@@ -1,0 +1,135 @@
+import React from "react"
+import ComponentsFactory from "./ComponentsFactory";
+
+import axios from 'axios';
+import SessionManager from "../../logic/user/SessionManager";
+
+let factory = new ComponentsFactory();
+
+export default class ItemForm extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading: false,
+            blocked: false
+        };
+
+        this.setupItem(props.item);
+
+        this.validateForm = this.validateForm.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        this.setItemState(this.props.item);
+    }
+
+    componentWillReceiveProps(props) {
+        this.setItemState(props.item);
+    }
+
+    setupItem(item) {
+        for (let i = 0; i < item.template.fields.length; i++) {
+            let field = item.template.fields[i];
+            this.state[field.name] = "";
+        }
+    }
+
+    setItemState(item) {
+        let itemState = {blocked: false};
+
+        for (let i = 0; i < item.template.fields.length; i++) {
+            let field = item.template.fields[i];
+            let value = item.data[field.name];
+            if (value == null)
+                value = "";
+            itemState[field.name] = value;
+        }
+        itemState['item'] = item;
+        this.setState(itemState);
+    }
+
+
+    validateForm() {
+        let blocked = this.state.blocked;
+        let item = this.props.item;
+        for (let i = 0; i < item.template.fields.length; i++) {
+            let field = item.template.fields[i];
+            if (field.required && field.editable) {
+                if (!this.state[field.name]) {
+                    return false
+                }
+            }
+        }
+        return !blocked;
+    }
+
+    handleChange(event) {
+        this.setState({
+            [event.target.id]: event.target.value
+        });
+    }
+
+    getAnnotationData() {
+        let item = this.props.item;
+        let result = {};
+        for (let i = 0; i < item.template.fields.length; i++) {
+            let field = item.template.fields[i];
+            if (field.editable) {
+                if (this.state[field.name])
+                    result[field.name] = this.state[field.name];
+                else
+                    result[field.name] = "";
+            }
+        }
+        return result;
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+
+        let item = this.props.item;
+        let payload = {data: this.getAnnotationData()};
+
+        this.setState({loading: true});
+
+        axios.post('http://localhost:8888/api/v1/items/' + item.id + '/annotation', payload, SessionManager.config)
+            .then((response) => {
+                this.setState({loading: false, blocked: true});
+                this.props.onAnnotationPost(response);
+            })
+            .catch((error) => {
+                this.setState({ loading: false});
+                alert(error);
+            });
+    }
+
+    render() {
+        if (this.state.loading) {
+            return (
+                <div>Loading</div>
+            );
+        }
+
+        let item = this.props.item;
+        let fields = item.template.fields.map((field) =>
+            factory.create(field.widget,
+                field.name,
+                this.state[field.name],
+                item.data[field.data_source],
+                field.required,
+                this.state.blocked,
+                this.handleChange));
+
+        return (
+            <form onSubmit={this.handleSubmit}>
+                {fields}
+                <button type="submit"
+                        disabled={!this.validateForm()}
+                        className="btn btn-primary">Submit</button>
+            </form>
+        );
+    }
+}
