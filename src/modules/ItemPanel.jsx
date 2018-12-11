@@ -25,7 +25,7 @@ export default class ItemPanel extends React.Component {
 
     getFirstItem() {
         let task = this.props.task;
-        axios.get('http://localhost:8888/api/v1/tasks/'+task.id+'/next_item', SessionManager.config)
+        axios.get(process.env.REACT_APP_BACKEND_URL+'/api/v1/tasks/'+task.id+'/next_item', SessionManager.config)
             .then((response) => {
                 this.setState({
                     loading: false,
@@ -40,7 +40,7 @@ export default class ItemPanel extends React.Component {
 
     getNextItem() {
         let item = this.state.item;
-        axios.get('http://localhost:8888/api/v1/items/'+item.id+'/next_item', SessionManager.config)
+        axios.get(process.env.REACT_APP_BACKEND_URL+'/api/v1/items/'+item.id+'/next_item', SessionManager.config)
             .then((response) => {
                 this.setState({
                     loading: false,

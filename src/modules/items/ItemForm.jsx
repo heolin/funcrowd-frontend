@@ -95,7 +95,7 @@ export default class ItemForm extends React.Component {
 
         this.setState({loading: true});
 
-        axios.post('http://localhost:8888/api/v1/items/' + item.id + '/annotation', payload, SessionManager.config)
+        axios.post(process.env.REACT_APP_BACKEND_URL+'/api/v1/items/' + item.id + '/annotation', payload, SessionManager.config)
             .then((response) => {
                 this.setState({loading: false, blocked: true});
                 this.props.onAnnotationPost(response);

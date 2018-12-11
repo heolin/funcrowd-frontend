@@ -15,7 +15,7 @@ export default class Missions extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8888/api/v1/missions', SessionManager.config)
+        axios.get(process.env.REACT_APP_BACKEND_URL+'/api/v1/missions', SessionManager.config)
             .then((response) => {
                 this.setState({
                     loading: false,

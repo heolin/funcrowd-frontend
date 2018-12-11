@@ -37,7 +37,7 @@ export default class Login extends React.Component {
         let stayLoggedIn = this.state.stayLoggedIn;
 
         this.setState({loading: true});
-        axios.post('http://localhost:8888/api/v1/users/login', {
+        axios.post(process.env.REACT_APP_BACKEND_URL+'/api/v1/users/login', {
             username: username,
             password: password
         })
