@@ -14,7 +14,7 @@ export default class RadioField extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        let result = nextProps.value != this.props.value;
+        let result = nextProps.value !== this.props.value;
         return result;
     }
 
@@ -27,6 +27,7 @@ export default class RadioField extends React.Component {
                           value={option}/>);
         return (
             <div className="form-group">
+                <label><strong>{this.props.name}</strong></label>
                 {options}
             </div>
         );

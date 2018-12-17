@@ -19,7 +19,7 @@ let Components = {
 export default class ComponentsFactory {
 
     create(widget, name, value, source, required, blocked, handleChange) {
-        if (widget == "Hidden")
+        if (widget === "Hidden")
             return null;
         let component = Components[widget];
         return React.createElement(component, {

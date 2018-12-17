@@ -1,8 +1,8 @@
 import React from "react"
 import ComponentsFactory from "./ComponentsFactory";
-
+import SkippingPanel from "./SkippingPanel";
 import axios from 'axios';
-import SessionManager from "../../logic/user/SessionManager";
+import SessionManager from "../../logic/SessionManager";
 
 let factory = new ComponentsFactory();
 
@@ -12,7 +12,8 @@ export default class ItemForm extends React.Component {
         super(props);
         this.state = {
             loading: false,
-            blocked: false
+            blocked: false,
+            skipping: false
         };
 
         this.setupItem(props.item);
@@ -20,6 +21,9 @@ export default class ItemForm extends React.Component {
         this.validateForm = this.validateForm.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.skipItem = this.skipItem.bind(this);
+        this.onSkipAccept = this.onSkipAccept.bind(this);
+        this.onSkipCancel = this.onSkipCancel.bind(this);
     }
 
     componentDidMount() {
@@ -38,7 +42,7 @@ export default class ItemForm extends React.Component {
     }
 
     setItemState(item) {
-        let itemState = {blocked: false};
+        let itemState = {blocked: false, loading: false};
 
         for (let i = 0; i < item.template.fields.length; i++) {
             let field = item.template.fields[i];
@@ -87,24 +91,38 @@ export default class ItemForm extends React.Component {
         return result;
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
+    handleSubmit(event, skip=false) {
+        if (event)
+            event.preventDefault();
 
         let item = this.props.item;
-        let payload = {data: this.getAnnotationData()};
+        let payload = {data: this.getAnnotationData(), skipped: skip};
 
-        this.setState({loading: true});
 
         axios.post(process.env.REACT_APP_BACKEND_URL+'/api/v1/items/' + item.id + '/annotation', payload, SessionManager.config)
             .then((response) => {
-                this.setState({loading: false, blocked: true});
+                this.setState({blocked: true, loading: true});
                 this.props.onAnnotationPost(response);
             })
             .catch((error) => {
-                this.setState({ loading: false});
                 alert(error);
             });
     }
+
+    skipItem(event) {
+        event.preventDefault();
+        this.setState({skipping: true});
+    }
+
+    onSkipAccept() {
+        this.setState({skipping: false});
+        this.handleSubmit(null, true);
+    }
+
+    onSkipCancel() {
+        this.setState({skipping: false});
+    }
+
 
     render() {
         if (this.state.loading) {
@@ -123,12 +141,24 @@ export default class ItemForm extends React.Component {
                 this.state.blocked,
                 this.handleChange));
 
+        let skipping = null;
+        if (this.state.skipping)
+            skipping = <SkippingPanel onAccept={this.onSkipAccept}
+                                      onCancel={this.onSkipCancel}/>;
+
         return (
             <form onSubmit={this.handleSubmit}>
+                {skipping}
                 {fields}
-                <button type="submit"
-                        disabled={!this.validateForm()}
-                        className="btn btn-primary">Submit</button>
+                <div style={{textAlign: "right"}}>
+                    <button onClick={this.skipItem}
+                            style={{marginRight: "10px", width: "80px"}}
+                            className="btn btn-default">Skip</button>
+                    <button type="submit"
+                            disabled={!this.validateForm()}
+                            style={{width: "120px"}}
+                            className="btn btn-green">Submit</button>
+                </div>
             </form>
         );
     }

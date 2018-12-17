@@ -1,4 +1,3 @@
-
 let USER = "funcrowd_user";
 
 
@@ -17,6 +16,7 @@ class _SessionManager {
                 Authorization: "Token " + user.token
             }
         };
+        sessionStorage.setItem(USER, JSON.stringify(user));
         if (saveUser) {
             localStorage.setItem(USER, JSON.stringify(user));
         }
@@ -27,9 +27,26 @@ class _SessionManager {
         this.token = null;
         this.config = {};
         localStorage.removeItem(USER);
+        sessionStorage.removeItem(USER);
     }
 
     getUser() {
+        let user = this.getSessionUser();
+        if (user === null)
+            user = this.getLocalStorageUser();
+        return user;
+    }
+
+    getSessionUser() {
+        let user = null;
+        try {
+            user = JSON.parse(sessionStorage.getItem(USER));
+        } catch (e) {
+        }
+        return user;
+    }
+
+    getLocalStorageUser() {
         let user = null;
         try {
             user = JSON.parse(localStorage.getItem(USER));

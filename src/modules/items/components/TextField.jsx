@@ -13,7 +13,7 @@ export default class TextField extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        let result = nextProps.value != this.props.value;
+        let result = nextProps.value !== this.props.value;
         return result;
     }
 

@@ -1,7 +1,5 @@
 import React from "react"
-import axios from 'axios';
-import User from "../../logic/user/User";
-import SessionManager from "../../logic/user/SessionManager";
+import UserRepository from "../../logic/repositories/UserRepository";
 
 export default class Login extends React.Component {
 
@@ -37,19 +35,14 @@ export default class Login extends React.Component {
         let stayLoggedIn = this.state.stayLoggedIn;
 
         this.setState({loading: true});
-        axios.post(process.env.REACT_APP_BACKEND_URL+'/api/v1/users/login', {
-            username: username,
-            password: password
-        })
-        .then((response) => {
-            let user = User.fromJson(response.data);
-            this.props.onSuccess(user, stayLoggedIn);
-        })
-        .catch((error) => {
-            this.setState({ loading: false});
-            console.log(error);
-            alert(error)
-        });
+        UserRepository.login(username, password)
+            .then((user) => {
+                this.props.onSuccess(user, stayLoggedIn);
+            })
+            .catch((error) => {
+                this.setState({ loading: false});
+                console.log(error);
+            });
     }
 
     render() {
@@ -60,7 +53,7 @@ export default class Login extends React.Component {
         }
         return (
             <div className="login-app baseapp">
-                <div className="row baserow">
+                <div className="row">
                     <div className="col-sm-8 offset-sm-2 card-3-static login-card">
                         <div className="row">
                             <div className="col-sm-12">

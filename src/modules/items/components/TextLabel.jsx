@@ -10,7 +10,7 @@ export default class TextLabel extends React.Component {
     render() {
         return (
             <div className="form-group">
-                <label>{this.props.name}</label>
+                <label><strong>{this.props.name}</strong></label>
                 <div>{this.props.value}</div>
             </div>
         );

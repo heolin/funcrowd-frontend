@@ -7,10 +7,6 @@ export default class TaskCard extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-    }
-
-
     render() {
         return (
             <div className="col-md-4">

@@ -1,21 +1,21 @@
 @font-face {
     font-family: RobotoSlab-Regular;
-    src: url('/static/fonts/RobotoSlab-Regular.ttf');
+    src: url('../fonts/RobotoSlab-Regular.ttf');
 }
 
 @font-face {
     font-family: RobotoSlab-Bold;
-    src: url('/static/fonts/RobotoSlab-Bold.ttf')
+    src: url('../fonts/RobotoSlab-Bold.ttf')
 }
 
 @font-face {
     font-family: Roboto-Regular;
-    src: url('/static/fonts/Roboto-Regular.ttf');
+    src: url('../fonts/Roboto-Regular.ttf');
 }
 
 @font-face {
     font-family: Roboto-Bold;
-    src: url('/static/fonts/Roboto-Bold.ttf')
+    src: url('../fonts/Roboto-Bold.ttf')
 }
 
 html {
@@ -26,21 +26,24 @@ html {
 body {
     overflow-x: hidden;
     height: 100%;
-    text-align: center;
     background-image: radial-gradient(#ffffff, #ffffff 32%, #e7e7e7);
     font-family: 'RobotoSlab-Regular', Fallback, sans-serif;
     font-weight: 300;
-    line-height: 1.5;
     color: #666666;
     font-size: 16px;
+}
+
+#root {
+    height: 100% !important;
+    width: 100% !important;
 }
 
 .container {
     height: 100%;
 }
 
-.baserow {
-    display: block;
+.base-row {
+    display: block !important;
     padding-top: 56px;
     height: 100%;
     min-height: 100%;
@@ -110,6 +113,19 @@ body {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
+.btn-green{color:#fff;background-color:#699b80;border-color:#699b80}
+
+.btn-green:hover{color:#fff;background-color:#6e9c83;border-color:#6e9c83}
+.btn-green:focus,.btn-green.focus{box-shadow:0 0 0 .2rem rgba(0,90,90,0.5)}
+.btn-green.disabled,.btn-green:disabled{color:#fff;background-color:#6e9c83;border-color:#6e9c83}
+.btn-green:not(:disabled):not(.disabled):active,.btn-green:not(:disabled):not(.disabled).active,.show>.btn-green.dropdown-toggle{color:#fff;background-color:#6e9c83;border-color:#000}
+.btn-green:not(:disabled):not(.disabled):active:focus,.btn-green:not(:disabled):not(.disabled).active:focus,.show>.btn-green.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(0,90,90,0.5)}
+
+
+h5 {
+    margin-top: 25px !important;
+}
+
 .baseapp {
     min-height: 100%;
     min-width: 100%;
@@ -153,9 +169,15 @@ body {
 
 
 .item-panel {
-    padding: 30px;
+    padding: 15px;
     margin-top: 60px;
+    margin-bottom: 40px;
     background: white;
+}
+
+.info-button {
+    float: right;
+    padding: 5px 6px !important;
 }
 
 
@@ -166,7 +188,7 @@ body {
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 18px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -190,7 +212,7 @@ body {
     width: 25px;
     background-color: #eee;
     border-radius: 50%;
-    margin-top: 4px;
+    margin-top: 0;
     margin-left: -35px;
 }
 
@@ -278,20 +300,140 @@ body {
 .feedback-panel {
     position: absolute;
     z-index: 100;
-    left: calc(50% - 200px);
+    left: calc(50% - 250px);
     top: 30%;
-    width: 400px;
-    height: 400px;
+    width: 500px;
     background: white !important;
+    padding: 15px;
 }
 
 .shadow {
-    position: absolute;
+    position: fixed;
     background-color: black;
     opacity: 0.4;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: 50;
+}
+
+.modal-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+}
+
+
+/* Bounties */
+.bounties-header-bar {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.bounty-card {
+    height: 180px;
+    padding: 15px;
+    color: white;
+    background-color: #699b80;
+}
+
+.bounty-card-title-base {
+   position: relative;
+}
+
+.bounty-card-icon {
+    top: calc(50% - 20px);
+    position: absolute;
+}
+
+.bounty-card-title {
+    width: calc(100% - 50px);
+    margin-left: 50px;
+}
+
+.bounty-card-id {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+}
+
+.bounty-card-header {
+    margin-bottom: 16px;
+}
+
+.closed-card {
+    background-color: #969696 !important;
+}
+
+.finished-card {
+    background-color: #4c715d !important;
+}
+
+.bounty-progress-bar {
+    background-color: #375043 !important;
+}
+
+.bounty-progress-stats {
+    margin-top: 5px;
+}
+
+.card-progress-bar {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 60px);
+}
+
+.bounty-status {
+    padding: 15px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+
+/* Instruction */
+.instruction-panel {
+    z-index: 100;
+    margin-left: auto;
+    margin-right: auto;
+    top: 100px;
+    background: white !important;
+    padding: 30px !important;
+    margin-bottom: 40px;
+}
+
+/* Skipping */
+
+.skipping-panel {
+    z-index: 100;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 400px;
+    text-align: center;
+    background: white !important;
+    padding: 30px;
+}
+
+/* Confirmation */
+.confirmation-panel {
+    z-index: 100;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 400px;
+    top: 40%;
+    text-align: center;
+    background: white !important;
+    padding: 30px;
+}
+
+/* Navbar */
+.player-hello {
+    position: absolute;
+    right: 20px;
 }

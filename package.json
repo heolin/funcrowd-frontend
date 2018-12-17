@@ -8,9 +8,13 @@
     "css-loader": "^2.0.0",
     "express": "^4.16.4",
     "express-favicon": "^2.0.1",
+    "jquery": "^3.3.1",
     "path": "^0.12.7",
+    "popper.js": "^1.14.6",
+    "query-string": "^6.2.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-icons-kit": "^1.2.1",
     "react-pose": "^4.0.4",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1"
