@@ -20,7 +20,7 @@
     "react-scripts": "2.1.1"
   },
   "scripts": {
-    "build": "react-scripts build",
+    "build": "react-scripts --max_old_space_size=460 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start": "npm run build && node server.js",
