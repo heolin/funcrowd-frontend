@@ -20,11 +20,12 @@
     "react-scripts": "2.1.1"
   },
   "scripts": {
-    "build": "react-scripts build",
+    "build": "sh -ac '. ./.env.${REACT_APP_ENV}; react-scripts build'",
+    "build:prod": "REACT_APP_ENV=prod npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start": "node server.js",
-    "start:dev": "react-scripts start"
+    "start:local": "react-scripts start"
   },
   "eslintConfig": {
     "extends": "react-app"
