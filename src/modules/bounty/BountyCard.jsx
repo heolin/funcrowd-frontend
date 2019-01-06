@@ -43,11 +43,14 @@ export default class BountyCard extends React.Component {
                     </div>
                 );
             } else {
+                let bountyStatus = "Bounty closed";
+                if (userBounty.progress === 1)
+                    bountyStatus = "Bounty finished";
                 return (
                     <div className="col-md-4" style={{marginBottom: "40px"}}>
-                        <div className="bounty-card finished-card card-2-static">
+                        <div className="bounty-card finished-card card-2" onClick={this.props.onSelect}>
                             <div className="bounty-card-header">
-                                <h6>Bounty finished</h6>
+                                <h6>{bountyStatus}</h6>
                                 <h6 className="bounty-card-id">#{bounty.id}</h6>
                             </div>
                             <div className="bounty-card-title-base">
@@ -86,7 +89,7 @@ export default class BountyCard extends React.Component {
                             </div>
 
                             <div className="bounty-card-title">
-                                <h4>#{task.name}</h4>
+                                <h4>{task.name}</h4>
                             </div>
                         </div>
                     </div>

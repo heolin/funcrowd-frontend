@@ -3,6 +3,7 @@ import ComponentsFactory from "./ComponentsFactory";
 import SkippingPanel from "./SkippingPanel";
 import axios from 'axios';
 import SessionManager from "../../logic/SessionManager";
+import ItemRepository from "../../logic/repositories/ItemRepository";
 
 let factory = new ComponentsFactory();
 
@@ -35,9 +36,11 @@ export default class ItemForm extends React.Component {
     }
 
     setupItem(item) {
-        for (let i = 0; i < item.template.fields.length; i++) {
-            let field = item.template.fields[i];
-            this.state[field.name] = "";
+        if (item) {
+            for (let i = 0; i < item.template.fields.length; i++) {
+                let field = item.template.fields[i];
+                this.state[field.name] = "";
+            }
         }
     }
 
@@ -98,14 +101,13 @@ export default class ItemForm extends React.Component {
         let item = this.props.item;
         let payload = {data: this.getAnnotationData(), skipped: skip};
 
-
-        axios.post(process.env.REACT_APP_BACKEND_URL+'/api/v1/items/' + item.id + '/annotation', payload, SessionManager.config)
-            .then((response) => {
+        ItemRepository.postAnnotation(item.id, payload)
+            .then((annotationResponse) => {
                 this.setState({blocked: true, loading: true});
-                this.props.onAnnotationPost(response);
+                this.props.onAnnotationPost(annotationResponse);
             })
             .catch((error) => {
-                alert(error);
+                console.log(error);
             });
     }
 

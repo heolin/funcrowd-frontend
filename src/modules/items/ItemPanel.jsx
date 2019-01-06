@@ -11,6 +11,8 @@ import { Icon } from 'react-icons-kit'
 import {info} from 'react-icons-kit/fa/info'
 import ConfirmationPanel from "./ConfirmationPanel";
 import ConfigManager from "../../logic/config/ConfigManager";
+import ItemRepository from "../../logic/repositories/ItemRepository";
+import NoItemsPanel from "./NoItemsPanel";
 
 export default class ItemPanel extends React.Component {
 
@@ -84,11 +86,11 @@ export default class ItemPanel extends React.Component {
 
     getFirstItem() {
         let task = this.props.task;
-        axios.get(process.env.REACT_APP_BACKEND_URL+'/api/v1/tasks/'+task.id+'/next_item', SessionManager.config)
-            .then((response) => {
+        ItemRepository.getFirstItem(task.id)
+            .then((item) => {
                 this.setState({
                     loading: false,
-                    item: response.data
+                    item: item
                 });
             })
             .catch((error) => {
@@ -99,11 +101,11 @@ export default class ItemPanel extends React.Component {
 
     getNextItem() {
         let item = this.state.item;
-        axios.get(process.env.REACT_APP_BACKEND_URL+'/api/v1/items/'+item.id+'/next_item', SessionManager.config)
-            .then((response) => {
+        ItemRepository.getNextItem(item.id)
+            .then((item) => {
                 this.setState({
                     loading: false,
-                    item: response.data
+                    item: item
                 });
             })
             .catch((error) => {
@@ -112,15 +114,15 @@ export default class ItemPanel extends React.Component {
             });
     }
 
-    onAnnotationPost(response) {
+    onAnnotationPost(annotationResponse) {
         let feedback = null;
         if (ConfigManager.config.showFeedback) {
-            feedback = response.data.annotation.feedback;
+            feedback = annotationResponse.annotation.feedback;
         }
 
         if (feedback) {
             this.setState({
-                annotation: response.data.annotation,
+                annotation: annotationResponse.annotation,
                 feedback: feedback});
         } else {
             this.showConfirmation();
@@ -172,36 +174,45 @@ export default class ItemPanel extends React.Component {
             );
         }
 
-        let itemForm = (
-
-            <div className="col-sm-12 item-panel card-1-static">
-                <h3 style={{display: "inline-block"}}>Item #{this.state.item.id}</h3>
-                <button className="btn btn-default info-button"
-                        onClick={this.showInstruction}>
-                    <Icon icon={info} size={24}/>
-                </button>
-
-                <ItemForm item={this.state.item} onAnnotationPost={this.onAnnotationPost}/>
-            </div>
-        );
-
+        let itemForm = null;
         let feedback = null;
-        if (this.state.feedback)
-            feedback = <FeedbackPanel feedback={this.state.feedback}
-                                      onAccept={this.onFeedbackAccept}
-                                      annotation={this.state.annotation}/>;
-
         let confirmation = null;
-        if (this.state.confirmation)
-            confirmation = <ConfirmationPanel onClose={this.onConfirmationClose}/>;
-
         let instruction = null;
-        if (this.state.instruction)
-            instruction = <InstructionPanel task={this.props.task} onClose={this.onInstructionClose}/>;
-
         let bounty = null;
+        let itemId = null;
+        let noitems = null;
+
+        if (this.state.item) {
+            itemId = this.state.item.id;
+
+            itemForm = (
+                <div className="col-sm-12 item-panel card-1-static">
+                    <h3 style={{display: "inline-block"}}>Item #{this.state.item.id}</h3>
+                    <button className="btn btn-default info-button"
+                            onClick={this.showInstruction}>
+                        <Icon icon={info} size={24}/>
+                    </button>
+
+                    <ItemForm item={this.state.item} onAnnotationPost={this.onAnnotationPost}/>
+                </div>
+            );
+
+            if (this.state.feedback)
+                feedback = <FeedbackPanel feedback={this.state.feedback}
+                                          onAccept={this.onFeedbackAccept}
+                                          annotation={this.state.annotation}/>;
+
+            if (this.state.confirmation)
+                confirmation = <ConfirmationPanel onClose={this.onConfirmationClose}/>;
+
+            if (this.state.instruction)
+                instruction = <InstructionPanel task={this.props.task} onClose={this.onInstructionClose}/>;
+        } else {
+            noitems = <NoItemsPanel/>;
+        }
+
         if (this.state.bounty) {
-            bounty = <BountyStatus itemId={this.state.item.id}
+            bounty = <BountyStatus itemId={itemId}
                                    onBountyFinished={this.onBountyFinished}
                                    bountyId={this.state.bounty.id}/>;
 
@@ -210,7 +221,6 @@ export default class ItemPanel extends React.Component {
             if (this.state.bounty.userBounty && this.state.bounty.userBounty.is_closed)
                 itemForm = null;
         }
-;
 
         return (
             <div className="row base-row">
@@ -219,6 +229,7 @@ export default class ItemPanel extends React.Component {
                 {feedback}
                 {bounty}
                 {itemForm}
+                {noitems}
             </div>
         );
     }

@@ -31,7 +31,6 @@ export default class BountyMenu extends React.Component {
         if (this.state.loading) {
             panel = <div>Loading</div>
         } else {
-            console.log(this.state);
             let bounties = this.state.bounties.map(
                 (bounty, i) => <BountyCard key={i} bounty={bounty}
                                              onSelect={() => this.props.onBountySelect(bounty)}/>);

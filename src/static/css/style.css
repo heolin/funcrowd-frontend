@@ -437,3 +437,11 @@ h5 {
     position: absolute;
     right: 20px;
 }
+
+/* No items */
+.no-items-panel {
+    padding: 15px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: white;
+}

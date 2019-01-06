@@ -52,7 +52,7 @@ export default class BountyStatus extends React.Component {
     render() {
         let status = null;
         let bountyStatus = "CLOSED";
-        if (this.state.userBounty && this.state.userBounty.status !== "CLOSED") {
+        if (this.state.userBounty) {
             let userBounty = this.state.userBounty;
             bountyStatus = userBounty.status;
 
