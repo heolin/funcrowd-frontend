@@ -1,8 +1,6 @@
 import React from "react"
 import ComponentsFactory from "./ComponentsFactory";
 import SkippingPanel from "./SkippingPanel";
-import axios from 'axios';
-import SessionManager from "../../logic/SessionManager";
 import ItemRepository from "../../logic/repositories/ItemRepository";
 
 let factory = new ComponentsFactory();

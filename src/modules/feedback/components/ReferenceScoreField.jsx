@@ -3,10 +3,6 @@ import React from "react"
 
 export default class ReferenceScoreField extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         let colorStyle = "badge-danger";
         if (this.props.value > 0)

@@ -3,14 +3,6 @@ import React from "react"
 
 export default class MissionCard extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
-    componentDidMount() {
-    }
-
-
     render() {
         return (
             <div className="col-md-4">

@@ -2,11 +2,6 @@ import React from "react"
 
 export default class NoItemsPanel extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
-
     render() {
         return (
             <div className="col-sm-12 card-1-static no-items-panel">

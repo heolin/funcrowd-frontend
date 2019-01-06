@@ -3,10 +3,6 @@ import React from "react"
 
 export default class TaskCard extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="col-md-4">

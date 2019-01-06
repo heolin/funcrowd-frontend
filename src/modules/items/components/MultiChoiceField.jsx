@@ -3,10 +3,6 @@ import React from "react"
 
 export default class MultiChoiceField extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="form-group">

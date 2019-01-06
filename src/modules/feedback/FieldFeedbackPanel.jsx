@@ -6,14 +6,6 @@ let factory = new FeedbackComponentsFactory();
 
 export default class FieldFeedbackPanel extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
-    componentDidMount() {
-    }
-
-
     render() {
 
         let field_values = [];

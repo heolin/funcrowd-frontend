@@ -1,7 +1,5 @@
 import React from "react"
-import axios from 'axios';
 import ItemForm from "./ItemForm";
-import SessionManager from "../../logic/SessionManager";
 import FeedbackPanel from "../feedback/FeedbackPanel";
 import InstructionPanel from "../instruction/InstructionPanel";
 import TasksRepository from "../../logic/repositories/TasksRepository";
@@ -76,6 +74,8 @@ export default class ItemPanel extends React.Component {
                     BountyRepository.get(bountyId).then((bounty) => {
                         this.props.onBountySelect(bounty);
                     });
+                    break;
+                default:
                     break;
             }
         } else {

@@ -3,10 +3,6 @@ import React from "react"
 
 export default class RadioElement extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <label className="radio-container">

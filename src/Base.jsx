@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Link, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import posed, { PoseGroup } from 'react-pose';
 import MissionsMenu from "./modules/missions/MissionsMenu";
 import Login from "./modules/login/Login";

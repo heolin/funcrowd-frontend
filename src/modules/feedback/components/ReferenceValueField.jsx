@@ -3,10 +3,6 @@ import React from "react"
 
 export default class ReferenceValueField extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         let annotationValue = this.props.annotation.data[this.props.field_name];
         let colorStyle = "badge-danger";
