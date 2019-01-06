@@ -1,6 +1,7 @@
 const express = require('express');
 const favicon = require('express-favicon');
 const path = require('path');
+const host = "0.0.0.0";
 const port = process.env.PORT || 3000;
 const app = express();
 app.use(favicon(__dirname + '/build/favicon.ico'));
@@ -13,4 +14,6 @@ app.get('/ping', function (req, res) {
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-app.listen(port);
+app.listen(port, host, function() {
+  console.log("Server started.......");
+});
