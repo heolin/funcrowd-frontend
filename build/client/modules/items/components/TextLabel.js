@@ -41,9 +41,11 @@ function (_React$Component) {
   _createClass(TextLabel, [{
     key: "render",
     value: function render() {
+      var label;
+      if (this.props.label) label = _react["default"].createElement("label", null, _react["default"].createElement("strong", null, this.props.label));
       return _react["default"].createElement("div", {
         className: "form-group"
-      }, _react["default"].createElement("label", null, _react["default"].createElement("strong", null, this.props.name)), _react["default"].createElement("div", null, this.props.value));
+      }, label, _react["default"].createElement("div", null, this.props.value));
     }
   }]);
 
@@ -51,4 +53,3 @@ function (_React$Component) {
 }(_react["default"].Component);
 
 exports["default"] = TextLabel;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9jbGllbnQvbW9kdWxlcy9pdGVtcy9jb21wb25lbnRzL1RleHRMYWJlbC5qc3giXSwibmFtZXMiOlsiVGV4dExhYmVsIiwicHJvcHMiLCJuYW1lIiwidmFsdWUiLCJSZWFjdCIsIkNvbXBvbmVudCJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0lBR3FCQSxTOzs7Ozs7Ozs7Ozs7OzZCQUVSO0FBQ0wsYUFDSTtBQUFLLFFBQUEsU0FBUyxFQUFDO0FBQWYsU0FDSSwrQ0FBTyxnREFBUyxLQUFLQyxLQUFMLENBQVdDLElBQXBCLENBQVAsQ0FESixFQUVJLDZDQUFNLEtBQUtELEtBQUwsQ0FBV0UsS0FBakIsQ0FGSixDQURKO0FBTUg7Ozs7RUFUa0NDLGtCQUFNQyxTIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gXCJyZWFjdFwiXG5cblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgVGV4dExhYmVsIGV4dGVuZHMgUmVhY3QuQ29tcG9uZW50IHtcblxuICAgIHJlbmRlcigpIHtcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZm9ybS1ncm91cFwiPlxuICAgICAgICAgICAgICAgIDxsYWJlbD48c3Ryb25nPnt0aGlzLnByb3BzLm5hbWV9PC9zdHJvbmc+PC9sYWJlbD5cbiAgICAgICAgICAgICAgICA8ZGl2Pnt0aGlzLnByb3BzLnZhbHVlfTwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICk7XG4gICAgfVxufVxuIl19

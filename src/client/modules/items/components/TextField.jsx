@@ -18,9 +18,12 @@ export default class TextField extends React.Component {
     }
 
     render() {
+        let label;
+        if (this.props.label)
+            label = <label><strong>{this.props.label}</strong></label>;
         return (
             <div className="form-group">
-                <label>{this.props.name}</label>
+                {label}
                 <input id={this.props.name}
                        value={this.props.value}
                        onChange={this.handleChange}

@@ -27,7 +27,7 @@ export default class RadioField extends React.Component {
                           value={option}/>);
         return (
             <div className="form-group">
-                <label><strong>{this.props.name}</strong></label>
+                <label><strong>{this.props.label}</strong></label>
                 {options}
             </div>
         );

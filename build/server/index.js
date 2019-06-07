@@ -6,7 +6,6 @@ var os = require('os');
 
 var app = express();
 app.use(express["static"]('dist'));
-app.listen(process.env.PORT || 8080, function () {
-  return console.log("Listening on port ".concat(process.env.PORT || 8080, "!"));
+app.listen(process.env.PORT || 8088, function () {
+  return console.log("Listening on port ".concat(process.env.PORT || 8088, "!"));
 });
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9zZXJ2ZXIvaW5kZXguanMiXSwibmFtZXMiOlsiZXhwcmVzcyIsInJlcXVpcmUiLCJvcyIsImFwcCIsInVzZSIsImxpc3RlbiIsInByb2Nlc3MiLCJlbnYiLCJQT1JUIiwiY29uc29sZSIsImxvZyJdLCJtYXBwaW5ncyI6Ijs7QUFBQSxJQUFNQSxPQUFPLEdBQUdDLE9BQU8sQ0FBQyxTQUFELENBQXZCOztBQUNBLElBQU1DLEVBQUUsR0FBR0QsT0FBTyxDQUFDLElBQUQsQ0FBbEI7O0FBRUEsSUFBTUUsR0FBRyxHQUFHSCxPQUFPLEVBQW5CO0FBRUFHLEdBQUcsQ0FBQ0MsR0FBSixDQUFRSixPQUFPLFVBQVAsQ0FBZSxNQUFmLENBQVI7QUFFQUcsR0FBRyxDQUFDRSxNQUFKLENBQVdDLE9BQU8sQ0FBQ0MsR0FBUixDQUFZQyxJQUFaLElBQW9CLElBQS9CLEVBQXFDO0FBQUEsU0FBTUMsT0FBTyxDQUFDQyxHQUFSLDZCQUFpQ0osT0FBTyxDQUFDQyxHQUFSLENBQVlDLElBQVosSUFBb0IsSUFBckQsT0FBTjtBQUFBLENBQXJDIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgZXhwcmVzcyA9IHJlcXVpcmUoJ2V4cHJlc3MnKTtcbmNvbnN0IG9zID0gcmVxdWlyZSgnb3MnKTtcblxuY29uc3QgYXBwID0gZXhwcmVzcygpO1xuXG5hcHAudXNlKGV4cHJlc3Muc3RhdGljKCdkaXN0JykpO1xuXG5hcHAubGlzdGVuKHByb2Nlc3MuZW52LlBPUlQgfHwgODA4MCwgKCkgPT4gY29uc29sZS5sb2coYExpc3RlbmluZyBvbiBwb3J0ICR7cHJvY2Vzcy5lbnYuUE9SVCB8fCA4MDgwfSFgKSk7XG4iXX0=

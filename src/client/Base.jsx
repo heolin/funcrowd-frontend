@@ -75,8 +75,8 @@ class Base extends React.Component {
         ConfigManager.setup(user);
         this.setState({user: user, checkingUser: false});
 
-        if (this.props.location.pathname === "/")
-            this.props.history.push('/bounties');
+        //if (this.props.location.pathname === "/")
+        //    this.props.history.push('/missions');
     }
 
     onLogout() {

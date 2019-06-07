@@ -11,6 +11,8 @@ import ConfirmationPanel from "./ConfirmationPanel";
 import ConfigManager from "../../logic/config/ConfigManager";
 import ItemRepository from "../../logic/repositories/ItemRepository";
 import NoItemsPanel from "./NoItemsPanel";
+import SkipButton from "./components/SkipButton";
+import SubmitButton from "./components/SubmitButton";
 
 export default class ItemPanel extends React.Component {
 
@@ -193,7 +195,10 @@ export default class ItemPanel extends React.Component {
                         <Icon icon={info} size={24}/>
                     </button>
 
-                    <ItemForm item={this.state.item} onAnnotationPost={this.onAnnotationPost}/>
+                    <ItemForm item={this.state.item}
+                              onAnnotationPost={this.onAnnotationPost}
+                              submitButton={SubmitButton}
+                              skipButton={SkipButton}/>
                 </div>
             );
 

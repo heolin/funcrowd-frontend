@@ -74,7 +74,7 @@ export default class TasksMenu extends React.Component {
     render() {
         return (
             <div className="row base-row">
-                <div className="col-sm-12">
+                <div className="col-sm-12 tasks-header-bar">
                     <h3>Taski</h3>
                 </div>
                 <div className="col-sm-12">

@@ -131,10 +131,15 @@ export default class ItemForm extends React.Component {
             );
         }
 
+        let SubmitButton = this.props.submitButton;
+        let SkipButton = this.props.skipButton;
+
         let item = this.props.item;
+        console.log(item);
         let fields = item.template.fields.map((field) =>
             factory.create(field.widget,
                 field.name,
+                field.label,
                 this.state[field.name],
                 item.data[field.data_source],
                 field.required,
@@ -147,17 +152,15 @@ export default class ItemForm extends React.Component {
                                       onCancel={this.onSkipCancel}/>;
 
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className="item-form" onSubmit={this.handleSubmit}>
                 {skipping}
                 {fields}
-                <div style={{textAlign: "right"}}>
-                    <button onClick={this.skipItem}
-                            style={{marginRight: "10px", width: "80px"}}
-                            className="btn btn-default">Skip</button>
-                    <button type="submit"
+                <div className="item-form-buttons">
+                    <SkipButton onClick={this.skipItem}
+                            style={{marginRight: "10px", width: "80px"}}>Skip</SkipButton>
+                    <SubmitButton type="submit"
                             disabled={!this.validateForm()}
-                            style={{width: "120px"}}
-                            className="btn btn-green">Submit</button>
+                            style={{width: "120px"}}>Submit</SubmitButton>
                 </div>
             </form>
         );

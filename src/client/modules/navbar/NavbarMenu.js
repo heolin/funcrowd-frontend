@@ -47,6 +47,11 @@ export default class NavbarMenu extends React.Component {
                             <NavbarMenuButton onClick={this.props.onNavigateToBounties} name="Bounties"/>
                         </ul>
                     </div>
+                    <div className="collapse navbar-collapse" id="navbarToggler">
+                        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <NavbarMenuButton onClick={this.props.onNavigateToMissions} name="Missions"/>
+                        </ul>
+                    </div>
                 </div>
             );
         } else {

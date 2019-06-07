@@ -43,7 +43,7 @@ function (_React$Component) {
     value: function render() {
       return _react["default"].createElement("div", {
         className: "form-group"
-      }, _react["default"].createElement("label", null, this.props.name), _react["default"].createElement("div", null, this.props.value));
+      }, _react["default"].createElement("label", null, this.props.label), _react["default"].createElement("div", null, this.props.value));
     }
   }]);
 
@@ -51,4 +51,3 @@ function (_React$Component) {
 }(_react["default"].Component);
 
 exports["default"] = MultiChoiceField;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9jbGllbnQvbW9kdWxlcy9pdGVtcy9jb21wb25lbnRzL011bHRpQ2hvaWNlRmllbGQuanN4Il0sIm5hbWVzIjpbIk11bHRpQ2hvaWNlRmllbGQiLCJwcm9wcyIsIm5hbWUiLCJ2YWx1ZSIsIlJlYWN0IiwiQ29tcG9uZW50Il0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7SUFHcUJBLGdCOzs7Ozs7Ozs7Ozs7OzZCQUVSO0FBQ0wsYUFDSTtBQUFLLFFBQUEsU0FBUyxFQUFDO0FBQWYsU0FDSSwrQ0FBUSxLQUFLQyxLQUFMLENBQVdDLElBQW5CLENBREosRUFFSSw2Q0FBTSxLQUFLRCxLQUFMLENBQVdFLEtBQWpCLENBRkosQ0FESjtBQU1IOzs7O0VBVHlDQyxrQkFBTUMsUyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tIFwicmVhY3RcIlxuXG5cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIE11bHRpQ2hvaWNlRmllbGQgZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xuXG4gICAgcmVuZGVyKCkge1xuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmb3JtLWdyb3VwXCI+XG4gICAgICAgICAgICAgICAgPGxhYmVsPnt0aGlzLnByb3BzLm5hbWV9PC9sYWJlbD5cbiAgICAgICAgICAgICAgICA8ZGl2Pnt0aGlzLnByb3BzLnZhbHVlfTwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICk7XG4gICAgfVxufVxuIl19

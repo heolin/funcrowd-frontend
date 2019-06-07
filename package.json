@@ -1,21 +1,24 @@
 {
-  "name": "simple-react-full-stack",
-  "version": "1.0.0",
-  "description": "Boilerplate to build a full stack web application using React, Node.js, Express and Webpack.",
-  "main": "src/server/index.js",
+  "name": "funcrowd-frontend",
+  "version": "1.2.16",
+  "description": "Frontend application for crowdsourcing engine - Funcrowd",
   "scripts": {
-    "buildpack": "webpack --mode production",
-    "build:start": "npm run build && node src/server/index.js",
+    "build:prod": "webpack --mode production",
     "start": "node src/server/index.js",
+    "start:prod": "npm run build:prod && node src/server/index.js",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server/index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "package": "rm build -rf; babel src -d build --copy-files"
   },
-  "author": "Sandeep Raveesh",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heolin123/funcrowd-frontend"
+  },
+  "author": "Wojciech Włodarczyk",
+  "license": "LGPLv3",
   "dependencies": {
     "axios": "^0.18.0",
-    "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.3.1",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
@@ -26,15 +29,19 @@
     "react-dom": "^16.8.6",
     "react-icons-kit": "^1.3.1",
     "react-pose": "^4.0.8",
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.0.0",
+    "react-slick": "^0.24.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.0",
     "babel-loader": "^8.0.0",
+    "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^1.0.0",
     "concurrently": "^4.0.0",
     "css-loader": "^2.0.0",
