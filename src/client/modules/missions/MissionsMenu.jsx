@@ -2,6 +2,13 @@ import React from "react"
 import MissionCard from "./MissionCard";
 import MissionRepository from "../../logic/repositories/MissionRepository";
 
+import posed  from 'react-pose';
+
+const ListContainer = posed.div({
+    enter: { staggerChildren: 50 },
+    exit: { staggerChildren: 20, staggerDirection: -1 }
+});
+
 
 export default class MissionsMenu extends React.Component {
 
@@ -28,17 +35,16 @@ export default class MissionsMenu extends React.Component {
     }
 
     getCardsPanel() {
-        let panel = null;
-        if (this.state.loading) {
-            panel = <div>Loading</div>
-        } else {
+        let panel = <div>Loading</div>;
+        if (!this.state.loading) {
             let missions = this.state.missions.map(
                 (mission, i) => <MissionCard key={i} mission={mission}
                                              onSelect={() => this.props.onMissionSelect(mission)}/>);
+
             panel = (
-                <div className="row">
+                <ListContainer className="row missions-row" key='list'>
                     {missions}
-                </div>
+                </ListContainer>
             );
         }
         return panel;
@@ -47,14 +53,14 @@ export default class MissionsMenu extends React.Component {
     render() {
 
         return (
-            <div className="row base-row">
-                <div className="col-sm-12 missions-header-bar">
-                    <h3>A witojcie w Excelu tutorial</h3>
-                    <p>Najlepszy lorem ipsum tutorial do excela, wszystkiego sie tu nauczycie.</p>
+            <div className="base-row">
+                <div className="row">
+                    <div className="col-sm-12 missions-introduction">
+                        <h3>A witojcie w Excelu tutorial</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem tellus, malesuada eget egestas nec, laoreet id orci. Morbi tristique dui non accumsan egestas. Fusce convallis est et eleifend pellentesque. Vivamus bibendum mi at purus sagittis, id malesuada nisi ornare. Nullam dictum vestibulum ante.</p>
+                    </div>
                 </div>
-                <div className="col-sm-12">
-                    {this.getCardsPanel()}
-                </div>
+                {this.getCardsPanel()}
             </div>
         );
     }

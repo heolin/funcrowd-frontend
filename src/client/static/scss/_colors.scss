@@ -1,0 +1,38 @@
+
+$dark-color: #32444C;
+$green-color: #a9b852;
+$blue-color: #5495b1;
+
+
+.color-white {
+  color: white;
+}
+
+.color-blue {
+  color: $blue-color;
+}
+
+.color-dark {
+  color: $dark-color;
+}
+
+.color-green {
+  color: $green-color;
+}
+
+
+.bg-white {
+  background: white;
+}
+
+.bg-blue {
+  background: $blue-color;
+}
+
+.bg-dark {
+  background: $dark-color;
+}
+
+.bg-green {
+  background: $green-color;
+}

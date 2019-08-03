@@ -1,0 +1,73 @@
+@import "colors";
+@import "variables";
+
+
+$header-height: 200px;
+$image-size: 212px;
+
+
+.tasks-header-bar {
+  background-color: $blue-color;
+  height: $header-height;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.tasks-header {
+  height: $header-height;
+  position: relative;
+  padding-top: 16px;
+}
+
+.tasks-header-info {
+  margin-top: 30px;
+}
+
+.tasks-header-info-text {
+  color: white;
+  display: inline-block;
+  padding-left: 30px;
+}
+
+.tasks-header-image {
+  position: absolute;
+  right: 60px;
+  bottom: -60px;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+  width: $image-size;
+  height: $image-size;
+}
+
+.tasks-header-image-content {
+  height: $image-size;
+}
+
+.tasks-header-icon {
+  width: 80px;
+  margin-top: -38px;
+}
+
+.tasks-header-progress {
+  margin-top: 20px;
+
+  margin-right: 340px;
+  @media screen and (max-width: map-get($screen-widths, 'md')) {
+    margin-right: 0px;
+  }
+}
+
+.tasks-summary-bar {
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.tasks-summary {
+  padding-top: 22px;
+  height: 80px;
+  width: 100%;
+}

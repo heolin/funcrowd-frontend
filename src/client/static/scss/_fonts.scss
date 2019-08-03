@@ -1,0 +1,105 @@
+@import "~rfs/scss";
+
+$light-weight:      300;
+$normal-weight:     400;
+$semibold-weight:   500;
+$bold-weight:       700;
+
+
+@font-face {
+  font-family: 'NunitoSans';
+  font-weight: $normal-weight;
+  font-style: normal;
+  src: url('../fonts/NunitoSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  font-weight: $semibold-weight;
+  font-style: normal;
+  src: url('../fonts/NunitoSans-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  font-weight: $bold-weight;
+  font-style: normal;
+  src: url('../fonts/NunitoSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  font-weight: $normal-weight;
+  font-style: italic;
+  src: url('../fonts/NunitoSans-RegularItalic.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'SourceSansPro';
+  font-weight: $normal-weight;
+  font-style: normal;
+  src: url('../fonts/SourceSansPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SourceSansPro';
+  font-weight: $semibold-weight;
+  font-style: normal;
+  src: url('../fonts/SourceSansPro-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SourceSansPro';
+  font-weight: $bold-weight;
+  font-style: normal;
+  src: url('../fonts/SourceSansPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SourceSansPro';
+  font-weight: $normal-weight;
+  font-style: italic;
+  src: url('../fonts/SourceSansPro-RegularItalic.ttf') format('truetype');
+}
+
+$normal-font: "SourceSansPro";
+$header-font: "NunitoSans";
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
+  font-weight: $bold-weight;
+}
+
+h2 {
+  @include font-size(32);
+}
+
+h2 {
+  @include font-size(28);
+}
+
+h3 {
+  @include font-size(24);
+}
+
+h4 {
+  @include font-size(20);
+}
+
+h5 {
+  @include font-size(16);
+}
+
+.normal {
+  @include font-size(20);
+}
+
+small, .small {
+  @include font-size(16);
+}
+
+.little {
+  @include font-size(13);
+}
+

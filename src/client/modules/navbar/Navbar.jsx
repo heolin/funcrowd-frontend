@@ -2,6 +2,7 @@ import React from "react"
 import NavbarMenu from "./NavbarMenu";
 import { Icon } from 'react-icons-kit'
 import {user} from 'react-icons-kit/metrize/user'
+import L from "../../logic/locatization/LocalizationManager";
 
 
 export default class Navbar extends React.Component {
@@ -24,15 +25,17 @@ export default class Navbar extends React.Component {
 
     render() {
         return (
-            <nav className="navbar card-2-static fixed-top navbar-expand-lg navbar-light bg-light">
-                <div className="navbar-brand">
-                    <Icon icon={user} size={24} style={{position: "absolute", top: "calc(50% - 18px)"}}/>
-                    <span style={{marginLeft: "32px"}}>FunCrowd</span>
+            <nav className="navbar fixed-top navbar-light bg-light navbar-expand-md py-3">
+
+                <a className="navbar-brand" href="#">{L.labels.title}</a>
+                <button className="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul className="navbar-nav mr-auto"/>
+                    <NavbarMenu/>
                 </div>
-                <NavbarMenu user={this.state.user}
-                            onLogout={this.props.onLogout}
-                            onNavigateToMissions={this.props.onNavigateToMissions}
-                            onNavigateToBounties={this.props.onNavigateToBounties}/>
             </nav>
         );
     }

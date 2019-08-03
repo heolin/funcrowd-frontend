@@ -1,6 +1,8 @@
 import React from "react"
 import NavbarMenuButton from "./NavbarMenuButton";
 
+import L from "../../logic/locatization/LocalizationManager";
+
 
 export default class NavbarMenu extends React.Component {
 
@@ -25,37 +27,17 @@ export default class NavbarMenu extends React.Component {
         this.props.onLogout();
     }
 
-
     render() {
-        //<div>Hello, {this.state.user.username}</div>-->
-        //<NavbarMenuButton onClick={this.props.onNavigateToMissions} name="Missions"/>
-        //                            <NavbarMenuButton onClick={this.onLogout} name="Logout"/>
-        if (this.state.user) {
-            return (
-                <div>
-                    <div style={{ position: "absolute", right: "80px", top: "18px"}}>
-                        Hello, {this.state.user.username}
-                    </div>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+        //if (!this.state.user)
+        //    return null;
 
-                    <div className="collapse navbar-collapse" id="navbarToggler">
-                        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <NavbarMenuButton onClick={this.props.onNavigateToBounties} name="Bounties"/>
-                        </ul>
-                    </div>
-                    <div className="collapse navbar-collapse" id="navbarToggler">
-                        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <NavbarMenuButton onClick={this.props.onNavigateToMissions} name="Missions"/>
-                        </ul>
-                    </div>
-                </div>
-            );
-        } else {
-            return null;
-        }
+        return (
+            <ul className="navbar-nav ml-auto">
+                <NavbarMenuButton targetPath="/missions" name={L.labels.missions} icon="missions"/>
+                <NavbarMenuButton targetPath="/about" name={L.labels.about} icon="about"/>
+                <NavbarMenuButton targetPath="/achievements" name={L.labels.achievements} icon="achievements"/>
+                <NavbarMenuButton targetPath="/ranking" name={L.labels.ranking} icon="ranking"/>
+            </ul>
+        );
     }
 }

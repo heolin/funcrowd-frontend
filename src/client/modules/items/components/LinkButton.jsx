@@ -9,7 +9,7 @@ export default class LinkButton extends React.Component {
                 <label><strong>{this.props.label}</strong></label>
                 <div>
                     <a href={this.props.value}>
-                        <div className="btn btn-primary">
+                        <div className="btn btn-primary download-button">
                             Download
                         </div>
                     </a>

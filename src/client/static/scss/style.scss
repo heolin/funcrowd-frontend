@@ -1,0 +1,26 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "breadcrumbs";
+@import "fonts";
+@import "colors";
+@import "utils";
+@import "achievements";
+
+
+html {
+}
+
+body {
+  @extend .normal;
+  font-family: $normal-font;
+  font-weight: $normal-weight;
+  color: $dark-color;
+}
+
+.container {
+  margin-top: 78px;
+}
+
+.justify-items {
+  display: flex;
+  justify-content: space-between;
+}

@@ -46,7 +46,7 @@ function (_React$Component) {
       }, _react["default"].createElement("label", null, _react["default"].createElement("strong", null, this.props.label)), _react["default"].createElement("div", null, _react["default"].createElement("a", {
         href: this.props.value
       }, _react["default"].createElement("div", {
-        className: "btn btn-primary"
+        className: "btn btn-primary download-button"
       }, "Download"))));
     }
   }]);

@@ -139,8 +139,8 @@ function (_React$Component) {
       this.setState({
         user: user,
         checkingUser: false
-      }); //if (this.props.location.pathname === "/")
-      //    this.props.history.push('/missions');
+      });
+      if (this.props.location.pathname === "/") this.props.history.push('/missions');
     }
   }, {
     key: "onLogout",

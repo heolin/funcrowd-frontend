@@ -1,0 +1,47 @@
+@import "colors";
+$card-margin: 20px;
+
+.missions-introduction {
+  margin: 80px 0 60px 0;
+}
+
+
+.missions-row {
+  margin: 0 -#{15px + $card-margin} !important;
+}
+
+.mission-card {
+  background-color: $blue-color;
+  margin: 0 $card-margin;
+}
+
+.mission-card-top {
+  position: relative;
+}
+
+.mission-card-image {
+  width: 100%;
+  position: relative;
+}
+
+.mission-card-triangle {
+  fill: $blue-color;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+}
+
+.mission-card-icon {
+  position: absolute;
+  width: 80px;
+  bottom: 0px;
+  left: 25px;
+  z-index: 20;
+}
+
+.mission-card-content {
+  padding: 25px;
+  padding-bottom: 8px;
+  color: white;
+}

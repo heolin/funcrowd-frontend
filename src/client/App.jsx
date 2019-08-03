@@ -1,11 +1,12 @@
 import React from "react"
 import Base from "./Base"
 import { BrowserRouter as Router} from 'react-router-dom';
-import './static/css/style.css';
 import 'bootstrap/dist/js/bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import './static/scss/navbar.scss'
+import './static/scss/style.scss'
+import './static/scss/missions.scss'
 
 
 class App extends React.Component {

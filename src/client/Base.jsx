@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Link } from 'react-router-dom';
 import posed, { PoseGroup } from 'react-pose';
 import MissionsMenu from "./modules/missions/MissionsMenu";
 import Login from "./modules/login/Login";
@@ -11,9 +11,14 @@ import BountyMenu from "./modules/bounty/BountyMenu";
 import queryString from 'query-string';
 import UserRepository from "./logic/repositories/UserRepository";
 import ConfigManager from "./logic/config/ConfigManager";
+import LocalizationManager from './logic/locatization/LocalizationManager'
+import AboutPage from "./modules/about/AboutPage";
+import AchievementsMenu from "./modules/achievements/AchievementsMenu";
 
 
 const RouteContainer = posed.div({
+  enter: { opacity: 1, delay: 300, beforeChildren: true },
+  exit: { opacity: 0 }
 });
 
 
@@ -37,12 +42,15 @@ class Base extends React.Component {
         this.onBountySelect = this.onBountySelect.bind(this);
 
         this.navigateToMissions = this.navigateToMissions.bind(this);
+        this.navigateToAbout = this.navigateToAbout.bind(this);
         this.navigateToBounties = this.navigateToBounties.bind(this);
     }
 
     componentDidMount() {
         this.checkSessionUser();
         this.checkUrlParams();
+
+        LocalizationManager.setup('pl');
     }
 
     checkSessionUser() {
@@ -75,8 +83,8 @@ class Base extends React.Component {
         ConfigManager.setup(user);
         this.setState({user: user, checkingUser: false});
 
-        //if (this.props.location.pathname === "/")
-        //    this.props.history.push('/missions');
+        if (this.props.location.pathname === "/")
+            this.props.history.push('/missions');
     }
 
     onLogout() {
@@ -113,21 +121,24 @@ class Base extends React.Component {
         this.props.history.push('/bounties');
     }
 
+    navigateToAbout() {
+        this.props.history.push('/about');
+    }
+
     //render
 
     render() {
         return (
-            <Route render={({location}) => (
-                <div className="container h-100">
+            <Route
+            render={({ location }) => (
+                <div>
                     <Navbar user={this.state.user}
                             onLogout={this.onLogout}
                             onNavigateToMissions={this.navigateToMissions}
-                            onNavigateToBounties={this.navigateToBounties}/>
-
-                    {this.state.checkingUser || this.state.checkingParams ?
-                        <div>Loading</div>
-                        :
-                        <PoseGroup preEnterPose="preenter" className="h-100 w-100">
+                            onNavigateToBounties={this.navigateToBounties}
+                            onNavigateToAbout={this.navigateToAbout}/>
+                    <div className="container h-100">
+                        <PoseGroup>
                             <RouteContainer key={location.pathname}>
                                 <Switch location={location}>
                                     <Route exact path="/"
@@ -135,6 +146,10 @@ class Base extends React.Component {
                                     <Route path="/missions"
                                            render={(props) => <MissionsMenu onMissionSelect={this.onMissionSelect}
                                                                             user={this.state.user} {...props}/>}/>
+                                    <Route path="/about"
+                                           render={(props) => <AboutPage user={this.state.user} {...props}/>}/>
+                                    <Route path="/achievements"
+                                           render={(props) => <AchievementsMenu user={this.state.user} {...props}/>}/>
                                     <Route path="/bounty/:id"
                                            render={(props) => <ItemPanel task={this.state.task}
                                                                          user={this.state.user}
@@ -157,11 +172,11 @@ class Base extends React.Component {
                                 </Switch>
                             </RouteContainer>
                         </PoseGroup>
-                    }
+                    </div>
                 </div>
-            )}/>
+                )}
+            />
         );
-
     }
 }
 
