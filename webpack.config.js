@@ -36,10 +36,14 @@ module.exports = (env, args) => ({
                 ]
             },
             {
-                test: /\.(png|jpg|gif|svg)$/,
+                test: /\.(png|jpg|gif)$/,
                 use: {
                     loader: 'url-loader',
                 }
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
             }
         ]
     },

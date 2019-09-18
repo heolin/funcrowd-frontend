@@ -8,7 +8,7 @@ const ListContainer = posed.ul({
     exit: { staggerChildren: 20, staggerDirection: -1 }
 });
 
-export default class AchievementsMenu extends React.Component {
+export default class BadgesMenu extends React.Component {
 
     constructor(props) {
         super(props);
@@ -29,7 +29,7 @@ export default class AchievementsMenu extends React.Component {
         return (
             <div className="base-row">
                 <div>
-                    <div className="">
+                    <div className="badges-earned">
                         <h3>Zdobyte</h3>
                         534543
                     </div>
@@ -40,7 +40,7 @@ export default class AchievementsMenu extends React.Component {
                     </div>
                 </div>
                 <div>
-                    <div className="">
+                    <div className="badges-to-earn">
                         <h3>Do zdobycia</h3>
                         534543
                     </div>

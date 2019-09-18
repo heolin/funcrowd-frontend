@@ -1,15 +1,19 @@
 import React from "react"
 
 
-export default class RadioElement extends React.Component {
+export default class CheckboxElement extends React.Component {
 
     render() {
         return (
-            <label className="radio-container">
-                <input name={this.props.name}
+            <label className="checkbox">
+                <input id={this.props.name}
+                       name={this.props.name}
                        value={this.props.value}
+                       onChange={this.handleChange}
                        type="checkbox"/>
-                <span className="checkmark"></span>
+                <span className="outer">
+                    <span className="inner"></span>
+                </span>
                 {this.props.value}
             </label>
         );

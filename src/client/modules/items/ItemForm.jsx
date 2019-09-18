@@ -124,6 +124,25 @@ export default class ItemForm extends React.Component {
     }
 
 
+    createGroup(item, groupFields, index) {
+        let fields = groupFields.map((fieldName) => {
+            let field = item.templateFields[fieldName];
+            return factory.create(field.widget,
+                field.name,
+                field.label,
+                this.state[field.name],
+                item.data[field.data_source],
+                field.required,
+                this.state.blocked,
+                this.handleChange);
+        });
+        return (
+            <div className="item-panel-group" key={"group-"+index}>
+                {fields}
+            </div>
+        );
+    }
+
     render() {
         if (this.state.loading) {
             return (
@@ -135,16 +154,14 @@ export default class ItemForm extends React.Component {
         let SkipButton = this.props.skipButton;
 
         let item = this.props.item;
-        console.log(item);
-        let fields = item.template.fields.map((field) =>
-            factory.create(field.widget,
-                field.name,
-                field.label,
-                this.state[field.name],
-                item.data[field.data_source],
-                field.required,
-                this.state.blocked,
-                this.handleChange));
+        let metadata = this.props.task.metadata;
+
+        let groups = metadata.groups || [item.template.fields];
+        console.log(groups)
+
+        let fieldGroups = groups.map((groupFields, index) =>
+            this.createGroup(item, groupFields, index)
+        );
 
         let skipping = null;
         if (this.state.skipping)
@@ -154,7 +171,7 @@ export default class ItemForm extends React.Component {
         return (
             <form className="item-form" onSubmit={this.handleSubmit}>
                 {skipping}
-                {fields}
+                {fieldGroups}
                 <div className="item-form-buttons">
                     <SkipButton onClick={this.skipItem}
                             style={{marginRight: "10px", width: "80px"}}>Skip</SkipButton>

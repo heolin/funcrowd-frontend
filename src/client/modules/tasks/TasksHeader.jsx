@@ -1,16 +1,16 @@
 import React from "react"
-import ProgressBar from "../components/ProgressBar";
-import {Breadcrumbs, BreadcrumbItem} from "../components/Breadcrumbs";
+import ProgressBar from "../../components/ProgressBar";
+import {Breadcrumbs, BreadcrumbItem} from "../../components/Breadcrumbs";
 import L from "../../logic/locatization/LocalizationManager";
-import {SmallIcon} from "../components/Icons";
+import {Icon, SmallIcon} from "../../components/Icons";
+import {CircleImage} from "../../components/Image";
 
 
-export default class TasksMenuHeader extends React.Component {
+export default class TasksHeader extends React.Component {
 
     render() {
         let mission = this.props.mission;
         let image = require("../../static/"+mission.metadata.image);
-        let icon = require("../../static/icons/"+mission.metadata.icon+".svg");
 
         return (
             <div>
@@ -24,7 +24,7 @@ export default class TasksMenuHeader extends React.Component {
                             </Breadcrumbs>
                         </div>
                         <div className="tasks-header-info">
-                            <img className="tasks-header-icon" src={icon}/>
+                            <Icon className="tasks-header-icon" name={mission.metadata.icon}/>
                             <div className="tasks-header-info-text">
                                 <h3 style={{marginBottom: 0}}>{mission.name}</h3>
                                 <span className="small">{mission.description}</span>
@@ -32,11 +32,11 @@ export default class TasksMenuHeader extends React.Component {
                         </div>
                         <div>
                             <ProgressBar className="tasks-header-progress"
-                                         textAlign="right" progress={0.54}/>
+                                         textAlign="right"
+                                         progress={0.54}
+                                         text="Ukończono 1/5"/>
                         </div>
-                        <div className="card-3-static tasks-header-image d-none d-sm-none d-md-block">
-                            <img className="tasks-header-image-content" src={image}/>
-                        </div>
+                        <CircleImage className="tasks-header-image d-none d-sm-none d-md-block" image={image}/>
                     </div>
                 </div>
                 <div className="tasks-summary-bar card-1-static"/>

@@ -3,6 +3,7 @@ import MissionCard from "./MissionCard";
 import MissionRepository from "../../logic/repositories/MissionRepository";
 
 import posed  from 'react-pose';
+import MissionProgressRepository from "../../logic/repositories/MissionProgressRepository";
 
 const ListContainer = posed.div({
     enter: { staggerChildren: 50 },
@@ -16,7 +17,9 @@ export default class MissionsMenu extends React.Component {
         super(props);
         this.state = {
             missions: null,
-            loading: true
+            progress: null,
+            loadingMissions: true,
+            loadingProgress: true
         }
     }
 
@@ -24,36 +27,52 @@ export default class MissionsMenu extends React.Component {
         MissionRepository.all()
             .then((missions) => {
                 this.setState({
-                    loading: false,
+                    loadingMissions: false,
                     missions: missions
                 });
             })
             .catch((error) => {
-                this.setState({ loading: false});
+                this.setState({ loadingMissions: false});
+                console.log(error)
+            });
+
+        MissionProgressRepository.all()
+            .then((progress) => {
+                let missionProgress = {};
+                progress.forEach((progress) => {
+                    missionProgress[progress.mission] = progress;
+                });
+                this.setState({
+                    loadingProgress: false,
+                    progress: missionProgress
+                });
+            })
+            .catch((error) => {
+                this.setState({ loadingProgress: false});
                 console.log(error)
             });
     }
 
     getCardsPanel() {
-        let panel = <div>Loading</div>;
-        if (!this.state.loading) {
-            let missions = this.state.missions.map(
-                (mission, i) => <MissionCard key={i} mission={mission}
-                                             onSelect={() => this.props.onMissionSelect(mission)}/>);
+        if (this.state.loadingMissions || this.state.loadingProgress)
+            return <div>Loading</div>;
 
-            panel = (
-                <ListContainer className="row missions-row" key='list'>
-                    {missions}
-                </ListContainer>
-            );
-        }
-        return panel;
+        let missions = this.state.missions.map(
+            (mission, i) => <MissionCard key={i} mission={mission}
+                                         progress={this.state.progress[mission.id]}
+                                         onSelect={() => this.props.onMissionSelect(mission)}/>);
+
+        return (
+            <ListContainer className="row missions-row" key='list'>
+                {missions}
+            </ListContainer>
+        );
     }
 
     render() {
 
         return (
-            <div className="base-row">
+            <div className="container base-row">
                 <div className="row">
                     <div className="col-sm-12 missions-introduction">
                         <h3>A witojcie w Excelu tutorial</h3>

@@ -464,24 +464,3 @@ h5 {
     margin-bottom: 20px;
     background-color: white;
 }
-
-/* Images Gallery */
-.gallery-image-modal {
-    z-index: 100;
-    background: white !important;
-    padding: 30px;
-
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.gallery-image {
-    margin: auto;
-    width: 300px;
-}
-
-.gallery-image > img {
-    width: inherit;
-}

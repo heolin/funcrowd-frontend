@@ -1,8 +1,8 @@
 import React from "react"
 
 import L from "../../logic/locatization/LocalizationManager";
-import ProgressBar from "../components/ProgressBar";
-import {AchievementIcon} from "../components/Icons";
+import ProgressBar from "../../components/ProgressBar";
+import {AchievementIcon} from "../../components/Icons";
 
 
 export default class AchievementCard extends React.Component {

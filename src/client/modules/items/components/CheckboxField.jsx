@@ -5,13 +5,17 @@ import CheckboxElement from "./element/CheckboxElement";
 export default class CheckboxField extends React.Component {
 
     render() {
-        let options = this.props.value.map((option) =>
+        let options = this.props.source.map((option) =>
             <CheckboxElement key={option}
                              name={this.props.name}
                              value={option}/>);
+        let label;
+        if (this.props.label)
+            label = <label><strong>{this.props.label}</strong></label>;
         return (
             <div className="form-group">
-                {options}
+                {label}
+                <div>{options}</div>
             </div>
         );
     }

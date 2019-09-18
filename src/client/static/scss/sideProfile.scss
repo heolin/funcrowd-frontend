@@ -1,0 +1,63 @@
+@import "variables";
+
+
+.side-profile {
+  width: 430px;
+  background: white;
+  height: 100%;
+  position: fixed;
+  z-index: 60;
+  right: 0px;
+  padding: 40px;
+
+  @media screen and (max-width: map-get($screen-widths, 'sm')) {
+    width: 100%;
+    right: 0;
+  }
+}
+
+.side-profile-image {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.side-profile-close {
+  position: absolute;
+  cursor: pointer;
+}
+
+.side-profile-close svg {
+  width: 24px;
+}
+
+.side-profile-block {
+  margin-top: 25px;
+  height: 60px;
+}
+
+.side-profile-block-icon svg {
+  padding-bottom: 8px;
+  margin-top: -23px;
+}
+
+.side-profile-progress .progress {
+  height: 12px !important;
+}
+
+.side-profile-settings {
+  position: absolute;
+  top: 10px;
+  right: calc(50% - 110px);
+}
+
+
+.black-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #0e2e3c;
+  z-index: 50;
+}

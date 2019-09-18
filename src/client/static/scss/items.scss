@@ -1,0 +1,21 @@
+@import "cards";
+@import "colors";
+
+
+.item-panel {
+  padding-top: 50px;
+  margin-bottom: 40px
+}
+
+.item-panel-group {
+  @extend .card-1-static;
+
+  background: white;
+  padding: 50px;
+  margin-bottom: 30px;
+  border-left: solid 4px $blue-color;
+}
+
+.item-form-buttons {
+  text-align: center;
+}

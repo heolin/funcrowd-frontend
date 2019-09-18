@@ -1,19 +1,22 @@
+@import "colors";
 
-.small-icon {
+.very-big-icon {
+  width: 80px;
+}
+
+.big-icon svg {
+  width: 48px;
+}
+
+.small-icon svg {
   width: 28px;
 }
 
-.achievement-icon {
-  position: relative;
+.very-small-icon svg {
+  width: 16px;
 }
 
-.achievement-icon-badge {
-  width: 110px;
+.orange-icon path {
+  fill: $orange-color;
 }
 
-.achievement-icon-image {
-  width: 70px;
-  position: absolute;
-  left: 20px;
-  top: 5px;
-}

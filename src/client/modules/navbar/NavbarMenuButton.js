@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from 'react-router-dom';
-import { SmallIcon } from "../components/Icons";
+import { SmallIcon } from "../../components/Icons";
 
 
 export default class NavbarMenuButton extends React.Component {

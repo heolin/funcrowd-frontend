@@ -1,5 +1,6 @@
 import React from "react"
 import NavbarMenuButton from "./NavbarMenuButton";
+import NavbarProfile from "./NavbarProfile";
 
 import L from "../../logic/locatization/LocalizationManager";
 
@@ -37,6 +38,11 @@ export default class NavbarMenu extends React.Component {
                 <NavbarMenuButton targetPath="/about" name={L.labels.about} icon="about"/>
                 <NavbarMenuButton targetPath="/achievements" name={L.labels.achievements} icon="achievements"/>
                 <NavbarMenuButton targetPath="/ranking" name={L.labels.ranking} icon="ranking"/>
+                <NavbarProfile onClick={this.props.showSideProfile}/>
+
+                <li className="nav-item">
+                    <span className="nav-link">Wyloguj</span>
+                </li>
             </ul>
         );
     }

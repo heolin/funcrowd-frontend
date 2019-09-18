@@ -13,6 +13,7 @@ import ItemRepository from "../../logic/repositories/ItemRepository";
 import NoItemsPanel from "./NoItemsPanel";
 import SkipButton from "./components/SkipButton";
 import SubmitButton from "./components/SubmitButton";
+import ItemHeader from "./ItemHeader";
 
 export default class ItemPanel extends React.Component {
 
@@ -176,6 +177,7 @@ export default class ItemPanel extends React.Component {
             );
         }
 
+        console.log("no witam");
         let itemForm = null;
         let feedback = null;
         let confirmation = null;
@@ -188,14 +190,15 @@ export default class ItemPanel extends React.Component {
             itemId = this.state.item.id;
 
             itemForm = (
-                <div className="col-sm-12 item-panel card-1-static">
+                <div className="col-sm-12 item-panel">
                     <h3 style={{display: "inline-block"}}>Item #{this.state.item.id}</h3>
                     <button className="btn btn-default info-button"
                             onClick={this.showInstruction}>
                         <Icon icon={info} size={24}/>
                     </button>
 
-                    <ItemForm item={this.state.item}
+                    <ItemForm task={this.props.task}
+                              item={this.state.item}
                               onAnnotationPost={this.onAnnotationPost}
                               submitButton={SubmitButton}
                               skipButton={SkipButton}/>
@@ -228,13 +231,16 @@ export default class ItemPanel extends React.Component {
         }
 
         return (
-            <div className="row base-row">
-                {instruction}
-                {confirmation}
-                {feedback}
-                {bounty}
-                {itemForm}
-                {noitems}
+            <div className="container base-row">
+                <ItemHeader task={this.state.task}/>
+                <div className="row">
+                    {instruction}
+                    {confirmation}
+                    {feedback}
+                    {bounty}
+                    {itemForm}
+                    {noitems}
+                </div>
             </div>
         );
     }

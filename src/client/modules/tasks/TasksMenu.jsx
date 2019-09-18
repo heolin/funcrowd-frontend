@@ -2,14 +2,16 @@ import React from "react"
 import TasksRepository from "../../logic/repositories/TasksRepository";
 import TaskCard from "./TaskCard";
 import MissionRepository from "../../logic/repositories/MissionRepository";
-import TasksMenuHeader from "./TasksMenuHeader";
+import TaskHeader from "./TasksHeader";
 import L from "../../logic/locatization/LocalizationManager";
 import { Link } from 'react-router-dom';
 
 import posed  from 'react-pose';
 import AchievementCard from "../achievements/AchievementCard";
+import TaskProgressRepository from "../../logic/repositories/TaskProgressRepository";
+import ImagesGallery from "../items/components/ImagesGallery/ImagesGallery";
 
-const ListContainer = posed.ul({
+const ListContainer = posed.div({
     enter: { staggerChildren: 50 },
     exit: { staggerChildren: 20, staggerDirection: -1 }
 });
@@ -19,8 +21,10 @@ export default class TasksMenu extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: true,
-            tasks: null
+            loadingTasks: true,
+            loadingProgress: true,
+            tasks: null,
+            progress: null
         }
     }
 
@@ -45,24 +49,38 @@ export default class TasksMenu extends React.Component {
     }
 
     getTasksList() {
-        console.log("getting tasks list");
         let mission = this.props.mission;
         TasksRepository.list(mission.id)
             .then((tasks) => {
                 this.setState({
-                    loading: false,
+                    loadingTasks: false,
                     tasks: tasks
                 });
             })
             .catch((error) => {
-                this.setState({ loading: false});
+                this.setState({ loadingTasks: false});
                 console.log(error)
             });
 
+        TaskProgressRepository.list(mission.id)
+            .then((tasks) => {
+                let taskProgress = {};
+                tasks.forEach((progress) => {
+                    taskProgress[progress.task] = progress;
+                });
+                this.setState({
+                    loadingProgress: false,
+                    progress: taskProgress
+                });
+            })
+            .catch((error) => {
+                this.setState({ loadingProgress: false});
+                console.log(error)
+            });
     }
 
     getCardsPanel() {
-        if (this.state.loading) {
+        if (this.state.loadingTasks || this.state.loadingProgress) {
             return (
                 <div>Loading</div>
             )
@@ -72,10 +90,11 @@ export default class TasksMenu extends React.Component {
         if (this.state.tasks !== null)
             tasks = this.state.tasks.map(
                 (task, i) => <TaskCard key={i} task={task}
-                                   onSelect={() => this.props.onTaskSelect(task)}/>);
+                                       progress={this.state.progress[task.id]}
+                                       onSelect={() => this.props.onTaskSelect(task)}/>);
 
         return (
-            <ListContainer>
+            <ListContainer className="task-cards">
                 {tasks}
             </ListContainer>
         );
@@ -84,10 +103,14 @@ export default class TasksMenu extends React.Component {
     render() {
 
         return (
-            <div className="base-row">
-                <TasksMenuHeader mission={this.props.mission}/>
+            <div className="container base-row">
+                <TaskHeader mission={this.props.mission}/>
+                <ImagesGallery
+                    label="hehe"
+                    value={ ["https://funcrowd-s3.s3.amazonaws.com/ImageFile_file/zad1_1.png", "https://funcrowd-s3.s3.amazonaws.com/ImageFile_file/zad1_1.png", "https://funcrowd-s3.s3.amazonaws.com/ImageFile_file/zad1_2.png", "https://funcrowd-s3.s3.amazonaws.com/ImageFile_file/zad1_3.png"]}
+                />
                 <div className="row tasks-row">
-                    <div className="col-md-8">
+                    <div className="col-md-12 col-lg-8">
                         <div className="tasks-introduction">
                             <h3>{L.labels.missions}</h3>
                             Lorem ipsum
@@ -109,7 +132,8 @@ export default class TasksMenu extends React.Component {
                             <div className="col-lg-12 col-md-6 col-sm-12">
                                 <AchievementCard/>
                             </div>
-                            <div className="text-right">
+                            <div className="col-sm-12 text-right color-blue small"
+                                 style={{paddingRight: "30px"}}>
                                 <Link to="/achievements">
                                     Zobacz wszystkie czalendze
                                 </Link>

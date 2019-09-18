@@ -3,6 +3,7 @@ import NavbarMenu from "./NavbarMenu";
 import { Icon } from 'react-icons-kit'
 import {user} from 'react-icons-kit/metrize/user'
 import L from "../../logic/locatization/LocalizationManager";
+import NavbarProfile from "./NavbarProfile";
 
 
 export default class Navbar extends React.Component {
@@ -34,7 +35,7 @@ export default class Navbar extends React.Component {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav mr-auto"/>
-                    <NavbarMenu/>
+                    <NavbarMenu showSideProfile={this.props.showSideProfile}/>
                 </div>
             </nav>
         );

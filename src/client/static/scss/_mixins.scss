@@ -65,3 +65,14 @@
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   }
 }
+
+@mixin horizontal_gradient($color) {
+  background: $color;
+  background: linear-gradient(
+                  90deg,
+                  rgba($color, 0) 0%,
+                  rgba($color, 0.3) 25%,
+                  rgba($color, 0.4) 50%,
+                  rgba($color, 0.3) 75%,
+                  rgba($color, 0) 100%);
+}

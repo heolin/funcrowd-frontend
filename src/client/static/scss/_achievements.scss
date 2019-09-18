@@ -1,8 +1,8 @@
 @import "cards";
 @import "variables";
+@import "mixins";
 $card-margin: 15px;
 $icon-part-width: 115px;
-
 
 .achievements-row {
   margin: 0 -#{15px + $card-margin} !important;
@@ -11,8 +11,9 @@ $icon-part-width: 115px;
 .achievement-card {
   @extend .card-1-static;
 
-  margin: 30px $card-margin;
+  margin: 0 $card-margin 50px $card-margin;
   height: 140px;
+  background: white;
 }
 
 .achievement-card-icon {
@@ -36,3 +37,23 @@ $icon-part-width: 115px;
   padding-right: 12px;
 }
 
+.achievement-icon {
+  position: relative;
+}
+
+.achievement-icon-badge svg {
+  margin-left: -28px;
+  margin-top: -23px;
+  width: 110px;
+}
+
+.achievement-image svg {
+  width: 70px;
+}
+
+.achievement-icon-image {
+  width: 70px;
+  position: absolute;
+  left: 20px;
+  top: 5px;
+}

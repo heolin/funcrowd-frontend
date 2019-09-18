@@ -13,7 +13,8 @@ import UserRepository from "./logic/repositories/UserRepository";
 import ConfigManager from "./logic/config/ConfigManager";
 import LocalizationManager from './logic/locatization/LocalizationManager'
 import AboutPage from "./modules/about/AboutPage";
-import AchievementsMenu from "./modules/achievements/AchievementsMenu";
+import BadgesMenu from "./modules/badge/BadgesMenu";
+import {SideProfilePanel} from "./modules/profile/SideProfilePanel";
 
 
 const RouteContainer = posed.div({
@@ -32,7 +33,8 @@ class Base extends React.Component {
             user: null,
             mission: null,
             task: null,
-            bounty: null
+            bounty: null,
+            sideProfileShown: false
         };
 
         this.onLogin = this.onLogin.bind(this);
@@ -40,10 +42,8 @@ class Base extends React.Component {
         this.onMissionSelect = this.onMissionSelect.bind(this);
         this.onTaskSelect = this.onTaskSelect.bind(this);
         this.onBountySelect = this.onBountySelect.bind(this);
-
-        this.navigateToMissions = this.navigateToMissions.bind(this);
-        this.navigateToAbout = this.navigateToAbout.bind(this);
-        this.navigateToBounties = this.navigateToBounties.bind(this);
+        this.showSideProfile = this.showSideProfile.bind(this);
+        this.hideSideProfile = this.hideSideProfile.bind(this);
     }
 
     componentDidMount() {
@@ -99,6 +99,8 @@ class Base extends React.Component {
     }
 
     onTaskSelect(task) {
+        console.log("onTaskSelect");
+        console.log(task);
         this.setState({task: task});
         this.props.history.push('/task/'+task.id);
     }
@@ -111,23 +113,26 @@ class Base extends React.Component {
         this.props.history.push('/bounty/'+bounty.id);
     }
 
-    //navigation
-
-    navigateToMissions() {
-        this.props.history.push('/missions');
+    showSideProfile() {
+        this.setState({
+            sideProfileShown: true
+        });
     }
 
-    navigateToBounties() {
-        this.props.history.push('/bounties');
+    hideSideProfile() {
+        this.setState({
+            sideProfileShown: false
+        });
     }
 
-    navigateToAbout() {
-        this.props.history.push('/about');
-    }
 
     //render
 
     render() {
+        let margin = 0;
+        if (document.body.scrollHeight <= window.innerHeight) {
+            margin = "300px";
+        }
         return (
             <Route
             render={({ location }) => (
@@ -136,8 +141,11 @@ class Base extends React.Component {
                             onLogout={this.onLogout}
                             onNavigateToMissions={this.navigateToMissions}
                             onNavigateToBounties={this.navigateToBounties}
-                            onNavigateToAbout={this.navigateToAbout}/>
-                    <div className="container h-100">
+                            onNavigateToAbout={this.navigateToAbout}
+                            showSideProfile={this.showSideProfile}/>
+                    <SideProfilePanel isOpen={this.state.sideProfileShown}
+                                      hideSideProfile={this.hideSideProfile}/>
+                    <div className="h-100">
                         <PoseGroup>
                             <RouteContainer key={location.pathname}>
                                 <Switch location={location}>
@@ -149,7 +157,7 @@ class Base extends React.Component {
                                     <Route path="/about"
                                            render={(props) => <AboutPage user={this.state.user} {...props}/>}/>
                                     <Route path="/achievements"
-                                           render={(props) => <AchievementsMenu user={this.state.user} {...props}/>}/>
+                                           render={(props) => <BadgesMenu user={this.state.user} {...props}/>}/>
                                     <Route path="/bounty/:id"
                                            render={(props) => <ItemPanel task={this.state.task}
                                                                          user={this.state.user}

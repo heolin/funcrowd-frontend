@@ -1,0 +1,20 @@
+
+.gallery-image-modal {
+  z-index: 100;
+  background: white !important;
+  padding: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 30px;
+}
+
+.gallery-image {
+  margin: auto;
+  width: 300px;
+}
+
+.gallery-image > img {
+  width: inherit;
+}

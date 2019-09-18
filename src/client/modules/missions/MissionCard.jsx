@@ -1,8 +1,8 @@
 import React from "react"
 import posed from 'react-pose';
 
-import ProgressBar from "../components/ProgressBar";
-import { SmallIcon } from "../components/Icons"
+import ProgressBar from "../../components/ProgressBar";
+import {Icon, SmallIcon} from "../../components/Icons"
 
 import L from "../../logic/locatization/LocalizationManager";
 
@@ -11,19 +11,20 @@ const Card = posed.div({
     exit: { y: 50, opacity: 0 }
 });
 
+
 export default class MissionCard extends React.Component {
 
     render() {
         let metadata = this.props.mission.metadata;
+        let progress = this.props.progress;
         let image = require("../../static/"+metadata.image);
-        let icon = require("../../static/icons/"+metadata.icon+".svg");
 
         return (
             <Card className="col-md-4">
                 <div className="mission-card card-2 font-light" onClick={this.props.onSelect}>
                     <div className="mission-card-top">
                         <img className="mission-card-image" src={image}/>
-                        <img className="mission-card-icon" src={icon}/>
+                        <Icon className="mission-card-icon" name={metadata.icon}/>
                         <svg className="mission-card-triangle"
                              width="100%" viewBox="0 0 300 60">
                             <polygon points="300,60 300,0 0,60"/>
@@ -44,7 +45,7 @@ export default class MissionCard extends React.Component {
                             <SmallIcon name="experience"/>
                             10 {L.general.experience}
                         </p>
-                        <ProgressBar progress={0.25}/>
+                        <ProgressBar progress={progress.progress} text={"Ukończono "+progress.tasks_done + "/" + progress.tasks_count}/>
                     </div>
                 </div>
             </Card>

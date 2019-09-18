@@ -1,5 +1,8 @@
 @import "colors";
+@import "mixins";
 @import "variables";
+@import "fonts";
+@import "icons";
 
 
 $header-height: 200px;
@@ -34,20 +37,13 @@ $image-size: 212px;
   position: absolute;
   right: 60px;
   bottom: -60px;
-  border: 5px solid #ffffff;
-  border-radius: 50%;
-  overflow: hidden;
   width: $image-size;
   height: $image-size;
 }
 
-.tasks-header-image-content {
-  height: $image-size;
-}
-
-.tasks-header-icon {
-  width: 80px;
-  margin-top: -38px;
+.tasks-header-icon svg {
+  @extend .very-big-icon;
+  margin-top: -33px;
 }
 
 .tasks-header-progress {
@@ -70,4 +66,32 @@ $image-size: 212px;
   padding-top: 22px;
   height: 80px;
   width: 100%;
+}
+
+.task-cards {
+  border-right: solid 1px #b2b2b3;
+  padding-right: 100px;
+  margin-right: 10px;
+}
+
+.task-card {
+  @extend .small;
+  padding: 10px 0;
+}
+
+.task-card a {
+  @extend .dark-color-orange;
+}
+
+.task-card:nth-child(odd) {
+  @include horizontal_gradient($orange-color);
+}
+
+
+.tasks-introduction {
+  padding: 50px 0;
+}
+
+.tasks-achievements-introduction {
+  padding: 50px 0;
 }

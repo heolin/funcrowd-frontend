@@ -5,6 +5,10 @@ export default class Item {
         this.task = task;
         this.data = data;
         this.template = template;
+        this.templateFields = {};
+        template.fields.forEach((field) => {
+            this.templateFields[field.name] = field;
+        });
     }
 
     static fromJson(item_data) {

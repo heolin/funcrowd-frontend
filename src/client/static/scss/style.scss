@@ -4,23 +4,38 @@
 @import "colors";
 @import "utils";
 @import "achievements";
+@import "navbar";
+@import "items";
+@import "buttons";
+@import "components/gallery.scss";
+@import "components/radio.scss";
+@import "components/checkbox.scss";
+
 
 
 html {
+  height: 100%;
+  overflow-y: scroll;
 }
 
 body {
   @extend .normal;
+  height: 100%;
   font-family: $normal-font;
   font-weight: $normal-weight;
   color: $dark-color;
-}
 
-.container {
-  margin-top: 78px;
+  background-image: radial-gradient(#ffffff, #ffffff 32%, #e7e7e7);
+  position: relative;
+
+  padding-top: 78px;
 }
 
 .justify-items {
   display: flex;
   justify-content: space-between;
+}
+
+.a {
+  @extend .color-blue;
 }

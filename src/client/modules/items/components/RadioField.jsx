@@ -25,10 +25,13 @@ export default class RadioField extends React.Component {
                           onChange={this.handleChange}
                           required={this.props.required}
                           value={option}/>);
+        let label;
+        if (this.props.label)
+            label = <label><strong>{this.props.label}</strong></label>;
         return (
             <div className="form-group">
-                <label><strong>{this.props.label}</strong></label>
-                {options}
+                {label}
+                <div>{options}</div>
             </div>
         );
     }

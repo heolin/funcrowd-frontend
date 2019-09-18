@@ -1,0 +1,14 @@
+@import "colors";
+@import "fonts";
+
+
+.btn {
+  @extend .normal;
+  text-transform: uppercase;
+
+  color: $blue-color;
+  border-radius: 0;
+  background: white;
+  border: solid 3px $blue-color;
+}
+

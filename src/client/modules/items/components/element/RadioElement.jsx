@@ -19,13 +19,15 @@ export default class RadioElement extends React.Component {
 
     render() {
         return (
-            <label className="radio-container">
+            <label className="radio">
                 <input id={this.props.name}
                        name={this.props.name}
                        value={this.props.value}
                        onChange={this.handleChange}
                        type="radio"/>
-                <span className="radiomark"></span>
+                <span className="outer">
+                    <span className="inner"></span>
+                </span>
                 {this.props.value}
             </label>
         );

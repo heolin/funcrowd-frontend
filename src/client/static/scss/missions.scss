@@ -1,4 +1,7 @@
 @import "colors";
+@import "icons";
+
+
 $card-margin: 20px;
 
 .missions-introduction {
@@ -12,7 +15,7 @@ $card-margin: 20px;
 
 .mission-card {
   background-color: $blue-color;
-  margin: 0 $card-margin;
+  margin: 0 $card-margin 40px $card-margin;
 }
 
 .mission-card-top {
@@ -33,8 +36,8 @@ $card-margin: 20px;
 }
 
 .mission-card-icon {
+  @extend .very-big-icon;
   position: absolute;
-  width: 80px;
   bottom: 0px;
   left: 25px;
   z-index: 20;
@@ -42,6 +45,5 @@ $card-margin: 20px;
 
 .mission-card-content {
   padding: 25px;
-  padding-bottom: 8px;
   color: white;
 }

@@ -103,3 +103,19 @@ small, .small {
   @include font-size(13);
 }
 
+.very-little {
+  @include font-size(12);
+}
+
+.weight-normal {
+  font-weight: $normal-weight;
+}
+
+.weight-bold {
+  font-weight: $bold-weight;
+}
+
+.line-height-1 {
+  line-height: 1;
+}
+

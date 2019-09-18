@@ -2,6 +2,8 @@ import React from "react"
 import Slider from "react-slick";
 import Image from "./Image";
 import ImageModal from "./ImageModal";
+import ScreenBreakpoints from "../../../../utils/SceenBreakpoints";
+
 
 
 let dragging = false;
@@ -16,12 +18,30 @@ export default class ImagesGallery extends React.Component {
 
         this.settings = {
             dots: true,
-            infinite: true,
+            infinite: false,
             speed: 500,
             slidesToShow: 3,
             slidesToScroll: 3,
             beforeChange: () => dragging = true,
             afterChange: () => dragging = false,
+            responsive: [
+                {
+                    breakpoint: ScreenBreakpoints.lg,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        initialSlide: 2
+                    }
+                },
+                {
+                    breakpoint: ScreenBreakpoints.md,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        initialSlide: 1
+                    }
+                }
+            ]
         };
 
         this.onImageClick = this.onImageClick.bind(this);
@@ -43,7 +63,6 @@ export default class ImagesGallery extends React.Component {
     }
 
     render() {
-
         let items = [];
         if (this.props.value)
             items = this.props.value.map((url) => <Image
@@ -53,16 +72,15 @@ export default class ImagesGallery extends React.Component {
             />);
         this.settings['slidesToShow'] = Math.min(items.length, 3);
 
-        let selectedImage = null;
-        if (this.state.selectedImage)
-            selectedImage = <ImageModal image={this.state.selectedImage}
-                                        onClose={this.onImageModalClose}/>;
-
+        let label;
+        if (this.props.label)
+            label = <label><strong>{this.props.label}</strong></label>;
 
         return (
             <div className="form-group">
-                {selectedImage}
-                <label><strong>{this.props.label}</strong></label>
+                <ImageModal image={this.state.selectedImage}
+                            onClose={this.onImageModalClose}/>
+                {label}
                 <div>
                     <Slider {...this.settings}>
                         {items}
