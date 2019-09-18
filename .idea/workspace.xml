@@ -157,7 +157,7 @@
           <entry key="html" value="33" />
           <entry key="js" value="18185" />
           <entry key="json" value="211" />
-          <entry key="jsx" value="44146" />
+          <entry key="jsx" value="44169" />
           <entry key="local" value="28" />
           <entry key="production" value="3" />
           <entry key="py" value="1" />
@@ -170,7 +170,7 @@
           <entry key="Env File" value="53" />
           <entry key="HTML" value="33" />
           <entry key="JSON" value="211" />
-          <entry key="JSX Harmony" value="44146" />
+          <entry key="JSX Harmony" value="44169" />
           <entry key="JavaScript" value="18185" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Python" value="1" />
@@ -187,7 +187,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImagesGallery.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
+            <state relative-caret-position="142">
               <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
@@ -875,7 +875,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImagesGallery.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
+        <state relative-caret-position="142">
           <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
