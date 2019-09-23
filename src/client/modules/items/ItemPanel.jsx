@@ -181,7 +181,6 @@ export default class ItemPanel extends React.Component {
         let itemForm = null;
         let feedback = null;
         let confirmation = null;
-        let instruction = null;
         let bounty = null;
         let itemId = null;
         let noitems = null;
@@ -212,9 +211,6 @@ export default class ItemPanel extends React.Component {
 
             if (this.state.confirmation)
                 confirmation = <ConfirmationPanel onClose={this.onConfirmationClose}/>;
-
-            if (this.state.instruction)
-                instruction = <InstructionPanel task={this.props.task} onClose={this.onInstructionClose}/>;
         } else {
             noitems = <NoItemsPanel/>;
         }
@@ -233,8 +229,10 @@ export default class ItemPanel extends React.Component {
         return (
             <div className="container base-row">
                 <ItemHeader task={this.state.task}/>
+                <InstructionPanel isOpen={this.state.item && this.state.instruction}
+                                  task={this.props.task}
+                                  onClose={this.onInstructionClose}/>
                 <div className="row">
-                    {instruction}
                     {confirmation}
                     {feedback}
                     {bounty}

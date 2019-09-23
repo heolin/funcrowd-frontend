@@ -4,6 +4,7 @@ import MissionRepository from "../../logic/repositories/MissionRepository";
 
 import posed  from 'react-pose';
 import MissionProgressRepository from "../../logic/repositories/MissionProgressRepository";
+import Loading from "../../components/Loading";
 
 const ListContainer = posed.div({
     enter: { staggerChildren: 50 },
@@ -54,9 +55,6 @@ export default class MissionsMenu extends React.Component {
     }
 
     getCardsPanel() {
-        if (this.state.loadingMissions || this.state.loadingProgress)
-            return <div>Loading</div>;
-
         let missions = this.state.missions.map(
             (mission, i) => <MissionCard key={i} mission={mission}
                                          progress={this.state.progress[mission.id]}
@@ -70,6 +68,8 @@ export default class MissionsMenu extends React.Component {
     }
 
     render() {
+        if (this.state.loadingMissions || this.state.loadingProgress)
+            return <Loading/>;
 
         return (
             <div className="container base-row">

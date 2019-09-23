@@ -18,6 +18,7 @@
   "author": "Wojciech Włodarczyk",
   "license": "LGPLv3",
   "dependencies": {
+    "@emotion/core": "^10.0.17",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "express": "^4.16.3",
@@ -31,6 +32,7 @@
     "react-pose": "^4.0.8",
     "react-router-dom": "^5.0.0",
     "react-slick": "^0.24.0",
+    "react-spinners": "^0.6.1",
     "rfs": "^8.0.4",
     "slick-carousel": "^1.8.1"
   },

@@ -2,6 +2,7 @@ import React from "react"
 import ComponentsFactory from "./ComponentsFactory";
 import SkippingPanel from "./SkippingPanel";
 import ItemRepository from "../../logic/repositories/ItemRepository";
+import Loading from "../../components/Loading";
 
 let factory = new ComponentsFactory();
 
@@ -144,11 +145,9 @@ export default class ItemForm extends React.Component {
     }
 
     render() {
-        if (this.state.loading) {
-            return (
-                <div>Loading</div>
-            );
-        }
+        if (this.state.loading)
+            return <Loading/>;
+
 
         let SubmitButton = this.props.submitButton;
         let SkipButton = this.props.skipButton;

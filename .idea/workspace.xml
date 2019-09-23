@@ -2,70 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ead4a25-4a17-4a45-977c-0c90b6b22b4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/client/components/BlackBackground.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/components/HorizontalLine.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/components/Icons.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/components/Image.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/logic/models/missions/MissionProgress.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/logic/models/tasks/TaskProgress.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/logic/repositories/MissionProgressRepository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/logic/repositories/TaskProgressRepository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/modules/navbar/NavbarProfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/static/scss/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/static/scss/_components.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/static/scss/_images.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/static/scss/badges.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/static/scss/components/checkbox.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/static/scss/components/gallery.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/static/scss/components/radio.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/static/scss/items.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/static/scss/sideProfile.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/utils/SceenBreakpoints.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/components/Loading.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/static/scss/modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/3f482321becfaa40fcb19825fa717859.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/550b42a5f50d0b943bc45f5c361a9bc1.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/7e0ee8c45d872446649aacd3ce96e1f7.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Base.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Base.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/logic/models/item/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/logic/models/item/Item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/logic/models/tasks/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/logic/models/tasks/Task.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/achievements/AchievementCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/achievements/AchievementCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/achievements/AchievementsMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/badge/BadgesMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/components/Breadcrumbs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/components/Breadcrumbs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/components/Icons.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/components/ProgressBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/components/ProgressBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/instruction/InstructionPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/instruction/InstructionPanel.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/items/components/CheckboxField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/components/CheckboxField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImageModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImageModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/Image.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/Image.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImagesGallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImagesGallery.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/items/components/RadioField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/components/RadioField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/items/components/element/CheckboxElement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/components/element/CheckboxElement.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/items/components/element/RadioElement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/components/element/RadioElement.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/modules/missions/MissionsMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/missions/MissionsMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/navbar/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenuButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenuButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/tasks/TaskCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/tasks/TaskCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/tasks/TasksMenuHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/ItemHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/icons/cancel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/icons/cogwheel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/icons/user (1).svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/scss/_achievements.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/_achievements.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/scss/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/_colors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/scss/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/_fonts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/scss/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/_icons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/static/scss/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/_buttons.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/static/scss/_utils.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/_utils.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/scss/missions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/missions.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/scss/navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/static/scss/components/gallery.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/components/gallery.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/static/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/scss/tasks.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/tasks.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,17 +52,17 @@
     <session id="-1496763004">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="83" />
+          <entry key="project.closed" value="85" />
           <entry key="project.open.time.0" value="9" />
           <entry key="project.open.time.1" value="28" />
           <entry key="project.open.time.2" value="12" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="8" />
-          <entry key="project.open.time.5" value="21" />
+          <entry key="project.open.time.5" value="23" />
           <entry key="project.open.time.6" value="12" />
           <entry key="project.open.time.7" value="3" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="95" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="98" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -111,16 +72,16 @@
           <entry key="env" value="3" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="3" />
-          <entry key="js" value="267" />
-          <entry key="json" value="16" />
-          <entry key="jsx" value="407" />
+          <entry key="js" value="271" />
+          <entry key="json" value="17" />
+          <entry key="jsx" value="426" />
           <entry key="local" value="2" />
           <entry key="log" value="1" />
           <entry key="md" value="4" />
           <entry key="prod" value="1" />
           <entry key="production" value="1" />
           <entry key="py" value="1" />
-          <entry key="scss" value="185" />
+          <entry key="scss" value="198" />
           <entry key="svg" value="1" />
           <entry key="ts" value="4" />
         </counts>
@@ -130,13 +91,13 @@
           <entry key="CSS" value="35" />
           <entry key="Env File" value="6" />
           <entry key="HTML" value="3" />
-          <entry key="JSON" value="16" />
-          <entry key="JSX Harmony" value="407" />
-          <entry key="JavaScript" value="267" />
+          <entry key="JSON" value="17" />
+          <entry key="JSX Harmony" value="426" />
+          <entry key="JavaScript" value="271" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Python" value="1" />
-          <entry key="SCSS" value="185" />
+          <entry key="SCSS" value="198" />
           <entry key="SVG" value="1" />
           <entry key="TypeScript" value="4" />
         </counts>
@@ -155,13 +116,13 @@
           <entry key="dummy" value="2" />
           <entry key="env" value="9" />
           <entry key="html" value="33" />
-          <entry key="js" value="18185" />
+          <entry key="js" value="18187" />
           <entry key="json" value="211" />
-          <entry key="jsx" value="44169" />
+          <entry key="jsx" value="45238" />
           <entry key="local" value="28" />
           <entry key="production" value="3" />
           <entry key="py" value="1" />
-          <entry key="scss" value="10165" />
+          <entry key="scss" value="10664" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -170,11 +131,11 @@
           <entry key="Env File" value="53" />
           <entry key="HTML" value="33" />
           <entry key="JSON" value="211" />
-          <entry key="JSX Harmony" value="44169" />
-          <entry key="JavaScript" value="18185" />
+          <entry key="JSX Harmony" value="45238" />
+          <entry key="JavaScript" value="18187" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Python" value="1" />
-          <entry key="SCSS" value="10165" />
+          <entry key="SCSS" value="10664" />
         </counts>
       </usages-collector>
     </session>
@@ -184,28 +145,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImagesGallery.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/utils/SceenBreakpoints.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/static/scss/_variables.scss">
+        <entry file="file://$PROJECT_DIR$/src/client/static/scss/_buttons.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="289">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -213,8 +157,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImageModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="60" column="83" selection-start-line="60" selection-start-column="83" selection-end-line="60" selection-end-column="83" />
+            <state relative-caret-position="221">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -223,47 +167,82 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/static/scss/sideProfile.scss">
+        <entry file="file://$PROJECT_DIR$/src/client/static/scss/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            <state relative-caret-position="136">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/static/scss/components/gallery.scss">
+        <entry file="file://$PROJECT_DIR$/src/client/static/scss/modal.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+            <state relative-caret-position="136">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/resources/general.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/resources/labels.js">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/instruction/InstructionPanel.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/Image.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+              <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/client/static/css/style.css">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1411">
-              <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2091">
+              <caret line="127" column="29" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3706">
+              <caret line="233" column="69" selection-start-line="233" selection-start-column="69" selection-end-line="233" selection-end-column="69" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/missions/MissionsMenu.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -274,8 +253,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="SCSS File" />
         <option value="JavaScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -290,12 +269,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/client/static/scss/components.scss" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/_components.scss" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/_colors.scss" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/missions.scss" />
-        <option value="$PROJECT_DIR$/src/client/modules/tasks/TasksMenuHeader.jsx" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/_fonts.scss" />
         <option value="$PROJECT_DIR$/src/client/components/ProgressBar.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/navbar/NavbarProfile.js" />
         <option value="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js" />
@@ -303,8 +276,6 @@
         <option value="$PROJECT_DIR$/src/client/static/scss/sideProfile.scss" />
         <option value="$PROJECT_DIR$/src/client/static/scss/navbar.scss" />
         <option value="$PROJECT_DIR$/src/client/components/HorizontalLine.js" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/_buttons.scss" />
-        <option value="$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/Groups.js" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/Groups.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/Group.jsx" />
@@ -316,31 +287,39 @@
         <option value="$PROJECT_DIR$/src/client/logic/repositories/TasksProgressRepository.js" />
         <option value="$PROJECT_DIR$/src/client/logic/repositories/MissionProgressRepository.js" />
         <option value="$PROJECT_DIR$/src/client/logic/repositories/TaskProgressRepository.js" />
-        <option value="$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx" />
         <option value="$PROJECT_DIR$/src/client/static/scss/gallery.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx" />
         <option value="$PROJECT_DIR$/src/client/Base.jsx" />
-        <option value="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/tasks/TaskCard.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/items/ItemHeader.jsx" />
         <option value="$PROJECT_DIR$/src/client/static/scss/components/radiobutton.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/element/RadioElement.jsx" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/style.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/element/CheckboxElement.jsx" />
         <option value="$PROJECT_DIR$/src/client/static/scss/components/checkbox.scss" />
         <option value="$PROJECT_DIR$/src/client/static/scss/components/radio.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/CheckboxField.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/RadioField.jsx" />
-        <option value="$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/Image.jsx" />
-        <option value="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" />
-        <option value="$PROJECT_DIR$/src/client/modules/missions/MissionsMenu.jsx" />
         <option value="$PROJECT_DIR$/src/client/components/BlackBackground.js" />
         <option value="$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx" />
         <option value="$PROJECT_DIR$/build/client/static/css/style.css" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/components/gallery.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImageModal.js" />
         <option value="$PROJECT_DIR$/src/client/utils/SceenBreakpoints.js" />
+        <option value="$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/Image.jsx" />
+        <option value="$PROJECT_DIR$/src/client/static/scss/_mixins.scss" />
+        <option value="$PROJECT_DIR$/src/client/static/scss/_utils.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImagesGallery.jsx" />
+        <option value="$PROJECT_DIR$/src/client/static/scss/components/gallery.scss" />
+        <option value="$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx" />
+        <option value="$PROJECT_DIR$/src/client/static/scss/_buttons.scss" />
+        <option value="$PROJECT_DIR$/src/client/components/Loading.js" />
+        <option value="$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx" />
+        <option value="$PROJECT_DIR$/src/client/components/Loading.jsx" />
+        <option value="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" />
+        <option value="$PROJECT_DIR$/src/client/modules/missions/MissionsMenu.jsx" />
+        <option value="$PROJECT_DIR$/src/client/static/scss/style.scss" />
+        <option value="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" />
+        <option value="$PROJECT_DIR$/src/client/static/scss/modal.scss" />
+        <option value="$PROJECT_DIR$/src/client/modules/instruction/InstructionPanel.jsx" />
       </list>
     </option>
   </component>
@@ -405,22 +384,58 @@
               <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="instruction" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="scss" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="items" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="items" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="items" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="ImagesGallery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="missions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -502,12 +517,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
+    <frame x="61" y="25" width="1859" height="1055" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" sideWeight="0.5016216" side_tool="true" weight="0.37354732" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49837837" visible="true" weight="0.21859436" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49837837" visible="true" weight="0.22669609" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -564,47 +578,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/client/logic/models/missions/MissionProgress.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/models/tasks/TaskProgress.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/repositories/MissionRepository.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/repositories/TasksRepository.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/repositories/TaskProgressRepository.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/repositories/MissionProgressRepository.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarProfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="80" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-408" />
@@ -612,13 +585,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/static/css/index.css">
       <provider selected="true" editor-type-id="text-editor" />
@@ -643,23 +609,6 @@
     <entry file="file://$PROJECT_DIR$/src/server/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/App.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="159" column="26" selection-start-line="159" selection-start-column="26" selection-end-line="159" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/Base.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -667,59 +616,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TaskCard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemHeader.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="88" selection-start-line="21" selection-start-column="88" selection-end-line="21" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/_components.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/_cards.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/_colors.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -732,13 +632,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/TextLabel.jsx">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/components/radio.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/static/scss/components/checkbox.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -754,34 +647,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/missions/MissionsMenu.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="107" column="30" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/components/BlackBackground.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -802,37 +671,10 @@
     <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/MultiChoiceField.jsx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/element/CheckboxElement.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImageModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="60" column="83" selection-start-line="60" selection-start-column="83" selection-end-line="60" selection-end-column="83" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/components/gallery.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -841,20 +683,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/resources/labels.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/Image.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/client/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/static/scss/sideProfile.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -873,10 +701,196 @@
     <entry file="file://$PROJECT_DIR$/src/client/utils/SceenBreakpoints.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/client/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="147" column="1" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/_components.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/_cards.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImagesGallery.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
+        <state relative-caret-position="323">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/components/gallery.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TaskCard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/components/radio.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/_utils.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/_colors.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/components/ProgressBar.jsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/components/Loading.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/_buttons.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImageModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/modal.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/Image.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="127" column="29" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3706">
+          <caret line="233" column="69" selection-start-line="233" selection-start-column="69" selection-end-line="233" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/missions/MissionsMenu.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/instruction/InstructionPanel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

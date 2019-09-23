@@ -13,7 +13,7 @@ import UserRepository from "./logic/repositories/UserRepository";
 import ConfigManager from "./logic/config/ConfigManager";
 import LocalizationManager from './logic/locatization/LocalizationManager'
 import AboutPage from "./modules/about/AboutPage";
-import BadgesMenu from "./modules/badge/BadgesMenu";
+import AchievementsMenu from "./modules/achievements/AchievementsMenu";
 import {SideProfilePanel} from "./modules/profile/SideProfilePanel";
 
 
@@ -157,7 +157,7 @@ class Base extends React.Component {
                                     <Route path="/about"
                                            render={(props) => <AboutPage user={this.state.user} {...props}/>}/>
                                     <Route path="/achievements"
-                                           render={(props) => <BadgesMenu user={this.state.user} {...props}/>}/>
+                                           render={(props) => <AchievementsMenu user={this.state.user} {...props}/>}/>
                                     <Route path="/bounty/:id"
                                            render={(props) => <ItemPanel task={this.state.task}
                                                                          user={this.state.user}

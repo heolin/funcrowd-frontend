@@ -26,15 +26,15 @@ export default class ImagesGallery extends React.Component {
             afterChange: () => dragging = false,
             responsive: [
                 {
-                    breakpoint: ScreenBreakpoints.lg,
+                    breakpoint: ScreenBreakpoints.xl,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 2,
-                        initialSlide: 2
+                        initialSlide: 1
                     }
                 },
                 {
-                    breakpoint: ScreenBreakpoints.md,
+                    breakpoint: ScreenBreakpoints.lg,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,

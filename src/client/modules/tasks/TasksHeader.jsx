@@ -9,7 +9,11 @@ import {CircleImage} from "../../components/Image";
 export default class TasksHeader extends React.Component {
 
     render() {
+        console.log("rpogress");
+
+        console.log(this.props.progress);
         let mission = this.props.mission;
+        let progress = this.props.progress;
         let image = require("../../static/"+mission.metadata.image);
 
         return (
@@ -33,8 +37,8 @@ export default class TasksHeader extends React.Component {
                         <div>
                             <ProgressBar className="tasks-header-progress"
                                          textAlign="right"
-                                         progress={0.54}
-                                         text="Ukończono 1/5"/>
+                                         progress={progress.progress}
+                                         text={"Ukończono "+progress.tasks_done + "/" + progress.tasks_count}/>
                         </div>
                         <CircleImage className="tasks-header-image d-none d-sm-none d-md-block" image={image}/>
                     </div>
