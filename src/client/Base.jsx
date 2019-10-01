@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, withRouter, Link } from 'react-router-dom';
 import posed, { PoseGroup } from 'react-pose';
 import MissionsMenu from "./modules/missions/MissionsMenu";
-import Login from "./modules/login/Login";
+import LoginPage from "./modules/login/LoginPage";
 import Navbar from "./modules/navbar/Navbar";
 import TasksMenu from "./modules/tasks/TasksMenu";
 import SessionManager from "./logic/SessionManager";
@@ -15,6 +15,8 @@ import LocalizationManager from './logic/locatization/LocalizationManager'
 import AboutPage from "./modules/about/AboutPage";
 import AchievementsMenu from "./modules/achievements/AchievementsMenu";
 import {SideProfilePanel} from "./modules/profile/SideProfilePanel";
+import RegisterPage from "./modules/login/RegisterPage";
+import Loading from "./components/Loading";
 
 
 const RouteContainer = posed.div({
@@ -99,8 +101,6 @@ class Base extends React.Component {
     }
 
     onTaskSelect(task) {
-        console.log("onTaskSelect");
-        console.log(task);
         this.setState({task: task});
         this.props.history.push('/task/'+task.id);
     }
@@ -129,6 +129,10 @@ class Base extends React.Component {
     //render
 
     render() {
+        if (this.state.checkingParams || this.state.checkingUser)
+            return <Loading/>;
+
+
         let margin = 0;
         if (document.body.scrollHeight <= window.innerHeight) {
             margin = "300px";
@@ -138,6 +142,7 @@ class Base extends React.Component {
             render={({ location }) => (
                 <div>
                     <Navbar user={this.state.user}
+                            location={this.props.location}
                             onLogout={this.onLogout}
                             onNavigateToMissions={this.navigateToMissions}
                             onNavigateToBounties={this.navigateToBounties}
@@ -150,7 +155,9 @@ class Base extends React.Component {
                             <RouteContainer key={location.pathname}>
                                 <Switch location={location}>
                                     <Route exact path="/"
-                                           render={(props) => <Login onSuccess={this.onLogin} {...props}/>}/>
+                                           render={(props) => <LoginPage onSuccess={this.onLogin} {...props}/>}/>
+                                    <Route exact path="/register"
+                                           render={(props) => <RegisterPage onSuccess={this.onLogin} {...props}/>}/>
                                     <Route path="/missions"
                                            render={(props) => <MissionsMenu onMissionSelect={this.onMissionSelect}
                                                                             user={this.state.user} {...props}/>}/>

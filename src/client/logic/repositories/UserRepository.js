@@ -14,6 +14,18 @@ export default class UserRepository {
         });
     }
 
+    static register(username, email, password1, password2) {
+        return axios.post(ConfigManager.baseUrl+'/api/v1/users/register', {
+            username: username,
+            email: email,
+            password1: password1,
+            password2: password2
+        }).then((response) => {
+            let user = User.fromJson(response.data);
+            return user;
+        });
+    }
+
     static mturk(workerId) {
         return axios.post(ConfigManager.baseUrl+'/api/v1/users/mturk', {
             worker_id: workerId,

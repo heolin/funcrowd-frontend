@@ -7,6 +7,7 @@ export default class CheckboxField extends React.Component {
     render() {
         let options = this.props.source.map((option) =>
             <CheckboxElement key={option}
+                             onChange={this.props.onChange}
                              name={this.props.name}
                              value={option}/>);
         let label;

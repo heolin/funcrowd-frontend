@@ -1,22 +1,17 @@
 @import "colors";
 
-.very-big-icon {
+.very-big-icon img {
   width: 80px;
 }
 
-.big-icon svg {
+.big-icon img {
   width: 48px;
 }
 
-.small-icon svg {
+.small-icon img {
   width: 28px;
 }
 
-.very-small-icon svg {
+.very-small-icon img {
   width: 16px;
 }
-
-.orange-icon path {
-  fill: $orange-color;
-}
-

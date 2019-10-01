@@ -1,4 +1,8 @@
 @import "~bootstrap/scss/bootstrap.scss";
+@import "components/input.scss";
+@import "components/gallery.scss";
+@import "components/radio.scss";
+@import "components/checkbox.scss";
 @import "breadcrumbs";
 @import "fonts";
 @import "colors";
@@ -8,9 +12,7 @@
 @import "items";
 @import "modal";
 @import "buttons";
-@import "components/gallery.scss";
-@import "components/radio.scss";
-@import "components/checkbox.scss";
+@import "login";
 
 
 

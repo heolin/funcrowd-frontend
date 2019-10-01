@@ -11,6 +11,7 @@ import AchievementCard from "../achievements/AchievementCard";
 import TaskProgressRepository from "../../logic/repositories/TaskProgressRepository";
 import MissionProgressRepository from "../../logic/repositories/MissionProgressRepository";
 import Loading from "../../components/Loading";
+import AchievementsRepository from "../../logic/repositories/AchievementsRepository";
 
 const ListContainer = posed.div({
     enter: { staggerChildren: 50 },
@@ -25,6 +26,7 @@ export default class TasksMenu extends React.Component {
             loadingTasks: true,
             loadingProgress: true,
             loadingTaskProgress: true,
+            loadingAchievements: true,
             tasks: null,
             progress: null,
             taskProgress: null,
@@ -92,6 +94,17 @@ export default class TasksMenu extends React.Component {
                 this.setState({ loadingTaskProgress: false});
                 console.log(error)
             });
+
+        AchievementsRepository.mission(mission.id)
+            .then((achievements) => {
+                this.setState({
+                    loadingAchievements: false,
+                    achievements: achievements
+                });
+            }).catch((error) => {
+            this.setState({ loadingAchievements: false});
+                console.log(error)
+            });
     }
 
     getCardsPanel() {
@@ -110,8 +123,19 @@ export default class TasksMenu extends React.Component {
     }
 
     render() {
-        if (this.state.loadingTasks || this.state.loadingProgress || this.state.loadingTaskProgress)
+        if (this.state.loadingTasks ||
+            this.state.loadingProgress ||
+            this.state.loadingTaskProgress ||
+            this.state.loadingAchievements)
             return <Loading/>;
+
+        let achievements = this.state.achievements.map(
+            (achievement) => (
+                <div classname="col-lg-12 col-md-6 col-sm-12" key={achievement.id}>
+                    <AchievementCard achievement={achievement}/>
+                </div>
+            )
+        );
 
         return (
             <div className="container base-row">
@@ -130,15 +154,7 @@ export default class TasksMenu extends React.Component {
                             W tym dzile IPSUM
                         </div>
                         <div className="row achievements-row">
-                            <div className="col-lg-12 col-md-6 col-sm-12">
-                                <AchievementCard/>
-                            </div>
-                            <div className="col-lg-12 col-md-6 col-sm-12">
-                                <AchievementCard/>
-                            </div>
-                            <div className="col-lg-12 col-md-6 col-sm-12">
-                                <AchievementCard/>
-                            </div>
+                            {achievements}
                             <div className="col-sm-12 text-right color-blue small"
                                  style={{paddingRight: "30px"}}>
                                 <Link to="/achievements">

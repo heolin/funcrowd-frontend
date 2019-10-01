@@ -8,7 +8,8 @@ import Loading from "../../components/Loading";
 
 const ListContainer = posed.div({
     enter: { staggerChildren: 50 },
-    exit: { staggerChildren: 20, staggerDirection: -1 }
+    exit: { staggerChildren: 20, staggerDirection: -1 },
+    initialPose: 'exit'
 });
 
 
@@ -54,22 +55,14 @@ export default class MissionsMenu extends React.Component {
             });
     }
 
-    getCardsPanel() {
+    render() {
+        if (this.state.loadingMissions || this.state.loadingProgress)
+            return <Loading/>;
+
         let missions = this.state.missions.map(
             (mission, i) => <MissionCard key={i} mission={mission}
                                          progress={this.state.progress[mission.id]}
                                          onSelect={() => this.props.onMissionSelect(mission)}/>);
-
-        return (
-            <ListContainer className="row missions-row" key='list'>
-                {missions}
-            </ListContainer>
-        );
-    }
-
-    render() {
-        if (this.state.loadingMissions || this.state.loadingProgress)
-            return <Loading/>;
 
         return (
             <div className="container base-row">
@@ -79,7 +72,9 @@ export default class MissionsMenu extends React.Component {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem tellus, malesuada eget egestas nec, laoreet id orci. Morbi tristique dui non accumsan egestas. Fusce convallis est et eleifend pellentesque. Vivamus bibendum mi at purus sagittis, id malesuada nisi ornare. Nullam dictum vestibulum ante.</p>
                     </div>
                 </div>
-                {this.getCardsPanel()}
+                <ListContainer className="row missions-row" key='list'>
+                    {missions}
+                </ListContainer>
             </div>
         );
     }

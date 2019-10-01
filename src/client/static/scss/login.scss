@@ -1,0 +1,68 @@
+@import "colors";
+
+.login-window {
+  margin: 60px auto 0 auto;
+  padding: 40px 70px;
+  background: white;
+  transition: all 0.25s ease-in-out;
+}
+
+.login-header {
+  margin-bottom: 35px;
+}
+
+.login-button {
+  width: 100%;
+  margin: 0px 0 20px 0;
+}
+
+.login-input {
+  border-color: $light-blue-color !important;
+  border-width: 2px;
+  padding: 20px 13px;
+  border-radius: 0;
+}
+
+.login-input::placeholder {
+  color: $blue-color;
+}
+
+
+.login-checkbox .outer {
+  width: 20px;
+  height: 20px;
+  margin: 5px 5px 5px 0;
+  border: 2px solid $light-blue-color;
+}
+
+.login-checkbox .inner {
+  width: 12px;
+  height: 12px;
+  //background-color: $light-blue-color;
+  background-color: $bright-blue-color;
+}
+
+.login-checkbox input:checked + .outer .inner {
+  //background-color: $light-blue-color;
+  background-color: $bright-blue-color;
+}
+
+.login-checkbox .register-checkbox-label {
+  padding-left: 30px;
+  line-height: 1.2;
+  text-align: justify;
+  margin-top: -15px;
+}
+
+.login-checkbox .login-checkbox-label {
+  padding-left: 30px;
+  margin-top: -12px;
+}
+
+.login-link a {
+  color: $bright-blue-color;
+}
+
+.login-error-message {
+  color: $red-color;
+}

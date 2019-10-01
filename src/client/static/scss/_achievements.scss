@@ -1,5 +1,6 @@
 @import "cards";
 @import "variables";
+@import "colors";
 @import "mixins";
 $card-margin: 15px;
 $icon-part-width: 115px;
@@ -41,19 +42,26 @@ $icon-part-width: 115px;
   position: relative;
 }
 
-.achievement-icon-badge svg {
-  margin-left: -28px;
-  margin-top: -23px;
-  width: 110px;
+.achievement-icon-badge {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to right, $bright-blue-color 50%,$blue-color 50%);
+  box-shadow: 0px 0px 12px -3px rgba(0,0,0,0.7);
 }
 
-.achievement-image svg {
+.achievement-icon-badge.finished{
+  background: white;
+}
+
+.achievement-image img {
   width: 70px;
 }
 
-.achievement-icon-image {
+.achievement-icon-image img {
   width: 70px;
   position: absolute;
-  left: 20px;
-  top: 5px;
+  left: 10px;
+  top: 10px;
 }

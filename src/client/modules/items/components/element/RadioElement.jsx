@@ -18,8 +18,11 @@ export default class RadioElement extends React.Component {
     }
 
     render() {
+        let className = this.props.className || "";
+        let text = this.props.label ? this.props.label : this.props.value;
+
         return (
-            <label className="radio">
+            <label className={"radio " + className}>
                 <input id={this.props.name}
                        name={this.props.name}
                        value={this.props.value}
@@ -28,7 +31,7 @@ export default class RadioElement extends React.Component {
                 <span className="outer">
                     <span className="inner"></span>
                 </span>
-                {this.props.value}
+                {text}
             </label>
         );
     }

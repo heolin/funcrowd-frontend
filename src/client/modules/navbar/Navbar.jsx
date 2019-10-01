@@ -4,6 +4,7 @@ import { Icon } from 'react-icons-kit'
 import {user} from 'react-icons-kit/metrize/user'
 import L from "../../logic/locatization/LocalizationManager";
 import NavbarProfile from "./NavbarProfile";
+import NavbarLoginMenu from "./NavbarLoginMenu";
 
 
 export default class Navbar extends React.Component {
@@ -12,6 +13,7 @@ export default class Navbar extends React.Component {
         super(props);
         this.state = {
             user: null,
+            location: null,
         };
     }
 
@@ -21,10 +23,22 @@ export default class Navbar extends React.Component {
                 user: props.user,
             };
         }
+        if (props.location !== state.location) {
+            return {
+                location: location
+            };
+        }
         return null;
     }
 
     render() {
+        let navmenu = null;
+        if (this.state.user)
+            navmenu = <NavbarMenu showSideProfile={this.props.showSideProfile}
+                                  onLogout={this.props.onLogout}/>;
+        else
+            navmenu = <NavbarLoginMenu location={this.state.location}/>;
+
         return (
             <nav className="navbar fixed-top navbar-light bg-light navbar-expand-md py-3">
 
@@ -35,7 +49,7 @@ export default class Navbar extends React.Component {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav mr-auto"/>
-                    <NavbarMenu showSideProfile={this.props.showSideProfile}/>
+                    {navmenu}
                 </div>
             </nav>
         );

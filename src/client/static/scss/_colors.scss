@@ -2,9 +2,14 @@
 $dark-color: #32444C;
 $green-color: #a9b852;
 $blue-color: #5495b1;
+$bright-blue-color: #5daac6;
+$dark-blue-color: #48849d;
 $light-blue-color: #bde1ef;
+$bright-orange-color: #de9865;
+$dark-bright-orange-color: #c97c45;
 $orange-color: rgb(207, 188, 161);
 $dark-orange-color: rgb(156, 140, 121);
+$red-color: #e05e5e;
 
 
 .color-white {
@@ -33,6 +38,10 @@ $dark-orange-color: rgb(156, 140, 121);
 
 .dark-color-orange {
   color: $dark-orange-color;
+}
+
+.color-bright-orange {
+  color: $bright-orange-color;
 }
 
 

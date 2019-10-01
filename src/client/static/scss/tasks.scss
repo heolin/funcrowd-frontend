@@ -41,9 +41,9 @@ $image-size: 212px;
   height: $image-size;
 }
 
-.tasks-header-icon svg {
-  @extend .very-big-icon;
+.tasks-header-icon img {
   margin-top: -33px;
+  width: 80px;
 }
 
 .tasks-header-progress {
