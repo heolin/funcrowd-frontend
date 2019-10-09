@@ -9,9 +9,6 @@ import {CircleImage} from "../../components/Image";
 export default class TasksHeader extends React.Component {
 
     render() {
-        console.log("rpogress");
-
-        console.log(this.props.progress);
         let mission = this.props.mission;
         let progress = this.props.progress;
         let image = require("../../static/"+mission.metadata.image);

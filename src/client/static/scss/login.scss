@@ -13,7 +13,7 @@
 
 .login-button {
   width: 100%;
-  margin: 0px 0 20px 0;
+  margin: 10px 0 20px 0;
 }
 
 .login-input {
@@ -38,12 +38,10 @@
 .login-checkbox .inner {
   width: 12px;
   height: 12px;
-  //background-color: $light-blue-color;
   background-color: $bright-blue-color;
 }
 
 .login-checkbox input:checked + .outer .inner {
-  //background-color: $light-blue-color;
   background-color: $bright-blue-color;
 }
 
@@ -65,4 +63,11 @@
 
 .login-error-message {
   color: $red-color;
+}
+
+.login-reset-password-link {
+  margin-top: 7px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }

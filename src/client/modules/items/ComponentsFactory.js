@@ -7,6 +7,7 @@ import SelectField from "./components/SelectField";
 import LinkButton from "./components/LinkButton";
 import ImagesGallery from "./components/ImagesGallery/ImagesGallery";
 import HtmlLabel from "./components/HtmlLabel";
+import TextTagField from "./components/TextTagField";
 
 
 let Components = {
@@ -20,6 +21,7 @@ let Components = {
     "LinkButton": LinkButton,
     "ImagesGallery": ImagesGallery,
     "HtmlLabel": HtmlLabel,
+    "TextTagField": TextTagField,
 };
 
 export default class ComponentsFactory {

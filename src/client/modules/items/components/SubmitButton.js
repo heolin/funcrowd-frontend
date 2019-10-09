@@ -8,7 +8,7 @@ export default class SubmitButton extends React.Component {
             <button type="submit"
                 disabled={this.props.disabled}
                 style={this.props.style}
-                className="item-form-submit btn btn-green">Submit</button>
+                className="item-form-submit btn btn-primary">Submit</button>
         );
     }
 }

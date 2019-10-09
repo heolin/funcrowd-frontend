@@ -1,22 +1,8 @@
 import React from "react"
-import posed from 'react-pose';
 import { Icon } from 'react-icons-kit'
 import {close} from 'react-icons-kit/fa/close'
 import BlackBackground from "../../components/BlackBackground";
-
-
-const Modal = posed.div({
-    open: {
-        opacity: 1.0,
-        x: "-50%",
-        y: "-50%"
-    },
-    closed: {
-        opacity: 0,
-        x: "-50%",
-        y: "-40%"
-    }
-});
+import Modal from "../../components/animated/Modal"
 
 
 export default class InstructionPanel extends React.Component {
@@ -34,7 +20,7 @@ export default class InstructionPanel extends React.Component {
                        pose={this.props.isOpen ? 'open' : 'closed'}
                        style={{pointerEvents: this.props.isOpen ? "auto" : "none"}}>
                     <button className="btn btn-default"
-                            style={{width: "40px",float: "right", paddingTop: "4px"}} onClick={this.props.onClose}>
+                            style={{width: "40px",float: "right", padding: "0px 8px 5px 10px"}} onClick={this.props.onClose}>
                         <Icon icon={close} size={24} style={{marginLeft: "-5px"}}/>
                     </button>
                     <h6>Instruction</h6>

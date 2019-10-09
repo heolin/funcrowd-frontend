@@ -1,3 +1,4 @@
+import ProfileConfigs from "./ProfileConfigs";
 
 function createConfig() {
     return {
@@ -17,6 +18,7 @@ class _ConfigManager {
         this.config = createConfig();
         this.config.showFeedback = true;// user.group > 5;
         this.initilized = true;
+        this.profile = ProfileConfigs[user.profile];
     }
 }
 

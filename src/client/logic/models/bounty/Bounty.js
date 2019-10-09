@@ -19,6 +19,23 @@ export default class Bounty {
             bounty_data.closed,
             UserBounty.fromJson(bounty_data.user_bounty)
         );
-    return bounty;
+        return bounty;
+    }
+
+    getStatusOrder() {
+        if (this.userBounty) {
+            let status = this.userBounty.status;
+            if (status === "CLOSED") {
+                if (this.userBounty.progress === 1)
+                    return 3;
+                else
+                    return 4;
+            }
+            if (status === "FINISHED")
+                return 3;
+            else
+                return 1;
+        }
+        return 4;
     }
 }

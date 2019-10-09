@@ -9,7 +9,7 @@ export default class NavbarMenuButton extends React.Component {
         return (
             <Link to={this.props.targetPath}>
                 <li className="nav-item">
-                    <SmallIcon name={this.props.icon}/>
+                    <SmallIcon name={this.props.icon} style={this.props.iconStyle}/>
                     <span className="nav-link">{this.props.name}</span>
                 </li>
             </Link>

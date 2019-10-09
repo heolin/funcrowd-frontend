@@ -5,12 +5,14 @@ class _SessionManager {
     constructor() {
         this.token = null;
         this.config = {};
-        this.is_logged = false;
+        this.isLogged = false;
+        this.currentUser = null;
     }
 
     login(user, saveUser) {
         this.token = user.token;
-        this.is_logged = true;
+        this.isLogged = true;
+        this.currentUser = user;
         this.config = {
             headers: {
                 Authorization: "Token " + user.token
@@ -23,9 +25,10 @@ class _SessionManager {
     }
 
     logout() {
-        this.is_logged = false;
+        this.isLogged = false;
         this.token = null;
         this.config = {};
+        this.currentUser = null;
         localStorage.removeItem(USER);
         sessionStorage.removeItem(USER);
     }

@@ -67,9 +67,9 @@ export default class AchievementsMenu extends React.Component {
         );
 
         return (
-            <div className="container base-row">
+            <div className="container base-row-padding">
                 <div>
-                    <div className="badges-earned">
+                    <div className="achivements-earned">
                         <h3>Zdobyte</h3>
                         534543
                     </div>
@@ -78,7 +78,7 @@ export default class AchievementsMenu extends React.Component {
                     </div>
                 </div>
                 <div>
-                    <div className="badges-to-earn">
+                    <div className="achivements-to-earn">
                         <h3>Do zdobycia</h3>
                         534543
                     </div>

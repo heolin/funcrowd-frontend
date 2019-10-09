@@ -6,6 +6,7 @@ import Loading from "../../components/Loading";
 
 let factory = new ComponentsFactory();
 
+
 export default class ItemForm extends React.Component {
 
     constructor(props) {
@@ -124,7 +125,6 @@ export default class ItemForm extends React.Component {
         this.setState({skipping: false});
     }
 
-
     createGroup(item, groupFields, index) {
         let fields = groupFields.map((fieldName) => {
             let field = item.templateFields[fieldName];
@@ -148,15 +148,14 @@ export default class ItemForm extends React.Component {
         if (this.state.loading)
             return <Loading/>;
 
-
         let SubmitButton = this.props.submitButton;
         let SkipButton = this.props.skipButton;
 
         let item = this.props.item;
         let metadata = this.props.task.metadata;
 
-        let groups = metadata.groups || [item.template.fields];
-        console.log(groups)
+        let groups = metadata.groups ||
+            [item.template.fields.map(field => field.name)];
 
         let fieldGroups = groups.map((groupFields, index) =>
             this.createGroup(item, groupFields, index)

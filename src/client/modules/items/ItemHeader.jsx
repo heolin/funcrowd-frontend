@@ -9,7 +9,11 @@ export default class ItemHeader extends React.Component {
 
     render() {
         let task = this.props.task;
-        let image = require("../../static/"+task.metadata.image);
+        let imageElement;
+        if (task.metadata.image) {
+            let image = require("../../static/"+task.metadata.image);
+            imageElement = <CircleImage className="tasks-header-image d-none d-sm-none d-md-block" image={image}/>;
+        }
 
         return (
             <div>
@@ -29,7 +33,7 @@ export default class ItemHeader extends React.Component {
                                 <span className="small">{task.description}</span>
                             </div>
                         </div>
-                        <CircleImage className="tasks-header-image d-none d-sm-none d-md-block" image={image}/>
+                        {imageElement}
                     </div>
                 </div>
                 <div className="tasks-summary-bar card-1-static"/>

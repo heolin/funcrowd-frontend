@@ -3,15 +3,18 @@
 @import "components/gallery.scss";
 @import "components/radio.scss";
 @import "components/checkbox.scss";
+@import "components/tagger.scss";
+@import "buttons";
 @import "breadcrumbs";
 @import "fonts";
 @import "colors";
 @import "utils";
+@import "instruction";
 @import "achievements";
 @import "navbar";
 @import "items";
+@import "feedback";
 @import "modal";
-@import "buttons";
 @import "login";
 
 
@@ -48,4 +51,19 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.padding-top {
+  padding: 60px 0;
+}
+
+.base-row {
+    display: block !important;
+    height: 100%;
+    min-height: 100%;
+}
+
+.base-row-padding {
+  @extend .base-row;
+  padding-top: 60px;
 }

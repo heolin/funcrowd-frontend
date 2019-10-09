@@ -13,7 +13,10 @@ export default class NavbarLoginMenu extends React.Component {
                 <NavbarMenuButton targetPath="/about" name={L.labels.about} icon="about"/>
                 <NavbarLoginButton targetPath="/"
                                    name="Login"
-                                   isSelected={this.props.location.pathname === "/"}/>
+                                   isSelected={
+                                       this.props.location.pathname === "/" ||
+                                       this.props.location.pathname === "/resetpassword"
+                                   }/>
                 <NavbarLoginButton targetPath="/register"
                                    name="Załóż konto"
                                    isSelected={this.props.location.pathname === "/register"}

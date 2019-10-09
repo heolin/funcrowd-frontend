@@ -27,7 +27,8 @@ export default class RegisterPage extends React.Component {
         return this.state.login.length > 0 &&
             this.state.password1.length > 0 &&
             this.state.password2.length > 0 &&
-            this.state.email.length > 0;
+            this.state.email.length > 0 &&
+            this.state.acceptTerms  ;
     }
 
     handleChange(event) {
@@ -38,7 +39,6 @@ export default class RegisterPage extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log("HEHE");
 
         let username = this.state.login;
         let email = this.state.email;
@@ -53,9 +53,8 @@ export default class RegisterPage extends React.Component {
             .catch((error) => {
                 this.setState({
                     loading: false,
-                    error: true,
+                    error: error.response.data[0],
                 });
-                console.log(error);
             });
     }
 
@@ -65,10 +64,18 @@ export default class RegisterPage extends React.Component {
 
         let errorMessage = null;
         if (this.state.error) {
+            let errorText = "Rejestracja nie powiodła się";
+            if (this.state.error === "Username already used")
+                errorText = "Ta nazwa użytkownika jest już użyta";
+            else if (this.state.error === "Email already used")
+                errorText = "Ten adres e-mail jest już użyty";
+            else if (this.state.error === "Passwords don't match")
+                errorText = "Podane hasła nie pasują";
+
             errorMessage = (
                 <div className="form-group">
                     <div className="text-center small login-error-message">
-                        Podany login lub hasło jest niepoprawny
+                        {errorText}
                     </div>
                 </div>
             );

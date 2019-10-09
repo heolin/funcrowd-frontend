@@ -1,23 +1,36 @@
 import React from "react"
-import posed from 'react-pose';
 
+import Card from "../../components/animated/Card";
 import ProgressBar from "../../components/ProgressBar";
-import {Icon, SmallIcon} from "../../components/Icons"
+import {Icon, SmallIcon} from "../../components/Icons";
 
 import L from "../../logic/locatization/LocalizationManager";
-
-const Card = posed.div({
-    enter: { y: 0, opacity: 1 },
-    exit: { y: 50, opacity: 0 }
-});
 
 
 export default class MissionCard extends React.Component {
 
     render() {
-        let metadata = this.props.mission.metadata;
+        let mission = this.props.mission;
+        let metadata = mission.metadata;
         let progress = this.props.progress;
         let image = require("../../static/"+metadata.image);
+
+        let achievements = null;
+        let experience = null;
+
+        if (mission.achievementsCount)
+            achievements = (
+                <p className="small">
+                    <SmallIcon name="achievements"/>
+                    {mission.achievementsCount} {L.general.achievements}
+                </p>);
+
+        experience = (
+            <p className="small">
+                <SmallIcon name="experience"/>
+                10 {L.general.experience}
+            </p>);
+
 
         return (
             <Card className="col-md-4">
@@ -37,14 +50,8 @@ export default class MissionCard extends React.Component {
                             <SmallIcon name="missions"/>
                             {this.props.mission.tasksCount} {L.general.missions}
                         </p>
-                        <p className="small">
-                            <SmallIcon name="achievements"/>
-                            10 {L.general.achievements}
-                        </p>
-                        <p className="small">
-                            <SmallIcon name="experience"/>
-                            10 {L.general.experience}
-                        </p>
+                        {achievements}
+                        {experience}
                         <ProgressBar progress={progress.progress} text={"Ukończono "+progress.tasks_done + "/" + progress.tasks_count}/>
                     </div>
                 </div>

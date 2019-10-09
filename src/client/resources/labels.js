@@ -30,5 +30,13 @@ export default {
     login: {
         en: "Login",
         pl: "Zaloguj"
+    },
+    register: {
+        en: "Register",
+        pl: "Zarejestruj"
+    },
+    bounties: {
+        en: "Bounties",
+        pl: "Wyzwania"
     }
 }

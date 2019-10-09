@@ -3,6 +3,11 @@ import React from "react"
 
 export default class ProgressBar extends React.Component {
 
+    shouldComponentUpdate(nextProps, nextState) {
+        let result = nextProps.progress !== this.props.progress;
+        return result;
+    }
+
     render() {
         let percent = this.props.progress * 100;
 

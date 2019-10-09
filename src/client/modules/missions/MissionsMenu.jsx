@@ -1,16 +1,10 @@
 import React from "react"
 import MissionCard from "./MissionCard";
 import MissionRepository from "../../logic/repositories/MissionRepository";
-
-import posed  from 'react-pose';
 import MissionProgressRepository from "../../logic/repositories/MissionProgressRepository";
+import ListContainer from "../../components/animated/ListContainer"
 import Loading from "../../components/Loading";
-
-const ListContainer = posed.div({
-    enter: { staggerChildren: 50 },
-    exit: { staggerChildren: 20, staggerDirection: -1 },
-    initialPose: 'exit'
-});
+import FeedbackPanel from "../feedback/FeedbackPanel";
 
 
 export default class MissionsMenu extends React.Component {
@@ -65,7 +59,7 @@ export default class MissionsMenu extends React.Component {
                                          onSelect={() => this.props.onMissionSelect(mission)}/>);
 
         return (
-            <div className="container base-row">
+            <div className="container base-row-padding">
                 <div className="row">
                     <div className="col-sm-12 missions-introduction">
                         <h3>A witojcie w Excelu tutorial</h3>

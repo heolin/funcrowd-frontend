@@ -17,6 +17,8 @@ import AchievementsMenu from "./modules/achievements/AchievementsMenu";
 import {SideProfilePanel} from "./modules/profile/SideProfilePanel";
 import RegisterPage from "./modules/login/RegisterPage";
 import Loading from "./components/Loading";
+import ResetPasswordPage from "./modules/login/ResetPasswordPage";
+import ProfileTypes from "./logic/config/ProfileTypes";
 
 
 const RouteContainer = posed.div({
@@ -85,11 +87,21 @@ class Base extends React.Component {
         ConfigManager.setup(user);
         this.setState({user: user, checkingUser: false});
 
-        if (this.props.location.pathname === "/")
-            this.props.history.push('/missions');
+        this.redirectToHome();
+    }
+
+    redirectToHome() {
+        if (this.props.location.pathname === "/") {
+            if (SessionManager.currentUser.profile == ProfileTypes.NORMAL) {
+                this.props.history.push('/missions');
+            } else {
+                this.props.history.push('/bounties');
+            }
+        }
     }
 
     onLogout() {
+        this.hideSideProfile();
         this.setState({user: null});
         SessionManager.logout();
         this.props.history.push('/');
@@ -132,11 +144,15 @@ class Base extends React.Component {
         if (this.state.checkingParams || this.state.checkingUser)
             return <Loading/>;
 
-
-        let margin = 0;
-        if (document.body.scrollHeight <= window.innerHeight) {
-            margin = "300px";
+        if (this.state.user === null) {
+            if (this.props.location.pathname !== "/") {
+                this.props.history.push('/');
+                return <Loading/>;
+            }
+        } else {
+            this.redirectToHome();
         }
+
         return (
             <Route
             render={({ location }) => (
@@ -158,6 +174,8 @@ class Base extends React.Component {
                                            render={(props) => <LoginPage onSuccess={this.onLogin} {...props}/>}/>
                                     <Route exact path="/register"
                                            render={(props) => <RegisterPage onSuccess={this.onLogin} {...props}/>}/>
+                                    <Route exact path="/resetpassword"
+                                           render={(props) => <ResetPasswordPage onSuccess={this.onLogin} {...props}/>}/>
                                     <Route path="/missions"
                                            render={(props) => <MissionsMenu onMissionSelect={this.onMissionSelect}
                                                                             user={this.state.user} {...props}/>}/>

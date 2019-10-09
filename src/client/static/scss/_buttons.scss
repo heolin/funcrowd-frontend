@@ -1,6 +1,6 @@
 @import "colors";
 @import "fonts";
-
+@import "mixins";
 
 .btn {
   @extend .normal;
@@ -12,51 +12,31 @@
   border-radius: 3px;
   box-shadow: 0px 0px 16px -6px rgba(0,0,0,0.7);
   transition: all .2s ease-in-out;
-}
+  cursor: pointer;
 
-.btn:hover {
-  color: white;
-  background: $blue-color;
-}
+  &:hover {
+    color: white;
+    background: $blue-color;
+  }
 
-.btn:active {
-  box-shadow: 0px 0px 12px -6px rgba(0,0,0,0.7);
+  &:active {
+    box-shadow: 0px 0px 12px -6px rgba(0,0,0,0.7);
+  }
 }
 
 
 .btn-primary {
-  color: white;
-  background: $blue-color;
-  box-shadow: 0px 0px 16px -6px rgba(0,0,0,0.8);
-}
-
-.btn-primary:hover,
-.btn-primary:active {
-  color: white;
-  background: $dark-blue-color !important;
-  border-color: $dark-blue-color !important;
+  @include button(white, $blue-color, $blue-color, $dark-color);
 }
 
 
 .btn-orange {
-  color: $bright-orange-color;
-  border: solid 3px $bright-orange-color;
+  @include button($bright-orange-color, white, $bright-orange-color, $bright-orange-color);
 }
 
-.btn-orange:hover {
-  color: white;
-  background: $bright-orange-color;
-}
 
 .btn-orange-primary {
-  color: white;
-  background: $bright-orange-color;
-  border: solid 3px $bright-orange-color;
-}
-
-.btn-orange-primary:hover {
-  background: $dark-bright-orange-color;
-  border: solid 3px $dark-bright-orange-color;
+  @include button(white, $bright-orange-color, $bright-orange-color, $dark-bright-orange-color);
 }
 
 

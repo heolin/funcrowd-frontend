@@ -14,6 +14,8 @@ import NoItemsPanel from "./NoItemsPanel";
 import SkipButton from "./components/SkipButton";
 import SubmitButton from "./components/SubmitButton";
 import ItemHeader from "./ItemHeader";
+import BountyHeader from "../bounty/BountyHeader";
+import Loading from "../../components/Loading";
 
 export default class ItemPanel extends React.Component {
 
@@ -34,7 +36,6 @@ export default class ItemPanel extends React.Component {
         this.onFeedbackAccept = this.onFeedbackAccept.bind(this);
         this.showInstruction = this.showInstruction.bind(this);
         this.onInstructionClose = this.onInstructionClose.bind(this);
-        this.onConfirmationClose = this.onConfirmationClose.bind(this);
         this.onBountyFinished = this.onBountyFinished.bind(this);
     }
 
@@ -123,28 +124,21 @@ export default class ItemPanel extends React.Component {
             feedback = annotationResponse.annotation.feedback;
         }
 
-        if (feedback) {
-            this.setState({
-                annotation: annotationResponse.annotation,
-                feedback: feedback});
-        } else {
-            this.showConfirmation();
-        }
+        this.setState({
+            annotation: annotationResponse.annotation,
+            feedback: feedback,
+            confirmation: true
+        });
     }
 
     onFeedbackAccept() {
         if (this.state.feedback)
-            this.setState({feedback: null});
-        this.getNextItem();
-    }
-
-    showConfirmation() {
-        this.setState({confirmation: true});
-    }
-
-    onConfirmationClose() {
-        if (this.state.confirmation)
-            this.setState({confirmation: false});
+            this.setState({
+                feedback: null,
+            });
+        this.setState({
+            confirmation: false
+        });
         this.getNextItem();
     }
 
@@ -171,30 +165,27 @@ export default class ItemPanel extends React.Component {
     }
 
     render() {
-        if (this.state.loading) {
-            return (
-                <div>Loading</div>
-            );
-        }
+        if (this.state.loading)
+            return <Loading/>;
 
-        console.log("no witam");
         let itemForm = null;
-        let feedback = null;
-        let confirmation = null;
         let bounty = null;
         let itemId = null;
         let noitems = null;
+        let header = null;
 
         if (this.state.item) {
             itemId = this.state.item.id;
 
             itemForm = (
                 <div className="col-sm-12 item-panel">
-                    <h3 style={{display: "inline-block"}}>Item #{this.state.item.id}</h3>
-                    <button className="btn btn-default info-button"
-                            onClick={this.showInstruction}>
-                        <Icon icon={info} size={24}/>
-                    </button>
+                    <div style={{marginBottom: "30px"}}>
+                        <h3 style={{display: "inline-block"}}>Item #{this.state.item.id}</h3>
+                        <button className="btn btn-default info-button"
+                                onClick={this.showInstruction}>
+                            <Icon icon={info} size={24}/>
+                        </button>
+                    </div>
 
                     <ItemForm task={this.props.task}
                               item={this.state.item}
@@ -203,38 +194,36 @@ export default class ItemPanel extends React.Component {
                               skipButton={SkipButton}/>
                 </div>
             );
-
-            if (this.state.feedback)
-                feedback = <FeedbackPanel feedback={this.state.feedback}
-                                          onAccept={this.onFeedbackAccept}
-                                          annotation={this.state.annotation}/>;
-
-            if (this.state.confirmation)
-                confirmation = <ConfirmationPanel onClose={this.onConfirmationClose}/>;
         } else {
             noitems = <NoItemsPanel/>;
         }
 
         if (this.state.bounty) {
-            bounty = <BountyStatus itemId={itemId}
-                                   onBountyFinished={this.onBountyFinished}
-                                   bountyId={this.state.bounty.id}/>;
-
             if (this.state.bounty.userBounty == null)
                 itemForm = null;
             if (this.state.bounty.userBounty && this.state.bounty.userBounty.is_closed)
                 itemForm = null;
+
+            header = <BountyHeader bounty={this.state.bounty}
+                                   itemId={itemId}
+                                   onBountyFinished={this.onBountyFinished}/>
+        } else {
+            header = <ItemHeader task={this.state.task}/>;
         }
 
         return (
             <div className="container base-row">
-                <ItemHeader task={this.state.task}/>
+                {header}
                 <InstructionPanel isOpen={this.state.item && this.state.instruction}
                                   task={this.props.task}
                                   onClose={this.onInstructionClose}/>
+
+                <FeedbackPanel isOpen={this.state.item && this.state.confirmation}
+                               feedback={this.state.feedback}
+                               onAccept={this.onFeedbackAccept}
+                               annotation={this.state.annotation}/>
+
                 <div className="row">
-                    {confirmation}
-                    {feedback}
                     {bounty}
                     {itemForm}
                     {noitems}

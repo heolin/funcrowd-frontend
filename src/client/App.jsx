@@ -1,6 +1,6 @@
 import React from "react"
 import Base from "./Base"
-import { BrowserRouter as Router} from 'react-router-dom';
+import { HashRouter as Router} from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap';
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'

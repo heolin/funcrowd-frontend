@@ -2,6 +2,8 @@ import React from "react"
 import UserRepository from "../../logic/repositories/UserRepository";
 import Loading from "../../components/Loading";
 import CheckboxElement from "../items/components/element/CheckboxElement";
+import { Link } from 'react-router-dom';
+import TextTagField from "../items/components/TextTagField";
 
 
 export default class LoginPage extends React.Component {
@@ -77,7 +79,7 @@ export default class LoginPage extends React.Component {
                                 <input id="login"
                                        type="login"
                                        className="login-input form-control"
-                                       value={this.state.email}
+                                       value={this.state.login}
                                        onChange={this.handleChange}
                                        placeholder="Login"/>
                             </div>
@@ -89,13 +91,18 @@ export default class LoginPage extends React.Component {
                                        onChange={this.handleChange}
                                        placeholder="Hasło"/>
                             </div>
-                            <div className="from-group little">
+                            <div className="from-group little" style={{position: "relative"}}>
                                 <CheckboxElement className="login-checkbox"
                                                  labelClassName="login-checkbox-label"
                                                  name='stayLoggedIn'
                                                  value={this.state.stayLoggedIn}
                                                  onChange={this.handleChange}
                                                  label="Zapamiętaj mnie"/>
+                                <div className="login-reset-password-link login-link">
+                                    <Link to="/resetpassword">
+                                        Przypomnij hasło
+                                    </Link>
+                                </div>
                             </div>
                             {errorMessage}
                             <button type="submit"

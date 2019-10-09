@@ -1,0 +1,90 @@
+@import "../colors";
+@import "../mixins";
+
+$color1: #e67676;
+$dark-color1: #bc6060;
+$color2: #7688e6;
+$dark-color2: #5f6db9;
+$color3: #e6cf6f;
+$dark-color3: #c7b265;
+$color4: #93c773;
+$dark-color4: #78a35e;
+$color5: #70a8c3;
+$dark-color5: #59859a;
+$color6: #bc76e6;
+$dark-color6: #935cb4;
+
+.tagger-text {
+  margin: 20px 10px 30px 0;
+}
+
+
+.tagger-text ::selection {
+  color: white;
+  background: grey;
+}
+
+.tagger-tag {
+  color: white;
+  background: grey;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.tag-color-1 {
+  background: $color1 !important;
+}
+
+.tag-color-2 {
+  background: $color2 !important;
+}
+
+.tag-color-3 {
+  background: $color3 !important;
+}
+
+.tag-color-4 {
+  background: $color4 !important;
+}
+
+.tag-color-5 {
+  background: $color5 !important;
+}
+
+.tag-color-6 {
+  background: $color6 !important;
+}
+
+.tagger-buttons {
+  margin: 0 -20px;
+}
+
+.tagger-button {
+  width: 130px;
+  margin: 10px 20px;
+}
+
+.tagger-button-1 {
+  @include button(white, $color1, $color1, $dark-color1);
+}
+
+.tagger-button-2 {
+  @include button(white, $color2, $color2, $dark-color2);
+}
+
+.tagger-button-3 {
+  @include button(white, $color3, $color3, $dark-color3);
+}
+
+.tagger-button-4 {
+  @include button(white, $color4, $color4, $dark-color4);
+}
+
+.tagger-button-5 {
+  @include button(white, $color5, $color5, $dark-color5);
+}
+
+.tagger-button-6 {
+  @include button(white, $color6, $color6, $dark-color6);
+}

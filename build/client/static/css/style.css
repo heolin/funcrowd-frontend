@@ -42,12 +42,6 @@ body {
     height: 100%;
 }
 
-.base-row {
-    display: block !important;
-    padding-top: 56px;
-    height: 100%;
-    min-height: 100%;
-}
 
 .font-light {
     color: white;
@@ -194,10 +188,6 @@ h5 {
     textAlign: right;
 }
 
-.info-button {
-    float: right;
-    padding: 5px 6px !important;
-}
 
 
 /* Radio button */
@@ -344,73 +334,6 @@ h5 {
     width: 100%;
     height: 100%;
     z-index: 50;
-}
-
-
-/* Bounties */
-.bounties-header-bar {
-    padding-top: 60px;
-    padding-bottom: 40px;
-}
-
-.bounty-card {
-    height: 180px;
-    padding: 15px;
-    color: white;
-    background-color: #699b80;
-}
-
-.bounty-card-title-base {
-   position: relative;
-}
-
-.bounty-card-icon {
-    top: calc(50% - 20px);
-    position: absolute;
-}
-
-.bounty-card-title {
-    width: calc(100% - 50px);
-    margin-left: 50px;
-}
-
-.bounty-card-id {
-    position: absolute;
-    top: 15px;
-    right: 30px;
-}
-
-.bounty-card-header {
-    margin-bottom: 16px;
-}
-
-.closed-card {
-    background-color: #969696 !important;
-}
-
-.finished-card {
-    background-color: #4c715d !important;
-}
-
-.bounty-progress-bar {
-    background-color: #375043 !important;
-}
-
-.bounty-progress-stats {
-    margin-top: 5px;
-}
-
-.card-progress-bar {
-    position: absolute;
-    bottom: 0;
-    width: calc(100% - 60px);
-}
-
-.bounty-status {
-    padding: 15px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    background-color: white;
 }
 
 

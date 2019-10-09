@@ -1,100 +1,33 @@
 import React from "react"
-import FieldFeedbackPanel from "./FieldFeedbackPanel";
+import BlackBackground from "../../components/BlackBackground";
+import Modal from "../../components/animated/Modal"
 
 
 export default class FeedbackPanel extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.onAccept = this.onAccept.bind(this);
-    }
-
-    onAccept() {
-        this.props.onAccept();
-    }
-
-
-    getFields() {
-        let feedback = this.props.feedback;
-        let fields_values = {};
-
-        for (let field_name in feedback.scores) {
-            if (field_name in fields_values === false)
-                fields_values[field_name] = [];
-            for (let key in feedback.scores[field_name]) {
-                let value = feedback.scores[field_name][key];
-                fields_values[field_name][key] = value;
-            }
-        }
-
-        for (let field_name in feedback.values) {
-            for (let key in feedback.values[field_name]) {
-                let value = feedback.values[field_name][key];
-                fields_values[field_name][key] = value;
-            }
-        }
-
-        let fields = [];
-        for (let field_name in fields_values) {
-            let scores = fields_values[field_name];
-            fields.push(<FieldFeedbackPanel key={field_name}
-                                            field_name={field_name}
-                                            annotation={this.props.annotation}
-                                            values={scores}/>);
-        }
-        return fields;
-    }
-
-    getAverageScore() {
-        let scores = {};
-
-        let feedback = this.props.feedback;
-
-        for (let field_name in feedback.scores) {
-            scores[field_name] = 0;
-            for (let key in feedback.scores[field_name]) {
-                let value = feedback.scores[field_name][key];
-                scores[field_name] += value;
-            }
-            scores[field_name] = scores[field_name] / Object.keys(feedback.scores[field_name]).length;
-        }
-        return scores;
-    }
-
-
     render() {
         let feedback = this.props.feedback;
-        let scores = this.getAverageScore();
-        let maxScore = Math.max(Object.values(scores));
-        let summary = null;
-        if (maxScore === 0)
-            summary = <span>Your answer was not correct</span>;
-        else
-            summary = <span>Your answer was correct</span>;
-
-        let fields = this.getFields();
 
         return (
             <div className="modal-base">
-                <div className="shadow"></div>
-                <div className="feedback-panel card-3-static">
-                    <h4 style={{textAlign: "center"}}>Feedback</h4>
-                    <div className="row">
-                        <div className="col-md-12"
-                             style={{marginTop: "10px", marginBottom: "20px", textAlign: "center"}}>
-                            {summary}
-                        </div>
-                    </div>
-                    {fields}
+                <BlackBackground className="black-background"
+                                 style={{pointerEvents: this.props.isOpen ? "auto" : "none"}}
+                                 pose={this.props.isOpen ? 'open' : 'closed'}
+                                 onClick={this.props.onClose}/>
+                <Modal className="modal-window feedback-panel card-3-static text-center"
+                       pose={this.props.isOpen ? 'open' : 'closed'}
+                       style={{
+                           pointerEvents: this.props.isOpen ? "auto" : "none",
+                           width: "660px"
+                       }}>
 
-                    <div style={{textAlign: "center"}}>
-                        <button className="btn btn-green"
-                             style={{width: "120px"}}
-                             onClick={this.onAccept}>
-                            Ok
-                        </button>
+                    <h2 className="feedback-header">Feedback</h2>
+                    <p>Ekstra! Lol nawet spoko. Co ja ci bede pisał</p>
+                    <div className="btn btn-primary feedback-button"
+                         onClick={this.props.onAccept}>
+                        Następne zadanie
                     </div>
-                </div>
+                </Modal>
             </div>
         );
     }

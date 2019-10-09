@@ -3,7 +3,7 @@
 
 
 .item-panel {
-  padding-top: 50px;
+  padding-top: 30px;
   margin-bottom: 40px
 }
 
@@ -18,4 +18,12 @@
 
 .item-form-buttons {
   text-align: center;
+}
+
+.info-button {
+  float: right;
+  padding: 5px 8px !important;
+  right: 13px;
+  position: absolute;
+  top: 20px;
 }
