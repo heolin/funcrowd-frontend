@@ -3647,6 +3647,9 @@ small, .small {
 .slick-next:before {
   color: #5495b1 !important; }
 
+.image-field {
+  height: 200px; }
+
 .color-white {
   color: white; }
 
@@ -11708,6 +11711,9 @@ a.text-dark:hover, a.text-dark:focus {
 .slick-prev:before,
 .slick-next:before {
   color: #5495b1 !important; }
+
+.image-field {
+  height: 200px; }
 
 .color-white {
   color: white; }

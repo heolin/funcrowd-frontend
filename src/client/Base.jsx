@@ -54,7 +54,7 @@ class Base extends React.Component {
         this.checkSessionUser();
         this.checkUrlParams();
 
-        LocalizationManager.setup('pl');
+        LocalizationManager.setup('en');
     }
 
     checkSessionUser() {
@@ -81,7 +81,6 @@ class Base extends React.Component {
     }
 
     //handlers
-
     onLogin(user, saveUser) {
         SessionManager.login(user, saveUser);
         ConfigManager.setup(user);
@@ -139,7 +138,6 @@ class Base extends React.Component {
 
 
     //render
-
     render() {
         if (this.state.checkingParams || this.state.checkingUser)
             return <Loading/>;

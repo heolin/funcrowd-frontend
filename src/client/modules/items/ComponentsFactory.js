@@ -8,6 +8,7 @@ import LinkButton from "./components/LinkButton";
 import ImagesGallery from "./components/ImagesGallery/ImagesGallery";
 import HtmlLabel from "./components/HtmlLabel";
 import TextTagField from "./components/TextTagField";
+import ImageField from "./components/ImageField";
 
 
 let Components = {
@@ -22,6 +23,7 @@ let Components = {
     "ImagesGallery": ImagesGallery,
     "HtmlLabel": HtmlLabel,
     "TextTagField": TextTagField,
+    "ImageField": ImageField
 };
 
 export default class ComponentsFactory {
@@ -29,6 +31,8 @@ export default class ComponentsFactory {
     create(widget, name, label, value, source, required, blocked, handleChange) {
         if (widget === "Hidden")
             return null;
+        console.log("HEHEH");
+        console.log(widget);
         let component = Components[widget];
         return React.createElement(component, {
             name: name,
