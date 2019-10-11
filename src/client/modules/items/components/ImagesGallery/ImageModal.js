@@ -46,7 +46,6 @@ export default class ImageModal extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="modal-base">
                 <BlackBackground className="black-background"

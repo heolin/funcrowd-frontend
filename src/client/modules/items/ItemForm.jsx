@@ -157,11 +157,9 @@ export default class ItemForm extends React.Component {
         let groups = metadata.groups ||
             [item.template.fields.map(field => field.name)];
 
-        console.log("1");
         let fieldGroups = groups.map((groupFields, index) =>
             this.createGroup(item, groupFields, index)
         );
-        console.log("2");
 
         let skipping = null;
         if (this.state.skipping)

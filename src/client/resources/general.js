@@ -11,4 +11,8 @@ export default {
         en: "experience points",
         pl: "punkty doświadczenia"
     },
+    finished: {
+        en: "Finished",
+        pl: "Ukończono"
+    }
 }

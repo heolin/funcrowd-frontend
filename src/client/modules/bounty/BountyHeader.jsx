@@ -65,7 +65,8 @@ export default class BountyHeader extends React.Component {
 
             let annotationsDone = Math.min(userBounty.annotationsDone, bounty.annotationsTarget);
             progressBar = <ProgressBar progress={userBounty.progress}
-                                       text={"Ukończono "+annotationsDone + "/" + bounty.annotationsTarget}/>;
+                                       textAlign="right"
+                                       text={L.general.finished+" "+annotationsDone + "/" + bounty.annotationsTarget}/>;
 
             let reward = <span className="badge badge-secondary" style={{fontSize: "14px"}}>{L.bounty.labels.bountyNotFinished}</span>;
             if (userBounty.reward)
@@ -79,8 +80,8 @@ export default class BountyHeader extends React.Component {
                         <h3 style={{marginBottom: 0}}>#{bounty.id} {task.name}</h3>
                         <span className="small">{task.description}</span>
                         <div className="small" style={{margin: "15px 0"}}>
-                            <div>Status:&nbsp;{status}</div>
-                            <div>Reward:&nbsp;{reward}</div>
+                            <div>{L.bounty.labels.status}:&nbsp;{status}</div>
+                            <div>{L.bounty.labels.reward}:&nbsp;{reward}</div>
                         </div>
                     </div>
                     {progressBar}

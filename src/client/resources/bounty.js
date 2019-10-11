@@ -21,6 +21,14 @@ export default {
         bountyNotFinished: {
             en: "Bounty not finished",
             pl: "Wyzwanie nie zakończone"
+        },
+        status: {
+            en: "Status",
+            pl: "Status"
+        },
+        reward: {
+            en: "Reward code",
+            pl: "Kod nagrody"
         }
     }
 }

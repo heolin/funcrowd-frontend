@@ -4484,6 +4484,7 @@ small, .small {
   display: inline-block !important; }
 
 .nav-item {
+  cursor: pointer;
   padding: 0 10px; }
 
 .navbar-light .navbar-nav .nav-link {
@@ -12712,6 +12713,7 @@ small,
   display: inline-block !important; }
 
 .nav-item {
+  cursor: pointer;
   padding: 0 10px; }
 
 .navbar-light .navbar-nav .nav-link {

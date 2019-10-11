@@ -32,8 +32,16 @@ class Tag {
 function getSelectionCharOffsetsWithin(element) {
     let start = 0, end = 0;
     let sel, range, priorRange;
+
     if (typeof window.getSelection !== "undefined") {
         let range = window.getSelection().getRangeAt(0);
+        console.log(range);
+        console.log(range.startContainer.parentElement.id);
+        console.log(element.id);
+        if (range.startContainer.parentElement.parentElement.id != element.id &&
+            range.endContainer.parentElement.parentElement.id != element.id)
+            return null;
+
         priorRange = range.cloneRange();
         priorRange.selectNodeContents(element);
         priorRange.setEnd(range.startContainer, range.startOffset);
@@ -82,6 +90,9 @@ export default class TextTagField extends React.Component {
     onTagButtonClick(tag) {
         let element = document.getElementById(this.props.name+"_text");
         let selection = getSelectionCharOffsetsWithin(element);
+        if (selection == null)
+            return;
+
         let selectionText = this.getSelectionText(selection.start, selection.end);
 
         if (selectionText === "")
