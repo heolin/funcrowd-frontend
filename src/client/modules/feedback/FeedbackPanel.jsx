@@ -21,11 +21,11 @@ export default class FeedbackPanel extends React.Component {
                            width: "660px"
                        }}>
 
-                    <h2 className="feedback-header">Feedback</h2>
-                    <p>Ekstra! Lol nawet spoko. Co ja ci bede pisał</p>
+                    <h2 className="feedback-header">Annotation saved</h2>
+                    <p>Your annotation has been saved</p>
                     <div className="btn btn-primary feedback-button"
                          onClick={this.props.onAccept}>
-                        Następne zadanie
+                        Next item
                     </div>
                 </Modal>
             </div>

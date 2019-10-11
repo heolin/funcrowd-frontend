@@ -67,11 +67,11 @@ export default class BountyHeader extends React.Component {
             progressBar = <ProgressBar progress={userBounty.progress}
                                        text={"Ukończono "+annotationsDone + "/" + bounty.annotationsTarget}/>;
 
-            let reward = <span className="badge badge-secondary" style={{fontSize: "14px"}}>Bounty not finished</span>;
+            let reward = <span className="badge badge-secondary" style={{fontSize: "14px"}}>{L.bounty.labels.bountyNotFinished}</span>;
             if (userBounty.reward)
                 reward = <span className="badge badge-green" style={{fontSize: "14px"}}>{userBounty.reward}</span>;
 
-            let status = <div className={"badge " + statusStyle[bountyStatus]} style={{fontSize: "14px"}}>{L.bounty[bountyStatus]}</div>;
+            let status = <div className={"badge " + statusStyle[bountyStatus]} style={{fontSize: "14px"}}>{L.bounty.status[bountyStatus]}</div>;
 
             elements = (
                 <div className="bounty-header-info">

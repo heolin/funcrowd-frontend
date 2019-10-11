@@ -1,9 +1,22 @@
 import React from "react"
+import posed from 'react-pose';
 import { Icon } from 'react-icons-kit'
 import {close} from 'react-icons-kit/fa/close'
 import BlackBackground from "../../components/BlackBackground";
-import Modal from "../../components/animated/Modal"
 
+
+const Modal = posed.div({
+    open: {
+        opacity: 1.0,
+        x: "-50%",
+        y: "-44%"
+    },
+    closed: {
+        opacity: 0,
+        x: "-50%",
+        y: "-34%"
+    }
+});
 
 export default class InstructionPanel extends React.Component {
 

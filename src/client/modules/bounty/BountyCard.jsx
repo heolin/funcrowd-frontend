@@ -5,6 +5,7 @@ import {unlock} from 'react-icons-kit/fa/unlock'
 import {trophy} from 'react-icons-kit/fa/trophy'
 import {SmallIcon} from "../../components/Icons";
 import ProgressBar from "../../components/ProgressBar";
+import L from "../../logic/locatization/LocalizationManager";
 
 
 export default class BountyCard extends React.Component {
@@ -16,23 +17,23 @@ export default class BountyCard extends React.Component {
 
         let progressBar = null;
         let icon = "locked";
-        let bountyStatus = "Bounty closed";
+        let bountyStatus = L.bounty.status.CLOSED;
         let className = "mission-closed-card card-2-static";
         let onClick = () => {};
 
         if (userBounty) {
             if (userBounty.status === "NEW") {
                 icon = "missions";
-                bountyStatus = "Bounty open";
+                bountyStatus = L.bounty.status.NEW;
                 className = "card-2";
                 onClick = this.props.onSelect;
             } else if (userBounty.status === "IN_PROGRESS") {
                 icon = "missions";
-                bountyStatus = "Bounty in progress";
+                bountyStatus = L.bounty.status.IN_PROGRESS;
                 className = "card-2";
                 onClick = this.props.onSelect;
             } else if (userBounty.progress === 1) {
-                bountyStatus = "Bounty finished";
+                bountyStatus = L.bounty.status.FINISHED;
                 icon = "checked";
                 className = "card-2";
                 onClick = this.props.onSelect;
