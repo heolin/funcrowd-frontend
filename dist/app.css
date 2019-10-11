@@ -3648,7 +3648,8 @@ small, .small {
   color: #5495b1 !important; }
 
 .image-field {
-  height: 200px; }
+  height: 200px;
+  cursor: pointer; }
 
 .color-white {
   color: white; }
@@ -11713,7 +11714,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: #5495b1 !important; }
 
 .image-field {
-  height: 200px; }
+  height: 200px;
+  cursor: pointer; }
 
 .color-white {
   color: white; }
