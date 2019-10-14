@@ -1,4 +1,5 @@
 import ProfileConfigs from "./ProfileConfigs";
+import ProfileTypes from "./ProfileTypes";
 
 function createConfig() {
     return {
@@ -12,6 +13,7 @@ class _ConfigManager {
         this.config = createConfig();
         this.initilized = false;
         this.baseUrl = process.env.BACKEND_URL;
+        this.profile = ProfileConfigs[ProfileTypes.NOTLOGGED];
     }
 
     setup(user) {
@@ -19,6 +21,10 @@ class _ConfigManager {
         this.config.showFeedback = true;// user.group > 5;
         this.initilized = true;
         this.profile = ProfileConfigs[user.profile];
+    }
+
+    logout() {
+        this.profile = ProfileConfigs[ProfileTypes.NOTLOGGED];
     }
 }
 

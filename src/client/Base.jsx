@@ -103,6 +103,7 @@ class Base extends React.Component {
         this.hideSideProfile();
         this.setState({user: null});
         SessionManager.logout();
+        ConfigManager.logout();
         this.props.history.push('/');
     }
 
@@ -143,7 +144,7 @@ class Base extends React.Component {
             return <Loading/>;
 
         if (this.state.user === null) {
-            if (this.props.location.pathname !== "/") {
+            if (ConfigManager.profile.availablePages.indexOf(this.props.location.pathname) < 0){
                 this.props.history.push('/');
                 return <Loading/>;
             }
