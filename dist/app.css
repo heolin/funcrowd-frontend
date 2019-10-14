@@ -4097,6 +4097,9 @@ small, .small {
   position: absolute;
   top: 20px; }
 
+.no-items-panel {
+  padding-top: 60px; }
+
 .color-white {
   color: white; }
 
@@ -12857,6 +12860,9 @@ small,
   right: 13px;
   position: absolute;
   top: 20px; }
+
+.no-items-panel {
+  padding-top: 60px; }
 
 .feedback-panel {
   padding: 60px; }
