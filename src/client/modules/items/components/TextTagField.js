@@ -24,6 +24,7 @@ export default class TextTagField extends React.Component {
 
         this.onTagButtonClick = this.onTagButtonClick.bind(this);
         this.onTagSelect = this.onTagSelect.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
 
     onChange() {
@@ -89,9 +90,7 @@ export default class TextTagField extends React.Component {
 
             this.setState({
                tags: tags
-            });
-
-            this.onChange();
+            }, this.onChange);
 
         } else {
             let tags = this.state.selectedTokens;
@@ -112,7 +111,7 @@ export default class TextTagField extends React.Component {
 
             this.setState({
                 selectedTokens: tags
-            });
+            }, this.onChange);
         }
     }
 
@@ -143,7 +142,7 @@ export default class TextTagField extends React.Component {
         this.setState({
             tags: tags,
             selectedTokens: []
-        })
+        }, this.onChange);
     }
 
     render() {

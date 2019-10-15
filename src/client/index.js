@@ -12,3 +12,4 @@ if (result)
 else {
     ReactDOM.render(<App />, document.getElementById('root'));
 }
+

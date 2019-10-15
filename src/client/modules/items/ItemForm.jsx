@@ -172,10 +172,10 @@ export default class ItemForm extends React.Component {
                 {fieldGroups}
                 <div className="item-form-buttons">
                     <SkipButton onClick={this.skipItem}
-                            style={{marginRight: "10px", width: "80px"}}>Skip</SkipButton>
+                            style={{ width: "80px"}}>Skip</SkipButton>
                     <SubmitButton type="submit"
                             disabled={!this.validateForm()}
-                            style={{width: "120px"}}>Submit</SubmitButton>
+                            style={{width: "160px"}}>Submit</SubmitButton>
                 </div>
             </form>
         );

@@ -4086,9 +4086,6 @@ small, .small {
   margin-bottom: 30px;
   border-left: solid 4px #5495b1; }
 
-.item-form-buttons {
-  text-align: center; }
-
 .info-button {
   float: right;
   padding: 5px 8px !important;
@@ -4098,6 +4095,17 @@ small, .small {
 
 .no-items-panel {
   padding-top: 60px; }
+
+.item-form-buttons {
+  position: relative; }
+
+.item-form-submit-skip {
+  float: left; }
+
+.item-form-submit {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute; }
 
 .color-white {
   color: white; }
@@ -12849,9 +12857,6 @@ small,
   margin-bottom: 30px;
   border-left: solid 4px #5495b1; }
 
-.item-form-buttons {
-  text-align: center; }
-
 .info-button {
   float: right;
   padding: 5px 8px !important;
@@ -12861,6 +12866,17 @@ small,
 
 .no-items-panel {
   padding-top: 60px; }
+
+.item-form-buttons {
+  position: relative; }
+
+.item-form-submit-skip {
+  float: left; }
+
+.item-form-submit {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute; }
 
 .feedback-panel {
   padding: 60px; }
