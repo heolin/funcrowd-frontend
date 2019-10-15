@@ -18,18 +18,16 @@ $dark-color6: #935cb4;
   margin: 20px 10px 30px 0;
 }
 
-
-.tagger-text ::selection {
-  color: white;
-  background: grey;
-}
-
 .tagger-tag {
   color: white;
-  background: grey;
+  background: #c3c3c3;
   border-radius: 0.25rem;
   cursor: pointer;
   padding: 2px 4px;
+}
+
+.tag-selected {
+  background: #6f6f6f;
 }
 
 .tag-color-1 {

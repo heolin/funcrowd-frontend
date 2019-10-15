@@ -3,134 +3,27 @@ import ReactTooltip from 'react-tooltip'
 
 
 class Tag {
-    constructor(start, end, tag, text) {
+    constructor(start, end, tag, text, tokens) {
         this.start = start;
         this.end = end;
         this.tag = tag;
         this.text = text;
-        this._clean();
-    }
-
-    _clean() {
-        let leftOffset = this.text.length;
-        let rightOffset = 0;
-        for (let i = 0; i < this.text.length; i++)
-            if (this.text[i] !== " ") {
-                if (i < leftOffset)
-                    leftOffset = i;
-                if (i > leftOffset && i > rightOffset)
-                    rightOffset = i;
-            }
-        rightOffset = this.text.length - rightOffset - 1;
-        this.start = this.start + leftOffset;
-        this.end = this.end - rightOffset;
-        this.text = this.text.substr(leftOffset, this.text.length - (leftOffset + rightOffset))
+        this.tokens = tokens
     }
 }
 
-
-function getSelectionCharOffsetsWithin(element) {
-    let start = 0, end = 0;
-    let sel, range, priorRange;
-
-    if (typeof window.getSelection !== "undefined") {
-        let range = window.getSelection().getRangeAt(0);
-        console.log(range);
-        console.log(range.startContainer.parentElement.id);
-        console.log(element.id);
-        if (range.startContainer.parentElement.parentElement.id != element.id &&
-            range.endContainer.parentElement.parentElement.id != element.id)
-            return null;
-
-        priorRange = range.cloneRange();
-        priorRange.selectNodeContents(element);
-        priorRange.setEnd(range.startContainer, range.startOffset);
-        start = priorRange.toString().length;
-        end = start + range.toString().length;
-    } else if (typeof document.selection !== "undefined" &&
-        (sel = document.selection).type !== "Control") {
-        range = sel.createRange();
-        priorRange = document.body.createTextRange();
-        priorRange.moveToElementText(element);
-        priorRange.setEndPoint("EndToStart", range);
-        start = priorRange.text.length;
-        end = start + range.text.length;
-    }
-    return {
-        start: start,
-        end: end
-    };
-}
 
 export default class TextTagField extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            selectedTag: null,
             tags: [],
+            selectedTokens: []
         };
 
-        this.onTagClick = this.onTagClick.bind(this);
         this.onTagButtonClick = this.onTagButtonClick.bind(this);
-    }
-
-    onTagClick(index) {
-        let tags = this.state.tags;
-        tags.splice(index, 1);
-        this.setState({
-            tags: tags
-        });
-    }
-
-    getSelectionText(start, end) {
-        return this.props.source.text.substring(start, end);
-    }
-
-    onTagButtonClick(tag) {
-        let element = document.getElementById(this.props.name+"_text");
-        let selection = getSelectionCharOffsetsWithin(element);
-        if (selection == null)
-            return;
-
-        let selectionText = this.getSelectionText(selection.start, selection.end);
-
-        if (selectionText === "")
-            return;
-
-        if (this.checkTagsCollision(selection.start, selection.end))
-            return;
-
-        let tagElement = new Tag(selection.start, selection.end, tag, selectionText);
-
-        this.addTag(tagElement);
-    }
-
-    checkTagsCollision(start, end) {
-        let collision = false;
-        this.state.tags.forEach((tag) => {
-            if (tag.start <= end && tag.end >= start)
-                collision = true;
-        });
-        return collision;
-    }
-
-    addTag(tag) {
-        let tags = this.state.tags;
-
-        let index = tags.length;
-        for (let i = 0; i < tags.length; i++)
-            if (tag.start < tags[i].start) {
-                index = i;
-                break;
-            }
-
-        tags.splice(index, 0, tag);
-        this.setState({
-            tags: tags
-        });
-
-        this.onChange();
+        this.onTagSelect = this.onTagSelect.bind(this);
     }
 
     onChange() {
@@ -143,39 +36,114 @@ export default class TextTagField extends React.Component {
         this.props.onChange(event);
     }
 
-    getText() {
-        let text = this.props.source.text;
-        let elements = [];
-        let lastIndex = 0;
-
+    getTagFromToken(tokenId) {
         for (let i = 0; i < this.state.tags.length; i++) {
             let tag = this.state.tags[i];
-            let colorIndex = this.props.source.tags.indexOf(tag.tag) + 1;
+            if (tag.tokens.indexOf(tokenId) >= 0) {
+                return tag;
+            }
+        }
+        return null;
+    }
 
-            if (lastIndex < tag.start)
-                elements.push(
-                    <span key={elements.length}>{text.substr(lastIndex, tag.start-lastIndex)}</span>
-                );
+    getText() {
+        let tokens = this.props.source.text.split(" ");
+
+        let elements = [];
+        for (let index = 0; index < tokens.length; index++) {
+            let className = "";
+            let text = "";
+
+            let tag = this.getTagFromToken(index);
+            if (tag) {
+                let colorIndex = this.props.source.tags.indexOf(tag.tag) + 1;
+                className = " tag-color-" + colorIndex;
+                text = tag.text;
+                index += tag.tokens.length-1;
+            } else {
+                if (this.state.selectedTokens.indexOf(index) > -1)
+                    className = " tag-selected";
+                text = tokens[index];
+            }
 
             elements.push(
                 <span key={elements.length}
-                      className={"tagger-tag tag-color-" + colorIndex}
-                      data-tip="tip"
-                      id={i}
-                      onClick={() => this.onTagClick(i)}>
-                    {text.substr(tag.start, tag.end-tag.start)}
+                      className={"tagger-tag" + className}
+                      id={index}
+                      onClick={() => this.onTagSelect(index)}>
+                    {text}
                 </span>
             );
-
-            lastIndex = tag.end;
+            elements.push(" ");
         }
-
-        if (lastIndex < text.length)
-            elements.push(
-                <span key={elements.length}>{text.substr(lastIndex, text.length-lastIndex)}</span>
-            );
-
         return elements;
+    }
+
+    onTagSelect(tagIndex) {
+        let tag = this.getTagFromToken(tagIndex);
+        if (tag) {
+            let tags = this.state.tags;
+            let index = tags.indexOf(tag);
+            if (index > -1)
+                tags.splice(index, 1);
+
+            this.setState({
+               tags: tags
+            });
+
+            this.onChange();
+
+        } else {
+            let tags = this.state.selectedTokens;
+            let index = tags.indexOf(tagIndex);
+            if (index > -1) {
+                if (tags.indexOf(tagIndex - 1) < 0 || tags.indexOf(tagIndex + 1) < 0) {
+                    tags.splice(index, 1);
+                }
+            } else {
+                if (tags.length > 0) {
+                    if (tags.indexOf(tagIndex - 1) > -1 || tags.indexOf(tagIndex + 1) > -1) {
+                        tags.push(tagIndex);
+                    }
+                } else {
+                    tags.push(tagIndex);
+                }
+            }
+
+            this.setState({
+                selectedTokens: tags
+            });
+        }
+    }
+
+    onTagButtonClick(tag) {
+        let sourceText = this.props.source.text;
+        let tokens = sourceText.split(" ");
+
+        if (this.state.selectedTokens.length === 0)
+            return;
+
+        let tags = this.state.tags;
+
+        let selectedTokens = this.state.selectedTokens.sort();
+        let start = 0;
+
+        for (let i = 0; i < selectedTokens[0]; i++)
+            start += tokens[i].length;
+        start += selectedTokens[0];
+
+        let end = start;
+        for (let i = 0; i < selectedTokens.length; i++)
+            end += tokens[selectedTokens[i]].length;
+        end += selectedTokens.length - 1;
+
+        let text = sourceText.substr(start, end-start);
+        tags.push(new Tag(start, end, tag, text, selectedTokens));
+
+        this.setState({
+            tags: tags,
+            selectedTokens: []
+        })
     }
 
     render() {
@@ -197,7 +165,7 @@ export default class TextTagField extends React.Component {
         return (
             <div className="form-group">
                 {label}
-                <div id={this.props.name+"_text"} className="tagger-text">
+                <div id={this.props.name+"_text"} className="tagger-text noselect">
                     {this.getText()}
                 </div>
                 <div className="tagger-buttons">

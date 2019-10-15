@@ -3865,16 +3865,15 @@ small, .small {
 .tagger-text {
   margin: 20px 10px 30px 0; }
 
-.tagger-text ::selection {
-  color: white;
-  background: grey; }
-
 .tagger-tag {
   color: white;
-  background: grey;
+  background: #c3c3c3;
   border-radius: 0.25rem;
   cursor: pointer;
   padding: 2px 4px; }
+
+.tag-selected {
+  background: #6f6f6f; }
 
 .tag-color-1 {
   background: #e67676 !important; }
@@ -11980,16 +11979,15 @@ a.text-dark:hover, a.text-dark:focus {
 .tagger-text {
   margin: 20px 10px 30px 0; }
 
-.tagger-text ::selection {
-  color: white;
-  background: grey; }
-
 .tagger-tag {
   color: white;
-  background: grey;
+  background: #c3c3c3;
   border-radius: 0.25rem;
   cursor: pointer;
   padding: 2px 4px; }
+
+.tag-selected {
+  background: #6f6f6f; }
 
 .tag-color-1 {
   background: #e67676 !important; }
@@ -13020,6 +13018,21 @@ body {
 
 .base-row-padding {
   padding-top: 60px; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */ }
 
 .color-white {
   color: white; }
