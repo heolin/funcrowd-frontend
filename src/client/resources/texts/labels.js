@@ -38,5 +38,5 @@ export default {
     bounties: {
         en: "Bounties",
         pl: "Wyzwania"
-    }
+    },
 }

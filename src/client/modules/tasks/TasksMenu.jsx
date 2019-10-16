@@ -131,7 +131,7 @@ export default class TasksMenu extends React.Component {
 
         let achievements = this.state.achievements.map(
             (achievement) => (
-                <div classname="col-lg-12 col-md-6 col-sm-12" key={achievement.id}>
+                <div className="col-lg-12 col-md-6 col-sm-12" key={achievement.id}>
                     <AchievementCard achievement={achievement}/>
                 </div>
             )

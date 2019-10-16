@@ -12,13 +12,13 @@ export default class NavbarLoginMenu extends React.Component {
             <ul className="navbar-nav ml-auto small">
                 <NavbarMenuButton targetPath="/about" name={L.labels.about} icon="about"/>
                 <NavbarLoginButton targetPath="/"
-                                   name="Login"
+                                   name={L.labels.login}
                                    isSelected={
                                        this.props.location.pathname === "/" ||
                                        this.props.location.pathname === "/resetpassword"
                                    }/>
                 <NavbarLoginButton targetPath="/register"
-                                   name="Załóż konto"
+                                   name={L.labels.register}
                                    isSelected={this.props.location.pathname === "/register"}
                                    style={{marginLeft: "20px"}}/>
             </ul>

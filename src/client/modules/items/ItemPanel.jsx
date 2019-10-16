@@ -16,6 +16,7 @@ import SubmitButton from "./components/SubmitButton";
 import ItemHeader from "./ItemHeader";
 import BountyHeader from "../bounty/BountyHeader";
 import Loading from "../../components/Loading";
+import FeedbackTypes from "../feedback/FeedbackTypes";
 
 export default class ItemPanel extends React.Component {
 
@@ -219,8 +220,9 @@ export default class ItemPanel extends React.Component {
                                   onClose={this.onInstructionClose}/>
 
                 <FeedbackPanel isOpen={this.state.item && this.state.confirmation}
-                               feedback={this.state.feedback}
                                onAccept={this.onFeedbackAccept}
+                               type={FeedbackTypes.BINARY}
+                               feedback={this.state.feedback}
                                annotation={this.state.annotation}/>
 
                 <div className="row">

@@ -3961,10 +3961,16 @@ small, .small {
     border-color: #935cb4 !important; }
 
 .feedback-panel {
+  width: 660px;
+  max-width: 90vw;
   padding: 60px; }
 
 .feedback-button {
   width: 240px; }
+
+.feedback-image {
+  width: 30%;
+  margin: 10px 0 30px 0; }
 
 .instruction-panel {
   padding: 60px;
@@ -12879,10 +12885,16 @@ small,
   position: absolute; }
 
 .feedback-panel {
+  width: 660px;
+  max-width: 90vw;
   padding: 60px; }
 
 .feedback-button {
   width: 240px; }
+
+.feedback-image {
+  width: 30%;
+  margin: 10px 0 30px 0; }
 
 .modal-window {
   position: fixed;

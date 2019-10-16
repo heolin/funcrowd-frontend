@@ -3,7 +3,7 @@ import UserRepository from "../../logic/repositories/UserRepository";
 import Loading from "../../components/Loading";
 import CheckboxElement from "../items/components/element/CheckboxElement";
 import { Link } from 'react-router-dom';
-import TextTagField from "../items/components/TextTagField";
+import L from "../../logic/locatization/LocalizationManager";
 
 
 export default class LoginPage extends React.Component {
@@ -63,17 +63,16 @@ export default class LoginPage extends React.Component {
             errorMessage = (
                 <div className="form-group">
                     <div className="text-center small login-error-message">
-                        Podany login lub hasło jest niepoprawny
+                        {L.login.loginIncorrect}
                     </div>
                 </div>
             );
         }
-
         return (
             <div className="container base-row">
                 <div className="row">
                     <div className="login-window col-md-6 card-3-static">
-                        <h3 className="text-center login-header">Logowanie</h3>
+                        <h3 className="text-center login-header">{L.login.loginHeader}</h3>
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
                                 <input id="login"
@@ -81,7 +80,7 @@ export default class LoginPage extends React.Component {
                                        className="login-input form-control"
                                        value={this.state.login}
                                        onChange={this.handleChange}
-                                       placeholder="Login"/>
+                                       placeholder={L.login.login}/>
                             </div>
                             <div className="form-group">
                                 <input id="password"
@@ -89,7 +88,7 @@ export default class LoginPage extends React.Component {
                                        className="login-input form-control"
                                        value={this.state.password}
                                        onChange={this.handleChange}
-                                       placeholder="Hasło"/>
+                                       placeholder={L.login.password}/>
                             </div>
                             <div className="from-group little" style={{position: "relative"}}>
                                 <CheckboxElement className="login-checkbox"
@@ -97,10 +96,10 @@ export default class LoginPage extends React.Component {
                                                  name='stayLoggedIn'
                                                  value={this.state.stayLoggedIn}
                                                  onChange={this.handleChange}
-                                                 label="Zapamiętaj mnie"/>
+                                                 label={L.login.rememberMe}/>
                                 <div className="login-reset-password-link login-link">
                                     <Link to="/resetpassword">
-                                        Przypomnij hasło
+                                        {L.login.forgotPassword}
                                     </Link>
                                 </div>
                             </div>

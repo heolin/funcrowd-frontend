@@ -152,9 +152,15 @@ export default class TextTagField extends React.Component {
 
         let tagsButtons = this.props.source.tags.map((tag) => {
             let colorIndex = this.props.source.tags.indexOf(tag) + 1;
+
+            let example = null;
+            if ('examples' in this.props.source)
+                example = "e.g. " + this.props.source.examples[tag];
+
             return (
                 <div key={tag}
                      className={"btn tagger-button tagger-button-" + colorIndex}
+                     data-tip={example}
                      onClick={() => this.onTagButtonClick(tag)}>
                     {tag}
                 </div>
@@ -170,6 +176,7 @@ export default class TextTagField extends React.Component {
                 <div className="tagger-buttons">
                     {tagsButtons}
                 </div>
+                <ReactTooltip />
             </div>
         );
     }
