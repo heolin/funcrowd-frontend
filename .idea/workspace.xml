@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ead4a25-4a17-4a45-977c-0c90b6b22b4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/client/modules/feedback/BinaryFeedbackModal.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/modules/feedback/FeedbackFactory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/modules/feedback/FeedbackModal.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/modules/feedback/FeedbackTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/resources/texts/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/3f482321becfaa40fcb19825fa717859.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/550b42a5f50d0b943bc45f5c361a9bc1.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/7e0ee8c45d872446649aacd3ce96e1f7.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/logic/locatization/LocalizationManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/logic/locatization/LocalizationManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/feedback/FeedbackPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/feedback/FeedbackPanel.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/items/components/TextTagField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/components/TextTagField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/resources/bounty.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/resources/texts/bounty.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/resources/feedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/resources/texts/feedback.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/resources/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/resources/texts/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/resources/labels.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/resources/texts/labels.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/scss/feedback.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/feedback.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +53,7 @@
           <entry key="ico" value="1" />
           <entry key="js" value="409" />
           <entry key="json" value="18" />
-          <entry key="jsx" value="611" />
+          <entry key="jsx" value="612" />
           <entry key="local" value="2" />
           <entry key="log" value="1" />
           <entry key="md" value="4" />
@@ -96,7 +72,7 @@
           <entry key="HTML" value="6" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="18" />
-          <entry key="JSX Harmony" value="611" />
+          <entry key="JSX Harmony" value="612" />
           <entry key="JavaScript" value="409" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="6" />
@@ -120,9 +96,9 @@
           <entry key="dummy" value="2" />
           <entry key="env" value="9" />
           <entry key="html" value="63" />
-          <entry key="js" value="38019" />
+          <entry key="js" value="38139" />
           <entry key="json" value="211" />
-          <entry key="jsx" value="61071" />
+          <entry key="jsx" value="61179" />
           <entry key="local" value="28" />
           <entry key="production" value="3" />
           <entry key="py" value="1" />
@@ -135,8 +111,8 @@
           <entry key="Env File" value="53" />
           <entry key="HTML" value="63" />
           <entry key="JSON" value="211" />
-          <entry key="JSX Harmony" value="61071" />
-          <entry key="JavaScript" value="38019" />
+          <entry key="JSX Harmony" value="61179" />
+          <entry key="JavaScript" value="38139" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Python" value="1" />
           <entry key="SCSS" value="15672" />
@@ -152,11 +128,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="97" column="74" selection-start-line="97" selection-start-column="74" selection-end-line="97" selection-end-column="74" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-776">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -176,8 +149,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="48" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="49" />
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -192,10 +165,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="223" column="54" selection-start-line="223" selection-start-column="54" selection-end-line="223" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/resources/texts/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+            <state relative-caret-position="442">
+              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -227,18 +212,6 @@
         <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarMenuButton.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/RadioField.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -322,15 +295,15 @@
         <option value="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/feedback/FeedbackTypes.js" />
         <option value="$PROJECT_DIR$/src/client/resources/texts/feedback.js" />
-        <option value="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/feedback/FeedbackFactory.js" />
         <option value="$PROJECT_DIR$/src/client/modules/feedback/FeedbackPanel.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/feedback/BinaryFeedbackModal.jsx" />
         <option value="$PROJECT_DIR$/src/client/resources/texts/labels.js" />
         <option value="$PROJECT_DIR$/src/client/logic/locatization/LocalizationManager.js" />
+        <option value="$PROJECT_DIR$/src/client/resources/texts/login.js" />
         <option value="$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginMenu.js" />
         <option value="$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx" />
-        <option value="$PROJECT_DIR$/src/client/resources/texts/login.js" />
+        <option value="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" />
       </list>
     </option>
   </component>
@@ -389,15 +362,15 @@
               <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="locatization" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="items" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -764,16 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/SelectField.jsx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -878,23 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="48" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="97" column="74" selection-start-line="97" selection-start-column="74" selection-end-line="97" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/resources/texts/labels.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
@@ -904,8 +850,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/resources/texts/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        <state relative-caret-position="442">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-776">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="223" column="54" selection-start-line="223" selection-start-column="54" selection-end-line="223" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

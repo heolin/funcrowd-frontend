@@ -221,7 +221,7 @@ export default class ItemPanel extends React.Component {
 
                 <FeedbackPanel isOpen={this.state.item && this.state.confirmation}
                                onAccept={this.onFeedbackAccept}
-                               type={FeedbackTypes.BINARY}
+                               type={FeedbackTypes.NONE}
                                feedback={this.state.feedback}
                                annotation={this.state.annotation}/>
 
