@@ -49,15 +49,21 @@ export default class BountyHeader extends React.Component {
                 previousStatus: newStatus,
                 loading: false
             });
+            this.props.onUpdateStatus(userBounty);
         });
     }
 
+
     render() {
+        if (this.props.bounty == null)
+            return null;
+
         let bounty = this.props.bounty;
         let task = bounty.task;
         let progressBar = null;
         let bountyStatus = "CLOSED";
         let elements = null;
+        let classNameExtend = "";
 
         if (this.state.userBounty) {
             let userBounty = this.state.userBounty;
@@ -66,13 +72,24 @@ export default class BountyHeader extends React.Component {
             let annotationsDone = Math.min(userBounty.annotationsDone, bounty.annotationsTarget);
             progressBar = <ProgressBar progress={userBounty.progress}
                                        textAlign="right"
-                                       text={L.general.finished+" "+annotationsDone + "/" + bounty.annotationsTarget}/>;
+                                       text={L.general.finished + " " + annotationsDone + "/" + bounty.annotationsTarget}/>;
 
-            let reward = <span className="badge badge-secondary" style={{fontSize: "14px"}}>{L.bounty.labels.bountyNotFinished}</span>;
+            let reward = <span className="badge badge-secondary"
+                               style={{fontSize: "14px"}}>{L.bounty.labels.bountyNotFinished}</span>;
             if (userBounty.reward)
                 reward = <span className="badge badge-green" style={{fontSize: "14px"}}>{userBounty.reward}</span>;
 
-            let status = <div className={"badge " + statusStyle[bountyStatus]} style={{fontSize: "14px"}}>{L.bounty.status[bountyStatus]}</div>;
+            let status = <div className={"badge " + statusStyle[bountyStatus]}
+                              style={{fontSize: "14px"}}>{L.bounty.status[bountyStatus]}</div>;
+
+            let rewardsList = null;
+            if (this.state.userBounty.rewardsList.length > 0) {
+                rewardsList = <div>{L.bounty.labels.rewardsList}:&nbsp;
+                    <a className="bounty-link" onClick={this.props.showPreviousCodes}>Show codes</a>
+                </div>;
+                classNameExtend = " tasks-header-extended";
+            }
+
 
             elements = (
                 <div className="bounty-header-info">
@@ -82,6 +99,7 @@ export default class BountyHeader extends React.Component {
                         <div className="small" style={{margin: "15px 0"}}>
                             <div>{L.bounty.labels.status}:&nbsp;{status}</div>
                             <div>{L.bounty.labels.reward}:&nbsp;{reward}</div>
+                            {rewardsList}
                         </div>
                     </div>
                     {progressBar}
@@ -91,14 +109,15 @@ export default class BountyHeader extends React.Component {
 
         return (
             <div>
-                <div className="tasks-header-bar card-2-static"/>
-                <div className="row tasks-header">
+                <div className={"tasks-header-bar card-2-static" + classNameExtend}/>
+                <div className={"row tasks-header" + classNameExtend}>
                     <div className="col-md-12">
                         {elements}
                     </div>
                 </div>
             </div>
         );
+
     }
 }
 

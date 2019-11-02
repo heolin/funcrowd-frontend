@@ -28,7 +28,7 @@ export default class MissionCard extends React.Component {
         experience = (
             <p className="small">
                 <SmallIcon name="experience"/>
-                10 {L.general.experience}
+                {mission.totalExp} {L.general.experience}
             </p>);
 
 
@@ -45,7 +45,7 @@ export default class MissionCard extends React.Component {
                     </div>
                     <div className="mission-card-content">
                         <h4>{this.props.mission.name}</h4>
-                        <p className="small">{this.props.mission.description}</p>
+                        <p className="small mission-card-description">{this.props.mission.description}</p>
                         <p className="small">
                             <SmallIcon name="missions"/>
                             {this.props.mission.tasksCount} {L.general.missions}

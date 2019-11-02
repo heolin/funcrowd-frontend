@@ -1,12 +1,13 @@
 
 export default class UserBounty {
-    constructor(id, progress, annotationsDone, annotationsTarget, status, reward) {
+    constructor(id, progress, annotationsDone, annotationsTarget, status, reward, rewardsList) {
         this.id = id;
         this.progress = progress;
         this.annotationsDone = annotationsDone;
         this.annotationsTarget = annotationsTarget;
         this.status = status;
         this.reward = reward;
+        this.rewardsList = rewardsList ? rewardsList : [];
     }
 
     static fromJson(bounty_data) {
@@ -17,13 +18,14 @@ export default class UserBounty {
                 bounty_data.annotations_done,
                 bounty_data.annotations_target,
                 bounty_data.status,
-                bounty_data.reward
+                bounty_data.reward,
+                bounty_data.rewards_list
             );
             return userBounty;
         }
     }
 
-    get is_closed() {
+    get isClosed() {
         return this.status === "FINISHED" || this.status === "CLOSED";
     }
 

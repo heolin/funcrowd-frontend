@@ -4,6 +4,7 @@ import posed  from 'react-pose';
 import AchievementCard from "./AchievementCard";
 import AchievementsRepository from "../../logic/repositories/AchievementsRepository";
 import Loading from "../../components/Loading";
+import AchievementsManager from "../../logic/AchievementsManager";
 
 const ListContainer = posed.ul({
     enter: { staggerChildren: 50 },
@@ -19,32 +20,25 @@ export default class AchievementsMenu extends React.Component {
             unfinishedAchievements: null,
             loading: true
         };
+
+        this.onUpdate = this.onUpdate.bind(this);
     }
 
     componentDidMount() {
-        AchievementsRepository.all()
-            .then((achievements) => {
-                let finishAchievements = [];
-                let unfinishedAchievements = [];
-                achievements.forEach((achievement) => {
-                   if (achievement.status == "FINISHED" || achievement.status == "DONE")
-                       finishAchievements.push(achievement);
-                   else
-                       unfinishedAchievements.push(achievement);
-                });
-
-                this.setState({
-                    loading: false,
-                    unfinishedAchievements: unfinishedAchievements,
-                    finishedAchievements: finishAchievements
-                });
-            }).catch((error) => {
-                this.setState({ loading: false});
-                console.log(error)
-            });
+        AchievementsManager.addAchievementsChangeHandler(this.onUpdate);
+        AchievementsManager.update();
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
+    componentWillUnmount() {
+        AchievementsManager.removeAchievementsChangeHandler(this.onUpdate);
+    }
+
+    onUpdate() {
+        this.setState({
+            loading: false,
+            finishedAchievements: AchievementsManager.finishedAchievements,
+            unfinishedAchievements: AchievementsManager.unfinishedAchievements
+        });
     }
 
     render() {

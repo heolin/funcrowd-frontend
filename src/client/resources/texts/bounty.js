@@ -29,6 +29,10 @@ export default {
         reward: {
             en: "Reward code",
             pl: "Kod nagrody"
+        },
+        rewardsList: {
+            en: "Previous codes",
+            pl: "Poprzednie kody"
         }
     }
 }

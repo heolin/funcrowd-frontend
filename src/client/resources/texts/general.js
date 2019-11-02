@@ -14,5 +14,9 @@ export default {
     finished: {
         en: "Finished",
         pl: "Ukończono"
+    },
+    newest: {
+        en: "Newest",
+        pl: "Najnowsze"
     }
 }

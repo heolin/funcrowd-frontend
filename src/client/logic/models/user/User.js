@@ -1,12 +1,13 @@
 
 export default class User {
-    constructor(id, username, email, token, profile, group) {
+    constructor(id, username, email, token, profile, group, exp) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.token = token;
         this.profile = profile;
         this.group = group;
+        this.exp = exp;
     }
 
     static fromJson(user_data) {
@@ -15,7 +16,9 @@ export default class User {
             user_data.email,
             user_data.token,
             user_data.profile,
-            user_data.group);
+            user_data.group,
+            user_data.exp
+        );
         return user;
     }
 }

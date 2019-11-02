@@ -27,18 +27,8 @@ export default class BinaryFeedbackModal extends React.Component {
     }
 
     render() {
-        let score = 0;
         let feedback = this.state.feedback;
-
-        if (feedback) {
-            let sum = 0;
-            let count = 0;
-            for (const [key, value] of Object.entries(feedback.scores)) {
-                sum += value['ReferenceScore'];
-                count += 1;
-            }
-            score = sum / count;
-        }
+        let score = feedback ? feedback.score : 0;
 
         let image = feedbackWrong;
         let headerText = L.feedback.annotationWrong;

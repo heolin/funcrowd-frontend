@@ -29,4 +29,12 @@ export default class BountyRepository {
                 return userBounty;
             })
     }
+
+    static start(bountyId) {
+        return axios.get(ConfigManager.baseUrl+'/api/v1/bounty/'+bountyId+'/start', SessionManager.config)
+            .then((response) => {
+                let bounty = Bounty.fromJson(response.data);
+                return bounty;
+            })
+    }
 }

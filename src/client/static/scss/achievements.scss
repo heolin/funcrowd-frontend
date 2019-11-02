@@ -53,6 +53,9 @@ $icon-part-width: 115px;
 
 .achievement-icon-badge.finished{
   background: white;
+  border-color: $light-blue-color;
+  border-style: solid;
+  border-width: 2px;
 }
 
 .achievement-image img {
@@ -66,9 +69,23 @@ $icon-part-width: 115px;
   top: 10px;
 }
 
+.achievement-icon-image.finished img {
+  width: 60px;
+  left: 15px;
+  top: 15px;
+}
+
 .achivements-earned {
 }
 
 .achivements-to-earn {
   padding: 0 0 50px 0;
+}
+
+.achievement-circle-icon .achievement-icon-badge {
+  position: relative !important;
+}
+
+.achievement-circle-info {
+  padding-top: 10px;
 }

@@ -1,10 +1,14 @@
 import React from "react"
 import posed from 'react-pose';
-import {CircleImage} from "../../components/Image";
 import {BigIcon, Icon, SmallIcon} from "../../components/Icons";
 import ProgressBar from "../../components/ProgressBar";
 import BlackBackground from "../../components/BlackBackground";
-import {HorizontalLine} from "../../components/HorizontalLine";
+import UserManager from "../../logic/UserManager";
+import { Link } from 'react-router-dom';
+import LevelsConfig from "../../resources/levels";
+import L from "../../logic/locatization/LocalizationManager";
+import AchievementsManager from "../../logic/AchievementsManager";
+import AchievementCircle from "../achievements/AchievementCircle";
 
 
 const Sidebar = posed.nav({
@@ -20,8 +24,59 @@ const NavItem = posed.li({
 
 export class SideProfilePanel extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            exp: null,
+            finishedAchievementsCount: null,
+            unfinishedAchievementsCount: null,
+        };
+
+        this.onUpdate = this.onUpdate.bind(this);
+    }
+
+    componentWillMount() {
+        UserManager.addExperienceChangeHandler(this.onUpdate);
+        AchievementsManager.addAchievementsChangeHandler(this.onUpdate);
+        AchievementsManager.update();
+    }
+
+    componentWillUnmount() {
+        UserManager.removeExperienceChangeHandler(this.onUpdate);
+        AchievementsManager.removeAchievementsChangeHandler(this.onUpdate)
+    }
+
+    onUpdate() {
+        let states = {};
+
+        if (UserManager.user)
+            states['exp'] = UserManager.user.exp;
+
+        states['finishedAchievementsCount'] = AchievementsManager.finishedAchievements.length;
+        states['unfinishedAchievementsCount'] = AchievementsManager.unfinishedAchievements.length;
+
+        this.setState(states);
+    }
+
     render() {
-        let profileImage = require("../../static/img/common/avatar.jpg");
+        let nextLevel = Math.min(UserManager.level+1, Object.keys(LevelsConfig).length);
+        let expThreshold = LevelsConfig[nextLevel].threshold;
+        let expCurrent = 0;
+        let username = "";
+
+        if (UserManager.user) {
+            username = UserManager.user.username;
+            expCurrent = Math.min(UserManager.user.exp, expThreshold);
+        }
+        let expProgress = expCurrent / expThreshold;
+
+        let achievementsCurrent = this.state.finishedAchievementsCount;
+        let achievementsTotal = this.state.finishedAchievementsCount + this.state.unfinishedAchievementsCount;
+        let achievementsProgress = achievementsCurrent / achievementsTotal;
+
+        let achievementsLast = AchievementsManager.getLastFinished(3).map((achievement) =>
+            <AchievementCircle key={achievement.id} achievement={achievement}/>);
+
 
         return (
             <div>
@@ -32,21 +87,24 @@ export class SideProfilePanel extends React.Component {
                 <Sidebar className="little side-profile weight-bold"
                          pose={this.props.isOpen ? 'open' : 'closed'}>
                     <div className='row'>
-                        <div className="col-12">
+                        <div className="col-6">
                             <div onClick={this.props.hideSideProfile}>
                                 <Icon className="side-profile-close"
                                       name="go-sign"
                                       color="dark"/>
                             </div>
-                            <CircleImage className="side-profile-image" image={profileImage}/>
-                            <div className="side-profile-settings">
-                                <SmallIcon name="settings"/>
-                                <span className="little">settings</span>
-                            </div>
                         </div>
-                        <div className="col-12 text-center"
-                             style={{marginTop: "15px"}}>
-                            <h4>dzezi</h4>
+                        <div className="col-6 side-profile-settings">
+                            <Link to="/profile" onClick={this.props.hideSideProfile}>
+                                <div className="little">Zobacz profil</div>
+                            </Link>
+                            <Link to="/settings" onClick={this.props.hideSideProfile}>
+                                <div className="little">Ustawienia</div>
+                            </Link>
+                        </div>
+                        <div className="col-12 side-profile-username text-center">
+                            <div>Twój nick</div>
+                            <h4>{username}</h4>
                         </div>
                     </div>
                     <div className='row'>
@@ -65,52 +123,35 @@ export class SideProfilePanel extends React.Component {
                     </div>
                     <div className='row' style={{marginTop: "30px", marginBottom: "30px"}}>
                         <div className="col-6 text-left">
-                            <div>POZIOM</div>
+                            <div>{L.levels.level} {UserManager.level}: {L.levels["level"+UserManager.level].toUpperCase()}</div>
                         </div>
                         <div className="col-6 text-right">
-                            <div>234<SmallIcon name="experience"/></div>
+                            <div>{expCurrent}/{expThreshold}<SmallIcon name="experience"/></div>
                         </div>
                         <div className="col-12">
                             <ProgressBar className="side-profile-progress"
-                                         bg="light-blue" fg="blue" progress={0.32}/>
-                            <HorizontalLine style={{marginTop: "20px"}} color="orange"/>
+                                         bg="light-blue" fg="blue" progress={expProgress}/>
                         </div>
                     </div>
                     <div className='row' style={{marginBottom: "30px"}}>
                         <div className="col-6 text-left">
-                            <div>OSIĄGNIĘCIA</div>
+                            <div>{L.labels.achievements.toUpperCase()}</div>
                         </div>
                         <div className="col-6 text-right">
-                            <div>234<SmallIcon name="achievements"/></div>
+                            <div>{achievementsCurrent}/{achievementsTotal}<SmallIcon name="achievements"/></div>
                         </div>
                         <div className="col-12">
                             <ProgressBar className="side-profile-progress"
-                                         bg="light-blue" fg="blue" progress={0.32}/>
-                            <HorizontalLine style={{marginTop: "20px"}} color="orange"/>
+                                         bg="light-blue" fg="blue" progress={achievementsProgress}/>
                         </div>
                     </div>
                     <div className='row'>
                         <div className="col-12">
-                            <div style={{marginBottom: "10px"}}>NAJNOWSZE</div>
+                            <div style={{marginBottom: "10px"}}>{L.general.newest.toUpperCase()}</div>
                         </div>
-                        <div className="col-4 text-center">
-                            <Icon className="achievement-image" name="unknown"/>
-                            <div className="small weight-normal line-height-1" style={{paddingTop: "10px"}}>
-                                PIERWSZE KROKI
-                            </div>
-                        </div>
-                        <div className="col-4 text-center">
-                            <Icon className="achievement-image" name="unknown"/>
-                            <div className="small weight-normal line-height-1" style={{paddingTop: "10px"}}>
-                                PIERWSZE KROKI
-                            </div>
-                        </div>
-                        <div className="col-4 text-center">
-                            <Icon className="achievement-image" name="unknown"/>
-                            <div className="small weight-normal line-height-1" style={{paddingTop: "10px"}}>
-                                PIERWSZE KROKI
-                            </div>
-                        </div>
+                    </div>
+                    <div className="row text-center">
+                        {achievementsLast}
                     </div>
                 </Sidebar>
             </div>

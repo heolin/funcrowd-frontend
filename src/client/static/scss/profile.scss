@@ -1,0 +1,29 @@
+@import 'colors';
+
+
+.level-card {
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.level-card-progress .progress {
+  height: 10px !important;
+}
+
+.level-card-exp {
+  text-align: right;
+}
+
+.level-card-current {
+  border-color: $green-color;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.level-card-icon {
+  width: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

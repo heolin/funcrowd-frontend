@@ -1,12 +1,13 @@
 
 export default class Mission {
-    constructor(id, name, description, tasksCount, achievementsCount, metadata={}) {
+    constructor(id, name, description, tasksCount, achievementsCount, metadata={}, totalExp) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.tasksCount = tasksCount;
         this.achievementsCount = achievementsCount,
         this.metadata = metadata;
+        this.totalExp = totalExp;
     }
 
     static fromJson(mission_data) {
@@ -16,7 +17,8 @@ export default class Mission {
             mission_data.description,
             mission_data.tasks_count,
             mission_data.achievementsCount,
-            mission_data.metadata
+            mission_data.metadata,
+            mission_data.total_exp
         );
         return mission;
     }

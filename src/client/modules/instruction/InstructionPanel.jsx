@@ -9,12 +9,12 @@ const Modal = posed.div({
     open: {
         opacity: 1.0,
         x: "-50%",
-        y: "-44%"
+        y: "-45%"
     },
     closed: {
         opacity: 0,
         x: "-50%",
-        y: "-34%"
+        y: "-35%"
     }
 });
 

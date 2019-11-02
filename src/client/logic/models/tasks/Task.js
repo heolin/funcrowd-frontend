@@ -1,12 +1,13 @@
 
 export default class Task {
-    constructor(id, name, description, instruction, keywords, metadata) {
+    constructor(id, name, description, instruction, keywords, metadata, totalExp) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.instruction = instruction;
         this.keywords = keywords;
         this.metadata = metadata;
+        this.totalExp = totalExp;
     }
 
     static fromJson(task_data) {
@@ -16,7 +17,8 @@ export default class Task {
             task_data.description,
             task_data.instruction,
             task_data.keywords,
-            task_data.metadata
+            task_data.metadata,
+            task_data.total_exp
         );
         return task;
     }

@@ -100,10 +100,10 @@ export default class ItemForm extends React.Component {
 
         let item = this.props.item;
         let payload = {data: this.getAnnotationData(), skipped: skip};
+        this.setState({blocked: true, loading: true});
 
         ItemRepository.postAnnotation(item.id, payload)
             .then((annotationResponse) => {
-                this.setState({blocked: true, loading: true});
                 this.props.onAnnotationPost(annotationResponse);
             })
             .catch((error) => {

@@ -19,6 +19,9 @@ import RegisterPage from "./modules/login/RegisterPage";
 import Loading from "./components/Loading";
 import ResetPasswordPage from "./modules/login/ResetPasswordPage";
 import ProfileTypes from "./logic/config/ProfileTypes";
+import UserManager from "./logic/UserManager";
+import ProfilePage from "./modules/profile/ProfilePage";
+import BountyItemPanel from "./modules/bounty/BountyItemPanel";
 
 
 const RouteContainer = posed.div({
@@ -74,6 +77,8 @@ class Base extends React.Component {
                     this.onLogin(user, true);
                     this.setState({checkingParams: false});
                 });
+            } else {
+                this.setState({checkingParams: false});
             }
         } else {
             this.setState({checkingParams: false});
@@ -91,7 +96,7 @@ class Base extends React.Component {
 
     redirectToHome() {
         if (this.props.location.pathname === "/") {
-            if (SessionManager.currentUser.profile == ProfileTypes.NORMAL) {
+            if (UserManager.user.profile == ProfileTypes.NORMAL) {
                 this.props.history.push('/missions');
             } else {
                 this.props.history.push('/bounties');
@@ -180,14 +185,16 @@ class Base extends React.Component {
                                                                             user={this.state.user} {...props}/>}/>
                                     <Route path="/about"
                                            render={(props) => <AboutPage user={this.state.user} {...props}/>}/>
+                                    <Route path="/profile"
+                                          render={(props) => <ProfilePage usr={this.state.user} {...props}/>}/>
                                     <Route path="/achievements"
                                            render={(props) => <AchievementsMenu user={this.state.user} {...props}/>}/>
                                     <Route path="/bounty/:id"
-                                           render={(props) => <ItemPanel task={this.state.task}
-                                                                         user={this.state.user}
-                                                                         bounty={this.state.bounty}
-                                                                         onBountySelect={this.onBountySelect}
-                                                                         {...props}/>}/>
+                                           render={(props) => <BountyItemPanel task={this.state.task}
+                                                                               user={this.state.user}
+                                                                               bounty={this.state.bounty}
+                                                                               onBountySelect={this.onBountySelect}
+                                                                               {...props}/>}/>
                                     <Route path="/bounties"
                                            render={(props) => <BountyMenu onBountySelect={this.onBountySelect}
                                                                           user={this.state.user} {...props}/>}/>

@@ -1,3 +1,5 @@
+import UserManager from "./UserManager";
+
 let USER = "funcrowd_user";
 
 
@@ -5,19 +7,17 @@ class _SessionManager {
     constructor() {
         this.token = null;
         this.config = {};
-        this.isLogged = false;
-        this.currentUser = null;
     }
 
     login(user, saveUser) {
         this.token = user.token;
         this.isLogged = true;
-        this.currentUser = user;
         this.config = {
             headers: {
                 Authorization: "Token " + user.token
             }
         };
+        UserManager.setup(user);
         sessionStorage.setItem(USER, JSON.stringify(user));
         if (saveUser) {
             localStorage.setItem(USER, JSON.stringify(user));
@@ -28,9 +28,9 @@ class _SessionManager {
         this.isLogged = false;
         this.token = null;
         this.config = {};
-        this.currentUser = null;
         localStorage.removeItem(USER);
         sessionStorage.removeItem(USER);
+        UserManager.logout();
     }
 
     getUser() {

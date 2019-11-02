@@ -1,6 +1,8 @@
 import axios from 'axios';
 import User from "../../logic/models/user/User";
+import SessionManager from "../SessionManager";
 import ConfigManager from "../config/ConfigManager";
+import UserStatus from "../models/user/UserStatus";
 
 
 export default class UserRepository {
@@ -32,6 +34,12 @@ export default class UserRepository {
         }).then((response) => {
             let user = User.fromJson(response.data);
             return user;
+        });
+    }
+    static status() {
+        return axios.get(ConfigManager.baseUrl+'/api/v1/users/status', SessionManager.config).then((response) => {
+            let status = UserStatus.fromJson(response.data);
+            return status;
         });
     }
 }

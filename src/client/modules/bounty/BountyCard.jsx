@@ -34,7 +34,7 @@ export default class BountyCard extends React.Component {
                 onClick = this.props.onSelect;
             } else if (userBounty.progress === 1) {
                 bountyStatus = L.bounty.status.FINISHED;
-                icon = "checked";
+                icon = "tick-sign-green";
                 className = "card-2";
                 onClick = this.props.onSelect;
             }
@@ -44,6 +44,11 @@ export default class BountyCard extends React.Component {
                 <ProgressBar progress={userBounty.progress} textAlign="right"
                              text={"Ukończono "+annotationsDone + "/" + bounty.annotationsTarget}/>
             );
+        } else if (bounty.closed === false) {
+            icon = "missions";
+            bountyStatus = L.bounty.status.NEW;
+            className = "card-2";
+            onClick = this.props.onSelect;
         }
 
 

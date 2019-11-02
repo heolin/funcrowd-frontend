@@ -53,7 +53,6 @@ export default class NavbarMenu extends React.Component {
             <ul className="navbar-nav ml-auto small">
                 {elements}
 
-
                 <li className="nav-item" onClick={this.props.onLogout}>
                     <span className="nav-link">{L.labels.logout}</span>
                 </li>

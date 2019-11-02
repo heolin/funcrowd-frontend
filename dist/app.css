@@ -2839,8 +2839,8 @@ small, .small {
   border: solid 3px #5495b1 !important; }
   .btn-primary:hover, .btn-primary:active {
     color: white !important;
-    background: #32444C !important;
-    border-color: #32444C !important; }
+    background: #48849d !important;
+    border-color: #48849d !important; }
 
 .btn-orange {
   color: #de9865 !important;
@@ -3352,7 +3352,10 @@ small, .small {
   box-shadow: 0px 0px 12px -3px rgba(0, 0, 0, 0.7); }
 
 .achievement-icon-badge.finished {
-  background: white; }
+  background: white;
+  border-color: #bde1ef;
+  border-style: solid;
+  border-width: 2px; }
 
 .achievement-image img {
   width: 70px; }
@@ -3363,8 +3366,19 @@ small, .small {
   left: 10px;
   top: 10px; }
 
+.achievement-icon-image.finished img {
+  width: 60px;
+  left: 15px;
+  top: 15px; }
+
 .achivements-to-earn {
   padding: 0 0 50px 0; }
+
+.achievement-circle-icon .achievement-icon-badge {
+  position: relative !important; }
+
+.achievement-circle-info {
+  padding-top: 10px; }
 
 .jello-horizontal {
   -webkit-animation: jello-horizontal 0.9s both;
@@ -3466,6 +3480,21 @@ small, .small {
     -webkit-transform: translateX(-8px);
     transform: translateX(-8px); } }
 
+.start-bounty-panel {
+  padding: 60px; }
+
+.restart-bounty-panel {
+  padding: 60px; }
+
+.not-finished-bounty-panel {
+  padding: 60px; }
+
+.bounty-link {
+  text-decoration: underline !important;
+  cursor: pointer; }
+
+.bounty-rewards-codes-panel {
+  padding: 60px; }
 
 .color-white {
   color: white; }
@@ -3980,6 +4009,9 @@ small, .small {
   height: 84vh;
   transform: translateX(-50%) translateY(-44%) translateZ(0px); }
 
+.instruction-steps li {
+  margin: 10px 0; }
+
 .card-1-static, .card-1, .item-panel-group {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 0px 4px rgba(0, 0, 0, 0.18); }
 
@@ -4375,6 +4407,9 @@ small, .small {
   padding: 25px;
   color: white; }
 
+.mission-card-description {
+  min-height: 24px; }
+
 .modal-window {
   position: fixed;
   top: 50%;
@@ -4523,6 +4558,79 @@ small, .small {
 .navbar-login-button {
   width: 140px; }
 
+.color-white {
+  color: white; }
+
+.color-blue {
+  color: #5495b1; }
+
+.color-light-blue {
+  color: #bde1ef; }
+
+.color-dark {
+  color: #32444C; }
+
+.color-green {
+  color: #a9b852; }
+
+.color-orange {
+  color: #cfbca1; }
+
+.dark-color-orange {
+  color: #9c8c79; }
+
+.color-bright-orange {
+  color: #de9865; }
+
+.border-color-orange {
+  border-color: #cfbca1; }
+
+.border-color-dark-orange {
+  border-color: #9c8c79; }
+
+.bg-white {
+  background: white; }
+
+.bg-blue {
+  background: #5495b1; }
+
+.bg-light-blue {
+  background: #bde1ef; }
+
+.bg-dark {
+  background: #32444C; }
+
+.bg-green {
+  background: #a9b852; }
+
+.bg-orange {
+  background-color: #cfbca1; }
+
+.bg-dark-orange {
+  background-color: #9c8c79; }
+
+.level-card {
+  margin: 20px;
+  padding: 20px;
+  position: relative; }
+
+.level-card-progress .progress {
+  height: 10px !important; }
+
+.level-card-exp {
+  text-align: right; }
+
+.level-card-current {
+  border-color: #a9b852;
+  border-style: solid;
+  border-width: 2px; }
+
+.level-card-icon {
+  width: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px; }
+
 .side-profile {
   width: 430px;
   background: white;
@@ -4545,14 +4653,14 @@ small, .small {
   position: absolute;
   cursor: pointer; }
 
-.side-profile-close svg {
+.side-profile-close img {
   width: 24px; }
 
 .side-profile-block {
   margin-top: 25px;
   height: 60px; }
 
-.side-profile-block-icon svg {
+.side-profile-block-icon img {
   padding-bottom: 8px;
   margin-top: -23px; }
 
@@ -4560,9 +4668,13 @@ small, .small {
   height: 12px !important; }
 
 .side-profile-settings {
-  position: absolute;
-  top: 10px;
-  right: calc(50% - 110px); }
+  text-align: right; }
+
+.side-profile-username {
+  margin-top: -30px;
+  pointer-events: none;
+  margin-bottom: 30px;
+  pointer-events: none; }
 
 .black-background {
   position: fixed;
@@ -12250,8 +12362,8 @@ small,
   border: solid 3px #5495b1 !important; }
   .btn-primary:hover, .btn-primary:active {
     color: white !important;
-    background: #32444C !important;
-    border-color: #32444C !important; }
+    background: #48849d !important;
+    border-color: #48849d !important; }
 
 .btn-orange {
   color: #de9865 !important;
@@ -12457,6 +12569,9 @@ small,
   height: 84vh;
   transform: translateX(-50%) translateY(-44%) translateZ(0px); }
 
+.instruction-steps li {
+  margin: 10px 0; }
+
 .card-1-static, .card-1, .achievement-card, .item-panel-group {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 0px 4px rgba(0, 0, 0, 0.18); }
 
@@ -12597,7 +12712,10 @@ small,
   box-shadow: 0px 0px 12px -3px rgba(0, 0, 0, 0.7); }
 
 .achievement-icon-badge.finished {
-  background: white; }
+  background: white;
+  border-color: #bde1ef;
+  border-style: solid;
+  border-width: 2px; }
 
 .achievement-image img {
   width: 70px; }
@@ -12608,8 +12726,19 @@ small,
   left: 10px;
   top: 10px; }
 
+.achievement-icon-image.finished img {
+  width: 60px;
+  left: 15px;
+  top: 15px; }
+
 .achivements-to-earn {
   padding: 0 0 50px 0; }
+
+.achievement-circle-icon .achievement-icon-badge {
+  position: relative !important; }
+
+.achievement-circle-info {
+  padding-top: 10px; }
 
 .card-1-static, .card-1, .achievement-card, .item-panel-group {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 0px 4px rgba(0, 0, 0, 0.18); }
@@ -13062,6 +13191,10 @@ body {
   /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */ }
 
+.col-02 {
+  flex: 0 0 20%;
+  max-width: 20%; }
+
 .color-white {
   color: white; }
 
@@ -13285,6 +13418,9 @@ small, .small, .task-card {
   height: 200px;
   position: relative;
   padding-top: 16px; }
+
+.tasks-header-extended {
+  height: 220px !important; }
 
 .tasks-header-info {
   margin-top: 30px; }

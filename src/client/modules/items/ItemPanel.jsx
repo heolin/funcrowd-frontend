@@ -16,7 +16,7 @@ import SubmitButton from "./components/SubmitButton";
 import ItemHeader from "./ItemHeader";
 import BountyHeader from "../bounty/BountyHeader";
 import Loading from "../../components/Loading";
-import FeedbackTypes from "../feedback/FeedbackTypes";
+import UserManager from "../../logic/UserManager";
 
 export default class ItemPanel extends React.Component {
 
@@ -89,6 +89,16 @@ export default class ItemPanel extends React.Component {
         }
     }
 
+    startNextBounty() {
+        let bountyId = this.props.match.params.id;
+        this.setState({
+            loading: true
+        });
+        BountyRepository.start(bountyId).then((bounty) => {
+            this.props.onBountySelect(bounty);
+        });
+    }
+
     getFirstItem() {
         let task = this.props.task;
         ItemRepository.getFirstItem(task.id)
@@ -120,6 +130,8 @@ export default class ItemPanel extends React.Component {
     }
 
     onAnnotationPost(annotationResponse) {
+        UserManager.update();
+
         let feedback = null;
         if (ConfigManager.config.showFeedback) {
             feedback = annotationResponse.annotation.feedback;
@@ -221,8 +233,6 @@ export default class ItemPanel extends React.Component {
 
                 <FeedbackPanel isOpen={this.state.item && this.state.confirmation}
                                onAccept={this.onFeedbackAccept}
-                               type={FeedbackTypes.NONE}
-                               feedback={this.state.feedback}
                                annotation={this.state.annotation}/>
 
                 <div className="row">
