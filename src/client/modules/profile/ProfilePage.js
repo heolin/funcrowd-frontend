@@ -3,6 +3,7 @@ import ProfilePageHeader from "./ProfilePageHeader";
 import LevelsConfig from "../../resources/levels";
 import LevelCard from "./LevelCard";
 import UserManager from "../../logic/UserManager";
+import {Footer} from "../../Footer";
 
 
 export default class ProfilePage extends React.Component {
@@ -41,20 +42,22 @@ export default class ProfilePage extends React.Component {
         });
 
         return (
-            <div className="container base-row">
+            <div className="container-fluid base-row">
                 <ProfilePageHeader/>
-                <div className="row tasks-row" style={{paddingTop: "60px"}}>
-                    <div className="col-sm-12">
-                        <h3>Twój poziom</h3>
-                        <p>Za rozwiązywanie zadań otrzymujesz gwiazdki. Im więcej gwiazdek, tym wyższy poziom doświadczenia!</p>
-                        <div className="text-center">
-                            <h5>Rozwiązałeś/łaś</h5>
-                            <h3>14 z 30 zadań</h3>
+                <div className="container">
+                    <div className="row tasks-row" style={{paddingTop: "60px"}}>
+                        <div className="col-sm-12">
+                            <h3>Twój poziom</h3>
+                            <p>Za rozwiązywanie zadań otrzymujesz gwiazdki. Im więcej gwiazdek, tym wyższy poziom doświadczenia!</p>
+                            <div className="text-center">
+                                <h5>Rozwiązałeś/łaś</h5>
+                                <h3>14 z 30 zadań</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-sm-12">
-                        <div className="row">
-                            {levelCards}
+                        <div className="col-sm-12">
+                            <div className="row">
+                                {levelCards}
+                            </div>
                         </div>
                     </div>
                 </div>

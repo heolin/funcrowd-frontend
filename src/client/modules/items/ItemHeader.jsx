@@ -17,35 +17,43 @@ export default class ItemHeader extends React.Component {
 
         return (
             <div>
-                <div className="tasks-header-bar"/>
-                <div className="row tasks-header">
-                    <div className="col-md-12">
-                        <div>
-                            <Breadcrumbs>
-                                <BreadcrumbItem label={L.labels.missions} link="/missions"/>
-                                <BreadcrumbItem label={L.labels.missions} link="/mission/2/tasks"/>
-                                <BreadcrumbItem label="Zadanie"/>
-                            </Breadcrumbs>
-                        </div>
-                        <div className="tasks-header-info">
-                            <div className="color-white">
-                                <h3 style={{marginBottom: 0}}>{task.name}</h3>
-                                <span className="small">{task.description}</span>
+                <div className="tasks-header-bar row">
+                    <div className="container">
+                        <div className="row tasks-header">
+                            <div className="col-md-8 col-sm-12">
+                                <div style={{marginTop: "10px"}}>
+                                    <Breadcrumbs>
+                                        <BreadcrumbItem label={L.labels.missions} link="/missions"/>
+                                        <BreadcrumbItem label={L.labels.missions} link="/mission/2/tasks"/>
+                                        <BreadcrumbItem label="Zadanie"/>
+                                    </Breadcrumbs>
+                                </div>
+                                <div className="tasks-header-info">
+                                    <div className="color-white">
+                                        <h3 style={{marginBottom: 0}}>{task.name}</h3>
+                                        <span className="small tasks-header-info-text">{task.description}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4">
+                                {imageElement}
                             </div>
                         </div>
-                        {imageElement}
                     </div>
                 </div>
-                <div className="tasks-summary-bar card-1-static"/>
-                <div className="row tasks-summary">
-                    <div className="col-sm-12 col-md-8 justify-items">
-                        <div className="d-inline-block">
-                            <SmallIcon name="achievements"/>
-                            <small> 10 {L.general.achievements}</small>
-                        </div>
-                        <div className="d-inline-block">
-                            <SmallIcon name="experience"/>
-                            <small> 10 {L.general.experience}</small>
+                <div className="tasks-summary-bar card-1-static row">
+                    <div className="container">
+                        <div className="row tasks-summary">
+                            <div className="col-sm-12 col-md-8 justify-items">
+                                <div className="d-inline-block">
+                                    <SmallIcon name="achievements"/>
+                                    <small> 10 {L.general.achievements}</small>
+                                </div>
+                                <div className="d-inline-block">
+                                    <SmallIcon name="experience"/>
+                                    <small> 10 {L.general.experience}</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

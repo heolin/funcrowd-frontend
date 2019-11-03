@@ -21,6 +21,8 @@ import ItemPanel from "../items/ItemPanel";
 import RestartBountyPanel from "./RestartBountyPanel";
 import NotFinishedBountyPanel from "./NotFinishedBountyPanel";
 import RewardCodesListPanel from "./RewardCodesListPanel";
+import {Footer} from "../../Footer";
+import SessionManager from "../../logic/SessionManager";
 
 
 export default class BountyItemPanel extends ItemPanel {
@@ -93,6 +95,7 @@ export default class BountyItemPanel extends ItemPanel {
                     this.checkInstruction();
                     this.checkRestartBounty();
                 } else if (!this.state.loadingStart) {
+                    SessionManager.cache['action'] = null;
                     this.setState({
                         loading: false,
                         startPanel: true
@@ -138,9 +141,9 @@ export default class BountyItemPanel extends ItemPanel {
     }
 
     checkRestartBounty() {
-        if (this.props.location.search) {
-            let params = queryString.parse(this.props.location.search);
-            if ("action" in params && params['action'] === 'startBounty') {
+        let action = SessionManager.cache['action'];
+        if (action) {
+            if (action === 'startBounty') {
                 if (this.state.bounty.userBounty.status === "FINISHED") {
                     this.setState({
                         restartPanel: true
@@ -150,6 +153,7 @@ export default class BountyItemPanel extends ItemPanel {
                         notFinishedPanel: true,
                     });
                 }
+                SessionManager.cache['action'] = null;
             }
         }
     }
@@ -222,7 +226,7 @@ export default class BountyItemPanel extends ItemPanel {
 
 
         return (
-            <div className="container base-row">
+            <div className="container-fluid base-row">
                 {bountyHeader}
 
                 <InstructionPanel isOpen={this.state.item && this.state.instruction}
@@ -248,11 +252,12 @@ export default class BountyItemPanel extends ItemPanel {
                 <RewardCodesListPanel bounty={this.state.bounty}
                                       isOpen={this.state.previousCodesPanel}
                                       onClose={this.closePreviousCodes}/>
-
-                <div className="row">
-                    {bounty}
-                    {itemForm}
-                    {noitems}
+                <div className="container">
+                    <div className="row">
+                        {bounty}
+                        {itemForm}
+                        {noitems}
+                    </div>
                 </div>
             </div>
         );

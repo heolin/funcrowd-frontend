@@ -5,11 +5,14 @@ import AchievementCard from "./AchievementCard";
 import AchievementsRepository from "../../logic/repositories/AchievementsRepository";
 import Loading from "../../components/Loading";
 import AchievementsManager from "../../logic/AchievementsManager";
+import {Footer} from "../../Footer";
+
 
 const ListContainer = posed.ul({
     enter: { staggerChildren: 50 },
     exit: { staggerChildren: 20, staggerDirection: -1 }
 });
+
 
 export default class AchievementsMenu extends React.Component {
 
@@ -61,23 +64,29 @@ export default class AchievementsMenu extends React.Component {
         );
 
         return (
-            <div className="container base-row-padding">
-                <div>
-                    <div className="achivements-earned">
-                        <h3>Zdobyte</h3>
-                        534543
+            <div className="container-fluid base-row-padding">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 achivements-earned">
+                            <h3>Zdobyte</h3>
+                            <p>
+                                534543
+                            </p>
+                            <div className="row achievements-row">
+                                {finishedAchievements}
+                            </div>
+                        </div>
                     </div>
-                    <div className="row achievements-row">
-                        {finishedAchievements}
-                    </div>
-                </div>
-                <div>
-                    <div className="achivements-to-earn">
-                        <h3>Do zdobycia</h3>
-                        534543
-                    </div>
-                    <div className="row achievements-row">
-                        {unfinishedAchievements}
+                    <div className="row">
+                        <div className="col-12 achivements-to-earn">
+                            <h3>Do zdobycia</h3>
+                            <p>
+                                test
+                            </p>
+                            <div className="row achievements-row">
+                                {unfinishedAchievements}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

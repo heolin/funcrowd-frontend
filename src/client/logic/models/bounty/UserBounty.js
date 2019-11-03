@@ -7,7 +7,7 @@ export default class UserBounty {
         this.annotationsTarget = annotationsTarget;
         this.status = status;
         this.reward = reward;
-        this.rewardsList = rewardsList ? rewardsList : [];
+        this.rewardsList = rewardsList || [];
     }
 
     static fromJson(bounty_data) {

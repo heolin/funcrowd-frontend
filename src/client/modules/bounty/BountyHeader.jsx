@@ -94,7 +94,7 @@ export default class BountyHeader extends React.Component {
             elements = (
                 <div className="bounty-header-info">
                     <div className="color-white">
-                        <h3 style={{marginBottom: 0}}>#{bounty.id} {task.name}</h3>
+                        <h3 style={{marginBottom: 0, marginTop: "10px"}}>#{bounty.id} {task.name}</h3>
                         <span className="small">{task.description}</span>
                         <div className="small" style={{margin: "15px 0"}}>
                             <div>{L.bounty.labels.status}:&nbsp;{status}</div>
@@ -108,11 +108,12 @@ export default class BountyHeader extends React.Component {
         }
 
         return (
-            <div>
-                <div className={"tasks-header-bar card-2-static" + classNameExtend}/>
-                <div className={"row tasks-header" + classNameExtend}>
-                    <div className="col-md-12">
-                        {elements}
+            <div className={"tasks-header-bar row card-2-static" + classNameExtend}>
+                <div className="container">
+                    <div className={"row tasks-header" + classNameExtend}>
+                        <div className="col-md-12">
+                            {elements}
+                        </div>
                     </div>
                 </div>
             </div>

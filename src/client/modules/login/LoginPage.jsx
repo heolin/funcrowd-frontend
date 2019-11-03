@@ -4,6 +4,7 @@ import Loading from "../../components/Loading";
 import CheckboxElement from "../items/components/element/CheckboxElement";
 import { Link } from 'react-router-dom';
 import L from "../../logic/locatization/LocalizationManager";
+import {Footer} from "../../Footer";
 
 
 export default class LoginPage extends React.Component {
@@ -69,46 +70,48 @@ export default class LoginPage extends React.Component {
             );
         }
         return (
-            <div className="container base-row">
-                <div className="row">
-                    <div className="login-window col-md-6 card-3-static">
-                        <h3 className="text-center login-header">{L.login.loginHeader}</h3>
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="form-group">
-                                <input id="login"
-                                       type="login"
-                                       className="login-input form-control"
-                                       value={this.state.login}
-                                       onChange={this.handleChange}
-                                       placeholder={L.login.login}/>
-                            </div>
-                            <div className="form-group">
-                                <input id="password"
-                                       type="password"
-                                       className="login-input form-control"
-                                       value={this.state.password}
-                                       onChange={this.handleChange}
-                                       placeholder={L.login.password}/>
-                            </div>
-                            <div className="from-group little" style={{position: "relative"}}>
-                                <CheckboxElement className="login-checkbox"
-                                                 labelClassName="login-checkbox-label"
-                                                 name='stayLoggedIn'
-                                                 value={this.state.stayLoggedIn}
-                                                 onChange={this.handleChange}
-                                                 label={L.login.rememberMe}/>
-                                <div className="login-reset-password-link login-link">
-                                    <Link to="/resetpassword">
-                                        {L.login.forgotPassword}
-                                    </Link>
+            <div className="container-fluid base-row">
+                <div className="container">
+                    <div className="row">
+                        <div className="login-window col-lg-6 col-md-10 col-12 card-3-static">
+                            <h3 className="text-center login-header">{L.login.loginHeader}</h3>
+                            <form onSubmit={this.handleSubmit}>
+                                <div className="form-group">
+                                    <input id="login"
+                                           type="login"
+                                           className="login-input form-control"
+                                           value={this.state.login}
+                                           onChange={this.handleChange}
+                                           placeholder={L.login.login}/>
                                 </div>
-                            </div>
-                            {errorMessage}
-                            <button type="submit"
-                                 disabled={!this.validateForm()}
-                                 className="btn btn-orange-primary login-button">Zaloguj</button>
-                        </form>
+                                <div className="form-group">
+                                    <input id="password"
+                                           type="password"
+                                           className="login-input form-control"
+                                           value={this.state.password}
+                                           onChange={this.handleChange}
+                                           placeholder={L.login.password}/>
+                                </div>
+                                <div className="from-group little" style={{position: "relative"}}>
+                                    <CheckboxElement className="login-checkbox"
+                                                     labelClassName="login-checkbox-label"
+                                                     name='stayLoggedIn'
+                                                     value={this.state.stayLoggedIn}
+                                                     onChange={this.handleChange}
+                                                     label={L.login.rememberMe}/>
+                                    <div className="login-reset-password-link login-link">
+                                        <Link to="/resetpassword">
+                                            {L.login.forgotPassword}
+                                        </Link>
+                                    </div>
+                                </div>
+                                {errorMessage}
+                                <button type="submit"
+                                     disabled={!this.validateForm()}
+                                     className="btn btn-orange-primary login-button">Zaloguj</button>
+                            </form>
 
+                        </div>
                     </div>
                 </div>
             </div>

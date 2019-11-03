@@ -11,6 +11,7 @@ $dark-bright-orange-color: #c97c45;
 $orange-color: rgb(207, 188, 161);
 $dark-orange-color: rgb(156, 140, 121);
 $red-color: #e05e5e;
+$black-blue-color: #32434c;
 
 
 .color-white {
@@ -81,4 +82,8 @@ $red-color: #e05e5e;
 
 .bg-dark-orange {
   background-color: $dark-orange-color;
+}
+
+.bg-black-blue {
+  background: $black-blue-color;
 }

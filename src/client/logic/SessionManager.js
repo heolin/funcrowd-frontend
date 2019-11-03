@@ -7,6 +7,9 @@ class _SessionManager {
     constructor() {
         this.token = null;
         this.config = {};
+        this.cache = {
+            'action': null
+        };
     }
 
     login(user, saveUser) {

@@ -20,15 +20,19 @@ export default class MissionCard extends React.Component {
 
         if (mission.achievementsCount)
             achievements = (
-                <p className="small">
+                <p className="mission-card-label">
                     <SmallIcon name="achievements"/>
-                    {mission.achievementsCount} {L.general.achievements}
+                    <span className="mission-card-label-text">
+                        {mission.achievementsCount} {L.general.achievements}
+                    </span>
                 </p>);
 
         experience = (
-            <p className="small">
+            <p className="mission-card-label">
                 <SmallIcon name="experience"/>
-                {mission.totalExp} {L.general.experience}
+                <span className="mission-card-label-text">
+                    {mission.totalExp} {L.general.experience}
+                </span>
             </p>);
 
 
@@ -44,11 +48,15 @@ export default class MissionCard extends React.Component {
                         </svg>
                     </div>
                     <div className="mission-card-content">
-                        <h4>{this.props.mission.name}</h4>
-                        <p className="small mission-card-description">{this.props.mission.description}</p>
-                        <p className="small">
+                        <div className="mission-card-title">
+                            <h4>{this.props.mission.name}</h4>
+                            <span className="small mission-card-description">{this.props.mission.description}</span>
+                        </div>
+                        <p className="mission-card-label">
                             <SmallIcon name="missions"/>
-                            {this.props.mission.tasksCount} {L.general.missions}
+                            <span className="mission-card-label-text">
+                                {this.props.mission.tasksCount} {L.general.missions}
+                            </span>
                         </p>
                         {achievements}
                         {experience}

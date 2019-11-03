@@ -8,8 +8,8 @@ export default {
         pl: "osiągnięcia"
     },
     experience: {
-        en: "experience points",
-        pl: "punkty doświadczenia"
+        en: "exp",
+        pl: "pkt"
     },
     finished: {
         en: "Finished",

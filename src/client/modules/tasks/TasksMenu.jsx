@@ -12,6 +12,7 @@ import TaskProgressRepository from "../../logic/repositories/TaskProgressReposit
 import MissionProgressRepository from "../../logic/repositories/MissionProgressRepository";
 import Loading from "../../components/Loading";
 import AchievementsRepository from "../../logic/repositories/AchievementsRepository";
+import {Footer} from "../../Footer";
 
 const ListContainer = posed.div({
     enter: { staggerChildren: 50 },
@@ -138,28 +139,30 @@ export default class TasksMenu extends React.Component {
         );
 
         return (
-            <div className="container base-row">
+            <div className="container-fluid base-row">
                 <TaskHeader mission={this.props.mission} progress={this.state.progress}/>
-                <div className="row tasks-row">
-                    <div className="col-md-12 col-lg-8">
-                        <div className="tasks-introduction">
-                            <h3>{L.labels.missions}</h3>
-                            Lorem ipsum
+                <div className="container">
+                    <div className="row tasks-row">
+                        <div className="col-md-12 col-lg-8">
+                            <div className="tasks-introduction">
+                                <h3>{L.labels.missions}</h3>
+                                Lorem ipsum
+                            </div>
+                            {this.getCardsPanel()}
                         </div>
-                        {this.getCardsPanel()}
-                    </div>
-                    <div className="col-lg-4 col-md-12">
-                        <div className="tasks-achievements-introduction">
-                            <h3>{L.labels.achievements}</h3>
-                            W tym dzile IPSUM
-                        </div>
-                        <div className="row achievements-row">
-                            {achievements}
-                            <div className="col-sm-12 text-right color-blue small"
-                                 style={{paddingRight: "30px"}}>
-                                <Link to="/achievements">
-                                    Zobacz wszystkie czalendze
-                                </Link>
+                        <div className="col-lg-4 col-md-12">
+                            <div className="tasks-achievements-introduction">
+                                <h3>{L.labels.achievements}</h3>
+                                W tym dzile IPSUM
+                            </div>
+                            <div className="row achievements-row">
+                                {achievements}
+                                <div className="col-sm-12 text-right color-blue small"
+                                     style={{paddingRight: "30px"}}>
+                                    <Link to="/achievements">
+                                        Zobacz wszystkie czalendze
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>

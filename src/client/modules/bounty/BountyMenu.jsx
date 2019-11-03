@@ -44,19 +44,22 @@ export default class BountyMenu extends React.Component {
                                        onSelect={() => this.props.onBountySelect(bounty)}/>);
 
         return (
-            <div className="container base-row-padding">
-                <div className="row">
-                    <div className="col-sm-12 missions-introduction">
-                        <h3>Bounties</h3>
-                        <p>Tasks performed in the form of bounty have the required number of items to perform.
-                            After completing the appropriate number of items, the reward code will be unlocked,
-                            which you can use to close the task and redeem the reward.</p>
-                        <p>Click on the card below to begin your work on selected bounty.</p>
+            <div className="container-fluid base-row-padding row">
+
+                <div className="container">
+                    <div className="row">
+                        <div className="col-sm-12 missions-introduction">
+                            <h3>Bounties</h3>
+                            <p>Tasks performed in the form of bounty have the required number of items to perform.
+                                After completing the appropriate number of items, the reward code will be unlocked,
+                                which you can use to close the task and redeem the reward.</p>
+                            <p>Click on the card below to begin your work on selected bounty.</p>
+                        </div>
                     </div>
+                    <ListContainer className="row missions-row" key='list'>
+                        {bounties}
+                    </ListContainer>
                 </div>
-                <ListContainer className="row missions-row" key='list'>
-                    {bounties}
-                </ListContainer>
             </div>
         );
     }

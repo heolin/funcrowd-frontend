@@ -23,6 +23,8 @@ import UserManager from "./logic/UserManager";
 import ProfilePage from "./modules/profile/ProfilePage";
 import BountyItemPanel from "./modules/bounty/BountyItemPanel";
 import SpaceCalcAboutPage from "./modules/about/SpaceCalcAboutPage";
+import SpaceCalcWelcomePage from "./modules/about/SpaceCalcWelcomePage";
+import Footer from "./Footer";
 
 
 const RouteContainer = posed.div({
@@ -42,7 +44,7 @@ class Base extends React.Component {
             mission: null,
             task: null,
             bounty: null,
-            sideProfileShown: false
+            sideProfileShown: false,
         };
 
         this.onLogin = this.onLogin.bind(this);
@@ -73,6 +75,9 @@ class Base extends React.Component {
     checkUrlParams() {
         if (this.props.location.search) {
             let params = queryString.parse(this.props.location.search);
+            if ("action" in params) {
+                SessionManager.cache['action'] = params['action'];
+            }
             if ("workerId" in params) {
                 UserRepository.mturk(params['workerId']).then((user) => {
                     this.onLogin(user, true);
@@ -186,6 +191,8 @@ class Base extends React.Component {
                                                                             user={this.state.user} {...props}/>}/>
                                     <Route path="/about"
                                            render={(props) => <SpaceCalcAboutPage user={this.state.user} {...props}/>}/>
+                                    <Route path="/welcome"
+                                           render={(props) => <SpaceCalcWelcomePage user={this.state.user} {...props}/>}/>
                                     <Route path="/profile"
                                           render={(props) => <ProfilePage usr={this.state.user} {...props}/>}/>
                                     <Route path="/achievements"

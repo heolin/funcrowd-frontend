@@ -3,6 +3,7 @@ import UserRepository from "../../logic/repositories/UserRepository";
 import Loading from "../../components/Loading";
 import { Link } from 'react-router-dom';
 import CheckboxElement from "../items/components/element/CheckboxElement";
+import {Footer} from "../../Footer";
 
 export default class RegisterPage extends React.Component {
 
@@ -82,62 +83,64 @@ export default class RegisterPage extends React.Component {
         }
 
         return (
-            <div className="container base-row">
-                <div className="row">
-                    <div className="login-window col-md-6 card-3-static">
-                        <h3 className="text-center login-header">
-                            Rejestracja
-                        </h3>
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="form-group">
-                                <input id="login"
-                                       type="login"
-                                       className="login-input form-control"
-                                       value={this.state.username}
-                                       onChange={this.handleChange}
-                                       placeholder="Nazwa użytkownika"/>
+            <div className="container-fluid base-row">
+                <div className="container">
+                    <div className="row">
+                        <div className="login-window col-md-6 card-3-static">
+                            <h3 className="text-center login-header">
+                                Rejestracja
+                            </h3>
+                            <form onSubmit={this.handleSubmit}>
+                                <div className="form-group">
+                                    <input id="login"
+                                           type="login"
+                                           className="login-input form-control"
+                                           value={this.state.username}
+                                           onChange={this.handleChange}
+                                           placeholder="Nazwa użytkownika"/>
+                                </div>
+                                <div className="form-group">
+                                    <input id="email"
+                                           type="email"
+                                           className="login-input form-control"
+                                           value={this.state.email}
+                                           onChange={this.handleChange}
+                                           placeholder="Adres e-mail"/>
+                                </div>
+                                <div className="form-group">
+                                    <input id="password1"
+                                           type="password"
+                                           className="login-input form-control"
+                                           value={this.state.password1}
+                                           onChange={this.handleChange}
+                                           placeholder="Hasło"/>
+                                </div>
+                                <div className="form-group">
+                                    <input id="password2"
+                                           type="password"
+                                           className="login-input form-control"
+                                           value={this.state.password2}
+                                           onChange={this.handleChange}
+                                           placeholder="Powtórz hasło"/>
+                                </div>
+                                <div className="form-group very-little">
+                                    <CheckboxElement className="login-checkbox"
+                                                     labelClassName="register-checkbox-label"
+                                                     key={'acceptTerms'}
+                                                     name={'acceptTerms'}
+                                                     value={this.state.acceptTerms}
+                                                     onChange={this.handleChange}
+                                                     label="Wyrażam zgodę na przetwarzanie moich danych osobowych przez administratora danych FunCrowd w celu wzięcia udziału w kursie nauki programu Excel. Podaję dane osobowe dobrowolnie i oświadczam, że są one zgodne z prawdą. Zapoznałem/łam się z Regulaminem strony oraz Polityką Prywatności serwisu, w tym z informacją o celu i sposobach przetwarzania danych osobowych oraz prawie dostępu do treści swoich danych i prawie ich poprawiania lub usunięcia."
+                                    />
+                                </div>
+                                {errorMessage}
+                                <button type="submit"
+                                     disabled={!this.validateForm()}
+                                     className="btn btn-orange-primary login-button">Załóż konto</button>
+                            </form>
+                            <div className="text-center small login-link">
+                                Masz już konto? <Link to="/">Zaloguj się</Link>
                             </div>
-                            <div className="form-group">
-                                <input id="email"
-                                       type="email"
-                                       className="login-input form-control"
-                                       value={this.state.email}
-                                       onChange={this.handleChange}
-                                       placeholder="Adres e-mail"/>
-                            </div>
-                            <div className="form-group">
-                                <input id="password1"
-                                       type="password"
-                                       className="login-input form-control"
-                                       value={this.state.password1}
-                                       onChange={this.handleChange}
-                                       placeholder="Hasło"/>
-                            </div>
-                            <div className="form-group">
-                                <input id="password2"
-                                       type="password"
-                                       className="login-input form-control"
-                                       value={this.state.password2}
-                                       onChange={this.handleChange}
-                                       placeholder="Powtórz hasło"/>
-                            </div>
-                            <div className="form-group very-little">
-                                <CheckboxElement className="login-checkbox"
-                                                 labelClassName="register-checkbox-label"
-                                                 key={'acceptTerms'}
-                                                 name={'acceptTerms'}
-                                                 value={this.state.acceptTerms}
-                                                 onChange={this.handleChange}
-                                                 label="Wyrażam zgodę na przetwarzanie moich danych osobowych przez administratora danych FunCrowd w celu wzięcia udziału w kursie nauki programu Excel. Podaję dane osobowe dobrowolnie i oświadczam, że są one zgodne z prawdą. Zapoznałem/łam się z Regulaminem strony oraz Polityką Prywatności serwisu, w tym z informacją o celu i sposobach przetwarzania danych osobowych oraz prawie dostępu do treści swoich danych i prawie ich poprawiania lub usunięcia."
-                                />
-                            </div>
-                            {errorMessage}
-                            <button type="submit"
-                                 disabled={!this.validateForm()}
-                                 className="btn btn-orange-primary login-button">Załóż konto</button>
-                        </form>
-                        <div className="text-center small login-link">
-                            Masz już konto? <Link to="/">Zaloguj się</Link>
                         </div>
                     </div>
                 </div>

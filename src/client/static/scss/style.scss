@@ -31,10 +31,15 @@ body {
   font-weight: $normal-weight;
   color: $dark-color;
 
-  background-image: radial-gradient(#ffffff, #ffffff 32%, #e7e7e7);
+  //background-image: radial-gradient(#ffffff, #ffffff 32%, #e7e7e7);
   position: relative;
 
   padding-top: 78px;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
 }
 
 .justify-items {
@@ -58,9 +63,8 @@ body {
 }
 
 .base-row {
-    display: block !important;
-    height: 100%;
-    min-height: 100%;
+  display: block !important;
+  height: 100%;
 }
 
 .base-row-padding {
@@ -86,4 +90,9 @@ body {
 
 .logo {
   height: 30px;
+}
+
+
+.shadow-light-2 {
+  box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.18);
 }

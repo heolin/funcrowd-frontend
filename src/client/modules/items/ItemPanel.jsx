@@ -17,6 +17,7 @@ import ItemHeader from "./ItemHeader";
 import BountyHeader from "../bounty/BountyHeader";
 import Loading from "../../components/Loading";
 import UserManager from "../../logic/UserManager";
+import {Footer} from "../../Footer";
 
 export default class ItemPanel extends React.Component {
 
@@ -225,7 +226,7 @@ export default class ItemPanel extends React.Component {
         }
 
         return (
-            <div className="container base-row">
+            <div className="container-fluid base-row">
                 {header}
                 <InstructionPanel isOpen={this.state.item && this.state.instruction}
                                   task={this.props.task}
@@ -235,10 +236,12 @@ export default class ItemPanel extends React.Component {
                                onAccept={this.onFeedbackAccept}
                                annotation={this.state.annotation}/>
 
-                <div className="row">
-                    {bounty}
-                    {itemForm}
-                    {noitems}
+                <div className="container">
+                    <div className="row">
+                        {bounty}
+                        {itemForm}
+                        {noitems}
+                    </div>
                 </div>
             </div>
         );
