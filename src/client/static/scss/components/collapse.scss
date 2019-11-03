@@ -1,0 +1,28 @@
+
+.text-collapse {
+  border-width: 0;
+  background: white;
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.2);
+  transition: all .8s ease-in-out;
+  cursor: pointer;
+}
+
+.text-collapse-head {
+  padding: 10px;
+  background: white;
+  border-width: 0;
+  width: 100%;
+  text-align: left;
+  height: inherit;
+}
+
+
+.text-collapse-body {
+  transition: all .2s ease-in-out;
+  overflow: hidden;
+  max-height: 300px;
+}
+
+.text-collapse-body.collapsed {
+  max-height: 0;
+}

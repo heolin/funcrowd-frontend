@@ -2823,14 +2823,14 @@ small, .small {
   background: white;
   border: solid 3px #5495b1;
   border-radius: 3px;
-  box-shadow: 0px 0px 16px -6px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 14px -4px rgba(0, 0, 0, 0.7);
   transition: all .2s ease-in-out;
   cursor: pointer; }
   .btn:hover {
     color: white;
     background: #5495b1; }
   .btn:active {
-    box-shadow: 0px 0px 12px -6px rgba(0, 0, 0, 0.7); }
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.7); }
 
 .btn-primary {
   color: white !important;
@@ -3591,6 +3591,29 @@ small, .small {
   transform: scale(1);
   opacity: 1;
   background-color: #5495b1; }
+
+.text-collapse {
+  border-width: 0;
+  background: white;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
+  transition: all .8s ease-in-out;
+  cursor: pointer; }
+
+.text-collapse-head {
+  padding: 10px;
+  background: white;
+  border-width: 0;
+  width: 100%;
+  text-align: left;
+  height: inherit; }
+
+.text-collapse-body {
+  transition: all .2s ease-in-out;
+  overflow: hidden;
+  max-height: 300px; }
+
+.text-collapse-body.collapsed {
+  max-height: 0; }
 
 .color-white {
   color: white; }
@@ -12346,14 +12369,14 @@ small,
   background: white;
   border: solid 3px #5495b1;
   border-radius: 3px;
-  box-shadow: 0px 0px 16px -6px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 14px -4px rgba(0, 0, 0, 0.7);
   transition: all .2s ease-in-out;
   cursor: pointer; }
   .btn:hover {
     color: white;
     background: #5495b1; }
   .btn:active {
-    box-shadow: 0px 0px 12px -6px rgba(0, 0, 0, 0.7); }
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.7); }
 
 .btn-primary {
   color: white !important;
@@ -13195,6 +13218,9 @@ body {
   flex: 0 0 20%;
   max-width: 20%; }
 
+.logo {
+  height: 30px; }
+
 .color-white {
   color: white; }
 
@@ -13466,7 +13492,8 @@ small, .small, .task-card {
   margin-right: 10px; }
 
 .task-card {
-  padding: 10px 0; }
+  padding: 10px 0;
+  cursor: pointer; }
 
 .task-card:nth-child(odd) {
   background: #cfbca1;

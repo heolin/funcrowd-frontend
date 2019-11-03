@@ -5,6 +5,7 @@ import {user} from 'react-icons-kit/metrize/user'
 import L from "../../logic/locatization/LocalizationManager";
 import NavbarProfile from "./NavbarProfile";
 import NavbarLoginMenu from "./NavbarLoginMenu";
+import Logo from "../../static/img/common/fun_crowd-02.svg";
 
 
 export default class Navbar extends React.Component {
@@ -42,7 +43,9 @@ export default class Navbar extends React.Component {
         return (
             <nav className="navbar fixed-top navbar-light bg-light navbar-expand-md py-3">
 
-                <a className="navbar-brand" href="#">{L.labels.title}</a>
+                <a className="navbar-brand" href="#">
+                    <img className="logo" src={Logo}/>
+                </a>
                 <button className="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

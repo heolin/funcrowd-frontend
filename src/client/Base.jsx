@@ -22,6 +22,7 @@ import ProfileTypes from "./logic/config/ProfileTypes";
 import UserManager from "./logic/UserManager";
 import ProfilePage from "./modules/profile/ProfilePage";
 import BountyItemPanel from "./modules/bounty/BountyItemPanel";
+import SpaceCalcAboutPage from "./modules/about/SpaceCalcAboutPage";
 
 
 const RouteContainer = posed.div({
@@ -184,7 +185,7 @@ class Base extends React.Component {
                                            render={(props) => <MissionsMenu onMissionSelect={this.onMissionSelect}
                                                                             user={this.state.user} {...props}/>}/>
                                     <Route path="/about"
-                                           render={(props) => <AboutPage user={this.state.user} {...props}/>}/>
+                                           render={(props) => <SpaceCalcAboutPage user={this.state.user} {...props}/>}/>
                                     <Route path="/profile"
                                           render={(props) => <ProfilePage usr={this.state.user} {...props}/>}/>
                                     <Route path="/achievements"

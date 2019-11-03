@@ -17,7 +17,7 @@ export default class AboutPage extends React.Component {
         return (
             <div className="container base-row-padding">
                 <div className="col-sm-12 missions-header-bar">
-                    <h3>About</h3>
+                    <h3></h3>
                     <p>Super ipsum.</p>
                 </div>
             </div>
