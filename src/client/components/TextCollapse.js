@@ -25,7 +25,7 @@ export class TextCollapse extends React.Component {
 
         return (
             <div className="text-collapse" style={this.props.style}>
-                <div className="text-collapse-head" onClick={this.onClick}>
+                <div className="text-collapse-head noselect smal" onClick={this.onClick}>
                     <SmallIcon name={icon}/>{this.props.headText}
                 </div>
                 <div className={"text-collapse-body" + className}>

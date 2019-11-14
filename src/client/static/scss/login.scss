@@ -1,4 +1,6 @@
 @import "colors";
+@import "components";
+
 
 .login-window {
   margin: 60px auto 0 auto;
@@ -17,16 +19,9 @@
 }
 
 .login-input {
-  border-color: $light-blue-color !important;
-  border-width: 2px;
+  @extend .form-input;
   padding: 20px 13px;
-  border-radius: 0;
 }
-
-.login-input::placeholder {
-  color: $blue-color;
-}
-
 
 .login-checkbox .outer {
   width: 20px;
@@ -49,12 +44,11 @@
   padding-left: 30px;
   line-height: 1.2;
   text-align: justify;
-  margin-top: -15px;
+  margin-top: -36px;
 }
 
 .login-checkbox .login-checkbox-label {
-  padding-left: 30px;
-  margin-top: -12px;
+  margin-top: -6px;
 }
 
 .login-link a {
@@ -70,4 +64,14 @@
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.activation-email-panel {
+  margin: 60px auto 0 auto;
+  padding: 40px 70px;
+}
+
+.login-reset-email-panel {
+  margin: 60px auto 0 auto;
+  padding: 40px 70px;
 }

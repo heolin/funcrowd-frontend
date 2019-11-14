@@ -4,6 +4,7 @@ import Loading from "../../components/Loading";
 import { Link } from 'react-router-dom';
 import CheckboxElement from "../items/components/element/CheckboxElement";
 import {Footer} from "../../Footer";
+import ActivationEmailSentPanel from "./ActivationEmailSentPanel";
 
 export default class RegisterPage extends React.Component {
 
@@ -16,11 +17,13 @@ export default class RegisterPage extends React.Component {
             password2: "",
             acceptTerms: false,
             error: false,
-            loading: false
+            loading: false,
+            activationEmailPanel: false
         };
 
         this.validateForm = this.validateForm.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -29,13 +32,18 @@ export default class RegisterPage extends React.Component {
             this.state.password1.length > 0 &&
             this.state.password2.length > 0 &&
             this.state.email.length > 0 &&
-            this.state.acceptTerms  ;
+            this.state.acceptTerms == 'true';
     }
 
     handleChange(event) {
         this.setState({
             [event.target.id]: event.target.value
         });
+    }
+
+    handleCheckboxChange(event) {
+        event.target.value = event.target.checked;
+        this.handleChange(event);
     }
 
     handleSubmit(event) {
@@ -48,13 +56,16 @@ export default class RegisterPage extends React.Component {
 
         this.setState({loading: true});
         UserRepository.register(username, email, password1, password2)
-            .then((user) => {
-                //this.props.onSuccess(user, stayLoggedIn);
+            .then(() => {
+                this.setState({
+                    activationEmailPanel: true,
+                    loading: false,
+                });
             })
             .catch((error) => {
                 this.setState({
                     loading: false,
-                    error: error.response.data[0],
+                    error: error.response.data['detail']
                 });
             });
     }
@@ -63,14 +74,18 @@ export default class RegisterPage extends React.Component {
         if (this.state.loading)
             return <Loading/>;
 
+        if (this.state.activationEmailPanel)
+            return <ActivationEmailSentPanel/>;
+
         let errorMessage = null;
         if (this.state.error) {
+            console.log(this.state.error);
             let errorText = "Rejestracja nie powiodła się";
-            if (this.state.error === "Username already used")
+            if (this.state.error === "Username is already used")
                 errorText = "Ta nazwa użytkownika jest już użyta";
-            else if (this.state.error === "Email already used")
+            else if (this.state.error === "Email is already used")
                 errorText = "Ten adres e-mail jest już użyty";
-            else if (this.state.error === "Passwords don't match")
+            else if (this.state.error === "Passwords does not match")
                 errorText = "Podane hasła nie pasują";
 
             errorMessage = (
@@ -129,7 +144,7 @@ export default class RegisterPage extends React.Component {
                                                      key={'acceptTerms'}
                                                      name={'acceptTerms'}
                                                      value={this.state.acceptTerms}
-                                                     onChange={this.handleChange}
+                                                     onChange={this.handleCheckboxChange}
                                                      label="Wyrażam zgodę na przetwarzanie moich danych osobowych przez administratora danych FunCrowd w celu wzięcia udziału w kursie nauki programu Excel. Podaję dane osobowe dobrowolnie i oświadczam, że są one zgodne z prawdą. Zapoznałem/łam się z Regulaminem strony oraz Polityką Prywatności serwisu, w tym z informacją o celu i sposobach przetwarzania danych osobowych oraz prawie dostępu do treści swoich danych i prawie ich poprawiania lub usunięcia."
                                     />
                                 </div>

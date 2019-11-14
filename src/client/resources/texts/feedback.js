@@ -26,5 +26,13 @@ export default {
     nextItem: {
         en: "Next item",
         pl: "Następne zadanie"
+    },
+    questionnaireSaved: {
+        en: "Questionnaire saved",
+        pl: "Kwestionariusz wypełniony"
+    },
+    questionnaireSavedMessage: {
+        en: "Thank you for filling personal questionnaire",
+        pl: "Dziękuje za wypełnienie kwestionariusza osobowego"
     }
 }

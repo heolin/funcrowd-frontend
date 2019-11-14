@@ -24,14 +24,14 @@ export default class ItemHeader extends React.Component {
                                 <div style={{marginTop: "10px"}}>
                                     <Breadcrumbs>
                                         <BreadcrumbItem label={L.labels.missions} link="/missions"/>
-                                        <BreadcrumbItem label={L.labels.missions} link="/mission/2/tasks"/>
-                                        <BreadcrumbItem label="Zadanie"/>
+                                        <BreadcrumbItem label={task.name} link={"/mission/" + task.id + "/tasks"}/>
+                                        <BreadcrumbItem label={L.general.task}/>
                                     </Breadcrumbs>
                                 </div>
                                 <div className="tasks-header-info">
                                     <div className="color-white">
                                         <h3 style={{marginBottom: 0}}>{task.name}</h3>
-                                        <span className="small tasks-header-info-text">{task.description}</span>
+                                        <span className="small item-header-info-text">{task.description}</span>
                                     </div>
                                 </div>
                             </div>

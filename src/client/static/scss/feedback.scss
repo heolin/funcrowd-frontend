@@ -1,3 +1,4 @@
+@import "fonts";
 
 .feedback-header {
 
@@ -16,4 +17,22 @@
 .feedback-image {
   width: 30%;
   margin: 10px 0 30px 0;
+}
+
+.feedback-points {
+  position: relative;
+  text-align: center;
+}
+
+.feedback-points-image {
+  @extend .feedback-image;
+}
+
+.feedback-points-text {
+  @extend .weight-bold;
+
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  font-size: 64px;
 }

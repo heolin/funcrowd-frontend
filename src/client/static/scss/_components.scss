@@ -1,5 +1,19 @@
+@import "colors";
 
 .horizontal-line {
   border-bottom: solid 2px black;
 }
 
+.number-field {
+  width: 300px;
+}
+
+.form-input {
+  border-color: $light-blue-color !important;
+  border-width: 2px !important;
+  border-radius: 0 !important;
+}
+
+.form-input::placeholder {
+  color: $blue-color;
+}

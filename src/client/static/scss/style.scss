@@ -16,6 +16,7 @@
 @import "feedback";
 @import "modal";
 @import "login";
+@import "components";
 
 
 
@@ -95,4 +96,8 @@ body {
 
 .shadow-light-2 {
   box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.18);
+}
+
+.form-group {
+  margin-bottom: 40px !important;
 }

@@ -20,6 +20,11 @@ $card-margin: 20px;
   cursor: pointer;
 }
 
+.mission-card.locked {
+  background-color: $grey-color;
+  cursor: not-allowed;
+}
+
 .mission-closed-card {
   background-color: $grey-blue-color;
   cursor: not-allowed;
@@ -34,12 +39,20 @@ $card-margin: 20px;
   position: relative;
 }
 
+.mission-card-image {
+  @extend .greyscale;
+}
+
 .mission-card-triangle {
   fill: $blue-color;
   position: absolute;
   z-index: 10;
   left: 0;
   bottom: 0;
+}
+
+.mission-card-triangle.locked {
+  fill: $grey-color;
 }
 
 .mission-card-icon {

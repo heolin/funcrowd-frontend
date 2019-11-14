@@ -3,6 +3,10 @@ export default {
         en: "missions",
         pl: "zadania"
     },
+    task: {
+        en: "Task",
+        pl: "Zadanie"
+    },
     achievements: {
         en: "achievements",
         pl: "osiągnięcia"

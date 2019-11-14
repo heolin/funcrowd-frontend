@@ -32,12 +32,12 @@ export default class BinaryFeedbackModal extends React.Component {
 
         let image = feedbackWrong;
         let headerText = L.feedback.annotationWrong;
-        let message = L.feedback.annotationCorrectMessage;
+        let message = L.feedback.annotationWrongMessage;
 
         if (score >= 0.5) {
             image = feedbackCorrect;
             headerText = L.feedback.annotationCorrect;
-            message = L.feedback.annotationWrongMessage;
+            message = L.feedback.annotationCorrectMessage;
         }
 
         return <FeedbackModal isOpen={this.props.isOpen}

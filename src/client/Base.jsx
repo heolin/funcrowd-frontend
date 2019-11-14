@@ -25,6 +25,7 @@ import BountyItemPanel from "./modules/bounty/BountyItemPanel";
 import SpaceCalcAboutPage from "./modules/about/SpaceCalcAboutPage";
 import SpaceCalcWelcomePage from "./modules/about/SpaceCalcWelcomePage";
 import Footer from "./Footer";
+import SettingsPage from "./modules/profile/SettingsPage";
 
 
 const RouteContainer = posed.div({
@@ -73,10 +74,22 @@ class Base extends React.Component {
     }
 
     checkUrlParams() {
+        console.log("CHECK");
+        console.log(this.props.location.search)
         if (this.props.location.search) {
             let params = queryString.parse(this.props.location.search);
+            console.log("params");
             if ("action" in params) {
                 SessionManager.cache['action'] = params['action'];
+            }
+            if ("resetPasswordToken" in params) {
+                this.props.history.push('/reset_password');
+            }
+            if ("activationToken" in params) {
+                UserRepository.activate(params['activationToken']).then((user) => {
+                    this.onLogin(user, true);
+                    this.setState({checkingParams: false});
+                });
             }
             if ("workerId" in params) {
                 UserRepository.mturk(params['workerId']).then((user) => {
@@ -174,27 +187,31 @@ class Base extends React.Component {
                             onNavigateToBounties={this.navigateToBounties}
                             onNavigateToAbout={this.navigateToAbout}
                             showSideProfile={this.showSideProfile}/>
+
                     <SideProfilePanel isOpen={this.state.sideProfileShown}
                                       hideSideProfile={this.hideSideProfile}/>
+
                     <div className="h-100">
                         <PoseGroup>
                             <RouteContainer key={location.pathname}>
                                 <Switch location={location}>
                                     <Route exact path="/"
                                            render={(props) => <LoginPage onSuccess={this.onLogin} {...props}/>}/>
-                                    <Route exact path="/register"
+                                    <Route path="/register"
                                            render={(props) => <RegisterPage onSuccess={this.onLogin} {...props}/>}/>
-                                    <Route exact path="/resetpassword"
-                                           render={(props) => <ResetPasswordPage onSuccess={this.onLogin} {...props}/>}/>
                                     <Route path="/missions"
                                            render={(props) => <MissionsMenu onMissionSelect={this.onMissionSelect}
                                                                             user={this.state.user} {...props}/>}/>
+                                    <Route path="/reset_password"
+                                           render={(props) => <ResetPasswordPage onSuccess={this.onLogin} {...props}/>}/>
                                     <Route path="/about"
                                            render={(props) => <SpaceCalcAboutPage user={this.state.user} {...props}/>}/>
                                     <Route path="/welcome"
                                            render={(props) => <SpaceCalcWelcomePage user={this.state.user} {...props}/>}/>
                                     <Route path="/profile"
                                           render={(props) => <ProfilePage usr={this.state.user} {...props}/>}/>
+                                    <Route path="/settings"
+                                           render={(props) => <SettingsPage usr={this.state.user} {...props}/>}/>
                                     <Route path="/achievements"
                                            render={(props) => <AchievementsMenu user={this.state.user} {...props}/>}/>
                                     <Route path="/bounty/:id"

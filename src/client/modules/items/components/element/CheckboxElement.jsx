@@ -9,7 +9,6 @@ export default class CheckboxElement extends React.Component {
     }
 
     handleChange(event) {
-        event.target.value = event.target.checked;
         this.props.onChange(event);
     }
 
@@ -28,7 +27,7 @@ export default class CheckboxElement extends React.Component {
                 <span className="outer">
                     <span className="inner"></span>
                 </span>
-                <div className={labelClassName}>
+                <div className={"text " + labelClassName}>
                     {text}
                 </div>
             </label>

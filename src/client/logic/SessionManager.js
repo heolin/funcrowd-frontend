@@ -13,6 +13,9 @@ class _SessionManager {
     }
 
     login(user, saveUser) {
+        if (user.login === "")
+            return;
+
         this.token = user.token;
         this.isLogged = true;
         this.config = {

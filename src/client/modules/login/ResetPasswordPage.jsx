@@ -3,6 +3,7 @@ import UserRepository from "../../logic/repositories/UserRepository";
 import Loading from "../../components/Loading";
 import { Link } from 'react-router-dom';
 import {Footer} from "../../Footer";
+import PasswodResetEmailSentPanel from "./PasswodResetEmailSentPanel";
 
 
 export default class ResetPasswordPage extends React.Component {
@@ -13,7 +14,8 @@ export default class ResetPasswordPage extends React.Component {
             email: "",
             stayLoggedIn: false,
             error: null,
-            loading: false
+            loading: false,
+            emailSentPanel: false
         };
 
         this.validateForm = this.validateForm.bind(this);
@@ -38,7 +40,11 @@ export default class ResetPasswordPage extends React.Component {
 
         this.setState({loading: true});
         UserRepository.resetPassword(email)
-            .then((user) => {
+            .then(() => {
+                this.setState({
+                    emailSentPanel: true,
+                    loading: false
+                });
             })
             .catch((error) => {
                 this.setState({
@@ -52,6 +58,9 @@ export default class ResetPasswordPage extends React.Component {
     render() {
         if (this.state.loading)
             return <Loading/>;
+
+        if (this.state.emailSentPanel)
+            return <PasswodResetEmailSentPanel/>
 
         let errorMessage = null;
         if (this.state.error) {

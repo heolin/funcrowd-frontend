@@ -21,6 +21,7 @@ export default class LoginPage extends React.Component {
 
         this.validateForm = this.validateForm.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -34,12 +35,17 @@ export default class LoginPage extends React.Component {
         });
     }
 
+    handleCheckboxChange(event) {
+        event.target.value = event.target.checked;
+        this.handleChange(event);
+    }
+
     handleSubmit(event) {
         event.preventDefault();
 
         let username = this.state.login;
         let password = this.state.password;
-        let stayLoggedIn = this.state.stayLoggedIn;
+        let stayLoggedIn = this.state.stayLoggedIn == "true";
 
         this.setState({loading: true});
         UserRepository.login(username, password)
@@ -97,10 +103,10 @@ export default class LoginPage extends React.Component {
                                                      labelClassName="login-checkbox-label"
                                                      name='stayLoggedIn'
                                                      value={this.state.stayLoggedIn}
-                                                     onChange={this.handleChange}
+                                                     onChange={this.handleCheckboxChange}
                                                      label={L.login.rememberMe}/>
                                     <div className="login-reset-password-link login-link">
-                                        <Link to="/resetpassword">
+                                        <Link to="/reset_password">
                                             {L.login.forgotPassword}
                                         </Link>
                                     </div>

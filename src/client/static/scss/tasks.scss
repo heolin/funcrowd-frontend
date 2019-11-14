@@ -3,6 +3,7 @@
 @import "variables";
 @import "fonts";
 @import "icons";
+@import "animations/bounce";
 
 
 $header-height: 200px;
@@ -26,13 +27,14 @@ $image-size: 212px;
 }
 
 .tasks-header-info {
-  margin-top: 10px;
+  margin-top: 25px;
 }
 
 .tasks-header-info-text {
   color: white;
   display: inline-block;
   margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .tasks-header-image {
@@ -49,9 +51,10 @@ $image-size: 212px;
 }
 
 .tasks-header-progress {
-  margin-top: 20px;
-
+  margin-top: 15px;
+  margin-bottom: 10px;
   margin-right: 340px;
+
   @media screen and (max-width: map-get($screen-widths, 'md')) {
     margin-right: 0px;
   }
@@ -75,18 +78,41 @@ $image-size: 212px;
 
 .task-card {
   @extend .small;
-  padding: 10px 0;
+  padding: 10px 0 12px 0;
   cursor: pointer;
+}
+
+.task-card.locked {
+  color: $grey-color;
+}
+
+.task-card.unlocked {
+  color: $blue-color;
+}
+
+.task-card.finished {
+  color: $green-color;
 }
 
 .task-card a {
   @extend .dark-color-orange;
 }
 
-.task-card:nth-child(odd) {
-  @include horizontal_gradient($orange-color);
+.task-card:hover {
+  text-decoration: underline !important;
 }
 
+.task-card:nth-child(odd) {
+  @include horizontal_gradient($green-color);
+}
+
+.task-card:nth-child(odd).unlocked {
+  @include horizontal_gradient($blue-color);
+}
+
+.task-card:nth-child(odd).locked {
+  @include horizontal_gradient($grey-color);
+}
 
 .tasks-introduction {
   padding: 50px 0;
@@ -94,4 +120,15 @@ $image-size: 212px;
 
 .tasks-achievements-introduction {
   padding: 50px 0;
+}
+
+.task-card-icon {
+  position: absolute;
+  margin-top: -5px;
+}
+
+.item-header-info-text {
+  color: white;
+  display: inline-block;
+  margin-bottom: 20px;
 }

@@ -6,6 +6,7 @@ import bounty from "../../resources/texts/bounty";
 import feedback from "../../resources/texts/feedback";
 import login from "../../resources/texts/login";
 import levels from "../../resources/texts/levels";
+import spacecalc from "../../resources/texts/spacecalc";
 
 
 class _LocalizationManager {
@@ -15,6 +16,8 @@ class _LocalizationManager {
         this.bounty = bounty;
         this.bounty.status = new LocalizedDictionary(bounty.status);
         this.bounty.labels = new LocalizedDictionary(bounty.labels);
+        this.spacecalc = spacecalc;
+        this.spacecalc.welcome = new LocalizedDictionary(spacecalc.welcome);
         this.levels = new LocalizedDictionary(levels);
         this.feedback = new LocalizedDictionary(feedback);
         this.login = new LocalizedDictionary(login);
@@ -27,6 +30,7 @@ class _LocalizationManager {
         this.general.setup(language);
         this.bounty.status.setup(language);
         this.bounty.labels.setup(language);
+        this.spacecalc.welcome.setup(language);
         this.feedback.setup(language);
         this.levels.setup(language);
         this.login.setup(language);

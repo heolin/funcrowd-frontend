@@ -2,8 +2,9 @@
 
 
 .checkbox {
-  display: inline-block;
   cursor: pointer;
+  display: table-row;
+  margin-bottom: 1px;
 }
 
 .checkbox input {
@@ -13,19 +14,24 @@
 }
 
 .checkbox .outer {
-  width: 30px;
-  height: 30px;
-  display: block;
+  width: 26px;
+  height: 26px;
+  display: inline-block;
   float: left;
-  margin: 10px 10px 10px 0px;
+  margin: 12px 10px 10px 0;
   border: 3px solid $blue-color;
+}
+
+.checkbox .text {
+  padding-top: 11px;
+  display: inline-block;
 }
 
 .checkbox .inner {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);

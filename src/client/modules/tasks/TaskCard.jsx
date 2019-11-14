@@ -12,20 +12,40 @@ const Card = posed.div({
 export default class TaskCard extends React.Component {
 
     render() {
+        let progress = this.props.progress;
+        let metadata = this.props.task.metadata;
+
+        let taskIconBase = "task/task";
+        let taskIcon = taskIconBase + "_grey";
+        let startIcon = null;
+        let statusClassName = "locked";
+
+        if (progress.status === "FINISHED") {
+            startIcon = <Icon className="very-small-icon" name="tick-sign-green"/>;
+            statusClassName = "finished";
+            taskIcon = taskIconBase + "_green";
+        }
+        else if (progress.status !== "LOCKED") {
+            startIcon = <Icon className="very-small-icon task-card-start-icon" name="arrow-right_blue"/>;
+            statusClassName = "unlocked";
+            taskIcon = taskIconBase + "_blue";
+        }
+
+
         return (
-            <Card className="col-12 task-card blocked" onClick={this.props.onSelect}>
+            <Card className={"col-12 task-card " + statusClassName} onClick={this.props.onSelect}>
                 <div className="row">
                     <div className="col-1">
-                        <SmallIcon name="excel" color="orange"/>
+                        <SmallIcon className="task-card-icon" name={taskIcon}/>
                     </div>
                     <div className="col-6">
                         {this.props.task.name}
                     </div>
                     <div className="col-2">
-                        exp
+                        {this.props.task.totalExp} exp
                     </div>
                     <div className="col-1">
-                        <Icon className="very-small-icon" name="go-sign" color="orange"/>
+                        {startIcon}
                     </div>
                 </div>
             </Card>

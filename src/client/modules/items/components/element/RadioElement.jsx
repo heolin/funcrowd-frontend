@@ -19,7 +19,7 @@ export default class RadioElement extends React.Component {
 
     render() {
         let className = this.props.className || "";
-        let text = this.props.label ? this.props.label : this.props.value;
+        let text = this.props.label == null ? this.props.value : this.props.label;
 
         return (
             <label className={"radio " + className}>

@@ -24,6 +24,7 @@ export default class ItemPanel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            exp: null,
             item: null,
             task: null,
             bounty: null,
@@ -137,9 +138,9 @@ export default class ItemPanel extends React.Component {
         if (ConfigManager.config.showFeedback) {
             feedback = annotationResponse.annotation.feedback;
         }
-
         this.setState({
             annotation: annotationResponse.annotation,
+            exp: annotationResponse.exp,
             feedback: feedback,
             confirmation: true
         });
@@ -234,6 +235,7 @@ export default class ItemPanel extends React.Component {
 
                 <FeedbackPanel isOpen={this.state.item && this.state.confirmation}
                                onAccept={this.onFeedbackAccept}
+                               exp={this.state.exp}
                                annotation={this.state.annotation}/>
 
                 <div className="container">

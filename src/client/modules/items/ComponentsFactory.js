@@ -9,21 +9,29 @@ import ImagesGallery from "./components/ImagesGallery/ImagesGallery";
 import HtmlLabel from "./components/HtmlLabel";
 import TextTagField from "./components/TextTagField";
 import ImageField from "./components/ImageField";
+import LikertScaleField from "./components/LikertScaleField";
+import NumberField from "./components/NumberField";
+import RadioOtherField from "./components/RadioOtherField";
+import CheckboxField from "./components/CheckboxField";
 
 
 let Components = {
     "TextLabel": TextLabel,
     "ChoiceField": RadioField ,
+    "CheckboxField": CheckboxField,
     "PDF": TextLabel,
     "TextField": TextField,
     "RadioField": RadioField,
+    "RadioOtherField": RadioOtherField,
     "MultiChoiceField": MultiChoiceField,
     "SelectField": SelectField,
     "LinkButton": LinkButton,
     "ImagesGallery": ImagesGallery,
     "HtmlLabel": HtmlLabel,
     "TextTagField": TextTagField,
-    "ImageField": ImageField
+    "ImageField": ImageField,
+    "LikertScaleField": LikertScaleField,
+    "NumberField": NumberField,
 };
 
 export default class ComponentsFactory {

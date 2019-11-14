@@ -21,6 +21,7 @@ export default class RadioField extends React.Component {
     render() {
         let options = this.props.source.map((option) =>
             <RadioElement key={option}
+                          className="small"
                           name={this.props.name}
                           onChange={this.handleChange}
                           required={this.props.required}

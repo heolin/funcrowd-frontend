@@ -1,12 +1,17 @@
 @import "../colors";
+@import "../variables";
 
 
 .radio {
-  display: inline-block;
-  padding-right: 20px;
+  display: block;
   font-size: 18px;
   line-height: 49px;
   cursor: pointer;
+  margin-bottom: 1px;
+}
+
+.radio-inline {
+  display: inline-block !important;
 }
 
 .radio:hover .inner {
@@ -43,11 +48,11 @@
 }
 
 .radio .outer {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   display: block;
   float: left;
-  margin: 10px 9px 10px 10px;
+  margin: 12px 9px 10px 10px;
   border: 3px solid $blue-color;
   border-radius: 50%;
 }
@@ -55,8 +60,8 @@
 .radio .inner {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
@@ -65,4 +70,42 @@
   border-radius: 50%;
   background-color: $blue-color;
   opacity: 0;
+}
+
+.radio-likert {
+  padding-right: 0 !important;
+  display: inline-block !important;
+}
+
+@media screen and (max-width: map-get($screen-widths, 'lg')) {
+  .radio-likert {
+    padding-right: 0 !important;
+    display: block !important;
+    line-height: 2;
+
+    .outer {
+      margin: 5px 10px;
+    }
+  }
+
+  .radio-likert-label {
+    position: absolute;
+    left: 60px;
+  }
+
+  .radio-likert-label.min {
+    top: 1px;
+  }
+
+  .radio-likert-label.max {
+    bottom: 5px;
+  }
+
+}
+
+.radio-other {
+  width: auto !important;
+  height: auto !important;
+  opacity: inherit !important;
+  display: inline-block;
 }

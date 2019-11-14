@@ -1,0 +1,67 @@
+import React from "react"
+
+
+export default class RadioOtherElement extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: ""
+        };
+
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleTextChange = this.handleTextChange.bind(this);
+    }
+
+    handleChange(event) {
+        event = {
+            target: {
+                id: this.props.name,
+                value: this.state.value
+            }
+        };
+        this.props.onChange(event);
+    }
+
+    handleTextChange(event) {
+        this.setState({
+           value: event.target.value
+        });
+
+        this.handleChange(event);
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        if (nextState.value !== this.state.value)
+            return true;
+        if (nextProps.disabled !== this.props.disabled)
+            return true;
+        return false;
+    }
+
+    render() {
+        let className = this.props.className || "";
+
+        return (
+            <label className={"radio " + className}>
+                <input id={this.props.name + "-other"}
+                       name={this.props.name}
+                       value={this.props.value}
+                       onChange={this.handleChange}
+                       type="radio"/>
+                <span className="outer">
+                    <span className="inner"></span>
+                </span>
+                Other:
+                <input id={this.props.name}
+                       value={this.state.value}
+                       name={this.props.name}
+                       className="form-control radio-other"
+                       onChange={this.handleTextChange}
+                       disabled={this.props.disabled}
+                       type="text"/>
+            </label>
+        );
+    }
+}

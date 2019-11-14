@@ -90,7 +90,7 @@ export class SideProfilePanel extends React.Component {
                         <div className="col-6">
                             <div onClick={this.props.hideSideProfile}>
                                 <Icon className="side-profile-close"
-                                      name="go-sign"
+                                      name="arrow-right"
                                       color="dark"/>
                             </div>
                         </div>
