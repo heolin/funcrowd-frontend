@@ -26,6 +26,8 @@ import SpaceCalcAboutPage from "./modules/about/SpaceCalcAboutPage";
 import SpaceCalcWelcomePage from "./modules/about/SpaceCalcWelcomePage";
 import Footer from "./Footer";
 import SettingsPage from "./modules/profile/SettingsPage";
+import ResetPasswordTokenPage from "./modules/login/ResetPasswordTokenPage";
+import ActivationPage from "./modules/login/ActivationPage";
 
 
 const RouteContainer = posed.div({
@@ -74,22 +76,10 @@ class Base extends React.Component {
     }
 
     checkUrlParams() {
-        console.log("CHECK");
-        console.log(this.props.location.search)
         if (this.props.location.search) {
             let params = queryString.parse(this.props.location.search);
-            console.log("params");
             if ("action" in params) {
                 SessionManager.cache['action'] = params['action'];
-            }
-            if ("resetPasswordToken" in params) {
-                this.props.history.push('/reset_password');
-            }
-            if ("activationToken" in params) {
-                UserRepository.activate(params['activationToken']).then((user) => {
-                    this.onLogin(user, true);
-                    this.setState({checkingParams: false});
-                });
             }
             if ("workerId" in params) {
                 UserRepository.mturk(params['workerId']).then((user) => {
@@ -109,12 +99,11 @@ class Base extends React.Component {
         SessionManager.login(user, saveUser);
         ConfigManager.setup(user);
         this.setState({user: user, checkingUser: false});
-
         this.redirectToHome();
     }
 
     redirectToHome() {
-        if (this.props.location.pathname === "/") {
+        if (this.props.location.pathname === "/" || this.props.location.pathname === "/activation") {
             if (UserManager.user.profile == ProfileTypes.NORMAL) {
                 this.props.history.push('/missions');
             } else {
@@ -197,13 +186,17 @@ class Base extends React.Component {
                                 <Switch location={location}>
                                     <Route exact path="/"
                                            render={(props) => <LoginPage onSuccess={this.onLogin} {...props}/>}/>
+                                    <Route path="/activation"
+                                           render={(props) => <ActivationPage onSuccess={this.onLogin} {...props}/>}/>
                                     <Route path="/register"
                                            render={(props) => <RegisterPage onSuccess={this.onLogin} {...props}/>}/>
                                     <Route path="/missions"
                                            render={(props) => <MissionsMenu onMissionSelect={this.onMissionSelect}
                                                                             user={this.state.user} {...props}/>}/>
                                     <Route path="/reset_password"
-                                           render={(props) => <ResetPasswordPage onSuccess={this.onLogin} {...props}/>}/>
+                                           render={(props) => <ResetPasswordPage {...props}/>}/>
+                                    <Route path="/reset_password_token"
+                                           render={(props) => <ResetPasswordTokenPage onSuccess={this.onLogin} {...props}/>}/>
                                     <Route path="/about"
                                            render={(props) => <SpaceCalcAboutPage user={this.state.user} {...props}/>}/>
                                     <Route path="/welcome"

@@ -8,7 +8,8 @@ class _SessionManager {
         this.token = null;
         this.config = {};
         this.cache = {
-            'action': null
+            action: null,
+            resetPasswordToken: null
         };
     }
 

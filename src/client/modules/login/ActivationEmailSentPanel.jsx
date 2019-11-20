@@ -16,12 +16,12 @@ export default class ActivationEmailSentPanel extends React.Component {
                             <h3 className="text-center" style={{marginBottom: "30px"}}>
                                 {L.login.activationEmailHeader}
                             </h3>
-                            <p>
+                            <p className="small text-center">
                                 {L.login.activationEmailMessage}
                             </p>
                             <div className="text-center">
                                 <Link to="/">
-                                    <button className="btn btn-primary"
+                                    <button className="btn btn-orange-primary"
                                             style={{width: "140px", marginTop: "20px"}}>
                                         {L.login.activationEmailButton}
                                     </button>

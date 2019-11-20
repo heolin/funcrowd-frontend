@@ -3,7 +3,8 @@ import UserRepository from "../../logic/repositories/UserRepository";
 import Loading from "../../components/Loading";
 import { Link } from 'react-router-dom';
 import {Footer} from "../../Footer";
-import PasswodResetEmailSentPanel from "./PasswodResetEmailSentPanel";
+import L from "../../logic/locatization/LocalizationManager";
+import ResetPasswordEmailSentPanel from "./ResetPasswordEmailSentPanel";
 
 
 export default class ResetPasswordPage extends React.Component {
@@ -47,11 +48,16 @@ export default class ResetPasswordPage extends React.Component {
                 });
             })
             .catch((error) => {
+                let responseError = error.response.data['detail'];
+
+                let errorMessage = L.login.unknownError;
+                if (responseError === "User with following email not found.")
+                    errorMessage = L.login.emailNotFound;
+
                 this.setState({
                     loading: false,
-                    error: error
+                    error: errorMessage
                 });
-                console.log(error);
             });
     }
 
@@ -60,26 +66,17 @@ export default class ResetPasswordPage extends React.Component {
             return <Loading/>;
 
         if (this.state.emailSentPanel)
-            return <PasswodResetEmailSentPanel/>
-
-        let errorMessage = null;
-        if (this.state.error) {
-            errorMessage = (
-                <div className="form-group">
-                    <div className="text-center small login-error-message">
-                        Podany login lub hasło jest niepoprawny
-                    </div>
-                </div>
-            );
-        }
+            return <ResetPasswordEmailSentPanel/>;
 
         return (
             <div className="container-fluid base-row">
                 <div className="container">
                     <div className="row">
                         <div className="login-window col-md-6 card-3-static">
-                            <h3 className="text-center login-header">Zresetuj haslo</h3>
-                            <p style={{marginBottom: "30px"}}>Podaj swój e-mail, a my wyślemy na niego link do zmiany hasła</p>
+                            <h3 className="text-center login-header">{L.login.resetPasswordHeader}</h3>
+                            <p className="small text-center" style={{marginBottom: "30px"}}>
+                                {L.login.resetPasswordMessage}
+                            </p>
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group">
                                     <input id="email"
@@ -89,7 +86,9 @@ export default class ResetPasswordPage extends React.Component {
                                            onChange={this.handleChange}
                                            placeholder="Adres e-mail"/>
                                 </div>
-                                {errorMessage}
+                                <div className="text-center small login-error-message">
+                                    {this.state.error}
+                                </div>
                                 <button type="submit"
                                      disabled={!this.validateForm()}
                                      className="btn btn-orange-primary login-button">Wyślij</button>

@@ -6,7 +6,7 @@ import Achievement from "../models/achievements/Achievements";
 
 export default class AchievementsRepository {
     static all() {
-        return axios.get(ConfigManager.baseUrl+'/api/v1/achievements', SessionManager.config)
+        return axios.get(ConfigManager.baseUrl+'/api/v1/achievements/', SessionManager.config)
             .then((response) => {
                 let achievements = response.data.map((data) => Achievement.fromJson(data));
                 return achievements;
@@ -14,7 +14,8 @@ export default class AchievementsRepository {
     }
 
     static mission(missionId) {
-        return axios.get(ConfigManager.baseUrl+'/api/v1/achievements/mission/'+missionId, SessionManager.config)
+        console.log(ConfigManager.baseUrl+'/api/v1/achievements/mission/'+missionId+'/');
+        return axios.get(ConfigManager.baseUrl+'/api/v1/achievements/mission/'+missionId+'/', SessionManager.config)
             .then((response) => {
                 let achievements = response.data.map((data) => Achievement.fromJson(data));
                 return achievements;
@@ -22,7 +23,7 @@ export default class AchievementsRepository {
     }
 
     static task(taskId) {
-        return axios.get(ConfigManager.baseUrl+'/api/v1/achievements/task/'+taskId, SessionManager.config)
+        return axios.get(ConfigManager.baseUrl+'/api/v1/achievements/task/'+taskId+'/', SessionManager.config)
             .then((response) => {
                 let achievements = response.data.map((data) => Achievement.fromJson(data));
                 return achievements;
@@ -30,7 +31,7 @@ export default class AchievementsRepository {
     }
 
     static unclosed() {
-        return axios.get(ConfigManager.baseUrl+'/api/v1/achievements/unclosed', SessionManager.config)
+        return axios.get(ConfigManager.baseUrl+'/api/v1/achievements/unclosed/', SessionManager.config)
             .then((response) => {
                 let achievements = response.data.map((data) => Achievement.fromJson(data));
                 return achievements;

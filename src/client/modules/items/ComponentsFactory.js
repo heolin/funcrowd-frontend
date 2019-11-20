@@ -13,6 +13,7 @@ import LikertScaleField from "./components/LikertScaleField";
 import NumberField from "./components/NumberField";
 import RadioOtherField from "./components/RadioOtherField";
 import CheckboxField from "./components/CheckboxField";
+import TextHeader from "./components/TextHeader";
 
 
 let Components = {
@@ -32,6 +33,7 @@ let Components = {
     "ImageField": ImageField,
     "LikertScaleField": LikertScaleField,
     "NumberField": NumberField,
+    "TextHeader": TextHeader
 };
 
 export default class ComponentsFactory {

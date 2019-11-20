@@ -126,22 +126,28 @@ export default class ItemForm extends React.Component {
     }
 
     createGroup(item, groupFields, index) {
-        let fields = groupFields.map((fieldName) => {
-            let field = item.templateFields[fieldName];
-            return factory.create(field.widget,
-                field.name,
-                field.label,
-                this.state[field.name],
-                item.data[field.data_source],
-                field.required,
-                this.state.blocked,
-                this.handleChange);
+
+        let fields = [];
+        groupFields.forEach((fieldName) => {
+            if (fieldName in item.templateFields) {
+                let field = item.templateFields[fieldName];
+                let compomnent = factory.create(field.widget,
+                    field.name,
+                    field.label,
+                    this.state[field.name],
+                    item.data[field.data_source],
+                    field.required,
+                    this.state.blocked,
+                    this.handleChange);
+                fields.push(compomnent);
+            }
         });
-        return (
-            <div className="item-panel-group" key={"group-"+index}>
-                {fields}
-            </div>
-        );
+        if (fields.length > 0)
+            return (
+                <div className="item-panel-group" key={"group-"+index}>
+                    {fields}
+                </div>
+            );
     }
 
     render() {

@@ -28,6 +28,7 @@ export class SideProfilePanel extends React.Component {
         super(props);
         this.state = {
             exp: null,
+            username: null,
             finishedAchievementsCount: null,
             unfinishedAchievementsCount: null,
         };
@@ -37,20 +38,24 @@ export class SideProfilePanel extends React.Component {
 
     componentWillMount() {
         UserManager.addExperienceChangeHandler(this.onUpdate);
+        UserManager.addUsernameChangeHandler(this.onUpdate);
         AchievementsManager.addAchievementsChangeHandler(this.onUpdate);
         AchievementsManager.update();
     }
 
     componentWillUnmount() {
         UserManager.removeExperienceChangeHandler(this.onUpdate);
+        UserManager.removeUsernameChangeHandler(this.onUpdate);
         AchievementsManager.removeAchievementsChangeHandler(this.onUpdate)
     }
 
     onUpdate() {
         let states = {};
 
-        if (UserManager.user)
+        if (UserManager.user) {
             states['exp'] = UserManager.user.exp;
+            states['username'] = UserManager.user.username;
+        }
 
         states['finishedAchievementsCount'] = AchievementsManager.finishedAchievements.length;
         states['unfinishedAchievementsCount'] = AchievementsManager.unfinishedAchievements.length;

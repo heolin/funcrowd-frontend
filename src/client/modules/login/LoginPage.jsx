@@ -12,7 +12,7 @@ export default class LoginPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            login: "",
+            email: "",
             password: "",
             stayLoggedIn: false,
             error: null,
@@ -26,7 +26,7 @@ export default class LoginPage extends React.Component {
     }
 
     validateForm() {
-        return this.state.login.length > 0 && this.state.password.length > 0;
+        return this.state.email.length > 0 && this.state.password.length > 0;
     }
 
     handleChange(event) {
@@ -43,21 +43,26 @@ export default class LoginPage extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        let username = this.state.login;
+        let email = this.state.email;
         let password = this.state.password;
         let stayLoggedIn = this.state.stayLoggedIn == "true";
 
         this.setState({loading: true});
-        UserRepository.login(username, password)
+        UserRepository.login(email, password)
             .then((user) => {
                 this.props.onSuccess(user, stayLoggedIn);
             })
             .catch((error) => {
+                let responseError = error.response.data['detail'];
+
+                let errorMessage = L.login.unknownError;
+                if (responseError === "Authentication credentials were not provided.")
+                    errorMessage = L.login.loginIncorrect;
+
                 this.setState({
                     loading: false,
-                    error: error
+                    error: errorMessage
                 });
-                console.log(error);
             });
     }
 
@@ -65,16 +70,6 @@ export default class LoginPage extends React.Component {
         if (this.state.loading)
             return <Loading/>;
 
-        let errorMessage = null;
-        if (this.state.error) {
-            errorMessage = (
-                <div className="form-group">
-                    <div className="text-center small login-error-message">
-                        {L.login.loginIncorrect}
-                    </div>
-                </div>
-            );
-        }
         return (
             <div className="container-fluid base-row">
                 <div className="container">
@@ -83,12 +78,12 @@ export default class LoginPage extends React.Component {
                             <h3 className="text-center login-header">{L.login.loginHeader}</h3>
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group">
-                                    <input id="login"
-                                           type="login"
+                                    <input id="email"
+                                           type="email"
                                            className="login-input form-control"
-                                           value={this.state.login}
+                                           value={this.state.email}
                                            onChange={this.handleChange}
-                                           placeholder={L.login.login}/>
+                                           placeholder={L.login.email}/>
                                 </div>
                                 <div className="form-group">
                                     <input id="password"
@@ -111,10 +106,12 @@ export default class LoginPage extends React.Component {
                                         </Link>
                                     </div>
                                 </div>
-                                {errorMessage}
+                                <div className="text-center small login-error-message">
+                                    {this.state.error}
+                                </div>
                                 <button type="submit"
                                      disabled={!this.validateForm()}
-                                     className="btn btn-orange-primary login-button">Zaloguj</button>
+                                     className="btn btn-orange-primary login-button">{L.login.login}</button>
                             </form>
 
                         </div>

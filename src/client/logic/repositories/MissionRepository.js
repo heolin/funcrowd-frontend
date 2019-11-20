@@ -6,7 +6,7 @@ import ConfigManager from "../config/ConfigManager";
 
 export default class MissionRepository {
     static all() {
-        return axios.get(ConfigManager.baseUrl+'/api/v1/missions', SessionManager.config)
+        return axios.get(ConfigManager.baseUrl+'/api/v1/missions/', SessionManager.config)
             .then((response) => {
                 let missions = response.data.map((mission_data) => Mission.fromJson(mission_data));
                 return missions;
@@ -14,7 +14,7 @@ export default class MissionRepository {
     }
 
     static get(missionId) {
-        return axios.get(ConfigManager.baseUrl+'/api/v1/missions/'+missionId, SessionManager.config)
+        return axios.get(ConfigManager.baseUrl+'/api/v1/missions/'+missionId+'/', SessionManager.config)
             .then((response) => {
                 let mission = Mission.fromJson(response.data);
                 return mission;

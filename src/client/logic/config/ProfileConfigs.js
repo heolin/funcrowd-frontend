@@ -10,7 +10,7 @@ ProfileConfigs[ProfileTypes.NOTLOGGED] = {
     bounties: false,
     profile: false,
     availablePages: [
-        "/", "/register", "/about", "/reset_password"
+        "/", "/register", "/activation", "/about", "/reset_password", "/reset_password_token"
     ]
 };
 

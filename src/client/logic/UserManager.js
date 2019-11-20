@@ -3,6 +3,7 @@ import UserRepository from "./repositories/UserRepository";
 import LevelsConfig from "../resources/levels";
 
 const EXPERIENCE_CHANGED = "experience-changed";
+const USERNAME_CHANGED = "username-changed";
 
 
 class _UserManager extends EventEmitter {
@@ -52,6 +53,19 @@ class _UserManager extends EventEmitter {
 
     removeExperienceChangeHandler(handler) {
         this.off(EXPERIENCE_CHANGED, handler);
+    }
+
+    addUsernameChangeHandler(handler) {
+        this.on(USERNAME_CHANGED, handler);
+    }
+
+    removeUsernameChangeHandler(handler) {
+        this.off(USERNAME_CHANGED, handler);
+    }
+
+    changeUsername(username) {
+        this.user.username = username;
+        this.emit(USERNAME_CHANGED);
     }
 
     _updateLevel() {

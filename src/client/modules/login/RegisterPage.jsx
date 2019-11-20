@@ -4,6 +4,7 @@ import Loading from "../../components/Loading";
 import { Link } from 'react-router-dom';
 import CheckboxElement from "../items/components/element/CheckboxElement";
 import {Footer} from "../../Footer";
+import L from "../../logic/locatization/LocalizationManager";
 import ActivationEmailSentPanel from "./ActivationEmailSentPanel";
 
 export default class RegisterPage extends React.Component {
@@ -63,9 +64,19 @@ export default class RegisterPage extends React.Component {
                 });
             })
             .catch((error) => {
+                let responseError = error.response.data['detail'];
+
+                let errorMessage = L.login.registrationFailed;
+                if (responseError === "Username is already used")
+                    errorMessage = L.login.usernameAlreadyUsed;
+                else if (responseError === "Email is already used")
+                    errorMessage = L.login.emailAlreadyUsed;
+                else if (responseError === "Passwords does not match")
+                    errorMessage = L.login.passwordsNotMatch;
+
                 this.setState({
                     loading: false,
-                    error: error.response.data['detail']
+                    error: errorMessage
                 });
             });
     }
@@ -77,33 +88,13 @@ export default class RegisterPage extends React.Component {
         if (this.state.activationEmailPanel)
             return <ActivationEmailSentPanel/>;
 
-        let errorMessage = null;
-        if (this.state.error) {
-            console.log(this.state.error);
-            let errorText = "Rejestracja nie powiodła się";
-            if (this.state.error === "Username is already used")
-                errorText = "Ta nazwa użytkownika jest już użyta";
-            else if (this.state.error === "Email is already used")
-                errorText = "Ten adres e-mail jest już użyty";
-            else if (this.state.error === "Passwords does not match")
-                errorText = "Podane hasła nie pasują";
-
-            errorMessage = (
-                <div className="form-group">
-                    <div className="text-center small login-error-message">
-                        {errorText}
-                    </div>
-                </div>
-            );
-        }
-
         return (
             <div className="container-fluid base-row">
                 <div className="container">
                     <div className="row">
                         <div className="login-window col-md-6 card-3-static">
                             <h3 className="text-center login-header">
-                                Rejestracja
+                                {L.login.registerHeader}
                             </h3>
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group">
@@ -112,7 +103,7 @@ export default class RegisterPage extends React.Component {
                                            className="login-input form-control"
                                            value={this.state.username}
                                            onChange={this.handleChange}
-                                           placeholder="Nazwa użytkownika"/>
+                                           placeholder={L.login.username}/>
                                 </div>
                                 <div className="form-group">
                                     <input id="email"
@@ -120,7 +111,7 @@ export default class RegisterPage extends React.Component {
                                            className="login-input form-control"
                                            value={this.state.email}
                                            onChange={this.handleChange}
-                                           placeholder="Adres e-mail"/>
+                                           placeholder={L.login.email}/>
                                 </div>
                                 <div className="form-group">
                                     <input id="password1"
@@ -128,7 +119,7 @@ export default class RegisterPage extends React.Component {
                                            className="login-input form-control"
                                            value={this.state.password1}
                                            onChange={this.handleChange}
-                                           placeholder="Hasło"/>
+                                           placeholder={L.login.password}/>
                                 </div>
                                 <div className="form-group">
                                     <input id="password2"
@@ -136,7 +127,7 @@ export default class RegisterPage extends React.Component {
                                            className="login-input form-control"
                                            value={this.state.password2}
                                            onChange={this.handleChange}
-                                           placeholder="Powtórz hasło"/>
+                                           placeholder={L.login.repeatPassword}/>
                                 </div>
                                 <div className="form-group very-little">
                                     <CheckboxElement className="login-checkbox"
@@ -145,16 +136,18 @@ export default class RegisterPage extends React.Component {
                                                      name={'acceptTerms'}
                                                      value={this.state.acceptTerms}
                                                      onChange={this.handleCheckboxChange}
-                                                     label="Wyrażam zgodę na przetwarzanie moich danych osobowych przez administratora danych FunCrowd w celu wzięcia udziału w kursie nauki programu Excel. Podaję dane osobowe dobrowolnie i oświadczam, że są one zgodne z prawdą. Zapoznałem/łam się z Regulaminem strony oraz Polityką Prywatności serwisu, w tym z informacją o celu i sposobach przetwarzania danych osobowych oraz prawie dostępu do treści swoich danych i prawie ich poprawiania lub usunięcia."
+                                                     label={L.login.processDataMessage}
                                     />
                                 </div>
-                                {errorMessage}
+                                <div className="text-center small login-error-message">
+                                    {this.state.error}
+                                </div>
                                 <button type="submit"
                                      disabled={!this.validateForm()}
-                                     className="btn btn-orange-primary login-button">Załóż konto</button>
+                                     className="btn btn-orange-primary login-button">{L.login.registerButton}</button>
                             </form>
                             <div className="text-center small login-link">
-                                Masz już konto? <Link to="/">Zaloguj się</Link>
+                                {L.login.alreadyHaveAccount} <Link to="/">{L.login.logInto}</Link>
                             </div>
                         </div>
                     </div>

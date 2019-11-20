@@ -15,7 +15,7 @@
 
 .login-button {
   width: 100%;
-  margin: 10px 0 20px 0;
+  margin: 10px 0 15px 0;
 }
 
 .login-input {
@@ -57,6 +57,7 @@
 
 .login-error-message {
   color: $red-color;
+  margin: 10px 0;
 }
 
 .login-reset-password-link {
@@ -74,4 +75,8 @@
 .login-reset-email-panel {
   margin: 60px auto 0 auto;
   padding: 40px 70px;
+}
+
+.settings-form-error-message.error {
+  color: $red-color;
 }
