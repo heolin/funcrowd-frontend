@@ -38,6 +38,7 @@ export default class RadioOtherField extends React.Component {
                           className="small"
                           name={this.props.name}
                           onChange={this.handleChange}
+                          text={"Other: "}
                           required={this.props.required}
                           value={option}/>);
         options.push(

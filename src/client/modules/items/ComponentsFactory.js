@@ -14,6 +14,7 @@ import NumberField from "./components/NumberField";
 import RadioOtherField from "./components/RadioOtherField";
 import CheckboxField from "./components/CheckboxField";
 import TextHeader from "./components/TextHeader";
+import TextOrRadioField from "./components/TextOrRadioField";
 
 
 let Components = {
@@ -24,6 +25,7 @@ let Components = {
     "TextField": TextField,
     "RadioField": RadioField,
     "RadioOtherField": RadioOtherField,
+    "TextOrRadioField": TextOrRadioField,
     "MultiChoiceField": MultiChoiceField,
     "SelectField": SelectField,
     "LinkButton": LinkButton,

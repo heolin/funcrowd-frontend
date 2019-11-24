@@ -7,6 +7,7 @@ import feedback from "../../resources/texts/feedback";
 import login from "../../resources/texts/login";
 import levels from "../../resources/texts/levels";
 import spacecalc from "../../resources/texts/spacecalc";
+import quiz from "../../resources/texts/quiz";
 
 
 class _LocalizationManager {
@@ -21,6 +22,7 @@ class _LocalizationManager {
         this.levels = new LocalizedDictionary(levels);
         this.feedback = new LocalizedDictionary(feedback);
         this.login = new LocalizedDictionary(login);
+        this.quiz = new LocalizedDictionary(quiz);
         this.language = null;
     }
 
@@ -34,6 +36,7 @@ class _LocalizationManager {
         this.feedback.setup(language);
         this.levels.setup(language);
         this.login.setup(language);
+        this.quiz.setup(language);
     }
 
 }

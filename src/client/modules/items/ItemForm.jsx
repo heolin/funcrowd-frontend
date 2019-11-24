@@ -65,6 +65,7 @@ export default class ItemForm extends React.Component {
         for (let i = 0; i < item.template.fields.length; i++) {
             let field = item.template.fields[i];
             if (field.required && field.editable) {
+                console.log(field.name + " " + this.state[field.name]);
                 if (!this.state[field.name]) {
                     return false
                 }
@@ -74,6 +75,7 @@ export default class ItemForm extends React.Component {
     }
 
     handleChange(event) {
+        console.log(event.target.value);
         this.setState({
             [event.target.id]: event.target.value
         });

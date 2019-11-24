@@ -27,9 +27,7 @@ export default class RadioOtherElement extends React.Component {
     handleTextChange(event) {
         this.setState({
            value: event.target.value
-        });
-
-        this.handleChange(event);
+        }, this.handleChange);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -53,7 +51,7 @@ export default class RadioOtherElement extends React.Component {
                 <span className="outer">
                     <span className="inner"></span>
                 </span>
-                Other:
+                {this.props.text}
                 <input id={this.props.name}
                        value={this.state.value}
                        name={this.props.name}

@@ -5,6 +5,7 @@ import L from "../../logic/locatization/LocalizationManager";
 import feedbackSurvey from "../../static/img/feedback/feedback_survey.svg";
 import BinaryFeedbackModal from "./BinaryFeedbackModal";
 import PointsFeedbackModal from "./PointsFeedbackModal";
+import QuizFeedbackModal from "./QuizFeedbackModal";
 
 
 class _FeedbackFactory {
@@ -20,12 +21,14 @@ class _FeedbackFactory {
                                       buttonText={L.feedback.nextItem}/>;
 
             case FeedbackTypes.QUIZ:
-                return <FeedbackModal isOpen={isOpen}
-                                      onAccept={onAccept}
-                                      headerText={L.feedback.annotationSaved}
-                                      message={L.feedback.annotationSavedMessage}
-                                      image={feedbackSurvey}
-                                      buttonText={L.feedback.nextItem}/>;
+                return <QuizFeedbackModal isOpen={isOpen}
+                                           onAccept={onAccept}
+                                           headerText={L.feedback.annotationSaved}
+                                           message={L.feedback.annotationSavedMessage}
+                                           image={feedbackSurvey}
+                                           annotation={annotation}
+                                           feedback={feedback}
+                                           buttonText={L.feedback.nextItem}/>;
 
             case FeedbackTypes.BINARY:
                 return <BinaryFeedbackModal isOpen={isOpen}

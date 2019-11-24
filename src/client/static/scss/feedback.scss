@@ -1,4 +1,7 @@
 @import "fonts";
+@import "colors";
+@import "mixins";
+
 
 .feedback-header {
 
@@ -35,4 +38,12 @@
   top: 50px;
   width: 100%;
   font-size: 64px;
+}
+
+.feedback-table-row {
+}
+
+
+.feedback-table-row:nth-child(odd) {
+  @include horizontal_gradient($blue-color);
 }
