@@ -1,0 +1,103 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "components/input.scss";
+@import "components/gallery.scss";
+@import "components/radio.scss";
+@import "components/checkbox.scss";
+@import "components/tagger.scss";
+@import "buttons";
+@import "breadcrumbs";
+@import "fonts";
+@import "colors";
+@import "utils";
+@import "instruction";
+@import "achievements";
+@import "navbar";
+@import "items";
+@import "feedback";
+@import "modal";
+@import "login";
+@import "components";
+
+
+
+html {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  @extend .normal;
+  height: 100%;
+  font-family: $normal-font;
+  font-weight: $normal-weight;
+  color: $dark-color;
+
+  //background-image: radial-gradient(#ffffff, #ffffff 32%, #e7e7e7);
+  position: relative;
+
+  padding-top: 78px;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+.justify-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.a {
+  @extend .color-blue;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.padding-top {
+  padding: 60px 0;
+}
+
+.base-row {
+  display: block !important;
+  height: 100%;
+}
+
+.base-row-padding {
+  @extend .base-row;
+  padding-top: 60px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+
+.col-02 {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.logo {
+  height: 30px;
+}
+
+
+.shadow-light-2 {
+  box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.18);
+}
+
+.form-group {
+  margin-bottom: 40px !important;
+}

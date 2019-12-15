@@ -42,8 +42,14 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return _react["default"].createElement("div", {
-        className: "col-sm-12 card-1-static no-items-panel"
-      }, _react["default"].createElement("h4", null, "No items left"), _react["default"].createElement("p", null, "You have finished tagging all items from this task."));
+        className: "col-sm-12 items-panel no-items-panel"
+      }, _react["default"].createElement("div", {
+        className: "card-1-static item-panel-group"
+      }, _react["default"].createElement("h4", null, "No items left"), _react["default"].createElement("p", {
+        style: {
+          marginBottom: 0
+        }
+      }, "You have finished tagging all items from this task.")));
     }
   }]);
 

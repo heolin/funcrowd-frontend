@@ -10,7 +10,7 @@ import QuizFeedbackModal from "./QuizFeedbackModal";
 
 class _FeedbackFactory {
 
-    create(type, isOpen, onAccept, annotation, feedback, exp) {
+    create(type, isOpen, onAccept, task, annotation, feedback, exp) {
         switch(type) {
             case FeedbackTypes.NONE:
                 return <FeedbackModal isOpen={isOpen}
@@ -39,6 +39,7 @@ class _FeedbackFactory {
                 return <PointsFeedbackModal isOpen={isOpen}
                                             onAccept={onAccept}
                                             feedback={feedback}
+                                            task={task}
                                             exp={exp}/>;
 
             case FeedbackTypes.QUESTIONNAIRE:

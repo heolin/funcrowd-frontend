@@ -3,6 +3,7 @@ import UserManager from "../../logic/UserManager";
 import UserRepository from "../../logic/repositories/UserRepository";
 import Loading from "../../components/Loading";
 import L from "../../logic/locatization/LocalizationManager";
+import {Footer} from "../../Footer";
 
 
 export default class SettingsPage extends React.Component {
@@ -186,6 +187,7 @@ export default class SettingsPage extends React.Component {
                         </div>
                     </div>
                 </div>
+                <Footer style={{marginTop: "80px"}}/>
             </div>
         );
     }

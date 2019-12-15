@@ -17,7 +17,7 @@ export default class FeedbackPanel extends React.Component {
         }
 
         let modal = FeedbackFactory.create(type,
-            this.props.isOpen, this.props.onAccept,
+            this.props.isOpen, this.props.onAccept, this.props.task,
             annotation, feedback, this.props.exp);
 
         return (

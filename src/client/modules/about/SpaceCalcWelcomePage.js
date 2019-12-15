@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import {Blob} from "../../components/Blob";
 import {Footer} from "../../Footer";
 import L from "../../logic/locatization/LocalizationManager";
+import ScrollAnimation from 'react-animate-on-scroll';
 
 
 export default class SpaceCalcWelcomePage extends React.Component {

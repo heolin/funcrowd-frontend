@@ -14,7 +14,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var UserBounty =
 /*#__PURE__*/
 function () {
-  function UserBounty(id, progress, annotationsDone, annotationsTarget, status, reward) {
+  function UserBounty(id, progress, annotationsDone, annotationsTarget, status, reward, rewardsList) {
     _classCallCheck(this, UserBounty);
 
     this.id = id;
@@ -23,10 +23,11 @@ function () {
     this.annotationsTarget = annotationsTarget;
     this.status = status;
     this.reward = reward;
+    this.rewardsList = rewardsList || [];
   }
 
   _createClass(UserBounty, [{
-    key: "is_closed",
+    key: "isClosed",
     get: function get() {
       return this.status === "FINISHED" || this.status === "CLOSED";
     }
@@ -34,7 +35,7 @@ function () {
     key: "fromJson",
     value: function fromJson(bounty_data) {
       if (bounty_data !== null && bounty_data.id) {
-        var userBounty = new UserBounty(bounty_data.id, bounty_data.progress, bounty_data.annotations_done, bounty_data.annotations_target, bounty_data.status, bounty_data.reward);
+        var userBounty = new UserBounty(bounty_data.id, bounty_data.progress, bounty_data.annotations_done, bounty_data.annotations_target, bounty_data.status, bounty_data.reward, bounty_data.rewards_list);
         return userBounty;
       }
     }

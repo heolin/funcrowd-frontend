@@ -24,7 +24,7 @@ export default class ItemHeader extends React.Component {
                                 <div style={{marginTop: "10px"}}>
                                     <Breadcrumbs>
                                         <BreadcrumbItem label={L.labels.missions} link="/missions"/>
-                                        <BreadcrumbItem label={task.name} link={"/mission/" + task.id + "/tasks"}/>
+                                        <BreadcrumbItem label={task.name} link={"/mission/" + task.mission_id + "/tasks"}/>
                                         <BreadcrumbItem label={L.general.task}/>
                                     </Breadcrumbs>
                                 </div>
@@ -47,11 +47,11 @@ export default class ItemHeader extends React.Component {
                             <div className="col-sm-12 col-md-8 justify-items">
                                 <div className="d-inline-block">
                                     <SmallIcon name="achievements"/>
-                                    <small> 10 {L.general.achievements}</small>
+                                    <small> X {L.general.achievements}</small>
                                 </div>
                                 <div className="d-inline-block">
                                     <SmallIcon name="experience"/>
-                                    <small> 10 {L.general.experience}</small>
+                                    <small> {task.totalExp} {L.general.experience}</small>
                                 </div>
                             </div>
                         </div>

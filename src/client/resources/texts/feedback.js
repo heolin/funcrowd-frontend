@@ -27,6 +27,10 @@ export default {
         en: "Next item",
         pl: "Następne zadanie"
     },
+    tryAgain: {
+        en: "Try again",
+        pl: "Wróć do zadania"
+    },
     questionnaireSaved: {
         en: "Questionnaire saved",
         pl: "Kwestionariusz wypełniony"

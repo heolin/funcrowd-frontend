@@ -1,0 +1,94 @@
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+@mixin box_shadow ($level) {
+  @if $level == 1 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 0px 4px rgba(0,0,0,0.18);
+  } @else if $level == 2 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12), 0 0px 8px rgba(0,0,0,0.18);
+  } @else if $level == 3 {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 0px 6px rgba(0,0,0,0.18);
+  } @else if $level == 4 {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.21), 0 0px 10px rgba(0,0,0,0.18);
+  } @else if $level == 5 {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.26), 0 0px 12px rgba(0,0,0,0.18);
+  }
+}
+
+@mixin horizontal_gradient($color) {
+  background: $color;
+  background: linear-gradient(
+                  90deg,
+                  rgba($color, 0) 0%,
+                  rgba($color, 0.3) 25%,
+                  rgba($color, 0.4) 50%,
+                  rgba($color, 0.3) 75%,
+                  rgba($color, 0) 100%);
+}
+
+
+@mixin button($color, $bg-color, $border-color, $dark-bg-color) {
+  color: $color !important;
+  background: $bg-color !important;
+  box-shadow: 0px 0px 16px -6px rgba(0, 0, 0, 0.8);
+  border: solid 3px $border-color !important;
+
+  &:hover,
+  &:active {
+    color: white !important;
+    background: $dark-bg-color !important;
+    border-color: $dark-bg-color !important;
+  }
+}
+

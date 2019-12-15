@@ -63,6 +63,9 @@ export default class ImagesGallery extends React.Component {
     }
 
     render() {
+        if (!this.props.value)
+            return null;
+
         let items = [];
         if (this.props.value)
             items = this.props.value.map((url) => <Image

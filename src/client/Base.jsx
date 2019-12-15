@@ -11,7 +11,6 @@ import BountyMenu from "./modules/bounty/BountyMenu";
 import queryString from 'query-string';
 import UserRepository from "./logic/repositories/UserRepository";
 import ConfigManager from "./logic/config/ConfigManager";
-import LocalizationManager from './logic/locatization/LocalizationManager'
 import AboutPage from "./modules/about/AboutPage";
 import AchievementsMenu from "./modules/achievements/AchievementsMenu";
 import {SideProfilePanel} from "./modules/profile/SideProfilePanel";
@@ -21,6 +20,7 @@ import ResetPasswordPage from "./modules/login/ResetPasswordPage";
 import ProfileTypes from "./logic/config/ProfileTypes";
 import UserManager from "./logic/UserManager";
 import ProfilePage from "./modules/profile/ProfilePage";
+import RankingPage from "./modules/ranking/RankingPage";
 import BountyItemPanel from "./modules/bounty/BountyItemPanel";
 import SpaceCalcAboutPage from "./modules/about/SpaceCalcAboutPage";
 import SpaceCalcWelcomePage from "./modules/about/SpaceCalcWelcomePage";
@@ -28,15 +28,16 @@ import Footer from "./Footer";
 import SettingsPage from "./modules/profile/SettingsPage";
 import ResetPasswordTokenPage from "./modules/login/ResetPasswordTokenPage";
 import ActivationPage from "./modules/login/ActivationPage";
+import urls from "./Urls"
 
 
-const RouteContainer = posed.div({
+export const RouteContainer = posed.div({
   enter: { opacity: 1, delay: 300, beforeChildren: true },
   exit: { opacity: 0 }
 });
 
 
-class Base extends React.Component {
+export class AppBase extends React.Component {
 
     constructor(props) {
         super(props);
@@ -57,13 +58,12 @@ class Base extends React.Component {
         this.onBountySelect = this.onBountySelect.bind(this);
         this.showSideProfile = this.showSideProfile.bind(this);
         this.hideSideProfile = this.hideSideProfile.bind(this);
+        this.redirectToHome = this.redirectToHome.bind(this);
     }
 
     componentDidMount() {
         this.checkSessionUser();
         this.checkUrlParams();
-
-        LocalizationManager.setup('en');
     }
 
     checkSessionUser() {
@@ -103,11 +103,13 @@ class Base extends React.Component {
     }
 
     redirectToHome() {
-        if (this.props.location.pathname === "/" || this.props.location.pathname === "/activation") {
+        if (urls.checkUrl(this.props.location.pathname, urls.HOME) ||
+            urls.checkUrl(this.props.location.pathname, urls.ACTIVATION) ||
+            urls.checkUrl(this.props.location.pathname, urls.LOGIN)) {
             if (UserManager.user.profile == ProfileTypes.NORMAL) {
-                this.props.history.push('/missions');
+                this.props.history.push(urls.MISSIONS);
             } else {
-                this.props.history.push('/bounties');
+                this.props.history.push(urls.BOUNTIES);
             }
         }
     }
@@ -156,9 +158,10 @@ class Base extends React.Component {
         if (this.state.checkingParams || this.state.checkingUser)
             return <Loading/>;
 
-        if (this.state.user === null) {
+        console.log(this.props.location);
+        if (UserManager.user === null) {
             if (ConfigManager.profile.availablePages.indexOf(this.props.location.pathname) < 0){
-                this.props.history.push('/');
+                this.props.history.push(urls.LOGIN);
                 return <Loading/>;
             }
         } else {
@@ -184,44 +187,46 @@ class Base extends React.Component {
                         <PoseGroup>
                             <RouteContainer key={location.pathname}>
                                 <Switch location={location}>
-                                    <Route exact path="/"
+                                    <Route exact path={urls.HOME}
                                            render={(props) => <LoginPage onSuccess={this.onLogin} {...props}/>}/>
-                                    <Route path="/activation"
+                                    <Route path={urls.ACTIVATION}
                                            render={(props) => <ActivationPage onSuccess={this.onLogin} {...props}/>}/>
-                                    <Route path="/register"
+                                    <Route path={urls.REGISTER}
                                            render={(props) => <RegisterPage onSuccess={this.onLogin} {...props}/>}/>
-                                    <Route path="/missions"
+                                    <Route path={urls.MISSIONS}
                                            render={(props) => <MissionsMenu onMissionSelect={this.onMissionSelect}
                                                                             user={this.state.user} {...props}/>}/>
-                                    <Route path="/reset_password"
+                                    <Route path={urls.RESET_PASSWORD}
                                            render={(props) => <ResetPasswordPage {...props}/>}/>
-                                    <Route path="/reset_password_token"
+                                    <Route path={urls.RESET_PASSWORD_TOKEN}
                                            render={(props) => <ResetPasswordTokenPage onSuccess={this.onLogin} {...props}/>}/>
-                                    <Route path="/about"
+                                    <Route path={urls.ABOUT}
                                            render={(props) => <SpaceCalcAboutPage user={this.state.user} {...props}/>}/>
-                                    <Route path="/welcome"
+                                    <Route path={urls.WELCOME}
                                            render={(props) => <SpaceCalcWelcomePage user={this.state.user} {...props}/>}/>
-                                    <Route path="/profile"
+                                    <Route path={urls.PROFILE}
                                           render={(props) => <ProfilePage usr={this.state.user} {...props}/>}/>
-                                    <Route path="/settings"
+                                    <Route path={urls.SETTINGS}
                                            render={(props) => <SettingsPage usr={this.state.user} {...props}/>}/>
-                                    <Route path="/achievements"
+                                    <Route path={urls.RANKING}
+                                           render={(props) => <RankingPage usr={this.state.user} {...props}/>}/>
+                                    <Route path={urls.ACHIEVEMENTS}
                                            render={(props) => <AchievementsMenu user={this.state.user} {...props}/>}/>
-                                    <Route path="/bounty/:id"
+                                    <Route path={urls.BOUNTY}
                                            render={(props) => <BountyItemPanel task={this.state.task}
                                                                                user={this.state.user}
                                                                                bounty={this.state.bounty}
                                                                                onBountySelect={this.onBountySelect}
                                                                                {...props}/>}/>
-                                    <Route path="/bounties"
+                                    <Route path={urls.BOUNTIES}
                                            render={(props) => <BountyMenu onBountySelect={this.onBountySelect}
                                                                           user={this.state.user} {...props}/>}/>
-                                    <Route path="/task/:id"
+                                    <Route path={urls.TASK}
                                            render={(props) => <ItemPanel task={this.state.task}
                                                                          user={this.state.user}
                                                                          onTaskSelect={this.onTaskSelect}
                                                                          {...props}/>}/>
-                                    <Route path="/mission/:id/tasks"
+                                    <Route path={urls.TASKS}
                                            render={(props) => <TasksMenu onTaskSelect={this.onTaskSelect}
                                                                          onMissionSelect={this.onMissionSelect}
                                                                          mission={this.state.mission}
@@ -237,4 +242,4 @@ class Base extends React.Component {
     }
 }
 
-export default withRouter(Base);
+export default withRouter(AppBase);

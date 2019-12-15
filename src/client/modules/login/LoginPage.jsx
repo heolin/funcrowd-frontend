@@ -4,6 +4,7 @@ import Loading from "../../components/Loading";
 import CheckboxElement from "../items/components/element/CheckboxElement";
 import { Link } from 'react-router-dom';
 import L from "../../logic/locatization/LocalizationManager";
+import urls from "../../Urls"
 import {Footer} from "../../Footer";
 
 
@@ -53,6 +54,7 @@ export default class LoginPage extends React.Component {
                 this.props.onSuccess(user, stayLoggedIn);
             })
             .catch((error) => {
+                console.log(error);
                 let responseError = error.response.data['detail'];
 
                 let errorMessage = L.login.unknownError;
@@ -101,7 +103,7 @@ export default class LoginPage extends React.Component {
                                                      onChange={this.handleCheckboxChange}
                                                      label={L.login.rememberMe}/>
                                     <div className="login-reset-password-link login-link">
-                                        <Link to="/reset_password">
+                                        <Link to={urls.RESET_PASSWORD}>
                                             {L.login.forgotPassword}
                                         </Link>
                                     </div>

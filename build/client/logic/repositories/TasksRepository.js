@@ -31,7 +31,7 @@ function () {
   _createClass(TasksRepository, null, [{
     key: "list",
     value: function list(missionId) {
-      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/missions/' + missionId + "/tasks", _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/missions/' + missionId + "/tasks/", _SessionManager["default"].config).then(function (response) {
         var tasks = response.data.map(function (task_data) {
           return _Task["default"].fromJson(task_data);
         });
@@ -41,7 +41,7 @@ function () {
   }, {
     key: "get",
     value: function get(taskId) {
-      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/tasks/' + taskId, _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/tasks/' + taskId + '/', _SessionManager["default"].config).then(function (response) {
         var task = _Task["default"].fromJson(response.data);
 
         return task;

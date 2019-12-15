@@ -7,9 +7,13 @@ exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _reactPose = _interopRequireDefault(require("react-pose"));
+
 var _reactIconsKit = require("react-icons-kit");
 
 var _close = require("react-icons-kit/fa/close");
+
+var _BlackBackground = _interopRequireDefault(require("../../../../components/BlackBackground"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -31,6 +35,21 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+var Modal = _reactPose["default"].div({
+  open: {
+    opacity: 1.0,
+    scale: 1.0,
+    x: "-50%",
+    y: "-50%"
+  },
+  closed: {
+    opacity: 0,
+    scale: 0.0,
+    x: "-50%",
+    y: "-50%"
+  }
+});
+
 var ImageModal =
 /*#__PURE__*/
 function (_React$Component) {
@@ -42,7 +61,9 @@ function (_React$Component) {
     _classCallCheck(this, ImageModal);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ImageModal).call(this, props));
-    _this.state = {};
+    _this.state = {
+      image: null
+    };
     _this.onClose = _this.onClose.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -57,32 +78,52 @@ function (_React$Component) {
     value: function render() {
       return _react["default"].createElement("div", {
         className: "modal-base"
-      }, _react["default"].createElement("div", {
-        className: "shadow",
-        onClick: this.onClose
-      }), _react["default"].createElement("div", {
-        className: "gallery-image-modal card-3-static"
-      }, _react["default"].createElement("img", {
-        src: this.props.image,
+      }, _react["default"].createElement(_BlackBackground["default"], {
+        className: "black-background",
         style: {
+          pointerEvents: this.props.image ? "auto" : "none"
+        },
+        pose: this.props.image ? 'open' : 'closed',
+        onClick: this.onClose
+      }), _react["default"].createElement(Modal, {
+        className: "gallery-image-modal card-3-static",
+        style: {
+          pointerEvents: this.props.image ? "auto" : "none"
+        },
+        pose: this.props.image ? 'open' : 'closed'
+      }, _react["default"].createElement("img", {
+        src: this.state.image,
+        style: {
+          maxHeight: "75vh",
           maxWidth: "90vw"
         }
-      }), _react["default"].createElement("button", {
-        className: "btn btn-default",
+      }), _react["default"].createElement("div", {
         style: {
           position: "absolute",
-          top: "-2px",
-          right: "-5px",
+          top: "-40px",
+          right: "-50px",
           width: "40px"
         },
         onClick: this.onClose
       }, _react["default"].createElement(_reactIconsKit.Icon, {
         icon: _close.close,
-        size: 24,
+        size: 32,
         style: {
-          marginLeft: "-5px"
+          marginLeft: "-5px",
+          color: "white"
         }
       }))));
+    }
+  }], [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(props, state) {
+      if (props.image !== state.image && props.image) {
+        return {
+          image: props.image
+        };
+      }
+
+      return null;
     }
   }]);
 

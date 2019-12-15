@@ -21,9 +21,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -34,27 +34,57 @@ var CheckboxField =
 function (_React$Component) {
   _inherits(CheckboxField, _React$Component);
 
-  function CheckboxField() {
+  function CheckboxField(props) {
+    var _this;
+
     _classCallCheck(this, CheckboxField);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(CheckboxField).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CheckboxField).call(this, props));
+    _this.onChange = _this.onChange.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(CheckboxField, [{
+    key: "onChange",
+    value: function onChange() {
+      var checkboxes = document.querySelectorAll('input[name=' + this.props.name + ']:checked');
+      var values = [];
+
+      for (var i = 0; i < checkboxes.length; i++) {
+        values.push(checkboxes[i].value);
+      }
+
+      var event = {
+        target: {
+          id: this.props.name,
+          value: JSON.stringify(values)
+        }
+      };
+      this.props.onChange(event);
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
-      var options = this.props.value.map(function (option) {
+      var options = this.props.source.map(function (option) {
         return _react["default"].createElement(_CheckboxElement["default"], {
           key: option,
-          name: _this.props.name,
+          labelClassName: "small",
+          onChange: _this2.onChange,
+          name: _this2.props.name,
           value: option
         });
       });
+      var label;
+      if (this.props.label) label = _react["default"].createElement("label", null, _react["default"].createElement("strong", null, this.props.label));
       return _react["default"].createElement("div", {
         className: "form-group"
-      }, options);
+      }, label, _react["default"].createElement("div", {
+        style: {
+          marginLeft: "10px"
+        }
+      }, options));
     }
   }]);
 

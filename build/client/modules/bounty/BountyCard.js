@@ -7,13 +7,19 @@ exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactIconsKit = require("react-icons-kit");
+var _Card = _interopRequireDefault(require("../../components/animated/Card"));
 
 var _lock = require("react-icons-kit/fa/lock");
 
 var _unlock = require("react-icons-kit/fa/unlock");
 
 var _trophy = require("react-icons-kit/fa/trophy");
+
+var _Icons = require("../../components/Icons");
+
+var _ProgressBar = _interopRequireDefault(require("../../components/ProgressBar"));
+
+var _LocalizationManager = _interopRequireDefault(require("../../logic/locatization/LocalizationManager"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -52,105 +58,68 @@ function (_React$Component) {
       var bounty = this.props.bounty;
       var task = bounty.task;
       var userBounty = bounty.userBounty;
+      var progressBar = null;
+      var icon = "locked";
+      var bountyStatus = _LocalizationManager["default"].bounty.status.CLOSED;
+      var className = "mission-closed-card card-2-static";
+
+      var onClick = function onClick() {};
 
       if (userBounty) {
-        var progress = Math.min(userBounty.progress * 100, 100);
-        var annotationsDone = Math.min(userBounty.annotationsDone, bounty.annotationsTarget);
-
-        if (userBounty.status === "NEW" || userBounty.status === "IN_PROGRESS") {
-          return _react["default"].createElement("div", {
-            className: "col-md-4",
-            style: {
-              marginBottom: "40px"
-            }
-          }, _react["default"].createElement("div", {
-            className: "bounty-card card-2",
-            onClick: this.props.onSelect
-          }, _react["default"].createElement("div", {
-            className: "bounty-card-header"
-          }, _react["default"].createElement("h6", null, "Bounty in progress"), _react["default"].createElement("h6", {
-            className: "bounty-card-id"
-          }, "#", bounty.id)), _react["default"].createElement("div", {
-            className: "bounty-card-title-base"
-          }, _react["default"].createElement("div", {
-            className: "bounty-card-icon"
-          }, _react["default"].createElement(_reactIconsKit.Icon, {
-            icon: _unlock.unlock,
-            size: 32
-          })), _react["default"].createElement("div", {
-            className: "bounty-card-title"
-          }, _react["default"].createElement("h4", null, task.name))), _react["default"].createElement("div", {
-            className: "card-progress-bar"
-          }, _react["default"].createElement("div", {
-            className: "progress mission-progress"
-          }, _react["default"].createElement("div", {
-            className: "progress-bar bounty-progress-bar",
-            style: {
-              width: progress + "%"
-            }
-          })), _react["default"].createElement("p", {
-            className: "bounty-progress-stats"
-          }, annotationsDone, " / ", bounty.annotationsTarget, " done"))));
-        } else {
-          var bountyStatus = "Bounty closed";
-          if (userBounty.progress === 1) bountyStatus = "Bounty finished";
-          return _react["default"].createElement("div", {
-            className: "col-md-4",
-            style: {
-              marginBottom: "40px"
-            }
-          }, _react["default"].createElement("div", {
-            className: "bounty-card finished-card card-2",
-            onClick: this.props.onSelect
-          }, _react["default"].createElement("div", {
-            className: "bounty-card-header"
-          }, _react["default"].createElement("h6", null, bountyStatus), _react["default"].createElement("h6", {
-            className: "bounty-card-id"
-          }, "#", bounty.id)), _react["default"].createElement("div", {
-            className: "bounty-card-title-base"
-          }, _react["default"].createElement("div", {
-            className: "bounty-card-icon"
-          }, _react["default"].createElement(_reactIconsKit.Icon, {
-            icon: _trophy.trophy,
-            size: 32
-          })), _react["default"].createElement("div", {
-            className: "bounty-card-title"
-          }, _react["default"].createElement("h4", null, task.name))), _react["default"].createElement("div", {
-            className: "card-progress-bar"
-          }, _react["default"].createElement("div", {
-            className: "progress mission-progress"
-          }, _react["default"].createElement("div", {
-            className: "progress-bar bounty-progress-bar",
-            style: {
-              width: progress + "%"
-            }
-          })), _react["default"].createElement("p", {
-            className: "bounty-progress-stats"
-          }, annotationsDone, " / ", bounty.annotationsTarget, " done"))));
+        if (userBounty.status === "NEW") {
+          icon = "missions";
+          bountyStatus = _LocalizationManager["default"].bounty.status.NEW;
+          className = "card-2";
+          onClick = this.props.onSelect;
+        } else if (userBounty.status === "IN_PROGRESS") {
+          icon = "missions";
+          bountyStatus = _LocalizationManager["default"].bounty.status.IN_PROGRESS;
+          className = "card-2";
+          onClick = this.props.onSelect;
+        } else if (userBounty.progress === 1) {
+          bountyStatus = _LocalizationManager["default"].bounty.status.FINISHED;
+          icon = "tick-sign-green";
+          className = "card-2";
+          onClick = this.props.onSelect;
         }
-      } else {
-        return _react["default"].createElement("div", {
-          className: "col-md-4",
-          style: {
-            marginBottom: "40px"
-          }
-        }, _react["default"].createElement("div", {
-          className: "bounty-card closed-card card-2-static"
-        }, _react["default"].createElement("div", {
-          className: "bounty-card-header"
-        }, _react["default"].createElement("h6", null, "Bounty closed"), _react["default"].createElement("h6", {
-          className: "bounty-card-id"
-        }, "#", bounty.id)), _react["default"].createElement("div", {
-          className: "bounty-card-title-base"
-        }, _react["default"].createElement("div", {
-          className: "bounty-card-icon"
-        }, _react["default"].createElement(_reactIconsKit.Icon, {
-          icon: _lock.lock,
-          size: 32
-        })), _react["default"].createElement("div", {
-          className: "bounty-card-title"
-        }, _react["default"].createElement("h4", null, task.name)))));
+
+        var annotationsDone = Math.min(userBounty.annotationsDone, bounty.annotationsTarget);
+        progressBar = _react["default"].createElement(_ProgressBar["default"], {
+          progress: userBounty.progress,
+          textAlign: "right",
+          text: "Ukończono " + annotationsDone + "/" + bounty.annotationsTarget
+        });
+      } else if (bounty.closed === false) {
+        icon = "missions";
+        bountyStatus = _LocalizationManager["default"].bounty.status.NEW;
+        className = "card-2";
+        onClick = this.props.onSelect;
       }
+
+      return _react["default"].createElement(_Card["default"], {
+        className: "col-md-4"
+      }, _react["default"].createElement("div", {
+        className: "mission-card font-light " + className,
+        onClick: onClick
+      }, _react["default"].createElement("div", {
+        className: "mission-card-content"
+      }, _react["default"].createElement("h4", null, "#", bounty.id, " ", task.name), _react["default"].createElement("p", {
+        className: "small",
+        style: {
+          minHeight: "48px"
+        }
+      }, task.description), _react["default"].createElement("div", {
+        className: "small",
+        style: {
+          margin: "30px 0"
+        }
+      }, _react["default"].createElement(_Icons.SmallIcon, {
+        name: icon
+      }), _react["default"].createElement("span", {
+        style: {
+          marginLeft: "10px"
+        }
+      }, bountyStatus)), progressBar)));
     }
   }]);
 

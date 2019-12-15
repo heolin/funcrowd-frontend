@@ -101,10 +101,19 @@ export default class ItemPanel extends React.Component {
         });
     }
 
+    onNoItems() {
+        let metadata = this.state.task.metadata;
+        if (metadata.redirectOnNoItems == true)
+            this.props.history.push('/mission/'+this.state.task.mission_id+'/tasks');
+    }
+
     getFirstItem() {
         let task = this.props.task;
         ItemRepository.getFirstItem(task.id)
             .then((item) => {
+                if (item == null)
+                    this.onNoItems();
+
                 this.setState({
                     loading: false,
                     item: item
@@ -120,6 +129,9 @@ export default class ItemPanel extends React.Component {
         let item = this.state.item;
         ItemRepository.getNextItem(item.id)
             .then((item) => {
+                if (item == null)
+                    this.onNoItems();
+
                 this.setState({
                     loading: false,
                     item: item
@@ -163,8 +175,10 @@ export default class ItemPanel extends React.Component {
     }
 
     showInstruction() {
-        this.setState({instruction: true});
-        localStorage.setItem("FUNCROWD_INSTRUCTION_TASK"+this.state.task.id, "true");
+        if (this.state.task.instruction) {
+            this.setState({instruction: true});
+            localStorage.setItem("FUNCROWD_INSTRUCTION_TASK"+this.state.task.id, "true");
+        }
     }
 
     onInstructionClose() {
@@ -191,15 +205,21 @@ export default class ItemPanel extends React.Component {
 
         if (this.state.item) {
             itemId = this.state.item.id;
+            let instructionButton = null;
+
+            if (this.state.task.instruction)
+                instructionButton = (
+                    <button className="btn btn-default info-button"
+                        onClick={this.showInstruction}>
+                        <Icon icon={info} size={24}/>
+                    </button>
+                );
 
             itemForm = (
                 <div className="col-sm-12 item-panel">
                     <div style={{marginBottom: "30px"}}>
                         <h3 style={{display: "inline-block"}}>Item #{this.state.item.id}</h3>
-                        <button className="btn btn-default info-button"
-                                onClick={this.showInstruction}>
-                            <Icon icon={info} size={24}/>
-                        </button>
+                        {instructionButton}
                     </div>
 
                     <ItemForm task={this.props.task}
@@ -236,6 +256,7 @@ export default class ItemPanel extends React.Component {
                 <FeedbackPanel isOpen={this.state.item && this.state.confirmation}
                                onAccept={this.onFeedbackAccept}
                                exp={this.state.exp}
+                               task={this.state.task}
                                annotation={this.state.annotation}/>
 
                 <div className="container">

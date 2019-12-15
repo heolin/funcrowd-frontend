@@ -1,4 +1,5 @@
 import ProfileTypes from "./ProfileTypes";
+import urls from "../../Urls"
 
 let ProfileConfigs = {};
 
@@ -10,7 +11,8 @@ ProfileConfigs[ProfileTypes.NOTLOGGED] = {
     bounties: false,
     profile: false,
     availablePages: [
-        "/", "/register", "/activation", "/about", "/reset_password", "/reset_password_token"
+        urls.HOME, urls.LOGIN, urls.REGISTER, urls.ACTIVATION,
+        urls.ABOUT, urls.RESET_PASSWORD, urls.RESET_PASSWORD_TOKEN
     ]
 };
 

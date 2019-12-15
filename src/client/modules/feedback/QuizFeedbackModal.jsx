@@ -46,7 +46,7 @@ export default class QuizFeedbackModal extends React.Component {
                 <h2 className="feedback-header">{L.quiz.answersHeader}</h2>
                 <p>{L.quiz.answersMessage}</p>
                 <div>
-                    <table className="table">
+                    <table className="table little">
                       <thead className="small color-blue">
                         <tr>
                           <th scope="col"></th>

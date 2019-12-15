@@ -7,7 +7,11 @@ exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _FieldFeedbackPanel = _interopRequireDefault(require("./FieldFeedbackPanel"));
+var _BlackBackground = _interopRequireDefault(require("../../components/BlackBackground"));
+
+var _FeedbackFactory = _interopRequireDefault(require("./FeedbackFactory"));
+
+var _FeedbackTypes = _interopRequireDefault(require("../feedback/FeedbackTypes"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -21,9 +25,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -34,115 +38,36 @@ var FeedbackPanel =
 function (_React$Component) {
   _inherits(FeedbackPanel, _React$Component);
 
-  function FeedbackPanel(props) {
-    var _this;
-
+  function FeedbackPanel() {
     _classCallCheck(this, FeedbackPanel);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(FeedbackPanel).call(this, props));
-    _this.onAccept = _this.onAccept.bind(_assertThisInitialized(_this));
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(FeedbackPanel).apply(this, arguments));
   }
 
   _createClass(FeedbackPanel, [{
-    key: "onAccept",
-    value: function onAccept() {
-      this.props.onAccept();
-    }
-  }, {
-    key: "getFields",
-    value: function getFields() {
-      var feedback = this.props.feedback;
-      var fields_values = {};
-
-      for (var field_name in feedback.scores) {
-        if (field_name in fields_values === false) fields_values[field_name] = [];
-
-        for (var key in feedback.scores[field_name]) {
-          var value = feedback.scores[field_name][key];
-          fields_values[field_name][key] = value;
-        }
-      }
-
-      for (var _field_name in feedback.values) {
-        for (var _key in feedback.values[_field_name]) {
-          var _value = feedback.values[_field_name][_key];
-          fields_values[_field_name][_key] = _value;
-        }
-      }
-
-      var fields = [];
-
-      for (var _field_name2 in fields_values) {
-        var scores = fields_values[_field_name2];
-        fields.push(_react["default"].createElement(_FieldFeedbackPanel["default"], {
-          key: _field_name2,
-          field_name: _field_name2,
-          annotation: this.props.annotation,
-          values: scores
-        }));
-      }
-
-      return fields;
-    }
-  }, {
-    key: "getAverageScore",
-    value: function getAverageScore() {
-      var scores = {};
-      var feedback = this.props.feedback;
-
-      for (var field_name in feedback.scores) {
-        scores[field_name] = 0;
-
-        for (var key in feedback.scores[field_name]) {
-          var value = feedback.scores[field_name][key];
-          scores[field_name] += value;
-        }
-
-        scores[field_name] = scores[field_name] / Object.keys(feedback.scores[field_name]).length;
-      }
-
-      return scores;
-    }
-  }, {
     key: "render",
     value: function render() {
-      var feedback = this.props.feedback;
-      var scores = this.getAverageScore();
-      var maxScore = Math.max(Object.values(scores));
-      var summary = null;
-      if (maxScore === 0) summary = _react["default"].createElement("span", null, "Your answer was not correct");else summary = _react["default"].createElement("span", null, "Your answer was correct");
-      var fields = this.getFields();
+      var annotation = this.props.annotation;
+      var feedback = null;
+      var type = _FeedbackTypes["default"].NONE;
+
+      if (annotation && annotation.feedback) {
+        feedback = annotation.feedback;
+        type = feedback.type;
+      }
+
+      var modal = _FeedbackFactory["default"].create(type, this.props.isOpen, this.props.onAccept, this.props.task, annotation, feedback, this.props.exp);
+
       return _react["default"].createElement("div", {
         className: "modal-base"
-      }, _react["default"].createElement("div", {
-        className: "shadow"
-      }), _react["default"].createElement("div", {
-        className: "feedback-panel card-3-static"
-      }, _react["default"].createElement("h4", {
+      }, _react["default"].createElement(_BlackBackground["default"], {
+        className: "black-background",
         style: {
-          textAlign: "center"
-        }
-      }, "Feedback"), _react["default"].createElement("div", {
-        className: "row"
-      }, _react["default"].createElement("div", {
-        className: "col-md-12",
-        style: {
-          marginTop: "10px",
-          marginBottom: "20px",
-          textAlign: "center"
-        }
-      }, summary)), fields, _react["default"].createElement("div", {
-        style: {
-          textAlign: "center"
-        }
-      }, _react["default"].createElement("button", {
-        className: "btn btn-green",
-        style: {
-          width: "120px"
+          pointerEvents: this.props.isOpen ? "auto" : "none"
         },
-        onClick: this.onAccept
-      }, "Ok"))));
+        pose: this.props.isOpen ? 'open' : 'closed',
+        onClick: this.props.onClose
+      }), modal);
     }
   }]);
 

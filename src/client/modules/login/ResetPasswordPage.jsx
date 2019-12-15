@@ -4,6 +4,7 @@ import Loading from "../../components/Loading";
 import { Link } from 'react-router-dom';
 import {Footer} from "../../Footer";
 import L from "../../logic/locatization/LocalizationManager";
+import urls from "../../Urls"
 import ResetPasswordEmailSentPanel from "./ResetPasswordEmailSentPanel";
 
 
@@ -84,18 +85,18 @@ export default class ResetPasswordPage extends React.Component {
                                            className="login-input form-control"
                                            value={this.state.email}
                                            onChange={this.handleChange}
-                                           placeholder="Adres e-mail"/>
+                                           placeholder={L.login.email}/>
                                 </div>
                                 <div className="text-center small login-error-message">
                                     {this.state.error}
                                 </div>
                                 <button type="submit"
                                      disabled={!this.validateForm()}
-                                     className="btn btn-orange-primary login-button">Wyślij</button>
+                                     className="btn btn-orange-primary login-button">{L.login.send}</button>
                             </form>
 
                             <div className="text-center small login-link">
-                                Masz już konto? <Link to="/">Zaloguj się</Link>
+                                {L.login.alreadyHaveAccount} <Link to={urls.LOGIN}>{L.login.logInto}</Link>
                             </div>
                         </div>
                     </div>

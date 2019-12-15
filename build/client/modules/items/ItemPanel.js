@@ -35,6 +35,16 @@ var _SkipButton = _interopRequireDefault(require("./components/SkipButton"));
 
 var _SubmitButton = _interopRequireDefault(require("./components/SubmitButton"));
 
+var _ItemHeader = _interopRequireDefault(require("./ItemHeader"));
+
+var _BountyHeader = _interopRequireDefault(require("../bounty/BountyHeader"));
+
+var _Loading = _interopRequireDefault(require("../../components/Loading"));
+
+var _UserManager = _interopRequireDefault(require("../../logic/UserManager"));
+
+var _Footer = require("../../Footer");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -67,6 +77,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ItemPanel).call(this, props));
     _this.state = {
+      exp: null,
       item: null,
       task: null,
       bounty: null,
@@ -80,7 +91,6 @@ function (_React$Component) {
     _this.onFeedbackAccept = _this.onFeedbackAccept.bind(_assertThisInitialized(_this));
     _this.showInstruction = _this.showInstruction.bind(_assertThisInitialized(_this));
     _this.onInstructionClose = _this.onInstructionClose.bind(_assertThisInitialized(_this));
-    _this.onConfirmationClose = _this.onConfirmationClose.bind(_assertThisInitialized(_this));
     _this.onBountyFinished = _this.onBountyFinished.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -132,19 +142,41 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "startNextBounty",
+    value: function startNextBounty() {
+      var _this3 = this;
+
+      var bountyId = this.props.match.params.id;
+      this.setState({
+        loading: true
+      });
+
+      _BountyRepository["default"].start(bountyId).then(function (bounty) {
+        _this3.props.onBountySelect(bounty);
+      });
+    }
+  }, {
+    key: "onNoItems",
+    value: function onNoItems() {
+      var metadata = this.state.task.metadata;
+      if (metadata.redirectOnNoItems == true) this.props.history.push('/mission/' + this.state.task.mission_id + '/tasks');
+    }
+  }, {
     key: "getFirstItem",
     value: function getFirstItem() {
-      var _this3 = this;
+      var _this4 = this;
 
       var task = this.props.task;
 
       _ItemRepository["default"].getFirstItem(task.id).then(function (item) {
-        _this3.setState({
+        if (item == null) _this4.onNoItems();
+
+        _this4.setState({
           loading: false,
           item: item
         });
       })["catch"](function (error) {
-        _this3.setState({
+        _this4.setState({
           loading: false
         });
 
@@ -154,17 +186,19 @@ function (_React$Component) {
   }, {
     key: "getNextItem",
     value: function getNextItem() {
-      var _this4 = this;
+      var _this5 = this;
 
       var item = this.state.item;
 
       _ItemRepository["default"].getNextItem(item.id).then(function (item) {
-        _this4.setState({
+        if (item == null) _this5.onNoItems();
+
+        _this5.setState({
           loading: false,
           item: item
         });
       })["catch"](function (error) {
-        _this4.setState({
+        _this5.setState({
           loading: false
         });
 
@@ -174,20 +208,20 @@ function (_React$Component) {
   }, {
     key: "onAnnotationPost",
     value: function onAnnotationPost(annotationResponse) {
+      _UserManager["default"].update();
+
       var feedback = null;
 
       if (_ConfigManager["default"].config.showFeedback) {
         feedback = annotationResponse.annotation.feedback;
       }
 
-      if (feedback) {
-        this.setState({
-          annotation: annotationResponse.annotation,
-          feedback: feedback
-        });
-      } else {
-        this.showConfirmation();
-      }
+      this.setState({
+        annotation: annotationResponse.annotation,
+        exp: annotationResponse.exp,
+        feedback: feedback,
+        confirmation: true
+      });
     }
   }, {
     key: "onFeedbackAccept",
@@ -195,19 +229,7 @@ function (_React$Component) {
       if (this.state.feedback) this.setState({
         feedback: null
       });
-      this.getNextItem();
-    }
-  }, {
-    key: "showConfirmation",
-    value: function showConfirmation() {
       this.setState({
-        confirmation: true
-      });
-    }
-  }, {
-    key: "onConfirmationClose",
-    value: function onConfirmationClose() {
-      if (this.state.confirmation) this.setState({
         confirmation: false
       });
       this.getNextItem();
@@ -220,10 +242,12 @@ function (_React$Component) {
   }, {
     key: "showInstruction",
     value: function showInstruction() {
-      this.setState({
-        instruction: true
-      });
-      localStorage.setItem("FUNCROWD_INSTRUCTION_TASK" + this.state.task.id, "true");
+      if (this.state.task.instruction) {
+        this.setState({
+          instruction: true
+        });
+        localStorage.setItem("FUNCROWD_INSTRUCTION_TASK" + this.state.task.id, "true");
+      }
     }
   }, {
     key: "onInstructionClose",
@@ -247,67 +271,75 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      if (this.state.loading) {
-        return _react["default"].createElement("div", null, "Loading");
-      }
-
+      if (this.state.loading) return _react["default"].createElement(_Loading["default"], null);
       var itemForm = null;
-      var feedback = null;
-      var confirmation = null;
-      var instruction = null;
       var bounty = null;
       var itemId = null;
       var noitems = null;
+      var header = null;
 
       if (this.state.item) {
         itemId = this.state.item.id;
-        itemForm = _react["default"].createElement("div", {
-          className: "col-sm-12 item-panel card-1-static"
-        }, _react["default"].createElement("h3", {
-          style: {
-            display: "inline-block"
-          }
-        }, "Item #", this.state.item.id), _react["default"].createElement("button", {
+        var instructionButton = null;
+        if (this.state.task.instruction) instructionButton = _react["default"].createElement("button", {
           className: "btn btn-default info-button",
           onClick: this.showInstruction
         }, _react["default"].createElement(_reactIconsKit.Icon, {
           icon: _info.info,
           size: 24
-        })), _react["default"].createElement(_ItemForm["default"], {
+        }));
+        itemForm = _react["default"].createElement("div", {
+          className: "col-sm-12 item-panel"
+        }, _react["default"].createElement("div", {
+          style: {
+            marginBottom: "30px"
+          }
+        }, _react["default"].createElement("h3", {
+          style: {
+            display: "inline-block"
+          }
+        }, "Item #", this.state.item.id), instructionButton), _react["default"].createElement(_ItemForm["default"], {
+          task: this.props.task,
           item: this.state.item,
           onAnnotationPost: this.onAnnotationPost,
           submitButton: _SubmitButton["default"],
           skipButton: _SkipButton["default"]
         }));
-        if (this.state.feedback) feedback = _react["default"].createElement(_FeedbackPanel["default"], {
-          feedback: this.state.feedback,
-          onAccept: this.onFeedbackAccept,
-          annotation: this.state.annotation
-        });
-        if (this.state.confirmation) confirmation = _react["default"].createElement(_ConfirmationPanel["default"], {
-          onClose: this.onConfirmationClose
-        });
-        if (this.state.instruction) instruction = _react["default"].createElement(_InstructionPanel["default"], {
-          task: this.props.task,
-          onClose: this.onInstructionClose
-        });
       } else {
         noitems = _react["default"].createElement(_NoItemsPanel["default"], null);
       }
 
       if (this.state.bounty) {
-        bounty = _react["default"].createElement(_BountyStatus["default"], {
-          itemId: itemId,
-          onBountyFinished: this.onBountyFinished,
-          bountyId: this.state.bounty.id
-        });
         if (this.state.bounty.userBounty == null) itemForm = null;
         if (this.state.bounty.userBounty && this.state.bounty.userBounty.is_closed) itemForm = null;
+        header = _react["default"].createElement(_BountyHeader["default"], {
+          bounty: this.state.bounty,
+          itemId: itemId,
+          onBountyFinished: this.onBountyFinished
+        });
+      } else {
+        header = _react["default"].createElement(_ItemHeader["default"], {
+          task: this.state.task
+        });
       }
 
       return _react["default"].createElement("div", {
-        className: "row base-row"
-      }, instruction, confirmation, feedback, bounty, itemForm, noitems);
+        className: "container-fluid base-row"
+      }, header, _react["default"].createElement(_InstructionPanel["default"], {
+        isOpen: this.state.item && this.state.instruction,
+        task: this.props.task,
+        onClose: this.onInstructionClose
+      }), _react["default"].createElement(_FeedbackPanel["default"], {
+        isOpen: this.state.item && this.state.confirmation,
+        onAccept: this.onFeedbackAccept,
+        exp: this.state.exp,
+        task: this.state.task,
+        annotation: this.state.annotation
+      }), _react["default"].createElement("div", {
+        className: "container"
+      }, _react["default"].createElement("div", {
+        className: "row"
+      }, bounty, itemForm, noitems)));
     }
   }], [{
     key: "getDerivedStateFromProps",

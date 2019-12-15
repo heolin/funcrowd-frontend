@@ -1,0 +1,13 @@
+
+.circle-image {
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 100px;
+  width: 100px;
+}
+
+.circle-image-content {
+  height: inherit;
+  margin-left: -28%;
+}

@@ -15,12 +15,18 @@ var Item =
 /*#__PURE__*/
 function () {
   function Item(id, task, data, template) {
+    var _this = this;
+
     _classCallCheck(this, Item);
 
     this.id = id;
     this.task = task;
     this.data = data;
     this.template = template;
+    this.templateFields = {};
+    template.fields.forEach(function (field) {
+      _this.templateFields[field.name] = field;
+    });
   }
 
   _createClass(Item, null, [{

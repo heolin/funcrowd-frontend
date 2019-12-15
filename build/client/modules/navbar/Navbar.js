@@ -13,6 +13,14 @@ var _reactIconsKit = require("react-icons-kit");
 
 var _user = require("react-icons-kit/metrize/user");
 
+var _LocalizationManager = _interopRequireDefault(require("../../logic/locatization/LocalizationManager"));
+
+var _NavbarProfile = _interopRequireDefault(require("./NavbarProfile"));
+
+var _NavbarLoginMenu = _interopRequireDefault(require("./NavbarLoginMenu"));
+
+var _fun_crowd = _interopRequireDefault(require("../../static/img/common/fun_crowd-02.svg"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -45,7 +53,8 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Navbar).call(this, props));
     _this.state = {
-      user: null
+      user: null,
+      location: null
     };
     return _this;
   }
@@ -53,27 +62,37 @@ function (_React$Component) {
   _createClass(Navbar, [{
     key: "render",
     value: function render() {
+      var navmenu = null;
+      if (this.state.user) navmenu = _react["default"].createElement(_NavbarMenu["default"], {
+        showSideProfile: this.props.showSideProfile,
+        onLogout: this.props.onLogout
+      });else navmenu = _react["default"].createElement(_NavbarLoginMenu["default"], {
+        location: this.state.location
+      });
       return _react["default"].createElement("nav", {
-        className: "navbar card-2-static fixed-top navbar-expand-lg navbar-light bg-light"
-      }, _react["default"].createElement("div", {
-        className: "navbar-brand"
-      }, _react["default"].createElement(_reactIconsKit.Icon, {
-        icon: _user.user,
-        size: 24,
-        style: {
-          position: "absolute",
-          top: "calc(50% - 18px)"
-        }
-      }), _react["default"].createElement("span", {
-        style: {
-          marginLeft: "32px"
-        }
-      }, "FunCrowd")), _react["default"].createElement(_NavbarMenu["default"], {
-        user: this.state.user,
-        onLogout: this.props.onLogout,
-        onNavigateToMissions: this.props.onNavigateToMissions,
-        onNavigateToBounties: this.props.onNavigateToBounties
-      }));
+        className: "navbar fixed-top navbar-light bg-light navbar-expand-md py-3"
+      }, _react["default"].createElement("a", {
+        className: "navbar-brand",
+        href: "#"
+      }, _react["default"].createElement("img", {
+        className: "logo",
+        src: _fun_crowd["default"]
+      })), _react["default"].createElement("button", {
+        className: "navbar-toggler ml-auto",
+        type: "button",
+        "data-toggle": "collapse",
+        "data-target": "#navbarNavDropdown",
+        "aria-controls": "navbarNavDropdown",
+        "aria-expanded": "false",
+        "aria-label": "Toggle navigation"
+      }, _react["default"].createElement("span", {
+        className: "navbar-toggler-icon"
+      })), _react["default"].createElement("div", {
+        className: "collapse navbar-collapse",
+        id: "navbarNavDropdown"
+      }, _react["default"].createElement("ul", {
+        className: "navbar-nav mr-auto"
+      }), navmenu));
     }
   }], [{
     key: "getDerivedStateFromProps",
@@ -81,6 +100,12 @@ function (_React$Component) {
       if (props.user !== state.user) {
         return {
           user: props.user
+        };
+      }
+
+      if (props.location !== state.location) {
+        return {
+          location: location
         };
       }
 

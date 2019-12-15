@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports["default"] = exports.AppBase = exports.RouteContainer = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -13,7 +13,7 @@ var _reactPose = _interopRequireWildcard(require("react-pose"));
 
 var _MissionsMenu = _interopRequireDefault(require("./modules/missions/MissionsMenu"));
 
-var _Login = _interopRequireDefault(require("./modules/login/Login"));
+var _LoginPage = _interopRequireDefault(require("./modules/login/LoginPage"));
 
 var _Navbar = _interopRequireDefault(require("./modules/navbar/Navbar"));
 
@@ -30,6 +30,42 @@ var _queryString = _interopRequireDefault(require("query-string"));
 var _UserRepository = _interopRequireDefault(require("./logic/repositories/UserRepository"));
 
 var _ConfigManager = _interopRequireDefault(require("./logic/config/ConfigManager"));
+
+var _AboutPage = _interopRequireDefault(require("./modules/about/AboutPage"));
+
+var _AchievementsMenu = _interopRequireDefault(require("./modules/achievements/AchievementsMenu"));
+
+var _SideProfilePanel = require("./modules/profile/SideProfilePanel");
+
+var _RegisterPage = _interopRequireDefault(require("./modules/login/RegisterPage"));
+
+var _Loading = _interopRequireDefault(require("./components/Loading"));
+
+var _ResetPasswordPage = _interopRequireDefault(require("./modules/login/ResetPasswordPage"));
+
+var _ProfileTypes = _interopRequireDefault(require("./logic/config/ProfileTypes"));
+
+var _UserManager = _interopRequireDefault(require("./logic/UserManager"));
+
+var _ProfilePage = _interopRequireDefault(require("./modules/profile/ProfilePage"));
+
+var _RankingPage = _interopRequireDefault(require("./modules/ranking/RankingPage"));
+
+var _BountyItemPanel = _interopRequireDefault(require("./modules/bounty/BountyItemPanel"));
+
+var _SpaceCalcAboutPage = _interopRequireDefault(require("./modules/about/SpaceCalcAboutPage"));
+
+var _SpaceCalcWelcomePage = _interopRequireDefault(require("./modules/about/SpaceCalcWelcomePage"));
+
+var _Footer = _interopRequireDefault(require("./Footer"));
+
+var _SettingsPage = _interopRequireDefault(require("./modules/profile/SettingsPage"));
+
+var _ResetPasswordTokenPage = _interopRequireDefault(require("./modules/login/ResetPasswordTokenPage"));
+
+var _ActivationPage = _interopRequireDefault(require("./modules/login/ActivationPage"));
+
+var _Urls = _interopRequireDefault(require("./Urls"));
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
@@ -55,38 +91,51 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var RouteContainer = _reactPose["default"].div({});
+var RouteContainer = _reactPose["default"].div({
+  enter: {
+    opacity: 1,
+    delay: 300,
+    beforeChildren: true
+  },
+  exit: {
+    opacity: 0
+  }
+});
 
-var Base =
+exports.RouteContainer = RouteContainer;
+
+var AppBase =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Base, _React$Component);
+  _inherits(AppBase, _React$Component);
 
-  function Base(props) {
+  function AppBase(props) {
     var _this;
 
-    _classCallCheck(this, Base);
+    _classCallCheck(this, AppBase);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Base).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(AppBase).call(this, props));
     _this.state = {
       checkingUser: true,
       checkingParams: true,
       user: null,
       mission: null,
       task: null,
-      bounty: null
+      bounty: null,
+      sideProfileShown: false
     };
     _this.onLogin = _this.onLogin.bind(_assertThisInitialized(_this));
     _this.onLogout = _this.onLogout.bind(_assertThisInitialized(_this));
     _this.onMissionSelect = _this.onMissionSelect.bind(_assertThisInitialized(_this));
     _this.onTaskSelect = _this.onTaskSelect.bind(_assertThisInitialized(_this));
     _this.onBountySelect = _this.onBountySelect.bind(_assertThisInitialized(_this));
-    _this.navigateToMissions = _this.navigateToMissions.bind(_assertThisInitialized(_this));
-    _this.navigateToBounties = _this.navigateToBounties.bind(_assertThisInitialized(_this));
+    _this.showSideProfile = _this.showSideProfile.bind(_assertThisInitialized(_this));
+    _this.hideSideProfile = _this.hideSideProfile.bind(_assertThisInitialized(_this));
+    _this.redirectToHome = _this.redirectToHome.bind(_assertThisInitialized(_this));
     return _this;
   }
 
-  _createClass(Base, [{
+  _createClass(AppBase, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.checkSessionUser();
@@ -113,6 +162,10 @@ function (_React$Component) {
       if (this.props.location.search) {
         var params = _queryString["default"].parse(this.props.location.search);
 
+        if ("action" in params) {
+          _SessionManager["default"].cache['action'] = params['action'];
+        }
+
         if ("workerId" in params) {
           _UserRepository["default"].mturk(params['workerId']).then(function (user) {
             _this2.onLogin(user, true);
@@ -120,6 +173,10 @@ function (_React$Component) {
             _this2.setState({
               checkingParams: false
             });
+          });
+        } else {
+          this.setState({
+            checkingParams: false
           });
         }
       } else {
@@ -140,16 +197,30 @@ function (_React$Component) {
         user: user,
         checkingUser: false
       });
-      if (this.props.location.pathname === "/") this.props.history.push('/missions');
+      this.redirectToHome();
+    }
+  }, {
+    key: "redirectToHome",
+    value: function redirectToHome() {
+      if (_Urls["default"].checkUrl(this.props.location.pathname, _Urls["default"].HOME) || _Urls["default"].checkUrl(this.props.location.pathname, _Urls["default"].ACTIVATION) || _Urls["default"].checkUrl(this.props.location.pathname, _Urls["default"].LOGIN)) {
+        if (_UserManager["default"].user.profile == _ProfileTypes["default"].NORMAL) {
+          this.props.history.push(_Urls["default"].MISSIONS);
+        } else {
+          this.props.history.push(_Urls["default"].BOUNTIES);
+        }
+      }
     }
   }, {
     key: "onLogout",
     value: function onLogout() {
+      this.hideSideProfile();
       this.setState({
         user: null
       });
 
       _SessionManager["default"].logout();
+
+      _ConfigManager["default"].logout();
 
       this.props.history.push('/');
     }
@@ -177,17 +248,20 @@ function (_React$Component) {
         task: bounty.task
       });
       this.props.history.push('/bounty/' + bounty.id);
-    } //navigation
-
-  }, {
-    key: "navigateToMissions",
-    value: function navigateToMissions() {
-      this.props.history.push('/missions');
     }
   }, {
-    key: "navigateToBounties",
-    value: function navigateToBounties() {
-      this.props.history.push('/bounties');
+    key: "showSideProfile",
+    value: function showSideProfile() {
+      this.setState({
+        sideProfileShown: true
+      });
+    }
+  }, {
+    key: "hideSideProfile",
+    value: function hideSideProfile() {
+      this.setState({
+        sideProfileShown: false
+      });
     } //render
 
   }, {
@@ -195,33 +269,62 @@ function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
+      if (this.state.checkingParams || this.state.checkingUser) return _react["default"].createElement(_Loading["default"], null);
+      console.log(this.props.location);
+
+      if (_UserManager["default"].user === null) {
+        if (_ConfigManager["default"].profile.availablePages.indexOf(this.props.location.pathname) < 0) {
+          this.props.history.push(_Urls["default"].LOGIN);
+          return _react["default"].createElement(_Loading["default"], null);
+        }
+      } else {
+        this.redirectToHome();
+      }
+
       return _react["default"].createElement(_reactRouterDom.Route, {
         render: function render(_ref) {
           var location = _ref.location;
-          return _react["default"].createElement("div", {
-            className: "container h-100"
-          }, _react["default"].createElement(_Navbar["default"], {
+          return _react["default"].createElement("div", null, _react["default"].createElement(_Navbar["default"], {
             user: _this3.state.user,
+            location: _this3.props.location,
             onLogout: _this3.onLogout,
             onNavigateToMissions: _this3.navigateToMissions,
-            onNavigateToBounties: _this3.navigateToBounties
-          }), _this3.state.checkingUser || _this3.state.checkingParams ? _react["default"].createElement("div", null, "Loading") : _react["default"].createElement(_reactPose.PoseGroup, {
-            preEnterPose: "preenter",
-            className: "h-100 w-100"
-          }, _react["default"].createElement(RouteContainer, {
+            onNavigateToBounties: _this3.navigateToBounties,
+            onNavigateToAbout: _this3.navigateToAbout,
+            showSideProfile: _this3.showSideProfile
+          }), _react["default"].createElement(_SideProfilePanel.SideProfilePanel, {
+            isOpen: _this3.state.sideProfileShown,
+            hideSideProfile: _this3.hideSideProfile
+          }), _react["default"].createElement("div", {
+            className: "h-100"
+          }, _react["default"].createElement(_reactPose.PoseGroup, null, _react["default"].createElement(RouteContainer, {
             key: location.pathname
           }, _react["default"].createElement(_reactRouterDom.Switch, {
             location: location
           }, _react["default"].createElement(_reactRouterDom.Route, {
             exact: true,
-            path: "/",
+            path: _Urls["default"].HOME,
             render: function render(props) {
-              return _react["default"].createElement(_Login["default"], _extends({
+              return _react["default"].createElement(_LoginPage["default"], _extends({
                 onSuccess: _this3.onLogin
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
-            path: "/missions",
+            path: _Urls["default"].ACTIVATION,
+            render: function render(props) {
+              return _react["default"].createElement(_ActivationPage["default"], _extends({
+                onSuccess: _this3.onLogin
+              }, props));
+            }
+          }), _react["default"].createElement(_reactRouterDom.Route, {
+            path: _Urls["default"].REGISTER,
+            render: function render(props) {
+              return _react["default"].createElement(_RegisterPage["default"], _extends({
+                onSuccess: _this3.onLogin
+              }, props));
+            }
+          }), _react["default"].createElement(_reactRouterDom.Route, {
+            path: _Urls["default"].MISSIONS,
             render: function render(props) {
               return _react["default"].createElement(_MissionsMenu["default"], _extends({
                 onMissionSelect: _this3.onMissionSelect,
@@ -229,9 +332,63 @@ function (_React$Component) {
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
-            path: "/bounty/:id",
+            path: _Urls["default"].RESET_PASSWORD,
             render: function render(props) {
-              return _react["default"].createElement(_ItemPanel["default"], _extends({
+              return _react["default"].createElement(_ResetPasswordPage["default"], props);
+            }
+          }), _react["default"].createElement(_reactRouterDom.Route, {
+            path: _Urls["default"].RESET_PASSWORD_TOKEN,
+            render: function render(props) {
+              return _react["default"].createElement(_ResetPasswordTokenPage["default"], _extends({
+                onSuccess: _this3.onLogin
+              }, props));
+            }
+          }), _react["default"].createElement(_reactRouterDom.Route, {
+            path: _Urls["default"].ABOUT,
+            render: function render(props) {
+              return _react["default"].createElement(_AboutPage["default"], _extends({
+                user: _this3.state.user
+              }, props));
+            }
+          }), _react["default"].createElement(_reactRouterDom.Route, {
+            path: _Urls["default"].WELCOME,
+            render: function render(props) {
+              return _react["default"].createElement(_SpaceCalcWelcomePage["default"], _extends({
+                user: _this3.state.user
+              }, props));
+            }
+          }), _react["default"].createElement(_reactRouterDom.Route, {
+            path: _Urls["default"].PROFILE,
+            render: function render(props) {
+              return _react["default"].createElement(_ProfilePage["default"], _extends({
+                usr: _this3.state.user
+              }, props));
+            }
+          }), _react["default"].createElement(_reactRouterDom.Route, {
+            path: _Urls["default"].SETTINGS,
+            render: function render(props) {
+              return _react["default"].createElement(_SettingsPage["default"], _extends({
+                usr: _this3.state.user
+              }, props));
+            }
+          }), _react["default"].createElement(_reactRouterDom.Route, {
+            path: _Urls["default"].RANKING,
+            render: function render(props) {
+              return _react["default"].createElement(_RankingPage["default"], _extends({
+                usr: _this3.state.user
+              }, props));
+            }
+          }), _react["default"].createElement(_reactRouterDom.Route, {
+            path: _Urls["default"].ACHIEVEMENTS,
+            render: function render(props) {
+              return _react["default"].createElement(_AchievementsMenu["default"], _extends({
+                user: _this3.state.user
+              }, props));
+            }
+          }), _react["default"].createElement(_reactRouterDom.Route, {
+            path: _Urls["default"].BOUNTY,
+            render: function render(props) {
+              return _react["default"].createElement(_BountyItemPanel["default"], _extends({
                 task: _this3.state.task,
                 user: _this3.state.user,
                 bounty: _this3.state.bounty,
@@ -239,7 +396,7 @@ function (_React$Component) {
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
-            path: "/bounties",
+            path: _Urls["default"].BOUNTIES,
             render: function render(props) {
               return _react["default"].createElement(_BountyMenu["default"], _extends({
                 onBountySelect: _this3.onBountySelect,
@@ -247,7 +404,7 @@ function (_React$Component) {
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
-            path: "/task/:id",
+            path: _Urls["default"].TASK,
             render: function render(props) {
               return _react["default"].createElement(_ItemPanel["default"], _extends({
                 task: _this3.state.task,
@@ -256,7 +413,7 @@ function (_React$Component) {
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
-            path: "/mission/:id/tasks",
+            path: _Urls["default"].TASKS,
             render: function render(props) {
               return _react["default"].createElement(_TasksMenu["default"], _extends({
                 onTaskSelect: _this3.onTaskSelect,
@@ -265,15 +422,17 @@ function (_React$Component) {
                 user: _this3.state.user
               }, props));
             }
-          })))));
+          }))))));
         }
       });
     }
   }]);
 
-  return Base;
+  return AppBase;
 }(_react["default"].Component);
 
-var _default = (0, _reactRouterDom.withRouter)(Base);
+exports.AppBase = AppBase;
+
+var _default = (0, _reactRouterDom.withRouter)(AppBase);
 
 exports["default"] = _default;

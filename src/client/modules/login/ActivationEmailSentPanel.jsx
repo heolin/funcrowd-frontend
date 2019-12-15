@@ -2,7 +2,7 @@ import React from "react"
 import {close} from 'react-icons-kit/fa/close'
 import { Link } from 'react-router-dom';
 import L from "../../logic/locatization/LocalizationManager";
-
+import urls from "../../Urls"
 
 
 export default class ActivationEmailSentPanel extends React.Component {
@@ -20,7 +20,7 @@ export default class ActivationEmailSentPanel extends React.Component {
                                 {L.login.activationEmailMessage}
                             </p>
                             <div className="text-center">
-                                <Link to="/">
+                                <Link to={urls.LOGIN}>
                                     <button className="btn btn-orange-primary"
                                             style={{width: "140px", marginTop: "20px"}}>
                                         {L.login.activationEmailButton}

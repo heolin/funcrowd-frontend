@@ -1,0 +1,55 @@
+@import 'cards';
+@import "variables";
+@import "colors";
+
+
+.navbar {
+  @extend .card-2-static;
+
+  @media screen and (min-width: map-get($screen-widths, 'xl')) {
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+  }
+  @media screen and (min-width: map-get($screen-widths, 'xxl')) {
+    padding-left: 150px !important;
+    padding-right: 150px !important;
+  }
+
+  font-size: 18px;
+}
+
+.nav-link {
+  display: inline-block !important;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $dark-color;
+}
+
+
+.navbar-profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar-profile-label {
+  padding-left: 35px;
+  display: inline-block;
+  position: relative;
+  top: 8px;
+}
+
+.navbar-profile-icon {
+  position: absolute;
+  top: 8px;
+}
+
+
+.navbar-login-button {
+  width: 140px;
+}

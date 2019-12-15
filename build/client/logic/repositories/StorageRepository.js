@@ -31,7 +31,7 @@ function () {
   _createClass(StorageRepository, null, [{
     key: "all",
     value: function all() {
-      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/users/storage', _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/users/storage/', _SessionManager["default"].config).then(function (response) {
         var storages = response.data.map(function (data) {
           return _storage["default"].fromJson(data);
         });
@@ -41,7 +41,7 @@ function () {
   }, {
     key: "postBatch",
     value: function postBatch(payload) {
-      return _axios["default"].post(_ConfigManager["default"].baseUrl + '/api/v1/users/storage', payload, _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].post(_ConfigManager["default"].baseUrl + '/api/v1/users/storage/', payload, _SessionManager["default"].config).then(function (response) {
         var storages = response.data.map(function (data) {
           return _storage["default"].fromJson(data);
         });
@@ -51,7 +51,7 @@ function () {
   }, {
     key: "get",
     value: function get(key) {
-      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/users/storage/' + key, _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/users/storage/' + key + '/', _SessionManager["default"].config).then(function (response) {
         var storage = _storage["default"].fromJson(response.data);
 
         return storage;
@@ -60,7 +60,7 @@ function () {
   }, {
     key: "post",
     value: function post(key, payload) {
-      return _axios["default"].post(_ConfigManager["default"].baseUrl + '/api/v1/users/storage/' + key, payload, _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].post(_ConfigManager["default"].baseUrl + '/api/v1/users/storage/' + key + '/', payload, _SessionManager["default"].config).then(function (response) {
         var storage = _storage["default"].fromJson(response.data);
 
         return storage;

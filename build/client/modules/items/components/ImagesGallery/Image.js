@@ -42,7 +42,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return _react["default"].createElement("div", {
-        className: "gallery-image stat",
+        className: "gallery-image grow",
         onClick: this.props.onClick
       }, _react["default"].createElement("img", {
         src: this.props.url

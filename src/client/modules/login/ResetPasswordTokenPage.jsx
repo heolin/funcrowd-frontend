@@ -5,6 +5,7 @@ import queryString from 'query-string';
 import L from "../../logic/locatization/LocalizationManager";
 import UserRepository from "../../logic/repositories/UserRepository";
 import Loading from "../../components/Loading";
+import urls from "../../Urls"
 
 
 export default class ResetPasswordTokenPage extends React.Component {
@@ -55,7 +56,7 @@ export default class ResetPasswordTokenPage extends React.Component {
         this.setState({loading: true});
         UserRepository.changePasswordWithToken(this.state.token, this.state.password1, this.state.password2)
             .then((user) => {
-                this.props.history.push('/');
+                this.props.history.push(urls.LOGIN);
             })
             .catch((error) => {
                 let errorMessage = error.response.data['detail'];

@@ -3,6 +3,7 @@ import NavbarMenuButton from "./NavbarMenuButton";
 import NavbarProfile from "./NavbarProfile";
 import ConfigManager from "../../logic/config/ConfigManager";
 
+import urls from "../../Urls";
 import L from "../../logic/locatization/LocalizationManager";
 
 
@@ -29,22 +30,22 @@ export default class NavbarMenu extends React.Component {
 
         if (ConfigManager.profile.bounties)
             elements.push(
-                <NavbarMenuButton key="bounties" targetPath="/bounties"
+                <NavbarMenuButton key="bounties" targetPath={urls.BOUNTIES}
                                   name={L.labels.bounties} icon="bounties"
                                   iconStyle={{marginTop: "-10px"}}/>
             );
 
         if (ConfigManager.profile.missions)
-            elements.push(<NavbarMenuButton key="missions" targetPath="/missions" name={L.labels.missions} icon="missions"/>);
+            elements.push(<NavbarMenuButton key="missions" targetPath={urls.MISSIONS} name={L.labels.missions} icon="missions"/>);
 
         if (ConfigManager.profile.about)
-            elements.push(<NavbarMenuButton key="about" targetPath="/about" name={L.labels.about} icon="about"/>);
+            elements.push(<NavbarMenuButton key="about" targetPath={urls.ABOUT} name={L.labels.about} icon="about"/>);
 
         if (ConfigManager.profile.achievements)
-            elements.push(<NavbarMenuButton key="achievements" targetPath="/achievements" name={L.labels.achievements} icon="achievements"/>);
+            elements.push(<NavbarMenuButton key="achievements" targetPath={urls.ACHIEVEMENTS} name={L.labels.achievements} icon="achievements"/>);
 
         if (ConfigManager.profile.ranking)
-            elements.push(<NavbarMenuButton key="ranking" targetPath="/ranking" name={L.labels.ranking} icon="ranking"/>);
+            elements.push(<NavbarMenuButton key="ranking" targetPath={urls.RANKING} name={L.labels.ranking} icon="ranking"/>);
 
         if (ConfigManager.profile.profile)
             elements.push(<NavbarProfile key="profile" onClick={this.props.showSideProfile}/>);

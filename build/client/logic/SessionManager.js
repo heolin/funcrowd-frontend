@@ -5,6 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _UserManager = _interopRequireDefault(require("./UserManager"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -21,19 +25,26 @@ function () {
 
     this.token = null;
     this.config = {};
-    this.is_logged = false;
+    this.cache = {
+      action: null,
+      resetPasswordToken: null
+    };
   }
 
   _createClass(_SessionManager, [{
     key: "login",
     value: function login(user, saveUser) {
+      if (user.login === "") return;
       this.token = user.token;
-      this.is_logged = true;
+      this.isLogged = true;
       this.config = {
         headers: {
           Authorization: "Token " + user.token
         }
       };
+
+      _UserManager["default"].setup(user);
+
       sessionStorage.setItem(USER, JSON.stringify(user));
 
       if (saveUser) {
@@ -43,11 +54,13 @@ function () {
   }, {
     key: "logout",
     value: function logout() {
-      this.is_logged = false;
+      this.isLogged = false;
       this.token = null;
       this.config = {};
       localStorage.removeItem(USER);
       sessionStorage.removeItem(USER);
+
+      _UserManager["default"].logout();
     }
   }, {
     key: "getUser",

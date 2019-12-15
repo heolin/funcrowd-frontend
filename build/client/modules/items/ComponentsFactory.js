@@ -23,6 +23,22 @@ var _ImagesGallery = _interopRequireDefault(require("./components/ImagesGallery/
 
 var _HtmlLabel = _interopRequireDefault(require("./components/HtmlLabel"));
 
+var _TextTagField = _interopRequireDefault(require("./components/TextTagField"));
+
+var _ImageField = _interopRequireDefault(require("./components/ImageField"));
+
+var _LikertScaleField = _interopRequireDefault(require("./components/LikertScaleField"));
+
+var _NumberField = _interopRequireDefault(require("./components/NumberField"));
+
+var _RadioOtherField = _interopRequireDefault(require("./components/RadioOtherField"));
+
+var _CheckboxField = _interopRequireDefault(require("./components/CheckboxField"));
+
+var _TextHeader = _interopRequireDefault(require("./components/TextHeader"));
+
+var _TextOrRadioField = _interopRequireDefault(require("./components/TextOrRadioField"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -34,14 +50,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var Components = {
   "TextLabel": _TextLabel["default"],
   "ChoiceField": _RadioField["default"],
+  "CheckboxField": _CheckboxField["default"],
   "PDF": _TextLabel["default"],
   "TextField": _TextField["default"],
   "RadioField": _RadioField["default"],
+  "RadioOtherField": _RadioOtherField["default"],
+  "TextOrRadioField": _TextOrRadioField["default"],
   "MultiChoiceField": _MultiChoiceField["default"],
   "SelectField": _SelectField["default"],
   "LinkButton": _LinkButton["default"],
   "ImagesGallery": _ImagesGallery["default"],
-  "HtmlLabel": _HtmlLabel["default"]
+  "HtmlLabel": _HtmlLabel["default"],
+  "TextTagField": _TextTagField["default"],
+  "ImageField": _ImageField["default"],
+  "LikertScaleField": _LikertScaleField["default"],
+  "NumberField": _NumberField["default"],
+  "TextHeader": _TextHeader["default"]
 };
 
 var ComponentsFactory =

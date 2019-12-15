@@ -27,8 +27,7 @@ export default class CheckboxElement extends React.Component {
                 <span className="outer">
                     <span className="inner"></span>
                 </span>
-                <div className={"text " + labelClassName}>
-                    {text}
+                <div className={"text " + labelClassName} dangerouslySetInnerHTML={{__html: text}}>
                 </div>
             </label>
         );

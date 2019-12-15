@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import CheckboxElement from "../items/components/element/CheckboxElement";
 import {Footer} from "../../Footer";
 import L from "../../logic/locatization/LocalizationManager";
+import urls from "../../Urls"
 import ActivationEmailSentPanel from "./ActivationEmailSentPanel";
 
 export default class RegisterPage extends React.Component {
@@ -147,7 +148,7 @@ export default class RegisterPage extends React.Component {
                                      className="btn btn-orange-primary login-button">{L.login.registerButton}</button>
                             </form>
                             <div className="text-center small login-link">
-                                {L.login.alreadyHaveAccount} <Link to="/">{L.login.logInto}</Link>
+                                {L.login.alreadyHaveAccount} <Link to={urls.LOGIN}>{L.login.logInto}</Link>
                             </div>
                         </div>
                     </div>

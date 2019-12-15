@@ -33,7 +33,7 @@ function () {
   _createClass(BountyRepository, null, [{
     key: "all",
     value: function all() {
-      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/bounty', _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/bounty/', _SessionManager["default"].config).then(function (response) {
         var bounties = response.data.map(function (bounty_data) {
           return _Bounty["default"].fromJson(bounty_data);
         });
@@ -43,7 +43,7 @@ function () {
   }, {
     key: "get",
     value: function get(bountyId) {
-      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/bounty/' + bountyId, _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/bounty/' + bountyId + '/', _SessionManager["default"].config).then(function (response) {
         var bounty = _Bounty["default"].fromJson(response.data);
 
         return bounty;
@@ -52,10 +52,19 @@ function () {
   }, {
     key: "getStatus",
     value: function getStatus(bountyId) {
-      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/bounty/' + bountyId + '/status', _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/bounty/' + bountyId + '/status/', _SessionManager["default"].config).then(function (response) {
         var userBounty = _UserBounty["default"].fromJson(response.data);
 
         return userBounty;
+      });
+    }
+  }, {
+    key: "start",
+    value: function start(bountyId) {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/bounty/' + bountyId + '/start/', _SessionManager["default"].config).then(function (response) {
+        var bounty = _Bounty["default"].fromJson(response.data);
+
+        return bounty;
       });
     }
   }]);

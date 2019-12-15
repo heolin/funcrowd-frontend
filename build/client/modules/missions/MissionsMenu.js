@@ -11,6 +11,16 @@ var _MissionCard = _interopRequireDefault(require("./MissionCard"));
 
 var _MissionRepository = _interopRequireDefault(require("../../logic/repositories/MissionRepository"));
 
+var _MissionProgressRepository = _interopRequireDefault(require("../../logic/repositories/MissionProgressRepository"));
+
+var _ListContainer = _interopRequireDefault(require("../../components/animated/ListContainer"));
+
+var _Loading = _interopRequireDefault(require("../../components/Loading"));
+
+var _FeedbackPanel = _interopRequireDefault(require("../feedback/FeedbackPanel"));
+
+var _Footer = require("../../Footer");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -44,7 +54,9 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(MissionsMenu).call(this, props));
     _this.state = {
       missions: null,
-      loading: true
+      progress: null,
+      loadingMissions: true,
+      loadingProgress: true
     };
     return _this;
   }
@@ -56,53 +68,63 @@ function (_React$Component) {
 
       _MissionRepository["default"].all().then(function (missions) {
         _this2.setState({
-          loading: false,
+          loadingMissions: false,
           missions: missions
         });
       })["catch"](function (error) {
         _this2.setState({
-          loading: false
+          loadingMissions: false
+        });
+
+        console.log(error);
+      });
+
+      _MissionProgressRepository["default"].all().then(function (progress) {
+        var missionProgress = {};
+        progress.forEach(function (progress) {
+          missionProgress[progress.mission] = progress;
+        });
+
+        _this2.setState({
+          loadingProgress: false,
+          progress: missionProgress
+        });
+      })["catch"](function (error) {
+        _this2.setState({
+          loadingProgress: false
         });
 
         console.log(error);
       });
     }
   }, {
-    key: "getCardsPanel",
-    value: function getCardsPanel() {
-      var _this3 = this;
-
-      var panel = null;
-
-      if (this.state.loading) {
-        panel = _react["default"].createElement("div", null, "Loading");
-      } else {
-        var missions = this.state.missions.map(function (mission, i) {
-          return _react["default"].createElement(_MissionCard["default"], {
-            key: i,
-            mission: mission,
-            onSelect: function onSelect() {
-              return _this3.props.onMissionSelect(mission);
-            }
-          });
-        });
-        panel = _react["default"].createElement("div", {
-          className: "row"
-        }, missions);
-      }
-
-      return panel;
-    }
-  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
+      if (this.state.loadingMissions || this.state.loadingProgress) return _react["default"].createElement(_Loading["default"], null);
+      var missions = this.state.missions.map(function (mission, i) {
+        return _react["default"].createElement(_MissionCard["default"], {
+          key: i,
+          mission: mission,
+          progress: _this3.state.progress[mission.id],
+          onSelect: function onSelect() {
+            return _this3.props.onMissionSelect(mission);
+          }
+        });
+      });
       return _react["default"].createElement("div", {
-        className: "row base-row"
+        className: "container-fluid base-row-padding"
       }, _react["default"].createElement("div", {
-        className: "col-sm-12 missions-header-bar"
-      }, _react["default"].createElement("h3", null, "A witojcie w Excelu tutorial"), _react["default"].createElement("p", null, "Najlepszy lorem ipsum tutorial do excela, wszystkiego sie tu nauczycie.")), _react["default"].createElement("div", {
-        className: "col-sm-12"
-      }, this.getCardsPanel()));
+        className: "container"
+      }, _react["default"].createElement("div", {
+        className: "row"
+      }, _react["default"].createElement("div", {
+        className: "col-sm-12 missions-introduction"
+      }, _react["default"].createElement("h3", null, "A witojcie w Excelu tutorial"), _react["default"].createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem tellus, malesuada eget egestas nec, laoreet id orci. Morbi tristique dui non accumsan egestas. Fusce convallis est et eleifend pellentesque. Vivamus bibendum mi at purus sagittis, id malesuada nisi ornare. Nullam dictum vestibulum ante."))), _react["default"].createElement(_ListContainer["default"], {
+        className: "row missions-row",
+        key: "list"
+      }, missions)));
     }
   }]);
 

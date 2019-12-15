@@ -13,6 +13,8 @@ var _Image = _interopRequireDefault(require("./Image"));
 
 var _ImageModal = _interopRequireDefault(require("./ImageModal"));
 
+var _SceenBreakpoints = _interopRequireDefault(require("../../../../utils/SceenBreakpoints"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -51,7 +53,7 @@ function (_React$Component) {
     };
     _this.settings = {
       dots: true,
-      infinite: true,
+      infinite: false,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 3,
@@ -60,7 +62,22 @@ function (_React$Component) {
       },
       afterChange: function afterChange() {
         return dragging = false;
-      }
+      },
+      responsive: [{
+        breakpoint: _SceenBreakpoints["default"].xl,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 1
+        }
+      }, {
+        breakpoint: _SceenBreakpoints["default"].lg,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      }]
     };
     _this.onImageClick = _this.onImageClick.bind(_assertThisInitialized(_this));
     _this.onImageModalClose = _this.onImageModalClose.bind(_assertThisInitialized(_this));
@@ -87,6 +104,7 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      if (!this.props.value) return null;
       var items = [];
       if (this.props.value) items = this.props.value.map(function (url) {
         return _react["default"].createElement(_Image["default"], {
@@ -98,14 +116,14 @@ function (_React$Component) {
         });
       });
       this.settings['slidesToShow'] = Math.min(items.length, 3);
-      var selectedImage = null;
-      if (this.state.selectedImage) selectedImage = _react["default"].createElement(_ImageModal["default"], {
-        image: this.state.selectedImage,
-        onClose: this.onImageModalClose
-      });
+      var label;
+      if (this.props.label) label = _react["default"].createElement("label", null, _react["default"].createElement("strong", null, this.props.label));
       return _react["default"].createElement("div", {
         className: "form-group"
-      }, selectedImage, _react["default"].createElement("label", null, _react["default"].createElement("strong", null, this.props.label)), _react["default"].createElement("div", null, _react["default"].createElement(_reactSlick["default"], this.settings, items)));
+      }, _react["default"].createElement(_ImageModal["default"], {
+        image: this.state.selectedImage,
+        onClose: this.onImageModalClose
+      }), label, _react["default"].createElement("div", null, _react["default"].createElement(_reactSlick["default"], this.settings, items)));
     }
   }]);
 

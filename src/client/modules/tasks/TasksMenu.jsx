@@ -146,7 +146,7 @@ export default class TasksMenu extends React.Component {
                         <div className="col-md-12 col-lg-8">
                             <div className="tasks-introduction">
                                 <h3>{L.labels.missions}</h3>
-                                Lorem ipsum
+                                {this.props.mission.instruction}
                             </div>
                             {this.getCardsPanel()}
                         </div>

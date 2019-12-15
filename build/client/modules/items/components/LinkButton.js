@@ -41,6 +41,7 @@ function (_React$Component) {
   _createClass(LinkButton, [{
     key: "render",
     value: function render() {
+      if (this.props.value == "") return null;
       return _react["default"].createElement("div", {
         className: "form-group"
       }, _react["default"].createElement("label", null, _react["default"].createElement("strong", null, this.props.label)), _react["default"].createElement("div", null, _react["default"].createElement("a", {

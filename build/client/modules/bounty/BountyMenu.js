@@ -11,6 +11,10 @@ var _BountyCard = _interopRequireDefault(require("./BountyCard"));
 
 var _BountyRepository = _interopRequireDefault(require("../../logic/repositories/BountyRepository"));
 
+var _ListContainer = _interopRequireDefault(require("../../components/animated/ListContainer"));
+
+var _Loading = _interopRequireDefault(require("../../components/Loading"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -55,6 +59,14 @@ function (_React$Component) {
       var _this2 = this;
 
       _BountyRepository["default"].all().then(function (bounties) {
+        bounties.sort(function (a, b) {
+          var keyA = a.getStatusOrder();
+          var keyB = b.getStatusOrder();
+          if (keyA < keyB) return -1;
+          if (keyA > keyB) return 1;
+          return 0;
+        });
+
         _this2.setState({
           loading: false,
           bounties: bounties
@@ -68,41 +80,32 @@ function (_React$Component) {
       });
     }
   }, {
-    key: "getCardsPanel",
-    value: function getCardsPanel() {
-      var _this3 = this;
-
-      var panel = null;
-
-      if (this.state.loading) {
-        panel = _react["default"].createElement("div", null, "Loading");
-      } else {
-        var bounties = this.state.bounties.map(function (bounty, i) {
-          return _react["default"].createElement(_BountyCard["default"], {
-            key: i,
-            bounty: bounty,
-            onSelect: function onSelect() {
-              return _this3.props.onBountySelect(bounty);
-            }
-          });
-        });
-        panel = _react["default"].createElement("div", {
-          className: "row"
-        }, bounties);
-      }
-
-      return panel;
-    }
-  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
+      if (this.state.loading) return _react["default"].createElement(_Loading["default"], null);
+      var bounties = this.state.bounties.map(function (bounty, i) {
+        return _react["default"].createElement(_BountyCard["default"], {
+          key: i,
+          bounty: bounty,
+          onSelect: function onSelect() {
+            return _this3.props.onBountySelect(bounty);
+          }
+        });
+      });
       return _react["default"].createElement("div", {
-        className: "row base-row"
+        className: "container-fluid base-row-padding row"
       }, _react["default"].createElement("div", {
-        className: "col-sm-12 bounties-header-bar"
-      }, _react["default"].createElement("h3", null, "Bounties"), _react["default"].createElement("p", null, "Tasks performed in the form of bounty have the required number of items to perform. After completing the appropriate number of items, the reward code will be unlocked, which you can use to close the task and redeem the reward."), _react["default"].createElement("p", null, "Click on the card below to begin your work on selected bounty.")), _react["default"].createElement("div", {
-        className: "col-sm-12"
-      }, this.getCardsPanel()));
+        className: "container"
+      }, _react["default"].createElement("div", {
+        className: "row"
+      }, _react["default"].createElement("div", {
+        className: "col-sm-12 missions-introduction"
+      }, _react["default"].createElement("h3", null, "Bounties"), _react["default"].createElement("p", null, "Tasks performed in the form of bounty have the required number of items to perform. After completing the appropriate number of items, the reward code will be unlocked, which you can use to close the task and redeem the reward."), _react["default"].createElement("p", null, "Click on the card below to begin your work on selected bounty."))), _react["default"].createElement(_ListContainer["default"], {
+        className: "row missions-row",
+        key: "list"
+      }, bounties)));
     }
   }]);
 

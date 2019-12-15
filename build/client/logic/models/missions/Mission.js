@@ -14,17 +14,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var Mission =
 /*#__PURE__*/
 function () {
-  function Mission(id, name) {
+  function Mission(id, name, description, instruction, tasksCount, achievementsCount) {
+    var metadata = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : {};
+    var totalExp = arguments.length > 7 ? arguments[7] : undefined;
+
     _classCallCheck(this, Mission);
 
     this.id = id;
     this.name = name;
+    this.description = description;
+    this.instruction = instruction;
+    this.tasksCount = tasksCount;
+    this.achievementsCount = achievementsCount;
+    this.metadata = metadata;
+    this.totalExp = totalExp;
   }
 
   _createClass(Mission, null, [{
     key: "fromJson",
     value: function fromJson(mission_data) {
-      var mission = new Mission(mission_data.id, mission_data.name);
+      var mission = new Mission(mission_data.id, mission_data.name, mission_data.description, mission_data.instruction, mission_data.tasks_count, mission_data.achievementsCount, mission_data.metadata, mission_data.total_exp);
       return mission;
     }
   }]);

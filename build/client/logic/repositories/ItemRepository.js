@@ -33,7 +33,7 @@ function () {
   _createClass(ItemRepository, null, [{
     key: "getFirstItem",
     value: function getFirstItem(taskId) {
-      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/tasks/' + taskId + '/next_item', _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/tasks/' + taskId + '/next_item/', _SessionManager["default"].config).then(function (response) {
         var item = _Item["default"].fromJson(response.data);
 
         return item;
@@ -42,7 +42,7 @@ function () {
   }, {
     key: "getNextItem",
     value: function getNextItem(itemId) {
-      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/items/' + itemId + '/next_item', _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/items/' + itemId + '/next_item/', _SessionManager["default"].config).then(function (response) {
         var item = _Item["default"].fromJson(response.data);
 
         return item;
@@ -51,7 +51,7 @@ function () {
   }, {
     key: "postAnnotation",
     value: function postAnnotation(itemId, payload) {
-      return _axios["default"].post(_ConfigManager["default"].baseUrl + '/api/v1/items/' + itemId + '/annotation', payload, _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].post(_ConfigManager["default"].baseUrl + '/api/v1/items/' + itemId + '/annotation/', payload, _SessionManager["default"].config).then(function (response) {
         var annotationResponse = _AnnotationResponse["default"].fromJson(response.data);
 
         return annotationResponse;

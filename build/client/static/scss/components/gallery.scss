@@ -1,0 +1,47 @@
+@import "../colors";
+
+
+.gallery-image-modal {
+  z-index: 100;
+  background: white !important;
+  padding: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 30px;
+}
+
+.gallery-image {
+  margin: auto;
+  width: 300px;
+  cursor: pointer;
+}
+
+.gallery-image > img {
+  width: inherit;
+}
+
+.slick-slider {
+  margin-top: 20px;
+}
+
+.slick-list {
+  padding: 100px 0 !important;
+  margin: -100px 0 !important;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 60px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: $blue-color !important;
+}
+
+.image-field {
+  height: 200px;
+  cursor: pointer;
+}

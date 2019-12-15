@@ -30,7 +30,7 @@ class _AchievementsManager extends EventEmitter {
                 this.unfinishedAchievements = [];
 
                 achievements.forEach((achievement) => {
-                    if (achievement.status == "FINISHED" || achievement.status == "DONE")
+                    if (achievement.status == "FINISHED" || achievement.status == "CLOSED")
                         this.finishedAchievements.push(achievement);
                     else
                         this.unfinishedAchievements.push(achievement);
@@ -51,6 +51,10 @@ class _AchievementsManager extends EventEmitter {
                 this.loading = false;
                 console.log(error)
             });
+    }
+
+    getFinishedAchievements() {
+
     }
 
     getLastFinished(top=3) {

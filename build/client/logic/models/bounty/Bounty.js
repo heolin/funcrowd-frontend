@@ -30,7 +30,22 @@ function () {
     this.userBounty = userBounty;
   }
 
-  _createClass(Bounty, null, [{
+  _createClass(Bounty, [{
+    key: "getStatusOrder",
+    value: function getStatusOrder() {
+      if (this.userBounty) {
+        var status = this.userBounty.status;
+
+        if (status === "CLOSED") {
+          if (this.userBounty.progress === 1) return 3;else return 4;
+        }
+
+        if (status === "FINISHED") return 3;else return 1;
+      }
+
+      return 4;
+    }
+  }], [{
     key: "fromJson",
     value: function fromJson(bounty_data) {
       var bounty = new Bounty(bounty_data.id, _Task["default"].fromJson(bounty_data.task), bounty_data.annotations_target, bounty_data.closed, _UserBounty["default"].fromJson(bounty_data.user_bounty));

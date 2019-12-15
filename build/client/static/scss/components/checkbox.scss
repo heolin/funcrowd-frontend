@@ -1,0 +1,60 @@
+@import "../colors";
+
+
+.checkbox {
+  cursor: pointer;
+  display: table-row;
+  margin-bottom: 1px;
+}
+
+.checkbox input {
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.checkbox .outer {
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  float: left;
+  margin: 12px 10px 10px 0;
+  border: 3px solid $blue-color;
+}
+
+.checkbox .text {
+  padding-top: 11px;
+  display: inline-block;
+}
+
+.checkbox .inner {
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  width: 16px;
+  height: 16px;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  display: block;
+  margin: 2px;
+  background-color: $blue-color;
+  opacity: 0;
+}
+
+.checkbox:hover .inner {
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5);
+  opacity: .5;
+  background-color: $light-blue-color;
+}
+
+/* Show the outer when checked */
+.checkbox input:checked + .outer .inner {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  background-color: $blue-color;
+}
+

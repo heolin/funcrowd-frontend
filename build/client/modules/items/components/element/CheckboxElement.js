@@ -19,41 +19,59 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var RadioElement =
+var CheckboxElement =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(RadioElement, _React$Component);
+  _inherits(CheckboxElement, _React$Component);
 
-  function RadioElement() {
-    _classCallCheck(this, RadioElement);
+  function CheckboxElement(props) {
+    var _this;
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(RadioElement).apply(this, arguments));
+    _classCallCheck(this, CheckboxElement);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CheckboxElement).call(this, props));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
-  _createClass(RadioElement, [{
+  _createClass(CheckboxElement, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.props.onChange(event);
+    }
+  }, {
     key: "render",
     value: function render() {
+      var className = this.props.className || "";
+      var labelClassName = this.props.labelClassName || "";
+      var text = this.props.label ? this.props.label : this.props.value;
       return _react["default"].createElement("label", {
-        className: "radio-container"
+        className: "checkbox " + className
       }, _react["default"].createElement("input", {
+        id: this.props.name,
         name: this.props.name,
         value: this.props.value,
+        onChange: this.handleChange,
         type: "checkbox"
       }), _react["default"].createElement("span", {
-        className: "checkmark"
-      }), this.props.value);
+        className: "outer"
+      }, _react["default"].createElement("span", {
+        className: "inner"
+      })), _react["default"].createElement("div", {
+        className: "text " + labelClassName
+      }, text));
     }
   }]);
 
-  return RadioElement;
+  return CheckboxElement;
 }(_react["default"].Component);
 
-exports["default"] = RadioElement;
+exports["default"] = CheckboxElement;

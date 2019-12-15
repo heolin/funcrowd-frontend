@@ -1,0 +1,22 @@
+
+.blob {
+  position: absolute;
+  z-index: -100;
+}
+
+.blob-relative {
+  position: relative !important;
+}
+
+.blob-front {
+  z-index: 100 !important;
+}
+
+.blob img {
+  position: absolute;
+}
+
+.blob span {
+  position: absolute;
+  line-height: 1.2;
+}

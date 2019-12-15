@@ -11,6 +11,17 @@ const Card = posed.div({
 
 export default class TaskCard extends React.Component {
 
+    constructor(props){
+        super(props);
+        this.onSelect = this.onSelect.bind(this);
+    }
+
+    onSelect() {
+        let progress = this.props.progress;
+        if (progress.status !== "FINISHED" && progress.status !== "LOCKED")
+            this.props.onSelect();
+    }
+
     render() {
         let progress = this.props.progress;
         let metadata = this.props.task.metadata;
@@ -33,7 +44,7 @@ export default class TaskCard extends React.Component {
 
 
         return (
-            <Card className={"col-12 task-card " + statusClassName} onClick={this.props.onSelect}>
+            <Card className={"col-12 task-card " + statusClassName} onClick={this.onSelect}>
                 <div className="row">
                     <div className="col-1">
                         <SmallIcon className="task-card-icon" name={taskIcon}/>

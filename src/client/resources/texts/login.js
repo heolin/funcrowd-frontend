@@ -108,8 +108,8 @@ export default {
         pl: "Podaj mail użyty podczas rejestracji"
     },
     processDataMessage: {
-        en: "Wyrażam zgodę na przetwarzanie moich danych osobowych przez administratora danych FunCrowd w celu wzięcia udziału w kursie nauki programu Excel. Podaję dane osobowe dobrowolnie i oświadczam, że są one zgodne z prawdą. Zapoznałem/łam się z Regulaminem strony oraz Polityką Prywatności serwisu, w tym z informacją o celu i sposobach przetwarzania danych osobowych oraz prawie dostępu do treści swoich danych i prawie ich poprawiania lub usunięcia.",
-        pl: "Wyrażam zgodę na przetwarzanie moich danych osobowych przez administratora danych FunCrowd w celu wzięcia udziału w kursie nauki programu Excel. Podaję dane osobowe dobrowolnie i oświadczam, że są one zgodne z prawdą. Zapoznałem/łam się z Regulaminem strony oraz Polityką Prywatności serwisu, w tym z informacją o celu i sposobach przetwarzania danych osobowych oraz prawie dostępu do treści swoich danych i prawie ich poprawiania lub usunięcia.",
+        en: "Oświadczam, że zapoznałem/łam się z treścią oraz akceptuje warunki <a target=\"_blank\" href=\"https://funcrowd-s3.s3.eu-central-1.amazonaws.com/Files/Space+Calc+-+Regulamin+serwisu.pdf\">Regulaminu</a> oraz <a target=\"_blank\" href=\"https://funcrowd-s3.s3.eu-central-1.amazonaws.com/Files/Space+Calc+-+Polityka+Prywatno%C5%9Bci.pdf\">Polityki Prywatności</a> serwisu. Dobrowolnie i świadomie wyrażam zgodę na udział w badaniu naukowym.",
+        pl: "Oświadczam, że zapoznałem/łam się z treścią oraz akceptuje warunki <a target=\"_blank\" href=\"https://funcrowd-s3.s3.eu-central-1.amazonaws.com/Files/Space+Calc+-+Regulamin+serwisu.pdf\">Regulaminu</a> oraz <a target=\"_blank\" href=\"https://funcrowd-s3.s3.eu-central-1.amazonaws.com/Files/Space+Calc+-+Polityka+Prywatno%C5%9Bci.pdf\">Polityki Prywatności</a> serwisu. Dobrowolnie i świadomie wyrażam zgodę na udział w badaniu naukowym.",
     },
     alreadyHaveAccount: {
         en: "Already have an account?",
@@ -126,5 +126,9 @@ export default {
     emailNotFound: {
         en: "User with following email not found",
         pl: "Użytkownik z podanym emailem nie znaleziony"
+    },
+    send: {
+        en: "Send",
+        pl: "Wyślij"
     }
 }

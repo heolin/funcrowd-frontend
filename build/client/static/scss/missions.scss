@@ -1,0 +1,88 @@
+@import "colors";
+@import "icons";
+@import "fonts";
+
+
+$card-margin: 20px;
+
+.missions-introduction {
+  margin: 0px 0 60px 0;
+}
+
+
+.missions-row {
+  margin: 0 -#{15px + $card-margin} !important;
+}
+
+.mission-card {
+  background-color: $blue-color;
+  margin: 0 $card-margin 40px $card-margin;
+  cursor: pointer;
+}
+
+.mission-card.locked {
+  background-color: $grey-color;
+  cursor: not-allowed;
+}
+
+.mission-closed-card {
+  background-color: $grey-blue-color;
+  cursor: not-allowed;
+}
+
+.mission-card-top {
+  position: relative;
+}
+
+.mission-card-image {
+  width: 100%;
+  position: relative;
+}
+
+.mission-card-image {
+  @extend .greyscale;
+}
+
+.mission-card-triangle {
+  fill: $blue-color;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+}
+
+.mission-card-triangle.locked {
+  fill: $grey-color;
+}
+
+.mission-card-icon {
+  @extend .very-big-icon;
+  position: absolute;
+  bottom: 0px;
+  left: 25px;
+  z-index: 20;
+}
+
+.mission-card-title {
+  height: 100px;
+}
+
+.mission-card-content {
+  padding: 25px;
+  color: white;
+}
+
+.mission-card-description {
+  min-height: 24px;
+}
+
+.mission-card-label {
+  @extend .little;
+  position: relative;
+}
+
+.mission-card-label-text {
+  top: 6px;
+  position: absolute;
+  left: 34px;
+}

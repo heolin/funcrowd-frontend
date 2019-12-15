@@ -1,0 +1,82 @@
+@import "colors";
+@import "components";
+
+
+.login-window {
+  margin: 60px auto 0 auto;
+  padding: 40px 70px;
+  background: white;
+  transition: all 0.25s ease-in-out;
+}
+
+.login-header {
+  margin-bottom: 35px;
+}
+
+.login-button {
+  width: 100%;
+  margin: 10px 0 15px 0;
+}
+
+.login-input {
+  @extend .form-input;
+  padding: 20px 13px;
+}
+
+.login-checkbox .outer {
+  width: 20px;
+  height: 20px;
+  margin: 5px 5px 5px 0;
+  border: 2px solid $light-blue-color;
+}
+
+.login-checkbox .inner {
+  width: 12px;
+  height: 12px;
+  background-color: $bright-blue-color;
+}
+
+.login-checkbox input:checked + .outer .inner {
+  background-color: $bright-blue-color;
+}
+
+.login-checkbox .register-checkbox-label {
+  padding-left: 30px;
+  line-height: 1.2;
+  text-align: justify;
+  margin-top: -36px;
+}
+
+.login-checkbox .login-checkbox-label {
+  margin-top: -6px;
+}
+
+.login-link a {
+  color: $bright-blue-color;
+}
+
+.login-error-message {
+  color: $red-color;
+  margin: 10px 0;
+}
+
+.login-reset-password-link {
+  margin-top: 7px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.activation-email-panel {
+  margin: 60px auto 0 auto;
+  padding: 40px 70px;
+}
+
+.login-reset-email-panel {
+  margin: 60px auto 0 auto;
+  padding: 40px 70px;
+}
+
+.settings-form-error-message.error {
+  color: $red-color;
+}

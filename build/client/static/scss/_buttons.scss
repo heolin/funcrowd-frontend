@@ -1,0 +1,45 @@
+@import "colors";
+@import "fonts";
+@import "mixins";
+
+.btn {
+  @extend .normal;
+
+  color: $blue-color;
+  border-radius: 0;
+  background: white;
+  border: solid 3px $blue-color;
+  border-radius: 3px;
+  box-shadow: 0px 0px 14px -4px rgba(0,0,0,0.7);
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    background: $blue-color;
+  }
+
+  &:active {
+    box-shadow: 0px 0px 10px -4px rgba(0,0,0,0.7);
+  }
+}
+
+
+.btn-primary {
+  @include button(white, $blue-color, $blue-color, $dark-blue-color);
+}
+
+
+.btn-orange {
+  @include button($bright-orange-color, white, $bright-orange-color, $bright-orange-color);
+}
+
+
+.btn-orange-primary {
+  @include button(white, $bright-orange-color, $bright-orange-color, $dark-bright-orange-color);
+}
+
+
+button, [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: none !important;
+}

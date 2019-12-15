@@ -68,18 +68,28 @@ class _UserManager extends EventEmitter {
         this.emit(USERNAME_CHANGED);
     }
 
-    _updateLevel() {
-        while (this.level < Object.keys(LevelsConfig).length
-            && this.user.exp >= LevelsConfig[this.level+1].threshold) {
-            this.level += 1;
+    getExpLevel(exp, initialLevel=0) {
+        let level = initialLevel;
+        while (level < Object.keys(LevelsConfig).length
+            && exp >= LevelsConfig[level+1].threshold) {
+            level += 1;
         }
+        return level;
+    }
 
-        this.levelProgress = 1.0;
-        if (this.level < Object.keys(LevelsConfig).length) {
-            let current = LevelsConfig[this.level].threshold;
-            let next = LevelsConfig[this.level+1].threshold;
-            this.levelProgress = (this.user.exp - current) / next;
+    getExpProgress(level, exp) {
+        let levelProgress = 1.0;
+        if (level < Object.keys(LevelsConfig).length) {
+            let current = LevelsConfig[level].threshold;
+            let next = LevelsConfig[level+1].threshold;
+            levelProgress = (exp - current) / next;
         }
+        return levelProgress;
+    }
+
+    _updateLevel() {
+        this.level = this.getExpLevel(this.user.exp, this.level);
+        this.levelProgress = this.getExpProgress(this.level, this.user.exp);
     }
 }
 

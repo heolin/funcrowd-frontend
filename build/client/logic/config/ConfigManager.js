@@ -5,6 +5,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _ProfileConfigs = _interopRequireDefault(require("./ProfileConfigs"));
+
+var _ProfileTypes = _interopRequireDefault(require("./ProfileTypes"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -26,6 +32,7 @@ function () {
     this.config = createConfig();
     this.initilized = false;
     this.baseUrl = process.env.BACKEND_URL;
+    this.profile = _ProfileConfigs["default"][_ProfileTypes["default"].NOTLOGGED];
   }
 
   _createClass(_ConfigManager, [{
@@ -35,6 +42,12 @@ function () {
       this.config.showFeedback = true; // user.group > 5;
 
       this.initilized = true;
+      this.profile = _ProfileConfigs["default"][user.profile];
+    }
+  }, {
+    key: "logout",
+    value: function logout() {
+      this.profile = _ProfileConfigs["default"][_ProfileTypes["default"].NOTLOGGED];
     }
   }]);
 

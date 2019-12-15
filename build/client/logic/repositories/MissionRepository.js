@@ -31,7 +31,7 @@ function () {
   _createClass(MissionRepository, null, [{
     key: "all",
     value: function all() {
-      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/missions', _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/missions/', _SessionManager["default"].config).then(function (response) {
         var missions = response.data.map(function (mission_data) {
           return _Mission["default"].fromJson(mission_data);
         });
@@ -41,7 +41,7 @@ function () {
   }, {
     key: "get",
     value: function get(missionId) {
-      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/missions/' + missionId, _SessionManager["default"].config).then(function (response) {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/missions/' + missionId + '/', _SessionManager["default"].config).then(function (response) {
         var mission = _Mission["default"].fromJson(response.data);
 
         return mission;

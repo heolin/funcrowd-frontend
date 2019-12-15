@@ -7,6 +7,10 @@ exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _reactRouterDom = require("react-router-dom");
+
+var _Icons = require("../../components/Icons");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -19,9 +23,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -32,49 +36,25 @@ var NavbarMenuButton =
 function (_React$Component) {
   _inherits(NavbarMenuButton, _React$Component);
 
-  function NavbarMenuButton(props) {
-    var _this;
-
+  function NavbarMenuButton() {
     _classCallCheck(this, NavbarMenuButton);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(NavbarMenuButton).call(this, props));
-    _this.state = {
-      name: null,
-      onClick: null
-    };
-    _this.onClick = _this.onClick.bind(_assertThisInitialized(_this));
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(NavbarMenuButton).apply(this, arguments));
   }
 
   _createClass(NavbarMenuButton, [{
-    key: "onClick",
-    value: function onClick() {
-      if (this.state.onClick !== null) {
-        this.state.onClick();
-      }
-    }
-  }, {
     key: "render",
     value: function render() {
-      return _react["default"].createElement("li", {
+      return _react["default"].createElement(_reactRouterDom.Link, {
+        to: this.props.targetPath
+      }, _react["default"].createElement("li", {
         className: "nav-item"
-      }, _react["default"].createElement("button", {
-        className: "nav-link btn btn-link",
-        href: "#",
-        onClick: this.onClick
-      }, this.state.name));
-    }
-  }], [{
-    key: "getDerivedStateFromProps",
-    value: function getDerivedStateFromProps(props, state) {
-      if (props.name !== state.name || props.onClick !== state.onClick) {
-        return {
-          name: props.name,
-          onClick: props.onClick
-        };
-      }
-
-      return null;
+      }, _react["default"].createElement(_Icons.SmallIcon, {
+        name: this.props.icon,
+        style: this.props.iconStyle
+      }), _react["default"].createElement("span", {
+        className: "nav-link"
+      }, this.props.name)));
     }
   }]);
 

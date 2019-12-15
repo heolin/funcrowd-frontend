@@ -13,6 +13,8 @@ var _SkippingPanel = _interopRequireDefault(require("./SkippingPanel"));
 
 var _ItemRepository = _interopRequireDefault(require("../../logic/repositories/ItemRepository"));
 
+var _Loading = _interopRequireDefault(require("../../components/Loading"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -154,13 +156,12 @@ function (_React$Component) {
         data: this.getAnnotationData(),
         skipped: skip
       };
+      this.setState({
+        blocked: true,
+        loading: true
+      });
 
       _ItemRepository["default"].postAnnotation(item.id, payload).then(function (annotationResponse) {
-        _this2.setState({
-          blocked: true,
-          loading: true
-        });
-
         _this2.props.onAnnotationPost(annotationResponse);
       })["catch"](function (error) {
         console.log(error);
@@ -190,20 +191,38 @@ function (_React$Component) {
       });
     }
   }, {
-    key: "render",
-    value: function render() {
+    key: "createGroup",
+    value: function createGroup(item, groupFields, index) {
       var _this3 = this;
 
-      if (this.state.loading) {
-        return _react["default"].createElement("div", null, "Loading");
-      }
+      var fields = [];
+      groupFields.forEach(function (fieldName) {
+        if (fieldName in item.templateFields) {
+          var field = item.templateFields[fieldName];
+          var compomnent = factory.create(field.widget, field.name, field.label, _this3.state[field.name], item.data[field.data_source], field.required, _this3.state.blocked, _this3.handleChange);
+          fields.push(compomnent);
+        }
+      });
+      if (fields.length > 0) return _react["default"].createElement("div", {
+        className: "item-panel-group",
+        key: "group-" + index
+      }, fields);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
 
+      if (this.state.loading) return _react["default"].createElement(_Loading["default"], null);
       var SubmitButton = this.props.submitButton;
       var SkipButton = this.props.skipButton;
       var item = this.props.item;
-      console.log(item);
-      var fields = item.template.fields.map(function (field) {
-        return factory.create(field.widget, field.name, field.label, _this3.state[field.name], item.data[field.data_source], field.required, _this3.state.blocked, _this3.handleChange);
+      var metadata = this.props.task.metadata;
+      var groups = metadata.groups || [item.template.fields.map(function (field) {
+        return field.name;
+      })];
+      var fieldGroups = groups.map(function (groupFields, index) {
+        return _this4.createGroup(item, groupFields, index);
       });
       var skipping = null;
       if (this.state.skipping) skipping = _react["default"].createElement(_SkippingPanel["default"], {
@@ -213,19 +232,18 @@ function (_React$Component) {
       return _react["default"].createElement("form", {
         className: "item-form",
         onSubmit: this.handleSubmit
-      }, skipping, fields, _react["default"].createElement("div", {
+      }, skipping, fieldGroups, _react["default"].createElement("div", {
         className: "item-form-buttons"
       }, _react["default"].createElement(SkipButton, {
         onClick: this.skipItem,
         style: {
-          marginRight: "10px",
           width: "80px"
         }
       }, "Skip"), _react["default"].createElement(SubmitButton, {
         type: "submit",
         disabled: !this.validateForm(),
         style: {
-          width: "120px"
+          width: "160px"
         }
       }, "Submit")));
     }

@@ -63,15 +63,18 @@ function (_React$Component) {
       var options = this.props.source.map(function (option) {
         return _react["default"].createElement(_RadioElement["default"], {
           key: option,
+          className: "small",
           name: _this2.props.name,
           onChange: _this2.handleChange,
           required: _this2.props.required,
           value: option
         });
       });
+      var label;
+      if (this.props.label) label = _react["default"].createElement("label", null, _react["default"].createElement("strong", null, this.props.label));
       return _react["default"].createElement("div", {
         className: "form-group"
-      }, _react["default"].createElement("label", null, _react["default"].createElement("strong", null, this.props.label)), options);
+      }, label, _react["default"].createElement("div", null, options));
     }
   }]);
 

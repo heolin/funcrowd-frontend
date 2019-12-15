@@ -64,14 +64,15 @@ export default class MissionsMenu extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12 missions-introduction">
-                            <h3>A witojcie w Excelu tutorial</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem tellus, malesuada eget egestas nec, laoreet id orci. Morbi tristique dui non accumsan egestas. Fusce convallis est et eleifend pellentesque. Vivamus bibendum mi at purus sagittis, id malesuada nisi ornare. Nullam dictum vestibulum ante.</p>
+                            <h3>Welcome</h3>
+                            <p></p>
                         </div>
                     </div>
                     <ListContainer className="row missions-row" key='list'>
                         {missions}
                     </ListContainer>
                 </div>
+                <Footer style={{marginTop: "70px"}}/>
             </div>
         );
     }

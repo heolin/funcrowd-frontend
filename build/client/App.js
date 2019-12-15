@@ -11,15 +11,19 @@ var _Base = _interopRequireDefault(require("./Base"));
 
 var _reactRouterDom = require("react-router-dom");
 
-require("./static/css/style.css");
-
 require("bootstrap/dist/js/bootstrap");
-
-require("bootstrap/dist/css/bootstrap.min.css");
 
 require("slick-carousel/slick/slick.css");
 
 require("slick-carousel/slick/slick-theme.css");
+
+require("./static/scss/navbar.scss");
+
+require("./static/scss/style.scss");
+
+require("./static/scss/missions.scss");
+
+var _LocalizationManager = _interopRequireDefault(require("./logic/locatization/LocalizationManager"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -41,6 +45,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+var baseLangCode = process.env.LANG_CODE || "en";
+
+_LocalizationManager["default"].setup(baseLangCode);
+
 var App =
 /*#__PURE__*/
 function (_React$Component) {
@@ -55,7 +63,7 @@ function (_React$Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return _react["default"].createElement(_reactRouterDom.BrowserRouter, null, _react["default"].createElement(_Base["default"], null));
+      return _react["default"].createElement(_reactRouterDom.HashRouter, null, _react["default"].createElement(_Base["default"], null));
     }
   }]);
 

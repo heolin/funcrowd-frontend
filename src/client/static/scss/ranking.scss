@@ -1,0 +1,54 @@
+@import "mixins";
+@import "colors";
+
+
+.ranking-panel {
+  padding: 20px 40px;
+  margin-top: 40px;
+}
+
+.ranking-table {
+  margin-bottom: 0 !important;
+}
+
+.ranking-table td {
+  padding: 6px 12px !important;
+}
+
+.ranking-table-row-current {
+  @include horizontal_gradient($blue-color);
+}
+
+.ranking-table-page-buttons {
+  margin-top: 30px;
+  position: relative;
+}
+
+.ranking-table-page-button {
+  position: absolute;
+  padding: 6px 0;
+  height: 40px;
+  line-height: 1.1 !important;
+  width: 40px;
+  text-align: center;
+}
+
+.ranking-table-page-arrow {
+  position: absolute;
+  cursor: pointer;
+  padding-top: 3px;
+
+}
+
+.ranking-table-page-arrow.inactive {
+  cursor: not-allowed;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.ranking-table-icon {
+  position: absolute;
+  margin-left: -40px;
+  color: #AC863E;
+  color: #9C7326;
+}

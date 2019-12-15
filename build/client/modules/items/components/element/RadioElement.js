@@ -56,8 +56,10 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var className = this.props.className || "";
+      var text = this.props.label == null ? this.props.value : this.props.label;
       return _react["default"].createElement("label", {
-        className: "radio-container"
+        className: "radio " + className
       }, _react["default"].createElement("input", {
         id: this.props.name,
         name: this.props.name,
@@ -65,8 +67,10 @@ function (_React$Component) {
         onChange: this.handleChange,
         type: "radio"
       }), _react["default"].createElement("span", {
-        className: "radiomark"
-      }), this.props.value);
+        className: "outer"
+      }, _react["default"].createElement("span", {
+        className: "inner"
+      })), text);
     }
   }]);
 

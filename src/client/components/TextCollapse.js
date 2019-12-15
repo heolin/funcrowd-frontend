@@ -1,5 +1,5 @@
 import React from "react"
-import {SmallIcon} from "./Icons";
+import {Icon} from "./Icons";
 
 
 export class TextCollapse extends React.Component {
@@ -26,7 +26,8 @@ export class TextCollapse extends React.Component {
         return (
             <div className="text-collapse" style={this.props.style}>
                 <div className="text-collapse-head noselect smal" onClick={this.onClick}>
-                    <SmallIcon name={icon}/>{this.props.headText}
+                    <Icon className="very-small-icon" name={icon} style={{marginRight: "10px"}}/>
+                    {this.props.headText}
                 </div>
                 <div className={"text-collapse-body" + className}>
                     <div style={{padding: "10px"}}>
