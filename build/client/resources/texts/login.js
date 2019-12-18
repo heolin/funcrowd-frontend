@@ -114,8 +114,8 @@ var _default = {
     pl: "Podaj mail użyty podczas rejestracji"
   },
   processDataMessage: {
-    en: "Oświadczam, że zapoznałem/łam się z treścią oraz akceptuje warunki <a href=\"s3://funcrowd-s3/Files/Space Calc - Regulamin serwisu.pdf\">Regulaminu</a> oraz <a href=\"s3://funcrowd-s3/Files/Space Calc - Polityka Prywatności.pdf\">Polityki Prywatności</a> serwisu. Dobrowolnie i świadomie wyrażam zgodę na udział w badaniu naukowym.",
-    pl: "Oświadczam, że zapoznałem/łam się z treścią oraz akceptuje warunki <a href=\"s3://funcrowd-s3/Files/Space Calc - Regulamin serwisu.pdf\">Regulaminu</a> oraz <a href=\"s3://funcrowd-s3/Files/Space Calc - Polityka Prywatności.pdf\">Polityki Prywatności</a> serwisu. Dobrowolnie i świadomie wyrażam zgodę na udział w badaniu naukowym.",
+    en: "Oświadczam, że zapoznałem/łam się z treścią oraz akceptuje warunki <a target=\"_blank\" href=\"https://funcrowd-s3.s3.eu-central-1.amazonaws.com/Files/Space+Calc+-+Regulamin+serwisu.pdf\">Regulaminu</a> oraz <a target=\"_blank\" href=\"https://funcrowd-s3.s3.eu-central-1.amazonaws.com/Files/Space+Calc+-+Polityka+Prywatno%C5%9Bci.pdf\">Polityki Prywatności</a> serwisu. Dobrowolnie i świadomie wyrażam zgodę na udział w badaniu naukowym.",
+    pl: "Oświadczam, że zapoznałem/łam się z treścią oraz akceptuje warunki <a target=\"_blank\" href=\"https://funcrowd-s3.s3.eu-central-1.amazonaws.com/Files/Space+Calc+-+Regulamin+serwisu.pdf\">Regulaminu</a> oraz <a target=\"_blank\" href=\"https://funcrowd-s3.s3.eu-central-1.amazonaws.com/Files/Space+Calc+-+Polityka+Prywatno%C5%9Bci.pdf\">Polityki Prywatności</a> serwisu. Dobrowolnie i świadomie wyrażam zgodę na udział w badaniu naukowym."
   },
   alreadyHaveAccount: {
     en: "Already have an account?",

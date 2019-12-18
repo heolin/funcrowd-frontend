@@ -346,7 +346,7 @@ function (_React$Component) {
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].ABOUT,
             render: function render(props) {
-              return _react["default"].createElement(_AboutPage["default"], _extends({
+              return _react["default"].createElement(_SpaceCalcAboutPage["default"], _extends({
                 user: _this3.state.user
               }, props));
             }

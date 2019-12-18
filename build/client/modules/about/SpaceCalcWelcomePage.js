@@ -23,6 +23,8 @@ var _Footer = require("../../Footer");
 
 var _LocalizationManager = _interopRequireDefault(require("../../logic/locatization/LocalizationManager"));
 
+var _reactAnimateOnScroll = _interopRequireDefault(require("react-animate-on-scroll"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }

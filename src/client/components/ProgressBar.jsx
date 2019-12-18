@@ -4,7 +4,8 @@ import React from "react"
 export default class ProgressBar extends React.Component {
 
     shouldComponentUpdate(nextProps, nextState) {
-        let result = nextProps.progress !== this.props.progress;
+        let result = (nextProps.progress !== this.props.progress) ||
+                     (nextProps.text !== this.props.text);
         return result;
     }
 

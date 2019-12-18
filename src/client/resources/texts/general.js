@@ -22,5 +22,9 @@ export default {
     newest: {
         en: "Newest",
         pl: "Najnowsze"
+    },
+    level: {
+        en: "Level",
+        pl: "Poziom"
     }
 }

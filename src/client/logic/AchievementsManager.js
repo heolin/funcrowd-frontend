@@ -53,8 +53,13 @@ class _AchievementsManager extends EventEmitter {
             });
     }
 
-    getFinishedAchievements() {
-
+    getUnclosedAchievements() {
+        return AchievementsRepository.unclosed()
+            .then((achievements) => {
+                return achievements;
+            }).catch((error) => {
+                console.log(error)
+            });
     }
 
     getLastFinished(top=3) {

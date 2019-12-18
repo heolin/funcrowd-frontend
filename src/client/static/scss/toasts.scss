@@ -1,0 +1,35 @@
+@import "colors";
+
+.toasts-panel {
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+}
+
+.toast-card {
+  position: relative;
+  margin: 20px;
+  padding: 14px 20px;
+  background: rgba($light-blue-color, 0.9);
+  width: 320px;
+  height: 120px;
+}
+
+.toast-link {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  text-decoration: underline;
+}
+
+.toast-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.toast-icon img {
+  width: 50px;
+  opacity: 1.0;
+}

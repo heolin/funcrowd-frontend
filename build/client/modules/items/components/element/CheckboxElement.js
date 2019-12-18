@@ -66,8 +66,11 @@ function (_React$Component) {
       }, _react["default"].createElement("span", {
         className: "inner"
       })), _react["default"].createElement("div", {
-        className: "text " + labelClassName
-      }, text));
+        className: "text " + labelClassName,
+        dangerouslySetInnerHTML: {
+          __html: text
+        }
+      }));
     }
   }]);
 

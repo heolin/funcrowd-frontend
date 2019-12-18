@@ -171,7 +171,7 @@ function (_React$Component) {
       var testCards = [];
       this.testsIds.forEach(function (testId) {
         testCards.push(_react["default"].createElement(_TestCard["default"], {
-          name: "test",
+          name: "Test",
           progress: _this3.state['test' + testId]
         }));
       });
@@ -182,17 +182,26 @@ function (_React$Component) {
       }, _react["default"].createElement("div", {
         className: "row tasks-row",
         style: {
-          paddingTop: "60px"
+          paddingTop: "80px"
         }
       }, _react["default"].createElement("div", {
-        className: "col-sm-12"
+        className: "col-sm-12",
+        style: {
+          marginBottom: "50px"
+        }
       }, _react["default"].createElement("h3", null, "Wyniki test\xF3w"), _react["default"].createElement("p", null, "Zobacz jakie wyniki uzyska\u0142e\u015B/\u0142a\u015B w kolejnych testach wiedzy i umiej\u0119tno\u015Bci obs\u0142ugi arkuszy kalkulacyjnych."), _react["default"].createElement("div", {
-        className: "test-cards text-center"
+        className: "test-cards text-center",
+        style: {
+          paddingTop: "20px"
+        }
       }, testCards)), _react["default"].createElement("div", {
-        className: "col-sm-12"
+        className: "col-sm-12",
+        style: {
+          marginBottom: "50px"
+        }
       }, _react["default"].createElement("h3", null, "Tw\xF3j poziom"), _react["default"].createElement("p", null, "Za rozwi\u0105zywanie zada\u0144 otrzymujesz gwiazdki. Im wi\u0119cej gwiazdek, tym wy\u017Cszy poziom do\u015Bwiadczenia!"), _react["default"].createElement("div", {
         className: "text-center"
-      }, _react["default"].createElement("h5", null, "Rozwi\u0105za\u0142e\u015B/\u0142a\u015B"), _react["default"].createElement("h3", null, "14 z 30 zada\u0144"))), _react["default"].createElement("div", {
+      }, _react["default"].createElement("h5", null, "Rozwi\u0105za\u0142e\u015B/\u0142a\u015B"), _react["default"].createElement("h3", null, "X z X zada\u0144"))), _react["default"].createElement("div", {
         className: "col-sm-12",
         style: {
           marginBottom: "60px"
@@ -229,7 +238,7 @@ function (_React$Component) {
         to: "/ranking"
       }, _react["default"].createElement("div", {
         className: "normal"
-      }, "Zobacz ca\u0142y ranking")))))));
+      }, "Zobacz ca\u0142y ranking")))))), _react["default"].createElement(_Footer.Footer, null));
     }
   }]);
 

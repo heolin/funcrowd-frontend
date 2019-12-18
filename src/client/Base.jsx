@@ -29,6 +29,7 @@ import SettingsPage from "./modules/profile/SettingsPage";
 import ResetPasswordTokenPage from "./modules/login/ResetPasswordTokenPage";
 import ActivationPage from "./modules/login/ActivationPage";
 import urls from "./Urls"
+import ToastsPanel from "./modules/toasts/ToastsPanel";
 
 
 export const RouteContainer = posed.div({
@@ -158,7 +159,6 @@ export class AppBase extends React.Component {
         if (this.state.checkingParams || this.state.checkingUser)
             return <Loading/>;
 
-        console.log(this.props.location);
         if (UserManager.user === null) {
             if (ConfigManager.profile.availablePages.indexOf(this.props.location.pathname) < 0){
                 this.props.history.push(urls.LOGIN);
@@ -182,6 +182,8 @@ export class AppBase extends React.Component {
 
                     <SideProfilePanel isOpen={this.state.sideProfileShown}
                                       hideSideProfile={this.hideSideProfile}/>
+
+                    <ToastsPanel/>
 
                     <div className="h-100">
                         <PoseGroup>

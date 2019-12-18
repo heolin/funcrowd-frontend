@@ -17,6 +17,8 @@ var _Icons = require("../../components/Icons");
 
 var _Image = require("../../components/Image");
 
+var _UserManager = _interopRequireDefault(require("../../logic/UserManager"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -62,10 +64,13 @@ function (_React$Component) {
       }, _react["default"].createElement("div", {
         className: "col-md-12"
       }, _react["default"].createElement("div", {
-        className: "bounty-header-info"
+        className: "tasks-header-info"
       }, _react["default"].createElement("div", {
-        className: "color-white"
-      })), _react["default"].createElement(_Image.CircleImage, {
+        className: "tasks-header-info-text color-white small",
+        style: {
+          marginTop: "10px"
+        }
+      }, _react["default"].createElement("h3", null, "Cze\u015B\u0107 ", _UserManager["default"].user.username), _react["default"].createElement("p", null, "\u015Aled\u017A postepy swojej nauki!", _react["default"].createElement("br", null), "W Twoim profilu zawarli\u015Bmy najwa\u017Cniejsze informacje dotycz\u0105ce Twojej aktywno\u015Bci."))), _react["default"].createElement(_Image.CircleImage, {
         className: "tasks-header-image d-none d-sm-none d-md-block",
         image: image
       })))));

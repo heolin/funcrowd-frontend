@@ -11,7 +11,8 @@ export default class NavbarProfile extends React.Component {
         super(props);
 
         this.state = {
-            exp: null
+            exp: null,
+            level: 0
         };
 
         this.onUpdate = this.onUpdate.bind(this);
@@ -28,7 +29,8 @@ export default class NavbarProfile extends React.Component {
     onUpdate() {
         if (UserManager.user) {
             this.setState({
-                exp: UserManager.user.exp
+                exp: UserManager.user.exp,
+                level: UserManager.level
             });
         }
     }
@@ -46,7 +48,7 @@ export default class NavbarProfile extends React.Component {
                                  bg="light-blue"
                                  fg="blue"
                                  progress={UserManager.levelProgress}
-                                 text={L.levels.level + " " + UserManager.level}/>
+                                 text={L.levels.level + " " + this.state.level}/>
                 </div>
             </div>
         );

@@ -8,6 +8,8 @@ import login from "../../resources/texts/login";
 import levels from "../../resources/texts/levels";
 import spacecalc from "../../resources/texts/spacecalc";
 import quiz from "../../resources/texts/quiz";
+import toasts from "../../resources/texts/toasts";
+import profile from "../../resources/texts/profile";
 
 
 class _LocalizationManager {
@@ -23,6 +25,8 @@ class _LocalizationManager {
         this.feedback = new LocalizedDictionary(feedback);
         this.login = new LocalizedDictionary(login);
         this.quiz = new LocalizedDictionary(quiz);
+        this.toasts = new LocalizedDictionary(toasts);
+        this.profile = new LocalizedDictionary(profile);
         this.language = null;
     }
 
@@ -37,6 +41,8 @@ class _LocalizationManager {
         this.levels.setup(language);
         this.login.setup(language);
         this.quiz.setup(language);
+        this.toasts.setup(language);
+        this.profile.setup(language);
     }
 
 }

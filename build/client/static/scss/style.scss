@@ -52,6 +52,24 @@ body {
   @extend .color-blue;
 }
 
+.white-link {
+  color: white !important;
+
+  &:hover {
+    color: white !important;
+  }
+}
+
+.light-blue-link {
+  color: $light-blue-color !important;
+  text-decoration: underline;
+
+  &:hover {
+    color: $light-blue-color !important;
+  }
+}
+
+
 .loading-spinner {
   position: absolute;
   top: 50%;

@@ -64,6 +64,9 @@ export class SideProfilePanel extends React.Component {
     }
 
     render() {
+        if (UserManager.level === 0)
+            return null;
+
         let nextLevel = Math.min(UserManager.level+1, Object.keys(LevelsConfig).length);
         let expThreshold = LevelsConfig[nextLevel].threshold;
         let expCurrent = 0;

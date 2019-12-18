@@ -1,6 +1,8 @@
 import EventEmitter from "event-emitter-es6"
 import UserRepository from "./repositories/UserRepository";
 import LevelsConfig from "../resources/levels";
+import L from "./locatization/LocalizationManager";
+import ToastManager from "./ToastsManager";
 
 const EXPERIENCE_CHANGED = "experience-changed";
 const USERNAME_CHANGED = "username-changed";
@@ -11,7 +13,7 @@ class _UserManager extends EventEmitter {
         super();
         this.user = null;
         this.loading = false;
-        this.level = 1;
+        this.level = 0;
         this.levelProgress = 0;
     }
 
@@ -87,8 +89,16 @@ class _UserManager extends EventEmitter {
         return levelProgress;
     }
 
+    _addLevelUpToast() {
+        let message = L.general.level + " " + this.level + " " + L.levels['level'+this.level];
+        ToastManager.addToast("level", message);
+    }
+
     _updateLevel() {
+        let currentLevel = this.level;
         this.level = this.getExpLevel(this.user.exp, this.level);
+        if (currentLevel < this.level && currentLevel > 0)
+            this._addLevelUpToast();
         this.levelProgress = this.getExpProgress(this.level, this.user.exp);
     }
 }

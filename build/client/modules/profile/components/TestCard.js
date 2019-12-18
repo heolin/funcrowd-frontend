@@ -49,7 +49,7 @@ function (_React$Component) {
       var isUnlocked = progress.status !== "LOCKED";
       var iconName = "task/test_grey";
       var scores = "";
-      var message = "lol zablokowane";
+      var message = "Rozwiąż test aby zobaczyć wynik";
       var className = "locked";
 
       if (isUnlocked) {

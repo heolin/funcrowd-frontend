@@ -100,6 +100,7 @@ function (_React$Component) {
       _UserRepository["default"].login(email, password).then(function (user) {
         _this2.props.onSuccess(user, stayLoggedIn);
       })["catch"](function (error) {
+        console.log(error);
         var responseError = error.response.data['detail'];
         var errorMessage = _LocalizationManager["default"].login.unknownError;
         if (responseError === "Authentication credentials were not provided.") errorMessage = _LocalizationManager["default"].login.loginIncorrect;

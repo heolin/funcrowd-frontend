@@ -65,8 +65,12 @@ function (_React$Component) {
       }, _react["default"].createElement("div", {
         className: "text-collapse-head noselect smal",
         onClick: this.onClick
-      }, _react["default"].createElement(_Icons.SmallIcon, {
-        name: icon
+      }, _react["default"].createElement(_Icons.Icon, {
+        className: "very-small-icon",
+        name: icon,
+        style: {
+          marginRight: "10px"
+        }
       }), this.props.headText), _react["default"].createElement("div", {
         className: "text-collapse-body" + className
       }, _react["default"].createElement("div", {

@@ -15,6 +15,8 @@ var _Loading = _interopRequireDefault(require("../../components/Loading"));
 
 var _LocalizationManager = _interopRequireDefault(require("../../logic/locatization/LocalizationManager"));
 
+var _Footer = require("../../Footer");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -235,7 +237,11 @@ function (_React$Component) {
         className: "btn btn-orange-primary settings-button"
       }, "Zmie\u0144 has\u0142o"), _react["default"].createElement("p", {
         className: "settings-form-error-message text-center small " + passwordMessageClassName
-      }, this.state.passwordMessage))))));
+      }, this.state.passwordMessage))))), _react["default"].createElement(_Footer.Footer, {
+        style: {
+          marginTop: "80px"
+        }
+      }));
     }
   }]);
 

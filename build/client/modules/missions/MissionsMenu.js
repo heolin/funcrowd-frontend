@@ -121,10 +121,14 @@ function (_React$Component) {
         className: "row"
       }, _react["default"].createElement("div", {
         className: "col-sm-12 missions-introduction"
-      }, _react["default"].createElement("h3", null, "A witojcie w Excelu tutorial"), _react["default"].createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem tellus, malesuada eget egestas nec, laoreet id orci. Morbi tristique dui non accumsan egestas. Fusce convallis est et eleifend pellentesque. Vivamus bibendum mi at purus sagittis, id malesuada nisi ornare. Nullam dictum vestibulum ante."))), _react["default"].createElement(_ListContainer["default"], {
+      }, _react["default"].createElement("h3", null, "Welcome"), _react["default"].createElement("p", null))), _react["default"].createElement(_ListContainer["default"], {
         className: "row missions-row",
         key: "list"
-      }, missions)));
+      }, missions)), _react["default"].createElement(_Footer.Footer, {
+        style: {
+          marginTop: "70px"
+        }
+      }));
     }
   }]);
 

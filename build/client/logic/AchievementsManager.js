@@ -64,7 +64,7 @@ function (_EventEmitter) {
         _this2.finishedAchievements = [];
         _this2.unfinishedAchievements = [];
         achievements.forEach(function (achievement) {
-          if (achievement.status == "FINISHED" || achievement.status == "DONE") _this2.finishedAchievements.push(achievement);else _this2.unfinishedAchievements.push(achievement);
+          if (achievement.status == "FINISHED" || achievement.status == "CLOSED") _this2.finishedAchievements.push(achievement);else _this2.unfinishedAchievements.push(achievement);
         });
 
         _this2.finishedAchievements.sort(function (a1, a2) {
@@ -85,6 +85,9 @@ function (_EventEmitter) {
         console.log(error);
       });
     }
+  }, {
+    key: "getFinishedAchievements",
+    value: function getFinishedAchievements() {}
   }, {
     key: "getLastFinished",
     value: function getLastFinished() {
