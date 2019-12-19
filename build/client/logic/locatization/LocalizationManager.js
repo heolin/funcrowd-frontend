@@ -23,6 +23,10 @@ var _spacecalc = _interopRequireDefault(require("../../resources/texts/spacecalc
 
 var _quiz = _interopRequireDefault(require("../../resources/texts/quiz"));
 
+var _toasts = _interopRequireDefault(require("../../resources/texts/toasts"));
+
+var _profile = _interopRequireDefault(require("../../resources/texts/profile"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -48,6 +52,8 @@ function () {
     this.feedback = new _LocalizedDictionary["default"](_feedback["default"]);
     this.login = new _LocalizedDictionary["default"](_login["default"]);
     this.quiz = new _LocalizedDictionary["default"](_quiz["default"]);
+    this.toasts = new _LocalizedDictionary["default"](_toasts["default"]);
+    this.profile = new _LocalizedDictionary["default"](_profile["default"]);
     this.language = null;
   }
 
@@ -64,6 +70,8 @@ function () {
       this.levels.setup(language);
       this.login.setup(language);
       this.quiz.setup(language);
+      this.toasts.setup(language);
+      this.profile.setup(language);
     }
   }]);
 

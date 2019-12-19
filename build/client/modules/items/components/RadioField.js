@@ -52,7 +52,7 @@ function (_React$Component) {
   }, {
     key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextProps, nextState) {
-      var result = nextProps.value !== this.props.value;
+      var result = nextProps.value !== this.props.value || nextProps.source !== this.props.source;
       return result;
     }
   }, {

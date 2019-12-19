@@ -11,6 +11,10 @@ var _UserRepository = _interopRequireDefault(require("./repositories/UserReposit
 
 var _levels = _interopRequireDefault(require("../resources/levels"));
 
+var _LocalizationManager = _interopRequireDefault(require("./locatization/LocalizationManager"));
+
+var _ToastsManager = _interopRequireDefault(require("./ToastsManager"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -47,7 +51,7 @@ function (_EventEmitter) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(_UserManager).call(this));
     _this.user = null;
     _this.loading = false;
-    _this.level = 1;
+    _this.level = 0;
     _this.levelProgress = 0;
     return _this;
   }
@@ -139,9 +143,18 @@ function (_EventEmitter) {
       return levelProgress;
     }
   }, {
+    key: "_addLevelUpToast",
+    value: function _addLevelUpToast() {
+      var message = _LocalizationManager["default"].general.level + " " + this.level + " " + _LocalizationManager["default"].levels['level' + this.level];
+
+      _ToastsManager["default"].addToast("level", message);
+    }
+  }, {
     key: "_updateLevel",
     value: function _updateLevel() {
+      var currentLevel = this.level;
       this.level = this.getExpLevel(this.user.exp, this.level);
+      if (currentLevel < this.level && currentLevel > 0) this._addLevelUpToast();
       this.levelProgress = this.getExpProgress(this.level, this.user.exp);
     }
   }]);

@@ -22,7 +22,8 @@ var _default = {
     pl: "Wyniki zadania"
   },
   answersMessage: {
-    en: "Summary of your answers"
+    en: "Summary of your answers",
+    pl: "Podsumowanie odpowiedzi"
   },
   answer: {
     en: "Answer",

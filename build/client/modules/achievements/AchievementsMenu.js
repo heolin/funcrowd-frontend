@@ -102,6 +102,11 @@ function (_React$Component) {
           achievement: achievement
         }));
       });
+      if (finishedAchievements.length === 0) finishedAchievements = _react["default"].createElement("p", {
+        style: {
+          marginLeft: "30px"
+        }
+      }, _react["default"].createElement("i", null, "Nie zdoby\u0142e\u015B jeszcze \u017Cadnych osi\u0105gni\u0119\u0107 :("));
       var unfinishedAchievements = this.state.unfinishedAchievements.map(function (achievement) {
         return _react["default"].createElement("div", {
           className: "col-md-6 col-lg-4 col-sm-12",
@@ -118,13 +123,16 @@ function (_React$Component) {
         className: "row"
       }, _react["default"].createElement("div", {
         className: "col-12 achivements-earned"
-      }, _react["default"].createElement("h3", null, "Zdobyte"), _react["default"].createElement("p", null, "534543"), _react["default"].createElement("div", {
+      }, _react["default"].createElement("h3", null, "Zdobyte"), _react["default"].createElement("p", null, "Twoja kolekcja odznak"), _react["default"].createElement("div", {
         className: "row achievements-row"
       }, finishedAchievements))), _react["default"].createElement("div", {
-        className: "row"
+        className: "row",
+        style: {
+          marginTop: "40px"
+        }
       }, _react["default"].createElement("div", {
         className: "col-12 achivements-to-earn"
-      }, _react["default"].createElement("h3", null, "Do zdobycia"), _react["default"].createElement("p", null, "test"), _react["default"].createElement("div", {
+      }, _react["default"].createElement("h3", null, "Do zdobycia"), _react["default"].createElement("p", null, "Wykonuj zadania, aby odblowa\u0107 nowe osi\u0105gniecia!"), _react["default"].createElement("div", {
         className: "row achievements-row"
       }, unfinishedAchievements)))));
     }

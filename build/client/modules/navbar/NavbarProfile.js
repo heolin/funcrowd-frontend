@@ -47,7 +47,8 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(NavbarProfile).call(this, props));
     _this.state = {
-      exp: null
+      exp: null,
+      level: 0
     };
     _this.onUpdate = _this.onUpdate.bind(_assertThisInitialized(_this));
     return _this;
@@ -68,7 +69,8 @@ function (_React$Component) {
     value: function onUpdate() {
       if (_UserManager["default"].user) {
         this.setState({
-          exp: _UserManager["default"].user.exp
+          exp: _UserManager["default"].user.exp,
+          level: _UserManager["default"].level
         });
       }
     }
@@ -89,7 +91,7 @@ function (_React$Component) {
         bg: "light-blue",
         fg: "blue",
         progress: _UserManager["default"].levelProgress,
-        text: _LocalizationManager["default"].levels.level + " " + _UserManager["default"].level
+        text: _LocalizationManager["default"].levels.level + " " + this.state.level
       })));
     }
   }]);

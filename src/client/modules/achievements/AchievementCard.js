@@ -22,6 +22,8 @@ export default class AchievementCard extends React.Component {
         let text = metadata.text;
         if (finished)
             text = metadata.finishText;
+        let value = Math.min(achievement.value, achievement.target);
+        value = Math.round(value * 100) / 100;
 
         return (
 
@@ -37,11 +39,11 @@ export default class AchievementCard extends React.Component {
                     <div className="achievement-card-progress">
                         <div className="little text-right color-green"
                              style={{marginBottom: "4px"}}>
-                            <b>+{metadata.exp} exp</b>
+                            <b>+{achievement.exp} exp</b>
                         </div>
                         <ProgressBar bg="dark" fg="green" color="dark"
                                      textAlign="right" progress={achievement.progress}
-                                     text={achievement.value + "/" + achievement.target + " zadań"}/>
+                                     text={value + "/" + achievement.target + " zadań"}/>
                     </div>
                </div>
             </div>

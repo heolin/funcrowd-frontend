@@ -28,6 +28,10 @@ var _default = {
   newest: {
     en: "Newest",
     pl: "Najnowsze"
+  },
+  level: {
+    en: "Level",
+    pl: "Poziom"
   }
 };
 exports["default"] = _default;

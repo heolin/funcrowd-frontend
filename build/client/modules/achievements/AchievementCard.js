@@ -54,6 +54,8 @@ function (_React$Component) {
       if (finished) icon = "achievements/" + metadata.icon;
       var text = metadata.text;
       if (finished) text = metadata.finishText;
+      var value = Math.min(achievement.value, achievement.target);
+      value = Math.round(value * 100) / 100;
       return _react["default"].createElement("div", {
         className: "achievement-card"
       }, _react["default"].createElement("div", {
@@ -79,13 +81,13 @@ function (_React$Component) {
         style: {
           marginBottom: "4px"
         }
-      }, _react["default"].createElement("b", null, "+", metadata.exp, " exp")), _react["default"].createElement(_ProgressBar["default"], {
+      }, _react["default"].createElement("b", null, "+", achievement.exp, " exp")), _react["default"].createElement(_ProgressBar["default"], {
         bg: "dark",
         fg: "green",
         color: "dark",
         textAlign: "right",
         progress: achievement.progress,
-        text: achievement.value + "/" + achievement.target + " zadań"
+        text: value + "/" + achievement.target + " zadań"
       }))));
     }
   }]);

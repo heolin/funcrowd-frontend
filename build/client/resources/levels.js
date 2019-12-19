@@ -9,19 +9,19 @@ var _default = {
     threshold: 0
   },
   2: {
-    threshold: 5
+    threshold: 50
   },
   3: {
-    threshold: 20
-  },
-  4: {
     threshold: 100
   },
+  4: {
+    threshold: 200
+  },
   5: {
-    threshold: 375
+    threshold: 400
   },
   6: {
-    threshold: 1045
+    threshold: 1000
   }
 };
 exports["default"] = _default;

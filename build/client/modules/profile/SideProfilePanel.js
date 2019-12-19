@@ -124,6 +124,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      if (_UserManager["default"].level === 0) return null;
       var nextLevel = Math.min(_UserManager["default"].level + 1, Object.keys(_levels["default"]).length);
       var expThreshold = _levels["default"][nextLevel].threshold;
       var expCurrent = 0;

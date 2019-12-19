@@ -1,8 +1,9 @@
 
 export default class Achievement {
-    constructor(id, order, status, value, target, progress, updated, metadata) {
+    constructor(id, order, status, value, exp, target, progress, updated, metadata) {
         this.id = id;
         this.order = order;
+        this.exp = exp;
         this.status = status;
         this.value = value;
         this.target = target;
@@ -17,6 +18,7 @@ export default class Achievement {
             data.order,
             data.status,
             data.value,
+            data.exp,
             data.target,
             data.progress,
             data.updated,

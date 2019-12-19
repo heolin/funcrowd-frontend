@@ -41,7 +41,7 @@ function (_React$Component) {
   _createClass(ProgressBar, [{
     key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextProps, nextState) {
-      var result = nextProps.progress !== this.props.progress;
+      var result = nextProps.progress !== this.props.progress || nextProps.text !== this.props.text;
       return result;
     }
   }, {

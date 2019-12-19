@@ -14,11 +14,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var Achievement =
 /*#__PURE__*/
 function () {
-  function Achievement(id, order, status, value, target, progress, updated, metadata) {
+  function Achievement(id, order, status, value, exp, target, progress, updated, metadata) {
     _classCallCheck(this, Achievement);
 
     this.id = id;
     this.order = order;
+    this.exp = exp;
     this.status = status;
     this.value = value;
     this.target = target;
@@ -30,7 +31,7 @@ function () {
   _createClass(Achievement, null, [{
     key: "fromJson",
     value: function fromJson(data) {
-      var achievement = new Achievement(data.id, data.order, data.status, data.value, data.target, data.progress, data.updated, data.metadata);
+      var achievement = new Achievement(data.id, data.order, data.status, data.value, data.exp, data.target, data.progress, data.updated, data.metadata);
       return achievement;
     }
   }]);

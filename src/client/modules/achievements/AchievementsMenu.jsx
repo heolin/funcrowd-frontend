@@ -55,6 +55,13 @@ export default class AchievementsMenu extends React.Component {
                 </div>
             )
         );
+        if (finishedAchievements.length === 0)
+            finishedAchievements = (
+                <p style={{marginLeft: "30px"}}>
+                    <i>Nie zdobyłeś jeszcze żadnych osiągnięć :(</i>
+                </p>
+            );
+
         let unfinishedAchievements = this.state.unfinishedAchievements.map(
             (achievement) => (
                 <div className="col-md-6 col-lg-4 col-sm-12" key={achievement.id}>
@@ -70,18 +77,18 @@ export default class AchievementsMenu extends React.Component {
                         <div className="col-12 achivements-earned">
                             <h3>Zdobyte</h3>
                             <p>
-                                534543
+                                Twoja kolekcja odznak
                             </p>
                             <div className="row achievements-row">
                                 {finishedAchievements}
                             </div>
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row" style={{marginTop: "40px"}}>
                         <div className="col-12 achivements-to-earn">
                             <h3>Do zdobycia</h3>
                             <p>
-                                test
+                                Wykonuj zadania, aby odblować nowe osiągniecia!
                             </p>
                             <div className="row achievements-row">
                                 {unfinishedAchievements}

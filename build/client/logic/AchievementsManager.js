@@ -86,8 +86,14 @@ function (_EventEmitter) {
       });
     }
   }, {
-    key: "getFinishedAchievements",
-    value: function getFinishedAchievements() {}
+    key: "getUnclosedAchievements",
+    value: function getUnclosedAchievements() {
+      return _AchievementsRepository["default"].unclosed().then(function (achievements) {
+        return achievements;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
   }, {
     key: "getLastFinished",
     value: function getLastFinished() {

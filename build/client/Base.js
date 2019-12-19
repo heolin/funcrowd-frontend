@@ -67,6 +67,8 @@ var _ActivationPage = _interopRequireDefault(require("./modules/login/Activation
 
 var _Urls = _interopRequireDefault(require("./Urls"));
 
+var _ToastsPanel = _interopRequireDefault(require("./modules/toasts/ToastsPanel"));
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -270,7 +272,6 @@ function (_React$Component) {
       var _this3 = this;
 
       if (this.state.checkingParams || this.state.checkingUser) return _react["default"].createElement(_Loading["default"], null);
-      console.log(this.props.location);
 
       if (_UserManager["default"].user === null) {
         if (_ConfigManager["default"].profile.availablePages.indexOf(this.props.location.pathname) < 0) {
@@ -295,7 +296,7 @@ function (_React$Component) {
           }), _react["default"].createElement(_SideProfilePanel.SideProfilePanel, {
             isOpen: _this3.state.sideProfileShown,
             hideSideProfile: _this3.hideSideProfile
-          }), _react["default"].createElement("div", {
+          }), _react["default"].createElement(_ToastsPanel["default"], null), _react["default"].createElement("div", {
             className: "h-100"
           }, _react["default"].createElement(_reactPose.PoseGroup, null, _react["default"].createElement(RouteContainer, {
             key: location.pathname
