@@ -9,7 +9,7 @@ export default {
     },
     about: {
         en: "About",
-        pl: "O projekcie"
+        pl: "O projekcie"
     },
     achievements: {
         en: "Achievements",
@@ -20,8 +20,8 @@ export default {
         pl: "Ranking"
     },
     account: {
-        en: "Your account",
-        pl: "Twoje kont"
+        en: "Your account",
+        pl: "Twoje konto"
     },
     logout: {
         en: "Logout",

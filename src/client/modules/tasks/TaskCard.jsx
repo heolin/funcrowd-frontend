@@ -27,9 +27,12 @@ export default class TaskCard extends React.Component {
         let metadata = this.props.task.metadata;
 
         let taskIconBase = "task/task";
+        if (metadata['icon'])
+            taskIconBase = "task/" + metadata['icon'];
         let taskIcon = taskIconBase + "_grey";
         let startIcon = null;
         let statusClassName = "locked";
+        let experience = null;
 
         if (progress.status === "FINISHED") {
             startIcon = <Icon className="very-small-icon" name="tick-sign-green"/>;
@@ -42,6 +45,9 @@ export default class TaskCard extends React.Component {
             taskIcon = taskIconBase + "_blue";
         }
 
+        if (this.props.task.totalExp > 0)
+            experience = this.props.task.totalExp + " exp";
+
 
         return (
             <Card className={"col-12 task-card " + statusClassName} onClick={this.onSelect}>
@@ -53,7 +59,7 @@ export default class TaskCard extends React.Component {
                         {this.props.task.name}
                     </div>
                     <div className="col-2">
-                        {this.props.task.totalExp} exp
+                        {experience}
                     </div>
                     <div className="col-1">
                         {startIcon}

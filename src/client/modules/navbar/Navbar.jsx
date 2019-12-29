@@ -33,28 +33,34 @@ export default class Navbar extends React.Component {
     }
 
     render() {
-        let navmenu = null;
         if (this.state.user)
-            navmenu = <NavbarMenu showSideProfile={this.props.showSideProfile}
-                                  onLogout={this.props.onLogout}/>;
+            return (
+                <nav className="navbar fixed-top navbar-light bg-light navbar-expand-md py-3">
+
+                    <a className="navbar-brand" href="#">
+                        <img className="logo" src={Logo}/>
+                    </a>
+                    <button className="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul className="navbar-nav mr-auto"/>
+                        <NavbarMenu showSideProfile={this.props.showSideProfile} onLogout={this.props.onLogout}/>
+                    </div>
+                </nav>
+            );
         else
-            navmenu = <NavbarLoginMenu location={this.state.location}/>;
+            return (
+                <nav className="navbar fixed-top navbar-light bg-light py-3">
+                    <a className="navbar-brand" href="#">
+                        <img className="logo" src={Logo}/>
+                    </a>
+                    <div className="">
+                        <NavbarLoginMenu location={this.state.location}/>
+                    </div>
+                </nav>
+            );
 
-        return (
-            <nav className="navbar fixed-top navbar-light bg-light navbar-expand-md py-3">
-
-                <a className="navbar-brand" href="#">
-                    <img className="logo" src={Logo}/>
-                </a>
-                <button className="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul className="navbar-nav mr-auto"/>
-                    {navmenu}
-                </div>
-            </nav>
-        );
     }
 }

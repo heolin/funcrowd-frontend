@@ -1,6 +1,7 @@
 import EventEmitter from "event-emitter-es6"
 import AchievementsRepository from "./repositories/AchievementsRepository";
 import UserManager from "./UserManager";
+import ToastManager from "./ToastsManager";
 
 const ACHIEVEMENTS_CHANGED = "achievements-changed";
 
@@ -9,6 +10,7 @@ class _AchievementsManager extends EventEmitter {
     constructor() {
         super();
         this.loading = false;
+        this.achievements = [];
         this.unfinishedAchievements = [];
         this.finishedAchievements = [];
     }
@@ -28,6 +30,8 @@ class _AchievementsManager extends EventEmitter {
                 this.loading = false;
                 this.finishedAchievements = [];
                 this.unfinishedAchievements = [];
+
+                this.achievements = achievements;
 
                 achievements.forEach((achievement) => {
                     if (achievement.status == "FINISHED" || achievement.status == "CLOSED")
@@ -53,10 +57,13 @@ class _AchievementsManager extends EventEmitter {
             });
     }
 
-    getUnclosedAchievements() {
-        return AchievementsRepository.unclosed()
+    checkToasts() {
+        AchievementsRepository.unclosed()
             .then((achievements) => {
-                return achievements;
+                achievements.forEach((achievement) => {
+                    let message = achievement.metadata.text;
+                    ToastManager.addToast('achievements', message);
+                });
             }).catch((error) => {
                 console.log(error)
             });

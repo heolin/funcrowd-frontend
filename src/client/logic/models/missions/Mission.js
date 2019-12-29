@@ -1,12 +1,12 @@
 
 export default class Mission {
-    constructor(id, name, description, instruction, tasksCount, achievementsCount, metadata={}, totalExp) {
+    constructor(id, name, description, instruction, tasksCount, achievements, metadata={}, totalExp) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.instruction = instruction;
         this.tasksCount = tasksCount;
-        this.achievementsCount = achievementsCount;
+        this.achievements = achievements;
         this.metadata = metadata;
         this.totalExp = totalExp;
     }
@@ -18,7 +18,7 @@ export default class Mission {
             mission_data.description,
             mission_data.instruction,
             mission_data.tasks_count,
-            mission_data.achievementsCount,
+            mission_data.achievements_count,
             mission_data.metadata,
             mission_data.total_exp
         );

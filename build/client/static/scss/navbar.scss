@@ -38,17 +38,19 @@
 }
 
 .navbar-profile-label {
-  padding-left: 35px;
   display: inline-block;
   position: relative;
   top: 8px;
+
+  @media screen and (min-width: map-get($screen-widths, 'lg')) {
+    padding-left: 35px;
+  }
 }
 
 .navbar-profile-icon {
   position: absolute;
   top: 8px;
 }
-
 
 .navbar-login-button {
   width: 140px;

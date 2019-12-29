@@ -15,6 +15,22 @@ export default class ItemHeader extends React.Component {
             imageElement = <CircleImage className="tasks-header-image d-none d-sm-none d-md-block" image={image}/>;
         }
 
+        let achievements = null;
+        if (task.achievements > 0)
+            achievements = (
+                <div className="d-inline-block">
+                    <SmallIcon name="achievements"/>
+                    <small> {task.achievements} {L.general.achievements}</small>
+                </div>);
+
+        let experience = null;
+        if (task.totalExp > 0)
+            experience = (
+                <div className="d-inline-block">
+                    <SmallIcon name="experience"/>
+                    <small> {task.totalExp} {L.general.experience}</small>
+                </div>);
+
         return (
             <div>
                 <div className="tasks-header-bar row">
@@ -45,14 +61,8 @@ export default class ItemHeader extends React.Component {
                     <div className="container">
                         <div className="row tasks-summary">
                             <div className="col-sm-12 col-md-8 justify-items">
-                                <div className="d-inline-block">
-                                    <SmallIcon name="achievements"/>
-                                    <small> X {L.general.achievements}</small>
-                                </div>
-                                <div className="d-inline-block">
-                                    <SmallIcon name="experience"/>
-                                    <small> {task.totalExp} {L.general.experience}</small>
-                                </div>
+                                {achievements}
+                                {experience}
                             </div>
                         </div>
                     </div>

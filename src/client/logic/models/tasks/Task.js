@@ -1,12 +1,13 @@
 
 export default class Task {
-    constructor(id, mission_id, name, description, instruction, keywords, metadata, totalExp) {
+    constructor(id, mission_id, name, description, instruction, keywords, achievements, metadata, totalExp) {
         this.id = id;
         this.mission_id  = mission_id;
         this.name = name;
         this.description = description;
         this.instruction = instruction;
         this.keywords = keywords;
+        this.achievements = achievements;
         this.metadata = metadata;
         this.totalExp = totalExp;
     }
@@ -19,6 +20,7 @@ export default class Task {
             task_data.description,
             task_data.instruction,
             task_data.keywords,
+            task_data.achievements_count,
             task_data.metadata,
             task_data.total_exp
         );

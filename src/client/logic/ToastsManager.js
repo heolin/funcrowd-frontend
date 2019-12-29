@@ -41,6 +41,11 @@ class _ToastsManager extends EventEmitter {
     removeToastsChangeHandler(handler) {
         this.off(TOASTS_CHANGED, handler);
     }
+
+    hideAll() {
+        this.toasts = [];
+        this.emit(TOASTS_CHANGED);
+    }
 }
 
 const ToastManager = new _ToastsManager();

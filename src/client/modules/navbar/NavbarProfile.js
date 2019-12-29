@@ -39,7 +39,7 @@ export default class NavbarProfile extends React.Component {
     render() {
         return (
             <div className="nav-item navbar-profile" onClick={this.props.onClick}>
-                <div className="navbar-profile-icon">
+                <div className="navbar-profile-icon d-md-none d-lg-inline">
                     <SmallIcon name="user"/>
                 </div>
                 <div className="navbar-profile-label">

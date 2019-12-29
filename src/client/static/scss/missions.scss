@@ -76,6 +76,10 @@ $card-margin: 20px;
   min-height: 24px;
 }
 
+.mission-card-labels {
+  min-height: 56px;
+}
+
 .mission-card-label {
   @extend .little;
   position: relative;

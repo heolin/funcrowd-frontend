@@ -42,16 +42,17 @@ export default class MissionCard extends React.Component {
                     </span>
                 </p>);
 
-        experience = (
-            <p className="mission-card-label">
-                <SmallIcon className={iconClassName} name="experience"/>
-                <span className="mission-card-label-text">
-                    {mission.totalExp} {L.general.experience}
-                </span>
-            </p>);
+        if (mission.totalExp > 0)
+            experience = (
+                <p className="mission-card-label">
+                    <SmallIcon className={iconClassName} name="experience"/>
+                    <span className="mission-card-label-text">
+                        {mission.totalExp} {L.general.experience}
+                    </span>
+                </p>);
 
         return (
-            <Card className="col-md-4">
+            <Card className="col-md-6 col-lg-4">
                 <div className={"mission-card card-2 font-light " + lockedClassName} onClick={this.onClick}>
                     <div className="mission-card-top">
                         <img className={"mission-card-image " + lockedClassName} src={image}/>
@@ -72,9 +73,11 @@ export default class MissionCard extends React.Component {
                                 {this.props.mission.tasksCount} {L.general.missions}
                             </span>
                         </p>
-                        {achievements}
-                        {experience}
-                        <ProgressBar progress={progress.progress} text={"Ukończono "+progress.tasks_done + "/" + progress.tasks_count}/>
+                        <div className="mission-card-labels">
+                            {achievements}
+                            {experience}
+                        </div>
+                        <ProgressBar progress={progress.progress} text={"Ukończono "+progress.tasks_done + " / " + progress.tasks_count}/>
                     </div>
                 </div>
             </Card>

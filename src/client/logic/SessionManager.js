@@ -1,4 +1,6 @@
 import UserManager from "./UserManager";
+import AchievementsManager from "./AchievementsManager";
+import ToastManager from "./ToastsManager";
 
 let USER = "funcrowd_user";
 
@@ -29,6 +31,8 @@ class _SessionManager {
         if (saveUser) {
             localStorage.setItem(USER, JSON.stringify(user));
         }
+
+        AchievementsManager.checkToasts();
     }
 
     logout() {
@@ -38,6 +42,7 @@ class _SessionManager {
         localStorage.removeItem(USER);
         sessionStorage.removeItem(USER);
         UserManager.logout();
+        ToastManager.hideAll();
     }
 
     getUser() {

@@ -9,21 +9,27 @@ import urls from "../../Urls";
 export default class NavbarLoginMenu extends React.Component {
 
     render() {
+        if (!this.props.location)
+            return null;
+
         return (
-            <ul className="navbar-nav ml-auto small">
-                <NavbarMenuButton targetPath={urls.ABOUT} name={L.labels.about} icon="about"/>
+            <div className="small">
+                <NavbarMenuButton className="d-inline-block color-dark"
+                                  targetPath={urls.ABOUT} name={L.labels.about} icon="about"/>
+
                 <NavbarLoginButton targetPath={urls.LOGIN}
                                    name={L.labels.login}
                                    isSelected={
                                        urls.checkUrl(this.props.location.hash, urls.LOGIN) ||
                                        urls.checkUrl(this.props.location.hash, urls.RESET_PASSWORD)
                                    }/>
+
                 <NavbarLoginButton targetPath={urls.REGISTER}
                                    name={L.labels.register}
                                    isSelected={urls.checkUrl(this.props.location.hash, urls.REGISTER)
                                    }
                                    style={{marginLeft: "20px"}}/>
-            </ul>
+            </div>
         );
     }
 }

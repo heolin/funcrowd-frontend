@@ -15,8 +15,9 @@ export default class AchievementCard extends React.Component {
     render() {
         let achievement = this.props.achievement;
         let metadata = achievement.metadata;
-        let finished = achievement.status == "FINISHED" || achievement.status == "DONE";
+        let finished = achievement.status == "FINISHED" || achievement.status == "CLOSED";
         let icon = "achievements/unknown";
+        console.log(finished);
         if (finished)
             icon = "achievements/" + metadata.icon;
         let text = metadata.text;

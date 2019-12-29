@@ -13,6 +13,30 @@ export default class TasksHeader extends React.Component {
         let progress = this.props.progress;
         let image = require("../../static/"+mission.metadata.image);
 
+        let tasks = null;
+        if (mission.tasksCount > 0)
+            tasks = (
+                <div className="d-inline-block">
+                    <SmallIcon name="missions"/>
+                    <small> {mission.tasksCount} {L.general.missions}</small>
+                </div>);
+
+        let achievements = null;
+        if (mission.achievements > 0)
+            achievements = (
+                <div className="d-inline-block">
+                    <SmallIcon name="achievements"/>
+                    <small> {mission.achievements} {L.general.achievements}</small>
+                </div>);
+
+        let experience = null;
+        if (mission.totalExp > 0)
+            experience = (
+                <div className="d-inline-block">
+                    <SmallIcon name="experience"/>
+                    <small> {mission.totalExp} {L.general.experience}</small>
+                </div>);
+
         return (
             <div>
                 <div className="tasks-header-bar row">
@@ -47,18 +71,9 @@ export default class TasksHeader extends React.Component {
                     <div className="container">
                         <div className="row tasks-summary">
                             <div className="col-sm-12 col-md-8 justify-items">
-                                <div className="d-inline-block">
-                                    <SmallIcon name="missions"/>
-                                    <small> {mission.tasksCount} {L.general.missions}</small>
-                                </div>
-                                <div className="d-inline-block">
-                                    <SmallIcon name="achievements"/>
-                                    <small> 10 {L.general.achievements}</small>
-                                </div>
-                                <div className="d-inline-block">
-                                    <SmallIcon name="experience"/>
-                                    <small> 10 {L.general.experience}</small>
-                                </div>
+                                {tasks}
+                                {achievements}
+                                {experience}
                             </div>
                         </div>
                     </div>

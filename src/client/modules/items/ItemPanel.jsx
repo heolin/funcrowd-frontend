@@ -18,6 +18,7 @@ import BountyHeader from "../bounty/BountyHeader";
 import Loading from "../../components/Loading";
 import UserManager from "../../logic/UserManager";
 import {Footer} from "../../Footer";
+import AchievementsManager from "../../logic/AchievementsManager";
 
 export default class ItemPanel extends React.Component {
 
@@ -44,6 +45,7 @@ export default class ItemPanel extends React.Component {
 
     componentDidMount() {
         this.checkState();
+        window.scrollTo(0, 0);
     }
 
     static getDerivedStateFromProps(props, state) {
@@ -64,6 +66,7 @@ export default class ItemPanel extends React.Component {
         if (this.state.task !== prevState.task) {
             this.checkState();
             this.checkInstruction();
+            window.scrollTo(0, 0);
         }
     }
 
@@ -145,6 +148,7 @@ export default class ItemPanel extends React.Component {
 
     onAnnotationPost(annotationResponse) {
         UserManager.update();
+        AchievementsManager.checkToasts();
 
         let feedback = null;
         if (ConfigManager.config.showFeedback) {
@@ -156,6 +160,8 @@ export default class ItemPanel extends React.Component {
             feedback: feedback,
             confirmation: true
         });
+
+        window.scrollTo(0, 0);
     }
 
     onFeedbackAccept() {

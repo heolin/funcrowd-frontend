@@ -153,14 +153,14 @@ export default class TasksMenu extends React.Component {
                         <div className="col-lg-4 col-md-12">
                             <div className="tasks-achievements-introduction">
                                 <h3>{L.labels.achievements}</h3>
-                                W tym dzile IPSUM
+                                W tym dziale możesz zdobyć
                             </div>
                             <div className="row achievements-row">
                                 {achievements}
                                 <div className="col-sm-12 text-right color-blue small"
                                      style={{paddingRight: "30px"}}>
                                     <Link to="/achievements">
-                                        Zobacz wszystkie czalendze
+                                        Zobacz wszystkie osiągnięcia
                                     </Link>
                                 </div>
                             </div>
