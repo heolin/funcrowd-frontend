@@ -3,6 +3,7 @@ import ComponentsFactory from "./ComponentsFactory";
 import SkippingPanel from "./SkippingPanel";
 import ItemRepository from "../../logic/repositories/ItemRepository";
 import Loading from "../../components/Loading";
+import L from "../../logic/locatization/LocalizationManager";
 
 let factory = new ComponentsFactory();
 
@@ -91,6 +92,7 @@ export default class ItemForm extends React.Component {
                     result[field.name] = "";
             }
         }
+
         return result;
     }
 
@@ -131,15 +133,18 @@ export default class ItemForm extends React.Component {
         groupFields.forEach((fieldName) => {
             if (fieldName in item.templateFields) {
                 let field = item.templateFields[fieldName];
-                let compomnent = factory.create(field.widget,
-                    field.name,
-                    field.label,
-                    this.state[field.name],
-                    item.data[field.data_source],
-                    field.required,
-                    this.state.blocked,
-                    this.handleChange);
-                fields.push(compomnent);
+                let skip = !field.editable && !this.state[field.name];
+                if (!skip) {
+                    let component = factory.create(field.widget,
+                        field.name,
+                        field.label,
+                        this.state[field.name],
+                        item.data[field.data_source],
+                        field.required,
+                        this.state.blocked,
+                        this.handleChange);
+                    fields.push(component);
+                }
             }
         });
         if (fields.length > 0)
@@ -163,6 +168,12 @@ export default class ItemForm extends React.Component {
         let groups = metadata.groups ||
             [item.template.fields.map(field => field.name)];
 
+        let allowSkip = metadata.allowSkip === true;
+        let skipButton = null;
+        if (allowSkip)
+            skipButton = <SkipButton onClick={this.skipItem}
+                                     style={{ width: "80px"}}>{L.labels.skip}</SkipButton>;
+
         let fieldGroups = groups.map((groupFields, index) =>
             this.createGroup(item, groupFields, index)
         );
@@ -177,11 +188,10 @@ export default class ItemForm extends React.Component {
                 {skipping}
                 {fieldGroups}
                 <div className="item-form-buttons">
-                    <SkipButton onClick={this.skipItem}
-                            style={{ width: "80px"}}>Skip</SkipButton>
+                    {skipButton}
                     <SubmitButton type="submit"
                             disabled={!this.validateForm()}
-                            style={{width: "160px"}}>Submit</SubmitButton>
+                            style={{width: "160px"}}>{L.labels.submit}</SubmitButton>
                 </div>
             </form>
         );

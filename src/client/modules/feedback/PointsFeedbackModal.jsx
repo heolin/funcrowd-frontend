@@ -113,6 +113,7 @@ export default class PointsFeedbackModal extends React.Component {
         let prevExp = UserManager.user.exp - exp.base - exp.bonus;
         let userExp = prevExp;
 
+        let attemptMessage = <p className="color-blue small weight-bold" style={{minHeight: "24px"}}></p>;
         let animationClass = "";
         let starPoints = exp.base;
 
@@ -126,10 +127,16 @@ export default class PointsFeedbackModal extends React.Component {
             animationClass = "jello-horizontal";
             starPoints = exp.bonus;
             userExp = prevExp + exp.base;
+            attemptMessage = <p className="color-blue small weight-bold">
+                {L.feedback.attemptsMessage1 + this.props.annotation.attempt + L.feedback.attemptsMessage2}
+            </p>;
         } else if (this.state.animationState === AnimationStates.HIDE_BONUS) {
             animationClass = "scale-out-center-fast";
             starPoints = exp.bonus;
             userExp = prevExp + exp.base + exp.bonus;
+            attemptMessage = <p className="color-blue small weight-bold">
+                {L.feedback.attemptsMessage1 + this.props.annotation.attempt + L.feedback.attemptsMessage2}
+            </p>;
         }
 
         let userLevel = UserManager.getExpLevel(userExp);
@@ -151,6 +158,7 @@ export default class PointsFeedbackModal extends React.Component {
                         {starPoints}
                     </div>
                 </div>
+                {attemptMessage}
                 <div style={{padding: "0 10%"}}>
                     <div className="feedback-progress-info-left">
                         {userLevelName} - {L.levels.level + " " + userLevel}

@@ -84,6 +84,8 @@ export class SideProfilePanel extends React.Component {
 
         let achievementsLast = AchievementsManager.getLastFinished(3).map((achievement) =>
             <AchievementCircle key={achievement.id} achievement={achievement}/>);
+        if (achievementsLast.length === 0)
+            achievementsLast = <i>Nie masz jeszcze żadnych osiągnięć :(</i>;
 
 
         return (
@@ -104,14 +106,14 @@ export class SideProfilePanel extends React.Component {
                         </div>
                         <div className="col-6 side-profile-settings">
                             <Link to="/profile" onClick={this.props.hideSideProfile}>
-                                <div className="little">Zobacz profil</div>
+                                <div className="little">{L.labels.showProfile}</div>
                             </Link>
                             <Link to="/settings" onClick={this.props.hideSideProfile}>
-                                <div className="little">Ustawienia</div>
+                                <div className="little">{L.labels.settings}</div>
                             </Link>
                         </div>
                         <div className="col-12 side-profile-username text-center">
-                            <div>Twój nick</div>
+                            <div>{L.labels.yourNick}</div>
                             <h4>{username}</h4>
                         </div>
                     </div>
@@ -160,6 +162,12 @@ export class SideProfilePanel extends React.Component {
                     </div>
                     <div className="row text-center">
                         {achievementsLast}
+                        <div className="col-sm-12 text-right color-blue small"
+                             style={{paddingRight: "30px"}}>
+                            <Link to="/achievements">
+                                Zobacz wszystkie osiągnięcia
+                            </Link>
+                        </div>
                     </div>
                 </Sidebar>
             </div>

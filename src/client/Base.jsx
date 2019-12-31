@@ -30,6 +30,16 @@ import ResetPasswordTokenPage from "./modules/login/ResetPasswordTokenPage";
 import ActivationPage from "./modules/login/ActivationPage";
 import urls from "./Urls"
 import ToastsPanel from "./modules/toasts/ToastsPanel";
+import 'bootstrap/dist/js/bootstrap';
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import './static/scss/navbar.scss'
+import './static/scss/style.scss'
+import './static/scss/missions.scss'
+import LocalizationManager from './logic/locatization/LocalizationManager'
+
+let baseLangCode = process.env.LANG_CODE || "en";
+LocalizationManager.setup(baseLangCode);
 
 
 export const RouteContainer = posed.div({

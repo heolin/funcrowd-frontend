@@ -39,7 +39,7 @@ $card-margin: 20px;
   position: relative;
 }
 
-.mission-card-image {
+.mission-card-image.locked {
   @extend .greyscale;
 }
 
@@ -58,7 +58,8 @@ $card-margin: 20px;
 .mission-card-icon {
   @extend .very-big-icon;
   position: absolute;
-  bottom: 0px;
+  bottom: 70px;
+  transform: translate(0, 90%);
   left: 25px;
   z-index: 20;
 }
@@ -76,9 +77,14 @@ $card-margin: 20px;
   min-height: 24px;
 }
 
+.mission-card-labels {
+  min-height: 132px;
+}
+
 .mission-card-label {
   @extend .little;
   position: relative;
+  margin-bottom: 10px;
 }
 
 .mission-card-label-text {

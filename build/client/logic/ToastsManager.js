@@ -80,6 +80,12 @@ function (_EventEmitter) {
     value: function removeToastsChangeHandler(handler) {
       this.off(TOASTS_CHANGED, handler);
     }
+  }, {
+    key: "hideAll",
+    value: function hideAll() {
+      this.toasts = [];
+      this.emit(TOASTS_CHANGED);
+    }
   }]);
 
   return _ToastsManager;

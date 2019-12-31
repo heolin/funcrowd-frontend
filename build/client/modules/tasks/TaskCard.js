@@ -69,9 +69,11 @@ function (_React$Component) {
       var progress = this.props.progress;
       var metadata = this.props.task.metadata;
       var taskIconBase = "task/task";
+      if (metadata['icon']) taskIconBase = "task/" + metadata['icon'];
       var taskIcon = taskIconBase + "_grey";
       var startIcon = null;
       var statusClassName = "locked";
+      var experience = null;
 
       if (progress.status === "FINISHED") {
         startIcon = _react["default"].createElement(_Icons.Icon, {
@@ -89,6 +91,7 @@ function (_React$Component) {
         taskIcon = taskIconBase + "_blue";
       }
 
+      if (this.props.task.totalExp > 0) experience = this.props.task.totalExp + " exp";
       return _react["default"].createElement(Card, {
         className: "col-12 task-card " + statusClassName,
         onClick: this.onSelect
@@ -103,7 +106,7 @@ function (_React$Component) {
         className: "col-6"
       }, this.props.task.name), _react["default"].createElement("div", {
         className: "col-2"
-      }, this.props.task.totalExp, " exp"), _react["default"].createElement("div", {
+      }, experience), _react["default"].createElement("div", {
         className: "col-1"
       }, startIcon)));
     }

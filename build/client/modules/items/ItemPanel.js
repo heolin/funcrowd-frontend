@@ -45,6 +45,8 @@ var _UserManager = _interopRequireDefault(require("../../logic/UserManager"));
 
 var _Footer = require("../../Footer");
 
+var _AchievementsManager = _interopRequireDefault(require("../../logic/AchievementsManager"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -99,6 +101,7 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.checkState();
+      window.scrollTo(0, 0);
     }
   }, {
     key: "componentDidUpdate",
@@ -106,6 +109,7 @@ function (_React$Component) {
       if (this.state.task !== prevState.task) {
         this.checkState();
         this.checkInstruction();
+        window.scrollTo(0, 0);
       }
     }
   }, {
@@ -210,6 +214,8 @@ function (_React$Component) {
     value: function onAnnotationPost(annotationResponse) {
       _UserManager["default"].update();
 
+      _AchievementsManager["default"].checkToasts();
+
       var feedback = null;
 
       if (_ConfigManager["default"].config.showFeedback) {
@@ -222,6 +228,7 @@ function (_React$Component) {
         feedback: feedback,
         confirmation: true
       });
+      window.scrollTo(0, 0);
     }
   }, {
     key: "onFeedbackAccept",

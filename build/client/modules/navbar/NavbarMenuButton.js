@@ -45,11 +45,13 @@ function (_React$Component) {
   _createClass(NavbarMenuButton, [{
     key: "render",
     value: function render() {
+      var className = this.props.className || "";
       return _react["default"].createElement(_reactRouterDom.Link, {
         to: this.props.targetPath
       }, _react["default"].createElement("li", {
-        className: "nav-item"
+        className: "nav-item " + className
       }, _react["default"].createElement(_Icons.SmallIcon, {
+        className: "d-md-none d-lg-inline",
         name: this.props.icon,
         style: this.props.iconStyle
       }), _react["default"].createElement("span", {

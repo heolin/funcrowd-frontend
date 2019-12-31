@@ -2,7 +2,7 @@ import React from "react"
 import Slider from "react-slick";
 import Image from "./Image";
 import ImageModal from "./ImageModal";
-import ScreenBreakpoints from "../../../../utils/SceenBreakpoints";
+import ScreenBreakpoints from "../../../../utils/ScreenBreakpoints";
 
 
 

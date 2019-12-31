@@ -86,7 +86,7 @@ export default class ResetPasswordTokenPage extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="login-window col-lg-6 col-md-10 col-12 card-3-static">
-                            <h3 className="text-center login-header">Reset password</h3>
+                            <h3 className="text-center login-header">{L.login.resetPasswordHeader}</h3>
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group">
                                     <input id="password1"
@@ -109,7 +109,7 @@ export default class ResetPasswordTokenPage extends React.Component {
                                 </div>
                                 <button type="submit"
                                         disabled={!this.validateForm()}
-                                        className="btn btn-orange-primary login-button">Zaloguj</button>
+                                        className="btn btn-orange-primary login-button">{L.labels.login}</button>
                             </form>
 
                         </div>

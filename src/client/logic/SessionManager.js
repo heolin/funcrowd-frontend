@@ -32,6 +32,7 @@ class _SessionManager {
             localStorage.setItem(USER, JSON.stringify(user));
         }
 
+        AchievementsManager.update();
         AchievementsManager.checkToasts();
     }
 

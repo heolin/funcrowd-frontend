@@ -7,6 +7,10 @@ exports["default"] = void 0;
 
 var _UserManager = _interopRequireDefault(require("./UserManager"));
 
+var _AchievementsManager = _interopRequireDefault(require("./AchievementsManager"));
+
+var _ToastsManager = _interopRequireDefault(require("./ToastsManager"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -50,6 +54,10 @@ function () {
       if (saveUser) {
         localStorage.setItem(USER, JSON.stringify(user));
       }
+
+      _AchievementsManager["default"].update();
+
+      _AchievementsManager["default"].checkToasts();
     }
   }, {
     key: "logout",
@@ -61,6 +69,8 @@ function () {
       sessionStorage.removeItem(USER);
 
       _UserManager["default"].logout();
+
+      _ToastsManager["default"].hideAll();
     }
   }, {
     key: "getUser",

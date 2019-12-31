@@ -71,9 +71,11 @@ $image-size: 212px;
 }
 
 .task-cards {
+  margin-bottom: 10px;
   @media screen and (min-width: map-get($screen-widths, 'lg')) {
     border-right: solid 1px #b2b2b3;
     padding-right: 100px;
+    margin-bottom: 40px;
   }
   margin-right: 10px;
 }

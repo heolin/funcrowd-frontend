@@ -15,6 +15,8 @@ var _ItemRepository = _interopRequireDefault(require("../../logic/repositories/I
 
 var _Loading = _interopRequireDefault(require("../../components/Loading"));
 
+var _LocalizationManager = _interopRequireDefault(require("../../logic/locatization/LocalizationManager"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -199,8 +201,8 @@ function (_React$Component) {
       groupFields.forEach(function (fieldName) {
         if (fieldName in item.templateFields) {
           var field = item.templateFields[fieldName];
-          var compomnent = factory.create(field.widget, field.name, field.label, _this3.state[field.name], item.data[field.data_source], field.required, _this3.state.blocked, _this3.handleChange);
-          fields.push(compomnent);
+          var component = factory.create(field.widget, field.name, field.label, _this3.state[field.name], item.data[field.data_source], field.required, _this3.state.blocked, _this3.handleChange);
+          fields.push(component);
         }
       });
       if (fields.length > 0) return _react["default"].createElement("div", {
@@ -221,6 +223,14 @@ function (_React$Component) {
       var groups = metadata.groups || [item.template.fields.map(function (field) {
         return field.name;
       })];
+      var allowSkip = metadata.allowSkip === true;
+      var skipButton = null;
+      if (allowSkip) skipButton = _react["default"].createElement(SkipButton, {
+        onClick: this.skipItem,
+        style: {
+          width: "80px"
+        }
+      }, _LocalizationManager["default"].labels.skip);
       var fieldGroups = groups.map(function (groupFields, index) {
         return _this4.createGroup(item, groupFields, index);
       });
@@ -234,18 +244,13 @@ function (_React$Component) {
         onSubmit: this.handleSubmit
       }, skipping, fieldGroups, _react["default"].createElement("div", {
         className: "item-form-buttons"
-      }, _react["default"].createElement(SkipButton, {
-        onClick: this.skipItem,
-        style: {
-          width: "80px"
-        }
-      }, "Skip"), _react["default"].createElement(SubmitButton, {
+      }, skipButton, _react["default"].createElement(SubmitButton, {
         type: "submit",
         disabled: !this.validateForm(),
         style: {
           width: "160px"
         }
-      }, "Submit")));
+      }, _LocalizationManager["default"].labels.submit)));
     }
   }]);
 

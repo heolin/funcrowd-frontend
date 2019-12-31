@@ -11,6 +11,8 @@ var _AchievementsRepository = _interopRequireDefault(require("./repositories/Ach
 
 var _UserManager = _interopRequireDefault(require("./UserManager"));
 
+var _ToastsManager = _interopRequireDefault(require("./ToastsManager"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -45,6 +47,7 @@ function (_EventEmitter) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(_AchievementsManager).call(this));
     _this.loading = false;
+    _this.achievements = [];
     _this.unfinishedAchievements = [];
     _this.finishedAchievements = [];
     return _this;
@@ -63,6 +66,7 @@ function (_EventEmitter) {
         _this2.loading = false;
         _this2.finishedAchievements = [];
         _this2.unfinishedAchievements = [];
+        _this2.achievements = achievements;
         achievements.forEach(function (achievement) {
           if (achievement.status == "FINISHED" || achievement.status == "CLOSED") _this2.finishedAchievements.push(achievement);else _this2.unfinishedAchievements.push(achievement);
         });
@@ -86,10 +90,14 @@ function (_EventEmitter) {
       });
     }
   }, {
-    key: "getUnclosedAchievements",
-    value: function getUnclosedAchievements() {
-      return _AchievementsRepository["default"].unclosed().then(function (achievements) {
-        return achievements;
+    key: "checkToasts",
+    value: function checkToasts() {
+      _AchievementsRepository["default"].unclosed().then(function (achievements) {
+        achievements.forEach(function (achievement) {
+          var message = achievement.metadata.text;
+
+          _ToastsManager["default"].addToast('achievements', message);
+        });
       })["catch"](function (error) {
         console.log(error);
       });

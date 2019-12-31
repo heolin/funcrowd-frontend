@@ -16,15 +16,21 @@
   }
 
   font-size: 18px;
+  min-height: 79px;
 }
 
 .nav-link {
   display: inline-block !important;
+  padding: 8px !important;
 }
 
 .nav-item {
   cursor: pointer;
   padding: 0 10px;
+
+  @media screen and (max-width: map-get($screen-widths, 'md')) {
+    padding: 10px;
+  }
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -45,12 +51,21 @@
   @media screen and (min-width: map-get($screen-widths, 'lg')) {
     padding-left: 35px;
   }
+
+  @media screen and (max-width: map-get($screen-widths, 'md')) {
+    padding-left: 35px;
+  }
 }
 
 .navbar-profile-icon {
   position: absolute;
   top: 8px;
+
+  @media screen and (max-width: map-get($screen-widths, 'md')) {
+    top: 18px;
+  }
 }
+
 
 .navbar-login-button {
   width: 140px;

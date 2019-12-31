@@ -69,6 +69,20 @@ var _Urls = _interopRequireDefault(require("./Urls"));
 
 var _ToastsPanel = _interopRequireDefault(require("./modules/toasts/ToastsPanel"));
 
+require("bootstrap/dist/js/bootstrap");
+
+require("slick-carousel/slick/slick.css");
+
+require("slick-carousel/slick/slick-theme.css");
+
+require("./static/scss/navbar.scss");
+
+require("./static/scss/style.scss");
+
+require("./static/scss/missions.scss");
+
+var _LocalizationManager = _interopRequireDefault(require("./logic/locatization/LocalizationManager"));
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -92,6 +106,10 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var baseLangCode = process.env.LANG_CODE || "en";
+
+_LocalizationManager["default"].setup(baseLangCode);
 
 var RouteContainer = _reactPose["default"].div({
   enter: {

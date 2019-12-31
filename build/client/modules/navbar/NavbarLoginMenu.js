@@ -49,9 +49,11 @@ function (_React$Component) {
   _createClass(NavbarLoginMenu, [{
     key: "render",
     value: function render() {
-      return _react["default"].createElement("ul", {
-        className: "navbar-nav ml-auto small"
+      if (!this.props.location) return null;
+      return _react["default"].createElement("div", {
+        className: "small"
       }, _react["default"].createElement(_NavbarMenuButton["default"], {
+        className: "d-inline-block color-dark",
         targetPath: _Urls["default"].ABOUT,
         name: _LocalizationManager["default"].labels.about,
         icon: "about"

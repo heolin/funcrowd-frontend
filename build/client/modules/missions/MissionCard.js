@@ -69,15 +69,15 @@ function (_React$Component) {
       var locked = progress.status === "LOCKED";
       var lockedClassName = locked ? "locked" : "";
       var iconClassName = locked ? "greyscale" : "";
-      if (mission.achievementsCount) achievements = _react["default"].createElement("p", {
+      if (mission.achievements) achievements = _react["default"].createElement("div", {
         className: "mission-card-label"
       }, _react["default"].createElement(_Icons.SmallIcon, {
         className: iconClassName,
         name: "achievements"
       }), _react["default"].createElement("span", {
         className: "mission-card-label-text"
-      }, mission.achievementsCount, " ", _LocalizationManager["default"].general.achievements));
-      experience = _react["default"].createElement("p", {
+      }, mission.achievements, " ", _LocalizationManager["default"].general.achievements));
+      if (mission.totalExp > 0) experience = _react["default"].createElement("div", {
         className: "mission-card-label"
       }, _react["default"].createElement(_Icons.SmallIcon, {
         className: iconClassName,
@@ -86,7 +86,7 @@ function (_React$Component) {
         className: "mission-card-label-text"
       }, mission.totalExp, " ", _LocalizationManager["default"].general.experience));
       return _react["default"].createElement(_Card["default"], {
-        className: "col-md-4"
+        className: "col-md-6 col-lg-4"
       }, _react["default"].createElement("div", {
         className: "mission-card card-2 font-light " + lockedClassName,
         onClick: this.onClick
@@ -110,15 +110,17 @@ function (_React$Component) {
         className: "mission-card-title"
       }, _react["default"].createElement("h4", null, this.props.mission.name), _react["default"].createElement("span", {
         className: "small mission-card-description"
-      }, this.props.mission.description)), _react["default"].createElement("p", {
+      }, this.props.mission.description)), _react["default"].createElement("div", {
+        className: "mission-card-labels"
+      }, _react["default"].createElement("div", {
         className: "mission-card-label"
       }, _react["default"].createElement(_Icons.SmallIcon, {
         name: "missions"
       }), _react["default"].createElement("span", {
         className: "mission-card-label-text"
-      }, this.props.mission.tasksCount, " ", _LocalizationManager["default"].general.missions)), achievements, experience, _react["default"].createElement(_ProgressBar["default"], {
+      }, this.props.mission.tasksCount, " ", _LocalizationManager["default"].general.missions)), achievements, experience), _react["default"].createElement(_ProgressBar["default"], {
         progress: progress.progress,
-        text: "Ukończono " + progress.tasks_done + "/" + progress.tasks_count
+        text: "Ukończono " + progress.tasks_done + " / " + progress.tasks_count
       }))));
     }
   }]);

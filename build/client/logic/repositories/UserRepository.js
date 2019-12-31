@@ -126,6 +126,14 @@ function () {
         return status;
       });
     }
+  }, {
+    key: "stats",
+    value: function stats(workerId) {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/stats/users/' + workerId + "/", _SessionManager["default"].config).then(function (response) {
+        var stats = UserStats.fromJson(response.data);
+        return stats;
+      });
+    }
   }]);
 
   return UserRepository;

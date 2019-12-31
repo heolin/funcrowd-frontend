@@ -81,7 +81,7 @@ function (_React$Component) {
         className: "nav-item navbar-profile",
         onClick: this.props.onClick
       }, _react["default"].createElement("div", {
-        className: "navbar-profile-icon"
+        className: "navbar-profile-icon d-md-none d-lg-inline"
       }, _react["default"].createElement(_Icons.SmallIcon, {
         name: "user"
       })), _react["default"].createElement("div", {

@@ -25,6 +25,7 @@ export default class TextField extends React.Component {
             <div className="form-group">
                 {label}
                 <input id={this.props.name}
+                       style={{maxWidth: "400px"}}
                        value={this.props.value}
                        onChange={this.handleChange}
                        className="form-control"

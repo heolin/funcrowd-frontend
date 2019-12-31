@@ -84,10 +84,19 @@ export default class UserRepository {
             return user;
         });
     }
+
     static status() {
         return axios.get(ConfigManager.baseUrl+'/api/v1/users/status/', SessionManager.config).then((response) => {
             let status = UserStatus.fromJson(response.data);
             return status;
+        });
+    }
+
+    static stats(workerId) {
+        return axios.get(ConfigManager.baseUrl+'/api/v1/stats/users/' + workerId + "/",
+            SessionManager.config).then((response) => {
+            let stats = UserStats.fromJson(response.data);
+            return stats;
         });
     }
 }

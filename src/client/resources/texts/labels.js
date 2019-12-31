@@ -39,4 +39,25 @@ export default {
         en: "Bounties",
         pl: "Wyzwania"
     },
+    submit: {
+        en: "Submit",
+        pl: "Dalej"
+    },
+    skip: {
+        en: "Skip",
+        pl: "Pomiń"
+    },
+    yourNick: {
+        en: "Your nick",
+        pl: "Twój nick"
+    },
+    settings: {
+        en: "Settings",
+        pl: "Ustawienia"
+    },
+    showProfile: {
+        en: "Show profile",
+        pl: "Zobacz profil"
+    }
+
 }

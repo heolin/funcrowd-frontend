@@ -56,6 +56,24 @@ function (_React$Component) {
 
       var image = require("../../static/" + mission.metadata.image);
 
+      var tasks = null;
+      if (mission.tasksCount > 0) tasks = _react["default"].createElement("div", {
+        className: "d-inline-block"
+      }, _react["default"].createElement(_Icons.SmallIcon, {
+        name: "missions"
+      }), _react["default"].createElement("small", null, " ", mission.tasksCount, " ", _LocalizationManager["default"].general.missions));
+      var achievements = null;
+      if (mission.achievements > 0) achievements = _react["default"].createElement("div", {
+        className: "d-inline-block"
+      }, _react["default"].createElement(_Icons.SmallIcon, {
+        name: "achievements"
+      }), _react["default"].createElement("small", null, " ", mission.achievements, " ", _LocalizationManager["default"].general.achievements));
+      var experience = null;
+      if (mission.totalExp > 0) experience = _react["default"].createElement("div", {
+        className: "d-inline-block"
+      }, _react["default"].createElement(_Icons.SmallIcon, {
+        name: "experience"
+      }), _react["default"].createElement("small", null, " ", mission.totalExp, " ", _LocalizationManager["default"].general.experience));
       return _react["default"].createElement("div", null, _react["default"].createElement("div", {
         className: "tasks-header-bar row"
       }, _react["default"].createElement("div", {
@@ -98,19 +116,7 @@ function (_React$Component) {
         className: "row tasks-summary"
       }, _react["default"].createElement("div", {
         className: "col-sm-12 col-md-8 justify-items"
-      }, _react["default"].createElement("div", {
-        className: "d-inline-block"
-      }, _react["default"].createElement(_Icons.SmallIcon, {
-        name: "missions"
-      }), _react["default"].createElement("small", null, " ", mission.tasksCount, " ", _LocalizationManager["default"].general.missions)), _react["default"].createElement("div", {
-        className: "d-inline-block"
-      }, _react["default"].createElement(_Icons.SmallIcon, {
-        name: "achievements"
-      }), _react["default"].createElement("small", null, " 10 ", _LocalizationManager["default"].general.achievements)), _react["default"].createElement("div", {
-        className: "d-inline-block"
-      }, _react["default"].createElement(_Icons.SmallIcon, {
-        name: "experience"
-      }), _react["default"].createElement("small", null, " 10 ", _LocalizationManager["default"].general.experience)))))));
+      }, tasks, achievements, experience)))));
     }
   }]);
 

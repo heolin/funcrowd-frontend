@@ -33,23 +33,23 @@ export default class MissionCard extends React.Component {
         let lockedClassName = locked ? "locked" : "";
         let iconClassName = locked ? "greyscale" : "";
 
-        if (mission.achievementsCount)
+        if (mission.achievements)
             achievements = (
-                <p className="mission-card-label">
+                <div className="mission-card-label">
                     <SmallIcon className={iconClassName} name="achievements"/>
                     <span className="mission-card-label-text">
-                        {mission.achievementsCount} {L.general.achievements}
+                        {mission.achievements} {L.general.achievements}
                     </span>
-                </p>);
+                </div>);
 
         if (mission.totalExp > 0)
             experience = (
-                <p className="mission-card-label">
+                <div className="mission-card-label">
                     <SmallIcon className={iconClassName} name="experience"/>
                     <span className="mission-card-label-text">
                         {mission.totalExp} {L.general.experience}
                     </span>
-                </p>);
+                </div>);
 
         return (
             <Card className="col-md-6 col-lg-4">
@@ -67,13 +67,13 @@ export default class MissionCard extends React.Component {
                             <h4>{this.props.mission.name}</h4>
                             <span className="small mission-card-description">{this.props.mission.description}</span>
                         </div>
-                        <p className="mission-card-label">
-                            <SmallIcon name="missions"/>
-                            <span className="mission-card-label-text">
+                        <div className="mission-card-labels">
+                            <div className="mission-card-label">
+                                <SmallIcon name="missions"/>
+                                <span className="mission-card-label-text">
                                 {this.props.mission.tasksCount} {L.general.missions}
                             </span>
-                        </p>
-                        <div className="mission-card-labels">
+                            </div>
                             {achievements}
                             {experience}
                         </div>

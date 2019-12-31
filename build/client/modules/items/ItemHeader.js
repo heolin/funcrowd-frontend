@@ -61,6 +61,18 @@ function (_React$Component) {
         });
       }
 
+      var achievements = null;
+      if (task.achievements > 0) achievements = _react["default"].createElement("div", {
+        className: "d-inline-block"
+      }, _react["default"].createElement(_Icons.SmallIcon, {
+        name: "achievements"
+      }), _react["default"].createElement("small", null, " ", task.achievements, " ", _LocalizationManager["default"].general.achievements));
+      var experience = null;
+      if (task.totalExp > 0) experience = _react["default"].createElement("div", {
+        className: "d-inline-block"
+      }, _react["default"].createElement(_Icons.SmallIcon, {
+        name: "experience"
+      }), _react["default"].createElement("small", null, " ", task.totalExp, " ", _LocalizationManager["default"].general.experience));
       return _react["default"].createElement("div", null, _react["default"].createElement("div", {
         className: "tasks-header-bar row"
       }, _react["default"].createElement("div", {
@@ -101,15 +113,7 @@ function (_React$Component) {
         className: "row tasks-summary"
       }, _react["default"].createElement("div", {
         className: "col-sm-12 col-md-8 justify-items"
-      }, _react["default"].createElement("div", {
-        className: "d-inline-block"
-      }, _react["default"].createElement(_Icons.SmallIcon, {
-        name: "achievements"
-      }), _react["default"].createElement("small", null, " X ", _LocalizationManager["default"].general.achievements)), _react["default"].createElement("div", {
-        className: "d-inline-block"
-      }, _react["default"].createElement(_Icons.SmallIcon, {
-        name: "experience"
-      }), _react["default"].createElement("small", null, " ", task.totalExp, " ", _LocalizationManager["default"].general.experience)))))));
+      }, achievements, experience)))));
     }
   }]);
 

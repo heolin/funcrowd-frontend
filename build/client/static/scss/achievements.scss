@@ -3,7 +3,7 @@
 @import "colors";
 @import "mixins";
 $card-margin: 15px;
-$icon-part-width: 115px;
+$icon-part-width: 120px;
 
 .achievements-row {
   margin: 0 -#{15px + $card-margin} !important;
@@ -13,7 +13,7 @@ $icon-part-width: 115px;
   @extend .card-1-static;
 
   margin: 0 $card-margin 50px $card-margin;
-  height: 140px;
+  height: 160px;
   background: white;
 }
 
@@ -21,7 +21,7 @@ $icon-part-width: 115px;
   vertical-align: top;
   display: inline-block;
   padding-top: 25px;
-  padding-left: 8px;
+  padding-left: 13px;
   width: $icon-part-width;
 }
 
@@ -29,13 +29,19 @@ $icon-part-width: 115px;
   display: inline-block;
   vertical-align: top;
   padding-top: 20px;
+  padding-right: 20px;
   line-height: 1;
   width: calc(100% - #{$icon-part-width});
+  position: relative;
+  height: 100%;
 }
 
 .achievement-card-progress {
   line-height: 1.5;
-  padding-right: 12px;
+  padding-right: 20px;
+  position: absolute;
+  width: 100%;
+  bottom: 15px
 }
 
 .achievement-icon {
@@ -43,6 +49,7 @@ $icon-part-width: 115px;
 }
 
 .achievement-icon-badge {
+  margin-left: 3px;
   width: 90px;
   height: 90px;
   position: absolute;
@@ -65,13 +72,13 @@ $icon-part-width: 115px;
 .achievement-icon-image img {
   width: 70px;
   position: absolute;
-  left: 10px;
+  left: 13px;
   top: 10px;
 }
 
 .achievement-icon-image.finished img {
   width: 60px;
-  left: 15px;
+  left: 17px;
   top: 15px;
 }
 

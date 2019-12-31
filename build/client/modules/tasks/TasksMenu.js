@@ -222,7 +222,7 @@ function (_React$Component) {
         className: "col-lg-4 col-md-12"
       }, _react["default"].createElement("div", {
         className: "tasks-achievements-introduction"
-      }, _react["default"].createElement("h3", null, _LocalizationManager["default"].labels.achievements), "W tym dzile IPSUM"), _react["default"].createElement("div", {
+      }, _react["default"].createElement("h3", null, _LocalizationManager["default"].labels.achievements), "W tym dziale mo\u017Cesz zdoby\u0107"), _react["default"].createElement("div", {
         className: "row achievements-row"
       }, achievements, _react["default"].createElement("div", {
         className: "col-sm-12 text-right color-blue small",
@@ -231,7 +231,7 @@ function (_React$Component) {
         }
       }, _react["default"].createElement(_reactRouterDom.Link, {
         to: "/achievements"
-      }, "Zobacz wszystkie czalendze")))))));
+      }, "Zobacz wszystkie osi\u0105gni\u0119cia")))))));
     }
   }]);
 

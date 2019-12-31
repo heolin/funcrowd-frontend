@@ -215,18 +215,18 @@ export default class ItemPanel extends React.Component {
 
             if (this.state.task.instruction)
                 instructionButton = (
-                    <button className="btn btn-default info-button"
-                        onClick={this.showInstruction}>
-                        <Icon icon={info} size={24}/>
-                    </button>
+                    <div style={{marginBottom: "35px"}}>
+                        <button className="btn btn-default info-button"
+                            onClick={this.showInstruction}>
+                            <Icon icon={info} size={24}/>
+                        </button>
+                    </div>
                 );
 
+            //                        <h3 style={{display: "inline-block"}}>Item #{this.state.item.id}</h3>
             itemForm = (
                 <div className="col-sm-12 item-panel">
-                    <div style={{marginBottom: "30px"}}>
-                        <h3 style={{display: "inline-block"}}>Item #{this.state.item.id}</h3>
                         {instructionButton}
-                    </div>
 
                     <ItemForm task={this.props.task}
                               item={this.state.item}

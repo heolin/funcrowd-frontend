@@ -62,14 +62,7 @@ function (_React$Component) {
   _createClass(Navbar, [{
     key: "render",
     value: function render() {
-      var navmenu = null;
-      if (this.state.user) navmenu = _react["default"].createElement(_NavbarMenu["default"], {
-        showSideProfile: this.props.showSideProfile,
-        onLogout: this.props.onLogout
-      });else navmenu = _react["default"].createElement(_NavbarLoginMenu["default"], {
-        location: this.state.location
-      });
-      return _react["default"].createElement("nav", {
+      if (this.state.user) return _react["default"].createElement("nav", {
         className: "navbar fixed-top navbar-light bg-light navbar-expand-md py-3"
       }, _react["default"].createElement("a", {
         className: "navbar-brand",
@@ -92,7 +85,22 @@ function (_React$Component) {
         id: "navbarNavDropdown"
       }, _react["default"].createElement("ul", {
         className: "navbar-nav mr-auto"
-      }), navmenu));
+      }), _react["default"].createElement(_NavbarMenu["default"], {
+        showSideProfile: this.props.showSideProfile,
+        onLogout: this.props.onLogout
+      })));else return _react["default"].createElement("nav", {
+        className: "navbar fixed-top navbar-light bg-light py-3"
+      }, _react["default"].createElement("a", {
+        className: "navbar-brand",
+        href: "#"
+      }, _react["default"].createElement("img", {
+        className: "logo",
+        src: _fun_crowd["default"]
+      })), _react["default"].createElement("div", {
+        className: ""
+      }, _react["default"].createElement(_NavbarLoginMenu["default"], {
+        location: this.state.location
+      })));
     }
   }], [{
     key: "getDerivedStateFromProps",

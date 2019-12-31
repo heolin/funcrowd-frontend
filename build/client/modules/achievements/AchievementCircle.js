@@ -47,7 +47,7 @@ function (_React$Component) {
     value: function render() {
       var achievement = this.props.achievement;
       var metadata = achievement.metadata;
-      var finished = achievement.status == "FINISHED" || achievement.status == "DONE";
+      var finished = achievement.status == "FINISHED" || achievement.status == "CLOSED";
       var icon = "achievements/unknown";
       if (finished) icon = "achievements/" + metadata.icon;
       return _react["default"].createElement("div", {

@@ -2,8 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ead4a25-4a17-4a45-977c-0c90b6b22b4b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/client/logic/models/user/UserStats.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/Base.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/Base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/AchievementsManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/AchievementsManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/SessionManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/SessionManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/ToastsManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/ToastsManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/models/missions/Mission.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/models/missions/Mission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/models/tasks/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/models/tasks/Task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/repositories/UserRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/repositories/UserRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/achievements/AchievementCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/achievements/AchievementCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/achievements/AchievementCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/achievements/AchievementCircle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/items/ItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/ItemForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/items/ItemHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/ItemHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/items/ItemPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/ItemPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/missions/MissionCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/missions/MissionCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/navbar/NavbarLoginMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/navbar/NavbarLoginMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/navbar/NavbarMenuButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/navbar/NavbarMenuButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/navbar/NavbarProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/navbar/NavbarProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/profile/SideProfilePanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/profile/SideProfilePanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/tasks/TaskCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/tasks/TaskCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/tasks/TasksHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/tasks/TasksHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/tasks/TasksMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/tasks/TasksMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/resources/texts/labels.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/resources/texts/labels.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/static/scss/_progressbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/_progressbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/static/scss/achievements.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/achievements.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/static/scss/items.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/items.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/static/scss/missions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/missions.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/client/static/scss/navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/static/scss/tasks.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/tasks.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/3f482321becfaa40fcb19825fa717859.ttf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/550b42a5f50d0b943bc45f5c361a9bc1.ttf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/7e0ee8c45d872446649aacd3ce96e1f7.ttf" beforeDir="false" />
@@ -11,28 +40,31 @@
       <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/logic/AchievementsManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/logic/AchievementsManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Base.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Base.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/logic/SessionManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/logic/SessionManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/logic/ToastsManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/logic/ToastsManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/logic/models/missions/Mission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/logic/models/missions/Mission.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/logic/models/tasks/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/logic/models/tasks/Task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/logic/models/annotation/Annotation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/logic/models/annotation/Annotation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/logic/repositories/UserRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/logic/repositories/UserRepository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/modules/achievements/AchievementCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/achievements/AchievementCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/achievements/AchievementCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/achievements/AchievementCircle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/items/ItemHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/ItemHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/feedback/FeedbackFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/feedback/FeedbackFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/feedback/PointsFeedbackModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/feedback/PointsFeedbackModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImagesGallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/components/ImagesGallery/ImagesGallery.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/items/components/TextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/components/TextField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/login/ResetPasswordTokenPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/login/ResetPasswordTokenPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/navbar/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenuButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenuButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/navbar/NavbarProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/navbar/NavbarProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/tasks/TaskCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/tasks/TaskCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/resources/texts/feedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/resources/texts/feedback.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/resources/texts/labels.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/resources/texts/labels.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/static/scss/_progressbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/_progressbar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/static/scss/achievements.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/achievements.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/static/scss/items.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/items.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/static/scss/missions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/missions.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/scss/navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/navbar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/static/scss/tasks.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/tasks.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/utils/SceenBreakpoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/utils/ScreenBreakpoints.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,20 +90,20 @@
     <session id="-1496763004">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="145" />
+          <entry key="project.closed" value="147" />
           <entry key="project.open.time.0" value="11" />
-          <entry key="project.open.time.1" value="48" />
+          <entry key="project.open.time.1" value="49" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.2" value="21" />
+          <entry key="project.open.time.2" value="22" />
           <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.4" value="12" />
-          <entry key="project.open.time.5" value="37" />
-          <entry key="project.open.time.6" value="18" />
+          <entry key="project.open.time.5" value="38" />
+          <entry key="project.open.time.6" value="19" />
           <entry key="project.open.time.7" value="7" />
           <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="169" />
+          <entry key="project.opened" value="173" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -83,17 +115,17 @@
           <entry key="gitignore" value="1" />
           <entry key="html" value="7" />
           <entry key="ico" value="1" />
-          <entry key="js" value="785" />
-          <entry key="json" value="24" />
-          <entry key="jsx" value="1017" />
+          <entry key="js" value="807" />
+          <entry key="json" value="26" />
+          <entry key="jsx" value="1049" />
           <entry key="local" value="2" />
           <entry key="log" value="1" />
           <entry key="md" value="4" />
           <entry key="prod" value="1" />
           <entry key="production" value="1" />
           <entry key="py" value="3" />
-          <entry key="scss" value="423" />
-          <entry key="svg" value="23" />
+          <entry key="scss" value="429" />
+          <entry key="svg" value="27" />
           <entry key="ts" value="4" />
         </counts>
       </usages-collector>
@@ -103,14 +135,14 @@
           <entry key="Env File" value="6" />
           <entry key="HTML" value="7" />
           <entry key="Image" value="1" />
-          <entry key="JSON" value="25" />
-          <entry key="JSX Harmony" value="1017" />
-          <entry key="JavaScript" value="785" />
+          <entry key="JSON" value="27" />
+          <entry key="JSX Harmony" value="1049" />
+          <entry key="JavaScript" value="807" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Python" value="3" />
-          <entry key="SCSS" value="423" />
-          <entry key="SVG" value="23" />
+          <entry key="SCSS" value="429" />
+          <entry key="SVG" value="27" />
           <entry key="TypeScript" value="4" />
         </counts>
       </usages-collector>
@@ -128,13 +160,13 @@
           <entry key="dummy" value="2" />
           <entry key="env" value="9" />
           <entry key="html" value="65" />
-          <entry key="js" value="78240" />
-          <entry key="json" value="348" />
-          <entry key="jsx" value="97200" />
+          <entry key="js" value="79389" />
+          <entry key="json" value="354" />
+          <entry key="jsx" value="98685" />
           <entry key="local" value="28" />
           <entry key="production" value="3" />
           <entry key="py" value="1" />
-          <entry key="scss" value="22110" />
+          <entry key="scss" value="22302" />
           <entry key="svg" value="224" />
         </counts>
       </usages-collector>
@@ -143,12 +175,12 @@
           <entry key="CSS" value="1966" />
           <entry key="Env File" value="53" />
           <entry key="HTML" value="65" />
-          <entry key="JSON" value="348" />
-          <entry key="JSX Harmony" value="97200" />
-          <entry key="JavaScript" value="78240" />
+          <entry key="JSON" value="354" />
+          <entry key="JSX Harmony" value="98685" />
+          <entry key="JavaScript" value="79389" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Python" value="1" />
-          <entry key="SCSS" value="22110" />
+          <entry key="SCSS" value="22302" />
           <entry key="SVG" value="224" />
         </counts>
       </usages-collector>
@@ -160,12 +192,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/logic/UserManager.js">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/achievements/AchievementCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="110">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
-                <element signature="e#0#44#0" expanded="true" />
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,8 +206,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="119" column="41" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
+            <state relative-caret-position="363">
+              <caret line="119" column="43" selection-start-line="119" selection-start-column="43" selection-end-line="119" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/static/scss/tasks.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/App.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -184,34 +234,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/client/logic/SessionManager.js">
+        <entry file="file://$PROJECT_DIR$/src/client/Base.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="2794">
+              <caret line="195" selection-start-line="195" selection-end-line="195" />
               <folding>
-                <element signature="e#0#40#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginMenu.js">
+        <entry file="file://$PROJECT_DIR$/src/client/logic/models/annotation/Annotation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="70" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/toasts/ToastsPanel.js">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/PointsFeedbackModal.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+              <caret line="136" column="12" selection-start-line="136" selection-start-column="12" selection-end-line="136" selection-end-column="12" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -220,28 +267,16 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/logic/ToastsManager.js">
+        <entry file="file://$PROJECT_DIR$/src/client/resources/texts/feedback.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="762">
-              <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+            <state relative-caret-position="561">
+              <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/Navbar.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="652">
-              <caret line="59" column="47" selection-start-line="59" selection-start-column="47" selection-end-line="59" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginButton.js">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/FeedbackPanel.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
@@ -252,22 +287,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarMenuButton.js">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/FeedbackFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+            <state relative-caret-position="595">
+              <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/static/scss/navbar.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -295,33 +321,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/client/modules/missions/MissionsMenu.jsx" />
-        <option value="$PROJECT_DIR$/src/client/modules/profile/ProfilePageHeader.jsx" />
-        <option value="$PROJECT_DIR$/src/client/modules/profile/components/TestCard.js" />
-        <option value="$PROJECT_DIR$/src/client/modules/profile/ProfilePage.js" />
-        <option value="$PROJECT_DIR$/src/client/modules/profile/SettingsPage.js" />
-        <option value="$PROJECT_DIR$/src/client/modules/achievements/AchievementToast.js" />
-        <option value="$PROJECT_DIR$/src/client/modules/achievements/AchievementToastsPanel.js" />
-        <option value="$PROJECT_DIR$/src/client/modules/toasts/AchievementToast.js" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/style.scss" />
-        <option value="$PROJECT_DIR$/src/client/modules/toasts/Toast.js" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/toasts.scss" />
-        <option value="$PROJECT_DIR$/src/client/modules/toasts/ToastsPanel.js" />
-        <option value="$PROJECT_DIR$/src/client/resources/texts/toasts.js" />
-        <option value="$PROJECT_DIR$/src/client/resources/texts/quiz.js" />
-        <option value="$PROJECT_DIR$/src/client/resources/texts/profile.js" />
-        <option value="$PROJECT_DIR$/src/client/resources/texts/general.js" />
         <option value="$PROJECT_DIR$/src/client/resources/texts/levels.js" />
         <option value="$PROJECT_DIR$/src/client/modules/ranking/RankingPage.js" />
         <option value="$PROJECT_DIR$/src/client/logic/locatization/LocalizationManager.js" />
-        <option value="$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx" />
         <option value="$PROJECT_DIR$/src/client/components/ProgressBar.jsx" />
-        <option value="$PROJECT_DIR$/src/client/Base.jsx" />
         <option value="$PROJECT_DIR$/src/client/resources/levels.js" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/RadioField.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/achievements/AchievementsMenu.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx" />
-        <option value="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" />
         <option value="$PROJECT_DIR$/src/client/logic/models/achievements/Achievements.js" />
         <option value="$PROJECT_DIR$/src/client/logic/models/tasks/Task.js" />
         <option value="$PROJECT_DIR$/src/client/logic/models/missions/Mission.js" />
@@ -329,16 +336,9 @@
         <option value="$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx" />
         <option value="$PROJECT_DIR$/src/client/logic/AchievementsManager.js" />
         <option value="$PROJECT_DIR$/src/client/logic/UserManager.js" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/missions.scss" />
-        <option value="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/achievements.scss" />
-        <option value="$PROJECT_DIR$/src/client/modules/achievements/AchievementCard.js" />
-        <option value="$PROJECT_DIR$/src/client/resources/texts/labels.js" />
         <option value="$PROJECT_DIR$/src/client/modules/navbar/NavbarProfile.js" />
-        <option value="$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx" />
         <option value="$PROJECT_DIR$/build/client/static/scss/navbar.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/tasks/TaskCard.jsx" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/tasks.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/achievements/AchievementCircle.js" />
         <option value="$PROJECT_DIR$/src/client/static/scss/navbar.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/navbar/Navbar.jsx" />
@@ -346,6 +346,32 @@
         <option value="$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginMenu.js" />
         <option value="$PROJECT_DIR$/src/client/logic/ToastsManager.js" />
         <option value="$PROJECT_DIR$/src/client/logic/SessionManager.js" />
+        <option value="$PROJECT_DIR$/src/client/static/scss/_progressbar.scss" />
+        <option value="$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx" />
+        <option value="$PROJECT_DIR$/src/client/static/scss/missions.scss" />
+        <option value="$PROJECT_DIR$/src/client/logic/repositories/UserRepository.js" />
+        <option value="$PROJECT_DIR$/src/client/logic/models/user/UserStats.js" />
+        <option value="$PROJECT_DIR$/src/client/static/scss/achievements.scss" />
+        <option value="$PROJECT_DIR$/src/client/Base.jsx" />
+        <option value="$PROJECT_DIR$/src/client/modules/items/components/HtmlLabel.jsx" />
+        <option value="$PROJECT_DIR$/src/client/modules/items/components/TextHeader.jsx" />
+        <option value="$PROJECT_DIR$/src/client/modules/items/components/TextLabel.jsx" />
+        <option value="$PROJECT_DIR$/src/client/static/scss/items.scss" />
+        <option value="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" />
+        <option value="$PROJECT_DIR$/src/client/utils/InputNormalizer.js" />
+        <option value="$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx" />
+        <option value="$PROJECT_DIR$/src/client/App.jsx" />
+        <option value="$PROJECT_DIR$/src/client/modules/login/ResetPasswordTokenPage.jsx" />
+        <option value="$PROJECT_DIR$/src/client/modules/items/components/TextField.jsx" />
+        <option value="$PROJECT_DIR$/src/client/resources/texts/labels.js" />
+        <option value="$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx" />
+        <option value="$PROJECT_DIR$/src/client/modules/achievements/AchievementCard.js" />
+        <option value="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" />
+        <option value="$PROJECT_DIR$/src/client/logic/models/annotation/Annotation.js" />
+        <option value="$PROJECT_DIR$/src/client/modules/feedback/FeedbackFactory.js" />
+        <option value="$PROJECT_DIR$/src/client/modules/feedback/PointsFeedbackModal.jsx" />
+        <option value="$PROJECT_DIR$/src/client/resources/texts/feedback.js" />
+        <option value="$PROJECT_DIR$/src/client/static/scss/tasks.scss" />
       </list>
     </option>
   </component>
@@ -404,7 +430,7 @@
               <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -412,6 +438,31 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="achievements" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="feedback" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="missions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -420,14 +471,6 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="tasks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="toasts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -450,6 +493,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="icons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="icons" type="462c0819:PsiDirectoryNode" />
+              <item name="achievements" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -480,19 +540,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/client/resources/texts" />
-      <recent name="$PROJECT_DIR$/src/client/static/scss" />
-      <recent name="$PROJECT_DIR$/src/client/modules/achievements" />
-      <recent name="$PROJECT_DIR$/src/client/static/scss/animations" />
-      <recent name="$PROJECT_DIR$/src/client/static/icons" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/client/modules/toasts" />
       <recent name="$PROJECT_DIR$/src/client/modules/profile/components" />
       <recent name="$PROJECT_DIR$/src/client/resources/texts" />
       <recent name="$PROJECT_DIR$/src/client/modules/feedback/_bak" />
       <recent name="$PROJECT_DIR$/src/client/modules/achievements" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/client/logic/models/user" />
+      <recent name="$PROJECT_DIR$/src/client/resources/texts" />
+      <recent name="$PROJECT_DIR$/src/client/static/scss" />
+      <recent name="$PROJECT_DIR$/src/client/modules/achievements" />
+      <recent name="$PROJECT_DIR$/src/client/static/scss/animations" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -543,8 +603,8 @@
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="1" sideWeight="0.15135135" side_tool="true" visible="true" weight="0.27137342" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.84864867" visible="true" weight="0.27137342" />
+      <window_info id="Favorites" order="1" sideWeight="0.15135135" side_tool="true" weight="0.27137342" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.84864867" visible="true" weight="0.28461114" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
@@ -569,8 +629,8 @@
     </layout>
     <layout-to-restore>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="1" sideWeight="0.15027027" side_tool="true" weight="0.30005515" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.8497297" visible="true" weight="0.31439602" />
+      <window_info id="Favorites" order="1" sideWeight="0.15135135" side_tool="true" weight="0.27137342" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.84864867" visible="true" weight="0.2813017" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
@@ -601,105 +661,48 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/client/resources/texts/levels.js">
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/missions.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        <state relative-caret-position="697">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/locatization/LocalizationManager.js">
+    <entry file="file://$PROJECT_DIR$/src/client/logic/repositories/UserRepository.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+        <state relative-caret-position="1581">
+          <caret line="97" column="23" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/QuizFeedbackModal.jsx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/PointsFeedbackModal.jsx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/components/ProgressBar.jsx">
+    <entry file="file://$PROJECT_DIR$/src/client/logic/models/user/UserStats.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Base.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2210">
-          <caret line="161" selection-start-line="161" selection-end-line="161" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/resources/levels.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/RadioField.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/achievements/AchievementIcon.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="391">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/achievements/AchievementsMenu.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="60" column="66" selection-start-line="60" selection-start-column="66" selection-end-line="60" selection-end-column="66" />
+        <state relative-caret-position="901">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/models/tasks/Task.js">
+    <entry file="file://$PROJECT_DIR$/src/client/modules/achievements/AchievementCircle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        <state relative-caret-position="238">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/_progressbar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -710,193 +713,173 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/client/logic/ToastsManager.js">
+    <entry file="file://$PROJECT_DIR$/src/client/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/SkippingPanel.jsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/NoItemsPanel.jsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ConfirmationPanel.jsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/HtmlLabel.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/toasts/Toast.js">
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/TextHeader.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/models/achievements/Achievements.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="73" selection-start-line="2" selection-start-column="73" selection-end-line="2" selection-end-column="73" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/TextOrRadioField.jsx">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/AchievementsManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/TextTagField.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx">
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/TextTagField_bak.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/TextLabel.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemHeader.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-374">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/items.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/utils/InputNormalizer.js" />
+    <entry file="file://$PROJECT_DIR$/src/client/utils/ScreenBreakpoints.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2448">
-          <caret line="164" column="4" selection-start-line="164" selection-start-column="4" selection-end-line="164" selection-end-column="4" />
+        <state relative-caret-position="397">
+          <caret line="217" column="49" selection-start-line="217" selection-start-column="49" selection-end-line="217" selection-end-column="49" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/missions.scss">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx">
+    <entry file="file://$PROJECT_DIR$/src/client/logic/repositories/ItemRepository.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/client/modules/achievements/AchievementCard.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/achievements.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/resources/texts/general.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/resources/texts/labels.js">
+    <entry file="file://$PROJECT_DIR$/src/client/resources/texts/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        <state relative-caret-position="1411">
+          <caret line="101" column="4" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/achievements/AchievementCard.js">
+    <entry file="file://$PROJECT_DIR$/src/client/modules/login/ResetPasswordTokenPage.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="87" selection-start-line="17" selection-start-column="87" selection-end-line="17" selection-end-column="87" />
+        <state relative-caret-position="1887">
+          <caret line="111" column="97" selection-start-line="111" selection-start-column="97" selection-end-line="111" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/login/ResetPasswordPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/login/RegisterPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1887" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1354" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/TextField.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/missions/MissionsMenu.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/icons/calculator.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/icons/achievements/door.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/icons/calculator_black.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/icons/achievements/diploma.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1717">
+          <caret line="111" column="75" selection-start-line="111" selection-start-column="75" selection-end-line="111" selection-end-column="75" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarProfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="41" column="40" lean-forward="true" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/App.jsx">
+    <entry file="file://$PROJECT_DIR$/src/client/modules/achievements/AchievementIcon.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-653" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/client/static/scss/navbar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/profile.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TaskCard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/tasks.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="76" column="2" selection-start-line="76" selection-start-column="2" selection-end-line="76" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/achievements/AchievementCircle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/navbar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginButton.js">
+    <entry file="file://$PROJECT_DIR$/src/client/modules/login/ResetPasswordEmailSentPanel.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -905,79 +888,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/Navbar.jsx">
+    <entry file="file://$PROJECT_DIR$/src/client/resources/texts/labels.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="59" column="47" selection-start-line="59" selection-start-column="47" selection-end-line="59" selection-end-column="47" />
+        <state relative-caret-position="1003">
+          <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/achievements/AchievementCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarMenuButton.js">
+    <entry file="file://$PROJECT_DIR$/src/client/logic/models/annotation/Annotation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+        <state relative-caret-position="374">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/FeedbackPanel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/FeedbackFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/PointsFeedbackModal.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="136" column="12" selection-start-line="136" selection-start-column="12" selection-end-line="136" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/resources/texts/feedback.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="119" column="41" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
+        <state relative-caret-position="363">
+          <caret line="119" column="43" selection-start-line="119" selection-start-column="43" selection-end-line="119" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/tasks.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginMenu.js">
+    <entry file="file://$PROJECT_DIR$/src/client/Base.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="70" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
+        <state relative-caret-position="2794">
+          <caret line="195" selection-start-line="195" selection-end-line="195" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/toasts/ToastsPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/ToastsManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/UserManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/SessionManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

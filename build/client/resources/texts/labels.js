@@ -15,7 +15,7 @@ var _default = {
   },
   about: {
     en: "About",
-    pl: "O projekcie"
+    pl: "O projekcie"
   },
   achievements: {
     en: "Achievements",
@@ -26,8 +26,8 @@ var _default = {
     pl: "Ranking"
   },
   account: {
-    en: "Your account",
-    pl: "Twoje kont"
+    en: "Your account",
+    pl: "Twoje konto"
   },
   logout: {
     en: "Logout",
@@ -44,6 +44,14 @@ var _default = {
   bounties: {
     en: "Bounties",
     pl: "Wyzwania"
+  },
+  submit: {
+    en: "Submit",
+    pl: "Dalej"
+  },
+  skip: {
+    en: "Skip",
+    pl: "Pomiń"
   }
 };
 exports["default"] = _default;
