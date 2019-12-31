@@ -27,6 +27,10 @@ var _AchievementsManager = _interopRequireDefault(require("../../logic/Achieveme
 
 var _AchievementCircle = _interopRequireDefault(require("../achievements/AchievementCircle"));
 
+var _RankingRepository = _interopRequireDefault(require("../../logic/repositories/RankingRepository"));
+
+var _UserRepository = _interopRequireDefault(require("../../logic/repositories/UserRepository"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -81,7 +85,9 @@ function (_React$Component) {
       exp: null,
       username: null,
       finishedAchievementsCount: null,
-      unfinishedAchievementsCount: null
+      unfinishedAchievementsCount: null,
+      ranking: null,
+      tasksDone: null
     };
     _this.onUpdate = _this.onUpdate.bind(_assertThisInitialized(_this));
     return _this;
@@ -120,6 +126,36 @@ function (_React$Component) {
       states['finishedAchievementsCount'] = _AchievementsManager["default"].finishedAchievements.length;
       states['unfinishedAchievementsCount'] = _AchievementsManager["default"].unfinishedAchievements.length;
       this.setState(states);
+      this.updateRanking();
+      this.updateTasksDone();
+    }
+  }, {
+    key: "updateRanking",
+    value: function updateRanking() {
+      var _this2 = this;
+
+      _RankingRepository["default"].user(_UserManager["default"].user.id).then(function (row) {
+        console.log(row);
+
+        _this2.setState({
+          ranking: row.position
+        });
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }, {
+    key: "updateTasksDone",
+    value: function updateTasksDone() {
+      var _this3 = this;
+
+      _UserRepository["default"].stats(_UserManager["default"].user.id).then(function (stats) {
+        _this3.setState({
+          tasksDone: stats.annotatedTasks
+        });
+      })["catch"](function (error) {
+        console.log(error);
+      });
     }
   }, {
     key: "render",
@@ -175,14 +211,14 @@ function (_React$Component) {
         onClick: this.props.hideSideProfile
       }, _react["default"].createElement("div", {
         className: "little"
-      }, "Zobacz profil")), _react["default"].createElement(_reactRouterDom.Link, {
+      }, _LocalizationManager["default"].labels.showProfile)), _react["default"].createElement(_reactRouterDom.Link, {
         to: "/settings",
         onClick: this.props.hideSideProfile
       }, _react["default"].createElement("div", {
         className: "little"
-      }, "Ustawienia"))), _react["default"].createElement("div", {
+      }, _LocalizationManager["default"].labels.settings))), _react["default"].createElement("div", {
         className: "col-12 side-profile-username text-center"
-      }, _react["default"].createElement("div", null, "Tw\xF3j nick"), _react["default"].createElement("h4", null, username))), _react["default"].createElement("div", {
+      }, _react["default"].createElement("div", null, _LocalizationManager["default"].labels.yourNick), _react["default"].createElement("h4", null, username))), _react["default"].createElement("div", {
         className: "row"
       }, _react["default"].createElement("div", {
         className: "col-6"
@@ -191,14 +227,14 @@ function (_React$Component) {
       }, _react["default"].createElement(_Icons.BigIcon, {
         className: "side-profile-block-icon",
         name: "ranking"
-      }), _react["default"].createElement("div", null, "7 miejsce w ranking"))), _react["default"].createElement("div", {
+      }), _react["default"].createElement("div", null, this.state.ranking, " miejsce w ranking"))), _react["default"].createElement("div", {
         className: "col-6"
       }, _react["default"].createElement("div", {
         className: "side-profile-block card-1-static little text-center"
       }, _react["default"].createElement(_Icons.BigIcon, {
         className: "side-profile-block-icon",
         name: "missions"
-      }), _react["default"].createElement("div", null, "14 rozwi\u0105zanych zada\u0144")))), _react["default"].createElement("div", {
+      }), _react["default"].createElement("div", null, this.state.tasksDone, " rozwi\u0105zanych zada\u0144")))), _react["default"].createElement("div", {
         className: "row",
         style: {
           marginTop: "30px",
@@ -245,7 +281,14 @@ function (_React$Component) {
         }
       }, _LocalizationManager["default"].general.newest.toUpperCase()))), _react["default"].createElement("div", {
         className: "row text-center"
-      }, achievementsLast)));
+      }, achievementsLast, _react["default"].createElement("div", {
+        className: "col-sm-12 text-right color-blue small",
+        style: {
+          paddingRight: "30px"
+        }
+      }, _react["default"].createElement(_reactRouterDom.Link, {
+        to: "/achievements"
+      }, "Zobacz wszystkie osi\u0105gni\u0119cia")))));
     }
   }]);
 

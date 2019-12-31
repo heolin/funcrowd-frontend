@@ -51,7 +51,6 @@ function (_React$Component) {
       var metadata = achievement.metadata;
       var finished = achievement.status == "FINISHED" || achievement.status == "CLOSED";
       var icon = "achievements/unknown";
-      console.log(finished);
       if (finished) icon = "achievements/" + metadata.icon;
       var text = metadata.text;
       if (finished) text = metadata.finishText;

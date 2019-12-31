@@ -9,6 +9,8 @@ import LevelsConfig from "../../resources/levels";
 import L from "../../logic/locatization/LocalizationManager";
 import AchievementsManager from "../../logic/AchievementsManager";
 import AchievementCircle from "../achievements/AchievementCircle";
+import RankingRepository from "../../logic/repositories/RankingRepository";
+import UserRepository from "../../logic/repositories/UserRepository";
 
 
 const Sidebar = posed.nav({
@@ -31,6 +33,8 @@ export class SideProfilePanel extends React.Component {
             username: null,
             finishedAchievementsCount: null,
             unfinishedAchievementsCount: null,
+            ranking: null,
+            tasksDone: null,
         };
 
         this.onUpdate = this.onUpdate.bind(this);
@@ -61,6 +65,34 @@ export class SideProfilePanel extends React.Component {
         states['unfinishedAchievementsCount'] = AchievementsManager.unfinishedAchievements.length;
 
         this.setState(states);
+
+        this.updateRanking();
+        this.updateTasksDone();
+    }
+
+    updateRanking() {
+        RankingRepository.user(UserManager.user.id)
+            .then((row) => {
+                console.log(row);
+                this.setState({
+                    ranking: row.position,
+                });
+            })
+            .catch((error) => {
+                console.log(error)
+            });
+    }
+
+    updateTasksDone() {
+        UserRepository.stats(UserManager.user.id)
+            .then((stats) => {
+                this.setState({
+                    tasksDone: stats.annotatedTasks
+                });
+            })
+            .catch((error) => {
+                console.log(error)
+            });
     }
 
     render() {
@@ -121,13 +153,13 @@ export class SideProfilePanel extends React.Component {
                         <div className="col-6">
                             <div className="side-profile-block card-1-static little text-center">
                                 <BigIcon className="side-profile-block-icon" name="ranking"/>
-                                <div>7 miejsce w ranking</div>
+                                <div>{this.state.ranking} miejsce w ranking</div>
                             </div>
                         </div>
                         <div className="col-6">
                             <div className="side-profile-block card-1-static little text-center">
                                 <BigIcon className="side-profile-block-icon" name="missions"/>
-                                <div>14 rozwiązanych zadań</div>
+                                <div>{this.state.tasksDone} rozwiązanych zadań</div>
                             </div>
                         </div>
                     </div>

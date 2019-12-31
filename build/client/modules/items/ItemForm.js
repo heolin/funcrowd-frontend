@@ -201,8 +201,12 @@ function (_React$Component) {
       groupFields.forEach(function (fieldName) {
         if (fieldName in item.templateFields) {
           var field = item.templateFields[fieldName];
-          var component = factory.create(field.widget, field.name, field.label, _this3.state[field.name], item.data[field.data_source], field.required, _this3.state.blocked, _this3.handleChange);
-          fields.push(component);
+          var skip = !field.editable && !_this3.state[field.name];
+
+          if (!skip) {
+            var component = factory.create(field.widget, field.name, field.label, _this3.state[field.name], item.data[field.data_source], field.required, _this3.state.blocked, _this3.handleChange);
+            fields.push(component);
+          }
         }
       });
       if (fields.length > 0) return _react["default"].createElement("div", {

@@ -1,14 +1,15 @@
 
 export default class UserStats {
-    constructor(id, annotated_documents, high_agreement_count, high_agreement_percentage, agreement_ranking_position,
-                agreement_ranking_percentage, annotated_missions) {
+    constructor(id, annotatedDocuments, highAgreementCount, highAgreementPercentage, agreementRankingPosition,
+                agreementRankingPercentage, annotatedMissions, annotatedTasks) {
         this.id = id;
-        this.annotated_documents = annotated_documents;
-        this.high_agreement_count = high_agreement_count;
-        this.high_agreement_percentage = high_agreement_percentage;
-        this.agreement_ranking_position = agreement_ranking_position;
-        this.agreement_ranking_percentage = agreement_ranking_percentage;
-        this.annotated_missions = annotated_missions;
+        this.annotatedDocuments = annotatedDocuments;
+        this.highAgreementCount = highAgreementCount;
+        this.highAgreementPercentage = highAgreementPercentage;
+        this.agreementRankingPosition = agreementRankingPosition;
+        this.agreementRankingPercentage = agreementRankingPercentage;
+        this.annotatedMissions = annotatedMissions;
+        this.annotatedTasks = annotatedTasks;
     }
 
     static fromJson(user_data) {
@@ -19,7 +20,8 @@ export default class UserStats {
             user_data.high_agreement_percentage,
             user_data.agreement_ranking_position,
             user_data.agreement_ranking_percentage,
-            user_data.annotated_missions
+            user_data.annotated_missions,
+            user_data.annotated_tasks
         );
         return stats;
     }

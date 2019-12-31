@@ -13,7 +13,7 @@ var _Image = _interopRequireDefault(require("./Image"));
 
 var _ImageModal = _interopRequireDefault(require("./ImageModal"));
 
-var _SceenBreakpoints = _interopRequireDefault(require("../../../../utils/SceenBreakpoints"));
+var _ScreenBreakpoints = _interopRequireDefault(require("../../../../utils/ScreenBreakpoints"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -64,14 +64,14 @@ function (_React$Component) {
         return dragging = false;
       },
       responsive: [{
-        breakpoint: _SceenBreakpoints["default"].xl,
+        breakpoint: _ScreenBreakpoints["default"].xl,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 1
         }
       }, {
-        breakpoint: _SceenBreakpoints["default"].lg,
+        breakpoint: _ScreenBreakpoints["default"].lg,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

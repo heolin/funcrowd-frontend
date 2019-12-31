@@ -15,6 +15,8 @@ var _ConfigManager = _interopRequireDefault(require("../config/ConfigManager"));
 
 var _UserStatus = _interopRequireDefault(require("../models/user/UserStatus"));
 
+var _UserStats = _interopRequireDefault(require("../models/user/UserStats"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -130,7 +132,8 @@ function () {
     key: "stats",
     value: function stats(workerId) {
       return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/stats/users/' + workerId + "/", _SessionManager["default"].config).then(function (response) {
-        var stats = UserStats.fromJson(response.data);
+        var stats = _UserStats["default"].fromJson(response.data);
+
         return stats;
       });
     }

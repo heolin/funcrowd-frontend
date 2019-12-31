@@ -44,6 +44,14 @@ var _default = {
   questionnaireSavedMessage: {
     en: "Thank you for filling personal questionnaire",
     pl: "Dziękuje za wypełnienie kwestionariusza osobowego"
+  },
+  attemptsMessage1: {
+    en: "Task solved in ",
+    pl: "Zadanie rozwiązane za "
+  },
+  attemptsMessage2: {
+    en: " attempts!",
+    pl: " razem!"
   }
 };
 exports["default"] = _default;

@@ -26,5 +26,5 @@ export default {
     level: {
         en: "Level",
         pl: "Poziom"
-    }
+    },
 }

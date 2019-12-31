@@ -18,19 +18,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var Annotation =
 /*#__PURE__*/
 function () {
-  function Annotation(itemId, data, feedback, skipped) {
+  function Annotation(itemId, data, feedback, skipped, attempt) {
     _classCallCheck(this, Annotation);
 
     this.itemId = itemId;
     this.data = data;
     this.feedback = feedback;
     this.skipped = skipped;
+    this.attempt = attempt;
   }
 
   _createClass(Annotation, null, [{
     key: "fromJson",
     value: function fromJson(annotation_data) {
-      var annotation = new Annotation(annotation_data.item_id, annotation_data.data, _Feedback["default"].fromJson(annotation_data.feedback), annotation_data.skipped);
+      var annotation = new Annotation(annotation_data.item_id, annotation_data.data, _Feedback["default"].fromJson(annotation_data.feedback), annotation_data.skipped, annotation_data.attempt);
       return annotation;
     }
   }]);

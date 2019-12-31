@@ -62,6 +62,9 @@ function (_React$Component) {
         className: "form-group"
       }, label, _react["default"].createElement("input", {
         id: this.props.name,
+        style: {
+          maxWidth: "400px"
+        },
         value: this.props.value,
         onChange: this.handleChange,
         className: "form-control",

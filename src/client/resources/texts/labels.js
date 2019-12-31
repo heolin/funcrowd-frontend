@@ -58,6 +58,9 @@ export default {
     showProfile: {
         en: "Show profile",
         pl: "Zobacz profil"
+    },
+    download: {
+        en: "Download",
+        pl: "Pobierz"
     }
-
 }

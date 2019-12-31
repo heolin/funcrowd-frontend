@@ -3,6 +3,7 @@ import User from "../../logic/models/user/User";
 import SessionManager from "../SessionManager";
 import ConfigManager from "../config/ConfigManager";
 import UserStatus from "../models/user/UserStatus";
+import UserStats from "../models/user/UserStats";
 
 
 export default class UserRepository {

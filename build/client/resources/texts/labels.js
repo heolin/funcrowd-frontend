@@ -52,6 +52,22 @@ var _default = {
   skip: {
     en: "Skip",
     pl: "Pomiń"
+  },
+  yourNick: {
+    en: "Your nick",
+    pl: "Twój nick"
+  },
+  settings: {
+    en: "Settings",
+    pl: "Ustawienia"
+  },
+  showProfile: {
+    en: "Show profile",
+    pl: "Zobacz profil"
+  },
+  download: {
+    en: "Download",
+    pl: "Pobierz"
   }
 };
 exports["default"] = _default;

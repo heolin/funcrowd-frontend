@@ -9,6 +9,7 @@ import {Footer} from "../../Footer";
 import TaskProgressRepository from "../../logic/repositories/TaskProgressRepository";
 import Loading from "../../components/Loading";
 import TestCard from "./components/TestCard";
+import UserRepository from "../../logic/repositories/UserRepository";
 
 
 export default class ProfilePage extends React.Component {
@@ -18,7 +19,8 @@ export default class ProfilePage extends React.Component {
         this.state = {
             exp: null,
             loadingUserRanking: true,
-            ranking: null
+            ranking: null,
+            tasksDone: null
         };
 
         this.testsIds = [52, 53, 54];
@@ -62,6 +64,16 @@ export default class ProfilePage extends React.Component {
             })
             .catch((error) => {
                 this.setState({loadingUserRanking: false});
+                console.log(error)
+            });
+
+        UserRepository.stats(UserManager.user.id)
+            .then((stats) => {
+                this.setState({
+                    tasksDone: stats.annotatedTasks
+                });
+            })
+            .catch((error) => {
                 console.log(error)
             });
 
@@ -123,7 +135,7 @@ export default class ProfilePage extends React.Component {
                             <p>Za rozwiązywanie zadań otrzymujesz gwiazdki. Im więcej gwiazdek, tym wyższy poziom doświadczenia!</p>
                             <div className="text-center">
                                 <h5>Rozwiązałeś/łaś</h5>
-                                <h3>X z X zadań</h3>
+                                <h3>{this.state.tasksDone} zadań</h3>
                             </div>
                         </div>
                         <div className="col-sm-12" style={{marginBottom: "60px"}}>

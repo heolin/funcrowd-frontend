@@ -1,4 +1,5 @@
 import React from "react"
+import L from "../../../logic/locatization/LocalizationManager";
 
 
 export default class LinkButton extends React.Component {
@@ -13,7 +14,7 @@ export default class LinkButton extends React.Component {
                 <div>
                     <a href={this.props.value}>
                         <div className="btn btn-primary download-button">
-                            Download
+                            {L.labels.download}
                         </div>
                     </a>
                 </div>

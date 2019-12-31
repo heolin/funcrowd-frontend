@@ -227,7 +227,8 @@ function (_React$Component) {
       }, achievements, _react["default"].createElement("div", {
         className: "col-sm-12 text-right color-blue small",
         style: {
-          paddingRight: "30px"
+          paddingRight: "30px",
+          paddingBottom: "30px"
         }
       }, _react["default"].createElement(_reactRouterDom.Link, {
         to: "/achievements"

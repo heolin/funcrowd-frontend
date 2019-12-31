@@ -288,24 +288,21 @@ function (_React$Component) {
       if (this.state.item) {
         itemId = this.state.item.id;
         var instructionButton = null;
-        if (this.state.task.instruction) instructionButton = _react["default"].createElement("button", {
+        if (this.state.task.instruction) instructionButton = _react["default"].createElement("div", {
+          style: {
+            marginBottom: "35px"
+          }
+        }, _react["default"].createElement("button", {
           className: "btn btn-default info-button",
           onClick: this.showInstruction
         }, _react["default"].createElement(_reactIconsKit.Icon, {
           icon: _info.info,
           size: 24
-        }));
+        }))); //                        <h3 style={{display: "inline-block"}}>Item #{this.state.item.id}</h3>
+
         itemForm = _react["default"].createElement("div", {
           className: "col-sm-12 item-panel"
-        }, _react["default"].createElement("div", {
-          style: {
-            marginBottom: "30px"
-          }
-        }, _react["default"].createElement("h3", {
-          style: {
-            display: "inline-block"
-          }
-        }, "Item #", this.state.item.id), instructionButton), _react["default"].createElement(_ItemForm["default"], {
+        }, instructionButton, _react["default"].createElement(_ItemForm["default"], {
           task: this.props.task,
           item: this.state.item,
           onAnnotationPost: this.onAnnotationPost,

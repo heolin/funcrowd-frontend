@@ -74,6 +74,7 @@ function () {
             isOpen: isOpen,
             onAccept: onAccept,
             feedback: feedback,
+            annotation: annotation,
             task: task,
             exp: exp
           });

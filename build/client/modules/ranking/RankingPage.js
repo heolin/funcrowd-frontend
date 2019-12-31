@@ -216,7 +216,7 @@ function (_React$Component) {
       }, _react["default"].createElement("h3", null, "Ranking"), _react["default"].createElement("p", null, "Sprawd\u017A swoje miejsce i zobacz post\u0119p innych!")), _react["default"].createElement("div", {
         className: "ranking-panel col-md-8 offset-md-2 col-12 card-2-static small"
       }, _react["default"].createElement("table", {
-        "class": "ranking-table table table-borderless text-center"
+        className: "ranking-table table table-borderless text-center"
       }, _react["default"].createElement("thead", null, _react["default"].createElement("tr", {
         className: "color-blue"
       }, _react["default"].createElement("th", {

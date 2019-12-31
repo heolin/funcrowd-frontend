@@ -152,6 +152,14 @@ function (_React$Component) {
 
       var prevExp = _UserManager["default"].user.exp - exp.base - exp.bonus;
       var userExp = prevExp;
+
+      var attemptMessage = _react["default"].createElement("p", {
+        className: "color-blue small weight-bold",
+        style: {
+          minHeight: "24px"
+        }
+      });
+
       var animationClass = "";
       var starPoints = exp.base;
 
@@ -165,10 +173,16 @@ function (_React$Component) {
         animationClass = "jello-horizontal";
         starPoints = exp.bonus;
         userExp = prevExp + exp.base;
+        attemptMessage = _react["default"].createElement("p", {
+          className: "color-blue small weight-bold"
+        }, _LocalizationManager["default"].feedback.attemptsMessage1 + this.props.annotation.attempt + _LocalizationManager["default"].feedback.attemptsMessage2);
       } else if (this.state.animationState === AnimationStates.HIDE_BONUS) {
         animationClass = "scale-out-center-fast";
         starPoints = exp.bonus;
         userExp = prevExp + exp.base + exp.bonus;
+        attemptMessage = _react["default"].createElement("p", {
+          className: "color-blue small weight-bold"
+        }, _LocalizationManager["default"].feedback.attemptsMessage1 + this.props.annotation.attempt + _LocalizationManager["default"].feedback.attemptsMessage2);
       }
 
       var userLevel = _UserManager["default"].getExpLevel(userExp);
@@ -192,7 +206,7 @@ function (_React$Component) {
         src: _experience["default"]
       }), _react["default"].createElement("div", {
         className: "feedback-points-text"
-      }, starPoints)), _react["default"].createElement("div", {
+      }, starPoints)), attemptMessage, _react["default"].createElement("div", {
         style: {
           padding: "0 10%"
         }

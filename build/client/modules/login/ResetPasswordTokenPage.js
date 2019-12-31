@@ -142,7 +142,7 @@ function (_React$Component) {
         className: "login-window col-lg-6 col-md-10 col-12 card-3-static"
       }, _react["default"].createElement("h3", {
         className: "text-center login-header"
-      }, "Reset password"), _react["default"].createElement("form", {
+      }, _LocalizationManager["default"].login.resetPasswordHeader), _react["default"].createElement("form", {
         onSubmit: this.handleSubmit
       }, _react["default"].createElement("div", {
         className: "form-group"
@@ -168,7 +168,7 @@ function (_React$Component) {
         type: "submit",
         disabled: !this.validateForm(),
         className: "btn btn-orange-primary login-button"
-      }, "Zaloguj"))))));
+      }, _LocalizationManager["default"].labels.login))))));
     }
   }]);
 

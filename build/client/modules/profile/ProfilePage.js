@@ -27,6 +27,8 @@ var _Loading = _interopRequireDefault(require("../../components/Loading"));
 
 var _TestCard = _interopRequireDefault(require("./components/TestCard"));
 
+var _UserRepository = _interopRequireDefault(require("../../logic/repositories/UserRepository"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -61,7 +63,8 @@ function (_React$Component) {
     _this.state = {
       exp: null,
       loadingUserRanking: true,
-      ranking: null
+      ranking: null,
+      tasksDone: null
     };
     _this.testsIds = [52, 53, 54];
 
@@ -111,6 +114,14 @@ function (_React$Component) {
           loadingUserRanking: false
         });
 
+        console.log(error);
+      });
+
+      _UserRepository["default"].stats(_UserManager["default"].user.id).then(function (stats) {
+        _this2.setState({
+          tasksDone: stats.annotatedTasks
+        });
+      })["catch"](function (error) {
         console.log(error);
       });
 
@@ -201,7 +212,7 @@ function (_React$Component) {
         }
       }, _react["default"].createElement("h3", null, "Tw\xF3j poziom"), _react["default"].createElement("p", null, "Za rozwi\u0105zywanie zada\u0144 otrzymujesz gwiazdki. Im wi\u0119cej gwiazdek, tym wy\u017Cszy poziom do\u015Bwiadczenia!"), _react["default"].createElement("div", {
         className: "text-center"
-      }, _react["default"].createElement("h5", null, "Rozwi\u0105za\u0142e\u015B/\u0142a\u015B"), _react["default"].createElement("h3", null, "X z X zada\u0144"))), _react["default"].createElement("div", {
+      }, _react["default"].createElement("h5", null, "Rozwi\u0105za\u0142e\u015B/\u0142a\u015B"), _react["default"].createElement("h3", null, this.state.tasksDone, " zada\u0144"))), _react["default"].createElement("div", {
         className: "col-sm-12",
         style: {
           marginBottom: "60px"

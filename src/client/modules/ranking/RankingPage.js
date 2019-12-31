@@ -186,7 +186,7 @@ export default class RankingPage extends React.Component {
                     <p>Sprawdź swoje miejsce i zobacz postęp innych!</p>
                 </div>
                 <div className="ranking-panel col-md-8 offset-md-2 col-12 card-2-static small">
-                    <table class="ranking-table table table-borderless text-center">
+                    <table className="ranking-table table table-borderless text-center">
                         <thead>
                             <tr className="color-blue">
                                 <th scope="col"><b>Miejsce</b></th>
