@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _LocalizationManager = _interopRequireDefault(require("../../../logic/locatization/LocalizationManager"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -45,7 +47,7 @@ function (_React$Component) {
         disabled: this.props.disabled,
         style: this.props.style,
         className: "item-form-submit-skip btn btn-default"
-      }, "Skip");
+      }, _LocalizationManager["default"].labels.skip);
     }
   }]);
 

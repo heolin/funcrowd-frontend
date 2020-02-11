@@ -46,6 +46,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var className = this.props.className || "";
+      var selected = this.props.isSelected ? "nav-link-selected" : "";
       return _react["default"].createElement(_reactRouterDom.Link, {
         to: this.props.targetPath
       }, _react["default"].createElement("li", {
@@ -55,7 +56,7 @@ function (_React$Component) {
         name: this.props.icon,
         style: this.props.iconStyle
       }), _react["default"].createElement("span", {
-        className: "nav-link"
+        className: "nav-link menu-link " + selected
       }, this.props.name)));
     }
   }]);

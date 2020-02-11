@@ -1,4 +1,5 @@
 import React from "react"
+import L from "../../../logic/locatization/LocalizationManager";
 
 
 export default class SkipButton extends React.Component {
@@ -8,7 +9,7 @@ export default class SkipButton extends React.Component {
             <button
                 disabled={this.props.disabled}
                 style={this.props.style}
-                className="item-form-submit-skip btn btn-default">Skip</button>
+                className="item-form-submit-skip btn btn-default">{L.labels.skip}</button>
         );
     }
 }

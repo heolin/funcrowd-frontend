@@ -33,26 +33,30 @@ export default class TextOrRadioField extends React.Component {
     }
 
     render() {
-        let options = [
-            <RadioOtherElement key="other"
-                               className="small"
-                               name={this.props.name}
-                               onChange={this.handleChange}
-                               required={this.props.required}
-                               text=""
-                               disabled={!this.state.otherSelected}/>
-        ];
+        let order = this.props.source.order;
 
-        this.props.source.forEach((option) => {
-            options.push(
-                <RadioElement key={option}
-                              className="small"
-                              name={this.props.name}
-                              onChange={this.handleChange}
-                              required={this.props.required}
-                              value={option}/>
-            );
-        });
+        let textElement = <RadioOtherElement key="other"
+                                             className="small"
+                                             name={this.props.name}
+                                             onChange={this.handleChange}
+                                             required={this.props.required}
+                                             text={this.props.source.label}
+                                             disabled={!this.state.otherSelected}/>;
+
+        const values = this.props.source.values;
+        let options = values.map((option) =>
+            <RadioElement key={option}
+                          className="small"
+                          name={this.props.name}
+                          onChange={this.handleChange}
+                          required={this.props.required}
+                          value={option}/>
+        );
+
+        if (order === 'first')
+            options.unshift(textElement);
+        else
+            options.push(textElement);
 
         let label;
         if (this.props.label)

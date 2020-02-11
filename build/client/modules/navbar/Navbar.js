@@ -86,6 +86,7 @@ function (_React$Component) {
       }, _react["default"].createElement("ul", {
         className: "navbar-nav mr-auto"
       }), _react["default"].createElement(_NavbarMenu["default"], {
+        location: this.state.location,
         showSideProfile: this.props.showSideProfile,
         onLogout: this.props.onLogout
       })));else return _react["default"].createElement("nav", {
@@ -105,19 +106,17 @@ function (_React$Component) {
   }], [{
     key: "getDerivedStateFromProps",
     value: function getDerivedStateFromProps(props, state) {
+      var result = {};
+
       if (props.user !== state.user) {
-        return {
-          user: props.user
-        };
+        result['user'] = props.user;
       }
 
       if (props.location !== state.location) {
-        return {
-          location: location
-        };
+        result['location'] = props.location;
       }
 
-      return null;
+      return result;
     }
   }]);
 

@@ -27,4 +27,8 @@ export default {
         en: "Level",
         pl: "Poziom"
     },
+    imageGalleryHelp: {
+        en: "Click the image to zoom in",
+        pl: "Kliknij aby powiększyć"
+    }
 }

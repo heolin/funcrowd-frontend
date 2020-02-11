@@ -150,28 +150,35 @@ export default class ItemPanel extends React.Component {
         UserManager.update();
         AchievementsManager.checkToasts();
 
-        let feedback = null;
-        if (ConfigManager.config.showFeedback) {
-            feedback = annotationResponse.annotation.feedback;
+        const lastPageOnlyFeedback =
+            this.state.task.metadata.lastPageOnlyFeedback === true;
+
+        if (lastPageOnlyFeedback === false ||
+            annotationResponse.isLastItem) {
+
+            let feedback = null;
+            if (ConfigManager.config.showFeedback) {
+                feedback = annotationResponse.annotation.feedback;
+            }
+            this.setState({
+                annotation: annotationResponse.annotation,
+                exp: annotationResponse.exp,
+                feedback: feedback,
+                confirmation: true
+            });
+        } else {
+            this.onFeedbackAccept();
         }
-        this.setState({
-            annotation: annotationResponse.annotation,
-            exp: annotationResponse.exp,
-            feedback: feedback,
-            confirmation: true
-        });
 
         window.scrollTo(0, 0);
     }
 
     onFeedbackAccept() {
+        const result = { confirmation: false };
         if (this.state.feedback)
-            this.setState({
-                feedback: null,
-            });
-        this.setState({
-            confirmation: false
-        });
+            result['feedback'] = null;
+
+        this.setState(result);
         this.getNextItem();
     }
 
@@ -223,7 +230,6 @@ export default class ItemPanel extends React.Component {
                     </div>
                 );
 
-            //                        <h3 style={{display: "inline-block"}}>Item #{this.state.item.id}</h3>
             itemForm = (
                 <div className="col-sm-12 item-panel">
                         {instructionButton}

@@ -9,11 +9,14 @@ export default class FeedbackPanel extends React.Component {
     render() {
         let annotation = this.props.annotation;
         let feedback = null;
-        let type = FeedbackTypes.NONE;
+        let type = null;
 
-        if (annotation && annotation.feedback) {
+        if (annotation) {
             feedback = annotation.feedback;
-            type = feedback.type;
+            if (this.props.task.feedback)
+                type = this.props.task.feedback['type'];
+            else
+                type = FeedbackTypes.CONFIRM_ONLY;
         }
 
         let modal = FeedbackFactory.create(type,

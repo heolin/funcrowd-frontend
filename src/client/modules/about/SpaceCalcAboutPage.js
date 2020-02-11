@@ -36,7 +36,7 @@ export default class SpaceCalcAboutPage extends React.Component {
                     <div className="row">
                         <div className="col-md-8 col-12" style={{marginBottom: "40px"}}>
                             <h2 style={{marginBottom: "20px"}}>O projekcie</h2>
-                            <p>Kurs nauki programu Excel został przygotowany w ramach pracy naukowej wykonywanej przez Dagmarę Dziedzic, doktorantkę Wydziału Psychologii i Kognitywistyki (UAM Poznań) na kierunku Nauki o Poznaniu i Komunikacji Społecznej. Zadania w kursie zostały przygotowane w oparciu o sylabus Europejskiego Certyfikatu Umiejętności Komputerowych i były konsultowane ze specjalistami, którzy na co dzień korzystają z programu Excel.   Celem tego kursu jest, po pierwsze - przekazanie wiedzy z trzech działów dotyczących obsługi programu, a po drugie - zebranie danych dotyczących uczenia się. Bardziej szczegółowe informacje znajdziesz w FAQu poniżej.</p>
+                            <p>Kurs nauki programu Excel został przygotowany w ramach pracy naukowej wykonywanej przez mgr Dagmarę Dziedzic, doktorantkę Wydziału Psychologii i Kognitywistyki (UAM Poznań). Zadania w kursie zostały przygotowane w oparciu o <a href="https://ecdl.pl/wp-content/uploads/2016/01/b41.pdf" target="_blank">sylabus Europejskiego Certyfikatu Umiejętności Komputerowych</a> i były konsultowane ze specjalistami, którzy na co dzień korzystają z programu Excel.   Celem tego kursu jest, po pierwsze - przekazanie wiedzy z trzech działów dotyczących obsługi programu, a po drugie - zebranie informacji dotyczących uczenia się. Bardziej szczegółowe informacje znajdziesz w FAQu poniżej.</p>
                         </div>
                         <div className="col-md-4 col-12" style={{textAlign: "center", marginBottom: "80px"}}>
                             <img style={{width: "100%", maxWidth: "300px"}} src={newIdeas}/>
@@ -51,7 +51,7 @@ export default class SpaceCalcAboutPage extends React.Component {
                                           style={{marginBottom: "30px"}}/>
 
                             <TextCollapse headText={'Czego się nauczę podczas kursu?'}
-                                          bodyText={"Zadania dostępne w kursie zostały przygotowane w oparciu o sylabus Europejskiego Certyfikatu Umiejętności Komputerowych i dotyczą trzech działów nauki programu Excel: reguł arytmetycznych, funkcji , liczb i dat. Po ukończeniu tego kursu będziesz wiedzieć jak prawidłowo odwoływać się do komórek i stosować operatory arytmetyczne. Nauczysz się korzystania z adresowania bezwzględnego, poznasz działanie wielu funkcji oraz nauczysz się formatowania komórek wyświetlając liczby, daty, procenty i waluty."}
+                                          bodyText={"Zadania dostępne w kursie zostały przygotowane w oparciu o <a href=\"https://ecdl.pl/wp-content/uploads/2016/01/b41.pdf\" target=\"_blank\">sylabus Europejskiego Certyfikatu Umiejętności Komputerowych</a> i dotyczą trzech działów nauki programu Excel: reguł arytmetycznych, funkcji , liczb i dat. Po ukończeniu tego kursu będziesz wiedzieć jak prawidłowo odwoływać się do komórek i stosować operatory arytmetyczne. Nauczysz się korzystania z adresowania bezwzględnego, poznasz działanie wielu funkcji oraz nauczysz się formatowania komórek wyświetlając liczby, daty, procenty i waluty."}
                                           style={{marginBottom: "30px"}}/>
 
                             <TextCollapse headText={'Dla kogo przeznaczony jest kurs?'}
@@ -63,11 +63,11 @@ export default class SpaceCalcAboutPage extends React.Component {
                                           style={{marginBottom: "30px"}}/>
 
                             <TextCollapse headText={'Na czym będzie polegało badanie?'}
-                                          bodyText={"Niestety nie mogę tego zdradzić, ale podczas kursu zostaniesz poproszony/na o wypełnienie kilku ankiet dotyczących Twoich postępów i zaangażowania."}
+                                          bodyText={"Podczas kursu zostaniesz poproszony/na o wypełnienie kilku ankiet dotyczących Twoich postępów i zaangażowania."}
                                           style={{marginBottom: "30px"}}/>
 
-                            <TextCollapse headText={'Jakie moje dane są zbierane przez serwis?'}
-                                          bodyText={"W związku z tym, że kurs jest równocześnie badaniem naukowym, konieczna jest możliwość wyciągnięcia wniosków dotyczących osób uczących się. Dlatego serwis przechowuje podstawowe dane o użytkownikach, takie jak liczba wykonanych zadań, czy szybkość ich rozwiązywania. Wspomniane dane zostaną zakodowane i będą przetwarzane z poszanowaniem Twojej prywatności i anonimowości. Na potrzeby badania i sprawozdania wyników posłużę się jedynie danymi zagregowanymi."}
+                            <TextCollapse headText={'Jakie dane na mój temat są zbierane przez serwis?'}
+                                          bodyText={"W związku z tym, że kurs jest równocześnie badaniem naukowym, konieczna jest możliwość wyciągnięcia wniosków dotyczących nie osób, ale sposobu uczenia się. Dlatego serwis przechowuje podstawowe dane o użytkownikach, takie jak liczba wykonanych zadań, czy szybkość ich rozwiązywania. Wspomniane dane zostaną zakodowane i będą przetwarzane z poszanowaniem Twojej prywatności i anonimowości. Na potrzeby badania i sprawozdania wyników posłużę się jedynie danymi zagregowanymi."}
                                           style={{marginBottom: "30px"}}/>
 
                             <TextCollapse headText={'Czy zadania mogę wykonywać w innym programie niż Excel?'}
@@ -75,7 +75,7 @@ export default class SpaceCalcAboutPage extends React.Component {
                                           style={{marginBottom: "30px"}}/>
 
                             <TextCollapse headText={'Jakie są wymagania techniczne kursu?'}
-                                          bodyText={"Kurs został przygotowany z myślą o korzystaniu z niego na komputerach. Serwis może nieprawidłowo wyświetlać się na urządzeniach mobilnych. Do korzystania z kursu zalecana jest przeglądarka Chrome, Chromium oraz Mozilla Firefox.  Na przeglądarce Edge,  Internet Explorer oraz Safari serwis może wyświetlać się nieprawidłowo."}
+                                          bodyText={"Kurs został przygotowany z myślą o korzystaniu z niego na komputerach. Serwis może nieprawidłowo wyświetlać się na urządzeniach mobilnych. Do korzystania z kursu zalecana jest przeglądarka Chrome, Chromium albo Mozilla Firefox.  Na przeglądarce Edge,  Internet Explorer oraz Safari serwis może wyświetlać się nieprawidłowo."}
                                           style={{marginBottom: "30px"}}/>
                         </div>
                         {registerPanel}

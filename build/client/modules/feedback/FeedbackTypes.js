@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var FeedbackTypes = {
   NONE: "NONE",
+  CONFIRM_ONLY: "CONFIRM_ONLY",
   BINARY: "BINARY",
   QUIZ: "QUIZ",
   POINTS: "POINTS",

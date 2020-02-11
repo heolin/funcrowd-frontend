@@ -24,6 +24,14 @@
   padding: 8px !important;
 }
 
+.menu-link:hover {
+  text-decoration: underline !important;
+}
+
+.nav-link-selected {
+  text-decoration: underline;
+}
+
 .nav-item {
   cursor: pointer;
   padding: 0 10px;

@@ -15,6 +15,8 @@ var _ImageModal = _interopRequireDefault(require("./ImageModal"));
 
 var _ScreenBreakpoints = _interopRequireDefault(require("../../../../utils/ScreenBreakpoints"));
 
+var _LocalizationManager = _interopRequireDefault(require("../../../../logic/locatization/LocalizationManager"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -123,7 +125,11 @@ function (_React$Component) {
       }, _react["default"].createElement(_ImageModal["default"], {
         image: this.state.selectedImage,
         onClose: this.onImageModalClose
-      }), label, _react["default"].createElement("div", null, _react["default"].createElement(_reactSlick["default"], this.settings, items)));
+      }), label, _react["default"].createElement("div", {
+        style: {
+          marginTop: "15px"
+        }
+      }, _react["default"].createElement("i", null, _LocalizationManager["default"].general.imageGalleryHelp)), _react["default"].createElement("div", null, _react["default"].createElement(_reactSlick["default"], this.settings, items)));
     }
   }]);
 

@@ -19,17 +19,15 @@ export default class Navbar extends React.Component {
     }
 
     static getDerivedStateFromProps(props, state) {
+        let result = {};
+
         if (props.user !== state.user) {
-            return {
-                user: props.user,
-            };
+            result['user'] = props.user;
         }
         if (props.location !== state.location) {
-            return {
-                location: location
-            };
+            result['location'] = props.location;
         }
-        return null;
+        return result;
     }
 
     render() {
@@ -46,7 +44,9 @@ export default class Navbar extends React.Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav mr-auto"/>
-                        <NavbarMenu showSideProfile={this.props.showSideProfile} onLogout={this.props.onLogout}/>
+                        <NavbarMenu location={this.state.location}
+                                    showSideProfile={this.props.showSideProfile}
+                                    onLogout={this.props.onLogout}/>
                     </div>
                 </nav>
             );

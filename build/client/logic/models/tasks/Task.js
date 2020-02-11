@@ -14,7 +14,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var Task =
 /*#__PURE__*/
 function () {
-  function Task(id, mission_id, name, description, instruction, keywords, achievements, metadata, totalExp) {
+  function Task(id, mission_id, name, description, instruction, keywords, achievements, metadata, totalExp, feedback) {
     _classCallCheck(this, Task);
 
     this.id = id;
@@ -26,12 +26,13 @@ function () {
     this.achievements = achievements;
     this.metadata = metadata;
     this.totalExp = totalExp;
+    this.feedback = feedback;
   }
 
   _createClass(Task, null, [{
     key: "fromJson",
     value: function fromJson(task_data) {
-      var task = new Task(task_data.id, task_data.mission, task_data.name, task_data.description, task_data.instruction, task_data.keywords, task_data.achievements_count, task_data.metadata, task_data.total_exp);
+      var task = new Task(task_data.id, task_data.mission, task_data.name, task_data.description, task_data.instruction, task_data.keywords, task_data.achievements_count, task_data.metadata, task_data.total_exp, task_data.feedback);
       return task;
     }
   }]);

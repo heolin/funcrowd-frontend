@@ -40,16 +40,23 @@ var NavbarLoginMenu =
 function (_React$Component) {
   _inherits(NavbarLoginMenu, _React$Component);
 
-  function NavbarLoginMenu() {
+  function NavbarLoginMenu(props) {
+    var _this;
+
     _classCallCheck(this, NavbarLoginMenu);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(NavbarLoginMenu).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(NavbarLoginMenu).call(this, props));
+    _this.state = {
+      user: null,
+      location: null
+    };
+    return _this;
   }
 
   _createClass(NavbarLoginMenu, [{
     key: "render",
     value: function render() {
-      if (!this.props.location) return null;
+      if (!this.state.location) return null;
       return _react["default"].createElement("div", {
         className: "small"
       }, _react["default"].createElement(_NavbarMenuButton["default"], {
@@ -60,15 +67,30 @@ function (_React$Component) {
       }), _react["default"].createElement(_NavbarLoginButton["default"], {
         targetPath: _Urls["default"].LOGIN,
         name: _LocalizationManager["default"].labels.login,
-        isSelected: _Urls["default"].checkUrl(this.props.location.hash, _Urls["default"].LOGIN) || _Urls["default"].checkUrl(this.props.location.hash, _Urls["default"].RESET_PASSWORD)
+        isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].LOGIN) || _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].RESET_PASSWORD)
       }), _react["default"].createElement(_NavbarLoginButton["default"], {
         targetPath: _Urls["default"].REGISTER,
         name: _LocalizationManager["default"].labels.register,
-        isSelected: _Urls["default"].checkUrl(this.props.location.hash, _Urls["default"].REGISTER),
+        isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].REGISTER),
         style: {
           marginLeft: "20px"
         }
       }));
+    }
+  }], [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(props, state) {
+      var result = {};
+
+      if (props.user !== state.user) {
+        result['user'] = props.user;
+      }
+
+      if (props.location !== state.location) {
+        result['location'] = props.location;
+      }
+
+      return result;
     }
   }]);
 

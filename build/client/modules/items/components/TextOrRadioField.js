@@ -70,25 +70,30 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var options = [_react["default"].createElement(_RadioOtherElement["default"], {
+      var order = this.props.source.order;
+
+      var textElement = _react["default"].createElement(_RadioOtherElement["default"], {
         key: "other",
         className: "small",
         name: this.props.name,
         onChange: this.handleChange,
         required: this.props.required,
-        text: "",
+        text: this.props.source.label,
         disabled: !this.state.otherSelected
-      })];
-      this.props.source.forEach(function (option) {
-        options.push(_react["default"].createElement(_RadioElement["default"], {
+      });
+
+      var values = this.props.source.values;
+      var options = values.map(function (option) {
+        return _react["default"].createElement(_RadioElement["default"], {
           key: option,
           className: "small",
           name: _this2.props.name,
           onChange: _this2.handleChange,
           required: _this2.props.required,
           value: option
-        }));
+        });
       });
+      if (order === 'first') options.unshift(textElement);else options.push(textElement);
       var label;
       if (this.props.label) label = _react["default"].createElement("label", null, _react["default"].createElement("strong", null, this.props.label));
       return _react["default"].createElement("div", {

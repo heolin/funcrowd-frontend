@@ -30,9 +30,8 @@ export class TextCollapse extends React.Component {
                     {this.props.headText}
                 </div>
                 <div className={"text-collapse-body" + className}>
-                    <div style={{padding: "10px"}}>
-                        {this.props.bodyText}
-                    </div>
+                    <div style={{padding: "20px"}}
+                         dangerouslySetInnerHTML={{__html: this.props.bodyText}}/>
                 </div>
             </div>
         )

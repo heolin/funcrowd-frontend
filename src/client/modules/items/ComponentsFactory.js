@@ -11,10 +11,10 @@ import TextTagField from "./components/TextTagField";
 import ImageField from "./components/ImageField";
 import LikertScaleField from "./components/LikertScaleField";
 import NumberField from "./components/NumberField";
-import RadioOtherField from "./components/RadioOtherField";
 import CheckboxField from "./components/CheckboxField";
 import TextHeader from "./components/TextHeader";
 import TextOrRadioField from "./components/TextOrRadioField";
+import ProgressBar from "./components/ProgressBar";
 
 
 let Components = {
@@ -24,8 +24,8 @@ let Components = {
     "PDF": TextLabel,
     "TextField": TextField,
     "RadioField": RadioField,
-    "RadioOtherField": RadioOtherField,
     "TextOrRadioField": TextOrRadioField,
+    "ProgressBar": ProgressBar,
     "MultiChoiceField": MultiChoiceField,
     "SelectField": SelectField,
     "LinkButton": LinkButton,

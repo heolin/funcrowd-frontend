@@ -41,6 +41,9 @@ function () {
     value: function create(type, isOpen, onAccept, task, annotation, feedback, exp) {
       switch (type) {
         case _FeedbackTypes["default"].NONE:
+          return null;
+
+        case _FeedbackTypes["default"].CONFIRM_ONLY:
           return _react["default"].createElement(_FeedbackModal["default"], {
             isOpen: isOpen,
             onAccept: onAccept,

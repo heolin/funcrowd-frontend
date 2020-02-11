@@ -31,13 +31,13 @@ var _LikertScaleField = _interopRequireDefault(require("./components/LikertScale
 
 var _NumberField = _interopRequireDefault(require("./components/NumberField"));
 
-var _RadioOtherField = _interopRequireDefault(require("./components/RadioOtherField"));
-
 var _CheckboxField = _interopRequireDefault(require("./components/CheckboxField"));
 
 var _TextHeader = _interopRequireDefault(require("./components/TextHeader"));
 
 var _TextOrRadioField = _interopRequireDefault(require("./components/TextOrRadioField"));
+
+var _ProgressBar = _interopRequireDefault(require("./components/ProgressBar"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -54,8 +54,8 @@ var Components = {
   "PDF": _TextLabel["default"],
   "TextField": _TextField["default"],
   "RadioField": _RadioField["default"],
-  "RadioOtherField": _RadioOtherField["default"],
   "TextOrRadioField": _TextOrRadioField["default"],
+  "ProgressBar": _ProgressBar["default"],
   "MultiChoiceField": _MultiChoiceField["default"],
   "SelectField": _SelectField["default"],
   "LinkButton": _LinkButton["default"],

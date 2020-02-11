@@ -73,7 +73,6 @@ export class SideProfilePanel extends React.Component {
     updateRanking() {
         RankingRepository.user(UserManager.user.id)
             .then((row) => {
-                console.log(row);
                 this.setState({
                     ranking: row.position,
                 });

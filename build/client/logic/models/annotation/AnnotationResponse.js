@@ -20,19 +20,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var AnnotationResponse =
 /*#__PURE__*/
 function () {
-  function AnnotationResponse(annotation, isVerified, errors, expBase, expBonus) {
+  function AnnotationResponse(annotation, isVerified, errors, expBase, expBonus, nextItemId) {
     _classCallCheck(this, AnnotationResponse);
 
     this.annotation = annotation;
     this.isVerified = isVerified;
+    this.nextItemId = nextItemId;
     this.errors = errors;
     this.exp = new _Exp["default"](expBase, expBonus);
   }
 
-  _createClass(AnnotationResponse, null, [{
+  _createClass(AnnotationResponse, [{
+    key: "isLastItem",
+    get: function get() {
+      return this.nextItemId === null;
+    }
+  }], [{
     key: "fromJson",
     value: function fromJson(responseData) {
-      var annotationResponse = new AnnotationResponse(_Annotation["default"].fromJson(responseData.annotation), responseData.is_verified, responseData.errors, responseData.exp_base, responseData.exp_bonus);
+      var annotationResponse = new AnnotationResponse(_Annotation["default"].fromJson(responseData.annotation), responseData.is_verified, responseData.errors, responseData.exp_base, responseData.exp_bonus, responseData.next_item_id);
       return annotationResponse;
     }
   }]);

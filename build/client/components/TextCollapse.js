@@ -75,9 +75,12 @@ function (_React$Component) {
         className: "text-collapse-body" + className
       }, _react["default"].createElement("div", {
         style: {
-          padding: "10px"
+          padding: "20px"
+        },
+        dangerouslySetInnerHTML: {
+          __html: this.props.bodyText
         }
-      }, this.props.bodyText)));
+      })));
     }
   }]);
 

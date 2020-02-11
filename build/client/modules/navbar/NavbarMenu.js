@@ -49,7 +49,8 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(NavbarMenu).call(this, props));
     _this.state = {
-      user: null
+      user: null,
+      location: null
     };
     return _this;
   }
@@ -57,12 +58,14 @@ function (_React$Component) {
   _createClass(NavbarMenu, [{
     key: "render",
     value: function render() {
+      if (!this.state.location) return null;
       var elements = [];
       if (_ConfigManager["default"].profile.bounties) elements.push(_react["default"].createElement(_NavbarMenuButton["default"], {
         key: "bounties",
         targetPath: _Urls["default"].BOUNTIES,
         name: _LocalizationManager["default"].labels.bounties,
         icon: "bounties",
+        isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].BOUNTIES),
         iconStyle: {
           marginTop: "-10px"
         }
@@ -71,24 +74,28 @@ function (_React$Component) {
         key: "missions",
         targetPath: _Urls["default"].MISSIONS,
         name: _LocalizationManager["default"].labels.missions,
+        isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].MISSIONS),
         icon: "missions"
       }));
       if (_ConfigManager["default"].profile.about) elements.push(_react["default"].createElement(_NavbarMenuButton["default"], {
         key: "about",
         targetPath: _Urls["default"].ABOUT,
         name: _LocalizationManager["default"].labels.about,
+        isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].ABOUT),
         icon: "about"
       }));
       if (_ConfigManager["default"].profile.achievements) elements.push(_react["default"].createElement(_NavbarMenuButton["default"], {
         key: "achievements",
         targetPath: _Urls["default"].ACHIEVEMENTS,
         name: _LocalizationManager["default"].labels.achievements,
+        isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].ACHIEVEMENTS),
         icon: "achievements"
       }));
       if (_ConfigManager["default"].profile.ranking) elements.push(_react["default"].createElement(_NavbarMenuButton["default"], {
         key: "ranking",
         targetPath: _Urls["default"].RANKING,
         name: _LocalizationManager["default"].labels.ranking,
+        isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].RANKING),
         icon: "ranking"
       }));
       if (_ConfigManager["default"].profile.profile) elements.push(_react["default"].createElement(_NavbarProfile["default"], {
@@ -107,13 +114,17 @@ function (_React$Component) {
   }], [{
     key: "getDerivedStateFromProps",
     value: function getDerivedStateFromProps(props, state) {
+      var result = {};
+
       if (props.user !== state.user) {
-        return {
-          user: props.user
-        };
+        result['user'] = props.user;
       }
 
-      return null;
+      if (props.location !== state.location) {
+        result['location'] = props.location;
+      }
+
+      return result;
     }
   }]);
 

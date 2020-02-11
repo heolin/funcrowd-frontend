@@ -92,7 +92,10 @@ function (_React$Component) {
         style: {
           marginBottom: "20px"
         }
-      }, "O projekcie"), _react["default"].createElement("p", null, "Kurs nauki programu Excel zosta\u0142 przygotowany w ramach pracy naukowej wykonywanej przez Dagmar\u0119 Dziedzic, doktorantk\u0119 Wydzia\u0142u Psychologii i Kognitywistyki (UAM Pozna\u0144) na kierunku Nauki o Poznaniu i Komunikacji Spo\u0142ecznej. Zadania w kursie zosta\u0142y przygotowane w oparciu o sylabus Europejskiego Certyfikatu Umiej\u0119tno\u015Bci Komputerowych i by\u0142y konsultowane ze specjalistami, kt\xF3rzy na co dzie\u0144 korzystaj\u0105 z programu Excel.   Celem tego kursu jest, po pierwsze - przekazanie wiedzy z trzech dzia\u0142\xF3w dotycz\u0105cych obs\u0142ugi programu, a po drugie - zebranie danych dotycz\u0105cych uczenia si\u0119. Bardziej szczeg\xF3\u0142owe informacje znajdziesz w FAQu poni\u017Cej.")), _react["default"].createElement("div", {
+      }, "O projekcie"), _react["default"].createElement("p", null, "Kurs nauki programu Excel zosta\u0142 przygotowany w ramach pracy naukowej wykonywanej przez mgr Dagmar\u0119 Dziedzic, doktorantk\u0119 Wydzia\u0142u Psychologii i Kognitywistyki (UAM Pozna\u0144). Zadania w kursie zosta\u0142y przygotowane w oparciu o ", _react["default"].createElement("a", {
+        href: "https://ecdl.pl/wp-content/uploads/2016/01/b41.pdf",
+        target: "_blank"
+      }, "sylabus Europejskiego Certyfikatu Umiej\u0119tno\u015Bci Komputerowych"), " i by\u0142y konsultowane ze specjalistami, kt\xF3rzy na co dzie\u0144 korzystaj\u0105 z programu Excel.   Celem tego kursu jest, po pierwsze - przekazanie wiedzy z trzech dzia\u0142\xF3w dotycz\u0105cych obs\u0142ugi programu, a po drugie - zebranie informacji dotycz\u0105cych uczenia si\u0119. Bardziej szczeg\xF3\u0142owe informacje znajdziesz w FAQu poni\u017Cej.")), _react["default"].createElement("div", {
         className: "col-md-4 col-12",
         style: {
           textAlign: "center",
@@ -124,7 +127,7 @@ function (_React$Component) {
         }
       }), _react["default"].createElement(_TextCollapse.TextCollapse, {
         headText: 'Czego się nauczę podczas kursu?',
-        bodyText: "Zadania dostępne w kursie zostały przygotowane w oparciu o sylabus Europejskiego Certyfikatu Umiejętności Komputerowych i dotyczą trzech działów nauki programu Excel: reguł arytmetycznych, funkcji , liczb i dat. Po ukończeniu tego kursu będziesz wiedzieć jak prawidłowo odwoływać się do komórek i stosować operatory arytmetyczne. Nauczysz się korzystania z adresowania bezwzględnego, poznasz działanie wielu funkcji oraz nauczysz się formatowania komórek wyświetlając liczby, daty, procenty i waluty.",
+        bodyText: "Zadania dostępne w kursie zostały przygotowane w oparciu o <a href=\"https://ecdl.pl/wp-content/uploads/2016/01/b41.pdf\" target=\"_blank\">sylabus Europejskiego Certyfikatu Umiejętności Komputerowych</a> i dotyczą trzech działów nauki programu Excel: reguł arytmetycznych, funkcji , liczb i dat. Po ukończeniu tego kursu będziesz wiedzieć jak prawidłowo odwoływać się do komórek i stosować operatory arytmetyczne. Nauczysz się korzystania z adresowania bezwzględnego, poznasz działanie wielu funkcji oraz nauczysz się formatowania komórek wyświetlając liczby, daty, procenty i waluty.",
         style: {
           marginBottom: "30px"
         }
@@ -142,13 +145,13 @@ function (_React$Component) {
         }
       }), _react["default"].createElement(_TextCollapse.TextCollapse, {
         headText: 'Na czym będzie polegało badanie?',
-        bodyText: "Niestety nie mogę tego zdradzić, ale podczas kursu zostaniesz poproszony/na o wypełnienie kilku ankiet dotyczących Twoich postępów i zaangażowania.",
+        bodyText: "Podczas kursu zostaniesz poproszony/na o wypełnienie kilku ankiet dotyczących Twoich postępów i zaangażowania.",
         style: {
           marginBottom: "30px"
         }
       }), _react["default"].createElement(_TextCollapse.TextCollapse, {
-        headText: 'Jakie moje dane są zbierane przez serwis?',
-        bodyText: "W związku z tym, że kurs jest równocześnie badaniem naukowym, konieczna jest możliwość wyciągnięcia wniosków dotyczących osób uczących się. Dlatego serwis przechowuje podstawowe dane o użytkownikach, takie jak liczba wykonanych zadań, czy szybkość ich rozwiązywania. Wspomniane dane zostaną zakodowane i będą przetwarzane z poszanowaniem Twojej prywatności i anonimowości. Na potrzeby badania i sprawozdania wyników posłużę się jedynie danymi zagregowanymi.",
+        headText: 'Jakie dane na mój temat są zbierane przez serwis?',
+        bodyText: "W związku z tym, że kurs jest równocześnie badaniem naukowym, konieczna jest możliwość wyciągnięcia wniosków dotyczących nie osób, ale sposobu uczenia się. Dlatego serwis przechowuje podstawowe dane o użytkownikach, takie jak liczba wykonanych zadań, czy szybkość ich rozwiązywania. Wspomniane dane zostaną zakodowane i będą przetwarzane z poszanowaniem Twojej prywatności i anonimowości. Na potrzeby badania i sprawozdania wyników posłużę się jedynie danymi zagregowanymi.",
         style: {
           marginBottom: "30px"
         }
@@ -160,7 +163,7 @@ function (_React$Component) {
         }
       }), _react["default"].createElement(_TextCollapse.TextCollapse, {
         headText: 'Jakie są wymagania techniczne kursu?',
-        bodyText: "Kurs został przygotowany z myślą o korzystaniu z niego na komputerach. Serwis może nieprawidłowo wyświetlać się na urządzeniach mobilnych. Do korzystania z kursu zalecana jest przeglądarka Chrome, Chromium oraz Mozilla Firefox.  Na przeglądarce Edge,  Internet Explorer oraz Safari serwis może wyświetlać się nieprawidłowo.",
+        bodyText: "Kurs został przygotowany z myślą o korzystaniu z niego na komputerach. Serwis może nieprawidłowo wyświetlać się na urządzeniach mobilnych. Do korzystania z kursu zalecana jest przeglądarka Chrome, Chromium albo Mozilla Firefox.  Na przeglądarce Edge,  Internet Explorer oraz Safari serwis może wyświetlać się nieprawidłowo.",
         style: {
           marginBottom: "30px"
         }

@@ -13,6 +13,9 @@ class _FeedbackFactory {
     create(type, isOpen, onAccept, task, annotation, feedback, exp) {
         switch(type) {
             case FeedbackTypes.NONE:
+                return null;
+
+            case FeedbackTypes.CONFIRM_ONLY:
                 return <FeedbackModal isOpen={isOpen}
                                       onAccept={onAccept}
                                       headerText={L.feedback.annotationSaved}

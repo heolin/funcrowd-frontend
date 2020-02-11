@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import Image from "./Image";
 import ImageModal from "./ImageModal";
 import ScreenBreakpoints from "../../../../utils/ScreenBreakpoints";
+import L from "../../../../logic/locatization/LocalizationManager";
 
 
 
@@ -84,6 +85,11 @@ export default class ImagesGallery extends React.Component {
                 <ImageModal image={this.state.selectedImage}
                             onClose={this.onImageModalClose}/>
                 {label}
+                <div style={{marginTop: "15px"}}>
+                    <i>
+                        {L.general.imageGalleryHelp}
+                    </i>
+                </div>
                 <div>
                     <Slider {...this.settings}>
                         {items}
