@@ -33,7 +33,8 @@ export default class ItemForm extends React.Component {
     }
 
     componentWillReceiveProps(props) {
-        this.setItemState(props.item);
+        if (this.state.item.id !== props.item.id)
+            this.setItemState(props.item);
     }
 
     setupItem(item) {
