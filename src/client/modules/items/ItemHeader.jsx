@@ -1,6 +1,7 @@
 import React from "react"
 import {Breadcrumbs, BreadcrumbItem} from "../../components/Breadcrumbs";
 import L from "../../logic/locatization/LocalizationManager";
+import ConfigManager from "../../logic/config/ConfigManager";
 import {Icon, SmallIcon} from "../../components/Icons";
 import {CircleImage} from "../../components/Image";
 
@@ -24,7 +25,7 @@ export default class ItemHeader extends React.Component {
                 </div>);
 
         let experience = null;
-        if (task.totalExp > 0)
+        if (ConfigManager.profile.exp && task.totalExp > 0)
             experience = (
                 <div className="d-inline-block">
                     <SmallIcon name="experience"/>

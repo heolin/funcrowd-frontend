@@ -11,6 +11,10 @@ export default {
         en: "About",
         pl: "O projekcie"
     },
+    profile: {
+        en: "Profile",
+        pl: "Profil"
+    },
     achievements: {
         en: "Achievements",
         pl: "Osiągnięcia"

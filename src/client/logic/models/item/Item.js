@@ -1,7 +1,11 @@
 
+let uniqueItemIndex = 0;
+
+
 export default class Item {
     constructor(id, task, data, template) {
         this.id = id;
+        this.index = uniqueItemIndex;
         this.task = task;
         this.data = data;
         this.template = template;
@@ -9,6 +13,8 @@ export default class Item {
         template.fields.forEach((field) => {
             this.templateFields[field.name] = field;
         });
+
+        uniqueItemIndex += 1;
     }
 
     static fromJson(item_data) {

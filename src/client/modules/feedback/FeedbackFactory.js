@@ -6,11 +6,15 @@ import feedbackSurvey from "../../static/img/feedback/feedback_survey.svg";
 import BinaryFeedbackModal from "./BinaryFeedbackModal";
 import PointsFeedbackModal from "./PointsFeedbackModal";
 import QuizFeedbackModal from "./QuizFeedbackModal";
+import ConfigManager from "../../logic/config/ConfigManager";
 
 
 class _FeedbackFactory {
 
     create(type, isOpen, onAccept, task, annotation, feedback, exp) {
+        if (ConfigManager.profile.exp === false && type === FeedbackTypes.POINTS)
+            type = FeedbackTypes.BINARY;
+
         switch(type) {
             case FeedbackTypes.NONE:
                 return null;

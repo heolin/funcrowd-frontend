@@ -2,6 +2,7 @@ import React from "react"
 
 import Card from "../../components/animated/Card";
 import ProgressBar from "../../components/ProgressBar";
+import ConfigManager from "../../logic/config/ConfigManager";
 import {Icon, SmallIcon} from "../../components/Icons";
 
 import L from "../../logic/locatization/LocalizationManager";
@@ -33,7 +34,7 @@ export default class MissionCard extends React.Component {
         let lockedClassName = locked ? "locked" : "";
         let iconClassName = locked ? "greyscale" : "";
 
-        if (mission.achievements)
+        if (ConfigManager.profile.achievements && mission.achievements)
             achievements = (
                 <div className="mission-card-label">
                     <SmallIcon className={iconClassName} name="achievements"/>
@@ -42,7 +43,7 @@ export default class MissionCard extends React.Component {
                     </span>
                 </div>);
 
-        if (mission.totalExp > 0)
+        if (ConfigManager.profile.exp && mission.totalExp > 0)
             experience = (
                 <div className="mission-card-label">
                     <SmallIcon className={iconClassName} name="experience"/>

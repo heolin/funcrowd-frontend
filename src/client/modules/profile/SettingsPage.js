@@ -118,7 +118,8 @@ export default class SettingsPage extends React.Component {
     }
 
     render() {
-        if (this.state.loading)
+        if (this.state.loading ||
+            UserManager.user === null)
             return <Loading/>;
 
         let settingsMessageClassName = this.state.settingsError ? "error" : "";

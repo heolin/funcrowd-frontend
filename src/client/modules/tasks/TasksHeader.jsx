@@ -3,6 +3,7 @@ import ProgressBar from "../../components/ProgressBar";
 import {Breadcrumbs, BreadcrumbItem} from "../../components/Breadcrumbs";
 import L from "../../logic/locatization/LocalizationManager";
 import {Icon, SmallIcon} from "../../components/Icons";
+import ConfigManager from "../../logic/config/ConfigManager";
 import {CircleImage} from "../../components/Image";
 
 
@@ -21,16 +22,17 @@ export default class TasksHeader extends React.Component {
                     <small> {mission.tasksCount} {L.general.missions}</small>
                 </div>);
 
+        let experience = null;
         let achievements = null;
-        if (mission.achievements > 0)
+
+        if (ConfigManager.profile.achievements && mission.achievements > 0)
             achievements = (
                 <div className="d-inline-block">
                     <SmallIcon name="achievements"/>
                     <small> {mission.achievements} {L.general.achievements}</small>
                 </div>);
 
-        let experience = null;
-        if (mission.totalExp > 0)
+        if (ConfigManager.profile.exp && mission.totalExp > 0)
             experience = (
                 <div className="d-inline-block">
                     <SmallIcon name="experience"/>

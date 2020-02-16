@@ -12,6 +12,7 @@ import TaskProgressRepository from "../../logic/repositories/TaskProgressReposit
 import MissionProgressRepository from "../../logic/repositories/MissionProgressRepository";
 import Loading from "../../components/Loading";
 import AchievementsRepository from "../../logic/repositories/AchievementsRepository";
+import ConfigManager from "../../logic/config/ConfigManager";
 import {Footer} from "../../Footer";
 
 const ListContainer = posed.div({
@@ -116,8 +117,10 @@ export default class TasksMenu extends React.Component {
                                        progress={this.state.taskProgress[task.id]}
                                        onSelect={() => this.props.onTaskSelect(task)}/>);
 
+        const lineClass = ConfigManager.profile.achievements ? "" : " noline";
+
         return (
-            <ListContainer className="task-cards">
+            <ListContainer className={"task-cards" + lineClass}>
                 {tasks}
             </ListContainer>
         );
@@ -130,41 +133,51 @@ export default class TasksMenu extends React.Component {
             this.state.loadingAchievements)
             return <Loading/>;
 
-        let achievements = this.state.achievements.map(
-            (achievement) => (
-                <div className="col-lg-12 col-md-6 col-sm-12" key={achievement.id}>
-                    <AchievementCard achievement={achievement}/>
+        let mainColumnClass = "col-lg-12";
+        let sideColumn = null;
+
+        if (ConfigManager.profile.achievements) {
+            mainColumnClass = "col-lg-8";
+
+            let achievements = this.state.achievements.map(
+                (achievement) => (
+                    <div className="col-lg-12 col-md-6 col-sm-12" key={achievement.id}>
+                        <AchievementCard achievement={achievement}/>
+                    </div>
+                )
+            );
+
+            sideColumn = (<div className="col-lg-4 col-md-12">
+                <div className="tasks-achievements-introduction">
+                    <h3>{L.labels.achievements}</h3>
+                    W tym dziale możesz zdobyć
                 </div>
-            )
-        );
+                <div className="row achievements-row">
+                    {achievements}
+                    <div className="col-sm-12 text-right color-blue small"
+                         style={{paddingRight: "30px", paddingBottom: "30px"}}>
+                        <Link to="/achievements">
+                            Zobacz wszystkie osiągnięcia
+                        </Link>
+                    </div>
+                </div>
+            </div>);
+        }
+
 
         return (
             <div className="container-fluid base-row">
                 <TaskHeader mission={this.props.mission} progress={this.state.progress}/>
                 <div className="container">
                     <div className="row tasks-row">
-                        <div className="col-md-12 col-lg-8">
+                        <div className={"col-md-12 " + mainColumnClass}>
                             <div className="tasks-introduction">
                                 <h3>{L.labels.missions}</h3>
                                 {this.props.mission.instruction}
                             </div>
                             {this.getCardsPanel()}
                         </div>
-                        <div className="col-lg-4 col-md-12">
-                            <div className="tasks-achievements-introduction">
-                                <h3>{L.labels.achievements}</h3>
-                                W tym dziale możesz zdobyć
-                            </div>
-                            <div className="row achievements-row">
-                                {achievements}
-                                <div className="col-sm-12 text-right color-blue small"
-                                     style={{paddingRight: "30px", paddingBottom: "30px"}}>
-                                    <Link to="/achievements">
-                                        Zobacz wszystkie osiągnięcia
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
+                        {sideColumn}
                     </div>
                 </div>
             </div>
