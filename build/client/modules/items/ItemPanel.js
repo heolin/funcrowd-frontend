@@ -163,7 +163,7 @@ function (_React$Component) {
     key: "onNoItems",
     value: function onNoItems() {
       var metadata = this.state.task.metadata;
-      if (metadata.redirectOnNoItems == true) this.props.history.push('/mission/' + this.state.task.mission_id + '/tasks');
+      if (metadata.redirectOnNoItems === true) this.props.history.push('/mission/' + this.state.task.mission_id + '/tasks');
     }
   }, {
     key: "getFirstItem",
@@ -195,6 +195,9 @@ function (_React$Component) {
       var item = this.state.item;
 
       _ItemRepository["default"].getNextItem(item.id).then(function (item) {
+        console.log('get next');
+        console.log(item);
+        console.log(_this5.state.item);
         if (item == null) _this5.onNoItems();
 
         _this5.setState({

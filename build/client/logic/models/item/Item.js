@@ -11,6 +11,8 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+var uniqueItemIndex = 0;
+
 var Item =
 /*#__PURE__*/
 function () {
@@ -20,6 +22,7 @@ function () {
     _classCallCheck(this, Item);
 
     this.id = id;
+    this.index = uniqueItemIndex;
     this.task = task;
     this.data = data;
     this.template = template;
@@ -27,6 +30,7 @@ function () {
     template.fields.forEach(function (field) {
       _this.templateFields[field.name] = field;
     });
+    uniqueItemIndex += 1;
   }
 
   _createClass(Item, null, [{

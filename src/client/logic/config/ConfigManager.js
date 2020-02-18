@@ -23,6 +23,12 @@ class _ConfigManager {
         this.profile = ProfileConfigs[user.profile];
     }
 
+    changeProfile(profile) {
+        this.profile = ProfileConfigs[profile];
+        console.log("CHANGE PROFILE");
+        console.log(this.profile);
+    }
+
     logout() {
         this.profile = ProfileConfigs[ProfileTypes.NOTLOGGED];
     }

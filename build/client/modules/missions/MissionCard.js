@@ -11,6 +11,8 @@ var _Card = _interopRequireDefault(require("../../components/animated/Card"));
 
 var _ProgressBar = _interopRequireDefault(require("../../components/ProgressBar"));
 
+var _ConfigManager = _interopRequireDefault(require("../../logic/config/ConfigManager"));
+
 var _Icons = require("../../components/Icons");
 
 var _LocalizationManager = _interopRequireDefault(require("../../logic/locatization/LocalizationManager"));
@@ -69,7 +71,7 @@ function (_React$Component) {
       var locked = progress.status === "LOCKED";
       var lockedClassName = locked ? "locked" : "";
       var iconClassName = locked ? "greyscale" : "";
-      if (mission.achievements) achievements = _react["default"].createElement("div", {
+      if (_ConfigManager["default"].profile.achievements && mission.achievements) achievements = _react["default"].createElement("div", {
         className: "mission-card-label"
       }, _react["default"].createElement(_Icons.SmallIcon, {
         className: iconClassName,
@@ -77,7 +79,7 @@ function (_React$Component) {
       }), _react["default"].createElement("span", {
         className: "mission-card-label-text"
       }, mission.achievements, " ", _LocalizationManager["default"].general.achievements));
-      if (mission.totalExp > 0) experience = _react["default"].createElement("div", {
+      if (_ConfigManager["default"].profile.exp && mission.totalExp > 0) experience = _react["default"].createElement("div", {
         className: "mission-card-label"
       }, _react["default"].createElement(_Icons.SmallIcon, {
         className: iconClassName,

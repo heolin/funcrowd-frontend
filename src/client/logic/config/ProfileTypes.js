@@ -3,9 +3,9 @@ let ProfileTypes = {
     NOTLOGGED: -1,
     MTURK: 0,
     NORMAL: 1,
-    ELEARNING: 2,
-    GAMIFICATION: 3,
-    GAME: 4
+    GAMIFICATION: 2,
+    ELEARNING: 3,
+    SERIOUS_GAME: 4
 };
 
 

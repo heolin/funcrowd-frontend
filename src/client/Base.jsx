@@ -56,6 +56,7 @@ export class AppBase extends React.Component {
             checkingUser: true,
             checkingParams: true,
             user: null,
+            profile: null,
             mission: null,
             task: null,
             bounty: null,
@@ -70,11 +71,18 @@ export class AppBase extends React.Component {
         this.showSideProfile = this.showSideProfile.bind(this);
         this.hideSideProfile = this.hideSideProfile.bind(this);
         this.redirectToHome = this.redirectToHome.bind(this);
+        this.onProfileChanged = this.onProfileChanged.bind(this);
     }
 
     componentDidMount() {
         this.checkSessionUser();
         this.checkUrlParams();
+
+        UserManager.addProfileChangeHandler(this.onProfileChanged);
+    }
+
+    componentWillUnmount() {
+        UserManager.removeProfileChangeHandler(this.onProfileChanged);
     }
 
     checkSessionUser() {
@@ -109,15 +117,30 @@ export class AppBase extends React.Component {
     onLogin(user, saveUser) {
         SessionManager.login(user, saveUser);
         ConfigManager.setup(user);
-        this.setState({user: user, checkingUser: false});
+        this.setState({
+            user: user,
+            checkingUser: false,
+            profile: user.profile
+        });
         this.redirectToHome();
+    }
+
+    onProfileChanged() {
+        //this.setState({
+        //    profile: UserManager.user.profile
+        //});
+        this.forceUpdate();
+        console.log("UPDATING PROFILE");
     }
 
     redirectToHome() {
         if (urls.checkUrl(this.props.location.pathname, urls.HOME) ||
             urls.checkUrl(this.props.location.pathname, urls.ACTIVATION) ||
             urls.checkUrl(this.props.location.pathname, urls.LOGIN)) {
-            if (UserManager.user.profile == ProfileTypes.NORMAL) {
+            if (UserManager.user.profile === ProfileTypes.NORMAL ||
+                UserManager.user.profile === ProfileTypes.GAMIFICATION ||
+                UserManager.user.profile === ProfileTypes.ELEARNING
+            ) {
                 this.props.history.push(urls.MISSIONS);
             } else {
                 this.props.history.push(urls.BOUNTIES);
@@ -127,7 +150,10 @@ export class AppBase extends React.Component {
 
     onLogout() {
         this.hideSideProfile();
-        this.setState({user: null});
+        this.setState({
+            user: null,
+            profile: null
+        });
         SessionManager.logout();
         ConfigManager.logout();
         this.props.history.push('/');

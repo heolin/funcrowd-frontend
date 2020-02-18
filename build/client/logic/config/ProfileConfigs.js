@@ -16,6 +16,7 @@ ProfileConfigs[_ProfileTypes["default"].NOTLOGGED] = {
   missions: false,
   achievements: false,
   about: false,
+  exp: false,
   ranking: false,
   bounties: false,
   profile: false,
@@ -23,8 +24,29 @@ ProfileConfigs[_ProfileTypes["default"].NOTLOGGED] = {
 };
 ProfileConfigs[_ProfileTypes["default"].NORMAL] = {
   missions: true,
+  achievements: false,
+  about: true,
+  exp: false,
+  ranking: false,
+  bounties: false,
+  profile: false,
+  availablePages: null
+};
+ProfileConfigs[_ProfileTypes["default"].ELEARNING] = {
+  missions: true,
+  achievements: false,
+  about: true,
+  exp: false,
+  ranking: false,
+  bounties: false,
+  profile: true,
+  availablePages: null
+};
+ProfileConfigs[_ProfileTypes["default"].GAMIFICATION] = {
+  missions: true,
   achievements: true,
   about: true,
+  exp: true,
   ranking: true,
   bounties: false,
   profile: true,

@@ -15,6 +15,8 @@ var _LocalizationManager = _interopRequireDefault(require("../../logic/locatizat
 
 var _Icons = require("../../components/Icons");
 
+var _ConfigManager = _interopRequireDefault(require("../../logic/config/ConfigManager"));
+
 var _Image = require("../../components/Image");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -62,14 +64,14 @@ function (_React$Component) {
       }, _react["default"].createElement(_Icons.SmallIcon, {
         name: "missions"
       }), _react["default"].createElement("small", null, " ", mission.tasksCount, " ", _LocalizationManager["default"].general.missions));
+      var experience = null;
       var achievements = null;
-      if (mission.achievements > 0) achievements = _react["default"].createElement("div", {
+      if (_ConfigManager["default"].profile.achievements && mission.achievements > 0) achievements = _react["default"].createElement("div", {
         className: "d-inline-block"
       }, _react["default"].createElement(_Icons.SmallIcon, {
         name: "achievements"
       }), _react["default"].createElement("small", null, " ", mission.achievements, " ", _LocalizationManager["default"].general.achievements));
-      var experience = null;
-      if (mission.totalExp > 0) experience = _react["default"].createElement("div", {
+      if (_ConfigManager["default"].profile.exp && mission.totalExp > 0) experience = _react["default"].createElement("div", {
         className: "d-inline-block"
       }, _react["default"].createElement(_Icons.SmallIcon, {
         name: "experience"

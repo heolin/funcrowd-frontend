@@ -11,6 +11,8 @@ var _Breadcrumbs = require("../../components/Breadcrumbs");
 
 var _LocalizationManager = _interopRequireDefault(require("../../logic/locatization/LocalizationManager"));
 
+var _ConfigManager = _interopRequireDefault(require("../../logic/config/ConfigManager"));
+
 var _Icons = require("../../components/Icons");
 
 var _Image = require("../../components/Image");
@@ -68,7 +70,7 @@ function (_React$Component) {
         name: "achievements"
       }), _react["default"].createElement("small", null, " ", task.achievements, " ", _LocalizationManager["default"].general.achievements));
       var experience = null;
-      if (task.totalExp > 0) experience = _react["default"].createElement("div", {
+      if (_ConfigManager["default"].profile.exp && task.totalExp > 0) experience = _react["default"].createElement("div", {
         className: "d-inline-block"
       }, _react["default"].createElement(_Icons.SmallIcon, {
         name: "experience"

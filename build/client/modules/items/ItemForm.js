@@ -77,7 +77,7 @@ function (_React$Component) {
   }, {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(props) {
-      if (this.state.item.id !== props.item.id) this.setItemState(props.item);
+      if (this.state.item.index !== props.item.index) this.setItemState(props.item);
     }
   }, {
     key: "setupItem",

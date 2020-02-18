@@ -17,7 +17,7 @@ export default class ItemHeader extends React.Component {
         }
 
         let achievements = null;
-        if (task.achievements > 0)
+        if (ConfigManager.profile.achievements && task.achievements > 0)
             achievements = (
                 <div className="d-inline-block">
                     <SmallIcon name="achievements"/>

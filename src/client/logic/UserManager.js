@@ -1,11 +1,13 @@
 import EventEmitter from "event-emitter-es6"
 import UserRepository from "./repositories/UserRepository";
+import ConfigManager from "../logic/config/ConfigManager";
 import LevelsConfig from "../resources/levels";
 import L from "./locatization/LocalizationManager";
 import ToastManager from "./ToastsManager";
 
 const EXPERIENCE_CHANGED = "experience-changed";
 const USERNAME_CHANGED = "username-changed";
+const PROFILE_CHANGED = "profile-changed";
 
 
 class _UserManager extends EventEmitter {
@@ -31,7 +33,6 @@ class _UserManager extends EventEmitter {
         if (this.loading)
             return;
 
-
         this.loading = true;
         return UserRepository.status()
             .then((userStatus) => {
@@ -42,6 +43,31 @@ class _UserManager extends EventEmitter {
                 this.user.exp = userStatus.exp;
                 this._updateLevel();
                 this.emit(EXPERIENCE_CHANGED);
+                this.loading = false;
+            })
+            .catch((error) => {
+                console.log(error)
+            });
+    }
+
+    updateProfile() {
+        if (this.loading)
+            return;
+
+        this.loading = true;
+        return UserRepository.details()
+            .then((details) => {
+                if (details.id !== this.user.id) {
+                    console.log("Error. User id mismatch");
+                }
+
+                if (this.user.profile !== details.profile) {
+                    this.user.profile = details.profile;
+                    console.log(details);
+                    console.log(this.user);
+                    ConfigManager.changeProfile(details.profile);
+                    this.emit(PROFILE_CHANGED);
+                }
                 this.loading = false;
             })
             .catch((error) => {
@@ -63,6 +89,14 @@ class _UserManager extends EventEmitter {
 
     removeUsernameChangeHandler(handler) {
         this.off(USERNAME_CHANGED, handler);
+    }
+
+    addProfileChangeHandler(handler) {
+        this.on(PROFILE_CHANGED, handler);
+    }
+
+    removeProfileChangeHandler(handler) {
+        this.off(PROFILE_CHANGED, handler);
     }
 
     changeUsername(username) {

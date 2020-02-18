@@ -164,7 +164,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      if (this.state.loading) return _react["default"].createElement(_Loading["default"], null);
+      if (this.state.loading || _UserManager["default"].user === null) return _react["default"].createElement(_Loading["default"], null);
       var settingsMessageClassName = this.state.settingsError ? "error" : "";
       var passwordMessageClassName = this.state.passwordError ? "error" : "";
       return _react["default"].createElement("div", {

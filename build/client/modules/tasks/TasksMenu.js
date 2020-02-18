@@ -31,6 +31,8 @@ var _Loading = _interopRequireDefault(require("../../components/Loading"));
 
 var _AchievementsRepository = _interopRequireDefault(require("../../logic/repositories/AchievementsRepository"));
 
+var _ConfigManager = _interopRequireDefault(require("../../logic/config/ConfigManager"));
+
 var _Footer = require("../../Footer");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -189,22 +191,45 @@ function (_React$Component) {
           }
         });
       });
+      var lineClass = _ConfigManager["default"].profile.achievements ? "" : " noline";
       return _react["default"].createElement(ListContainer, {
-        className: "task-cards"
+        className: "task-cards" + lineClass
       }, tasks);
     }
   }, {
     key: "render",
     value: function render() {
       if (this.state.loadingTasks || this.state.loadingProgress || this.state.loadingTaskProgress || this.state.loadingAchievements) return _react["default"].createElement(_Loading["default"], null);
-      var achievements = this.state.achievements.map(function (achievement) {
-        return _react["default"].createElement("div", {
-          className: "col-lg-12 col-md-6 col-sm-12",
-          key: achievement.id
-        }, _react["default"].createElement(_AchievementCard["default"], {
-          achievement: achievement
-        }));
-      });
+      var mainColumnClass = "col-lg-12";
+      var sideColumn = null;
+
+      if (_ConfigManager["default"].profile.achievements) {
+        mainColumnClass = "col-lg-8";
+        var achievements = this.state.achievements.map(function (achievement) {
+          return _react["default"].createElement("div", {
+            className: "col-lg-12 col-md-6 col-sm-12",
+            key: achievement.id
+          }, _react["default"].createElement(_AchievementCard["default"], {
+            achievement: achievement
+          }));
+        });
+        sideColumn = _react["default"].createElement("div", {
+          className: "col-lg-4 col-md-12"
+        }, _react["default"].createElement("div", {
+          className: "tasks-achievements-introduction"
+        }, _react["default"].createElement("h3", null, _LocalizationManager["default"].labels.achievements), "W tym dziale mo\u017Cesz zdoby\u0107"), _react["default"].createElement("div", {
+          className: "row achievements-row"
+        }, achievements, _react["default"].createElement("div", {
+          className: "col-sm-12 text-right color-blue small",
+          style: {
+            paddingRight: "30px",
+            paddingBottom: "30px"
+          }
+        }, _react["default"].createElement(_reactRouterDom.Link, {
+          to: "/achievements"
+        }, "Zobacz wszystkie osi\u0105gni\u0119cia"))));
+      }
+
       return _react["default"].createElement("div", {
         className: "container-fluid base-row"
       }, _react["default"].createElement(_TasksHeader["default"], {
@@ -215,24 +240,10 @@ function (_React$Component) {
       }, _react["default"].createElement("div", {
         className: "row tasks-row"
       }, _react["default"].createElement("div", {
-        className: "col-md-12 col-lg-8"
+        className: "col-md-12 " + mainColumnClass
       }, _react["default"].createElement("div", {
         className: "tasks-introduction"
-      }, _react["default"].createElement("h3", null, _LocalizationManager["default"].labels.missions), this.props.mission.instruction), this.getCardsPanel()), _react["default"].createElement("div", {
-        className: "col-lg-4 col-md-12"
-      }, _react["default"].createElement("div", {
-        className: "tasks-achievements-introduction"
-      }, _react["default"].createElement("h3", null, _LocalizationManager["default"].labels.achievements), "W tym dziale mo\u017Cesz zdoby\u0107"), _react["default"].createElement("div", {
-        className: "row achievements-row"
-      }, achievements, _react["default"].createElement("div", {
-        className: "col-sm-12 text-right color-blue small",
-        style: {
-          paddingRight: "30px",
-          paddingBottom: "30px"
-        }
-      }, _react["default"].createElement(_reactRouterDom.Link, {
-        to: "/achievements"
-      }, "Zobacz wszystkie osi\u0105gni\u0119cia")))))));
+      }, _react["default"].createElement("h3", null, _LocalizationManager["default"].labels.missions), this.props.mission.instruction), this.getCardsPanel()), sideColumn)));
     }
   }]);
 

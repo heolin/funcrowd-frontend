@@ -1,4 +1,5 @@
 import EventEmitter from "event-emitter-es6"
+import ConfigManager from "../logic/config/ConfigManager";
 
 const TOASTS_CHANGED = "toasts-changed";
 
@@ -20,8 +21,10 @@ class _ToastsManager extends EventEmitter {
     }
 
     addToast(type, message) {
-        this.toasts.push(new Toast(type, message));
-        this.emit(TOASTS_CHANGED);
+        if (ConfigManager.profile.achievements) {
+            this.toasts.push(new Toast(type, message));
+            this.emit(TOASTS_CHANGED);
+        }
     }
 
     removeToast(index) {

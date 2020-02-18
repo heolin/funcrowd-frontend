@@ -21,6 +21,8 @@ var _PointsFeedbackModal = _interopRequireDefault(require("./PointsFeedbackModal
 
 var _QuizFeedbackModal = _interopRequireDefault(require("./QuizFeedbackModal"));
 
+var _ConfigManager = _interopRequireDefault(require("../../logic/config/ConfigManager"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -39,6 +41,8 @@ function () {
   _createClass(_FeedbackFactory, [{
     key: "create",
     value: function create(type, isOpen, onAccept, task, annotation, feedback, exp) {
+      if (_ConfigManager["default"].profile.exp === false && type === _FeedbackTypes["default"].POINTS) type = _FeedbackTypes["default"].BINARY;
+
       switch (type) {
         case _FeedbackTypes["default"].NONE:
           return null;

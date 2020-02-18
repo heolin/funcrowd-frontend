@@ -106,8 +106,10 @@ export default class ItemPanel extends React.Component {
 
     onNoItems() {
         let metadata = this.state.task.metadata;
-        if (metadata.redirectOnNoItems === true)
+        if (metadata.redirectOnNoItems === true) {
             this.props.history.push('/mission/'+this.state.task.mission_id+'/tasks');
+            UserManager.updateProfile();
+        }
     }
 
     getFirstItem() {
@@ -132,9 +134,6 @@ export default class ItemPanel extends React.Component {
         let item = this.state.item;
         ItemRepository.getNextItem(item.id)
             .then((item) => {
-                console.log('get next');
-                console.log(item);
-                console.log(this.state.item);
                 if (item == null)
                     this.onNoItems();
 
