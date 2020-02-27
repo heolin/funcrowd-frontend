@@ -183,7 +183,7 @@ function (_React$Component) {
 
       if (achievementsLast.length === 0) achievementsLast = _react["default"].createElement("i", null, "Nie masz jeszcze \u017Cadnych osi\u0105gni\u0119\u0107 :(");
       return _react["default"].createElement("div", null, _react["default"].createElement(_BlackBackground["default"], {
-        className: "black-background",
+        className: "black-background behind",
         style: {
           pointerEvents: this.props.isOpen ? "auto" : "none"
         },
@@ -206,11 +206,13 @@ function (_React$Component) {
         className: "col-6 side-profile-settings"
       }, _react["default"].createElement(_reactRouterDom.Link, {
         to: "/profile",
+        "class": "blue-link",
         onClick: this.props.hideSideProfile
       }, _react["default"].createElement("div", {
         className: "little"
       }, _LocalizationManager["default"].labels.showProfile)), _react["default"].createElement(_reactRouterDom.Link, {
         to: "/settings",
+        "class": "blue-link",
         onClick: this.props.hideSideProfile
       }, _react["default"].createElement("div", {
         className: "little"
@@ -282,11 +284,13 @@ function (_React$Component) {
       }, achievementsLast, _react["default"].createElement("div", {
         className: "col-sm-12 text-right color-blue small",
         style: {
-          paddingRight: "30px"
+          paddingRight: "15px",
+          paddingTop: "15px"
         }
       }, _react["default"].createElement(_reactRouterDom.Link, {
-        to: "/achievements"
-      }, "Zobacz wszystkie osi\u0105gni\u0119cia")))));
+        to: "/achievements",
+        className: "blue-link"
+      }, _react["default"].createElement("b", null, "Zobacz wszystkie osi\u0105gni\u0119cia"))))));
     }
   }]);
 

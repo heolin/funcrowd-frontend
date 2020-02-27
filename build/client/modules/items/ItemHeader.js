@@ -64,7 +64,7 @@ function (_React$Component) {
       }
 
       var achievements = null;
-      if (task.achievements > 0) achievements = _react["default"].createElement("div", {
+      if (_ConfigManager["default"].profile.achievements && task.achievements > 0) achievements = _react["default"].createElement("div", {
         className: "d-inline-block"
       }, _react["default"].createElement(_Icons.SmallIcon, {
         name: "achievements"

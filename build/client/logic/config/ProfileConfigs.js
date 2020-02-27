@@ -39,7 +39,7 @@ ProfileConfigs[_ProfileTypes["default"].ELEARNING] = {
   exp: false,
   ranking: false,
   bounties: false,
-  profile: true,
+  profile: false,
   availablePages: null
 };
 ProfileConfigs[_ProfileTypes["default"].GAMIFICATION] = {

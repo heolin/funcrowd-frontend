@@ -63,11 +63,13 @@ function (_React$Component) {
       var image = _feedback_wrong["default"];
       var headerText = _LocalizationManager["default"].feedback.annotationWrong;
       var message = _LocalizationManager["default"].feedback.annotationWrongMessage;
+      var buttonText = _LocalizationManager["default"].feedback.tryAgain;
 
       if (score >= 0.5) {
         image = _feedback_ok["default"];
         headerText = _LocalizationManager["default"].feedback.annotationCorrect;
         message = _LocalizationManager["default"].feedback.annotationCorrectMessage;
+        buttonText = _LocalizationManager["default"].feedback.nextItem;
       }
 
       return _react["default"].createElement(_FeedbackModal["default"], {
@@ -76,7 +78,7 @@ function (_React$Component) {
         headerText: headerText,
         message: message,
         image: image,
-        buttonText: _LocalizationManager["default"].feedback.nextItem
+        buttonText: buttonText
       });
     }
   }], [{

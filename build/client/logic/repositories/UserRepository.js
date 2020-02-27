@@ -15,6 +15,8 @@ var _ConfigManager = _interopRequireDefault(require("../config/ConfigManager"));
 
 var _UserStatus = _interopRequireDefault(require("../models/user/UserStatus"));
 
+var _UserDetails = _interopRequireDefault(require("../models/user/UserDetails"));
+
 var _UserStats = _interopRequireDefault(require("../models/user/UserStats"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -126,6 +128,15 @@ function () {
         var status = _UserStatus["default"].fromJson(response.data);
 
         return status;
+      });
+    }
+  }, {
+    key: "details",
+    value: function details() {
+      return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/users/details/', _SessionManager["default"].config).then(function (response) {
+        var details = _UserDetails["default"].fromJson(response.data);
+
+        return details;
       });
     }
   }, {

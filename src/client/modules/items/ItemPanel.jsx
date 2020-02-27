@@ -107,8 +107,13 @@ export default class ItemPanel extends React.Component {
     onNoItems() {
         let metadata = this.state.task.metadata;
         if (metadata.redirectOnNoItems === true) {
-            this.props.history.push('/mission/'+this.state.task.mission_id+'/tasks');
-            UserManager.updateProfile();
+            if (metadata.redirectToMissions === true) {
+                this.props.history.push('/missions/');
+                UserManager.updateProfile();
+            } else {
+                this.props.history.push('/mission/'+this.state.task.mission_id+'/tasks');
+                UserManager.updateProfile();
+            }
         }
     }
 
@@ -217,6 +222,7 @@ export default class ItemPanel extends React.Component {
         let itemId = null;
         let noitems = null;
         let header = null;
+        let metadata = this.state.task.metadata;
 
         if (this.state.item) {
             itemId = this.state.item.id;
@@ -243,7 +249,7 @@ export default class ItemPanel extends React.Component {
                               skipButton={SkipButton}/>
                 </div>
             );
-        } else {
+        } else if (metadata.redirectOnNoItems === false) {
             noitems = <NoItemsPanel/>;
         }
 

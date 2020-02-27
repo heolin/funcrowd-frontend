@@ -121,7 +121,7 @@ export class SideProfilePanel extends React.Component {
 
         return (
             <div>
-                <BlackBackground className="black-background"
+                <BlackBackground className="black-background behind"
                                  style={{pointerEvents: this.props.isOpen ? "auto" : "none"}}
                                  pose={this.props.isOpen ? 'open' : 'closed'}
                                  onClick={this.props.hideSideProfile}/>
@@ -136,10 +136,10 @@ export class SideProfilePanel extends React.Component {
                             </div>
                         </div>
                         <div className="col-6 side-profile-settings">
-                            <Link to="/profile" onClick={this.props.hideSideProfile}>
+                            <Link to="/profile" class="blue-link" onClick={this.props.hideSideProfile}>
                                 <div className="little">{L.labels.showProfile}</div>
                             </Link>
-                            <Link to="/settings" onClick={this.props.hideSideProfile}>
+                            <Link to="/settings" class="blue-link" onClick={this.props.hideSideProfile}>
                                 <div className="little">{L.labels.settings}</div>
                             </Link>
                         </div>
@@ -194,9 +194,9 @@ export class SideProfilePanel extends React.Component {
                     <div className="row text-center">
                         {achievementsLast}
                         <div className="col-sm-12 text-right color-blue small"
-                             style={{paddingRight: "30px"}}>
-                            <Link to="/achievements">
-                                Zobacz wszystkie osiągnięcia
+                             style={{paddingRight: "15px", paddingTop: "15px"}}>
+                            <Link to="/achievements" className="blue-link">
+                                <b>Zobacz wszystkie osiągnięcia</b>
                             </Link>
                         </div>
                     </div>

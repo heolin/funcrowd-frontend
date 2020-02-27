@@ -180,38 +180,40 @@ export default class RankingPage extends React.Component {
             nextArrowClass = "inactive";
 
         return (
-            <div className="container base-row-padding">
-                <div className="col-sm-12">
-                    <h3>Ranking</h3>
-                    <p>Sprawdź swoje miejsce i zobacz postęp innych!</p>
-                </div>
-                <div className="ranking-panel col-md-8 offset-md-2 col-12 card-2-static small">
-                    <table className="ranking-table table table-borderless text-center">
-                        <thead>
-                            <tr className="color-blue">
-                                <th scope="col"><b>Miejsce</b></th>
-                                <th scope="col"><b>Gracz</b></th>
-                                <th scope="col"><b>Doświadczenie</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {rows}
-                        </tbody>
-                    </table>
-                </div>
-                <div className="ranking-table-page-buttons text-center">
-                    <div className={"d-inline-block flip-horizontal ranking-table-page-arrow " + prevArrowClass}
-                         onClick={this.onPrevPage}
-                         style={{marginLeft: "-120px"}}>
-                        <Icon className="very-small-icon" name="arrow-right_blue"/>
+            <div className="container-fluid base-row">
+                <div className="container base-row-padding">
+                    <div className="col-sm-12">
+                        <h3>Ranking</h3>
+                        <p>Sprawdź swoje miejsce i zobacz postęp innych!</p>
                     </div>
-                    {prevButton}
-                    {currentButton}
-                    {nextButton}
-                    <div className={"d-inline-block ranking-table-page-arrow" + nextArrowClass}
-                         onClick={this.onNextPage}
-                        style={{marginLeft: "100px"}}>
-                        <Icon className="very-small-icon" name="arrow-right_blue"/>
+                    <div className="ranking-panel col-md-8 offset-md-2 col-12 card-2-static small">
+                        <table className="ranking-table table table-borderless text-center">
+                            <thead>
+                                <tr className="color-blue">
+                                    <th scope="col"><b>Miejsce</b></th>
+                                    <th scope="col"><b>Gracz</b></th>
+                                    <th scope="col"><b>Doświadczenie</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {rows}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div className="ranking-table-page-buttons text-center">
+                        <div className={"d-inline-block flip-horizontal ranking-table-page-arrow " + prevArrowClass}
+                             onClick={this.onPrevPage}
+                             style={{marginLeft: "-120px"}}>
+                            <Icon className="very-small-icon" name="arrow-right_blue"/>
+                        </div>
+                        {prevButton}
+                        {currentButton}
+                        {nextButton}
+                        <div className={"d-inline-block ranking-table-page-arrow" + nextArrowClass}
+                             onClick={this.onNextPage}
+                            style={{marginLeft: "100px"}}>
+                            <Icon className="very-small-icon" name="arrow-right_blue"/>
+                        </div>
                     </div>
                 </div>
             </div>

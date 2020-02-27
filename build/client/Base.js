@@ -139,6 +139,7 @@ function (_React$Component) {
       checkingUser: true,
       checkingParams: true,
       user: null,
+      profile: null,
       mission: null,
       task: null,
       bounty: null,
@@ -152,6 +153,7 @@ function (_React$Component) {
     _this.showSideProfile = _this.showSideProfile.bind(_assertThisInitialized(_this));
     _this.hideSideProfile = _this.hideSideProfile.bind(_assertThisInitialized(_this));
     _this.redirectToHome = _this.redirectToHome.bind(_assertThisInitialized(_this));
+    _this.onProfileChanged = _this.onProfileChanged.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -160,6 +162,13 @@ function (_React$Component) {
     value: function componentDidMount() {
       this.checkSessionUser();
       this.checkUrlParams();
+
+      _UserManager["default"].addProfileChangeHandler(this.onProfileChanged);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      _UserManager["default"].removeProfileChangeHandler(this.onProfileChanged);
     }
   }, {
     key: "checkSessionUser",
@@ -215,15 +224,25 @@ function (_React$Component) {
 
       this.setState({
         user: user,
-        checkingUser: false
+        checkingUser: false,
+        profile: user.profile
       });
       this.redirectToHome();
+    }
+  }, {
+    key: "onProfileChanged",
+    value: function onProfileChanged() {
+      //this.setState({
+      //    profile: UserManager.user.profile
+      //});
+      this.forceUpdate();
+      console.log("UPDATING PROFILE");
     }
   }, {
     key: "redirectToHome",
     value: function redirectToHome() {
       if (_Urls["default"].checkUrl(this.props.location.pathname, _Urls["default"].HOME) || _Urls["default"].checkUrl(this.props.location.pathname, _Urls["default"].ACTIVATION) || _Urls["default"].checkUrl(this.props.location.pathname, _Urls["default"].LOGIN)) {
-        if (_UserManager["default"].user.profile == _ProfileTypes["default"].NORMAL) {
+        if (_UserManager["default"].user.profile === _ProfileTypes["default"].NORMAL || _UserManager["default"].user.profile === _ProfileTypes["default"].GAMIFICATION || _UserManager["default"].user.profile === _ProfileTypes["default"].ELEARNING) {
           this.props.history.push(_Urls["default"].MISSIONS);
         } else {
           this.props.history.push(_Urls["default"].BOUNTIES);
@@ -235,7 +254,8 @@ function (_React$Component) {
     value: function onLogout() {
       this.hideSideProfile();
       this.setState({
-        user: null
+        user: null,
+        profile: null
       });
 
       _SessionManager["default"].logout();

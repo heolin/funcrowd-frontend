@@ -16,7 +16,7 @@ export default class QuizFeedbackModal extends React.Component {
 
         for (const [key, value] of Object.entries(this.props.annotation.data)) {
             let score = parseFloat(feedback.scores[key]['ReferenceScore']);
-            let reference = feedback.values[key]['ReferenceValue'];
+            let reference = [... new Set(feedback.values[key]['ReferenceValue'])];
             let feedbackAnswer = null;
             let order = rows.length + 1;
 

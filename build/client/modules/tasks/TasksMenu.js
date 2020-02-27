@@ -132,10 +132,14 @@ function (_React$Component) {
       });
 
       _TasksRepository["default"].list(mission.id).then(function (tasks) {
-        _this3.setState({
-          loadingTasks: false,
-          tasks: tasks
-        });
+        if (mission.metadata['autoOpenTask'] === true && tasks.length > 0) {
+          _this3.props.onTaskSelect(tasks[0]);
+        } else {
+          _this3.setState({
+            loadingTasks: false,
+            tasks: tasks
+          });
+        }
       })["catch"](function (error) {
         _this3.setState({
           loadingTasks: false

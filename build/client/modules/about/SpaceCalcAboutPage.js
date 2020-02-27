@@ -93,6 +93,7 @@ function (_React$Component) {
           marginBottom: "20px"
         }
       }, "O projekcie"), _react["default"].createElement("p", null, "Kurs nauki programu Excel zosta\u0142 przygotowany w ramach pracy naukowej wykonywanej przez mgr Dagmar\u0119 Dziedzic, doktorantk\u0119 Wydzia\u0142u Psychologii i Kognitywistyki (UAM Pozna\u0144). Zadania w kursie zosta\u0142y przygotowane w oparciu o ", _react["default"].createElement("a", {
+        className: "blue-link",
         href: "https://ecdl.pl/wp-content/uploads/2016/01/b41.pdf",
         target: "_blank"
       }, "sylabus Europejskiego Certyfikatu Umiej\u0119tno\u015Bci Komputerowych"), " i by\u0142y konsultowane ze specjalistami, kt\xF3rzy na co dzie\u0144 korzystaj\u0105 z programu Excel.   Celem tego kursu jest, po pierwsze - przekazanie wiedzy z trzech dzia\u0142\xF3w dotycz\u0105cych obs\u0142ugi programu, a po drugie - zebranie informacji dotycz\u0105cych uczenia si\u0119. Bardziej szczeg\xF3\u0142owe informacje znajdziesz w FAQu poni\u017Cej.")), _react["default"].createElement("div", {
@@ -127,7 +128,7 @@ function (_React$Component) {
         }
       }), _react["default"].createElement(_TextCollapse.TextCollapse, {
         headText: 'Czego się nauczę podczas kursu?',
-        bodyText: "Zadania dostępne w kursie zostały przygotowane w oparciu o <a href=\"https://ecdl.pl/wp-content/uploads/2016/01/b41.pdf\" target=\"_blank\">sylabus Europejskiego Certyfikatu Umiejętności Komputerowych</a> i dotyczą trzech działów nauki programu Excel: reguł arytmetycznych, funkcji , liczb i dat. Po ukończeniu tego kursu będziesz wiedzieć jak prawidłowo odwoływać się do komórek i stosować operatory arytmetyczne. Nauczysz się korzystania z adresowania bezwzględnego, poznasz działanie wielu funkcji oraz nauczysz się formatowania komórek wyświetlając liczby, daty, procenty i waluty.",
+        bodyText: "Zadania dostępne w kursie zostały przygotowane w oparciu o <a class=\"blue-link\" href=\"https://ecdl.pl/wp-content/uploads/2016/01/b41.pdf\" target=\"_blank\">sylabus Europejskiego Certyfikatu Umiejętności Komputerowych</a> i dotyczą trzech działów nauki programu Excel: reguł arytmetycznych, funkcji , liczb i dat. Po ukończeniu tego kursu będziesz wiedzieć jak prawidłowo odwoływać się do komórek i stosować operatory arytmetyczne. Nauczysz się korzystania z adresowania bezwzględnego, poznasz działanie wielu funkcji oraz nauczysz się formatowania komórek wyświetlając liczby, daty, procenty i waluty.",
         style: {
           marginBottom: "30px"
         }
@@ -186,21 +187,25 @@ function (_React$Component) {
           margin: "0 -20px"
         }
       }, _react["default"].createElement("a", {
+        className: "blue-link",
         style: {
           padding: "0 20px"
         },
         href: "https://pl.freepik.com/freepik"
       }, "freepik"), _react["default"].createElement("a", {
+        className: "blue-link",
         style: {
           padding: "0 20px"
         },
         href: "https://undraw.co/"
       }, "undraw.co"), _react["default"].createElement("a", {
+        className: "blue-link",
         style: {
           padding: "0 20px"
         },
         href: "https://unsplash.com/"
       }, "unsplash"), _react["default"].createElement("a", {
+        className: "blue-link",
         style: {
           padding: "0 20px"
         },

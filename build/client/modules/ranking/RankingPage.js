@@ -210,6 +210,8 @@ function (_React$Component) {
         }
       }, this.state.page + 2);else nextArrowClass = "inactive";
       return _react["default"].createElement("div", {
+        className: "container-fluid base-row"
+      }, _react["default"].createElement("div", {
         className: "container base-row-padding"
       }, _react["default"].createElement("div", {
         className: "col-sm-12"
@@ -245,7 +247,7 @@ function (_React$Component) {
       }, _react["default"].createElement(_Icons.Icon, {
         className: "very-small-icon",
         name: "arrow-right_blue"
-      }))));
+      })))));
     }
   }]);
 

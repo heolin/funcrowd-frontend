@@ -63,5 +63,9 @@
   height: 100%;
   width: 100%;
   background-color: #0e2e3c;
+  z-index: 10000;
+}
+
+.black-background.behind {
   z-index: 50;
 }

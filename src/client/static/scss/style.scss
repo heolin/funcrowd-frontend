@@ -48,8 +48,13 @@ body {
   justify-content: space-between;
 }
 
-.a {
-  @extend .color-blue;
+.blue-link {
+  color: $dark-blue-color !important;
+  text-decoration: underline;
+
+  &:hover {
+    color: $black-blue-color !important;
+  }
 }
 
 .white-link {

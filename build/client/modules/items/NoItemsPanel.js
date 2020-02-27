@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _LocalizationManager = _interopRequireDefault(require("../../logic/locatization/LocalizationManager"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -45,11 +47,11 @@ function (_React$Component) {
         className: "col-sm-12 items-panel no-items-panel"
       }, _react["default"].createElement("div", {
         className: "card-1-static item-panel-group"
-      }, _react["default"].createElement("h4", null, "No items left"), _react["default"].createElement("p", {
+      }, _react["default"].createElement("h4", null, _LocalizationManager["default"].general.noItemsHeader), _react["default"].createElement("p", {
         style: {
           marginBottom: 0
         }
-      }, "You have finished tagging all items from this task.")));
+      }, _LocalizationManager["default"].general.noItemsMessage)));
     }
   }]);
 

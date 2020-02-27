@@ -30,5 +30,13 @@ export default {
     imageGalleryHelp: {
         en: "Click the image to zoom in",
         pl: "Kliknij aby powiększyć"
+    },
+    noItemsHeader: {
+        en: "No items left",
+        pl: "Brak zadań"
+    },
+    noItemsMessage: {
+        en: "You have finished tagging all items from this task.",
+        pl: "Wszystkie zadania zostały wypełnione"
     }
 }

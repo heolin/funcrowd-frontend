@@ -163,7 +163,18 @@ function (_React$Component) {
     key: "onNoItems",
     value: function onNoItems() {
       var metadata = this.state.task.metadata;
-      if (metadata.redirectOnNoItems === true) this.props.history.push('/mission/' + this.state.task.mission_id + '/tasks');
+
+      if (metadata.redirectOnNoItems === true) {
+        if (metadata.redirectToMissions === true) {
+          this.props.history.push('/missions/');
+
+          _UserManager["default"].updateProfile();
+        } else {
+          this.props.history.push('/mission/' + this.state.task.mission_id + '/tasks');
+
+          _UserManager["default"].updateProfile();
+        }
+      }
     }
   }, {
     key: "getFirstItem",
@@ -195,9 +206,6 @@ function (_React$Component) {
       var item = this.state.item;
 
       _ItemRepository["default"].getNextItem(item.id).then(function (item) {
-        console.log('get next');
-        console.log(item);
-        console.log(_this5.state.item);
         if (item == null) _this5.onNoItems();
 
         _this5.setState({
@@ -293,6 +301,7 @@ function (_React$Component) {
       var itemId = null;
       var noitems = null;
       var header = null;
+      var metadata = this.state.task.metadata;
 
       if (this.state.item) {
         itemId = this.state.item.id;
@@ -317,7 +326,7 @@ function (_React$Component) {
           submitButton: _SubmitButton["default"],
           skipButton: _SkipButton["default"]
         }));
-      } else {
+      } else if (metadata.redirectOnNoItems === false) {
         noitems = _react["default"].createElement(_NoItemsPanel["default"], null);
       }
 

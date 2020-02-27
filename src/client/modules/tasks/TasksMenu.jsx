@@ -71,10 +71,16 @@ export default class TasksMenu extends React.Component {
 
         TasksRepository.list(mission.id)
             .then((tasks) => {
-                this.setState({
-                    loadingTasks: false,
-                    tasks: tasks
-                });
+                if (mission.metadata['autoOpenTask'] === true &&
+                    tasks.length > 0) {
+                    this.props.onTaskSelect(tasks[0]);
+                } else {
+                    this.setState({
+                        loadingTasks: false,
+                        tasks: tasks
+                    });
+                }
+
             })
             .catch((error) => {
                 this.setState({ loadingTasks: false});

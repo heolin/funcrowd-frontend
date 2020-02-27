@@ -45,6 +45,11 @@ function () {
       this.profile = _ProfileConfigs["default"][user.profile];
     }
   }, {
+    key: "changeProfile",
+    value: function changeProfile(profile) {
+      this.profile = _ProfileConfigs["default"][profile];
+    }
+  }, {
     key: "logout",
     value: function logout() {
       this.profile = _ProfileConfigs["default"][_ProfileTypes["default"].NOTLOGGED];

@@ -14,18 +14,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var UserStatus =
 /*#__PURE__*/
 function () {
-  function UserStatus(id, username, exp) {
+  function UserStatus(id, username, profile, exp) {
     _classCallCheck(this, UserStatus);
 
     this.id = id;
     this.username = username;
+    this.profile = profile;
     this.exp = exp;
   }
 
   _createClass(UserStatus, null, [{
     key: "fromJson",
     value: function fromJson(user_data) {
-      var user = new UserStatus(user_data.id, user_data.username, user_data.exp);
+      var user = new UserStatus(user_data.id, user_data.username, user_data.profile, user_data.exp);
       return user;
     }
   }]);

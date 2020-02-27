@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _eventEmitterEs = _interopRequireDefault(require("event-emitter-es6"));
 
+var _ConfigManager = _interopRequireDefault(require("../logic/config/ConfigManager"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -56,8 +58,10 @@ function (_EventEmitter) {
   _createClass(_ToastsManager, [{
     key: "addToast",
     value: function addToast(type, message) {
-      this.toasts.push(new Toast(type, message));
-      this.emit(TOASTS_CHANGED);
+      if (_ConfigManager["default"].profile.achievements) {
+        this.toasts.push(new Toast(type, message));
+        this.emit(TOASTS_CHANGED);
+      }
     }
   }, {
     key: "removeToast",

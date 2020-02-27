@@ -9,6 +9,8 @@ var _eventEmitterEs = _interopRequireDefault(require("event-emitter-es6"));
 
 var _UserRepository = _interopRequireDefault(require("./repositories/UserRepository"));
 
+var _ConfigManager = _interopRequireDefault(require("../logic/config/ConfigManager"));
+
 var _levels = _interopRequireDefault(require("../resources/levels"));
 
 var _LocalizationManager = _interopRequireDefault(require("./locatization/LocalizationManager"));
@@ -37,6 +39,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 var EXPERIENCE_CHANGED = "experience-changed";
 var USERNAME_CHANGED = "username-changed";
+var PROFILE_CHANGED = "profile-changed";
 
 var _UserManager =
 /*#__PURE__*/
@@ -92,6 +95,33 @@ function (_EventEmitter) {
       });
     }
   }, {
+    key: "updateProfile",
+    value: function updateProfile() {
+      var _this3 = this;
+
+      if (this.loading) return;
+      this.loading = true;
+      return _UserRepository["default"].details().then(function (details) {
+        if (details.id !== _this3.user.id) {
+          console.log("Error. User id mismatch");
+        }
+
+        if (_this3.user.profile !== details.profile) {
+          _this3.user.profile = details.profile;
+          console.log(details);
+          console.log(_this3.user);
+
+          _ConfigManager["default"].changeProfile(details.profile);
+
+          _this3.emit(PROFILE_CHANGED);
+        }
+
+        _this3.loading = false;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }, {
     key: "addExperienceChangeHandler",
     value: function addExperienceChangeHandler(handler) {
       this.on(EXPERIENCE_CHANGED, handler);
@@ -110,6 +140,16 @@ function (_EventEmitter) {
     key: "removeUsernameChangeHandler",
     value: function removeUsernameChangeHandler(handler) {
       this.off(USERNAME_CHANGED, handler);
+    }
+  }, {
+    key: "addProfileChangeHandler",
+    value: function addProfileChangeHandler(handler) {
+      this.on(PROFILE_CHANGED, handler);
+    }
+  }, {
+    key: "removeProfileChangeHandler",
+    value: function removeProfileChangeHandler(handler) {
+      this.off(PROFILE_CHANGED, handler);
     }
   }, {
     key: "changeUsername",

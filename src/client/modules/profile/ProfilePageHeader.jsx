@@ -10,7 +10,7 @@ import UserManager from "../../logic/UserManager";
 export default class ProfilePageHeader extends React.Component {
 
     render() {
-        let image = require("../../static/img/missions/office.png");
+        let image = require("../../static/img/missions/office.jpg");
 
         return (
             <div className="tasks-header-bar card-2-static row">

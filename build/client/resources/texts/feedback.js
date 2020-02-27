@@ -42,8 +42,8 @@ var _default = {
     pl: "Kwestionariusz wypełniony"
   },
   questionnaireSavedMessage: {
-    en: "Thank you for filling personal questionnaire",
-    pl: "Dziękuje za wypełnienie kwestionariusza osobowego"
+    en: "Thank you for the questionnaire",
+    pl: "Dziękujemy za wypełnienie ankiety. Twoje odpowiedzi pomogą w badaniu naukowym!"
   },
   attemptsMessage1: {
     en: "Task solved in ",

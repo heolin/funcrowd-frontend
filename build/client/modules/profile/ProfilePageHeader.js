@@ -53,7 +53,7 @@ function (_React$Component) {
   _createClass(ProfilePageHeader, [{
     key: "render",
     value: function render() {
-      var image = require("../../static/img/missions/office.png");
+      var image = require("../../static/img/missions/office.jpg");
 
       return _react["default"].createElement("div", {
         className: "tasks-header-bar card-2-static row"
