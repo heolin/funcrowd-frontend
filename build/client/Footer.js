@@ -69,8 +69,8 @@ function (_React$Component) {
         }
       }, _react["default"].createElement("p", null, "Masz pytania? Chcesz wiedziec wi\u0119cej?", _react["default"].createElement("br", null), "Skontaktuj si\u0119 ze mn\u0105:"), _react["default"].createElement("p", null, _react["default"].createElement("a", {
         className: "light-blue-link",
-        href: "mailto: funcrowd.service@gmail.com"
-      }, "funcrowd.service@gmail.com"))), _react["default"].createElement("div", {
+        href: "mailto: kontakt@spacecalc.pl"
+      }, "kontakt@spacecalc.pl"))), _react["default"].createElement("div", {
         className: "col-md-3 col-12",
         style: {
           paddingTop: "20px",

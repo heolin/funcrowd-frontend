@@ -206,13 +206,13 @@ function (_React$Component) {
         className: "col-6 side-profile-settings"
       }, _react["default"].createElement(_reactRouterDom.Link, {
         to: "/profile",
-        "class": "blue-link",
+        className: "blue-link",
         onClick: this.props.hideSideProfile
       }, _react["default"].createElement("div", {
         className: "little"
       }, _LocalizationManager["default"].labels.showProfile)), _react["default"].createElement(_reactRouterDom.Link, {
         to: "/settings",
-        "class": "blue-link",
+        className: "blue-link",
         onClick: this.props.hideSideProfile
       }, _react["default"].createElement("div", {
         className: "little"

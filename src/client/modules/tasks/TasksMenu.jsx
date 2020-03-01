@@ -162,7 +162,7 @@ export default class TasksMenu extends React.Component {
                     {achievements}
                     <div className="col-sm-12 text-right color-blue small"
                          style={{paddingRight: "30px", paddingBottom: "30px"}}>
-                        <Link to="/achievements">
+                        <Link className="blue-link" to="/achievements">
                             Zobacz wszystkie osiągnięcia
                         </Link>
                     </div>

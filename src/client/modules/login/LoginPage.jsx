@@ -103,7 +103,7 @@ export default class LoginPage extends React.Component {
                                                      onChange={this.handleCheckboxChange}
                                                      label={L.login.rememberMe}/>
                                     <div className="login-reset-password-link login-link">
-                                        <Link to={urls.RESET_PASSWORD}>
+                                        <Link className="blue-link" to={urls.RESET_PASSWORD}>
                                             {L.login.forgotPassword}
                                         </Link>
                                     </div>

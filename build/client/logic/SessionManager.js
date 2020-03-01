@@ -29,6 +29,7 @@ function () {
 
     this.token = null;
     this.config = {};
+    this.saveUser = false;
     this.cache = {
       action: null,
       resetPasswordToken: null
@@ -40,6 +41,7 @@ function () {
     value: function login(user, saveUser) {
       if (user.login === "") return;
       this.token = user.token;
+      this.saveUser = saveUser;
       this.isLogged = true;
       this.config = {
         headers: {
@@ -49,7 +51,7 @@ function () {
 
       _UserManager["default"].setup(user);
 
-      this.setUser(user, saveUser);
+      this.setUser(user);
 
       _AchievementsManager["default"].update();
 
@@ -57,10 +59,10 @@ function () {
     }
   }, {
     key: "setUser",
-    value: function setUser(user, saveUser) {
+    value: function setUser(user) {
       sessionStorage.setItem(USER, JSON.stringify(user));
 
-      if (saveUser) {
+      if (this.saveUser) {
         localStorage.setItem(USER, JSON.stringify(user));
       }
     }
@@ -82,6 +84,7 @@ function () {
     value: function getUser() {
       var user = this.getSessionUser();
       if (user === null) user = this.getLocalStorageUser();
+      console.log(user);
       return user;
     }
   }, {
@@ -91,6 +94,7 @@ function () {
 
       try {
         user = JSON.parse(sessionStorage.getItem(USER));
+        console.log(user);
       } catch (e) {}
 
       return user;

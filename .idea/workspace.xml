@@ -2,30 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ead4a25-4a17-4a45-977c-0c90b6b22b4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/client/static/img/common/spacecalc.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/static/icons/achievements/teamwork.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/static/icons/gear.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/client/logic/SessionManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/SessionManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/logic/UserManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/UserManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/login/RegisterPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/login/RegisterPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/navbar/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/navbar/NavbarMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/navbar/NavbarMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/profile/ProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/profile/ProfilePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/profile/SettingsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/profile/SettingsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/ranking/RankingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/ranking/RankingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/resources/texts/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/resources/texts/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/resources/texts/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/resources/texts/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/profile/SideProfilePanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/profile/SideProfilePanel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/logic/SessionManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/logic/SessionManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/logic/UserManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/logic/UserManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/login/RegisterPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/login/RegisterPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/profile/ProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/profile/ProfilePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/profile/SettingsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/profile/SettingsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/ranking/RankingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/ranking/RankingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/resources/texts/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/resources/texts/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/resources/texts/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/resources/texts/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,9 +63,9 @@
           <entry key="gitignore" value="1" />
           <entry key="html" value="7" />
           <entry key="ico" value="1" />
-          <entry key="js" value="854" />
+          <entry key="js" value="855" />
           <entry key="json" value="27" />
-          <entry key="jsx" value="1089" />
+          <entry key="jsx" value="1095" />
           <entry key="local" value="2" />
           <entry key="log" value="1" />
           <entry key="md" value="9" />
@@ -97,8 +84,8 @@
           <entry key="HTML" value="7" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="28" />
-          <entry key="JSX Harmony" value="1089" />
-          <entry key="JavaScript" value="854" />
+          <entry key="JSX Harmony" value="1095" />
+          <entry key="JavaScript" value="855" />
           <entry key="Markdown" value="9" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Python" value="3" />
@@ -121,9 +108,9 @@
           <entry key="dummy" value="2" />
           <entry key="env" value="9" />
           <entry key="html" value="65" />
-          <entry key="js" value="81769" />
+          <entry key="js" value="81780" />
           <entry key="json" value="356" />
-          <entry key="jsx" value="99946" />
+          <entry key="jsx" value="100100" />
           <entry key="local" value="28" />
           <entry key="md" value="186" />
           <entry key="production" value="3" />
@@ -138,8 +125,8 @@
           <entry key="Env File" value="53" />
           <entry key="HTML" value="65" />
           <entry key="JSON" value="356" />
-          <entry key="JSX Harmony" value="99946" />
-          <entry key="JavaScript" value="81769" />
+          <entry key="JSX Harmony" value="100100" />
+          <entry key="JavaScript" value="81780" />
           <entry key="Markdown" value="186" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Python" value="1" />
@@ -155,64 +142,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/logic/config/ConfigManager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-              <folding>
-                <element signature="e#0#46#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/logic/config/ProfileTypes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/logic/UserManager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="805">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/Base.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/logic/SessionManager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -227,10 +160,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/ranking/RankingPage.js">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="184" column="82" selection-start-line="184" selection-start-column="82" selection-end-line="184" selection-end-column="82" />
+            <state relative-caret-position="431">
+              <caret line="82" column="53" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="168" column="17" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/profile/ProfilePageHeader.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -247,11 +207,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/profile/ProfilePage.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="177" column="60" selection-start-line="177" selection-start-column="60" selection-end-line="177" selection-end-column="60" />
+            <state relative-caret-position="476">
+              <caret line="118" column="59" selection-start-line="118" selection-start-column="59" selection-end-line="118" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/Footer.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="118" selection-start-line="20" selection-start-column="118" selection-end-line="20" selection-end-column="118" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="109" column="37" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="37" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -282,8 +263,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/client/modules/items/ComponentsFactory.js" />
-        <option value="$PROJECT_DIR$/build/client/static/scss/items.scss" />
         <option value="$PROJECT_DIR$/src/client/static/scss/_utils.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/ProgressBar.jsx" />
         <option value="$PROJECT_DIR$/src/client/static/scss/items.scss" />
@@ -302,7 +281,6 @@
         <option value="$PROJECT_DIR$/src/client/logic/repositories/UserRepository.js" />
         <option value="$PROJECT_DIR$/src/client/logic/models/user/UserDetails.js" />
         <option value="$PROJECT_DIR$/src/client/modules/items/ItemHeader.jsx" />
-        <option value="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" />
         <option value="$PROJECT_DIR$/src/client/resources/texts/feedback.js" />
         <option value="$PROJECT_DIR$/src/client/modules/profile/ProfilePageHeader.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx" />
@@ -315,7 +293,6 @@
         <option value="$PROJECT_DIR$/src/client/static/scss/modal.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/items/NoItemsPanel.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" />
-        <option value="$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx" />
         <option value="$PROJECT_DIR$/src/client/static/scss/sideProfile.scss" />
         <option value="$PROJECT_DIR$/src/client/static/scss/components/gallery.scss" />
         <option value="$PROJECT_DIR$/src/client/logic/config/ConfigManager.js" />
@@ -323,7 +300,6 @@
         <option value="$PROJECT_DIR$/src/client/resources/texts/labels.js" />
         <option value="$PROJECT_DIR$/src/client/modules/profile/SettingsPage.js" />
         <option value="$PROJECT_DIR$/src/client/resources/texts/general.js" />
-        <option value="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js" />
         <option value="$PROJECT_DIR$/src/client/modules/ranking/RankingPage.js" />
         <option value="$PROJECT_DIR$/src/client/modules/profile/ProfilePage.js" />
         <option value="$PROJECT_DIR$/src/client/resources/texts/login.js" />
@@ -333,6 +309,11 @@
         <option value="$PROJECT_DIR$/src/client/modules/navbar/Navbar.jsx" />
         <option value="$PROJECT_DIR$/src/client/logic/SessionManager.js" />
         <option value="$PROJECT_DIR$/src/client/Base.jsx" />
+        <option value="$PROJECT_DIR$/src/client/Footer.jsx" />
+        <option value="$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx" />
+        <option value="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js" />
+        <option value="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" />
+        <option value="$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx" />
       </list>
     </option>
   </component>
@@ -390,29 +371,6 @@
               <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="locatization" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -429,22 +387,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="navbar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="profile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -453,39 +395,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="ranking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="toasts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="texts" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -626,13 +536,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/about/SpaceCalcAboutPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -647,13 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="10055" column="1" selection-start-line="10055" selection-start-column="1" selection-end-line="10055" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2890">
-          <caret line="185" column="35" selection-start-line="185" selection-start-column="35" selection-end-line="185" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -810,27 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/profile/ProfilePageHeader.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="123" column="56" selection-start-line="123" selection-start-column="56" selection-end-line="123" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/login/ActivationEmailSentPanel.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -843,15 +718,6 @@
     <entry file="file://$PROJECT_DIR$/src/client/modules/login/ActivationPage.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1354">
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -914,13 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/Navbar.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -962,16 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/profile/SettingsPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="140" column="4" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/profile/ProfilePage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
@@ -1003,6 +852,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/profile/SettingsPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="140" column="4" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Footer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="118" selection-start-line="20" selection-start-column="118" selection-end-line="20" selection-end-column="118" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/login/LoginPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="109" column="37" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="82" column="53" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TasksHeader.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="168" column="17" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/profile/ProfilePageHeader.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/profile/SideProfilePanel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="118" column="59" selection-start-line="118" selection-start-column="59" selection-end-line="118" selection-end-column="59" />
         </state>
       </provider>
     </entry>

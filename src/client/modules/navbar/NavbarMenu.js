@@ -80,7 +80,7 @@ export default class NavbarMenu extends React.Component {
                                             targetPath={urls.SETTINGS}
                                             name={L.labels.settings}
                                             isSelected={urls.checkUrl(this.state.location.pathname, urls.SETTINGS)}
-                                            icon="user"/>);
+                                            icon="gear"/>);
 
             elements.push(<NavbarMenuButton key="profile"
                                             targetPath={urls.PROFILE}

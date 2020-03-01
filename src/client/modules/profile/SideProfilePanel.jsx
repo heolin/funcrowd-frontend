@@ -116,7 +116,7 @@ export class SideProfilePanel extends React.Component {
         let achievementsLast = AchievementsManager.getLastFinished(3).map((achievement) =>
             <AchievementCircle key={achievement.id} achievement={achievement}/>);
         if (achievementsLast.length === 0)
-            achievementsLast = <i>Nie masz jeszcze żadnych osiągnięć :(</i>;
+            achievementsLast = <i style={{paddingLeft: "15px"}}>Nie masz jeszcze żadnych osiągnięć :(</i>;
 
 
         return (
