@@ -18,7 +18,7 @@ export class Footer extends React.Component {
                                 Masz pytania? Chcesz wiedziec więcej?<br/>Skontaktuj się ze mną:
                             </p>
                             <p>
-                                <a className="light-blue-link" href="mailto: funcrowd.service@gmail.com">funcrowd.service@gmail.com</a>
+                                <a className="light-blue-link" href="mailto: kontakt@spacecalc.pl">kontakt@spacecalc.pl</a>
                             </p>
                         </div>
                         <div className="col-md-3 col-12" style={{paddingTop: "20px", textAlign: "right"}}>

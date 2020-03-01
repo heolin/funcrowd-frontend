@@ -1,5 +1,6 @@
 import EventEmitter from "event-emitter-es6"
 import UserRepository from "./repositories/UserRepository";
+import SessionManager from "./SessionManager";
 import ConfigManager from "../logic/config/ConfigManager";
 import LevelsConfig from "../resources/levels";
 import L from "./locatization/LocalizationManager";
@@ -63,8 +64,7 @@ class _UserManager extends EventEmitter {
 
                 if (this.user.profile !== details.profile) {
                     this.user.profile = details.profile;
-                    console.log(details);
-                    console.log(this.user);
+                    SessionManager.setUser(this.user);
                     ConfigManager.changeProfile(details.profile);
                     this.emit(PROFILE_CHANGED);
                 }

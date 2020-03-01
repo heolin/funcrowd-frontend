@@ -15,6 +15,8 @@ var _UserManager = _interopRequireDefault(require("../../logic/UserManager"));
 
 var _Icons = require("../../components/Icons");
 
+var _Footer = require("../../Footer");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -212,7 +214,10 @@ function (_React$Component) {
       return _react["default"].createElement("div", {
         className: "container-fluid base-row"
       }, _react["default"].createElement("div", {
-        className: "container base-row-padding"
+        className: "container base-row-padding",
+        style: {
+          minHeight: "850px"
+        }
       }, _react["default"].createElement("div", {
         className: "col-sm-12"
       }, _react["default"].createElement("h3", null, "Ranking"), _react["default"].createElement("p", null, "Sprawd\u017A swoje miejsce i zobacz post\u0119p innych!")), _react["default"].createElement("div", {
@@ -247,7 +252,7 @@ function (_React$Component) {
       }, _react["default"].createElement(_Icons.Icon, {
         className: "very-small-icon",
         name: "arrow-right_blue"
-      })))));
+      })))), _react["default"].createElement(_Footer.Footer, null));
     }
   }]);
 

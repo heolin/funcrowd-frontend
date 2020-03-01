@@ -148,7 +148,7 @@ export default class RegisterPage extends React.Component {
                                      className="btn btn-orange-primary login-button">{L.login.registerButton}</button>
                             </form>
                             <div className="text-center small login-link">
-                                {L.login.alreadyHaveAccount} <Link to={urls.LOGIN}>{L.login.logInto}</Link>
+                                {L.login.alreadyHaveAccount} <Link className="blue-link" to={urls.LOGIN}>{L.login.logInto}</Link>
                             </div>
                         </div>
                     </div>

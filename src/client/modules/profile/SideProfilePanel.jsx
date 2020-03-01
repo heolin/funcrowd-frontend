@@ -136,10 +136,10 @@ export class SideProfilePanel extends React.Component {
                             </div>
                         </div>
                         <div className="col-6 side-profile-settings">
-                            <Link to="/profile" class="blue-link" onClick={this.props.hideSideProfile}>
+                            <Link to="/profile" className="blue-link" onClick={this.props.hideSideProfile}>
                                 <div className="little">{L.labels.showProfile}</div>
                             </Link>
-                            <Link to="/settings" class="blue-link" onClick={this.props.hideSideProfile}>
+                            <Link to="/settings" className="blue-link" onClick={this.props.hideSideProfile}>
                                 <div className="little">{L.labels.settings}</div>
                             </Link>
                         </div>

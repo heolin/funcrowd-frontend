@@ -19,7 +19,7 @@ var _NavbarProfile = _interopRequireDefault(require("./NavbarProfile"));
 
 var _NavbarLoginMenu = _interopRequireDefault(require("./NavbarLoginMenu"));
 
-var _fun_crowd = _interopRequireDefault(require("../../static/img/common/fun_crowd-02.svg"));
+var _spacecalc = _interopRequireDefault(require("../../static/img/common/spacecalc.svg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -69,7 +69,7 @@ function (_React$Component) {
         href: "#"
       }, _react["default"].createElement("img", {
         className: "logo",
-        src: _fun_crowd["default"]
+        src: _spacecalc["default"]
       })), _react["default"].createElement("button", {
         className: "navbar-toggler ml-auto",
         type: "button",
@@ -96,7 +96,7 @@ function (_React$Component) {
         href: "#"
       }, _react["default"].createElement("img", {
         className: "logo",
-        src: _fun_crowd["default"]
+        src: _spacecalc["default"]
       })), _react["default"].createElement("div", {
         className: ""
       }, _react["default"].createElement(_NavbarLoginMenu["default"], {

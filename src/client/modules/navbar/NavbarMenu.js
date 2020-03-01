@@ -74,12 +74,20 @@ export default class NavbarMenu extends React.Component {
         if (ConfigManager.profile.profile)
             elements.push(<NavbarProfile key="profile"
                                          onClick={this.props.showSideProfile}/>);
-        else
+        else {
+
             elements.push(<NavbarMenuButton key="settings"
                                             targetPath={urls.SETTINGS}
-                                            name={L.labels.profile}
+                                            name={L.labels.settings}
                                             isSelected={urls.checkUrl(this.state.location.pathname, urls.SETTINGS)}
                                             icon="user"/>);
+
+            elements.push(<NavbarMenuButton key="profile"
+                                            targetPath={urls.PROFILE}
+                                            name={L.labels.profile}
+                                            isSelected={urls.checkUrl(this.state.location.pathname, urls.PROFILE)}
+                                            icon="user"/>);
+        }
 
         return (
             <ul className="navbar-nav ml-auto small">

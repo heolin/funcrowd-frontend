@@ -49,15 +49,20 @@ function () {
 
       _UserManager["default"].setup(user);
 
+      this.setUser(user, saveUser);
+
+      _AchievementsManager["default"].update();
+
+      _AchievementsManager["default"].checkToasts();
+    }
+  }, {
+    key: "setUser",
+    value: function setUser(user, saveUser) {
       sessionStorage.setItem(USER, JSON.stringify(user));
 
       if (saveUser) {
         localStorage.setItem(USER, JSON.stringify(user));
       }
-
-      _AchievementsManager["default"].update();
-
-      _AchievementsManager["default"].checkToasts();
     }
   }, {
     key: "logout",

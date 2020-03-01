@@ -3,6 +3,7 @@ import RankingRepository from "../../logic/repositories/RankingRepository";
 import Loading from "../../components/Loading";
 import UserManager from "../../logic/UserManager";
 import {Icon, SmallIcon} from "../../components/Icons";
+import {Footer} from "../../Footer";
 
 
 export default class RankingPage extends React.Component {
@@ -181,7 +182,7 @@ export default class RankingPage extends React.Component {
 
         return (
             <div className="container-fluid base-row">
-                <div className="container base-row-padding">
+                <div className="container base-row-padding" style={{minHeight: "850px"}}>
                     <div className="col-sm-12">
                         <h3>Ranking</h3>
                         <p>Sprawdź swoje miejsce i zobacz postęp innych!</p>
@@ -216,6 +217,7 @@ export default class RankingPage extends React.Component {
                         </div>
                     </div>
                 </div>
+                <Footer/>
             </div>
         );
     }

@@ -191,6 +191,7 @@ function (_React$Component) {
       }, _LocalizationManager["default"].login.registerButton)), _react["default"].createElement("div", {
         className: "text-center small login-link"
       }, _LocalizationManager["default"].login.alreadyHaveAccount, " ", _react["default"].createElement(_reactRouterDom.Link, {
+        className: "blue-link",
         to: _Urls["default"].LOGIN
       }, _LocalizationManager["default"].login.logInto))))));
     }

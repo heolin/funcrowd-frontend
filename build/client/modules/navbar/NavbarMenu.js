@@ -101,13 +101,22 @@ function (_React$Component) {
       if (_ConfigManager["default"].profile.profile) elements.push(_react["default"].createElement(_NavbarProfile["default"], {
         key: "profile",
         onClick: this.props.showSideProfile
-      }));else elements.push(_react["default"].createElement(_NavbarMenuButton["default"], {
-        key: "settings",
-        targetPath: _Urls["default"].SETTINGS,
-        name: _LocalizationManager["default"].labels.profile,
-        isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].SETTINGS),
-        icon: "user"
-      }));
+      }));else {
+        elements.push(_react["default"].createElement(_NavbarMenuButton["default"], {
+          key: "settings",
+          targetPath: _Urls["default"].SETTINGS,
+          name: _LocalizationManager["default"].labels.settings,
+          isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].SETTINGS),
+          icon: "user"
+        }));
+        elements.push(_react["default"].createElement(_NavbarMenuButton["default"], {
+          key: "profile",
+          targetPath: _Urls["default"].PROFILE,
+          name: _LocalizationManager["default"].labels.profile,
+          isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].PROFILE),
+          icon: "user"
+        }));
+      }
       return _react["default"].createElement("ul", {
         className: "navbar-nav ml-auto small"
       }, elements, _react["default"].createElement("li", {

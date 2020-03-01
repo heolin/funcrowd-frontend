@@ -178,17 +178,17 @@ function (_React$Component) {
         }
       }, _react["default"].createElement("div", {
         className: "col-sm-12"
-      }, _react["default"].createElement("h3", null, "Ustawienia"), _react["default"].createElement("p", null, "Tu mo\u017Cesz zmieni\u0107 swoj\u0105 nazw\u0119 lub has\u0142o")), _react["default"].createElement("div", {
+      }, _react["default"].createElement("h3", null, _LocalizationManager["default"].labels.settings), _react["default"].createElement("p", null, _LocalizationManager["default"].general.settingsMessage)), _react["default"].createElement("div", {
         className: "col-xl-4 col-md-6"
       }, _react["default"].createElement("div", {
         className: "form-group"
       }, _react["default"].createElement("label", {
         className: "weight-bold small settings-form-label",
         htmlFor: "username"
-      }, "Nazwa u\u017Cytkownika"), _react["default"].createElement("small", {
+      }, _LocalizationManager["default"].login.username), _react["default"].createElement("small", {
         id: "usernameHelp",
         className: "text-muted settings-form-text"
-      }, "We'll never share your email with anyone else."), _react["default"].createElement("input", {
+      }, _LocalizationManager["default"].general.emailSafe), _react["default"].createElement("input", {
         type: "username",
         className: "form-control settings-form-input",
         id: "username",
@@ -198,7 +198,7 @@ function (_React$Component) {
         onClick: this.handleSettingsSubmit,
         disabled: !this.validateSettingsForm(),
         className: "btn btn-orange-primary settings-button"
-      }, "Zapisz dane"), _react["default"].createElement("p", {
+      }, _LocalizationManager["default"].general.saveChanges), _react["default"].createElement("p", {
         className: "settings-form-error-message text-center small " + settingsMessageClassName
       }, this.state.settingsMessage)))), _react["default"].createElement("div", {
         className: "row tasks-row"
@@ -209,33 +209,33 @@ function (_React$Component) {
       }, _react["default"].createElement("label", {
         className: "weight-bold small settings-form-label",
         htmlFor: "password1"
-      }, "Nazwa u\u017Cytkownika"), _react["default"].createElement("small", {
+      }, _LocalizationManager["default"].general.password), _react["default"].createElement("small", {
         className: "settings-form-text text-muted"
-      }, "Podaj swoje stare has\u0142o"), _react["default"].createElement("input", {
+      }, _LocalizationManager["default"].general.typeOldPassword), _react["default"].createElement("input", {
         type: "password",
         className: "form-control settings-form-input",
         id: "oldPassword",
-        placeholder: "current password",
+        placeholder: _LocalizationManager["default"].general.currentPassword,
         onChange: this.handleChange
       }), _react["default"].createElement("small", {
         className: "settings-form-text text-muted"
-      }, "Podaj swoje nowe haslo"), _react["default"].createElement("input", {
+      }, _LocalizationManager["default"].general.typeNewPassword), _react["default"].createElement("input", {
         type: "password",
         className: "form-control settings-form-input",
         id: "newPassword1",
-        placeholder: "new password",
+        placeholder: _LocalizationManager["default"].general.newPassword,
         onChange: this.handleChange
       }), _react["default"].createElement("input", {
         type: "password",
         className: "form-control settings-form-input",
         id: "newPassword2",
-        placeholder: "repeat new password",
+        placeholder: _LocalizationManager["default"].general.repeatNewPassword,
         onChange: this.handleChange
       }), _react["default"].createElement("button", {
         onClick: this.handlePasswordSubmit,
         disabled: !this.validatePasswordForm(),
         className: "btn btn-orange-primary settings-button"
-      }, "Zmie\u0144 has\u0142o"), _react["default"].createElement("p", {
+      }, _LocalizationManager["default"].general.changePassword), _react["default"].createElement("p", {
         className: "settings-form-error-message text-center small " + passwordMessageClassName
       }, this.state.passwordMessage))))), _react["default"].createElement(_Footer.Footer, {
         style: {

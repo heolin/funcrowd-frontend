@@ -27,6 +27,8 @@ var _Loading = _interopRequireDefault(require("../../components/Loading"));
 
 var _TestCard = _interopRequireDefault(require("./components/TestCard"));
 
+var _ConfigManager = _interopRequireDefault(require("../../logic/config/ConfigManager"));
+
 var _UserRepository = _interopRequireDefault(require("../../logic/repositories/UserRepository"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -182,10 +184,70 @@ function (_React$Component) {
       var testCards = [];
       this.testsIds.forEach(function (testId) {
         testCards.push(_react["default"].createElement(_TestCard["default"], {
-          name: "Test",
+          name: "Test " + (testCards.length + 1),
           progress: _this3.state['test' + testId]
         }));
       });
+      var levelsHeader = null;
+      var levelsPanel = null;
+
+      if (_ConfigManager["default"].profile.exp) {
+        levelsHeader = _react["default"].createElement("div", {
+          className: "col-sm-12",
+          style: {
+            marginBottom: "50px"
+          }
+        }, _react["default"].createElement("h3", null, "Tw\xF3j poziom"), _react["default"].createElement("p", null, "Za rozwi\u0105zywanie zada\u0144 otrzymujesz gwiazdki. Im wi\u0119cej gwiazdek, tym wy\u017Cszy poziom do\u015Bwiadczenia!"), _react["default"].createElement("div", {
+          className: "text-center"
+        }, _react["default"].createElement("h5", null, "Rozwi\u0105za\u0142e\u015B/\u0142a\u015B"), _react["default"].createElement("h3", null, this.state.tasksDone, " zada\u0144")));
+        levelsPanel = _react["default"].createElement("div", {
+          className: "col-sm-12",
+          style: {
+            marginBottom: "60px"
+          }
+        }, _react["default"].createElement("div", {
+          className: "row"
+        }, levelCards));
+      }
+
+      var rankingHeader = null;
+      var rankingPanel = null;
+
+      if (_ConfigManager["default"].profile.ranking) {
+        rankingHeader = _react["default"].createElement("div", {
+          className: "col-12"
+        }, _react["default"].createElement("h3", null, "Twoje miejsce w rankingu"), _react["default"].createElement("p", null, "Sprawd\u017A swoje miejsce"));
+        rankingPanel = _react["default"].createElement("div", {
+          className: "col-md-8 offset-md-2 col-12 small",
+          style: {
+            marginBottom: "60px"
+          }
+        }, _react["default"].createElement("div", {
+          className: "ranking-panel card-2-static"
+        }, _react["default"].createElement("table", {
+          "class": "ranking-table table table-borderless text-center"
+        }, _react["default"].createElement("thead", null, _react["default"].createElement("tr", {
+          className: "color-blue"
+        }, _react["default"].createElement("th", {
+          scope: "col"
+        }, _react["default"].createElement("b", null, "Miejsce")), _react["default"].createElement("th", {
+          scope: "col"
+        }, _react["default"].createElement("b", null, "Gracz")), _react["default"].createElement("th", {
+          scope: "col"
+        }, _react["default"].createElement("b", null, "Do\u015Bwiadczenie")))), _react["default"].createElement("tbody", null, _react["default"].createElement("tr", {
+          className: "ranking-table-row-current"
+        }, _react["default"].createElement("td", null, this.state.ranking.position), _react["default"].createElement("td", null, this.state.ranking.username), _react["default"].createElement("td", null, _react["default"].createElement("b", null, this.state.ranking.value), " pkt"))))), _react["default"].createElement("div", {
+          className: "text-right",
+          style: {
+            paddingTop: "20px"
+          }
+        }, _react["default"].createElement(_reactRouterDom.Link, {
+          to: "/ranking"
+        }, _react["default"].createElement("div", {
+          className: "normal blue-link"
+        }, "Zobacz ca\u0142y ranking"))));
+      }
+
       return _react["default"].createElement("div", {
         className: "container-fluid base-row"
       }, _react["default"].createElement(_ProfilePageHeader["default"], null), _react["default"].createElement("div", {
@@ -193,7 +255,8 @@ function (_React$Component) {
       }, _react["default"].createElement("div", {
         className: "row tasks-row",
         style: {
-          paddingTop: "80px"
+          paddingTop: "80px",
+          minHeight: "650px"
         }
       }, _react["default"].createElement("div", {
         className: "col-sm-12",
@@ -205,51 +268,7 @@ function (_React$Component) {
         style: {
           paddingTop: "20px"
         }
-      }, testCards)), _react["default"].createElement("div", {
-        className: "col-sm-12",
-        style: {
-          marginBottom: "50px"
-        }
-      }, _react["default"].createElement("h3", null, "Tw\xF3j poziom"), _react["default"].createElement("p", null, "Za rozwi\u0105zywanie zada\u0144 otrzymujesz gwiazdki. Im wi\u0119cej gwiazdek, tym wy\u017Cszy poziom do\u015Bwiadczenia!"), _react["default"].createElement("div", {
-        className: "text-center"
-      }, _react["default"].createElement("h5", null, "Rozwi\u0105za\u0142e\u015B/\u0142a\u015B"), _react["default"].createElement("h3", null, this.state.tasksDone, " zada\u0144"))), _react["default"].createElement("div", {
-        className: "col-sm-12",
-        style: {
-          marginBottom: "60px"
-        }
-      }, _react["default"].createElement("div", {
-        className: "row"
-      }, levelCards)), _react["default"].createElement("div", {
-        className: "col-12"
-      }, _react["default"].createElement("h3", null, "Twoje miejsce w rankingu"), _react["default"].createElement("p", null, "Sprawd\u017A swoje miejsce")), _react["default"].createElement("div", {
-        className: "col-md-8 offset-md-2 col-12 small",
-        style: {
-          marginBottom: "60px"
-        }
-      }, _react["default"].createElement("div", {
-        className: "ranking-panel card-2-static"
-      }, _react["default"].createElement("table", {
-        "class": "ranking-table table table-borderless text-center"
-      }, _react["default"].createElement("thead", null, _react["default"].createElement("tr", {
-        className: "color-blue"
-      }, _react["default"].createElement("th", {
-        scope: "col"
-      }, _react["default"].createElement("b", null, "Miejsce")), _react["default"].createElement("th", {
-        scope: "col"
-      }, _react["default"].createElement("b", null, "Gracz")), _react["default"].createElement("th", {
-        scope: "col"
-      }, _react["default"].createElement("b", null, "Do\u015Bwiadczenie")))), _react["default"].createElement("tbody", null, _react["default"].createElement("tr", {
-        className: "ranking-table-row-current"
-      }, _react["default"].createElement("td", null, this.state.ranking.position), _react["default"].createElement("td", null, this.state.ranking.username), _react["default"].createElement("td", null, _react["default"].createElement("b", null, this.state.ranking.value), " pkt"))))), _react["default"].createElement("div", {
-        className: "text-right",
-        style: {
-          paddingTop: "20px"
-        }
-      }, _react["default"].createElement(_reactRouterDom.Link, {
-        to: "/ranking"
-      }, _react["default"].createElement("div", {
-        className: "normal"
-      }, "Zobacz ca\u0142y ranking")))))), _react["default"].createElement(_Footer.Footer, null));
+      }, testCards)), levelsHeader, levelsPanel, rankingHeader, rankingPanel)), _react["default"].createElement(_Footer.Footer, null));
     }
   }]);
 

@@ -130,16 +130,16 @@ export default class SettingsPage extends React.Component {
                 <div className="container">
                     <div className="row tasks-row" style={{paddingTop: "60px"}}>
                         <div className="col-sm-12">
-                            <h3>Ustawienia</h3>
-                            <p>Tu możesz zmienić swoją nazwę lub hasło</p>
+                            <h3>{L.labels.settings}</h3>
+                            <p>{L.general.settingsMessage}</p>
                         </div>
                         <div className="col-xl-4 col-md-6">
                             <div className="form-group">
                                 <label className="weight-bold small settings-form-label" htmlFor="username">
-                                    Nazwa użytkownika
+                                    {L.login.username}
                                 </label>
                                 <small id="usernameHelp" className="text-muted settings-form-text">
-                                    We'll never share your email with anyone else.
+                                    {L.general.emailSafe}
                                 </small>
                                 <input type="username" className="form-control settings-form-input"
                                        id="username" placeholder={UserManager.user.username}
@@ -147,7 +147,7 @@ export default class SettingsPage extends React.Component {
 
                                 <button onClick={this.handleSettingsSubmit}
                                         disabled={!this.validateSettingsForm()}
-                                        className="btn btn-orange-primary settings-button">Zapisz dane</button>
+                                        className="btn btn-orange-primary settings-button">{L.general.saveChanges}</button>
 
                                 <p className={"settings-form-error-message text-center small " + settingsMessageClassName}>
                                     {this.state.settingsMessage}
@@ -159,27 +159,27 @@ export default class SettingsPage extends React.Component {
                         <div className="col-xl-4 col-md-6">
                             <div className="form-group">
                                 <label className="weight-bold small settings-form-label" htmlFor="password1">
-                                    Nazwa użytkownika
+                                    {L.general.password}
                                 </label>
                                 <small className="settings-form-text text-muted">
-                                    Podaj swoje stare hasło
+                                    {L.general.typeOldPassword}
                                 </small>
                                 <input type="password" className="form-control settings-form-input"
-                                       id="oldPassword" placeholder="current password"
+                                       id="oldPassword" placeholder={L.general.currentPassword}
                                        onChange={this.handleChange}/>
                                 <small className="settings-form-text text-muted">
-                                    Podaj swoje nowe haslo
+                                    {L.general.typeNewPassword}
                                 </small>
                                 <input type="password" className="form-control settings-form-input"
-                                       id="newPassword1" placeholder="new password"
+                                       id="newPassword1" placeholder={L.general.newPassword}
                                        onChange={this.handleChange}/>
                                 <input type="password" className="form-control settings-form-input"
-                                       id="newPassword2" placeholder="repeat new password"
+                                       id="newPassword2" placeholder={L.general.repeatNewPassword}
                                        onChange={this.handleChange}/>
 
                                 <button onClick={this.handlePasswordSubmit}
                                         disabled={!this.validatePasswordForm()}
-                                        className="btn btn-orange-primary settings-button">Zmień hasło</button>
+                                        className="btn btn-orange-primary settings-button">{L.general.changePassword}</button>
 
                                 <p className={"settings-form-error-message text-center small " + passwordMessageClassName}>
                                     {this.state.passwordMessage}

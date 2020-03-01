@@ -9,6 +9,8 @@ var _eventEmitterEs = _interopRequireDefault(require("event-emitter-es6"));
 
 var _UserRepository = _interopRequireDefault(require("./repositories/UserRepository"));
 
+var _SessionManager = _interopRequireDefault(require("./SessionManager"));
+
 var _ConfigManager = _interopRequireDefault(require("../logic/config/ConfigManager"));
 
 var _levels = _interopRequireDefault(require("../resources/levels"));
@@ -108,8 +110,8 @@ function (_EventEmitter) {
 
         if (_this3.user.profile !== details.profile) {
           _this3.user.profile = details.profile;
-          console.log(details);
-          console.log(_this3.user);
+
+          _SessionManager["default"].setUser(_this3.user);
 
           _ConfigManager["default"].changeProfile(details.profile);
 

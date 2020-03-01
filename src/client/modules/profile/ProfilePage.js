@@ -9,6 +9,7 @@ import {Footer} from "../../Footer";
 import TaskProgressRepository from "../../logic/repositories/TaskProgressRepository";
 import Loading from "../../components/Loading";
 import TestCard from "./components/TestCard";
+import ConfigManager from "../../logic/config/ConfigManager";
 import UserRepository from "../../logic/repositories/UserRepository";
 
 
@@ -113,14 +114,79 @@ export default class ProfilePage extends React.Component {
 
         let testCards = [];
         this.testsIds.forEach((testId) => {
-            testCards.push(<TestCard name="Test" progress={this.state['test' + testId]}/>);
+            testCards.push(<TestCard name={"Test " + (testCards.length + 1)}
+                                     progress={this.state['test' + testId]}/>);
         });
+
+
+        let levelsHeader = null;
+        let levelsPanel = null;
+        if (ConfigManager.profile.exp) {
+            levelsHeader = (
+                <div className="col-sm-12" style={{marginBottom: "50px"}}>
+                    <h3>Twój poziom</h3>
+                    <p>Za rozwiązywanie zadań otrzymujesz gwiazdki. Im więcej gwiazdek, tym wyższy poziom doświadczenia!</p>
+                    <div className="text-center">
+                        <h5>Rozwiązałeś/łaś</h5>
+                        <h3>{this.state.tasksDone} zadań</h3>
+                    </div>
+                </div>
+
+            );
+
+            levelsPanel = (
+                <div className="col-sm-12" style={{marginBottom: "60px"}}>
+                    <div className="row">
+                            {levelCards}
+                    </div>
+                </div>
+            );
+        }
+
+        let rankingHeader = null;
+        let rankingPanel = null;
+        if (ConfigManager.profile.ranking) {
+            rankingHeader = (
+                <div className="col-12">
+                    <h3>Twoje miejsce w rankingu</h3>
+                    <p>Sprawdź swoje miejsce</p>
+                </div>
+            );
+
+            rankingPanel = (
+                <div className="col-md-8 offset-md-2 col-12 small" style={{marginBottom: "60px"}}>
+                    <div className="ranking-panel card-2-static">
+                        <table class="ranking-table table table-borderless text-center">
+                            <thead>
+                            <tr className="color-blue">
+                                <th scope="col"><b>Miejsce</b></th>
+                                <th scope="col"><b>Gracz</b></th>
+                                <th scope="col"><b>Doświadczenie</b></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr className="ranking-table-row-current">
+                                <td>{this.state.ranking.position}</td>
+                                <td>{this.state.ranking.username}</td>
+                                <td><b>{this.state.ranking.value}</b> pkt</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div className="text-right" style={{paddingTop: "20px"}}>
+                        <Link to="/ranking">
+                            <div className="normal blue-link">Zobacz cały ranking</div>
+                        </Link>
+                    </div>
+                </div>
+            )
+        }
 
         return (
             <div className="container-fluid base-row">
                 <ProfilePageHeader/>
                 <div className="container">
-                    <div className="row tasks-row" style={{paddingTop: "80px"}}>
+                    <div className="row tasks-row" style={{paddingTop: "80px", minHeight: "650px"}}>
                         <div className="col-sm-12" style={{marginBottom: "50px"}}>
                             <h3>Wyniki testów</h3>
                             <p>
@@ -130,49 +196,13 @@ export default class ProfilePage extends React.Component {
                                 {testCards}
                             </div>
                         </div>
-                        <div className="col-sm-12" style={{marginBottom: "50px"}}>
-                            <h3>Twój poziom</h3>
-                            <p>Za rozwiązywanie zadań otrzymujesz gwiazdki. Im więcej gwiazdek, tym wyższy poziom doświadczenia!</p>
-                            <div className="text-center">
-                                <h5>Rozwiązałeś/łaś</h5>
-                                <h3>{this.state.tasksDone} zadań</h3>
-                            </div>
-                        </div>
-                        <div className="col-sm-12" style={{marginBottom: "60px"}}>
-                            <div className="row">
-                                {levelCards}
-                            </div>
-                        </div>
-                        <div className="col-12">
-                            <h3>Twoje miejsce w rankingu</h3>
-                            <p>Sprawdź swoje miejsce</p>
-                        </div>
 
-                        <div className="col-md-8 offset-md-2 col-12 small" style={{marginBottom: "60px"}}>
-                            <div className="ranking-panel card-2-static">
-                                <table class="ranking-table table table-borderless text-center">
-                                    <thead>
-                                    <tr className="color-blue">
-                                        <th scope="col"><b>Miejsce</b></th>
-                                        <th scope="col"><b>Gracz</b></th>
-                                        <th scope="col"><b>Doświadczenie</b></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr className="ranking-table-row-current">
-                                            <td>{this.state.ranking.position}</td>
-                                            <td>{this.state.ranking.username}</td>
-                                            <td><b>{this.state.ranking.value}</b> pkt</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div className="text-right" style={{paddingTop: "20px"}}>
-                                <Link to="/ranking">
-                                    <div className="normal">Zobacz cały ranking</div>
-                                </Link>
-                            </div>
-                        </div>
+                        {levelsHeader}
+                        {levelsPanel}
+
+                        {rankingHeader}
+                        {rankingPanel}
+
                     </div>
                 </div>
                 <Footer/>

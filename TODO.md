@@ -18,6 +18,7 @@
  - [x] Pop-up pod headerem, nie widać tekstu
  - [x] Kwestionariusz satysfakcji - zły popup podczas przechodzenia między podstronami kwestionariusza (ogólnie kwestionariusz jest chyba nieprawidłowo skonfigurowany)
  - [ ] Jak sie klika na 1 misje po zakończeniu to przeładowuje strone
+ - [ ] Cachowanie grupy użytkownika
 
  
  https://docs.google.com/document/d/15bPBwuWLHOBOTIOQpoCEEVDDDUg6nKkVP9OCTWrc_Ds/edit?ts=5e542d82

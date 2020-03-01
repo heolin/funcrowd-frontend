@@ -5,7 +5,7 @@ import {user} from 'react-icons-kit/metrize/user'
 import L from "../../logic/locatization/LocalizationManager";
 import NavbarProfile from "./NavbarProfile";
 import NavbarLoginMenu from "./NavbarLoginMenu";
-import Logo from "../../static/img/common/fun_crowd-02.svg";
+import Logo from "../../static/img/common/spacecalc.svg";
 
 
 export default class Navbar extends React.Component {

@@ -9,6 +9,7 @@ class _SessionManager {
     constructor() {
         this.token = null;
         this.config = {};
+        this.saveUser = false;
         this.cache = {
             action: null,
             resetPasswordToken: null
@@ -20,6 +21,7 @@ class _SessionManager {
             return;
 
         this.token = user.token;
+        this.saveUser = saveUser;
         this.isLogged = true;
         this.config = {
             headers: {
@@ -27,13 +29,17 @@ class _SessionManager {
             }
         };
         UserManager.setup(user);
-        sessionStorage.setItem(USER, JSON.stringify(user));
-        if (saveUser) {
-            localStorage.setItem(USER, JSON.stringify(user));
-        }
+        this.setUser(user);
 
         AchievementsManager.update();
         AchievementsManager.checkToasts();
+    }
+
+    setUser(user) {
+        sessionStorage.setItem(USER, JSON.stringify(user));
+        if (this.saveUser) {
+            localStorage.setItem(USER, JSON.stringify(user));
+        }
     }
 
     logout() {
@@ -50,6 +56,7 @@ class _SessionManager {
         let user = this.getSessionUser();
         if (user === null)
             user = this.getLocalStorageUser();
+        console.log(user);
         return user;
     }
 
@@ -57,6 +64,7 @@ class _SessionManager {
         let user = null;
         try {
             user = JSON.parse(sessionStorage.getItem(USER));
+            console.log(user);
         } catch (e) {
         }
         return user;
