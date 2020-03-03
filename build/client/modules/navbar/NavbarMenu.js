@@ -107,7 +107,7 @@ function (_React$Component) {
           targetPath: _Urls["default"].SETTINGS,
           name: _LocalizationManager["default"].labels.settings,
           isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].SETTINGS),
-          icon: "user"
+          icon: "gear"
         }));
         elements.push(_react["default"].createElement(_NavbarMenuButton["default"], {
           key: "profile",

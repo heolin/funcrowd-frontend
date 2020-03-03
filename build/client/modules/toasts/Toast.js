@@ -87,7 +87,10 @@ function (_React$Component) {
       }, _react["default"].createElement("div", {
         className: "d-inline-block"
       }, toastHeader), _react["default"].createElement("div", {
-        className: "weight-bold"
+        className: "weight-bold",
+        style: {
+          lineHeight: "1.1"
+        }
       }, this.props.message))), _react["default"].createElement("div", {
         className: "toast-close",
         onClick: this.props.onClose

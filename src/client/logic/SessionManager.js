@@ -56,7 +56,6 @@ class _SessionManager {
         let user = this.getSessionUser();
         if (user === null)
             user = this.getLocalStorageUser();
-        console.log(user);
         return user;
     }
 
@@ -64,7 +63,6 @@ class _SessionManager {
         let user = null;
         try {
             user = JSON.parse(sessionStorage.getItem(USER));
-            console.log(user);
         } catch (e) {
         }
         return user;

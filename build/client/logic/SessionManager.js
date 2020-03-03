@@ -84,7 +84,6 @@ function () {
     value: function getUser() {
       var user = this.getSessionUser();
       if (user === null) user = this.getLocalStorageUser();
-      console.log(user);
       return user;
     }
   }, {
@@ -94,7 +93,6 @@ function () {
 
       try {
         user = JSON.parse(sessionStorage.getItem(USER));
-        console.log(user);
       } catch (e) {}
 
       return user;

@@ -174,8 +174,8 @@ export default class ProfilePage extends React.Component {
                         </table>
                     </div>
                     <div className="text-right" style={{paddingTop: "20px"}}>
-                        <Link to="/ranking">
-                            <div className="normal blue-link">Zobacz cały ranking</div>
+                        <Link className="blue-link" to="/ranking">
+                            <div className="normal">Zobacz cały ranking</div>
                         </Link>
                     </div>
                 </div>

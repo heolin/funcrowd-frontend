@@ -230,6 +230,7 @@ function (_React$Component) {
             paddingBottom: "30px"
           }
         }, _react["default"].createElement(_reactRouterDom.Link, {
+          className: "blue-link",
           to: "/achievements"
         }, "Zobacz wszystkie osi\u0105gni\u0119cia"))));
       }

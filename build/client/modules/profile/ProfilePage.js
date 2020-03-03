@@ -242,9 +242,10 @@ function (_React$Component) {
             paddingTop: "20px"
           }
         }, _react["default"].createElement(_reactRouterDom.Link, {
+          className: "blue-link",
           to: "/ranking"
         }, _react["default"].createElement("div", {
-          className: "normal blue-link"
+          className: "normal"
         }, "Zobacz ca\u0142y ranking"))));
       }
 

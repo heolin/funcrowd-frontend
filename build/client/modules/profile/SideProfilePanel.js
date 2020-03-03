@@ -181,7 +181,11 @@ function (_React$Component) {
         });
       });
 
-      if (achievementsLast.length === 0) achievementsLast = _react["default"].createElement("i", null, "Nie masz jeszcze \u017Cadnych osi\u0105gni\u0119\u0107 :(");
+      if (achievementsLast.length === 0) achievementsLast = _react["default"].createElement("i", {
+        style: {
+          paddingLeft: "15px"
+        }
+      }, "Nie masz jeszcze \u017Cadnych osi\u0105gni\u0119\u0107 :(");
       return _react["default"].createElement("div", null, _react["default"].createElement(_BlackBackground["default"], {
         className: "black-background behind",
         style: {

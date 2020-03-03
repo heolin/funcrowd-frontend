@@ -160,6 +160,7 @@ function (_React$Component) {
       }), _react["default"].createElement("div", {
         className: "login-reset-password-link login-link"
       }, _react["default"].createElement(_reactRouterDom.Link, {
+        className: "blue-link",
         to: _Urls["default"].RESET_PASSWORD
       }, _LocalizationManager["default"].login.forgotPassword))), _react["default"].createElement("div", {
         className: "text-center small login-error-message"

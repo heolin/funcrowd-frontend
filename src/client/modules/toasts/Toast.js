@@ -35,7 +35,7 @@ export default class Toast extends React.Component {
                         <div className="d-inline-block">
                             {toastHeader}
                         </div>
-                        <div className="weight-bold">
+                        <div className="weight-bold" style={{lineHeight: "1.1"}}>
                             {this.props.message}
                         </div>
                     </div>
