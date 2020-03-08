@@ -85,6 +85,10 @@ export class AppBase extends React.Component {
         UserManager.removeProfileChangeHandler(this.onProfileChanged);
     }
 
+    componentDidCatch() {
+
+    }
+
     checkSessionUser() {
         let user = SessionManager.getUser();
         if (user) {

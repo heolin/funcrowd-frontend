@@ -136,6 +136,42 @@ var _default = {
   send: {
     en: "Send",
     pl: "Wyślij"
+  },
+  back: {
+    en: "Back",
+    pl: "Wróć"
+  },
+  activationTokenMissingHeader: {
+    en: "Malformed link",
+    pl: "Niepoprawny link"
+  },
+  activationTokenMissingMessage: {
+    en: "Activation link is missing required token",
+    pl: "Ten link aktywacyjny nie zawiera odpowiedniego tokenu"
+  },
+  activationTokenExpiredHeader: {
+    en: "Link expired",
+    pl: "Link wygasł"
+  },
+  activationTokenExpiredMessage: {
+    en: "This activation link already expired.<br/>Click button below to send another email.",
+    pl: "Ten link aktywacyjny nie jest już dostępny.<br/>Naciśnij poniższy guzik aby wysłać kolejny email."
+  },
+  activationTokenWrongHeader: {
+    en: "Link incorrect",
+    pl: "Link niepoprawny"
+  },
+  activationTokenWrongMessage: {
+    en: "This activation link is not correct",
+    pl: "Link aktywacyjny zawiera niepoprawny token"
+  },
+  activationTokenUsedHeader: {
+    en: "Link already used",
+    pl: "Link nieaktywny"
+  },
+  activationTokenUsedMessage: {
+    en: "This acitvation link was already used",
+    pl: "Ten link aktywacyjny został już użyty"
   }
 };
 exports["default"] = _default;

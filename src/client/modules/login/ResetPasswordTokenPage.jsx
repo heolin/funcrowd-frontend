@@ -1,6 +1,5 @@
 import React from "react"
 import {close} from 'react-icons-kit/fa/close'
-import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import L from "../../logic/locatization/LocalizationManager";
 import UserRepository from "../../logic/repositories/UserRepository";
@@ -102,7 +101,7 @@ export default class ResetPasswordTokenPage extends React.Component {
                                            className="login-input form-control"
                                            value={this.state.password2}
                                            onChange={this.handleChange}
-                                           placeholder={L.login.password}/>
+                                           placeholder={L.login.repeatPassword}/>
                                 </div>
                                 <div className="text-center small login-error-message">
                                     {this.state.error}

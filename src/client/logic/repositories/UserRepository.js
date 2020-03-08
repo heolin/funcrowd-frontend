@@ -78,6 +78,12 @@ export default class UserRepository {
         });
     }
 
+    static renewToken(token) {
+        return axios.post(ConfigManager.baseUrl+'/api/v1/users/activate/renew/', {
+            token: token,
+        });
+    }
+
     static mturk(workerId) {
         return axios.post(ConfigManager.baseUrl+'/api/v1/users/mturk/', {
             worker_id: workerId,

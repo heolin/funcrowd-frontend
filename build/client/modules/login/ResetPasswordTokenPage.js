@@ -9,8 +9,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _close = require("react-icons-kit/fa/close");
 
-var _reactRouterDom = require("react-router-dom");
-
 var _queryString = _interopRequireDefault(require("query-string"));
 
 var _LocalizationManager = _interopRequireDefault(require("../../logic/locatization/LocalizationManager"));
@@ -161,7 +159,7 @@ function (_React$Component) {
         className: "login-input form-control",
         value: this.state.password2,
         onChange: this.handleChange,
-        placeholder: _LocalizationManager["default"].login.password
+        placeholder: _LocalizationManager["default"].login.repeatPassword
       })), _react["default"].createElement("div", {
         className: "text-center small login-error-message"
       }, this.state.error), _react["default"].createElement("button", {

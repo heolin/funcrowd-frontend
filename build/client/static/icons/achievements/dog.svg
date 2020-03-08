@@ -1,16 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 176.2 595.3 489.6" enable-background="new 0 176.2 595.3 489.6" xml:space="preserve">
-<path fill="#FCD0A3" d="M513.9,339V176.2h-208c-26.4,0-50.6,14.9-62.4,38.6l-38.9,77.7H0v34.9L72.9,455
-	c12.4,21.7,35.5,35.1,60.6,35.1H286v175.6h309.3V420.4L513.9,339z"/>
-<path fill="#FFB983" d="M595.3,420.4L513.9,339V176.2h-208c-26.4,0-50.6,14.9-62.4,38.6l-38.9,77.7l236,303.5v69.8h154.6
-	L595.3,420.4L595.3,420.4z"/>
-<path fill="#C66F34" d="M444.1,350.6L444.1,350.6c-38.5,0-69.8-31.2-69.8-69.8V176.2h139.5v104.6
-	C513.9,319.4,482.7,350.6,444.1,350.6z"/>
-<circle fill="#C66F34" cx="286" cy="286.7" r="23.3"/>
-<rect x="286" y="595.9" fill="#656691" width="309.3" height="69.8"/>
-<rect x="440.6" y="595.9" fill="#575988" width="154.6" height="69.8"/>
-<polygon fill="#C66F34" points="0,292.5 0,327.4 11.1,346.7 65.4,292.5 "/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="60mm"
+   height="60mm"
+   viewBox="0 0 60 60"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="drawing.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="269.18817"
+     inkscape:cy="120.78861"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1859"
+     inkscape:window-height="1025"
+     inkscape:window-x="61"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-237.00002)">
+    <g
+       id="g843"
+       transform="matrix(0.10076871,0,0,0.10076871,-0.05426939,223.31339)">
+      <path
+         id="path815"
+         d="M 513.9,339 V 176.2 h -208 c -26.4,0 -50.6,14.9 -62.4,38.6 l -38.9,77.7 H 0 v 34.9 L 72.9,455 c 12.4,21.7 35.5,35.1 60.6,35.1 H 286 V 665.7 H 595.3 V 420.4 Z"
+         inkscape:connector-curvature="0"
+         style="fill:#fcd0a3" />
+      <path
+         id="path817"
+         d="M 595.3,420.4 513.9,339 V 176.2 h -208 c -26.4,0 -50.6,14.9 -62.4,38.6 l -38.9,77.7 236,303.5 v 69.8 h 154.6 z"
+         inkscape:connector-curvature="0"
+         style="fill:#ffb983" />
+      <path
+         id="path819"
+         d="m 444.1,350.6 v 0 c -38.5,0 -69.8,-31.2 -69.8,-69.8 V 176.2 h 139.5 v 104.6 c 0.1,38.6 -31.1,69.8 -69.7,69.8 z"
+         inkscape:connector-curvature="0"
+         style="fill:#c66f34" />
+      <circle
+         id="circle821"
+         r="23.299999"
+         cy="286.70001"
+         cx="286"
+         style="fill:#c66f34" />
+      <rect
+         id="rect823"
+         height="69.800003"
+         width="309.29999"
+         y="595.90002"
+         x="286"
+         style="fill:#656691" />
+      <rect
+         id="rect825"
+         height="69.800003"
+         width="154.60001"
+         y="595.90002"
+         x="440.60001"
+         style="fill:#575988" />
+      <polygon
+         id="polygon827"
+         points="11.1,346.7 65.4,292.5 0,292.5 0,327.4 "
+         style="fill:#c66f34" />
+    </g>
+    <rect
+       style="opacity:1;fill:#93a7ac;fill-opacity:0;stroke:none;stroke-width:0.495;stroke-miterlimit:3.9000001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect1434"
+       width="194.27975"
+       height="130.77975"
+       x="-176.1369"
+       y="-97.607147" />
+    <rect
+       style="opacity:1;fill:#93a7ac;fill-opacity:0;stroke:none;stroke-width:0.495;stroke-miterlimit:3.9000001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect1436"
+       width="315.9881"
+       height="272.14285"
+       x="-378.73215"
+       y="-281.30356" />
+    <rect
+       style="opacity:1;fill:#93a7ac;fill-opacity:0;stroke:none;stroke-width:0.495;stroke-miterlimit:3.9000001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect1442"
+       width="59.720234"
+       height="52.916664"
+       x="14.363094"
+       y="114.81546" />
+    <rect
+       style="opacity:1;fill:#93a7ac;fill-opacity:0;stroke:none;stroke-width:0.495;stroke-miterlimit:3.9000001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect1444"
+       width="12.095239"
+       height="4.5357141"
+       x="-15.119047"
+       y="80.041656" />
+  </g>
 </svg>

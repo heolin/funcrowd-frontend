@@ -111,6 +111,13 @@ function () {
       });
     }
   }, {
+    key: "renewToken",
+    value: function renewToken(token) {
+      return _axios["default"].post(_ConfigManager["default"].baseUrl + '/api/v1/users/activate/renew/', {
+        token: token
+      });
+    }
+  }, {
     key: "mturk",
     value: function mturk(workerId) {
       return _axios["default"].post(_ConfigManager["default"].baseUrl + '/api/v1/users/mturk/', {

@@ -171,6 +171,9 @@ function (_React$Component) {
       _UserManager["default"].removeProfileChangeHandler(this.onProfileChanged);
     }
   }, {
+    key: "componentDidCatch",
+    value: function componentDidCatch() {}
+  }, {
     key: "checkSessionUser",
     value: function checkSessionUser() {
       var user = _SessionManager["default"].getUser();
