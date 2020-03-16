@@ -75,7 +75,9 @@ function (_React$Component) {
         }
       }, _react["default"].createElement("h3", {
         className: "text-center"
-      }, "\u0141atwiej b\u0119dzie na komputerze"), _react["default"].createElement("div", null, _react["default"].createElement("p", null, "Cze\u015B\u0107!"), _react["default"].createElement("p", null, "Wygl\u0105da na to, \u017Ce chcesz rozwi\u0105za\u0107 to zadanie, ale przegl\u0105dasz je na smartfonie. Nasz kurs wygodniej rozwi\u0105zywa\u0107 na wi\u0119kszym ekranie. Nasza rada? Przesi\u0105d\u017A si\u0119 na laptop lub komputer."), _react["default"].createElement("p", null, "Pami\u0119taj, do rozwi\u0105zywania zada\u0144 potrzebujesz programu Excel. \u0141atwiej i szybciej obs\u0142u\u017Cysz go na komputerze.")), _react["default"].createElement("div", {
+      }, "\u0141atwiej b\u0119dzie na komputerze"), _react["default"].createElement("div", {
+        className: "small"
+      }, _react["default"].createElement("p", null, "Cze\u015B\u0107!"), _react["default"].createElement("p", null, "Wygl\u0105da na to, \u017Ce chcesz rozwi\u0105za\u0107 to zadanie, ale przegl\u0105dasz je na smartfonie. Nasz kurs wygodniej rozwi\u0105zywa\u0107 na wi\u0119kszym ekranie. Nasza rada? Przesi\u0105d\u017A si\u0119 na laptop lub komputer."), _react["default"].createElement("p", null, "Pami\u0119taj, do rozwi\u0105zywania zada\u0144 potrzebujesz programu Excel. \u0141atwiej i szybciej obs\u0142u\u017Cysz go na komputerze.")), _react["default"].createElement("div", {
         className: "text-center"
       }, _react["default"].createElement("div", {
         className: "btn btn-primary feedback-button",

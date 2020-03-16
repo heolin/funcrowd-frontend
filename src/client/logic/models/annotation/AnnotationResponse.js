@@ -5,7 +5,7 @@ export default class AnnotationResponse {
     constructor(annotation, isVerified, errors, expBase, expBonus, nextItemId) {
         this.annotation = annotation;
         this.isVerified = isVerified;
-        this.nextItemId = nextItemId
+        this.nextItemId = nextItemId;
         this.errors = errors;
         this.exp = new Exp(expBase, expBonus);
     }

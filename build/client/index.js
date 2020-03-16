@@ -15,7 +15,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var result = _DetectIE["default"].detectIE();
 
 window.isMobile = function () {
-  return true;
   var check = false;
 
   (function (a) {

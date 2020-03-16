@@ -31,7 +31,7 @@ export default class MobileWarningPanel extends React.Component {
                     <h3 className="text-center">
                         Łatwiej będzie na komputerze
                     </h3>
-                    <div>
+                    <div className="small">
                         <p>
                             Cześć!
                         </p>

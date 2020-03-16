@@ -31,6 +31,7 @@ function () {
   _createClass(Annotation, null, [{
     key: "fromJson",
     value: function fromJson(annotation_data) {
+      console.log(annotation_data.feedback);
       var annotation = new Annotation(annotation_data.item_id, annotation_data.data, _Feedback["default"].fromJson(annotation_data.feedback), annotation_data.skipped, annotation_data.attempt);
       return annotation;
     }

@@ -33,7 +33,7 @@ export default class NavbarLoginMenu extends React.Component {
             return null;
 
         return (
-            <div className="small">
+            <ul className="navbar-nav ml-auto small">
                 <NavbarMenuButton className="d-inline-block color-dark"
                                   targetPath={urls.ABOUT} name={L.labels.about} icon="about"/>
 
@@ -42,14 +42,15 @@ export default class NavbarLoginMenu extends React.Component {
                                    isSelected={
                                        urls.checkUrl(this.state.location.pathname, urls.LOGIN) ||
                                        urls.checkUrl(this.state.location.pathname, urls.RESET_PASSWORD)
-                                   }/>
+                                   }
+                                   style={{marginRight: "20px"}}/>
 
                 <NavbarLoginButton targetPath={urls.REGISTER}
                                    name={L.labels.register}
-                                   isSelected={urls.checkUrl(this.state.location.pathname, urls.REGISTER)
-                                   }
-                                   style={{marginLeft: "20px"}}/>
-            </div>
+                                   isSelected={
+                                       urls.checkUrl(this.state.location.pathname, urls.REGISTER)
+                                   }/>
+            </ul>
         );
     }
 }

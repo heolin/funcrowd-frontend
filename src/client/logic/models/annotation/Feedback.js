@@ -1,8 +1,7 @@
 
 export default class Feedback {
-    constructor(score, type, scores, values) {
+    constructor(score, scores, values) {
         this.score = score;
-        this.type = type;
         this.scores = scores;
         this.values = values;
     }
@@ -11,7 +10,6 @@ export default class Feedback {
         if (feedback_data) {
             let feedback = new Feedback(
                 feedback_data.score,
-                feedback_data.type,
                 feedback_data.scores,
                 feedback_data.values
             );

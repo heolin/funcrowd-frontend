@@ -11,7 +11,7 @@ export default class NavbarLoginButton extends React.Component {
 
         return (
             <Link to={this.props.targetPath}>
-                <li className={"btn small navbar-login-button " + className}
+                <li className={"nav-item btn small navbar-login-button " + className}
                     style={this.props.style}>
                     {this.props.name}
                 </li>

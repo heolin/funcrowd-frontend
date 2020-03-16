@@ -20,6 +20,7 @@ import UserManager from "../../logic/UserManager";
 import {Footer} from "../../Footer";
 import AchievementsManager from "../../logic/AchievementsManager";
 import MobileWarningPanel from "../popups/MobileWarningPanel";
+import FeedbackTypes from "../feedback/FeedbackTypes";
 
 const MobileWarningStates = {
     NONE: 0,
@@ -173,7 +174,10 @@ export default class ItemPanel extends React.Component {
         const lastPageOnlyFeedback =
             this.state.task.metadata.lastPageOnlyFeedback === true;
 
-        if (lastPageOnlyFeedback === false ||
+        if (this.state.task.feedback.type === FeedbackTypes.NONE) {
+            this.onFeedbackAccept();
+
+        } else if (lastPageOnlyFeedback === false ||
             annotationResponse.isLastItem) {
 
             let feedback = null;
