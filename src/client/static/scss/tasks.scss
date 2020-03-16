@@ -107,6 +107,10 @@ $image-size: 212px;
   color: $green-color;
 }
 
+.task-card.permanent {
+  color: $dark-orange-color;
+}
+
 .task-card a {
   @extend .dark-color-orange;
 }
@@ -129,6 +133,10 @@ $image-size: 212px;
 
 .task-card:nth-child(odd).locked {
   @include horizontal_gradient($grey-color);
+}
+
+.task-card:nth-child(odd).permanent {
+  @include horizontal_gradient($light-orange-color);
 }
 
 .tasks-introduction {

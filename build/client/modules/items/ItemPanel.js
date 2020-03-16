@@ -47,6 +47,8 @@ var _Footer = require("../../Footer");
 
 var _AchievementsManager = _interopRequireDefault(require("../../logic/AchievementsManager"));
 
+var _MobileWarningPanel = _interopRequireDefault(require("../popups/MobileWarningPanel"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -66,6 +68,12 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var MobileWarningStates = {
+  NONE: 0,
+  SHOWN: 1,
+  HIDDEN: 2
+};
 
 var ItemPanel =
 /*#__PURE__*/
@@ -87,13 +95,16 @@ function (_React$Component) {
       feedback: null,
       annotation: null,
       instruction: false,
-      confirmation: false
+      confirmation: false,
+      mobileWarning: MobileWarningStates.NONE
     };
     _this.onAnnotationPost = _this.onAnnotationPost.bind(_assertThisInitialized(_this));
     _this.onFeedbackAccept = _this.onFeedbackAccept.bind(_assertThisInitialized(_this));
     _this.showInstruction = _this.showInstruction.bind(_assertThisInitialized(_this));
     _this.onInstructionClose = _this.onInstructionClose.bind(_assertThisInitialized(_this));
     _this.onBountyFinished = _this.onBountyFinished.bind(_assertThisInitialized(_this));
+    _this.checkMobileWarning = _this.checkMobileWarning.bind(_assertThisInitialized(_this));
+    _this.onMobileWarningClose = _this.onMobileWarningClose.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -109,6 +120,7 @@ function (_React$Component) {
       if (this.state.task !== prevState.task) {
         this.checkState();
         this.checkInstruction();
+        this.checkMobileWarning();
         window.scrollTo(0, 0);
       }
     }
@@ -143,6 +155,7 @@ function (_React$Component) {
       } else {
         this.getFirstItem();
         this.checkInstruction();
+        this.checkMobileWarning();
       }
     }
   }, {
@@ -259,6 +272,26 @@ function (_React$Component) {
       this.getNextItem();
     }
   }, {
+    key: "checkMobileWarning",
+    value: function checkMobileWarning() {
+      if (this.state.task) {
+        var metadata = this.state.task.metadata;
+
+        if (this.state.mobileWarning === MobileWarningStates.NONE && window.isMobile() && metadata.onlyPC === true) {
+          this.setState({
+            mobileWarning: MobileWarningStates.SHOWN
+          });
+        }
+      }
+    }
+  }, {
+    key: "onMobileWarningClose",
+    value: function onMobileWarningClose() {
+      this.setState({
+        mobileWarning: MobileWarningStates.HIDDEN
+      });
+    }
+  }, {
     key: "checkInstruction",
     value: function checkInstruction() {
       if (localStorage.getItem("FUNCROWD_INSTRUCTION_TASK" + this.state.task.id) !== "true") this.showInstruction();
@@ -356,6 +389,9 @@ function (_React$Component) {
         exp: this.state.exp,
         task: this.state.task,
         annotation: this.state.annotation
+      }), _react["default"].createElement(_MobileWarningPanel["default"], {
+        isOpen: this.state.mobileWarning === MobileWarningStates.SHOWN,
+        onClose: this.onMobileWarningClose
       }), _react["default"].createElement("div", {
         className: "container"
       }, _react["default"].createElement("div", {

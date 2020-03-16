@@ -82,6 +82,13 @@ function (_React$Component) {
         });
         statusClassName = "finished";
         taskIcon = taskIconBase + "_green";
+      } else if (progress.status === "PERMANENT") {
+        startIcon = _react["default"].createElement(_Icons.Icon, {
+          className: "very-small-icon task-card-start-icon",
+          name: "arrow-right_orange"
+        });
+        statusClassName = "permanent";
+        taskIcon = taskIconBase + "_orange";
       } else if (progress.status !== "LOCKED") {
         startIcon = _react["default"].createElement(_Icons.Icon, {
           className: "very-small-icon task-card-start-icon",

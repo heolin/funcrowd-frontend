@@ -24,7 +24,7 @@ export default class ProfilePage extends React.Component {
             tasksDone: null
         };
 
-        this.testsIds = [52, 53, 54];
+        this.testsIds = [61, 53, 54];
 
         this.testsIds.forEach((testId) => {
             this.state["test" + testId] = null;

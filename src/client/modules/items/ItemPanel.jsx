@@ -19,6 +19,14 @@ import Loading from "../../components/Loading";
 import UserManager from "../../logic/UserManager";
 import {Footer} from "../../Footer";
 import AchievementsManager from "../../logic/AchievementsManager";
+import MobileWarningPanel from "../popups/MobileWarningPanel";
+
+const MobileWarningStates = {
+    NONE: 0,
+    SHOWN: 1,
+    HIDDEN: 2
+};
+
 
 export default class ItemPanel extends React.Component {
 
@@ -34,6 +42,7 @@ export default class ItemPanel extends React.Component {
             annotation: null,
             instruction: false,
             confirmation: false,
+            mobileWarning: MobileWarningStates.NONE,
         };
 
         this.onAnnotationPost = this.onAnnotationPost.bind(this);
@@ -41,6 +50,8 @@ export default class ItemPanel extends React.Component {
         this.showInstruction = this.showInstruction.bind(this);
         this.onInstructionClose = this.onInstructionClose.bind(this);
         this.onBountyFinished = this.onBountyFinished.bind(this);
+        this.checkMobileWarning = this.checkMobileWarning.bind(this);
+        this.onMobileWarningClose = this.onMobileWarningClose.bind(this);
     }
 
     componentDidMount() {
@@ -66,6 +77,7 @@ export default class ItemPanel extends React.Component {
         if (this.state.task !== prevState.task) {
             this.checkState();
             this.checkInstruction();
+            this.checkMobileWarning();
             window.scrollTo(0, 0);
         }
     }
@@ -91,6 +103,7 @@ export default class ItemPanel extends React.Component {
         } else {
             this.getFirstItem();
             this.checkInstruction();
+            this.checkMobileWarning();
         }
     }
 
@@ -189,6 +202,21 @@ export default class ItemPanel extends React.Component {
         this.getNextItem();
     }
 
+    checkMobileWarning() {
+        if (this.state.task) {
+            let metadata = this.state.task.metadata;
+            if (this.state.mobileWarning === MobileWarningStates.NONE &&
+                window.isMobile() &&
+                metadata.onlyPC === true) {
+                this.setState({mobileWarning: MobileWarningStates.SHOWN});
+            }
+        }
+    }
+
+    onMobileWarningClose() {
+        this.setState({mobileWarning: MobileWarningStates.HIDDEN});
+    }
+
     checkInstruction() {
         if (localStorage.getItem("FUNCROWD_INSTRUCTION_TASK"+this.state.task.id) !== "true")
             this.showInstruction();
@@ -278,6 +306,9 @@ export default class ItemPanel extends React.Component {
                                exp={this.state.exp}
                                task={this.state.task}
                                annotation={this.state.annotation}/>
+
+                <MobileWarningPanel isOpen={this.state.mobileWarning === MobileWarningStates.SHOWN}
+                                    onClose={this.onMobileWarningClose}/>
 
                 <div className="container">
                     <div className="row">

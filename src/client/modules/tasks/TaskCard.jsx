@@ -39,6 +39,11 @@ export default class TaskCard extends React.Component {
             statusClassName = "finished";
             taskIcon = taskIconBase + "_green";
         }
+        else if (progress.status === "PERMANENT") {
+            startIcon = <Icon className="very-small-icon task-card-start-icon" name="arrow-right_orange"/>;
+            statusClassName = "permanent";
+            taskIcon = taskIconBase + "_orange";
+        }
         else if (progress.status !== "LOCKED") {
             startIcon = <Icon className="very-small-icon task-card-start-icon" name="arrow-right_blue"/>;
             statusClassName = "unlocked";

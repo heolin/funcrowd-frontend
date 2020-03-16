@@ -68,7 +68,7 @@ function (_React$Component) {
       ranking: null,
       tasksDone: null
     };
-    _this.testsIds = [52, 53, 54];
+    _this.testsIds = [61, 53, 54];
 
     _this.testsIds.forEach(function (testId) {
       _this.state["test" + testId] = null;
