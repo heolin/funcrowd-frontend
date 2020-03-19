@@ -109,6 +109,7 @@ function (_React$Component) {
       }, _react["default"].createElement("h3", null, _LocalizationManager["default"].spacecalc.welcome.header2), _react["default"].createElement("p", {
         className: "color-bright-orange"
       }, _LocalizationManager["default"].spacecalc.welcome.text2), _react["default"].createElement(_Blob.Blob, {
+        className: "d-none d-sm-block",
         name: "blob1",
         top: "-35px",
         left: "-100px"
@@ -121,6 +122,7 @@ function (_React$Component) {
       }, _react["default"].createElement("h3", null, _LocalizationManager["default"].spacecalc.welcome.header3), _react["default"].createElement("p", {
         className: "color-bright-orange"
       }, _LocalizationManager["default"].spacecalc.welcome.text3), _react["default"].createElement(_Blob.Blob, {
+        className: "d-none d-sm-block",
         name: "blob2",
         top: "-50px",
         right: "100px"
@@ -133,6 +135,7 @@ function (_React$Component) {
       }, _react["default"].createElement("h3", null, _LocalizationManager["default"].spacecalc.welcome.header4), _react["default"].createElement("p", {
         className: "color-bright-orange"
       }, _LocalizationManager["default"].spacecalc.welcome.text4), _react["default"].createElement(_Blob.Blob, {
+        className: "d-none d-sm-block",
         name: "blob3",
         top: "-50px",
         left: "-100px"
@@ -255,7 +258,7 @@ function (_React$Component) {
       }, _LocalizationManager["default"].spacecalc.welcome.label4)), _react["default"].createElement(_Blob.Blob, {
         className: "blob-front blob-relative",
         name: "blob5",
-        right: "170px",
+        right: "200px",
         top: "100px",
         align: "right"
       }, _react["default"].createElement("span", {
@@ -266,9 +269,9 @@ function (_React$Component) {
           left: "50px"
         }
       }, _LocalizationManager["default"].spacecalc.welcome.label5)), _react["default"].createElement(_Blob.Blob, {
-        className: "blob-front blob-relative",
+        className: "blob-front blob-relative blob300",
+        top: "null",
         name: "blob4",
-        top: "300px",
         left: "-30px"
       }, _react["default"].createElement("span", {
         className: "color-bright-orange font-weight-bold small",
@@ -277,7 +280,7 @@ function (_React$Component) {
           top: "30px",
           left: "15px"
         }
-      }, _LocalizationManager["default"].spacecalc.welcome.label6)), _react["default"].createElement("img", {
+      }, _LocalizationManager["default"].spacecalc.welcome.label6), "S"), _react["default"].createElement("img", {
         src: _appScreen["default"],
         style: {
           width: "100%"

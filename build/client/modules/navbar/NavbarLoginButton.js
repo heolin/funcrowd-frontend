@@ -48,7 +48,7 @@ function (_React$Component) {
       return _react["default"].createElement(_reactRouterDom.Link, {
         to: this.props.targetPath
       }, _react["default"].createElement("li", {
-        className: "btn small navbar-login-button " + className,
+        className: "nav-item btn small navbar-login-button " + className,
         style: this.props.style
       }, this.props.name));
     }

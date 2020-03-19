@@ -74,7 +74,13 @@
   }
 }
 
-
 .navbar-login-button {
   width: 140px;
+  padding: 6px 12px;
+
+  @media screen and (max-width: map-get($screen-widths, 'md')) {
+    margin-bottom: 20px;
+  }
 }
+
+

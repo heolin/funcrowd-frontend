@@ -1,3 +1,4 @@
+@import "../variables";
 
 .blob {
   position: absolute;
@@ -19,4 +20,12 @@
 .blob span {
   position: absolute;
   line-height: 1.2;
+}
+
+.blob300 {
+  top: 300px !important;
+
+  @media screen and (max-width: map-get($screen-widths, 'sm')) {
+    top: 150px !important;
+  }
 }

@@ -36,21 +36,21 @@ export default class SpaceCalcWelcomePage extends React.Component {
                             <p className="color-bright-orange">
                                 {L.spacecalc.welcome.text2}
                             </p>
-                            <Blob name="blob1" top="-35px" left="-100px"/>
+                            <Blob className="d-none d-sm-block" name="blob1" top="-35px" left="-100px"/>
                         </div>
                         <div className="col-md-8 col-12 text-right mx-auto" style={{marginBottom: "60px", position: "relative"}}>
                             <h3>{L.spacecalc.welcome.header3}</h3>
                             <p className="color-bright-orange">
                                 {L.spacecalc.welcome.text3}
                             </p>
-                            <Blob name="blob2" top="-50px" right="100px"/>
+                            <Blob className="d-none d-sm-block" name="blob2" top="-50px" right="100px"/>
                         </div>
                         <div className="col-md-8 col-12 mx-auto" style={{marginBottom: "60px", position: "relative"}}>
                             <h3>{L.spacecalc.welcome.header4}</h3>
                             <p className="color-bright-orange">
                                 {L.spacecalc.welcome.text4}
                             </p>
-                            <Blob name="blob3" top="-50px" left="-100px"/>
+                            <Blob className="d-none d-sm-block" name="blob3" top="-50px" left="-100px"/>
                         </div>
                         <div className="col-12 text-center mx-auto" style={{marginBottom: "60px"}}>
                             <Link to="/register">
@@ -103,17 +103,17 @@ export default class SpaceCalcWelcomePage extends React.Component {
                                 </span>
                             </Blob>
                             <Blob className="blob-front blob-relative" name="blob5"
-                                  right="170px" top="100px" align="right">
+                                  right="200px" top="100px" align="right">
                                 <span className="color-bright-orange font-weight-bold small"
                                       style={{width: "150px", top: "20px", left: "50px"}}>
                                     {L.spacecalc.welcome.label5}
                                 </span>
                             </Blob>
-                            <Blob className="blob-front blob-relative" name="blob4" top="300px" left="-30px">
+                            <Blob className="blob-front blob-relative blob300" top="null" name="blob4" left="-30px">
                                 <span className="color-bright-orange font-weight-bold small"
                                       style={{width: "150px", top: "30px", left: "15px"}}>
                                     {L.spacecalc.welcome.label6}
-                                </span>
+                                </span>S
                             </Blob>
                             <img src={appScreen} style={{width: "100%"}}/>
                         </div>

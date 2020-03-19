@@ -24,9 +24,19 @@ export default class ProfilePage extends React.Component {
             tasksDone: null
         };
 
-        this.testsIds = [61, 53, 54];
+        this.testsIds = {
+            "Test 1": [61, 62, 63, 64, 65, 66],
+            "Test 2": [53],
+            "Test 3": [54]
+        };
+        this.allIds = [];
+        for (const test in this.testsIds) {
+            this.testsIds[test].forEach((testId) => {
+                this.allIds.push(testId);
+            });
+        }
 
-        this.testsIds.forEach((testId) => {
+        this.allIds.forEach((testId) => {
             this.state["test" + testId] = null;
             this.state["loadingTest" + testId] = true;
         });
@@ -38,7 +48,7 @@ export default class ProfilePage extends React.Component {
         UserManager.addExperienceChangeHandler(this.onUpdate);
 
         let state = {};
-        this.testsIds.forEach((testId) => {
+        this.allIds.forEach((testId) => {
             state["loadingTest" + testId] = true;
 
             TaskProgressRepository.get(testId)
@@ -97,7 +107,7 @@ export default class ProfilePage extends React.Component {
         if (UserManager.user === null)
             return <Loading/>;
 
-        for (const testId of this.testsIds) {
+        for (const testId of this.allIds) {
             if (this.state["loadingTest" + testId])
                 return <Loading/>;
         }
@@ -113,10 +123,14 @@ export default class ProfilePage extends React.Component {
         });
 
         let testCards = [];
-        this.testsIds.forEach((testId) => {
-            testCards.push(<TestCard name={"Test " + (testCards.length + 1)}
-                                     progress={this.state['test' + testId]}/>);
-        });
+        for (const test in this.testsIds) {
+            let testResults = this.testsIds[test].map((taskId) => {
+                return this.state['test' + taskId]
+            });
+            testCards.push(<TestCard name={test}
+                                     key={test}
+                                     testResults={testResults}/>);
+        }
 
 
         let levelsHeader = null;
@@ -202,7 +216,6 @@ export default class ProfilePage extends React.Component {
 
                         {rankingHeader}
                         {rankingPanel}
-
                     </div>
                 </div>
                 <Footer/>

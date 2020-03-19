@@ -1,10 +1,15 @@
 @import "cards";
 @import "colors";
+@import "variables";
 
 
 .item-panel {
   padding-top: 50px;
-  margin-bottom: 40px
+  margin-bottom: 40px;
+
+  @media screen and (max-width: map-get($screen-widths, 'sm')) {
+    padding: 40px 0;
+  }
 }
 
 .item-panel-group {
@@ -14,6 +19,10 @@
   padding: 50px 50px 20px 50px;
   margin-bottom: 30px;
   border-left: solid 4px $blue-color;
+
+  @media screen and (max-width: map-get($screen-widths, 'sm')) {
+    padding: 20px;
+  }
 }
 
 .info-button {

@@ -57,8 +57,8 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       if (!this.state.location) return null;
-      return _react["default"].createElement("div", {
-        className: "small"
+      return _react["default"].createElement("ul", {
+        className: "navbar-nav ml-auto small"
       }, _react["default"].createElement(_NavbarMenuButton["default"], {
         className: "d-inline-block color-dark",
         targetPath: _Urls["default"].ABOUT,
@@ -67,14 +67,14 @@ function (_React$Component) {
       }), _react["default"].createElement(_NavbarLoginButton["default"], {
         targetPath: _Urls["default"].LOGIN,
         name: _LocalizationManager["default"].labels.login,
-        isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].LOGIN) || _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].RESET_PASSWORD)
+        isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].LOGIN) || _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].RESET_PASSWORD),
+        style: {
+          marginRight: "20px"
+        }
       }), _react["default"].createElement(_NavbarLoginButton["default"], {
         targetPath: _Urls["default"].REGISTER,
         name: _LocalizationManager["default"].labels.register,
-        isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].REGISTER),
-        style: {
-          marginLeft: "20px"
-        }
+        isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].REGISTER)
       }));
     }
   }], [{

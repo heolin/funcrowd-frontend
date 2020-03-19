@@ -4,6 +4,7 @@ import TaskCard from "./TaskCard";
 import MissionRepository from "../../logic/repositories/MissionRepository";
 import TaskHeader from "./TasksHeader";
 import L from "../../logic/locatization/LocalizationManager";
+import urls from "../../Urls";
 import { Link } from 'react-router-dom';
 
 import posed  from 'react-pose';
@@ -175,13 +176,19 @@ export default class TasksMenu extends React.Component {
             <div className="container-fluid base-row">
                 <TaskHeader mission={this.props.mission} progress={this.state.progress}/>
                 <div className="container">
-                    <div className="row tasks-row">
+                    <div className="row tasks-row" style={{marginBottom: "30px"}}>
                         <div className={"col-md-12 " + mainColumnClass}>
                             <div className="tasks-introduction">
                                 <h3>{L.labels.missions}</h3>
                                 {this.props.mission.instruction}
                             </div>
                             {this.getCardsPanel()}
+                            <div style={{marginTop: "20px"}}>
+                                <Link className="blue-link"
+                                      to={urls.MISSIONS}>
+                                    {L.general.backToMissions}
+                                </Link>
+                            </div>
                         </div>
                         {sideColumn}
                     </div>

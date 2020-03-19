@@ -5,8 +5,17 @@ import {Icon, SmallIcon} from "../../../components/Icons";
 export default class TestCard extends React.Component {
 
     render() {
-        let progress = this.props.progress;
-        let isUnlocked = progress.status !== "LOCKED";
+
+        let isUnlocked = false;
+        let score = 0;
+        let maxScore = 0;
+        this.props.testResults.forEach((result) => {
+            if (result.status !== "LOCKED")
+                isUnlocked = true;
+
+            score += result.score;
+            maxScore += result.maxScore;
+        });
 
         let iconName = "task/test_grey";
         let scores = "";
@@ -14,7 +23,7 @@ export default class TestCard extends React.Component {
         let className = "locked";
 
         if (isUnlocked) {
-            scores = (progress.score || 0) + "/" + progress.maxScore + " pytań";
+            scores = (score || 0) + "/" + maxScore + " pytań";
             iconName = isUnlocked ? "task/test_blue" : "task/test_grey";
             message = "Odpowiedziałeś/łaś dobrze na:";
             className = "";

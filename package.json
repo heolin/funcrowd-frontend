@@ -1,6 +1,6 @@
 {
   "name": "funcrowd-frontend",
-  "version": "1.5.20",
+  "version": "1.5.27",
   "description": "Frontend application for crowdsourcing engine - Funcrowd",
   "scripts": {
     "build:prod": "webpack --mode production",

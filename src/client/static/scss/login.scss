@@ -1,5 +1,6 @@
 @import "colors";
 @import "components";
+@import "variables";
 
 
 .login-window {
@@ -7,6 +8,10 @@
   padding: 40px 70px;
   background: white;
   transition: all 0.25s ease-in-out;
+
+  @media screen and (max-width: map-get($screen-widths, 'sm')) {
+    padding: 20px;
+  }
 }
 
 .login-header {
