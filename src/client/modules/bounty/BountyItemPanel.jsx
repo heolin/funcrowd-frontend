@@ -1,28 +1,16 @@
 import React from "react"
-import queryString from 'query-string';
 import ItemForm from "../items/ItemForm";
 import FeedbackPanel from "../feedback/FeedbackPanel";
 import InstructionPanel from "../instruction/InstructionPanel";
 import BountyRepository from "../../logic/repositories/BountyRepository";
-import BountyStatus from "../bounty/BountyStatus";
-import { Icon } from 'react-icons-kit'
+import {Icon} from 'react-icons-kit'
 import {info} from 'react-icons-kit/fa/info'
-import ConfigManager from "../../logic/config/ConfigManager";
-import ItemRepository from "../../logic/repositories/ItemRepository";
 import NoItemsPanel from "../items/NoItemsPanel";
 import SkipButton from "../items/components/SkipButton";
 import SubmitButton from "../items/components/SubmitButton";
 import BountyHeader from "../bounty/BountyHeader";
 import Loading from "../../components/Loading";
-import UserManager from "../../logic/UserManager";
-import StartBountyPanel from "./StartBountyPanel";
-import bounty from "../../resources/texts/bounty";
 import ItemPanel from "../items/ItemPanel";
-import RestartBountyPanel from "./RestartBountyPanel";
-import NotFinishedBountyPanel from "./NotFinishedBountyPanel";
-import RewardCodesListPanel from "./RewardCodesListPanel";
-import {Footer} from "../../Footer";
-import SessionManager from "../../logic/SessionManager";
 
 
 export default class BountyItemPanel extends ItemPanel {
@@ -32,17 +20,16 @@ export default class BountyItemPanel extends ItemPanel {
         this.state = {
             item: null,
             task: null,
-            bounty: null,
+            userBounty: null,
             loading: true,
             loadingStart: false,
             feedback: null,
             annotation: null,
             instruction: false,
             confirmation: false,
-            startPanel: false,
-            restartPanel: false,
             notFinishedPanel: false,
             previousCodesPanel: false,
+            metadata: {},
         };
 
         this.onAnnotationPost = this.onAnnotationPost.bind(this);
@@ -51,9 +38,6 @@ export default class BountyItemPanel extends ItemPanel {
         this.onInstructionClose = this.onInstructionClose.bind(this);
         this.onBountyFinished = this.onBountyFinished.bind(this);
         this.startBounty = this.startBounty.bind(this);
-        this.closeNotFinishedPanel = this.closeNotFinishedPanel.bind(this);
-        this.showPreviousCodes = this.showPreviousCodes.bind(this);
-        this.closePreviousCodes = this.closePreviousCodes.bind(this);
         this.onUpdateStatus = this.onUpdateStatus.bind(this);
     }
 
@@ -62,10 +46,10 @@ export default class BountyItemPanel extends ItemPanel {
     }
 
     static getDerivedStateFromProps(props, state) {
-        if (props.task !== state.task || props.task !== state.bounty) {
+        if (props.userBounty !== state.userBounty) {
             return {
-                task: props.task,
-                bounty: props.bounty,
+                userBounty: props.userBounty,
+                metadata: props.userBounty.bounty.metadata,
             };
         }
 
@@ -73,15 +57,47 @@ export default class BountyItemPanel extends ItemPanel {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.state.bounty !== prevState.bounty ||
-            this.state.startPanel !== prevState.startPanel) {
+        if (this.state.userBounty !== prevState.userBounty) {
             this.checkState();
             this.checkInstruction();
         }
     }
 
+    checkInstruction() {
+        if (localStorage.getItem("FUNCROWD_INSTRUCTION_BOUNTY"+this.state.userBounty.bounty.id) !== "true")
+            this.showInstruction();
+    }
+
+    showInstruction() {
+        if (this.state.userBounty.bounty.instruction) {
+            this.setState({instruction: true});
+            localStorage.setItem("FUNCROWD_INSTRUCTION_BOUNTY"+this.state.userBounty.bounty.id, "true");
+        }
+    }
+
+    getFirstItem() {
+        return this.getNextItem();
+    }
+
+    getNextItem() {
+        BountyRepository.getNextItem(this.state.userBounty.bounty.id)
+            .then((item) => {
+                if (item == null)
+                    this.onNoItems();
+
+                this.setState({
+                    loading: false,
+                    item: item
+                });
+            })
+            .catch((error) => {
+                this.setState({ loading: false});
+                console.log(error)
+            });
+    }
+
     checkState() {
-        if (this.props.bounty == null) {
+        if (this.props.userBounty == null) {
             if (this.props.match.path === "/bounty/:id") {
                 let bountyId = this.props.match.params.id;
                 BountyRepository.get(bountyId).then((bounty) => {
@@ -89,21 +105,12 @@ export default class BountyItemPanel extends ItemPanel {
                 });
             }
         } else {
-            if (this.state.bounty) {
-                if (this.state.bounty.userBounty) {
-                    this.getFirstItem();
-                    this.checkInstruction();
-                    this.checkRestartBounty();
-                } else if (!this.state.loadingStart) {
-                    SessionManager.cache['action'] = null;
-                    this.setState({
-                        loading: false,
-                        startPanel: true
-                    });
-                }
+            if (this.state.userBounty) {
+                this.getFirstItem();
+                this.checkInstruction();
             } else {
                 this.setState({
-                    bounty: this.props.bounty
+                    userBounty: this.props.userBounty
                 });
             }
         }
@@ -113,68 +120,27 @@ export default class BountyItemPanel extends ItemPanel {
         let bountyId = this.props.match.params.id;
         this.setState({
             loading: true,
-            startPanel: false,
-            loadingStart: true,
-            restartPanel: false,
             notFinishedPanel: false
         });
-        BountyRepository.start(bountyId).then((bounty) => {
+        BountyRepository.start(bountyId).then((userBounty) => {
             this.setState({
                 loadingStart: false
             });
-            this.props.onBountySelect(bounty);
+            this.props.onBountySelect(userBounty);
         });
     }
 
     onBountyFinished() {
-        let bounty = this.state.bounty;
-        if (bounty) {
-            bounty.userBounty.status = "FINISHED";
-            this.setState({bounty: bounty});
+        let userBounty = this.state.userBounty;
+        if (userBounty) {
+            userBounty.status = "FINISHED";
+            this.setState({userBounty: userBounty});
         }
-    }
-
-    closeNotFinishedPanel() {
-        this.setState({
-            notFinishedPanel: false,
-        })
-    }
-
-    checkRestartBounty() {
-        let action = SessionManager.cache['action'];
-        if (action) {
-            if (action === 'startBounty') {
-                if (this.state.bounty.userBounty.status === "FINISHED") {
-                    this.setState({
-                        restartPanel: true
-                    })
-                } else {
-                    this.setState({
-                        notFinishedPanel: true,
-                    });
-                }
-                SessionManager.cache['action'] = null;
-            }
-        }
-    }
-
-    showPreviousCodes() {
-        this.setState({
-            previousCodesPanel: true
-        });
-    }
-
-    closePreviousCodes() {
-        this.setState({
-            previousCodesPanel: false
-        });
     }
 
     onUpdateStatus(userBounty) {
-        let bounty = this.state.bounty;
-        bounty.userBounty = userBounty;
         this.setState({
-            bounty: bounty
+            userBounty: userBounty
         });
     }
 
@@ -185,78 +151,56 @@ export default class BountyItemPanel extends ItemPanel {
         let itemForm = null;
         let bounty = null;
         let itemId = null;
-        let noitems = null;
 
-        if (!this.state.bounty.closed) {
-            if (this.state.bounty.userBounty && !this.state.bounty.userBounty.isClosed) {
-                if (this.state.item) {
-                    itemId = this.state.item.id;
+        if (this.state.userBounty && !this.state.userBounty.isClosed) {
+            if (this.state.item) {
+                itemId = this.state.item.id;
 
-                    itemForm = (
-                        <div className="col-sm-12 item-panel">
-                            <div style={{marginBottom: "30px"}}>
-                                <h3 style={{display: "inline-block"}}>Item #{this.state.item.id}</h3>
-                                <button className="btn btn-default info-button"
-                                        onClick={this.showInstruction}>
-                                    <Icon icon={info} size={24}/>
-                                </button>
-                            </div>
-
-                            <ItemForm task={this.props.task}
-                                      item={this.state.item}
-                                      onAnnotationPost={this.onAnnotationPost}
-                                      submitButton={SubmitButton}
-                                      skipButton={SkipButton}/>
+                itemForm = (
+                    <div className="col-sm-12 item-panel">
+                        <div style={{marginBottom: "30px"}}>
+                            <h3 style={{display: "inline-block"}}>Item #{this.state.item.id}</h3>
+                            <button className="btn btn-default info-button"
+                                    onClick={this.showInstruction}>
+                                <Icon icon={info} size={24}/>
+                            </button>
                         </div>
-                    );
-                } else {
-                    noitems = <NoItemsPanel/>;
-                }
+
+                        <ItemForm metadata={this.state.metadata}
+                                  item={this.state.item}
+                                  onAnnotationPost={this.onAnnotationPost}
+                                  submitButton={SubmitButton}
+                                  skipButton={SkipButton}/>
+                    </div>
+                );
             }
         }
 
         let bountyHeader = null;
 
-        if (this.state.bounty.userBounty)
-            bountyHeader =  <BountyHeader bounty={this.state.bounty}
+        if (this.state.userBounty)
+            bountyHeader =  <BountyHeader userBounty={this.state.userBounty}
                                           itemId={itemId}
                                           onUpdateStatus={this.onUpdateStatus}
                                           showPreviousCodes={this.showPreviousCodes}
                                           onBountyFinished={this.onBountyFinished}/>;
-
 
         return (
             <div className="container-fluid base-row">
                 {bountyHeader}
 
                 <InstructionPanel isOpen={this.state.item && this.state.instruction}
-                                  task={this.props.task}
+                                  task={this.state.userBounty.bounty}
                                   onClose={this.onInstructionClose}/>
 
                 <FeedbackPanel isOpen={this.state.item && this.state.confirmation}
                                onAccept={this.onFeedbackAccept}
                                annotation={this.state.annotation}/>
 
-                <StartBountyPanel bounty={this.props.bounty}
-                                  isOpen={this.state.startPanel}
-                                  startBounty={this.startBounty}/>
-
-                <RestartBountyPanel bounty={this.props.bounty}
-                                    isOpen={this.state.restartPanel}
-                                    startBounty={this.startBounty}/>
-
-                <NotFinishedBountyPanel bounty={this.props.bounty}
-                                        isOpen={this.state.notFinishedPanel}
-                                        onClose={this.closeNotFinishedPanel}/>
-
-                <RewardCodesListPanel bounty={this.state.bounty}
-                                      isOpen={this.state.previousCodesPanel}
-                                      onClose={this.closePreviousCodes}/>
                 <div className="container">
                     <div className="row">
                         {bounty}
                         {itemForm}
-                        {noitems}
                     </div>
                 </div>
             </div>

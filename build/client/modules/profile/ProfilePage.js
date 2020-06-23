@@ -68,9 +68,20 @@ function (_React$Component) {
       ranking: null,
       tasksDone: null
     };
-    _this.testsIds = [61, 53, 54];
+    _this.testsIds = {
+      "Test 1": [61, 62, 63, 64, 65, 66],
+      "Test 2": [53],
+      "Test 3": [54]
+    };
+    _this.allIds = [];
 
-    _this.testsIds.forEach(function (testId) {
+    for (var test in _this.testsIds) {
+      _this.testsIds[test].forEach(function (testId) {
+        _this.allIds.push(testId);
+      });
+    }
+
+    _this.allIds.forEach(function (testId) {
       _this.state["test" + testId] = null;
       _this.state["loadingTest" + testId] = true;
     });
@@ -87,7 +98,7 @@ function (_React$Component) {
       _UserManager["default"].addExperienceChangeHandler(this.onUpdate);
 
       var state = {};
-      this.testsIds.forEach(function (testId) {
+      this.allIds.forEach(function (testId) {
         state["loadingTest" + testId] = true;
 
         _TaskProgressRepository["default"].get(testId).then(function (progress) {
@@ -154,7 +165,7 @@ function (_React$Component) {
       var _iteratorError = undefined;
 
       try {
-        for (var _iterator = this.testsIds[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        for (var _iterator = this.allIds[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var testId = _step.value;
           if (this.state["loadingTest" + testId]) return _react["default"].createElement(_Loading["default"], null);
         }
@@ -182,12 +193,18 @@ function (_React$Component) {
         }));
       });
       var testCards = [];
-      this.testsIds.forEach(function (testId) {
+
+      for (var test in this.testsIds) {
+        var testResults = this.testsIds[test].map(function (taskId) {
+          return _this3.state['test' + taskId];
+        });
         testCards.push(_react["default"].createElement(_TestCard["default"], {
-          name: "Test " + (testCards.length + 1),
-          progress: _this3.state['test' + testId]
+          name: test,
+          key: test,
+          testResults: testResults
         }));
-      });
+      }
+
       var levelsHeader = null;
       var levelsPanel = null;
 

@@ -84,6 +84,10 @@ var _default = {
   typeNewPassword: {
     en: "Type your new password",
     pl: "Podaj swoje nowe hasło"
+  },
+  backToMissions: {
+    en: "Go back to task selection menu",
+    pl: "Wróć do wyboru zadań"
   }
 };
 exports["default"] = _default;

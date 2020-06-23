@@ -113,7 +113,7 @@ export default class SpaceCalcWelcomePage extends React.Component {
                                 <span className="color-bright-orange font-weight-bold small"
                                       style={{width: "150px", top: "30px", left: "15px"}}>
                                     {L.spacecalc.welcome.label6}
-                                </span>S
+                                </span>
                             </Blob>
                             <img src={appScreen} style={{width: "100%"}}/>
                         </div>

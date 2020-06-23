@@ -45,15 +45,21 @@ function (_React$Component) {
   _createClass(TestCard, [{
     key: "render",
     value: function render() {
-      var progress = this.props.progress;
-      var isUnlocked = progress.status !== "LOCKED";
+      var isUnlocked = false;
+      var score = 0;
+      var maxScore = 0;
+      this.props.testResults.forEach(function (result) {
+        if (result.status !== "LOCKED") isUnlocked = true;
+        score += result.score;
+        maxScore += result.maxScore;
+      });
       var iconName = "task/test_grey";
       var scores = "";
       var message = "Rozwiąż test aby zobaczyć wynik";
       var className = "locked";
 
       if (isUnlocked) {
-        scores = (progress.score || 0) + "/" + progress.maxScore + " pytań";
+        scores = (score || 0) + "/" + maxScore + " pytań";
         iconName = isUnlocked ? "task/test_blue" : "task/test_grey";
         message = "Odpowiedziałeś/łaś dobrze na:";
         className = "";

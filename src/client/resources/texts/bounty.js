@@ -1,6 +1,6 @@
 export default {
     status: {
-        NEW: {
+        NONE: {
             en: "Bounty is available",
             pl: "Wyzwanie dostępne"
         },

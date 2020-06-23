@@ -11,6 +11,7 @@ ProfileConfigs[ProfileTypes.NOTLOGGED] = {
     ranking: false,
     bounties: false,
     profile: false,
+    settings: false,
     availablePages: [
         urls.HOME, urls.LOGIN, urls.REGISTER, urls.ACTIVATION,
         urls.ABOUT, urls.RESET_PASSWORD, urls.RESET_PASSWORD_TOKEN
@@ -24,7 +25,9 @@ ProfileConfigs[ProfileTypes.NORMAL] = {
     exp: false,
     ranking: false,
     bounties: false,
+    profile_menu: false,
     profile: false,
+    settings: true,
     availablePages: null,
 };
 
@@ -35,7 +38,9 @@ ProfileConfigs[ProfileTypes.ELEARNING] = {
     exp: false,
     ranking: false,
     bounties: false,
-    profile: false,
+    profile: true,
+    profile_menu: false,
+    settings: true,
     availablePages: null,
 };
 
@@ -46,7 +51,9 @@ ProfileConfigs[ProfileTypes.GAMIFICATION] = {
     exp: true,
     ranking: true,
     bounties: false,
-    profile: true,
+    profile: false,
+    profile_menu: true,
+    settings: false,
     availablePages: null,
 };
 
@@ -57,6 +64,8 @@ ProfileConfigs[ProfileTypes.MTURK] = {
     ranking: false,
     bounties: true,
     profile: false,
+    profile_menu: false,
+    settings: false,
     availablePages: null,
 };
 

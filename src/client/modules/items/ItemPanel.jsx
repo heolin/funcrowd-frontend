@@ -41,6 +41,7 @@ export default class ItemPanel extends React.Component {
             loading: true,
             feedback: null,
             annotation: null,
+            metadata: {},
             instruction: false,
             confirmation: false,
             mobileWarning: MobileWarningStates.NONE,
@@ -64,6 +65,7 @@ export default class ItemPanel extends React.Component {
         if (props.task !== state.task) {
             return {
                 task: props.task,
+                metadata: props.task.meta,
             };
         }
         if (props.bounty !== state.bounty) {
@@ -119,7 +121,7 @@ export default class ItemPanel extends React.Component {
     }
 
     onNoItems() {
-        let metadata = this.state.task.metadata;
+        let metadata = this.state.metadata;
         if (metadata.redirectOnNoItems === true) {
             if (metadata.redirectToMissions === true) {
                 this.props.history.push('/missions/');
@@ -170,20 +172,17 @@ export default class ItemPanel extends React.Component {
     onAnnotationPost(annotationResponse) {
         UserManager.update();
         AchievementsManager.checkToasts();
+        let feedback = annotationResponse.annotation.feedback;
 
         const lastPageOnlyFeedback =
-            this.state.task.metadata.lastPageOnlyFeedback === true;
+            this.state.metadata.lastPageOnlyFeedback === true;
 
-        if (this.state.task.feedback.type === FeedbackTypes.NONE) {
+        if (feedback.type === FeedbackTypes.NONE || feedback == null) {
             this.onFeedbackAccept();
 
         } else if (lastPageOnlyFeedback === false ||
             annotationResponse.isLastItem) {
 
-            let feedback = null;
-            if (ConfigManager.config.showFeedback) {
-                feedback = annotationResponse.annotation.feedback;
-            }
             this.setState({
                 annotation: annotationResponse.annotation,
                 exp: annotationResponse.exp,
@@ -207,13 +206,11 @@ export default class ItemPanel extends React.Component {
     }
 
     checkMobileWarning() {
-        if (this.state.task) {
-            let metadata = this.state.task.metadata;
-            if (this.state.mobileWarning === MobileWarningStates.NONE &&
-                window.isMobile() &&
-                metadata.onlyPC === true) {
-                this.setState({mobileWarning: MobileWarningStates.SHOWN});
-            }
+        let metadata = this.state.metadata;
+        if (this.state.mobileWarning === MobileWarningStates.NONE &&
+            window.isMobile() &&
+            metadata.onlyPC === true) {
+            this.setState({mobileWarning: MobileWarningStates.SHOWN});
         }
     }
 
@@ -254,7 +251,7 @@ export default class ItemPanel extends React.Component {
         let itemId = null;
         let noitems = null;
         let header = null;
-        let metadata = this.state.task.metadata;
+        let metadata = this.state.metadata;
 
         if (this.state.item) {
             itemId = this.state.item.id;
@@ -274,7 +271,7 @@ export default class ItemPanel extends React.Component {
                 <div className="col-sm-12 item-panel">
                         {instructionButton}
 
-                    <ItemForm task={this.props.task}
+                    <ItemForm metadata={this.props.metadata}
                               item={this.state.item}
                               onAnnotationPost={this.onAnnotationPost}
                               submitButton={SubmitButton}

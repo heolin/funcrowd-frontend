@@ -135,6 +135,7 @@ export default class ItemForm extends React.Component {
             if (fieldName in item.templateFields) {
                 let field = item.templateFields[fieldName];
                 let skip = !field.editable && !this.state[field.name];
+
                 if (!skip) {
                     let component = factory.create(field.widget,
                         field.name,
@@ -164,7 +165,7 @@ export default class ItemForm extends React.Component {
         let SkipButton = this.props.skipButton;
 
         let item = this.props.item;
-        let metadata = this.props.task.metadata;
+        let metadata = this.props.metadata;
 
         let groups = metadata.groups ||
             [item.template.fields.map(field => field.name)];

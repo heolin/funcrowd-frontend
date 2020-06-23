@@ -10,15 +10,15 @@ export default class BountyMenu extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            bounties: null,
+            userBounties: null,
             loading: true
         };
     }
 
     componentDidMount() {
         BountyRepository.all()
-            .then((bounties) => {
-                bounties.sort(function (a, b) {
+            .then((userBounties) => {
+                userBounties.sort(function (a, b) {
                     let keyA = a.getStatusOrder();
                     let keyB = b.getStatusOrder();
                     if(keyA < keyB) return -1;
@@ -27,7 +27,7 @@ export default class BountyMenu extends React.Component {
                 });
                 this.setState({
                     loading: false,
-                    bounties: bounties
+                    userBounties: userBounties
                 });
             }).catch((error) => {
                 this.setState({ loading: false});
@@ -39,9 +39,9 @@ export default class BountyMenu extends React.Component {
         if (this.state.loading)
             return <Loading/>;
 
-        let bounties = this.state.bounties.map(
-            (bounty, i) => <BountyCard key={i} bounty={bounty}
-                                       onSelect={() => this.props.onBountySelect(bounty)}/>);
+        let userBounties = this.state.userBounties.map(
+            (userBounty, i) => <BountyCard key={i} userBounty={userBounty}
+                                       onSelect={() => this.props.onBountySelect(userBounty)}/>);
 
         return (
             <div className="container-fluid base-row-padding row">
@@ -57,7 +57,7 @@ export default class BountyMenu extends React.Component {
                         </div>
                     </div>
                     <ListContainer className="row missions-row" key='list'>
-                        {bounties}
+                        {userBounties}
                     </ListContainer>
                 </div>
             </div>

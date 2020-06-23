@@ -13,8 +13,8 @@ export default class FeedbackPanel extends React.Component {
 
         if (annotation) {
             feedback = annotation.feedback;
-            if (this.props.task.feedback)
-                type = this.props.task.feedback['type'];
+            if (feedback)
+                type = feedback['type'];
             else
                 type = FeedbackTypes.CONFIRM_ONLY;
         }

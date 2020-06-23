@@ -1,41 +1,23 @@
-import UserBounty from "./UserBounty";
-import Task from "../tasks/Task";
-
 
 export default class Bounty {
-    constructor(id, task, annotationsTarget, closed, userBounty) {
+    constructor(id, name, order, status, metadata, instruction) {
         this.id = id;
-        this.task = task;
-        this.annotationsTarget = annotationsTarget;
-        this.closed = closed;
-        this.userBounty = userBounty;
+        this.name = name;
+        this.order = order;
+        this.status = status;
+        this.metadata = metadata;
+        this.instruction = instruction;
     }
 
     static fromJson(bounty_data) {
         let bounty = new Bounty(
             bounty_data.id,
-            Task.fromJson(bounty_data.task),
-            bounty_data.annotations_target,
-            bounty_data.closed,
-            UserBounty.fromJson(bounty_data.user_bounty)
+            bounty_data.name,
+            bounty_data.order,
+            bounty_data.status,
+            bounty_data.metadata,
+            bounty_data.instruction
         );
         return bounty;
-    }
-
-    getStatusOrder() {
-        if (this.userBounty) {
-            let status = this.userBounty.status;
-            if (status === "CLOSED") {
-                if (this.userBounty.progress === 1)
-                    return 3;
-                else
-                    return 4;
-            }
-            if (status === "FINISHED")
-                return 3;
-            else
-                return 1;
-        }
-        return 4;
     }
 }

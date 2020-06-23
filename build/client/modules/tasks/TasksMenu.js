@@ -17,6 +17,8 @@ var _TasksHeader = _interopRequireDefault(require("./TasksHeader"));
 
 var _LocalizationManager = _interopRequireDefault(require("../../logic/locatization/LocalizationManager"));
 
+var _Urls = _interopRequireDefault(require("../../Urls"));
+
 var _reactRouterDom = require("react-router-dom");
 
 var _reactPose = _interopRequireDefault(require("react-pose"));
@@ -243,12 +245,22 @@ function (_React$Component) {
       }), _react["default"].createElement("div", {
         className: "container"
       }, _react["default"].createElement("div", {
-        className: "row tasks-row"
+        className: "row tasks-row",
+        style: {
+          marginBottom: "30px"
+        }
       }, _react["default"].createElement("div", {
         className: "col-md-12 " + mainColumnClass
       }, _react["default"].createElement("div", {
         className: "tasks-introduction"
-      }, _react["default"].createElement("h3", null, _LocalizationManager["default"].labels.missions), this.props.mission.instruction), this.getCardsPanel()), sideColumn)));
+      }, _react["default"].createElement("h3", null, _LocalizationManager["default"].labels.missions), this.props.mission.instruction), this.getCardsPanel(), _react["default"].createElement("div", {
+        style: {
+          marginTop: "20px"
+        }
+      }, _react["default"].createElement(_reactRouterDom.Link, {
+        className: "blue-link",
+        to: _Urls["default"].MISSIONS
+      }, _LocalizationManager["default"].general.backToMissions))), sideColumn)));
     }
   }]);
 

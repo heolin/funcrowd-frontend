@@ -1,40 +1,32 @@
 import axios from 'axios';
 import SessionManager from "../SessionManager";
-import Bounty from "../models/bounty/Bounty";
 import UserBounty from "../models/bounty/UserBounty";
 import ConfigManager from "../config/ConfigManager";
+import Item from "../models/item/Item";
 
 
 export default class BountyRepository {
     static all() {
-        return axios.get(ConfigManager.baseUrl+'/api/v1/bounty/', SessionManager.config)
+        return axios.get(ConfigManager.baseUrl+'/api/v1/packages/status/', SessionManager.config)
             .then((response) => {
-                let bounties = response.data.map((bounty_data) => Bounty.fromJson(bounty_data));
+                let bounties = response.data.map((bounty_data) => UserBounty.fromJson(bounty_data));
                 return bounties;
             })
     }
 
     static get(bountyId) {
-        return axios.get(ConfigManager.baseUrl+'/api/v1/bounty/'+bountyId+'/', SessionManager.config)
+        return axios.get(ConfigManager.baseUrl+'/api/v1/packages/'+bountyId+'/status/', SessionManager.config)
             .then((response) => {
-                let bounty = Bounty.fromJson(response.data);
+                let bounty = UserBounty.fromJson(response.data);
                 return bounty;
             })
     }
 
-    static getStatus(bountyId) {
-        return axios.get(ConfigManager.baseUrl+'/api/v1/bounty/'+bountyId+'/status/', SessionManager.config)
+    static getNextItem(bountyId) {
+        return axios.get(ConfigManager.baseUrl+'/api/v1/packages/'+bountyId+'/items/next/', SessionManager.config)
             .then((response) => {
-                let userBounty = UserBounty.fromJson(response.data);
-                return userBounty;
-            })
-    }
-
-    static start(bountyId) {
-        return axios.get(ConfigManager.baseUrl+'/api/v1/bounty/'+bountyId+'/start/', SessionManager.config)
-            .then((response) => {
-                let bounty = Bounty.fromJson(response.data);
-                return bounty;
+                let item = Item.fromJson(response.data);
+                return item;
             })
     }
 }

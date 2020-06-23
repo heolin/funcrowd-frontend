@@ -20,7 +20,7 @@ export default class BountyHeader extends React.Component {
         super(props);
         this.state = {
             loading: true,
-            userBounty: null,
+            userBounty: this.props.userBounty,
             previousStatus: null
         };
     }
@@ -36,7 +36,7 @@ export default class BountyHeader extends React.Component {
     }
 
     updateStatus() {
-        BountyRepository.getStatus(this.props.bounty.id).then((userBounty) => {
+        BountyRepository.get(this.props.userBounty.bounty.id).then((userBounty) => {
             let newStatus = null;
             if (userBounty) {
                 newStatus = userBounty.status;
@@ -53,59 +53,43 @@ export default class BountyHeader extends React.Component {
         });
     }
 
-
     render() {
-        if (this.props.bounty == null)
+        if (this.props.userBounty == null)
             return null;
 
-        let bounty = this.props.bounty;
-        let task = bounty.task;
-        let progressBar = null;
-        let bountyStatus = "CLOSED";
-        let elements = null;
+        let userBounty = this.state.userBounty;
+        let bounty = userBounty.bounty;
         let classNameExtend = "";
 
-        if (this.state.userBounty) {
-            let userBounty = this.state.userBounty;
-            bountyStatus = userBounty.status;
+        let bountyStatus = userBounty.status;
 
-            let annotationsDone = Math.min(userBounty.annotationsDone, bounty.annotationsTarget);
-            progressBar = <ProgressBar progress={userBounty.progress}
-                                       textAlign="right"
-                                       text={L.general.finished + " " + annotationsDone + "/" + bounty.annotationsTarget}/>;
+        let annotationsDone = Math.min(userBounty.annotationsDone, userBounty.annotationsTarget);
+        let progressBar = <ProgressBar progress={userBounty.progress}
+                                   textAlign="right"
+                                   text={L.general.finished + " " + annotationsDone + "/" + userBounty.annotationsTarget}/>;
 
-            let reward = <span className="badge badge-secondary"
-                               style={{fontSize: "14px"}}>{L.bounty.labels.bountyNotFinished}</span>;
-            if (userBounty.reward)
-                reward = <span className="badge badge-green" style={{fontSize: "14px"}}>{userBounty.reward}</span>;
+        let reward = <span className="badge badge-secondary"
+                           style={{fontSize: "14px"}}>{L.bounty.labels.bountyNotFinished}</span>;
 
-            let status = <div className={"badge " + statusStyle[bountyStatus]}
-                              style={{fontSize: "14px"}}>{L.bounty.status[bountyStatus]}</div>;
+        if (userBounty.reward)
+            reward = <span className="badge badge-green" style={{fontSize: "14px"}}>{userBounty.reward}</span>;
 
-            let rewardsList = null;
-            if (this.state.userBounty.rewardsList.length > 0) {
-                rewardsList = <div>{L.bounty.labels.rewardsList}:&nbsp;
-                    <a className="bounty-link" onClick={this.props.showPreviousCodes}>Show codes</a>
-                </div>;
-                classNameExtend = " tasks-header-extended";
-            }
+        let status = <div className={"badge " + statusStyle[bountyStatus]}
+                          style={{fontSize: "14px"}}>{L.bounty.status[bountyStatus]}</div>;
 
 
-            elements = (
-                <div className="bounty-header-info">
-                    <div className="color-white">
-                        <h3 style={{marginBottom: 0, marginTop: "10px"}}>#{bounty.id} {task.name}</h3>
-                        <span className="small">{task.description}</span>
-                        <div className="small" style={{margin: "15px 0"}}>
-                            <div>{L.bounty.labels.status}:&nbsp;{status}</div>
-                            <div>{L.bounty.labels.reward}:&nbsp;{reward}</div>
-                            {rewardsList}
-                        </div>
+        let elements = (
+            <div className="bounty-header-info">
+                <div className="color-white">
+                    <h3 style={{marginBottom: 0, marginTop: "10px"}}>#{bounty.id} {bounty.name}</h3>
+                    <div className="small" style={{margin: "15px 0"}}>
+                        <div>{L.bounty.labels.status}:&nbsp;{status}</div>
+                        <div>{L.bounty.labels.reward}:&nbsp;{reward}</div>
                     </div>
-                    {progressBar}
                 </div>
-            );
-        }
+                {progressBar}
+            </div>
+        );
 
         return (
             <div className={"tasks-header-bar row card-2-static" + classNameExtend}>

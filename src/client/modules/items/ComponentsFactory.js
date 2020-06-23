@@ -1,6 +1,7 @@
 import React from "react"
 import TextLabel from "./components/TextLabel";
 import TextField from "./components/TextField";
+import TextAreaField from "./components/TextAreaField";
 import RadioField from "./components/RadioField";
 import MultiChoiceField from "./components/MultiChoiceField";
 import SelectField from "./components/SelectField";
@@ -15,14 +16,17 @@ import CheckboxField from "./components/CheckboxField";
 import TextHeader from "./components/TextHeader";
 import TextOrRadioField from "./components/TextOrRadioField";
 import ProgressBar from "./components/ProgressBar";
+import Link from "./components/Link";
 
 
 let Components = {
+    "Link": Link,
     "TextLabel": TextLabel,
     "ChoiceField": RadioField ,
     "CheckboxField": CheckboxField,
     "PDF": TextLabel,
     "TextField": TextField,
+    "TextAreaField": TextAreaField,
     "RadioField": RadioField,
     "TextOrRadioField": TextOrRadioField,
     "ProgressBar": ProgressBar,

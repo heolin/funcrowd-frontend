@@ -11,9 +11,8 @@ import L from "../../logic/locatization/LocalizationManager";
 export default class BountyCard extends React.Component {
 
     render() {
-        let bounty = this.props.bounty;
-        let task = bounty.task;
-        let userBounty = bounty.userBounty;
+        let userBounty = this.props.userBounty;
+        let bounty = userBounty.bounty;
 
         let progressBar = null;
         let icon = "locked";
@@ -22,9 +21,9 @@ export default class BountyCard extends React.Component {
         let onClick = () => {};
 
         if (userBounty) {
-            if (userBounty.status === "NEW") {
+            if (userBounty.status === "NONE") {
                 icon = "missions";
-                bountyStatus = L.bounty.status.NEW;
+                bountyStatus = L.bounty.status.NONE;
                 className = "card-2";
                 onClick = this.props.onSelect;
             } else if (userBounty.status === "IN_PROGRESS") {
@@ -39,10 +38,10 @@ export default class BountyCard extends React.Component {
                 onClick = this.props.onSelect;
             }
 
-            let annotationsDone = Math.min(userBounty.annotationsDone, bounty.annotationsTarget);
+            let annotationsDone = Math.min(userBounty.annotationsDone, userBounty.annotationsTarget);
             progressBar = (
                 <ProgressBar progress={userBounty.progress} textAlign="right"
-                             text={"Ukończono "+annotationsDone + "/" + bounty.annotationsTarget}/>
+                             text={"Ukończono "+annotationsDone + "/" + userBounty.annotationsTarget}/>
             );
         } else if (bounty.closed === false) {
             icon = "missions";
@@ -56,8 +55,7 @@ export default class BountyCard extends React.Component {
             <Card className="col-md-4">
                 <div className={"mission-card font-light " + className} onClick={onClick}>
                     <div className="mission-card-content">
-                        <h4>#{bounty.id} {task.name}</h4>
-                        <p className="small" style={{minHeight: "48px"}}>{task.description}</p>
+                        <h4>#{bounty.id} {bounty.name}</h4>
                         <div className="small" style={{margin: "30px 0"}}>
                             <SmallIcon name={icon}/>
                             <span style={{marginLeft: "10px"}}>{bountyStatus}</span>

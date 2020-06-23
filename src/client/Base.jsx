@@ -59,7 +59,7 @@ export class AppBase extends React.Component {
             profile: null,
             mission: null,
             task: null,
-            bounty: null,
+            userBounty: null,
             sideProfileShown: false,
         };
 
@@ -101,9 +101,6 @@ export class AppBase extends React.Component {
     checkUrlParams() {
         if (this.props.location.search) {
             let params = queryString.parse(this.props.location.search);
-            if ("action" in params) {
-                SessionManager.cache['action'] = params['action'];
-            }
             if ("workerId" in params) {
                 UserRepository.mturk(params['workerId']).then((user) => {
                     this.onLogin(user, true);
@@ -134,7 +131,6 @@ export class AppBase extends React.Component {
         //    profile: UserManager.user.profile
         //});
         this.forceUpdate();
-        console.log("UPDATING PROFILE");
     }
 
     redirectToHome() {
@@ -173,12 +169,11 @@ export class AppBase extends React.Component {
         this.props.history.push('/task/'+task.id);
     }
 
-    onBountySelect(bounty) {
+    onBountySelect(userBounty) {
         this.setState({
-            bounty: bounty,
-            task: bounty.task
+            userBounty: userBounty,
         });
-        this.props.history.push('/bounty/'+bounty.id);
+        this.props.history.push('/bounty/'+userBounty.bounty.id);
     }
 
     showSideProfile() {
@@ -257,7 +252,7 @@ export class AppBase extends React.Component {
                                     <Route path={urls.BOUNTY}
                                            render={(props) => <BountyItemPanel task={this.state.task}
                                                                                user={this.state.user}
-                                                                               bounty={this.state.bounty}
+                                                                               userBounty={this.state.userBounty}
                                                                                onBountySelect={this.onBountySelect}
                                                                                {...props}/>}/>
                                     <Route path={urls.BOUNTIES}

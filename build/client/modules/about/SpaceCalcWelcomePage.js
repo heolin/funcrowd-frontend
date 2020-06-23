@@ -280,7 +280,7 @@ function (_React$Component) {
           top: "30px",
           left: "15px"
         }
-      }, _LocalizationManager["default"].spacecalc.welcome.label6), "S"), _react["default"].createElement("img", {
+      }, _LocalizationManager["default"].spacecalc.welcome.label6)), _react["default"].createElement("img", {
         src: _appScreen["default"],
         style: {
           width: "100%"

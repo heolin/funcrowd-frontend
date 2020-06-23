@@ -1,25 +1,24 @@
+import Bounty from "./Bounty";
 
 export default class UserBounty {
-    constructor(id, progress, annotationsDone, annotationsTarget, status, reward, rewardsList) {
-        this.id = id;
+    constructor(progress, annotationsDone, annotationsTarget, status, reward, bounty) {
         this.progress = progress;
         this.annotationsDone = annotationsDone;
         this.annotationsTarget = annotationsTarget;
         this.status = status;
+        this.bounty = bounty;
         this.reward = reward;
-        this.rewardsList = rewardsList || [];
     }
 
     static fromJson(bounty_data) {
-        if (bounty_data !== null && bounty_data.id) {
+        if (bounty_data !== null) {
             let userBounty = new UserBounty(
-                bounty_data.id,
                 bounty_data.progress,
-                bounty_data.annotations_done,
-                bounty_data.annotations_target,
+                bounty_data.items_done,
+                bounty_data.items_count,
                 bounty_data.status,
                 bounty_data.reward,
-                bounty_data.rewards_list
+                Bounty.fromJson(bounty_data.package)
             );
             return userBounty;
         }
@@ -27,6 +26,20 @@ export default class UserBounty {
 
     get isClosed() {
         return this.status === "FINISHED" || this.status === "CLOSED";
+    }
+
+    getStatusOrder() {
+        let status = this.status;
+        if (status === "CLOSED") {
+            if (this.progress === 1)
+                return 3;
+            else
+                return 4;
+        }
+        if (status === "FINISHED")
+            return 3;
+        else
+            return 1;
     }
 
 }

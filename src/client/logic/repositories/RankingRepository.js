@@ -20,6 +20,9 @@ export default class MissionRepository {
         return axios.get(ConfigManager.baseUrl+'/api/v1/ranking/exp/around/' + userId + '/?size=0',
             SessionManager.config)
             .then((response) => {
+                if (response.data.length === 0)
+                    return null;
+
                 let row = RankingRow.fromJson(response.data[0]);
                 return row;
             })
