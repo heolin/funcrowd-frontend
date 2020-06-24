@@ -75,6 +75,7 @@ export class AppBase extends React.Component {
     }
 
     componentDidMount() {
+        console.log('hehe');
         this.checkSessionUser();
         this.checkUrlParams();
 
@@ -85,9 +86,7 @@ export class AppBase extends React.Component {
         UserManager.removeProfileChangeHandler(this.onProfileChanged);
     }
 
-    componentDidCatch() {
-
-    }
+    componentDidCatch() {}
 
     checkSessionUser() {
         let user = SessionManager.getUser();
@@ -99,6 +98,7 @@ export class AppBase extends React.Component {
     }
 
     checkUrlParams() {
+        console.log("CHECKING");
         if (this.props.location.search) {
             let params = queryString.parse(this.props.location.search);
             if ("workerId" in params) {
@@ -111,6 +111,15 @@ export class AppBase extends React.Component {
             }
         } else {
             this.setState({checkingParams: false});
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        let params = queryString.parse(this.props.location.search);
+        if ("workerId" in params) {
+            UserRepository.mturk(params['workerId']).then((user) => {
+                this.onLogin(user, true);
+            });
         }
     }
 
@@ -187,7 +196,6 @@ export class AppBase extends React.Component {
             sideProfileShown: false
         });
     }
-
 
     //render
     render() {

@@ -10,9 +10,7 @@
       <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/items/components/element/RadioElement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/components/element/RadioElement.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/scss/components/radio.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/components/radio.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Base.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Base.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +110,7 @@
           <entry key="html" value="139" />
           <entry key="js" value="86314" />
           <entry key="json" value="356" />
-          <entry key="jsx" value="108336" />
+          <entry key="jsx" value="108752" />
           <entry key="local" value="28" />
           <entry key="md" value="186" />
           <entry key="production" value="3" />
@@ -127,7 +125,7 @@
           <entry key="Env File" value="53" />
           <entry key="HTML" value="139" />
           <entry key="JSON" value="356" />
-          <entry key="JSX Harmony" value="108336" />
+          <entry key="JSX Harmony" value="108752" />
           <entry key="JavaScript" value="86314" />
           <entry key="Markdown" value="186" />
           <entry key="PLAIN_TEXT" value="18" />
@@ -143,11 +141,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/Base.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="106" selection-start-line="106" selection-end-line="106" />
+            <state relative-caret-position="459">
+              <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -158,8 +156,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+            <state relative-caret-position="238">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -173,7 +171,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/static/scss/components/radio.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="163">
@@ -315,10 +313,10 @@
         <option value="$PROJECT_DIR$/src/client/logic/config/ProfileConfigs.js" />
         <option value="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js" />
         <option value="$PROJECT_DIR$/src/client/logic/models/bounty/Bounty.js" />
-        <option value="$PROJECT_DIR$/src/client/Base.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/element/RadioElement.jsx" />
         <option value="$PROJECT_DIR$/src/client/static/scss/components/radio.scss" />
+        <option value="$PROJECT_DIR$/src/client/Base.jsx" />
       </list>
     </option>
   </component>
@@ -859,23 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Base.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="106" selection-start-line="106" selection-end-line="106" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/element/RadioElement.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -887,6 +868,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="77" column="2" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Base.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
