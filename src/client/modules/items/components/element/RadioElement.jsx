@@ -13,8 +13,7 @@ export default class RadioElement extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        let result = nextProps.value !== this.props.value;
-        return result;
+        return nextProps.value !== this.props.value;
     }
 
     render() {
@@ -29,9 +28,11 @@ export default class RadioElement extends React.Component {
                        onChange={this.handleChange}
                        type="radio"/>
                 <span className="outer">
-                    <span className="inner"></span>
+                    <span className="inner"/>
                 </span>
-                {text}
+                <span className={this.props.labelsClassName}>
+                    {text}
+                </span>
             </label>
         );
     }

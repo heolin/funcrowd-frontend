@@ -75,6 +75,7 @@
 .radio-likert {
   padding-right: 0 !important;
   display: inline-block !important;
+  position: relative;
 }
 
 @media screen and (max-width: map-get($screen-widths, 'lg')) {
@@ -82,6 +83,7 @@
     padding-right: 0 !important;
     display: block !important;
     line-height: 2;
+    position: relative;
 
     .outer {
       margin: 5px 10px;
@@ -100,7 +102,14 @@
   .radio-likert-label.max {
     bottom: 5px;
   }
+}
 
+.radio-likert-value-label {
+  position: absolute;
+  width: 46px;
+  top: 26px;
+  left: 0;
+  text-align: center;
 }
 
 .radio-other {
