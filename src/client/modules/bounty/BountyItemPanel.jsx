@@ -37,7 +37,6 @@ export default class BountyItemPanel extends ItemPanel {
         this.showInstruction = this.showInstruction.bind(this);
         this.onInstructionClose = this.onInstructionClose.bind(this);
         this.onBountyFinished = this.onBountyFinished.bind(this);
-        this.startBounty = this.startBounty.bind(this);
         this.onUpdateStatus = this.onUpdateStatus.bind(this);
     }
 
@@ -114,20 +113,6 @@ export default class BountyItemPanel extends ItemPanel {
                 });
             }
         }
-    }
-
-    startBounty() {
-        let bountyId = this.props.match.params.id;
-        this.setState({
-            loading: true,
-            notFinishedPanel: false
-        });
-        BountyRepository.start(bountyId).then((userBounty) => {
-            this.setState({
-                loadingStart: false
-            });
-            this.props.onBountySelect(userBounty);
-        });
     }
 
     onBountyFinished() {

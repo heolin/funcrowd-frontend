@@ -61,6 +61,7 @@ export class AppBase extends React.Component {
             task: null,
             userBounty: null,
             sideProfileShown: false,
+            locationSearch: this.props.location.search
         };
 
         this.onLogin = this.onLogin.bind(this);
@@ -72,21 +73,40 @@ export class AppBase extends React.Component {
         this.hideSideProfile = this.hideSideProfile.bind(this);
         this.redirectToHome = this.redirectToHome.bind(this);
         this.onProfileChanged = this.onProfileChanged.bind(this);
+        this.onLocationChanged = this.onLocationChanged.bind(this);
     }
 
     componentDidMount() {
-        console.log('hehe');
         this.checkSessionUser();
         this.checkUrlParams();
 
         UserManager.addProfileChangeHandler(this.onProfileChanged);
+        this.onLocationChangedUnlisten = this.props.history.listen(this.onLocationChanged);
     }
 
     componentWillUnmount() {
         UserManager.removeProfileChangeHandler(this.onProfileChanged);
+        this.onLocationChangedUnlisten();
     }
 
     componentDidCatch() {}
+
+    onLocationChanged(location, action) {
+        if (action === "POP" &&
+            location.search !== "" &&
+            window.location.pathname === "/" &&
+            UserManager.user === null) {
+
+            let newUrl = location.pathname;
+            this.setState({
+                checkingParams: true,
+                locationSearch: location.search
+            }, () => {
+                this.checkUrlParams();
+                this.props.history.push(newUrl);
+            });
+        }
+    }
 
     checkSessionUser() {
         let user = SessionManager.getUser();
@@ -98,9 +118,8 @@ export class AppBase extends React.Component {
     }
 
     checkUrlParams() {
-        console.log("CHECKING");
-        if (this.props.location.search) {
-            let params = queryString.parse(this.props.location.search);
+        if (this.state.checkingParams && this.state.locationSearch) {
+            let params = queryString.parse(this.state.locationSearch);
             if ("workerId" in params) {
                 UserRepository.mturk(params['workerId']).then((user) => {
                     this.onLogin(user, true);
@@ -111,15 +130,6 @@ export class AppBase extends React.Component {
             }
         } else {
             this.setState({checkingParams: false});
-        }
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        let params = queryString.parse(this.props.location.search);
-        if ("workerId" in params) {
-            UserRepository.mturk(params['workerId']).then((user) => {
-                this.onLogin(user, true);
-            });
         }
     }
 
