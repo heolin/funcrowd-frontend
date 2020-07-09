@@ -7,6 +7,7 @@ import BinaryFeedbackModal from "./BinaryFeedbackModal";
 import PointsFeedbackModal from "./PointsFeedbackModal";
 import QuizFeedbackModal from "./QuizFeedbackModal";
 import ConfigManager from "../../logic/config/ConfigManager";
+import ClassificationFeedbackModal from "./ClassificationFeedbackModal";
 
 
 class _FeedbackFactory {
@@ -14,6 +15,8 @@ class _FeedbackFactory {
     create(type, isOpen, onAccept, task, annotation, feedback, exp) {
         if (ConfigManager.profile.exp === false && type === FeedbackTypes.POINTS)
             type = FeedbackTypes.BINARY;
+        if (ConfigManager.config.showFeedback === false)
+            type = FeedbackTypes.CONFIRM_ONLY;
 
         switch(type) {
             case FeedbackTypes.NONE:
@@ -57,6 +60,13 @@ class _FeedbackFactory {
                                       message={L.feedback.questionnaireSavedMessage}
                                       image={feedbackSurvey}
                                       buttonText={L.feedback.nextItem}/>;
+
+            case FeedbackTypes.CLASSIFICATION:
+                return <ClassificationFeedbackModal isOpen={isOpen}
+                                                    onAccept={onAccept}
+                                                    annotation={annotation}
+                                                    feedback={feedback}
+                                                    buttonText={L.feedback.nextItem}/>;
 
             default:
                 return null;

@@ -18,7 +18,9 @@ class _ConfigManager {
 
     setup(user) {
         this.config = createConfig();
-        this.config.showFeedback = true;// user.group > 5;
+        console.log(user);
+        this.config.showFeedback = user.group > 5;
+        console.log(this.config)
         this.initilized = true;
         this.profile = ProfileConfigs[user.profile];
     }
