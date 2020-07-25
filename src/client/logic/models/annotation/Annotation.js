@@ -10,7 +10,6 @@ export default class Annotation {
     }
 
     static fromJson(annotation_data) {
-        console.log(annotation_data.feedback);
         let annotation = new Annotation(
             annotation_data.item_id,
             annotation_data.data,

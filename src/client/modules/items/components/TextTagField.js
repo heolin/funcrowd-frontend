@@ -12,6 +12,10 @@ class Tag {
     }
 }
 
+function compareNumberStrings(a, b) {
+    return parseInt(a) - parseInt(b);
+}
+
 
 export default class TextTagField extends React.Component {
 
@@ -124,7 +128,7 @@ export default class TextTagField extends React.Component {
 
         let tags = this.state.tags;
 
-        let selectedTokens = this.state.selectedTokens.sort();
+        let selectedTokens = this.state.selectedTokens.sort(compareNumberStrings);
         let start = 0;
 
         for (let i = 0; i < selectedTokens[0]; i++)
@@ -146,6 +150,7 @@ export default class TextTagField extends React.Component {
     }
 
     render() {
+
         let label;
         if (this.props.label)
             label = <label><strong>{this.props.label}</strong></label>;

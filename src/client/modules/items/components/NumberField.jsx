@@ -30,7 +30,7 @@ export default class NumberField extends React.Component {
                        className="form-control number-field"
                        required={this.props.required}
                        min="0"
-                       max="999"
+                       max="10000"
                        type="number"/>
             </div>
         );

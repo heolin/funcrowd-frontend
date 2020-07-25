@@ -8,6 +8,8 @@ import PointsFeedbackModal from "./PointsFeedbackModal";
 import QuizFeedbackModal from "./QuizFeedbackModal";
 import ConfigManager from "../../logic/config/ConfigManager";
 import ClassificationFeedbackModal from "./ClassificationFeedbackModal";
+import RegressionFeedbackModal from "./RegressionFeedbackModal";
+import NERFeedbackModal from "./NERFeedbackModal";
 
 
 class _FeedbackFactory {
@@ -67,6 +69,20 @@ class _FeedbackFactory {
                                                     annotation={annotation}
                                                     feedback={feedback}
                                                     buttonText={L.feedback.nextItem}/>;
+
+            case FeedbackTypes.REGRESSION:
+                return <RegressionFeedbackModal isOpen={isOpen}
+                                                onAccept={onAccept}
+                                                annotation={annotation}
+                                                feedback={feedback}
+                                                buttonText={L.feedback.nextItem}/>;
+
+            case FeedbackTypes.NER:
+                return <NERFeedbackModal isOpen={isOpen}
+                                         onAccept={onAccept}
+                                         annotation={annotation}
+                                         feedback={feedback}
+                                         buttonText={L.feedback.nextItem}/>;
 
             default:
                 return null;

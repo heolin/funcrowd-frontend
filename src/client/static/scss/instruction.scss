@@ -4,7 +4,8 @@
     pointer-events: auto;
     overflow-y: scroll;
     opacity: 1;
-    height: 84vh;
+    height: auto;
+    max-height: 84vh;
     transform: translateX(-50%) translateY(-44%) translateZ(0px);
 }
 
