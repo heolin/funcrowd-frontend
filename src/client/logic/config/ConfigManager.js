@@ -3,7 +3,7 @@ import ProfileTypes from "./ProfileTypes";
 
 function createConfig() {
     return {
-        showFeedback: false
+        showFeedback: true
     };
 }
 
@@ -18,9 +18,8 @@ class _ConfigManager {
 
     setup(user) {
         this.config = createConfig();
-        console.log(user);
-        this.config.showFeedback = user.group > 5;
-        console.log(this.config)
+        if (user.profile === ProfileTypes.MTURK)
+            this.config.showFeedback = user.group > 5;
         this.initilized = true;
         this.profile = ProfileConfigs[user.profile];
     }

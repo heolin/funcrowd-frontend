@@ -57,13 +57,14 @@ export default class NERFeedbackModal extends React.Component {
                    }}>
 
                 <h2 className="feedback-header">Your results</h2>
-                <div>
+                <b>Reference values are only suggestions and may be incorrect!</b>
+                <div style={{paddingTop: "30px"}}>
                     <table className="table table-striped">
                         <thead>
                             <tr>
                                 <th>Text</th>
-                                <th>Correct Tag</th>
                                 <th>Your Tag</th>
+                                <th>Correct Tag</th>
                                 <th>Result</th>
                             </tr>
                         </thead>
