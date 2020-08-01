@@ -28,7 +28,7 @@ export default class NERFeedbackModal extends React.Component {
     }
 
     render() {
-        let feedback = this.state.feedback;
+        let feedback = this.props.feedback;
         let answerField = Object.keys(feedback.values)[0];
         let reference = feedback.values[answerField]['NERReferenceValue'];
         let buttonText = L.feedback.nextItem;
