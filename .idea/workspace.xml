@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8ead4a25-4a17-4a45-977c-0c90b6b22b4b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/3f482321becfaa40fcb19825fa717859.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/550b42a5f50d0b943bc45f5c361a9bc1.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/7e0ee8c45d872446649aacd3ce96e1f7.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +28,7 @@
     <session id="-1496763004">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="207" />
+          <entry key="project.closed" value="208" />
           <entry key="project.open.time.0" value="12" />
           <entry key="project.open.time.1" value="79" />
           <entry key="project.open.time.10" value="2" />
@@ -44,11 +37,11 @@
           <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.4" value="15" />
           <entry key="project.open.time.5" value="49" />
-          <entry key="project.open.time.6" value="27" />
+          <entry key="project.open.time.6" value="28" />
           <entry key="project.open.time.7" value="10" />
           <entry key="project.open.time.8" value="6" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="238" />
+          <entry key="project.opened" value="239" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -109,7 +102,7 @@
           <entry key="html" value="151" />
           <entry key="js" value="86945" />
           <entry key="json" value="356" />
-          <entry key="jsx" value="113142" />
+          <entry key="jsx" value="113191" />
           <entry key="local" value="28" />
           <entry key="md" value="186" />
           <entry key="production" value="3" />
@@ -124,7 +117,7 @@
           <entry key="Env File" value="53" />
           <entry key="HTML" value="151" />
           <entry key="JSON" value="356" />
-          <entry key="JSX Harmony" value="113142" />
+          <entry key="JSX Harmony" value="113191" />
           <entry key="JavaScript" value="86945" />
           <entry key="Markdown" value="186" />
           <entry key="PLAIN_TEXT" value="18" />
@@ -161,8 +154,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/NERFeedbackModal.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="442">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -494,7 +487,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" sideWeight="0.15135135" side_tool="true" weight="0.27137342" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.84864867" visible="true" weight="0.24600111" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.84864867" visible="true" weight="0.24875896" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
@@ -743,6 +736,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/FeedbackTypes.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemHeader.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -785,13 +781,10 @@
     <entry file="file://$PROJECT_DIR$/src/client/static/img/common/fun_crowd-01.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/FeedbackTypes.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/NERFeedbackModal.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="442">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
