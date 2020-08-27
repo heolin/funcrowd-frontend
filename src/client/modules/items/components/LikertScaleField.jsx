@@ -30,7 +30,7 @@ export default class LikertScaleField extends React.Component {
         let labelsClassName = this.props.source['labels'] === true ? "radio-likert-value-label" : "";
 
         for (let i = 0; i < count; i++) {
-            let value = i * (max['value'] - min['value'] + 1) / count;
+            let value = min['value'] + i * (max['value'] - min['value'] + 1) / count;
             options.push(
                 <RadioElement key={value}
                               label={value}
@@ -51,7 +51,9 @@ export default class LikertScaleField extends React.Component {
                 <div className="position-relative">
                     <div className="d-lg-inline-block radio-likert-label min">
                         <small>
-                            {min['text']}
+                            <b>
+                                {min['text']}
+                            </b>
                         </small>
                     </div>
                     <div className="d-inline-block">
@@ -59,7 +61,9 @@ export default class LikertScaleField extends React.Component {
                     </div>
                     <div className="d-inline-block radio-likert-label max">
                         <small>
-                            {max['text']}
+                            <b>
+                                {max['text']}
+                            </b>
                         </small>
                     </div>
                 </div>

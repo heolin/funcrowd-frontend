@@ -3,6 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="8ead4a25-4a17-4a45-977c-0c90b6b22b4b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/3f482321becfaa40fcb19825fa717859.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/550b42a5f50d0b943bc45f5c361a9bc1.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/7e0ee8c45d872446649aacd3ce96e1f7.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/static/scss/components/radio.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/components/radio.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,20 +37,20 @@
     <session id="-1496763004">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="210" />
+          <entry key="project.closed" value="213" />
           <entry key="project.open.time.0" value="12" />
-          <entry key="project.open.time.1" value="80" />
+          <entry key="project.open.time.1" value="83" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.2" value="29" />
           <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.4" value="15" />
           <entry key="project.open.time.5" value="49" />
-          <entry key="project.open.time.6" value="28" />
+          <entry key="project.open.time.6" value="29" />
           <entry key="project.open.time.7" value="10" />
           <entry key="project.open.time.8" value="6" />
           <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="241" />
+          <entry key="project.opened" value="245" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -55,7 +64,7 @@
           <entry key="ico" value="2" />
           <entry key="js" value="955" />
           <entry key="json" value="27" />
-          <entry key="jsx" value="1218" />
+          <entry key="jsx" value="1219" />
           <entry key="local" value="2" />
           <entry key="log" value="1" />
           <entry key="md" value="9" />
@@ -63,7 +72,7 @@
           <entry key="production" value="1" />
           <entry key="py" value="3" />
           <entry key="rnc" value="1" />
-          <entry key="scss" value="476" />
+          <entry key="scss" value="477" />
           <entry key="svg" value="75" />
           <entry key="ts" value="5" />
         </counts>
@@ -75,13 +84,13 @@
           <entry key="HTML" value="12" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="28" />
-          <entry key="JSX Harmony" value="1218" />
+          <entry key="JSX Harmony" value="1219" />
           <entry key="JavaScript" value="955" />
           <entry key="Markdown" value="9" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Python" value="3" />
           <entry key="RNG Compact" value="1" />
-          <entry key="SCSS" value="476" />
+          <entry key="SCSS" value="477" />
           <entry key="SVG" value="75" />
           <entry key="TypeScript" value="5" />
         </counts>
@@ -102,12 +111,12 @@
           <entry key="html" value="151" />
           <entry key="js" value="86958" />
           <entry key="json" value="356" />
-          <entry key="jsx" value="113191" />
+          <entry key="jsx" value="113250" />
           <entry key="local" value="28" />
           <entry key="md" value="186" />
           <entry key="production" value="3" />
           <entry key="py" value="1" />
-          <entry key="scss" value="23142" />
+          <entry key="scss" value="23159" />
           <entry key="svg" value="330" />
         </counts>
       </usages-collector>
@@ -117,12 +126,12 @@
           <entry key="Env File" value="53" />
           <entry key="HTML" value="151" />
           <entry key="JSON" value="356" />
-          <entry key="JSX Harmony" value="113191" />
+          <entry key="JSX Harmony" value="113250" />
           <entry key="JavaScript" value="86958" />
           <entry key="Markdown" value="186" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Python" value="1" />
-          <entry key="SCSS" value="23142" />
+          <entry key="SCSS" value="23159" />
           <entry key="SVG" value="330" />
         </counts>
       </usages-collector>
@@ -134,29 +143,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/NERFeedbackModal.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/BinaryFeedbackModal.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/FeedbackFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="323">
               <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
@@ -169,12 +158,12 @@
         <entry file="file://$PROJECT_DIR$/src/client/logic/config/ConfigManager.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -186,6 +175,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/index.js">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/static/scss/components/radio.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="337">
+              <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -279,9 +289,7 @@
         <option value="$PROJECT_DIR$/src/client/logic/config/ProfileConfigs.js" />
         <option value="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js" />
         <option value="$PROJECT_DIR$/src/client/logic/models/bounty/Bounty.js" />
-        <option value="$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/element/RadioElement.jsx" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/components/radio.scss" />
         <option value="$PROJECT_DIR$/src/client/Base.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/bounty/BountyItemPanel.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/feedback/ClassificationFeedbackModal.jsx" />
@@ -300,6 +308,8 @@
         <option value="$PROJECT_DIR$/src/client/modules/feedback/NERFeedbackModal.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/feedback/FeedbackFactory.js" />
         <option value="$PROJECT_DIR$/src/client/logic/config/ConfigManager.js" />
+        <option value="$PROJECT_DIR$/src/client/static/scss/components/radio.scss" />
+        <option value="$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx" />
       </list>
     </option>
   </component>
@@ -365,7 +375,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="feedback" type="462c0819:PsiDirectoryNode" />
+              <item name="items" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="items" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -383,7 +402,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/wojciech/repo/funcrowd-frontend/src/client/modules/feedback/FeedbackPanel.jsx" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/wi/repo/gl-gsc-api" />
+    <property name="last_opened_file_path" value="$USER_HOME$/wi/repo/wi-edge-workers" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -450,10 +469,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="25" width="1859" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" sideWeight="0.15135135" side_tool="true" weight="0.27137342" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.84864867" visible="true" weight="0.2542747" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.84864867" visible="true" weight="0.2658577" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
@@ -512,20 +532,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/TextTagField.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2465">
-          <caret line="145" selection-start-line="145" selection-end-line="145" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/models/annotation/Annotation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/items/ComponentsFactory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -697,25 +703,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/FeedbackFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/logic/config/ConfigManager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
@@ -747,10 +747,33 @@
     <entry file="file://$PROJECT_DIR$/src/client/static/img/common/fun_crowd-01.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
+    <entry file="file://$PROJECT_DIR$/src/server/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/components/radio.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        <state relative-caret-position="337">
+          <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/feedback/FeedbackFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

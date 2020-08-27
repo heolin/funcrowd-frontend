@@ -78,6 +78,10 @@
   position: relative;
 }
 
+.radio-likert-label {
+  margin: 0 10px;
+}
+
 @media screen and (max-width: map-get($screen-widths, 'lg')) {
   .radio-likert {
     padding-right: 0 !important;
