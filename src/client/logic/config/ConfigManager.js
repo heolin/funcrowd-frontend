@@ -20,6 +20,7 @@ class _ConfigManager {
         this.config = createConfig();
         if (user.profile === ProfileTypes.MTURK)
             this.config.showFeedback = user.group > 5;
+        this.config.showFeedback = true;
         this.initilized = true;
         this.profile = ProfileConfigs[user.profile];
     }
