@@ -238,7 +238,7 @@ export class AppBase extends React.Component {
 
                     <ToastsPanel/>
 
-                    <div className="h-100" style={{paddingTop: "80px"}}>
+                    <div className="h-100">
                         <PoseGroup>
                             <RouteContainer key={location.pathname}>
                                 <Switch location={location}>
