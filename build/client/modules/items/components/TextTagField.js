@@ -39,6 +39,10 @@ var Tag = function Tag(start, end, tag, text, tokens) {
   this.tokens = tokens;
 };
 
+function compareNumberStrings(a, b) {
+  return parseInt(a) - parseInt(b);
+}
+
 var TextTagField =
 /*#__PURE__*/
 function (_React$Component) {
@@ -171,7 +175,7 @@ function (_React$Component) {
       var tokens = sourceText.split(" ");
       if (this.state.selectedTokens.length === 0) return;
       var tags = this.state.tags;
-      var selectedTokens = this.state.selectedTokens.sort();
+      var selectedTokens = this.state.selectedTokens.sort(compareNumberStrings);
       var start = 0;
 
       for (var i = 0; i < selectedTokens[0]; i++) {

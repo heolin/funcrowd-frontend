@@ -23,6 +23,12 @@ var _QuizFeedbackModal = _interopRequireDefault(require("./QuizFeedbackModal"));
 
 var _ConfigManager = _interopRequireDefault(require("../../logic/config/ConfigManager"));
 
+var _ClassificationFeedbackModal = _interopRequireDefault(require("./ClassificationFeedbackModal"));
+
+var _RegressionFeedbackModal = _interopRequireDefault(require("./RegressionFeedbackModal"));
+
+var _NERFeedbackModal = _interopRequireDefault(require("./NERFeedbackModal"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -42,6 +48,7 @@ function () {
     key: "create",
     value: function create(type, isOpen, onAccept, task, annotation, feedback, exp) {
       if (_ConfigManager["default"].profile.exp === false && type === _FeedbackTypes["default"].POINTS) type = _FeedbackTypes["default"].BINARY;
+      if (_ConfigManager["default"].config.showFeedback === false) type = _FeedbackTypes["default"].CONFIRM_ONLY;
 
       switch (type) {
         case _FeedbackTypes["default"].NONE:
@@ -93,6 +100,33 @@ function () {
             headerText: _LocalizationManager["default"].feedback.questionnaireSaved,
             message: _LocalizationManager["default"].feedback.questionnaireSavedMessage,
             image: _feedback_survey["default"],
+            buttonText: _LocalizationManager["default"].feedback.nextItem
+          });
+
+        case _FeedbackTypes["default"].CLASSIFICATION:
+          return _react["default"].createElement(_ClassificationFeedbackModal["default"], {
+            isOpen: isOpen,
+            onAccept: onAccept,
+            annotation: annotation,
+            feedback: feedback,
+            buttonText: _LocalizationManager["default"].feedback.nextItem
+          });
+
+        case _FeedbackTypes["default"].REGRESSION:
+          return _react["default"].createElement(_RegressionFeedbackModal["default"], {
+            isOpen: isOpen,
+            onAccept: onAccept,
+            annotation: annotation,
+            feedback: feedback,
+            buttonText: _LocalizationManager["default"].feedback.nextItem
+          });
+
+        case _FeedbackTypes["default"].NER:
+          return _react["default"].createElement(_NERFeedbackModal["default"], {
+            isOpen: isOpen,
+            onAccept: onAccept,
+            annotation: annotation,
+            feedback: feedback,
             buttonText: _LocalizationManager["default"].feedback.nextItem
           });
 

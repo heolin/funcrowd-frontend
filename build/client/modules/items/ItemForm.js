@@ -223,7 +223,7 @@ function (_React$Component) {
       var SubmitButton = this.props.submitButton;
       var SkipButton = this.props.skipButton;
       var item = this.props.item;
-      var metadata = this.props.task.metadata;
+      var metadata = this.props.metadata;
       var groups = metadata.groups || [item.template.fields.map(function (field) {
         return field.name;
       })];

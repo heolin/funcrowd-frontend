@@ -19,7 +19,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function createConfig() {
   return {
-    showFeedback: false
+    showFeedback: true
   };
 }
 
@@ -39,8 +39,8 @@ function () {
     key: "setup",
     value: function setup(user) {
       this.config = createConfig();
-      this.config.showFeedback = true; // user.group > 5;
-
+      if (user.profile === _ProfileTypes["default"].MTURK) this.config.showFeedback = user.group > 5;
+      this.config.showFeedback = true;
       this.initilized = true;
       this.profile = _ProfileConfigs["default"][user.profile];
     }

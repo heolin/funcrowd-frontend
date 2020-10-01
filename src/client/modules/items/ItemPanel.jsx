@@ -65,7 +65,7 @@ export default class ItemPanel extends React.Component {
         if (props.task !== state.task) {
             return {
                 task: props.task,
-                metadata: props.task.meta,
+                metadata: props.task.metadata,
             };
         }
         if (props.bounty !== state.bounty) {
@@ -271,7 +271,7 @@ export default class ItemPanel extends React.Component {
                 <div className="col-sm-12 item-panel">
                         {instructionButton}
 
-                    <ItemForm metadata={this.props.metadata}
+                    <ItemForm metadata={metadata}
                               item={this.state.item}
                               onAnnotationPost={this.onAnnotationPost}
                               submitButton={SubmitButton}

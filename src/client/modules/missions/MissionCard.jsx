@@ -22,8 +22,13 @@ export default class MissionCard extends React.Component {
     }
 
     render() {
+
         let mission = this.props.mission;
         let metadata = mission.metadata;
+
+        if (!metadata.image)
+            return null;
+
         let progress = this.props.progress;
         let image = require("../../static/"+metadata.image);
 

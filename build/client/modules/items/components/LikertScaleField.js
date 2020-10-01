@@ -65,14 +65,16 @@ function (_React$Component) {
       var min = this.props.source['min'];
       var max = this.props.source['max'];
       var count = this.props.source['count'];
+      var labelsClassName = this.props.source['labels'] === true ? "radio-likert-value-label" : "";
 
       for (var i = 0; i < count; i++) {
-        var value = (max['value'] - min['value'] + 1) * (i + 1) / count;
+        var value = min['value'] + i * (max['value'] - min['value'] + 1) / count;
         options.push(_react["default"].createElement(_RadioElement["default"], {
           key: value,
-          label: "",
+          label: value,
           name: this.props.name,
           className: "radio-likert",
+          labelsClassName: labelsClassName,
           onChange: this.handleChange,
           required: this.props.required,
           value: value
@@ -87,11 +89,11 @@ function (_React$Component) {
         className: "position-relative"
       }, _react["default"].createElement("div", {
         className: "d-lg-inline-block radio-likert-label min"
-      }, _react["default"].createElement("small", null, min['text'])), _react["default"].createElement("div", {
+      }, _react["default"].createElement("small", null, _react["default"].createElement("b", null, min['text']))), _react["default"].createElement("div", {
         className: "d-inline-block"
       }, options), _react["default"].createElement("div", {
         className: "d-inline-block radio-likert-label max"
-      }, _react["default"].createElement("small", null, max['text']))));
+      }, _react["default"].createElement("small", null, _react["default"].createElement("b", null, max['text'])))));
     }
   }]);
 

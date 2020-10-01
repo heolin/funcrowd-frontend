@@ -62,6 +62,7 @@ function (_React$Component) {
     value: function render() {
       var mission = this.props.mission;
       var metadata = mission.metadata;
+      if (!metadata.image) return null;
       var progress = this.props.progress;
 
       var image = require("../../static/" + metadata.image);

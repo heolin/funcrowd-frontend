@@ -12,7 +12,8 @@ var FeedbackTypes = {
   POINTS: "POINTS",
   NER: "NER",
   CLASSIFICATION: "CLASSIFICATION",
-  QUESTIONNAIRE: "QUESTIONNAIRE"
+  QUESTIONNAIRE: "QUESTIONNAIRE",
+  REGRESSION: "REGRESSION"
 };
 var _default = FeedbackTypes;
 exports["default"] = _default;

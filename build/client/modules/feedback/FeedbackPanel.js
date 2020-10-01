@@ -53,7 +53,7 @@ function (_React$Component) {
 
       if (annotation) {
         feedback = annotation.feedback;
-        if (this.props.task.feedback) type = this.props.task.feedback['type'];else type = _FeedbackTypes["default"].CONFIRM_ONLY;
+        if (feedback) type = feedback['type'];else type = _FeedbackTypes["default"].CONFIRM_ONLY;
       }
 
       var modal = _FeedbackFactory["default"].create(type, this.props.isOpen, this.props.onAccept, this.props.task, annotation, feedback, this.props.exp);

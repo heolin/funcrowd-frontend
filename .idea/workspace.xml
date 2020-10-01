@@ -2,7 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ead4a25-4a17-4a45-977c-0c90b6b22b4b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/client/ErrorBoundary.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/Base.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/Base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/config/ConfigManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/config/ConfigManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/config/ProfileConfigs.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/config/ProfileConfigs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/models/annotation/Annotation.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/models/annotation/Annotation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/models/annotation/Feedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/models/annotation/Feedback.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/models/bounty/Bounty.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/models/bounty/Bounty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/models/bounty/UserBounty.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/models/bounty/UserBounty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/repositories/BountyRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/repositories/BountyRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/logic/repositories/RankingRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/repositories/RankingRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/BountyCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/bounty/BountyCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/BountyHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/bounty/BountyHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/BountyItemPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/bounty/BountyItemPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/BountyMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/bounty/BountyMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/NotFinishedBountyPanel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/RestartBountyPanel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/RewardCodesListPanel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/StartBountyPanel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/feedback/FeedbackFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/feedback/FeedbackFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/feedback/FeedbackPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/feedback/FeedbackPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/feedback/FeedbackTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/feedback/FeedbackTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/items/ComponentsFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/ComponentsFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/items/ItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/ItemForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/items/ItemPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/ItemPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/items/components/LikertScaleField.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/components/LikertScaleField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/items/components/NumberField.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/components/NumberField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/items/components/TextTagField.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/components/TextTagField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/items/components/element/RadioElement.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/components/element/RadioElement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/missions/MissionCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/missions/MissionCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/navbar/NavbarMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/navbar/NavbarMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/modules/profile/SideProfilePanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/profile/SideProfilePanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/resources/texts/bounty.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/resources/texts/bounty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/static/scss/_badges.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/_badges.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/static/scss/components/gallery.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/components/gallery.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/static/scss/components/radio.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/components/radio.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/static/scss/components/tagger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/components/tagger.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/client/static/scss/instruction.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/instruction.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/3f482321becfaa40fcb19825fa717859.ttf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/550b42a5f50d0b943bc45f5c361a9bc1.ttf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/7e0ee8c45d872446649aacd3ce96e1f7.ttf" beforeDir="false" />
@@ -10,8 +50,14 @@
       <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/logic/config/ConfigManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/logic/config/ConfigManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/static/scss/components/gallery.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/static/scss/components/gallery.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Base.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Base.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,9 +83,9 @@
     <session id="-1496763004">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="219" />
+          <entry key="project.closed" value="222" />
           <entry key="project.open.time.0" value="12" />
-          <entry key="project.open.time.1" value="89" />
+          <entry key="project.open.time.1" value="92" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.2" value="29" />
@@ -50,7 +96,7 @@
           <entry key="project.open.time.7" value="10" />
           <entry key="project.open.time.8" value="6" />
           <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="251" />
+          <entry key="project.opened" value="254" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -59,12 +105,12 @@
           <entry key="css" value="45" />
           <entry key="development" value="3" />
           <entry key="env" value="3" />
-          <entry key="gitignore" value="1" />
-          <entry key="html" value="12" />
+          <entry key="gitignore" value="2" />
+          <entry key="html" value="14" />
           <entry key="ico" value="2" />
-          <entry key="js" value="957" />
+          <entry key="js" value="963" />
           <entry key="json" value="27" />
-          <entry key="jsx" value="1221" />
+          <entry key="jsx" value="1228" />
           <entry key="local" value="2" />
           <entry key="log" value="1" />
           <entry key="md" value="9" />
@@ -72,7 +118,7 @@
           <entry key="production" value="1" />
           <entry key="py" value="3" />
           <entry key="rnc" value="1" />
-          <entry key="scss" value="479" />
+          <entry key="scss" value="480" />
           <entry key="svg" value="75" />
           <entry key="ts" value="5" />
         </counts>
@@ -81,16 +127,16 @@
         <counts>
           <entry key="CSS" value="45" />
           <entry key="Env File" value="6" />
-          <entry key="HTML" value="12" />
+          <entry key="HTML" value="14" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="29" />
-          <entry key="JSX Harmony" value="1221" />
-          <entry key="JavaScript" value="957" />
+          <entry key="JSX Harmony" value="1228" />
+          <entry key="JavaScript" value="963" />
           <entry key="Markdown" value="9" />
-          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="PLAIN_TEXT" value="7" />
           <entry key="Python" value="3" />
           <entry key="RNG Compact" value="1" />
-          <entry key="SCSS" value="479" />
+          <entry key="SCSS" value="480" />
           <entry key="SVG" value="75" />
           <entry key="TypeScript" value="5" />
         </counts>
@@ -108,15 +154,15 @@
           <entry key="development" value="24" />
           <entry key="dummy" value="2" />
           <entry key="env" value="9" />
-          <entry key="html" value="156" />
-          <entry key="js" value="86970" />
+          <entry key="html" value="167" />
+          <entry key="js" value="87186" />
           <entry key="json" value="356" />
-          <entry key="jsx" value="113254" />
+          <entry key="jsx" value="113634" />
           <entry key="local" value="28" />
           <entry key="md" value="186" />
           <entry key="production" value="3" />
           <entry key="py" value="1" />
-          <entry key="scss" value="23182" />
+          <entry key="scss" value="23184" />
           <entry key="svg" value="330" />
         </counts>
       </usages-collector>
@@ -124,14 +170,14 @@
         <counts>
           <entry key="CSS" value="1966" />
           <entry key="Env File" value="53" />
-          <entry key="HTML" value="156" />
+          <entry key="HTML" value="167" />
           <entry key="JSON" value="356" />
-          <entry key="JSX Harmony" value="113254" />
-          <entry key="JavaScript" value="86970" />
+          <entry key="JSX Harmony" value="113634" />
+          <entry key="JavaScript" value="87186" />
           <entry key="Markdown" value="186" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Python" value="1" />
-          <entry key="SCSS" value="23182" />
+          <entry key="SCSS" value="23184" />
           <entry key="SVG" value="330" />
         </counts>
       </usages-collector>
@@ -143,51 +189,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/about/SpaceCalcAboutPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="169" column="8" selection-start-line="169" selection-start-column="8" selection-end-line="169" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/logic/config/ConfigManager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.babelrc">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/static/scss/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/client/static/scss/components/gallery.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/static/scss/components/radio.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1411">
-              <caret line="83" selection-start-line="83" selection-end-line="83" />
+            <state>
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -204,20 +211,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/Footer.jsx">
+        <entry file="file://$PROJECT_DIR$/src/client/Base.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="612">
+              <caret line="240" column="67" selection-start-line="240" selection-start-column="67" selection-end-line="240" selection-end-column="67" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -226,8 +223,71 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/static/img/common/fun_crowd-01.svg">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/src/server/index.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/NotSupported.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/static/scss/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/client/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/ErrorBoundary.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -253,12 +313,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginButton.js" />
-        <option value="$PROJECT_DIR$/src/client/modules/navbar/NavbarLoginMenu.js" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/navbar.scss" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/login.scss" />
-        <option value="$PROJECT_DIR$/src/client/components/Blob.js" />
-        <option value="$PROJECT_DIR$/src/client/static/scss/components/blob.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/tasks/TasksMenu.jsx" />
         <option value="$PROJECT_DIR$/src/client/resources/texts/general.js" />
         <option value="$PROJECT_DIR$/src/client/modules/profile/ProfilePage.js" />
@@ -270,7 +324,6 @@
         <option value="$PROJECT_DIR$/src/client/modules/bounty/BountyCard.jsx" />
         <option value="$PROJECT_DIR$/src/client/resources/texts/bounty.js" />
         <option value="$PROJECT_DIR$/src/client/modules/bounty/BountyMenu.jsx" />
-        <option value="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" />
         <option value="$PROJECT_DIR$/src/client/logic/models/bounty/UserBounty.js" />
         <option value="$PROJECT_DIR$/src/client/logic/models/annotation/Feedback.js" />
         <option value="$PROJECT_DIR$/src/client/modules/feedback/FeedbackPanel.jsx" />
@@ -283,27 +336,34 @@
         <option value="$PROJECT_DIR$/src/client/modules/navbar/NavbarMenu.js" />
         <option value="$PROJECT_DIR$/src/client/logic/models/bounty/Bounty.js" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/element/RadioElement.jsx" />
-        <option value="$PROJECT_DIR$/src/client/Base.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/bounty/BountyItemPanel.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/feedback/ClassificationFeedbackModal.jsx" />
         <option value="$PROJECT_DIR$/src/client/static/scss/_badges.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/NumberField.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/feedback/FeedbackTypes.js" />
         <option value="$PROJECT_DIR$/src/client/modules/feedback/RegressionFeedbackModal.jsx" />
-        <option value="$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/TextTagField.js" />
         <option value="$PROJECT_DIR$/src/client/static/scss/components/tagger.scss" />
         <option value="$PROJECT_DIR$/src/client/logic/models/annotation/Annotation.js" />
         <option value="$PROJECT_DIR$/src/client/static/icons/cancel-sign-red.svg" />
         <option value="$PROJECT_DIR$/src/client/static/scss/modal.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/navbar/Navbar.jsx" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/client/modules/feedback/NERFeedbackModal.jsx" />
         <option value="$PROJECT_DIR$/src/client/modules/feedback/FeedbackFactory.js" />
         <option value="$PROJECT_DIR$/src/client/static/scss/components/radio.scss" />
         <option value="$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx" />
         <option value="$PROJECT_DIR$/src/client/logic/config/ConfigManager.js" />
         <option value="$PROJECT_DIR$/src/client/static/scss/components/gallery.scss" />
+        <option value="$PROJECT_DIR$/dist/index.html" />
+        <option value="$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx" />
+        <option value="$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx" />
+        <option value="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" />
+        <option value="$PROJECT_DIR$/src/client/ErrorBoundary.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/client/Base.jsx" />
+        <option value="$PROJECT_DIR$/src/client/index.js" />
+        <option value="$PROJECT_DIR$/src/client/NotSupported.jsx" />
+        <option value="$PROJECT_DIR$/src/client/app.js" />
       </list>
     </option>
   </component>
@@ -333,6 +393,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -345,11 +406,73 @@
               <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="about" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="items" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="missions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="scss" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="funcrowd-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="funcrowd-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -368,19 +491,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/client/static/icons" />
-      <recent name="$PROJECT_DIR$/src/client/modules/feedback" />
-      <recent name="$PROJECT_DIR$/src/client/modules/items/components" />
-      <recent name="$PROJECT_DIR$/src/client/static/scss" />
-      <recent name="$PROJECT_DIR$/src/client/modules/popups" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/client/modules/toasts" />
       <recent name="$PROJECT_DIR$/src/client/modules/profile/components" />
       <recent name="$PROJECT_DIR$/src/client/resources/texts" />
       <recent name="$PROJECT_DIR$/src/client/modules/feedback/_bak" />
       <recent name="$PROJECT_DIR$/src/client/modules/achievements" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/client" />
+      <recent name="$PROJECT_DIR$/src/client/static/icons" />
+      <recent name="$PROJECT_DIR$/src/client/modules/feedback" />
+      <recent name="$PROJECT_DIR$/src/client/modules/items/components" />
+      <recent name="$PROJECT_DIR$/src/client/static/scss" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -426,7 +549,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" sideWeight="0.15135135" side_tool="true" weight="0.27137342" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.84864867" visible="true" weight="0.2857143" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.84864867" visible="true" weight="0.14396028" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
@@ -485,40 +608,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/client/modules/bounty/BountyCard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/icons/badgeBgGreen.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/icons/badgeBg.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/icons/arrow-right_orange.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/icons/unlocked.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/icons/unknown.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/icons/tick-sign-green.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/icons/star.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/icons/settings.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/icons/ranking.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/static/icons/medal-gold.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -589,14 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3383">
-          <caret line="221" column="25" selection-start-line="221" selection-start-column="25" selection-end-line="221" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/logic/repositories/ItemRepository.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -627,23 +708,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/items/components/LikertScaleField.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -651,9 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="50" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -671,12 +736,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/App.jsx">
+    <entry file="file://$PROJECT_DIR$/dist/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/client/logic/config/ConfigManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2720">
+          <caret line="165" selection-start-line="165" selection-end-line="165" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/components/gallery.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3944">
+          <caret line="254" selection-start-line="254" selection-end-line="254" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/about/AboutPage.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/about/SpaceCalcWelcomePage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/components/Icons.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -689,46 +812,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/index.js">
+    <entry file="file://$PROJECT_DIR$/src/client/static/img/common/fun_crowd-01.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/about/SpaceCalcAboutPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/static/scss/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Base.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="240" column="67" selection-start-line="240" selection-start-column="67" selection-end-line="240" selection-end-column="67" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/img/common/fun_crowd-01.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemForm.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="169" column="8" selection-start-line="169" selection-start-column="8" selection-end-line="169" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/logic/config/ConfigManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.babelrc">
+    <entry file="file://$PROJECT_DIR$/src/server/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/style.scss">
+    <entry file="file://$PROJECT_DIR$/src/client/ErrorBoundary.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+        <state relative-caret-position="238">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/static/scss/components/gallery.scss">
+    <entry file="file://$PROJECT_DIR$/src/client/NotSupported.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+        <state relative-caret-position="278">
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

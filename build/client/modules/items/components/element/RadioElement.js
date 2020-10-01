@@ -50,8 +50,7 @@ function (_React$Component) {
   }, {
     key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextProps, nextState) {
-      var result = nextProps.value !== this.props.value;
-      return result;
+      return nextProps.value !== this.props.value;
     }
   }, {
     key: "render",
@@ -70,7 +69,9 @@ function (_React$Component) {
         className: "outer"
       }, _react["default"].createElement("span", {
         className: "inner"
-      })), text);
+      })), _react["default"].createElement("span", {
+        className: this.props.labelsClassName
+      }, text));
     }
   }]);
 

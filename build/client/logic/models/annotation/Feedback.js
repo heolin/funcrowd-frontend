@@ -14,19 +14,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var Feedback =
 /*#__PURE__*/
 function () {
-  function Feedback(score, scores, values) {
+  function Feedback(score, scores, values, type) {
     _classCallCheck(this, Feedback);
 
     this.score = score;
     this.scores = scores;
     this.values = values;
+    this.type = type;
   }
 
   _createClass(Feedback, null, [{
     key: "fromJson",
     value: function fromJson(feedback_data) {
       if (feedback_data) {
-        var feedback = new Feedback(feedback_data.score, feedback_data.scores, feedback_data.values);
+        var feedback = new Feedback(feedback_data.score, feedback_data.scores, feedback_data.values, feedback_data.type);
         return feedback;
       }
     }

@@ -142,8 +142,9 @@ function (_React$Component) {
       profile: null,
       mission: null,
       task: null,
-      bounty: null,
-      sideProfileShown: false
+      userBounty: null,
+      sideProfileShown: false,
+      locationSearch: _this.props.location.search
     };
     _this.onLogin = _this.onLogin.bind(_assertThisInitialized(_this));
     _this.onLogout = _this.onLogout.bind(_assertThisInitialized(_this));
@@ -154,6 +155,7 @@ function (_React$Component) {
     _this.hideSideProfile = _this.hideSideProfile.bind(_assertThisInitialized(_this));
     _this.redirectToHome = _this.redirectToHome.bind(_assertThisInitialized(_this));
     _this.onProfileChanged = _this.onProfileChanged.bind(_assertThisInitialized(_this));
+    _this.onLocationChanged = _this.onLocationChanged.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -164,15 +166,36 @@ function (_React$Component) {
       this.checkUrlParams();
 
       _UserManager["default"].addProfileChangeHandler(this.onProfileChanged);
+
+      this.onLocationChangedUnlisten = this.props.history.listen(this.onLocationChanged);
     }
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       _UserManager["default"].removeProfileChangeHandler(this.onProfileChanged);
+
+      this.onLocationChangedUnlisten();
     }
   }, {
     key: "componentDidCatch",
     value: function componentDidCatch() {}
+  }, {
+    key: "onLocationChanged",
+    value: function onLocationChanged(location, action) {
+      var _this2 = this;
+
+      if (action === "POP" && location.search !== "" && window.location.pathname === "/" && _UserManager["default"].user === null) {
+        var newUrl = location.pathname;
+        this.setState({
+          checkingParams: true,
+          locationSearch: location.search
+        }, function () {
+          _this2.checkUrlParams();
+
+          _this2.props.history.push(newUrl);
+        });
+      }
+    }
   }, {
     key: "checkSessionUser",
     value: function checkSessionUser() {
@@ -189,20 +212,16 @@ function (_React$Component) {
   }, {
     key: "checkUrlParams",
     value: function checkUrlParams() {
-      var _this2 = this;
+      var _this3 = this;
 
-      if (this.props.location.search) {
-        var params = _queryString["default"].parse(this.props.location.search);
-
-        if ("action" in params) {
-          _SessionManager["default"].cache['action'] = params['action'];
-        }
+      if (this.state.checkingParams && this.state.locationSearch) {
+        var params = _queryString["default"].parse(this.state.locationSearch);
 
         if ("workerId" in params) {
           _UserRepository["default"].mturk(params['workerId']).then(function (user) {
-            _this2.onLogin(user, true);
+            _this3.onLogin(user, true);
 
-            _this2.setState({
+            _this3.setState({
               checkingParams: false
             });
           });
@@ -239,7 +258,6 @@ function (_React$Component) {
       //    profile: UserManager.user.profile
       //});
       this.forceUpdate();
-      console.log("UPDATING PROFILE");
     }
   }, {
     key: "redirectToHome",
@@ -285,12 +303,11 @@ function (_React$Component) {
     }
   }, {
     key: "onBountySelect",
-    value: function onBountySelect(bounty) {
+    value: function onBountySelect(userBounty) {
       this.setState({
-        bounty: bounty,
-        task: bounty.task
+        userBounty: userBounty
       });
-      this.props.history.push('/bounty/' + bounty.id);
+      this.props.history.push('/bounty/' + userBounty.bounty.id);
     }
   }, {
     key: "showSideProfile",
@@ -310,7 +327,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       if (this.state.checkingParams || this.state.checkingUser) return _react["default"].createElement(_Loading["default"], null);
 
@@ -327,16 +344,16 @@ function (_React$Component) {
         render: function render(_ref) {
           var location = _ref.location;
           return _react["default"].createElement("div", null, _react["default"].createElement(_Navbar["default"], {
-            user: _this3.state.user,
-            location: _this3.props.location,
-            onLogout: _this3.onLogout,
-            onNavigateToMissions: _this3.navigateToMissions,
-            onNavigateToBounties: _this3.navigateToBounties,
-            onNavigateToAbout: _this3.navigateToAbout,
-            showSideProfile: _this3.showSideProfile
+            user: _this4.state.user,
+            location: _this4.props.location,
+            onLogout: _this4.onLogout,
+            onNavigateToMissions: _this4.navigateToMissions,
+            onNavigateToBounties: _this4.navigateToBounties,
+            onNavigateToAbout: _this4.navigateToAbout,
+            showSideProfile: _this4.showSideProfile
           }), _react["default"].createElement(_SideProfilePanel.SideProfilePanel, {
-            isOpen: _this3.state.sideProfileShown,
-            hideSideProfile: _this3.hideSideProfile
+            isOpen: _this4.state.sideProfileShown,
+            hideSideProfile: _this4.hideSideProfile
           }), _react["default"].createElement(_ToastsPanel["default"], null), _react["default"].createElement("div", {
             className: "h-100"
           }, _react["default"].createElement(_reactPose.PoseGroup, null, _react["default"].createElement(RouteContainer, {
@@ -348,29 +365,29 @@ function (_React$Component) {
             path: _Urls["default"].HOME,
             render: function render(props) {
               return _react["default"].createElement(_LoginPage["default"], _extends({
-                onSuccess: _this3.onLogin
+                onSuccess: _this4.onLogin
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].ACTIVATION,
             render: function render(props) {
               return _react["default"].createElement(_ActivationPage["default"], _extends({
-                onSuccess: _this3.onLogin
+                onSuccess: _this4.onLogin
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].REGISTER,
             render: function render(props) {
               return _react["default"].createElement(_RegisterPage["default"], _extends({
-                onSuccess: _this3.onLogin
+                onSuccess: _this4.onLogin
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].MISSIONS,
             render: function render(props) {
               return _react["default"].createElement(_MissionsMenu["default"], _extends({
-                onMissionSelect: _this3.onMissionSelect,
-                user: _this3.state.user
+                onMissionSelect: _this4.onMissionSelect,
+                user: _this4.state.user
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
@@ -382,86 +399,86 @@ function (_React$Component) {
             path: _Urls["default"].RESET_PASSWORD_TOKEN,
             render: function render(props) {
               return _react["default"].createElement(_ResetPasswordTokenPage["default"], _extends({
-                onSuccess: _this3.onLogin
+                onSuccess: _this4.onLogin
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].ABOUT,
             render: function render(props) {
               return _react["default"].createElement(_SpaceCalcAboutPage["default"], _extends({
-                user: _this3.state.user
+                user: _this4.state.user
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].WELCOME,
             render: function render(props) {
               return _react["default"].createElement(_SpaceCalcWelcomePage["default"], _extends({
-                user: _this3.state.user
+                user: _this4.state.user
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].PROFILE,
             render: function render(props) {
               return _react["default"].createElement(_ProfilePage["default"], _extends({
-                usr: _this3.state.user
+                usr: _this4.state.user
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].SETTINGS,
             render: function render(props) {
               return _react["default"].createElement(_SettingsPage["default"], _extends({
-                usr: _this3.state.user
+                usr: _this4.state.user
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].RANKING,
             render: function render(props) {
               return _react["default"].createElement(_RankingPage["default"], _extends({
-                usr: _this3.state.user
+                usr: _this4.state.user
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].ACHIEVEMENTS,
             render: function render(props) {
               return _react["default"].createElement(_AchievementsMenu["default"], _extends({
-                user: _this3.state.user
+                user: _this4.state.user
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].BOUNTY,
             render: function render(props) {
               return _react["default"].createElement(_BountyItemPanel["default"], _extends({
-                task: _this3.state.task,
-                user: _this3.state.user,
-                bounty: _this3.state.bounty,
-                onBountySelect: _this3.onBountySelect
+                task: _this4.state.task,
+                user: _this4.state.user,
+                userBounty: _this4.state.userBounty,
+                onBountySelect: _this4.onBountySelect
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].BOUNTIES,
             render: function render(props) {
               return _react["default"].createElement(_BountyMenu["default"], _extends({
-                onBountySelect: _this3.onBountySelect,
-                user: _this3.state.user
+                onBountySelect: _this4.onBountySelect,
+                user: _this4.state.user
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].TASK,
             render: function render(props) {
               return _react["default"].createElement(_ItemPanel["default"], _extends({
-                task: _this3.state.task,
-                user: _this3.state.user,
-                onTaskSelect: _this3.onTaskSelect
+                task: _this4.state.task,
+                user: _this4.state.user,
+                onTaskSelect: _this4.onTaskSelect
               }, props));
             }
           }), _react["default"].createElement(_reactRouterDom.Route, {
             path: _Urls["default"].TASKS,
             render: function render(props) {
               return _react["default"].createElement(_TasksMenu["default"], _extends({
-                onTaskSelect: _this3.onTaskSelect,
-                onMissionSelect: _this3.onMissionSelect,
-                mission: _this3.state.mission,
-                user: _this3.state.user
+                onTaskSelect: _this4.onTaskSelect,
+                onMissionSelect: _this4.onMissionSelect,
+                mission: _this4.state.mission,
+                user: _this4.state.user
               }, props));
             }
           }))))));

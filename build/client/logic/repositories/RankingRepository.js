@@ -47,6 +47,8 @@ function () {
     key: "user",
     value: function user(userId) {
       return _axios["default"].get(_ConfigManager["default"].baseUrl + '/api/v1/ranking/exp/around/' + userId + '/?size=0', _SessionManager["default"].config).then(function (response) {
+        if (response.data.length === 0) return null;
+
         var row = _ranking_row["default"].fromJson(response.data[0]);
 
         return row;

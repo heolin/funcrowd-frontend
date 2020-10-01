@@ -96,6 +96,7 @@ function (_React$Component) {
       loading: true,
       feedback: null,
       annotation: null,
+      metadata: {},
       instruction: false,
       confirmation: false,
       mobileWarning: MobileWarningStates.NONE
@@ -177,7 +178,7 @@ function (_React$Component) {
   }, {
     key: "onNoItems",
     value: function onNoItems() {
-      var metadata = this.state.task.metadata;
+      var metadata = this.state.metadata;
 
       if (metadata.redirectOnNoItems === true) {
         if (metadata.redirectToMissions === true) {
@@ -242,17 +243,12 @@ function (_React$Component) {
 
       _AchievementsManager["default"].checkToasts();
 
-      var lastPageOnlyFeedback = this.state.task.metadata.lastPageOnlyFeedback === true;
+      var feedback = annotationResponse.annotation.feedback;
+      var lastPageOnlyFeedback = this.state.metadata.lastPageOnlyFeedback === true;
 
-      if (this.state.task.feedback.type === _FeedbackTypes["default"].NONE) {
+      if (feedback.type === _FeedbackTypes["default"].NONE || feedback == null) {
         this.onFeedbackAccept();
       } else if (lastPageOnlyFeedback === false || annotationResponse.isLastItem) {
-        var feedback = null;
-
-        if (_ConfigManager["default"].config.showFeedback) {
-          feedback = annotationResponse.annotation.feedback;
-        }
-
         this.setState({
           annotation: annotationResponse.annotation,
           exp: annotationResponse.exp,
@@ -278,14 +274,12 @@ function (_React$Component) {
   }, {
     key: "checkMobileWarning",
     value: function checkMobileWarning() {
-      if (this.state.task) {
-        var metadata = this.state.task.metadata;
+      var metadata = this.state.metadata;
 
-        if (this.state.mobileWarning === MobileWarningStates.NONE && window.isMobile() && metadata.onlyPC === true) {
-          this.setState({
-            mobileWarning: MobileWarningStates.SHOWN
-          });
-        }
+      if (this.state.mobileWarning === MobileWarningStates.NONE && window.isMobile() && metadata.onlyPC === true) {
+        this.setState({
+          mobileWarning: MobileWarningStates.SHOWN
+        });
       }
     }
   }, {
@@ -338,7 +332,7 @@ function (_React$Component) {
       var itemId = null;
       var noitems = null;
       var header = null;
-      var metadata = this.state.task.metadata;
+      var metadata = this.state.metadata;
 
       if (this.state.item) {
         itemId = this.state.item.id;
@@ -357,7 +351,7 @@ function (_React$Component) {
         itemForm = _react["default"].createElement("div", {
           className: "col-sm-12 item-panel"
         }, instructionButton, _react["default"].createElement(_ItemForm["default"], {
-          task: this.props.task,
+          metadata: metadata,
           item: this.state.item,
           onAnnotationPost: this.onAnnotationPost,
           submitButton: _SubmitButton["default"],
@@ -407,7 +401,8 @@ function (_React$Component) {
     value: function getDerivedStateFromProps(props, state) {
       if (props.task !== state.task) {
         return {
-          task: props.task
+          task: props.task,
+          metadata: props.task.metadata
         };
       }
 

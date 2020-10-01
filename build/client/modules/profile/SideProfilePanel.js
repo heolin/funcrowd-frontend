@@ -135,7 +135,7 @@ function (_React$Component) {
       var _this2 = this;
 
       _RankingRepository["default"].user(_UserManager["default"].user.id).then(function (row) {
-        _this2.setState({
+        if (row) _this2.setState({
           ranking: row.position
         });
       })["catch"](function (error) {

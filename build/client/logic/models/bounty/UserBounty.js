@@ -5,6 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _Bounty = _interopRequireDefault(require("./Bounty"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -14,19 +18,29 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var UserBounty =
 /*#__PURE__*/
 function () {
-  function UserBounty(id, progress, annotationsDone, annotationsTarget, status, reward, rewardsList) {
+  function UserBounty(progress, annotationsDone, annotationsTarget, status, reward, bounty) {
     _classCallCheck(this, UserBounty);
 
-    this.id = id;
     this.progress = progress;
     this.annotationsDone = annotationsDone;
     this.annotationsTarget = annotationsTarget;
     this.status = status;
+    this.bounty = bounty;
     this.reward = reward;
-    this.rewardsList = rewardsList || [];
   }
 
   _createClass(UserBounty, [{
+    key: "getStatusOrder",
+    value: function getStatusOrder() {
+      var status = this.status;
+
+      if (status === "CLOSED") {
+        if (this.progress === 1) return 3;else return 4;
+      }
+
+      if (status === "FINISHED") return 3;else return 1;
+    }
+  }, {
     key: "isClosed",
     get: function get() {
       return this.status === "FINISHED" || this.status === "CLOSED";
@@ -34,8 +48,8 @@ function () {
   }], [{
     key: "fromJson",
     value: function fromJson(bounty_data) {
-      if (bounty_data !== null && bounty_data.id) {
-        var userBounty = new UserBounty(bounty_data.id, bounty_data.progress, bounty_data.annotations_done, bounty_data.annotations_target, bounty_data.status, bounty_data.reward, bounty_data.rewards_list);
+      if (bounty_data !== null) {
+        var userBounty = new UserBounty(bounty_data.progress, bounty_data.items_done, bounty_data.items_count, bounty_data.status, bounty_data.reward, _Bounty["default"].fromJson(bounty_data["package"]));
         return userBounty;
       }
     }

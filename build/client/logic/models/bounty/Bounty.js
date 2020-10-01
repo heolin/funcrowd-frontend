@@ -5,12 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _UserBounty = _interopRequireDefault(require("./UserBounty"));
-
-var _Task = _interopRequireDefault(require("../tasks/Task"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -20,35 +14,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var Bounty =
 /*#__PURE__*/
 function () {
-  function Bounty(id, task, annotationsTarget, closed, userBounty) {
+  function Bounty(id, name, order, status, metadata, instruction) {
     _classCallCheck(this, Bounty);
 
     this.id = id;
-    this.task = task;
-    this.annotationsTarget = annotationsTarget;
-    this.closed = closed;
-    this.userBounty = userBounty;
+    this.name = name;
+    this.order = order;
+    this.status = status;
+    this.metadata = metadata;
+    this.instruction = instruction;
   }
 
-  _createClass(Bounty, [{
-    key: "getStatusOrder",
-    value: function getStatusOrder() {
-      if (this.userBounty) {
-        var status = this.userBounty.status;
-
-        if (status === "CLOSED") {
-          if (this.userBounty.progress === 1) return 3;else return 4;
-        }
-
-        if (status === "FINISHED") return 3;else return 1;
-      }
-
-      return 4;
-    }
-  }], [{
+  _createClass(Bounty, null, [{
     key: "fromJson",
     value: function fromJson(bounty_data) {
-      var bounty = new Bounty(bounty_data.id, _Task["default"].fromJson(bounty_data.task), bounty_data.annotations_target, bounty_data.closed, _UserBounty["default"].fromJson(bounty_data.user_bounty));
+      var bounty = new Bounty(bounty_data.id, bounty_data.name, bounty_data.order, bounty_data.status, bounty_data.metadata, bounty_data.instruction);
       return bounty;
     }
   }]);

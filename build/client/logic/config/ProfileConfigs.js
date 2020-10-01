@@ -20,6 +20,7 @@ ProfileConfigs[_ProfileTypes["default"].NOTLOGGED] = {
   ranking: false,
   bounties: false,
   profile: false,
+  settings: false,
   availablePages: [_Urls["default"].HOME, _Urls["default"].LOGIN, _Urls["default"].REGISTER, _Urls["default"].ACTIVATION, _Urls["default"].ABOUT, _Urls["default"].RESET_PASSWORD, _Urls["default"].RESET_PASSWORD_TOKEN]
 };
 ProfileConfigs[_ProfileTypes["default"].NORMAL] = {
@@ -29,7 +30,9 @@ ProfileConfigs[_ProfileTypes["default"].NORMAL] = {
   exp: false,
   ranking: false,
   bounties: false,
+  profile_menu: false,
   profile: false,
+  settings: true,
   availablePages: null
 };
 ProfileConfigs[_ProfileTypes["default"].ELEARNING] = {
@@ -39,7 +42,9 @@ ProfileConfigs[_ProfileTypes["default"].ELEARNING] = {
   exp: false,
   ranking: false,
   bounties: false,
-  profile: false,
+  profile: true,
+  profile_menu: false,
+  settings: true,
   availablePages: null
 };
 ProfileConfigs[_ProfileTypes["default"].GAMIFICATION] = {
@@ -49,7 +54,9 @@ ProfileConfigs[_ProfileTypes["default"].GAMIFICATION] = {
   exp: true,
   ranking: true,
   bounties: false,
-  profile: true,
+  profile: false,
+  profile_menu: true,
+  settings: false,
   availablePages: null
 };
 ProfileConfigs[_ProfileTypes["default"].MTURK] = {
@@ -59,6 +66,8 @@ ProfileConfigs[_ProfileTypes["default"].MTURK] = {
   ranking: false,
   bounties: true,
   profile: false,
+  profile_menu: false,
+  settings: false,
   availablePages: null
 };
 var _default = ProfileConfigs;

@@ -59,7 +59,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(BountyHeader).call(this, props));
     _this.state = {
       loading: true,
-      userBounty: null,
+      userBounty: _this.props.userBounty,
       previousStatus: null
     };
     return _this;
@@ -82,7 +82,7 @@ function (_React$Component) {
     value: function updateStatus() {
       var _this2 = this;
 
-      _BountyRepository["default"].getStatus(this.props.bounty.id).then(function (userBounty) {
+      _BountyRepository["default"].get(this.props.userBounty.bounty.id).then(function (userBounty) {
         var newStatus = null;
 
         if (userBounty) {
@@ -102,73 +102,55 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      if (this.props.bounty == null) return null;
-      var bounty = this.props.bounty;
-      var task = bounty.task;
-      var progressBar = null;
-      var bountyStatus = "CLOSED";
-      var elements = null;
+      if (this.props.userBounty == null) return null;
+      var userBounty = this.state.userBounty;
+      var bounty = userBounty.bounty;
       var classNameExtend = "";
+      var bountyStatus = userBounty.status;
+      var annotationsDone = Math.min(userBounty.annotationsDone, userBounty.annotationsTarget);
 
-      if (this.state.userBounty) {
-        var userBounty = this.state.userBounty;
-        bountyStatus = userBounty.status;
-        var annotationsDone = Math.min(userBounty.annotationsDone, bounty.annotationsTarget);
-        progressBar = _react["default"].createElement(_ProgressBar["default"], {
-          progress: userBounty.progress,
-          textAlign: "right",
-          text: _LocalizationManager["default"].general.finished + " " + annotationsDone + "/" + bounty.annotationsTarget
-        });
+      var progressBar = _react["default"].createElement(_ProgressBar["default"], {
+        progress: userBounty.progress,
+        textAlign: "right",
+        text: _LocalizationManager["default"].general.finished + " " + annotationsDone + "/" + userBounty.annotationsTarget
+      });
 
-        var reward = _react["default"].createElement("span", {
-          className: "badge badge-secondary",
-          style: {
-            fontSize: "14px"
-          }
-        }, _LocalizationManager["default"].bounty.labels.bountyNotFinished);
-
-        if (userBounty.reward) reward = _react["default"].createElement("span", {
-          className: "badge badge-green",
-          style: {
-            fontSize: "14px"
-          }
-        }, userBounty.reward);
-
-        var status = _react["default"].createElement("div", {
-          className: "badge " + statusStyle[bountyStatus],
-          style: {
-            fontSize: "14px"
-          }
-        }, _LocalizationManager["default"].bounty.status[bountyStatus]);
-
-        var rewardsList = null;
-
-        if (this.state.userBounty.rewardsList.length > 0) {
-          rewardsList = _react["default"].createElement("div", null, _LocalizationManager["default"].bounty.labels.rewardsList, ":\xA0", _react["default"].createElement("a", {
-            className: "bounty-link",
-            onClick: this.props.showPreviousCodes
-          }, "Show codes"));
-          classNameExtend = " tasks-header-extended";
+      var reward = _react["default"].createElement("span", {
+        className: "badge badge-secondary",
+        style: {
+          fontSize: "14px"
         }
+      }, _LocalizationManager["default"].bounty.labels.bountyNotFinished);
 
-        elements = _react["default"].createElement("div", {
-          className: "bounty-header-info"
-        }, _react["default"].createElement("div", {
-          className: "color-white"
-        }, _react["default"].createElement("h3", {
-          style: {
-            marginBottom: 0,
-            marginTop: "10px"
-          }
-        }, "#", bounty.id, " ", task.name), _react["default"].createElement("span", {
-          className: "small"
-        }, task.description), _react["default"].createElement("div", {
-          className: "small",
-          style: {
-            margin: "15px 0"
-          }
-        }, _react["default"].createElement("div", null, _LocalizationManager["default"].bounty.labels.status, ":\xA0", status), _react["default"].createElement("div", null, _LocalizationManager["default"].bounty.labels.reward, ":\xA0", reward), rewardsList)), progressBar);
-      }
+      if (userBounty.reward) reward = _react["default"].createElement("span", {
+        className: "badge badge-green",
+        style: {
+          fontSize: "14px"
+        }
+      }, userBounty.reward);
+
+      var status = _react["default"].createElement("div", {
+        className: "badge " + statusStyle[bountyStatus],
+        style: {
+          fontSize: "14px"
+        }
+      }, _LocalizationManager["default"].bounty.status[bountyStatus]);
+
+      var elements = _react["default"].createElement("div", {
+        className: "bounty-header-info"
+      }, _react["default"].createElement("div", {
+        className: "color-white"
+      }, _react["default"].createElement("h3", {
+        style: {
+          marginBottom: 0,
+          marginTop: "10px"
+        }
+      }, "#", bounty.id, " ", bounty.name), _react["default"].createElement("div", {
+        className: "small",
+        style: {
+          margin: "15px 0"
+        }
+      }, _react["default"].createElement("div", null, _LocalizationManager["default"].bounty.labels.status, ":\xA0", status), _react["default"].createElement("div", null, _LocalizationManager["default"].bounty.labels.reward, ":\xA0", reward))), progressBar);
 
       return _react["default"].createElement("div", {
         className: "tasks-header-bar row card-2-static" + classNameExtend

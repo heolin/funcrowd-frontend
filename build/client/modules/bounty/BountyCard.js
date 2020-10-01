@@ -55,9 +55,8 @@ function (_React$Component) {
   _createClass(BountyCard, [{
     key: "render",
     value: function render() {
-      var bounty = this.props.bounty;
-      var task = bounty.task;
-      var userBounty = bounty.userBounty;
+      var userBounty = this.props.userBounty;
+      var bounty = userBounty.bounty;
       var progressBar = null;
       var icon = "locked";
       var bountyStatus = _LocalizationManager["default"].bounty.status.CLOSED;
@@ -66,9 +65,9 @@ function (_React$Component) {
       var onClick = function onClick() {};
 
       if (userBounty) {
-        if (userBounty.status === "NEW") {
+        if (userBounty.status === "NONE") {
           icon = "missions";
-          bountyStatus = _LocalizationManager["default"].bounty.status.NEW;
+          bountyStatus = _LocalizationManager["default"].bounty.status.NONE;
           className = "card-2";
           onClick = this.props.onSelect;
         } else if (userBounty.status === "IN_PROGRESS") {
@@ -83,11 +82,11 @@ function (_React$Component) {
           onClick = this.props.onSelect;
         }
 
-        var annotationsDone = Math.min(userBounty.annotationsDone, bounty.annotationsTarget);
+        var annotationsDone = Math.min(userBounty.annotationsDone, userBounty.annotationsTarget);
         progressBar = _react["default"].createElement(_ProgressBar["default"], {
           progress: userBounty.progress,
           textAlign: "right",
-          text: "Ukończono " + annotationsDone + "/" + bounty.annotationsTarget
+          text: "Ukończono " + annotationsDone + "/" + userBounty.annotationsTarget
         });
       } else if (bounty.closed === false) {
         icon = "missions";
@@ -103,12 +102,7 @@ function (_React$Component) {
         onClick: onClick
       }, _react["default"].createElement("div", {
         className: "mission-card-content"
-      }, _react["default"].createElement("h4", null, "#", bounty.id, " ", task.name), _react["default"].createElement("p", {
-        className: "small",
-        style: {
-          minHeight: "48px"
-        }
-      }, task.description), _react["default"].createElement("div", {
+      }, _react["default"].createElement("h4", null, "#", bounty.id, " ", bounty.name), _react["default"].createElement("div", {
         className: "small",
         style: {
           margin: "30px 0"

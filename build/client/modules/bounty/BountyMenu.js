@@ -47,7 +47,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(BountyMenu).call(this, props));
     _this.state = {
-      bounties: null,
+      userBounties: null,
       loading: true
     };
     return _this;
@@ -58,8 +58,8 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _BountyRepository["default"].all().then(function (bounties) {
-        bounties.sort(function (a, b) {
+      _BountyRepository["default"].all().then(function (userBounties) {
+        userBounties.sort(function (a, b) {
           var keyA = a.getStatusOrder();
           var keyB = b.getStatusOrder();
           if (keyA < keyB) return -1;
@@ -69,7 +69,7 @@ function (_React$Component) {
 
         _this2.setState({
           loading: false,
-          bounties: bounties
+          userBounties: userBounties
         });
       })["catch"](function (error) {
         _this2.setState({
@@ -85,12 +85,12 @@ function (_React$Component) {
       var _this3 = this;
 
       if (this.state.loading) return _react["default"].createElement(_Loading["default"], null);
-      var bounties = this.state.bounties.map(function (bounty, i) {
+      var userBounties = this.state.userBounties.map(function (userBounty, i) {
         return _react["default"].createElement(_BountyCard["default"], {
           key: i,
-          bounty: bounty,
+          userBounty: userBounty,
           onSelect: function onSelect() {
-            return _this3.props.onBountySelect(bounty);
+            return _this3.props.onBountySelect(userBounty);
           }
         });
       });
@@ -105,7 +105,7 @@ function (_React$Component) {
       }, _react["default"].createElement("h3", null, "Bounties"), _react["default"].createElement("p", null, "Tasks performed in the form of bounty have the required number of items to perform. After completing the appropriate number of items, the reward code will be unlocked, which you can use to close the task and redeem the reward."), _react["default"].createElement("p", null, "Click on the card below to begin your work on selected bounty."))), _react["default"].createElement(_ListContainer["default"], {
         className: "row missions-row",
         key: "list"
-      }, bounties)));
+      }, userBounties)));
     }
   }]);
 

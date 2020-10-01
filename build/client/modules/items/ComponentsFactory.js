@@ -11,6 +11,8 @@ var _TextLabel = _interopRequireDefault(require("./components/TextLabel"));
 
 var _TextField = _interopRequireDefault(require("./components/TextField"));
 
+var _TextAreaField = _interopRequireDefault(require("./components/TextAreaField"));
+
 var _RadioField = _interopRequireDefault(require("./components/RadioField"));
 
 var _MultiChoiceField = _interopRequireDefault(require("./components/MultiChoiceField"));
@@ -39,6 +41,8 @@ var _TextOrRadioField = _interopRequireDefault(require("./components/TextOrRadio
 
 var _ProgressBar = _interopRequireDefault(require("./components/ProgressBar"));
 
+var _Link = _interopRequireDefault(require("./components/Link"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -48,11 +52,13 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var Components = {
+  "Link": _Link["default"],
   "TextLabel": _TextLabel["default"],
   "ChoiceField": _RadioField["default"],
   "CheckboxField": _CheckboxField["default"],
   "PDF": _TextLabel["default"],
   "TextField": _TextField["default"],
+  "TextAreaField": _TextAreaField["default"],
   "RadioField": _RadioField["default"],
   "TextOrRadioField": _TextOrRadioField["default"],
   "ProgressBar": _ProgressBar["default"],

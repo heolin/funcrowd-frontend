@@ -54,6 +54,11 @@ module.exports = (env, args) => ({
             '@': path.resolve(__dirname, 'src')
         }
     },
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      }
+    },
     devServer: {
         port: 3000,
         open: true,

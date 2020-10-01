@@ -7,8 +7,6 @@ exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _queryString = _interopRequireDefault(require("query-string"));
-
 var _ItemForm = _interopRequireDefault(require("../items/ItemForm"));
 
 var _FeedbackPanel = _interopRequireDefault(require("../feedback/FeedbackPanel"));
@@ -17,15 +15,9 @@ var _InstructionPanel = _interopRequireDefault(require("../instruction/Instructi
 
 var _BountyRepository = _interopRequireDefault(require("../../logic/repositories/BountyRepository"));
 
-var _BountyStatus = _interopRequireDefault(require("../bounty/BountyStatus"));
-
 var _reactIconsKit = require("react-icons-kit");
 
 var _info = require("react-icons-kit/fa/info");
-
-var _ConfigManager = _interopRequireDefault(require("../../logic/config/ConfigManager"));
-
-var _ItemRepository = _interopRequireDefault(require("../../logic/repositories/ItemRepository"));
 
 var _NoItemsPanel = _interopRequireDefault(require("../items/NoItemsPanel"));
 
@@ -37,23 +29,7 @@ var _BountyHeader = _interopRequireDefault(require("../bounty/BountyHeader"));
 
 var _Loading = _interopRequireDefault(require("../../components/Loading"));
 
-var _UserManager = _interopRequireDefault(require("../../logic/UserManager"));
-
-var _StartBountyPanel = _interopRequireDefault(require("./StartBountyPanel"));
-
-var _bounty = _interopRequireDefault(require("../../resources/texts/bounty"));
-
 var _ItemPanel2 = _interopRequireDefault(require("../items/ItemPanel"));
-
-var _RestartBountyPanel = _interopRequireDefault(require("./RestartBountyPanel"));
-
-var _NotFinishedBountyPanel = _interopRequireDefault(require("./NotFinishedBountyPanel"));
-
-var _RewardCodesListPanel = _interopRequireDefault(require("./RewardCodesListPanel"));
-
-var _Footer = require("../../Footer");
-
-var _SessionManager = _interopRequireDefault(require("../../logic/SessionManager"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -89,27 +65,22 @@ function (_ItemPanel) {
     _this.state = {
       item: null,
       task: null,
-      bounty: null,
+      userBounty: null,
       loading: true,
       loadingStart: false,
       feedback: null,
       annotation: null,
       instruction: false,
       confirmation: false,
-      startPanel: false,
-      restartPanel: false,
       notFinishedPanel: false,
-      previousCodesPanel: false
+      previousCodesPanel: false,
+      metadata: {}
     };
     _this.onAnnotationPost = _this.onAnnotationPost.bind(_assertThisInitialized(_this));
     _this.onFeedbackAccept = _this.onFeedbackAccept.bind(_assertThisInitialized(_this));
     _this.showInstruction = _this.showInstruction.bind(_assertThisInitialized(_this));
     _this.onInstructionClose = _this.onInstructionClose.bind(_assertThisInitialized(_this));
     _this.onBountyFinished = _this.onBountyFinished.bind(_assertThisInitialized(_this));
-    _this.startBounty = _this.startBounty.bind(_assertThisInitialized(_this));
-    _this.closeNotFinishedPanel = _this.closeNotFinishedPanel.bind(_assertThisInitialized(_this));
-    _this.showPreviousCodes = _this.showPreviousCodes.bind(_assertThisInitialized(_this));
-    _this.closePreviousCodes = _this.closePreviousCodes.bind(_assertThisInitialized(_this));
     _this.onUpdateStatus = _this.onUpdateStatus.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -122,127 +93,92 @@ function (_ItemPanel) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState, snapshot) {
-      if (this.state.bounty !== prevState.bounty || this.state.startPanel !== prevState.startPanel) {
+      if (this.state.userBounty !== prevState.userBounty) {
         this.checkState();
         this.checkInstruction();
       }
     }
   }, {
-    key: "checkState",
-    value: function checkState() {
+    key: "checkInstruction",
+    value: function checkInstruction() {
+      if (localStorage.getItem("FUNCROWD_INSTRUCTION_BOUNTY" + this.state.userBounty.bounty.id) !== "true") this.showInstruction();
+    }
+  }, {
+    key: "showInstruction",
+    value: function showInstruction() {
+      if (this.state.userBounty.bounty.instruction) {
+        this.setState({
+          instruction: true
+        });
+        localStorage.setItem("FUNCROWD_INSTRUCTION_BOUNTY" + this.state.userBounty.bounty.id, "true");
+      }
+    }
+  }, {
+    key: "getFirstItem",
+    value: function getFirstItem() {
+      return this.getNextItem();
+    }
+  }, {
+    key: "getNextItem",
+    value: function getNextItem() {
       var _this2 = this;
 
-      if (this.props.bounty == null) {
+      _BountyRepository["default"].getNextItem(this.state.userBounty.bounty.id).then(function (item) {
+        if (item == null) _this2.onNoItems();
+
+        _this2.setState({
+          loading: false,
+          item: item
+        });
+      })["catch"](function (error) {
+        _this2.setState({
+          loading: false
+        });
+
+        console.log(error);
+      });
+    }
+  }, {
+    key: "checkState",
+    value: function checkState() {
+      var _this3 = this;
+
+      if (this.props.userBounty == null) {
         if (this.props.match.path === "/bounty/:id") {
           var bountyId = this.props.match.params.id;
 
           _BountyRepository["default"].get(bountyId).then(function (bounty) {
-            _this2.props.onBountySelect(bounty);
+            _this3.props.onBountySelect(bounty);
           });
         }
       } else {
-        if (this.state.bounty) {
-          if (this.state.bounty.userBounty) {
-            this.getFirstItem();
-            this.checkInstruction();
-            this.checkRestartBounty();
-          } else if (!this.state.loadingStart) {
-            _SessionManager["default"].cache['action'] = null;
-            this.setState({
-              loading: false,
-              startPanel: true
-            });
-          }
+        if (this.state.userBounty) {
+          this.getFirstItem();
+          this.checkInstruction();
         } else {
           this.setState({
-            bounty: this.props.bounty
+            userBounty: this.props.userBounty
           });
         }
       }
-    }
-  }, {
-    key: "startBounty",
-    value: function startBounty() {
-      var _this3 = this;
-
-      var bountyId = this.props.match.params.id;
-      this.setState({
-        loading: true,
-        startPanel: false,
-        loadingStart: true,
-        restartPanel: false,
-        notFinishedPanel: false
-      });
-
-      _BountyRepository["default"].start(bountyId).then(function (bounty) {
-        _this3.setState({
-          loadingStart: false
-        });
-
-        _this3.props.onBountySelect(bounty);
-      });
     }
   }, {
     key: "onBountyFinished",
     value: function onBountyFinished() {
-      var bounty = this.state.bounty;
+      var userBounty = this.state.userBounty;
 
-      if (bounty) {
-        bounty.userBounty.status = "FINISHED";
+      if (userBounty) {
+        userBounty.status = "FINISHED";
         this.setState({
-          bounty: bounty
+          userBounty: userBounty
         });
       }
     }
   }, {
-    key: "closeNotFinishedPanel",
-    value: function closeNotFinishedPanel() {
-      this.setState({
-        notFinishedPanel: false
-      });
-    }
-  }, {
-    key: "checkRestartBounty",
-    value: function checkRestartBounty() {
-      var action = _SessionManager["default"].cache['action'];
-
-      if (action) {
-        if (action === 'startBounty') {
-          if (this.state.bounty.userBounty.status === "FINISHED") {
-            this.setState({
-              restartPanel: true
-            });
-          } else {
-            this.setState({
-              notFinishedPanel: true
-            });
-          }
-
-          _SessionManager["default"].cache['action'] = null;
-        }
-      }
-    }
-  }, {
-    key: "showPreviousCodes",
-    value: function showPreviousCodes() {
-      this.setState({
-        previousCodesPanel: true
-      });
-    }
-  }, {
-    key: "closePreviousCodes",
-    value: function closePreviousCodes() {
-      this.setState({
-        previousCodesPanel: false
-      });
-    }
-  }, {
     key: "onUpdateStatus",
     value: function onUpdateStatus(userBounty) {
-      var bounty = this.state.bounty;
-      bounty.userBounty = userBounty;
       this.setState({
-        bounty: bounty
+        userBounty: userBounty
       });
     }
   }, {
@@ -252,44 +188,39 @@ function (_ItemPanel) {
       var itemForm = null;
       var bounty = null;
       var itemId = null;
-      var noitems = null;
 
-      if (!this.state.bounty.closed) {
-        if (this.state.bounty.userBounty && !this.state.bounty.userBounty.isClosed) {
-          if (this.state.item) {
-            itemId = this.state.item.id;
-            itemForm = _react["default"].createElement("div", {
-              className: "col-sm-12 item-panel"
-            }, _react["default"].createElement("div", {
-              style: {
-                marginBottom: "30px"
-              }
-            }, _react["default"].createElement("h3", {
-              style: {
-                display: "inline-block"
-              }
-            }, "Item #", this.state.item.id), _react["default"].createElement("button", {
-              className: "btn btn-default info-button",
-              onClick: this.showInstruction
-            }, _react["default"].createElement(_reactIconsKit.Icon, {
-              icon: _info.info,
-              size: 24
-            }))), _react["default"].createElement(_ItemForm["default"], {
-              task: this.props.task,
-              item: this.state.item,
-              onAnnotationPost: this.onAnnotationPost,
-              submitButton: _SubmitButton["default"],
-              skipButton: _SkipButton["default"]
-            }));
-          } else {
-            noitems = _react["default"].createElement(_NoItemsPanel["default"], null);
-          }
+      if (this.state.userBounty && !this.state.userBounty.isClosed) {
+        if (this.state.item) {
+          itemId = this.state.item.id;
+          itemForm = _react["default"].createElement("div", {
+            className: "col-sm-12 item-panel"
+          }, _react["default"].createElement("div", {
+            style: {
+              marginBottom: "30px"
+            }
+          }, _react["default"].createElement("h3", {
+            style: {
+              display: "inline-block"
+            }
+          }, "Item #", this.state.item.id), _react["default"].createElement("button", {
+            className: "btn btn-default info-button",
+            onClick: this.showInstruction
+          }, _react["default"].createElement(_reactIconsKit.Icon, {
+            icon: _info.info,
+            size: 24
+          }))), _react["default"].createElement(_ItemForm["default"], {
+            metadata: this.state.metadata,
+            item: this.state.item,
+            onAnnotationPost: this.onAnnotationPost,
+            submitButton: _SubmitButton["default"],
+            skipButton: _SkipButton["default"]
+          }));
         }
       }
 
       var bountyHeader = null;
-      if (this.state.bounty.userBounty) bountyHeader = _react["default"].createElement(_BountyHeader["default"], {
-        bounty: this.state.bounty,
+      if (this.state.userBounty) bountyHeader = _react["default"].createElement(_BountyHeader["default"], {
+        userBounty: this.state.userBounty,
         itemId: itemId,
         onUpdateStatus: this.onUpdateStatus,
         showPreviousCodes: this.showPreviousCodes,
@@ -299,41 +230,25 @@ function (_ItemPanel) {
         className: "container-fluid base-row"
       }, bountyHeader, _react["default"].createElement(_InstructionPanel["default"], {
         isOpen: this.state.item && this.state.instruction,
-        task: this.props.task,
+        task: this.state.userBounty.bounty,
         onClose: this.onInstructionClose
       }), _react["default"].createElement(_FeedbackPanel["default"], {
         isOpen: this.state.item && this.state.confirmation,
         onAccept: this.onFeedbackAccept,
         annotation: this.state.annotation
-      }), _react["default"].createElement(_StartBountyPanel["default"], {
-        bounty: this.props.bounty,
-        isOpen: this.state.startPanel,
-        startBounty: this.startBounty
-      }), _react["default"].createElement(_RestartBountyPanel["default"], {
-        bounty: this.props.bounty,
-        isOpen: this.state.restartPanel,
-        startBounty: this.startBounty
-      }), _react["default"].createElement(_NotFinishedBountyPanel["default"], {
-        bounty: this.props.bounty,
-        isOpen: this.state.notFinishedPanel,
-        onClose: this.closeNotFinishedPanel
-      }), _react["default"].createElement(_RewardCodesListPanel["default"], {
-        bounty: this.state.bounty,
-        isOpen: this.state.previousCodesPanel,
-        onClose: this.closePreviousCodes
       }), _react["default"].createElement("div", {
         className: "container"
       }, _react["default"].createElement("div", {
         className: "row"
-      }, bounty, itemForm, noitems)));
+      }, bounty, itemForm)));
     }
   }], [{
     key: "getDerivedStateFromProps",
     value: function getDerivedStateFromProps(props, state) {
-      if (props.task !== state.task || props.task !== state.bounty) {
+      if (props.userBounty !== state.userBounty) {
         return {
-          task: props.task,
-          bounty: props.bounty
+          userBounty: props.userBounty,
+          metadata: props.userBounty.bounty.metadata
         };
       }
 
