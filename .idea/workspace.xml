@@ -2,62 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ead4a25-4a17-4a45-977c-0c90b6b22b4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/client/ErrorBoundary.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/Base.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/Base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/logic/config/ConfigManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/config/ConfigManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/logic/config/ProfileConfigs.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/config/ProfileConfigs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/logic/models/annotation/Annotation.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/models/annotation/Annotation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/logic/models/annotation/Feedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/models/annotation/Feedback.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/logic/models/bounty/Bounty.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/models/bounty/Bounty.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/logic/models/bounty/UserBounty.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/models/bounty/UserBounty.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/logic/repositories/BountyRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/repositories/BountyRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/logic/repositories/RankingRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/logic/repositories/RankingRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/BountyCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/bounty/BountyCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/BountyHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/bounty/BountyHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/BountyItemPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/bounty/BountyItemPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/BountyMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/bounty/BountyMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/NotFinishedBountyPanel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/RestartBountyPanel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/RewardCodesListPanel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/bounty/StartBountyPanel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/feedback/FeedbackFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/feedback/FeedbackFactory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/feedback/FeedbackPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/feedback/FeedbackPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/feedback/FeedbackTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/feedback/FeedbackTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/items/ComponentsFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/ComponentsFactory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/items/ItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/ItemForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/items/ItemPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/ItemPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/items/components/LikertScaleField.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/components/LikertScaleField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/items/components/NumberField.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/components/NumberField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/items/components/TextTagField.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/components/TextTagField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/items/components/element/RadioElement.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/items/components/element/RadioElement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/missions/MissionCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/missions/MissionCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/navbar/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/navbar/NavbarMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/navbar/NavbarMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/modules/profile/SideProfilePanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/modules/profile/SideProfilePanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/resources/texts/bounty.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/resources/texts/bounty.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/static/scss/_badges.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/_badges.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/static/scss/components/gallery.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/components/gallery.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/static/scss/components/radio.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/components/radio.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/static/scss/components/tagger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/components/tagger.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/client/static/scss/instruction.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/client/static/scss/instruction.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/3f482321becfaa40fcb19825fa717859.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/550b42a5f50d0b943bc45f5c361a9bc1.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/7e0ee8c45d872446649aacd3ce96e1f7.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Base.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Base.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/modules/missions/MissionCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +55,7 @@
           <entry key="ico" value="2" />
           <entry key="js" value="963" />
           <entry key="json" value="27" />
-          <entry key="jsx" value="1228" />
+          <entry key="jsx" value="1229" />
           <entry key="local" value="2" />
           <entry key="log" value="1" />
           <entry key="md" value="9" />
@@ -130,7 +75,7 @@
           <entry key="HTML" value="14" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="29" />
-          <entry key="JSX Harmony" value="1228" />
+          <entry key="JSX Harmony" value="1229" />
           <entry key="JavaScript" value="963" />
           <entry key="Markdown" value="9" />
           <entry key="PLAIN_TEXT" value="7" />
@@ -155,7 +100,7 @@
           <entry key="dummy" value="2" />
           <entry key="env" value="9" />
           <entry key="html" value="167" />
-          <entry key="js" value="87186" />
+          <entry key="js" value="87191" />
           <entry key="json" value="356" />
           <entry key="jsx" value="113634" />
           <entry key="local" value="28" />
@@ -173,7 +118,7 @@
           <entry key="HTML" value="167" />
           <entry key="JSON" value="356" />
           <entry key="JSX Harmony" value="113634" />
-          <entry key="JavaScript" value="87186" />
+          <entry key="JavaScript" value="87191" />
           <entry key="Markdown" value="186" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Python" value="1" />
@@ -189,7 +134,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/modules/about/SpaceCalcAboutPage.js">
+        <entry file="file://$PROJECT_DIR$/src/client/App.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
@@ -200,9 +145,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/App.jsx">
+        <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="303">
+              <caret line="254" selection-start-line="254" selection-end-line="254" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -227,11 +173,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+            <state relative-caret-position="221">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -269,7 +215,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -361,9 +307,9 @@
         <option value="$PROJECT_DIR$/src/client/ErrorBoundary.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/client/Base.jsx" />
-        <option value="$PROJECT_DIR$/src/client/index.js" />
         <option value="$PROJECT_DIR$/src/client/NotSupported.jsx" />
         <option value="$PROJECT_DIR$/src/client/app.js" />
+        <option value="$PROJECT_DIR$/src/client/index.js" />
       </list>
     </option>
   </component>
@@ -774,16 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3944">
-          <caret line="254" selection-start-line="254" selection-end-line="254" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/modules/about/AboutPage.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -877,22 +813,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/modules/items/ItemPanel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="254" selection-start-line="254" selection-end-line="254" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

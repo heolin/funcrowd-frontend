@@ -11,5 +11,5 @@ async function loadMainApp() {
     await import(/* webpackChunkName: "app" */ './app');
 }
 
-//loadMainApp();
+loadMainApp();
 
