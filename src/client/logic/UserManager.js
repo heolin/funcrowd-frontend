@@ -15,9 +15,14 @@ class _UserManager extends EventEmitter {
     constructor() {
         super();
         this.user = null;
-        this.loading = false;
+        this.loadingExp = false;
+        this.loadingProfile = false;
         this.level = 0;
         this.levelProgress = 0;
+    }
+
+    get loading() {
+        return this.loadingExp || this.loadingProfile;
     }
 
     setup(user) {
@@ -33,8 +38,9 @@ class _UserManager extends EventEmitter {
     update() {
         if (this.loading)
             return;
+        console.log("updating exp");
 
-        this.loading = true;
+        this.loadingExp = true;
         return UserRepository.status()
             .then((userStatus) => {
                 if (userStatus.id !== this.user.id) {
@@ -44,7 +50,7 @@ class _UserManager extends EventEmitter {
                 this.user.exp = userStatus.exp;
                 this._updateLevel();
                 this.emit(EXPERIENCE_CHANGED);
-                this.loading = false;
+                this.loadingExp = false;
             })
             .catch((error) => {
                 console.log(error)
@@ -55,7 +61,8 @@ class _UserManager extends EventEmitter {
         if (this.loading)
             return;
 
-        this.loading = true;
+        console.log("updating profile");
+        this.loadingProfile = true;
         return UserRepository.details()
             .then((details) => {
                 if (details.id !== this.user.id) {
@@ -68,7 +75,7 @@ class _UserManager extends EventEmitter {
                     ConfigManager.changeProfile(details.profile);
                     this.emit(PROFILE_CHANGED);
                 }
-                this.loading = false;
+                this.loadingProfile = false;
             })
             .catch((error) => {
                 console.log(error)

@@ -21,6 +21,7 @@ export default class TextOrRadioField extends React.Component {
             otherSelected: other.checked
         });
 
+        console.log(event.target);
         this.props.onChange(event);
     }
 

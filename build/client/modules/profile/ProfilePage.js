@@ -70,8 +70,8 @@ function (_React$Component) {
     };
     _this.testsIds = {
       "Test 1": [61, 62, 63, 64, 65, 66],
-      "Test 2": [53],
-      "Test 3": [54]
+      "Test 2": [111, 112, 113, 114, 115, 116],
+      "Test 3": [123, 124, 125, 126, 127, 128]
     };
     _this.allIds = [];
 
@@ -230,7 +230,7 @@ function (_React$Component) {
       var rankingHeader = null;
       var rankingPanel = null;
 
-      if (_ConfigManager["default"].profile.ranking) {
+      if (_ConfigManager["default"].profile.ranking && this.state.ranking) {
         rankingHeader = _react["default"].createElement("div", {
           className: "col-12"
         }, _react["default"].createElement("h3", null, "Twoje miejsce w rankingu"), _react["default"].createElement("p", null, "Sprawd\u017A swoje miejsce"));

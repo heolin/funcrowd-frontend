@@ -209,10 +209,14 @@ function (_React$Component) {
           }
         }
       });
-      if (fields.length > 0) return _react["default"].createElement("div", {
-        className: "item-panel-group",
-        key: "group-" + index
-      }, fields);
+
+      if (fields.length > 0) {
+        var itemPanelGroupClass = this.props.itemPanelGroupClass || "item-panel-group";
+        return _react["default"].createElement("div", {
+          className: itemPanelGroupClass,
+          key: "group-" + index
+        }, fields);
+      }
     }
   }, {
     key: "render",

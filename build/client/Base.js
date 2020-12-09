@@ -83,6 +83,8 @@ require("./static/scss/missions.scss");
 
 var _LocalizationManager = _interopRequireDefault(require("./logic/locatization/LocalizationManager"));
 
+var _SurveyPanel = _interopRequireDefault(require("./modules/survey/SurveyPanel"));
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -164,6 +166,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       this.checkSessionUser();
       this.checkUrlParams();
+      this.checkUserLoading();
 
       _UserManager["default"].addProfileChangeHandler(this.onProfileChanged);
 
@@ -195,6 +198,13 @@ function (_React$Component) {
           _this2.props.history.push(newUrl);
         });
       }
+    }
+  }, {
+    key: "checkUserLoading",
+    value: function checkUserLoading() {
+      if (_UserManager["default"].loadingProfile) this.setState({
+        checkingUser: true
+      });
     }
   }, {
     key: "checkSessionUser",
@@ -254,19 +264,29 @@ function (_React$Component) {
   }, {
     key: "onProfileChanged",
     value: function onProfileChanged() {
-      //this.setState({
-      //    profile: UserManager.user.profile
-      //});
+      this.setState({
+        checkingUser: false
+      });
       this.forceUpdate();
     }
   }, {
     key: "redirectToHome",
     value: function redirectToHome() {
       if (_Urls["default"].checkUrl(this.props.location.pathname, _Urls["default"].HOME) || _Urls["default"].checkUrl(this.props.location.pathname, _Urls["default"].ACTIVATION) || _Urls["default"].checkUrl(this.props.location.pathname, _Urls["default"].LOGIN)) {
-        if (_UserManager["default"].user.profile === _ProfileTypes["default"].NORMAL || _UserManager["default"].user.profile === _ProfileTypes["default"].GAMIFICATION || _UserManager["default"].user.profile === _ProfileTypes["default"].ELEARNING) {
-          this.props.history.push(_Urls["default"].MISSIONS);
-        } else {
-          this.props.history.push(_Urls["default"].BOUNTIES);
+        switch (_UserManager["default"].user.profile) {
+          case _ProfileTypes["default"].NORMAL:
+          case _ProfileTypes["default"].GAMIFICATION:
+          case _ProfileTypes["default"].ELEARNING:
+            this.props.history.push(_Urls["default"].MISSIONS);
+            break;
+
+          case _ProfileTypes["default"].SERIOUS_GAME:
+            this.props.history.push(_Urls["default"].GAME);
+            break;
+
+          default:
+            this.props.history.push(_Urls["default"].BOUNTIES);
+            break;
         }
       }
     }
@@ -322,15 +342,10 @@ function (_React$Component) {
       this.setState({
         sideProfileShown: false
       });
-    } //render
-
+    }
   }, {
-    key: "render",
-    value: function render() {
-      var _this4 = this;
-
-      if (this.state.checkingParams || this.state.checkingUser) return _react["default"].createElement(_Loading["default"], null);
-
+    key: "shouldComponentUpdate",
+    value: function shouldComponentUpdate() {
       if (_UserManager["default"].user === null) {
         if (_ConfigManager["default"].profile.availablePages.indexOf(this.props.location.pathname) < 0) {
           this.props.history.push(_Urls["default"].LOGIN);
@@ -340,6 +355,15 @@ function (_React$Component) {
         this.redirectToHome();
       }
 
+      return true;
+    } //render
+
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      if (this.state.checkingParams || this.state.checkingUser) return _react["default"].createElement(_Loading["default"], null);
       return _react["default"].createElement(_reactRouterDom.Route, {
         render: function render(_ref) {
           var location = _ref.location;
@@ -354,7 +378,7 @@ function (_React$Component) {
           }), _react["default"].createElement(_SideProfilePanel.SideProfilePanel, {
             isOpen: _this4.state.sideProfileShown,
             hideSideProfile: _this4.hideSideProfile
-          }), _react["default"].createElement(_ToastsPanel["default"], null), _react["default"].createElement("div", {
+          }), _react["default"].createElement(_SurveyPanel["default"], null), _react["default"].createElement(_ToastsPanel["default"], null), _react["default"].createElement("div", {
             className: "h-100"
           }, _react["default"].createElement(_reactPose.PoseGroup, null, _react["default"].createElement(RouteContainer, {
             key: location.pathname

@@ -132,7 +132,7 @@ export default class RankingPage extends React.Component {
             rows.push(elem);
         });
 
-        if (addUserRow) {
+        if (addUserRow && this.state.userRanking) {
             let row = this.state.userRanking;
 
             if (lastPosition < row.position) {

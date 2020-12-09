@@ -124,7 +124,7 @@ export default class ItemPanel extends React.Component {
         let metadata = this.state.metadata;
         if (metadata.redirectOnNoItems === true) {
             if (metadata.redirectToMissions === true) {
-                this.props.history.push('/missions/');
+                this.props.history.push('/');
                 UserManager.updateProfile();
             } else {
                 this.props.history.push('/mission/'+this.state.task.mission_id+'/tasks');
@@ -172,6 +172,7 @@ export default class ItemPanel extends React.Component {
     onAnnotationPost(annotationResponse) {
         UserManager.update();
         AchievementsManager.checkToasts();
+
         let feedback = annotationResponse.annotation.feedback;
 
         const lastPageOnlyFeedback =
@@ -269,8 +270,7 @@ export default class ItemPanel extends React.Component {
 
             itemForm = (
                 <div className="col-sm-12 item-panel">
-                        {instructionButton}
-
+                    {instructionButton}
                     <ItemForm metadata={metadata}
                               item={this.state.item}
                               onAnnotationPost={this.onAnnotationPost}

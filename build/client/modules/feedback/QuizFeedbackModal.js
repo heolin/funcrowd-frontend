@@ -62,7 +62,7 @@ function (_React$Component) {
     key: "render",
 
     /*
-    Requires ReferenceScore and ReferenceValue feedbacks
+    Requires ReferenceScore and ReferenceValue feedback
      */
     value: function render() {
       var feedback = this.props.feedback;

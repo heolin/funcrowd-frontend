@@ -5,7 +5,7 @@ import L from "../../logic/locatization/LocalizationManager";
 
 export default class QuizFeedbackModal extends React.Component {
     /*
-    Requires ReferenceScore and ReferenceValue feedbacks
+    Requires ReferenceScore and ReferenceValue feedback
      */
 
     render() {

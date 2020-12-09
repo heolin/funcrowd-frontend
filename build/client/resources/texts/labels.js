@@ -72,6 +72,10 @@ var _default = {
   download: {
     en: "Download",
     pl: "Pobierz"
+  },
+  game: {
+    en: "Game",
+    pl: "Gra"
   }
 };
 exports["default"] = _default;

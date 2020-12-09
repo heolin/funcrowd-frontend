@@ -66,5 +66,9 @@ export default {
     download: {
         en: "Download",
         pl: "Pobierz"
+    },
+    game: {
+        en: "Game",
+        pl: "Gra"
     }
 }

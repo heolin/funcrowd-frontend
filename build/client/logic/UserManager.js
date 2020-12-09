@@ -55,7 +55,8 @@ function (_EventEmitter) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(_UserManager).call(this));
     _this.user = null;
-    _this.loading = false;
+    _this.loadingExp = false;
+    _this.loadingProfile = false;
     _this.level = 0;
     _this.levelProgress = 0;
     return _this;
@@ -79,7 +80,8 @@ function (_EventEmitter) {
       var _this2 = this;
 
       if (this.loading) return;
-      this.loading = true;
+      console.log("updating exp");
+      this.loadingExp = true;
       return _UserRepository["default"].status().then(function (userStatus) {
         if (userStatus.id !== _this2.user.id) {
           console.log("Error. User id mismatch");
@@ -91,7 +93,7 @@ function (_EventEmitter) {
 
         _this2.emit(EXPERIENCE_CHANGED);
 
-        _this2.loading = false;
+        _this2.loadingExp = false;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -102,7 +104,8 @@ function (_EventEmitter) {
       var _this3 = this;
 
       if (this.loading) return;
-      this.loading = true;
+      console.log("updating profile");
+      this.loadingProfile = true;
       return _UserRepository["default"].details().then(function (details) {
         if (details.id !== _this3.user.id) {
           console.log("Error. User id mismatch");
@@ -118,7 +121,7 @@ function (_EventEmitter) {
           _this3.emit(PROFILE_CHANGED);
         }
 
-        _this3.loading = false;
+        _this3.loadingProfile = false;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -198,6 +201,11 @@ function (_EventEmitter) {
       this.level = this.getExpLevel(this.user.exp, this.level);
       if (currentLevel < this.level && currentLevel > 0) this._addLevelUpToast();
       this.levelProgress = this.getExpProgress(this.level, this.user.exp);
+    }
+  }, {
+    key: "loading",
+    get: function get() {
+      return this.loadingExp || this.loadingProfile;
     }
   }]);
 

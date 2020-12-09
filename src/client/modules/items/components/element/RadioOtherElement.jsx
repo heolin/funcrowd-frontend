@@ -58,6 +58,7 @@ export default class RadioOtherElement extends React.Component {
                        className="form-control radio-other"
                        onChange={this.handleTextChange}
                        disabled={this.props.disabled}
+                       style={{marginLeft: "15px"}}
                        type="text"/>
             </label>
         );

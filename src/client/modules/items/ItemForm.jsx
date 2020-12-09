@@ -149,12 +149,14 @@ export default class ItemForm extends React.Component {
                 }
             }
         });
-        if (fields.length > 0)
+        if (fields.length > 0) {
+            let itemPanelGroupClass = this.props.itemPanelGroupClass || "item-panel-group";
             return (
-                <div className="item-panel-group" key={"group-"+index}>
+                <div className={itemPanelGroupClass} key={"group-" + index}>
                     {fields}
                 </div>
             );
+        }
     }
 
     render() {

@@ -37,6 +37,7 @@ import './static/scss/navbar.scss'
 import './static/scss/style.scss'
 import './static/scss/missions.scss'
 import LocalizationManager from './logic/locatization/LocalizationManager'
+import SurveyPanel from "./modules/survey/SurveyPanel";
 
 let baseLangCode = process.env.LANG_CODE || "en";
 LocalizationManager.setup(baseLangCode);
@@ -79,6 +80,7 @@ export class AppBase extends React.Component {
     componentDidMount() {
         this.checkSessionUser();
         this.checkUrlParams();
+        this.checkUserLoading();
 
         UserManager.addProfileChangeHandler(this.onProfileChanged);
         this.onLocationChangedUnlisten = this.props.history.listen(this.onLocationChanged);
@@ -106,6 +108,11 @@ export class AppBase extends React.Component {
                 this.props.history.push(newUrl);
             });
         }
+    }
+
+    checkUserLoading() {
+        if (UserManager.loadingProfile)
+            this.setState({checkingUser: true});
     }
 
     checkSessionUser() {
@@ -146,9 +153,9 @@ export class AppBase extends React.Component {
     }
 
     onProfileChanged() {
-        //this.setState({
-        //    profile: UserManager.user.profile
-        //});
+        this.setState({
+            checkingUser: false,
+        });
         this.forceUpdate();
     }
 
@@ -156,13 +163,19 @@ export class AppBase extends React.Component {
         if (urls.checkUrl(this.props.location.pathname, urls.HOME) ||
             urls.checkUrl(this.props.location.pathname, urls.ACTIVATION) ||
             urls.checkUrl(this.props.location.pathname, urls.LOGIN)) {
-            if (UserManager.user.profile === ProfileTypes.NORMAL ||
-                UserManager.user.profile === ProfileTypes.GAMIFICATION ||
-                UserManager.user.profile === ProfileTypes.ELEARNING
-            ) {
-                this.props.history.push(urls.MISSIONS);
-            } else {
-                this.props.history.push(urls.BOUNTIES);
+
+            switch (UserManager.user.profile) {
+                case ProfileTypes.NORMAL:
+                case ProfileTypes.GAMIFICATION:
+                case ProfileTypes.ELEARNING:
+                    this.props.history.push(urls.MISSIONS);
+                    break;
+                case ProfileTypes.SERIOUS_GAME:
+                    this.props.history.push(urls.GAME);
+                    break;
+                default:
+                    this.props.history.push(urls.BOUNTIES);
+                    break;
             }
         }
     }
@@ -207,11 +220,8 @@ export class AppBase extends React.Component {
         });
     }
 
-    //render
-    render() {
-        if (this.state.checkingParams || this.state.checkingUser)
-            return <Loading/>;
 
+    shouldComponentUpdate() {
         if (UserManager.user === null) {
             if (ConfigManager.profile.availablePages.indexOf(this.props.location.pathname) < 0){
                 this.props.history.push(urls.LOGIN);
@@ -220,6 +230,13 @@ export class AppBase extends React.Component {
         } else {
             this.redirectToHome();
         }
+        return true;
+    }
+
+    //render
+    render() {
+        if (this.state.checkingParams || this.state.checkingUser)
+            return <Loading/>;
 
         return (
             <Route
@@ -236,6 +253,7 @@ export class AppBase extends React.Component {
                     <SideProfilePanel isOpen={this.state.sideProfileShown}
                                       hideSideProfile={this.hideSideProfile}/>
 
+                    <SurveyPanel/>
                     <ToastsPanel/>
 
                     <div className="h-100">

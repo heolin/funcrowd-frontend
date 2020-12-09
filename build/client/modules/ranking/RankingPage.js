@@ -178,7 +178,7 @@ function (_React$Component) {
         rows.push(elem);
       });
 
-      if (addUserRow) {
+      if (addUserRow && this.state.userRanking) {
         var row = this.state.userRanking;
 
         if (lastPosition < row.position) {

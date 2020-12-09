@@ -17,6 +17,7 @@ import TextHeader from "./components/TextHeader";
 import TextOrRadioField from "./components/TextOrRadioField";
 import ProgressBar from "./components/ProgressBar";
 import Link from "./components/Link";
+import TextOrCheckboxField from "./components/TextOrCheckboxField";
 
 
 let Components = {
@@ -29,6 +30,7 @@ let Components = {
     "TextAreaField": TextAreaField,
     "RadioField": RadioField,
     "TextOrRadioField": TextOrRadioField,
+    "TextOrCheckboxField": TextOrCheckboxField,
     "ProgressBar": ProgressBar,
     "MultiChoiceField": MultiChoiceField,
     "SelectField": SelectField,

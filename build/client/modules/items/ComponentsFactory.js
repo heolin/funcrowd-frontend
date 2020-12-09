@@ -43,6 +43,8 @@ var _ProgressBar = _interopRequireDefault(require("./components/ProgressBar"));
 
 var _Link = _interopRequireDefault(require("./components/Link"));
 
+var _TextOrCheckboxField = _interopRequireDefault(require("./components/TextOrCheckboxField"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -61,6 +63,7 @@ var Components = {
   "TextAreaField": _TextAreaField["default"],
   "RadioField": _RadioField["default"],
   "TextOrRadioField": _TextOrRadioField["default"],
+  "TextOrCheckboxField": _TextOrCheckboxField["default"],
   "ProgressBar": _ProgressBar["default"],
   "MultiChoiceField": _MultiChoiceField["default"],
   "SelectField": _SelectField["default"],

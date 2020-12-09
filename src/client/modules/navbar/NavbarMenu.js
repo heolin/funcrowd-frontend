@@ -35,6 +35,14 @@ export default class NavbarMenu extends React.Component {
 
         let elements = [];
 
+        if (ConfigManager.profile.game)
+            elements.push(<NavbarMenuButton key="game"
+                                            targetPath={urls.GAME}
+                                            name={L.labels.game}
+                                            icon="game"
+                                            isSelected={urls.checkUrl(this.state.location.pathname, urls.GAME)}
+                                            iconStyle={{marginTop: "-10px"}}/>);
+
         if (ConfigManager.profile.bounties)
             elements.push(<NavbarMenuButton key="bounties"
                                             targetPath={urls.BOUNTIES}

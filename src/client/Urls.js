@@ -11,6 +11,7 @@ export default {
     WELCOME: "/welcome",
     PROFILE: "/profile",
     SETTINGS: "/settings",
+    GAME: "/game",
     RANKING: "/ranking",
     ACHIEVEMENTS: "/achievements",
     BOUNTY: "/bounty/:id",

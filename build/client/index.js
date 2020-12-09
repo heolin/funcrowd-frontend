@@ -4,15 +4,11 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
-var _App = _interopRequireDefault(require("./App"));
-
-var _DetectIE = _interopRequireDefault(require("./utils/DetectIE"));
-
-var _NotSupported = _interopRequireDefault(require("./NotSupported"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var result = _DetectIE["default"].detectIE();
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 window.isMobile = function () {
   var check = false;
@@ -24,6 +20,31 @@ window.isMobile = function () {
   return check;
 };
 
-if (result) _reactDom["default"].render(_react["default"].createElement(_NotSupported["default"], null), document.getElementById('root'));else {
-  _reactDom["default"].render(_react["default"].createElement(_App["default"], null), document.getElementById('root'));
+function loadMainApp() {
+  return _loadMainApp.apply(this, arguments);
 }
+
+function _loadMainApp() {
+  _loadMainApp = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee() {
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return import(
+            /* webpackChunkName: "app" */
+            './app');
+
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _loadMainApp.apply(this, arguments);
+}
+
+loadMainApp();

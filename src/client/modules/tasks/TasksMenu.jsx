@@ -171,7 +171,6 @@ export default class TasksMenu extends React.Component {
             </div>);
         }
 
-
         return (
             <div className="container-fluid base-row">
                 <TaskHeader mission={this.props.mission} progress={this.state.progress}/>

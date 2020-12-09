@@ -26,8 +26,8 @@ export default class ProfilePage extends React.Component {
 
         this.testsIds = {
             "Test 1": [61, 62, 63, 64, 65, 66],
-            "Test 2": [53],
-            "Test 3": [54]
+            "Test 2": [111, 112, 113, 114, 115, 116],
+            "Test 3": [123, 124, 125, 126, 127, 128]
         };
         this.allIds = [];
         for (const test in this.testsIds) {
@@ -159,7 +159,7 @@ export default class ProfilePage extends React.Component {
 
         let rankingHeader = null;
         let rankingPanel = null;
-        if (ConfigManager.profile.ranking) {
+        if (ConfigManager.profile.ranking && this.state.ranking) {
             rankingHeader = (
                 <div className="col-12">
                     <h3>Twoje miejsce w rankingu</h3>

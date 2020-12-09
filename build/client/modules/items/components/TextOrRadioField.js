@@ -56,6 +56,7 @@ function (_React$Component) {
       this.setState({
         otherSelected: other.checked
       });
+      console.log(event.target);
       this.props.onChange(event);
     }
   }, {

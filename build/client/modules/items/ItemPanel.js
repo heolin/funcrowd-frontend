@@ -182,7 +182,7 @@ function (_React$Component) {
 
       if (metadata.redirectOnNoItems === true) {
         if (metadata.redirectToMissions === true) {
-          this.props.history.push('/missions/');
+          this.props.history.push('/');
 
           _UserManager["default"].updateProfile();
         } else {

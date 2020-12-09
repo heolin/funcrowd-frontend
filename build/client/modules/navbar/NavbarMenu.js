@@ -60,6 +60,16 @@ function (_React$Component) {
     value: function render() {
       if (!this.state.location) return null;
       var elements = [];
+      if (_ConfigManager["default"].profile.game) elements.push(_react["default"].createElement(_NavbarMenuButton["default"], {
+        key: "game",
+        targetPath: _Urls["default"].GAME,
+        name: _LocalizationManager["default"].labels.game,
+        icon: "game",
+        isSelected: _Urls["default"].checkUrl(this.state.location.pathname, _Urls["default"].GAME),
+        iconStyle: {
+          marginTop: "-10px"
+        }
+      }));
       if (_ConfigManager["default"].profile.bounties) elements.push(_react["default"].createElement(_NavbarMenuButton["default"], {
         key: "bounties",
         targetPath: _Urls["default"].BOUNTIES,
