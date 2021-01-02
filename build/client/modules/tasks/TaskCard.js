@@ -11,6 +11,8 @@ var _reactPose = _interopRequireDefault(require("react-pose"));
 
 var _Icons = require("../../components/Icons");
 
+var _ConfigManager = _interopRequireDefault(require("../../logic/config/ConfigManager"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -98,7 +100,7 @@ function (_React$Component) {
         taskIcon = taskIconBase + "_blue";
       }
 
-      if (this.props.task.totalExp > 0) experience = this.props.task.totalExp + " exp";
+      if (_ConfigManager["default"].profile.exp && this.props.task.totalExp > 0) experience = this.props.task.totalExp + " exp";
       return _react["default"].createElement(Card, {
         className: "col-12 task-card " + statusClassName,
         onClick: this.onSelect

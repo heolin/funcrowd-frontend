@@ -5,6 +5,7 @@ import L from "../../logic/locatization/LocalizationManager";
 import feedbackSurvey from "../../static/img/feedback/feedback_survey.svg";
 import BinaryFeedbackModal from "./BinaryFeedbackModal";
 import PointsFeedbackModal from "./PointsFeedbackModal";
+import BinaryPointsFeedbackModal from "./BinaryPointsFeedbackModal";
 import QuizFeedbackModal from "./QuizFeedbackModal";
 import ConfigManager from "../../logic/config/ConfigManager";
 import ClassificationFeedbackModal from "./ClassificationFeedbackModal";
@@ -16,7 +17,7 @@ class _FeedbackFactory {
 
     create(type, isOpen, onAccept, task, annotation, feedback, exp) {
         if (ConfigManager.profile.exp === false && type === FeedbackTypes.POINTS)
-            type = FeedbackTypes.BINARY;
+            type = FeedbackTypes.BINARY_POINTS;
         if (ConfigManager.config.showFeedback === false)
             type = FeedbackTypes.CONFIRM_ONLY;
 
@@ -46,6 +47,14 @@ class _FeedbackFactory {
                 return <BinaryFeedbackModal isOpen={isOpen}
                                             onAccept={onAccept}
                                             feedback={feedback}/>;
+
+            case FeedbackTypes.BINARY_POINTS:
+                return <BinaryPointsFeedbackModal isOpen={isOpen}
+                                            onAccept={onAccept}
+                                            feedback={feedback}
+                                            annotation={annotation}
+                                            task={task}
+                                            exp={exp}/>;
 
             case FeedbackTypes.POINTS:
                 return <PointsFeedbackModal isOpen={isOpen}

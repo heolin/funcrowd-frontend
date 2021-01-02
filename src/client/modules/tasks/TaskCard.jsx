@@ -1,6 +1,7 @@
 import React from "react"
 import posed from 'react-pose';
 import {Icon, SmallIcon} from "../../components/Icons";
+import ConfigManager from "../../logic/config/ConfigManager";
 
 
 const Card = posed.div({
@@ -50,7 +51,7 @@ export default class TaskCard extends React.Component {
             taskIcon = taskIconBase + "_blue";
         }
 
-        if (this.props.task.totalExp > 0)
+        if (ConfigManager.profile.exp && this.props.task.totalExp > 0)
             experience = this.props.task.totalExp + " exp";
 
 

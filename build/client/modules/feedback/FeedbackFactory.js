@@ -19,6 +19,8 @@ var _BinaryFeedbackModal = _interopRequireDefault(require("./BinaryFeedbackModal
 
 var _PointsFeedbackModal = _interopRequireDefault(require("./PointsFeedbackModal"));
 
+var _BinaryPointsFeedbackModal = _interopRequireDefault(require("./BinaryPointsFeedbackModal"));
+
 var _QuizFeedbackModal = _interopRequireDefault(require("./QuizFeedbackModal"));
 
 var _ConfigManager = _interopRequireDefault(require("../../logic/config/ConfigManager"));
@@ -47,7 +49,7 @@ function () {
   _createClass(_FeedbackFactory, [{
     key: "create",
     value: function create(type, isOpen, onAccept, task, annotation, feedback, exp) {
-      if (_ConfigManager["default"].profile.exp === false && type === _FeedbackTypes["default"].POINTS) type = _FeedbackTypes["default"].BINARY;
+      if (_ConfigManager["default"].profile.exp === false && type === _FeedbackTypes["default"].POINTS) type = _FeedbackTypes["default"].BINARY_POINTS;
       if (_ConfigManager["default"].config.showFeedback === false) type = _FeedbackTypes["default"].CONFIRM_ONLY;
 
       switch (type) {
@@ -81,6 +83,16 @@ function () {
             isOpen: isOpen,
             onAccept: onAccept,
             feedback: feedback
+          });
+
+        case _FeedbackTypes["default"].BINARY_POINTS:
+          return _react["default"].createElement(_BinaryPointsFeedbackModal["default"], {
+            isOpen: isOpen,
+            onAccept: onAccept,
+            feedback: feedback,
+            annotation: annotation,
+            task: task,
+            exp: exp
           });
 
         case _FeedbackTypes["default"].POINTS:

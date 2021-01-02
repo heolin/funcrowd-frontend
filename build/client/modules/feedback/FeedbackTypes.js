@@ -8,6 +8,7 @@ var FeedbackTypes = {
   NONE: "NONE",
   CONFIRM_ONLY: "CONFIRM_ONLY",
   BINARY: "BINARY",
+  BINARY_POINTS: "BINARY_POINTS",
   QUIZ: "QUIZ",
   POINTS: "POINTS",
   NER: "NER",
