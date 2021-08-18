@@ -70,7 +70,10 @@ export default class ItemForm extends React.Component {
         for (let i = 0; i < item.template.fields.length; i++) {
             let field = item.template.fields[i];
             if (field.required && field.editable) {
-                if (!this.state[field.name]) {
+                let value = this.state[field.name];
+                if (value)
+                    value = JSON.parse(value);
+                if (!value) {
                     return false
                 }
             }
