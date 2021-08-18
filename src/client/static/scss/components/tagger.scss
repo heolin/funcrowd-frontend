@@ -13,45 +13,80 @@ $color5: #70a8c3;
 $dark-color5: #59859a;
 $color6: #bc76e6;
 $dark-color6: #935cb4;
+$color7: #754431;
+$dark-color7: #603522;
+$color8: #e78200;
+$dark-color8: #b26505;
+$color9: #00b09e;
+$dark-color9: #006e62;
+$color10: #ffbbbb;
+$dark-color10: #d08e8e;
+
 
 .tagger-text {
   margin: 20px 10px 30px 0;
 }
 
 .tagger-tag {
-  color: white;
-  background: #c3c3c3;
+  color: #151515;
   border-radius: 0.25rem;
   cursor: pointer;
   padding: 2px 4px;
 }
 
 .tag-selected {
+  color: white;
   background: #6f6f6f;
 }
 
 .tag-color-1 {
+  color: white;
   background: $color1 !important;
 }
 
 .tag-color-2 {
+  color: white;
   background: $color2 !important;
 }
 
 .tag-color-3 {
+  color: white;
   background: $color3 !important;
 }
 
 .tag-color-4 {
+  color: white;
   background: $color4 !important;
 }
 
 .tag-color-5 {
+  color: white;
   background: $color5 !important;
 }
 
 .tag-color-6 {
+  color: white;
   background: $color6 !important;
+}
+
+.tag-color-7 {
+  color: white;
+  background: $color7 !important;
+}
+
+.tag-color-8 {
+  color: white;
+  background: $color8 !important;
+}
+
+.tag-color-9 {
+  color: white;
+  background: $color9 !important;
+}
+
+.tag-color-10 {
+  color: white;
+  background: $color10 !important;
 }
 
 .tagger-buttons {
@@ -85,4 +120,20 @@ $dark-color6: #935cb4;
 
 .tagger-button-6 {
   @include button(white, $color6, $color6, $dark-color6);
+}
+
+.tagger-button-7 {
+  @include button(white, $color7, $color7, $dark-color7);
+}
+
+.tagger-button-8 {
+  @include button(white, $color8, $color8, $dark-color8);
+}
+
+.tagger-button-9 {
+  @include button(white, $color9, $color9, $dark-color9);
+}
+
+.tagger-button-10 {
+  @include button(white, $color10, $color10, $dark-color10);
 }

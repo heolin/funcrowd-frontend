@@ -41,7 +41,8 @@ export default class ItemForm extends React.Component {
         if (item) {
             for (let i = 0; i < item.template.fields.length; i++) {
                 let field = item.template.fields[i];
-                this.state[field.name] = "";
+                let value = JSON.stringify(this.props.currentAnnotation.data[field.name]) || "";
+                this.state[field.name] = value;
             }
         }
     }
@@ -52,8 +53,10 @@ export default class ItemForm extends React.Component {
         for (let i = 0; i < item.template.fields.length; i++) {
             let field = item.template.fields[i];
             let value = item.data[field.name];
-            if (value == null)
-                value = "";
+            if (value == null) {
+                value = JSON.stringify(this.props.currentAnnotation.data[field.name]) || "";
+            }
+
             itemState[field.name] = value;
         }
         itemState['item'] = item;

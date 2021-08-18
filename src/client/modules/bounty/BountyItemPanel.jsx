@@ -23,6 +23,7 @@ export default class BountyItemPanel extends ItemPanel {
             userBounty: null,
             loading: true,
             loadingStart: false,
+            currentAnnotation: null,
             feedback: null,
             annotation: null,
             instruction: false,
@@ -85,8 +86,9 @@ export default class BountyItemPanel extends ItemPanel {
                     this.onNoItems();
 
                 this.setState({
-                    loading: false,
                     item: item
+                }, () => {
+                    this.getCurrentAnnotation(item)
                 });
             })
             .catch((error) => {
@@ -153,6 +155,7 @@ export default class BountyItemPanel extends ItemPanel {
 
                         <ItemForm metadata={this.state.metadata}
                                   item={this.state.item}
+                                  currentAnnotation={this.state.currentAnnotation}
                                   onAnnotationPost={this.onAnnotationPost}
                                   submitButton={SubmitButton}
                                   skipButton={SkipButton}/>
