@@ -38,7 +38,9 @@ export default class TextTagField extends React.Component {
 
     setupDefaultTags() {
         let tags = []
-        let values = JSON.parse(this.props.value);
+        let values = [];
+        if (this.props.value)
+            values = JSON.parse(this.props.value);
         values.map((value) => {
             tags.push(new Tag(value.start, value.end, value.tag, value.text, value.tokens))
         })
@@ -166,7 +168,6 @@ export default class TextTagField extends React.Component {
     }
 
     render() {
-
         let label;
         if (this.props.label)
             label = <label><strong>{this.props.label}</strong></label>;

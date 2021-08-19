@@ -154,12 +154,13 @@ export default class ItemPanel extends React.Component {
             });
     }
 
-    getCurrentAnnotation() {
-        ItemRepository.getAnnotation(this.state.item.id)
+    getCurrentAnnotation(item) {
+        ItemRepository.getAnnotation(item.id)
             .then((annotation) => {
-                console.log(annotation);
                 this.setState({
                     loading: false,
+                    item: item,
+                    annotation: null,
                     currentAnnotation: annotation
                 });
             })
@@ -218,7 +219,11 @@ export default class ItemPanel extends React.Component {
     }
 
     onFeedbackAccept() {
-        const result = { confirmation: false };
+        const result = {
+            confirmation: false,
+            item: null,
+            currentAnnotation: null,
+        };
         if (this.state.feedback)
             result['feedback'] = null;
 

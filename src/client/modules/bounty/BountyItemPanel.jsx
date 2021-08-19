@@ -84,12 +84,7 @@ export default class BountyItemPanel extends ItemPanel {
             .then((item) => {
                 if (item == null)
                     this.onNoItems();
-
-                this.setState({
-                    item: item
-                }, () => {
-                    this.getCurrentAnnotation(item)
-                });
+                this.getCurrentAnnotation(item);
             })
             .catch((error) => {
                 this.setState({ loading: false});
