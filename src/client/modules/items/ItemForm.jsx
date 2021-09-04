@@ -41,7 +41,8 @@ export default class ItemForm extends React.Component {
         if (item) {
             for (let i = 0; i < item.template.fields.length; i++) {
                 let field = item.template.fields[i];
-                this.state[field.name] = "";
+                let value = JSON.stringify(this.props.currentAnnotation.data[field.name]) || "";
+                this.state[field.name] = value;
             }
         }
     }
@@ -52,8 +53,10 @@ export default class ItemForm extends React.Component {
         for (let i = 0; i < item.template.fields.length; i++) {
             let field = item.template.fields[i];
             let value = item.data[field.name];
-            if (value == null)
-                value = "";
+            if (value == null) {
+                value = JSON.stringify(this.props.currentAnnotation.data[field.name]);
+            }
+
             itemState[field.name] = value;
         }
         itemState['item'] = item;
@@ -67,7 +70,10 @@ export default class ItemForm extends React.Component {
         for (let i = 0; i < item.template.fields.length; i++) {
             let field = item.template.fields[i];
             if (field.required && field.editable) {
-                if (!this.state[field.name]) {
+                let value = this.state[field.name];
+                if (value)
+                    value = JSON.parse(value);
+                if (!value) {
                     return false
                 }
             }
@@ -103,7 +109,10 @@ export default class ItemForm extends React.Component {
 
         let item = this.props.item;
         let payload = {data: this.getAnnotationData(), skipped: skip};
-        this.setState({blocked: true, loading: true});
+        this.setState({
+            blocked: true,
+            loading: true,
+        });
 
         ItemRepository.postAnnotation(item.id, payload)
             .then((annotationResponse) => {
@@ -137,7 +146,8 @@ export default class ItemForm extends React.Component {
                 let skip = !field.editable && !this.state[field.name];
 
                 if (!skip) {
-                    let component = factory.create(field.widget,
+                    let component = factory.create(
+                        field.widget,
                         field.name,
                         field.label,
                         this.state[field.name],

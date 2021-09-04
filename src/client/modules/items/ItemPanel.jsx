@@ -41,6 +41,7 @@ export default class ItemPanel extends React.Component {
             loading: true,
             feedback: null,
             annotation: null,
+            currentAnnotation: null,
             metadata: {},
             instruction: false,
             confirmation: false,
@@ -48,6 +49,7 @@ export default class ItemPanel extends React.Component {
         };
 
         this.onAnnotationPost = this.onAnnotationPost.bind(this);
+        this.getCurrentAnnotation = this.getCurrentAnnotation.bind(this);
         this.onFeedbackAccept = this.onFeedbackAccept.bind(this);
         this.showInstruction = this.showInstruction.bind(this);
         this.onInstructionClose = this.onInstructionClose.bind(this);
@@ -141,8 +143,25 @@ export default class ItemPanel extends React.Component {
                     this.onNoItems();
 
                 this.setState({
-                    loading: false,
                     item: item
+                }, () => {
+                    this.getCurrentAnnotation(item)
+                });
+            })
+            .catch((error) => {
+                this.setState({ loading: false});
+                console.log(error)
+            });
+    }
+
+    getCurrentAnnotation(item) {
+        ItemRepository.getAnnotation(item.id)
+            .then((annotation) => {
+                this.setState({
+                    loading: false,
+                    item: item,
+                    annotation: null,
+                    currentAnnotation: annotation
                 });
             })
             .catch((error) => {
@@ -161,6 +180,8 @@ export default class ItemPanel extends React.Component {
                 this.setState({
                     loading: false,
                     item: item
+                }, () => {
+                    this.getCurrentAnnotation(item)
                 });
             })
             .catch((error) => {
@@ -198,7 +219,11 @@ export default class ItemPanel extends React.Component {
     }
 
     onFeedbackAccept() {
-        const result = { confirmation: false };
+        const result = {
+            confirmation: false,
+            item: null,
+            currentAnnotation: null,
+        };
         if (this.state.feedback)
             result['feedback'] = null;
 
@@ -273,6 +298,7 @@ export default class ItemPanel extends React.Component {
                     {instructionButton}
                     <ItemForm metadata={metadata}
                               item={this.state.item}
+                              currentAnnotation={this.state.currentAnnotation}
                               onAnnotationPost={this.onAnnotationPost}
                               submitButton={SubmitButton}
                               skipButton={SkipButton}/>

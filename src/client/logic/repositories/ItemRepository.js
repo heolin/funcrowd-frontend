@@ -3,6 +3,7 @@ import SessionManager from "../SessionManager";
 import Item from "../models/item/Item";
 import AnnotationResponse from "../models/annotation/AnnotationResponse";
 import ConfigManager from "../config/ConfigManager";
+import Annotation from "../models/annotation/Annotation";
 
 
 export default class ItemRepository {
@@ -19,6 +20,14 @@ export default class ItemRepository {
             .then((response) => {
                 let item = Item.fromJson(response.data);
                 return item;
+            });
+    }
+
+    static getAnnotation(itemId) {
+        return axios.get(ConfigManager.baseUrl+'/api/v1/items/'+itemId+'/annotation/', SessionManager.config)
+            .then((response) => {
+                let annotation = Annotation.fromJson(response.data);
+                return annotation;
             });
     }
 

@@ -29,6 +29,24 @@ export default class TextTagField extends React.Component {
         this.onTagButtonClick = this.onTagButtonClick.bind(this);
         this.onTagSelect = this.onTagSelect.bind(this);
         this.onChange = this.onChange.bind(this);
+        this.setupDefaultTags = this.setupDefaultTags.bind(this);
+    }
+
+    componentDidMount() {
+        this.setupDefaultTags();
+    }
+
+    setupDefaultTags() {
+        let tags = []
+        let values = [];
+        if (this.props.value)
+            values = JSON.parse(this.props.value);
+        values.map((value) => {
+            tags.push(new Tag(value.start, value.end, value.tag, value.text, value.tokens))
+        })
+        this.setState({
+            tags: tags
+        });
     }
 
     onChange() {
@@ -150,7 +168,6 @@ export default class TextTagField extends React.Component {
     }
 
     render() {
-
         let label;
         if (this.props.label)
             label = <label><strong>{this.props.label}</strong></label>;
