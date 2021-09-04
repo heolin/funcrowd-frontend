@@ -8,6 +8,16 @@ import L from "../../logic/locatization/LocalizationManager";
 let factory = new ComponentsFactory();
 
 
+function isJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+
+
 export default class ItemForm extends React.Component {
 
     constructor(props) {
@@ -71,8 +81,11 @@ export default class ItemForm extends React.Component {
             let field = item.template.fields[i];
             if (field.required && field.editable) {
                 let value = this.state[field.name];
+                console.log("HEHE");
+                console.log(this.state);
                 if (value)
-                    value = JSON.parse(value);
+                    if (isJsonString(value))
+                        value = JSON.parse(value);
                 if (!value) {
                     return false
                 }
